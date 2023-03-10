@@ -1,13 +1,13 @@
-This is still a work in prgress, and needs to be ratified
+This is still a work in progress, and needs to be ratified.
 
 ## Principles
 
-This repo adheres to the following principles:
+This repository adheres to the following principles:
 
 - Open: Contribution is always welcome.
 - Respectful: See the [Code of Conduct](CODE_OF_CONDUCT.md).
 - Transparent and accessible: Work and collaboration should be done in public.
-  See Governance, below.
+  See [Governance](#governance) section for details.
 - Merit: Ideas and contributions are accepted according to their merit and
   alignment with the project objectives principles.
 
@@ -19,9 +19,9 @@ We are very happy to receive contributions from the community in any form, but i
 - Typos / fixes
 - Style improvements
 
-Please use a GitHub pull reuqest to submit your contributions. If you have a
+Please use a GitHub pull request to submit your contributions. If you have a
 question or are unsure if a contribution is wanted, please join us in
-[TBD](#channel-name-here) on Matrix (IRC name here) to discuss your change. If
+[TBD](#channel-name-here) on Matrix  or (IRC name here) to discuss your change. If
 you prefer async discussion, feel free to open a GitHub issue with your
 question/suggestion.
 

@@ -13,7 +13,7 @@ Please see [Governance](CONTRIBUTING.md#Governance)
 ## Contacting the maintainers
 
 The Website Working group can be found in [TBD](#channel-name-here) on Matrix
-(IRC name here). Alternatively, a GitHub issue is also acceptable for asking
+or (IRC name here). Alternatively, a GitHub issue is also acceptable for asking
 questions.
 
 ## Using this repository
