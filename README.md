@@ -18,11 +18,23 @@ questions.
 
 ## Using this repository
 
-TBD depends on choice of SSG
+This repo contains the source used to generate a static site using [Nikola](https://getnikola.com/).
 
-## Prerequisites
+Nikola installation and documentation can be found [here](https://getnikola.com/getting-started.html#install).
 
-TBD depends on choice of SSG
+Configuration file for the site is ``conf.py``.
+
+To build the site::
+
+    nikola build
+
+To see it::
+
+    nikola serve -b
+
+To check all available commands::
+
+    nikola help
 
 ## Code of Conduct
 
