@@ -1,11 +1,12 @@
+name: Build and deploy with Nikola
 on: [push]
 
 jobs:
   nikola_build:
     runs-on: ubuntu-latest
-    name: 'Deploy Nikola to GitHub Pages'
+    name: 'Build and deploy website to gh-pages'
     steps:
     - name: Check out
       uses: actions/checkout@v3
-    - name: Build and Deploy Nikola
+    - name: Run Nikola action
       uses: getnikola/nikola-action@v8
