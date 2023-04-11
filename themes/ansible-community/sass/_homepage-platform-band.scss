@@ -1,0 +1,16 @@
+.homepage-platform-band {
+    padding-bottom: 2rem;
+    margin: 6rem auto;
+    text-align: left;
+}
+
+.learn-more {
+    a {
+        background-color: $red-hat-red;
+        color: $white;
+        &:hover {
+          background-color: $red-hat-red;
+          color: $black;
+        }
+    }
+}

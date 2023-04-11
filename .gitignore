@@ -166,3 +166,6 @@ output/
 cache/
 __pycache__/
 .doit.db
+
+# Sass cache directory
+.sass-cache
