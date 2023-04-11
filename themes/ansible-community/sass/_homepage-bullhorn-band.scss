@@ -1,0 +1,39 @@
+.homepage-bullhorn-band {
+  text-align: center;
+  position: relative;
+  background-color: $navy;
+  color: $white;
+  padding: 20px;
+  h2 {
+    font-size:2rem;
+  }
+}
+
+.subscribe-description {
+  p span {
+    font-size:0.9rem;
+  }
+}
+
+.subscribe-input {
+  p {
+    font-size:1rem;
+  }
+}
+
+.clear {
+  .button {
+    background-color: $pool;
+    color: $white;
+    border: 0;
+    border-radius: 2px;
+    padding: 8px;
+    width: 15%;
+    text-transform: none;
+    text-align: center;
+    &:hover {
+      background-color: $pool;
+      color: $black;
+    }
+  }
+}

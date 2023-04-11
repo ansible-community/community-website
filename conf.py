@@ -160,7 +160,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+THEME = "ansible-community"
 
 # A theme color. In default themes, it might be displayed by some browsers as
 # the browser UI color (eg. Chrome on Android). Other themes might also use it
@@ -584,7 +584,7 @@ HIDDEN_AUTHORS = ['Guest']
 # Final location for the main blog page and sibling paginated pages is
 # output / TRANSLATION[lang] / INDEX_PATH / index-*.html
 # (translatable)
-INDEX_PATH = "blog"
+# INDEX_PATH = "blog"
 
 # Optional HTML that displayed on “main” blog index.html files.
 # May be used for a greeting. (translatable)
@@ -1409,9 +1409,24 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+try:
+    from nikola.utils import load_data
+    GLOBAL_CONTEXT = {
+    "meta": load_data('data/meta.yaml'),
+    "homepage": load_data('data/homepage.yaml')
+    }
+
+except ImportError:
+    GLOBAL_CONTEXT = {}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be
 # rendered
 GLOBAL_CONTEXT_FILLER = []
+
+# Compiler to process Sass files.
+SASS_COMPILER = 'sass'
+
+# A list of options to pass to the Sass compiler.
+# Final command is: SASS_COMPILER SASS_OPTIONS file.s(a|c)ss
+SASS_OPTIONS = []

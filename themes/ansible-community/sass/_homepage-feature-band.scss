@@ -1,0 +1,26 @@
+.homepage-feature-band {
+    background-color: $white;
+    padding-bottom: 2rem;
+    margin: 6rem auto;
+}
+
+.box {
+    float: left;
+    width: 33.3%;
+    padding: 20px;
+    color: $black;
+    align-items: center;
+    padding-bottom: 0px;
+    img {
+        width: 75px;
+        position: absolute;
+    }
+    p {
+        text-align: center;
+        margin-left: 75px;
+    }
+}
+
+.feature {
+    padding-bottom: 10px;
+}

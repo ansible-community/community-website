@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   width="60.120125"
+   height="60.129997"
+   viewBox="0 0 60.120128 60.129996"
+   version="1.1"
+   sodipodi:docname="icon_lint.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview78"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="4.6542077"
+     inkscape:cx="30.939745"
+     inkscape:cy="24.279105"
+     inkscape:window-width="1920"
+     inkscape:window-height="979"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs59">
+    <style
+       id="style57">.cls-1{fill:#102441;}.cls-2{fill:#fff;}</style>
+  </defs>
+  <g
+     id="Group_31"
+     data-name="Group 31"
+     transform="translate(-36.169998,-59.8)">
+    <path
+       id="Path_47"
+       data-name="Path 47"
+       class="cls-1"
+       d="M 61.86,76.2 H 75 a 1.63,1.63 0 0 0 1.64,-1.64 V 61.49 A 1.66,1.66 0 0 0 75,59.8 H 61.86 a 1.66,1.66 0 0 0 -1.64,1.64 v 13.12 a 1.63,1.63 0 0 0 1.64,1.64 z M 63.5,63.08 h 9.83 v 9.84 H 63.5 Z" />
+    <path
+       id="Path_48"
+       data-name="Path 48"
+       class="cls-1"
+       d="m 89.25,95.26 a 1.5,1.5 0 0 0 -0.48,-0.3 h -0.68 a 1.35,1.35 0 0 0 -0.52,0.11 v 0 a 3.08,3.08 0 0 0 -0.48,0.32 v 0 l -4.37,4.38 a 1.63,1.63 0 0 0 2.28,2.31 l 1.58,-1.55 V 103 a 7.11,7.11 0 0 1 -7.15,7.07 h -22 a 1.6404877,1.6404877 0 1 0 -0.08,3.28 h 22 A 10.39,10.39 0 0 0 89.73,103 v -2.6 l 1.57,1.6 a 1.62,1.62 0 0 0 2.29,0 v 0 0 a 1.65,1.65 0 0 0 0,-2.31 z" />
+    <path
+       id="Path_49"
+       data-name="Path 49"
+       class="cls-1"
+       d="M 56.94,68.05 A 1.66,1.66 0 0 0 55.3,66.36 H 53.11 A 10.41,10.41 0 0 0 42.73,76.79 v 0 17.9 l -1.58,-1.57 a 1.64,1.64 0 0 0 -2.31,2.32 l 4.37,4.37 a 1.49,1.49 0 0 0 0.55,0.37 1.71,1.71 0 0 0 1.22,0 v 0 a 2.27,2.27 0 0 0 0.48,-0.33 v 0 l 4.37,-4.37 a 1.6404877,1.6404877 0 0 0 -2.32,-2.32 l -1.57,1.58 V 76.79 A 7.13,7.13 0 0 1 53,69.64 h 2.3 a 1.64,1.64 0 0 0 1.64,-1.59 z" />
+    <path
+       id="Path_50"
+       data-name="Path 50"
+       class="cls-1"
+       d="M 94.65,59.8 H 81.53 a 1.66,1.66 0 0 0 -1.64,1.64 v 13.12 a 1.64,1.64 0 0 0 1.64,1.64 h 13.12 a 1.64,1.64 0 0 0 1.64,-1.64 V 61.49 A 1.67,1.67 0 0 0 94.65,59.8 Z M 93,72.92 H 83.17 V 63.08 H 93 Z" />
+    <rect
+       id="Rectangle_23"
+       data-name="Rectangle 23"
+       class="cls-1"
+       x="60.220001"
+       y="79.480003"
+       width="16.4"
+       height="16.4"
+       rx="0.75" />
+    <rect
+       id="Rectangle_24"
+       data-name="Rectangle 24"
+       class="cls-1"
+       x="36.169998"
+       y="103.53"
+       width="16.4"
+       height="16.4"
+       rx="0.75" />
+  </g>
+</svg>

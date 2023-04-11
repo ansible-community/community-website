@@ -20,9 +20,20 @@ questions.
 
 This repo contains the source used to generate a static site using [Nikola](https://getnikola.com/).
 
-Nikola installation and documentation can be found [here](https://getnikola.com/getting-started.html#install).
-
 Configuration file for the site is ``conf.py``.
+
+### Requirements
+
+- Visit [Nikola installation documentation](https://getnikola.com/getting-started.html#install).
+- Install `sass` to compile scss files to css.
+
+You can install `sass` as described in the [Sass install docs](https://sass-lang.com/install).
+If you are a Fedora user, you can install and use `sassc` as follows:
+
+- `sudo dnf install sassc`
+- `sudo ln -s /usr/bin/sassc /usr/bin/sass` (Nikola expects a sass binary.)
+
+### Building and viewing the site
 
 To build the site::
 
