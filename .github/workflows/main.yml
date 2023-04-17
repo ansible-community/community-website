@@ -11,6 +11,8 @@ jobs:
     steps:
     - name: Check out
       uses: actions/checkout@v3
+    - name: Change sass binary in conf.py
+      run: sed -i "s|SASS_COMPILER = 'sass'|SASS_COMPILER = 'sassc'|g" conf.py
     - name: Run Nikola action
       uses: getnikola/nikola-action@v8
       with:
