@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Build and deploy website to gh-pages'
     steps:
-    - name: Install Dart Sass Embedded
-      run: sudo snap install dart-sass-embedded
     - name: Check out
       uses: actions/checkout@v3
     - name: Run Nikola action
       uses: getnikola/nikola-action@v8
+      with:
+        apt_install: sassc
