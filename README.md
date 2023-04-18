@@ -2,6 +2,8 @@
 
 This repository contains the assets required to build the Ansible Community website. Welcome!
 
+See the WIP site at https://ansible-community.github.io/community-website/
+
 ## Contributing to the website
 
 Please see [CONTRIBUTING](CONTRIBUTING.md)
