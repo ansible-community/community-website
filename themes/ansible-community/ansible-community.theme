@@ -1,6 +1,6 @@
 [Theme]
 engine = jinja
-parent = base-jinja
+parent = bootstrap4-jinja
 author = Ansible community
 #author_url = TBD
 tags = ansible
