@@ -142,13 +142,6 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/blog/", "Blog"),
-        ("https://github.com/ansible-community", "GitHub"),
-        ("https://fosstodon.org/@ansible", "Fosstodon"),
-        ("https://discourse.ansible.im/", "Discourse"),
-        ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
     ),
 }
 
@@ -156,7 +149,14 @@ NAVIGATION_LINKS = {
 # although themes may not always support them. (translatable)
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
 NAVIGATION_ALT_LINKS = {
-    DEFAULT_LANG: ()
+    DEFAULT_LANG: (
+        ("/blog/", "Blog"),
+        ("https://github.com/ansible-community", "GitHub"),
+        ("https://fosstodon.org/@ansible", "Fosstodon"),
+        ("https://discourse.ansible.im/", "Discourse"),
+        ("/archive.html", "Archive"),
+        ("/categories/", "Tags"),
+        ("/rss.xml", "RSS feed"),)
 }
 
 # Name of the theme to use.
