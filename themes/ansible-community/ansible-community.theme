@@ -1,16 +1,6 @@
 [Theme]
 engine = jinja
-parent = bootstrap3-jinja
+parent = bootstrap4-jinja
 author = Ansible community
 #author_url = TBD
-based_on = Bootstrap 3 <https://getbootstrap.com/>
-license = MIT
 tags = ansible
-
-[Family]
-family = bootstrap3
-jinja_version = bootstrap3-jinja
-variants = bootstrap3-gradients, bootstrap3-gradients-jinja
-
-[Nikola]
-bootswatch = True
