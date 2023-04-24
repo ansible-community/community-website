@@ -153,16 +153,16 @@ NAVIGATION_ALT_LINKS = {
         (
           (
             ("/blog/", "Latest Posts"),
+            ("/categories/", "Tags"),
             ("/blog/archive.html", "Post Archive"),
+            ("/rss.xml", "RSS feed"),
           ),
           "Blog"
         ),
-        ("https://github.com/ansible-community", "GitHub"),
+        ("/events/","Events"),
         ("https://fosstodon.org/@ansible", "Fosstodon"),
         ("https://discourse.ansible.im/", "Discourse"),
-        ("/archive.html", "Archive"),
-        ("/categories/", "Tags"),
-        ("/rss.xml", "RSS feed"),
+        ("https://github.com/ansible-community", "GitHub"),
     )
 }
 
@@ -1070,7 +1070,7 @@ STRIP_INDEXES = True
 # This can be disabled on a per-page/post basis by adding
 #    .. pretty_url: False
 # to the metadata.
-PRETTY_URLS = False
+PRETTY_URLS = True
 
 # If True, publish future dated posts right away instead of scheduling them.
 # Defaults to False.
