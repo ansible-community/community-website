@@ -1,0 +1,28 @@
+.navbar-padding {
+  padding: 0;
+}
+
+.nav-link-color {
+  color: $white !important;
+  &:hover {
+    color: $light-grey !important;
+  }
+}
+
+.nav-toggle-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%23fff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.dropdown-menu-border {
+  border: 0 solid rgba(0,0,0,.15);
+  border-radius: 3px;
+  a:active {
+    background-color: $red-hat-red !important;
+  }
+}
+
+.active {
+  color: $white !important;
+  text-decoration: none !important;
+  background-color: $red-hat-red !important;
+}

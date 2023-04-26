@@ -123,9 +123,6 @@ lang="{{ lang }}">
             href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
             integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
             crossorigin="anonymous"/>
-        <!-- Ansible.com css -->
-        <link rel="stylesheet"
-            href="https://www.ansible.com/hubfs/css/styles.min.css"/>
         <!-- Sass compiled css  -->
         <link rel="stylesheet" href="/assets/css/main.css">
         <link rel="stylesheet" href="/assets/css/redhat-footer.css">
@@ -146,8 +143,8 @@ lang="{{ lang }}">
 {% macro html_navigation_links_entries(navigation_links_source) %}
     {% for url, text in navigation_links_source[lang] %}
         {% if isinstance(url, tuple) %}
-            <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ text }}</a>
-            <div class="dropdown-menu">
+            <li class="nav-item dropdown"><a href="#" class="nav-link nav-link-color dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ text }}</a>
+            <div class="dropdown-menu dropdown-menu-border">
             {% for suburl, text in url %}
                 {% if rel_link(permalink, suburl) == "#" %}
                     <a href="{{ permalink }}" class="dropdown-item active">{{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span></a>
@@ -158,9 +155,9 @@ lang="{{ lang }}">
             </div>
         {% else %}
             {% if rel_link(permalink, url) == "#" %}
-                <li class="nav-item active"><a href="{{ permalink }}" class="nav-link">{{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span></a>
+                <li class="nav-item active"><a href="{{ permalink }}" class="nav-link nav-link-color">{{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span></a>
             {% else %}
-                <li class="nav-item"><a href="{{ url }}" class="nav-link">{{ text }}</a>
+                <li class="nav-item"><a href="{{ url }}" class="nav-link nav-link-color">{{ text }}</a>
             {% endif %}
         {% endif %}
     {% endfor %}
@@ -173,7 +170,7 @@ lang="{{ lang }}">
 {% macro html_translations() %}
     {% for langname in translations|sort %}
         {% if langname != lang %}
-            <li class="nav-item"><a href="{{ _link("root", None, langname) }}" rel="alternate" hreflang="{{ langname }}" class="nav-link">{{ messages("LANGUAGE", langname) }}</a></li>
+            <li class="nav-item"><a href="{{ _link("root", None, langname) }}" rel="alternate" hreflang="{{ langname }}" class="nav-link nav-link-color">{{ messages("LANGUAGE", langname) }}</a></li>
         {% endif %}
     {% endfor %}
 {% endmacro %}
