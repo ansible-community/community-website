@@ -38,4 +38,10 @@ I'm looking for information on Red Hat's Ansible offerings. I might be an exitin
 * **Attitude:** Possibly irritated that they didn't land on the product right away. Might appreciate being aware of the upstream community, but wants to get to their target.
 * **Knowledge:** Unclear, but business-focussed for sure. Might be aware of RHAAP, AutomationHub, etc, or might be a community user of Ansible looking to go further
 
+## Meetup organizer
 
+Meetup organizers plan, organize, and coordinate events around Ansible. These events can range from casual meetups for hobbists to full-scale conferences.
+
+* **Needs:** An understanding of what consistutes an Ansible meetup, how to abide by the code of conduct, and resources for successfully hosting an Ansible event.
+* **Attitude:** Motivated to have a successful event, which can often be quite stressful. Meetups can be time-consuming and require a lot of preparation.
+* **Knowledge:** Undetermined, meetup organizers might not have technical backgrounds or be very experienced with Ansible.
