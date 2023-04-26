@@ -154,12 +154,14 @@ lang="{{ lang }}">
             {% endfor %}
             </div>
         {% else %}
-            {% if rel_link(permalink, url) == "#" %}
-                <li class="nav-item active"><a href="{{ permalink }}" class="nav-link nav-link-color">{{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span></a>
-            {% else %}
-                <li class="nav-item"><a href="{{ url }}" class="nav-link nav-link-color">{{ text }}</a>
-            {% endif %}
-        {% endif %}
+             {% if rel_link(permalink, url) == "#" %}
+                 <li class="nav-item active"><a href="{{ permalink }}" class="nav-link nav-link-color">{{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span></a>
+             {% elif url.startswith("https://")  %}
+                 <li class="nav-item"><a href="{{ url }}" target="_blank" class="nav-link nav-link-color">{{ text }}</a>
+             {% else %}
+                 <li class="nav-item"><a href="{{ url }}" class="nav-link nav-link-color">{{ text }}</a>
+             {% endif %}
+         {% endif %}
     {% endfor %}
 {% endmacro %}
 
