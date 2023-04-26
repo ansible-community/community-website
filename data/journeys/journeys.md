@@ -71,5 +71,23 @@ Milestone: Learn about the products
   Redirect to the product site
 ```
 
+## Meetup organizer
 
-
+```yaml
+Milestone: Gain awareness of Ansible meetups
+- [ ] Understand what constitutes an Ansible meetup
+- [ ] Learn about the roles of meetup participants
+- [ ] Review and abide by the code of conduct
+Milestone: Start planning
+- [ ] How to decide on the agenda?
+- [ ] How to scout for the venue?
+- [ ] Where to collaborate with other groups?
+- [ ] How to get the logos, posters following guidelines?
+- [ ] Security concerns
+- [ ] Securing a venue
+Milestone: On the day of the event
+Milestone: After the event
+- [ ] How to share lessons learnt/ post event report?
+- [ ] How to promote your event?
+- [ ] How to reach out to the speakers?
+```
