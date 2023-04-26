@@ -38,4 +38,12 @@ I'm looking for information on Red Hat's Ansible offerings. I might be an exitin
 * **Attitude:** Possibly irritated that they didn't land on the product right away. Might appreciate being aware of the upstream community, but wants to get to their target.
 * **Knowledge:** Unclear, but business-focussed for sure. Might be aware of RHAAP, AutomationHub, etc, or might be a community user of Ansible looking to go further
 
+## Technical writer
 
+Technical writers contribute to Ansible community documentation. They can be users who notice trivial corrections or out-of-date content while using Ansible. Technical writers do not necessarily need to be Ansible users. They can be people who simply have an interest in contributing to open-source and regard documentation as an easy starting point.
+
+Note that technical writer does not refer to a developer who is adding user documentation for code. This technical writer persona represents someone who is contributing to the existing codebase.
+
+* **Needs:** Often require some help setting up a working environment and getting oriented with an Ansible project. Can require guidance with contributor guidelines and git workflow. Ability to preview and verify changes in built output. Also needs style guidelines and writing best practices.
+* **Attitude:** Can get overwhelmed easily by fast-moving projects.
+* **Knowledge:** Technically curious and enthusiastic about contributing to open-source. Could be familiar with RST and Sphinx or another plain-text markup like MD or ADOC. Not necessarily a native English speaker but has at least intermediate fluency in English.
