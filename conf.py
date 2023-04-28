@@ -160,7 +160,7 @@ NAVIGATION_ALT_LINKS = {
           "Blog", "fa fa-comment"
         ),
         ("/events/", "Events", "fa fa-calendar"),
-        ("https://fosstodon.org/@ansible", "Fosstodon", "fab fa-mastodon"),
+        ("https://fosstodon.org/@ansible", "Mastodon", "fab fa-mastodon"),
         ("https://forum.ansible.com/", "Discourse", "fab fa-discourse"),
         ("https://github.com/ansible-community", "GitHub", "fab fa-github"),
     )
