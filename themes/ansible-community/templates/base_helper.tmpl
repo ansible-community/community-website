@@ -141,25 +141,45 @@ lang="{{ lang }}">
 {% endmacro %}
 
 {% macro html_navigation_links_entries(navigation_links_source) %}
-    {% for url, text in navigation_links_source[lang] %}
+    {% for url, text, icon in navigation_links_source[lang] %}
         {% if isinstance(url, tuple) %}
-            <li class="nav-item dropdown"><a href="#" class="nav-link nav-link-color dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ text }}</a>
-            <div class="dropdown-menu dropdown-menu-border">
-            {% for suburl, text in url %}
+            <li class="nav-item dropdown">
+	        <a href="#" class="nav-link nav-link-color dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    <i class="{{ icon }}"></i> {{ text }}
+                </a>
+		<div class="dropdown-menu dropdown-menu-border">
+	    </li>
+            {% for suburl, text, icon in url %}
                 {% if rel_link(permalink, suburl) == "#" %}
-                    <a href="{{ permalink }}" class="dropdown-item active">{{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span></a>
+                    <a href="{{ permalink }}" class="dropdown-item active">
+		        <i class="{{ icon }}"></i> {{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span>
+                    </a>
                 {% else %}
-                    <a href="{{ suburl }}" class="dropdown-item">{{ text }}</a>
+                    <a href="{{ suburl }}" class="dropdown-item">
+		        <i class="{{ icon }}"></i> {{ text }}
+                    </a>
                 {% endif %}
             {% endfor %}
             </div>
         {% else %}
              {% if rel_link(permalink, url) == "#" %}
-                 <li class="nav-item active"><a href="{{ permalink }}" class="nav-link nav-link-color">{{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span></a>
+                 <li class="nav-item active">
+		     <a href="{{ permalink }}" class="nav-link nav-link-color">
+                         <i class="{{ icon }}"> {{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span>
+                     </a>
+                 </li>
              {% elif url.startswith("https://")  %}
-                 <li class="nav-item"><a href="{{ url }}" target="_blank" class="nav-link nav-link-color">{{ text }}</a>
+                 <li class="nav-item">
+		     <a href="{{ url }}" target="_blank" class="nav-link nav-link-color">
+		         <i class="{{ icon }}"></i> {{ text }}
+		     </a>
+		 </li>
              {% else %}
-                 <li class="nav-item"><a href="{{ url }}" class="nav-link nav-link-color">{{ text }}</a>
+                 <li class="nav-item">
+                     <a href="{{ url }}" class="nav-link nav-link-color">
+                         <i class="{{ icon }}"></i> {{ text }}
+                     </a>
+                 </li>
              {% endif %}
          {% endif %}
     {% endfor %}
