@@ -152,17 +152,17 @@ NAVIGATION_ALT_LINKS = {
     DEFAULT_LANG: (
         (
           (
-            ("/blog/", "Latest Posts"),
-            ("/categories/", "Tags"),
-            ("/blog/archive.html", "Post Archive"),
-            ("/rss.xml", "RSS feed"),
+            ("/blog/", "Latest Posts", "fa fa-comment"),
+            ("/categories/", "Tags", "fa fa-tag"),
+            ("/blog/archive.html", "Post Archive", ""),
+            ("/rss.xml", "RSS feed", "fa fa-rss-square"),
           ),
-          "Blog"
+          "Blog", "fa fa-comment"
         ),
-        ("/events/", "Events"),
-        ("https://fosstodon.org/@ansible", "Fosstodon"),
-        ("https://forum.ansible.com/", "Discourse"),
-        ("https://github.com/ansible-community", "GitHub"),
+        ("/events/", "Events", "fa fa-calendar"),
+        ("https://fosstodon.org/@ansible", "Fosstodon", "fab fa-mastodon"),
+        ("https://forum.ansible.com/", "Discourse", "fab fa-discourse"),
+        ("https://github.com/ansible-community", "GitHub", "fab fa-github"),
     )
 }
 
