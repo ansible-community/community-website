@@ -1,8 +1,12 @@
 name: Build and deploy with Nikola
 on: 
   push:
-    branches:
-      - main
+    branches: main
+  pull_request:
+    branches: main
+
+permissions:
+  contents: write
 
 jobs:
   nikola_build:
@@ -13,7 +17,15 @@ jobs:
       uses: actions/checkout@v3
     - name: Change sass binary in conf.py
       run: sed -i "s|SASS_COMPILER = 'sass'|SASS_COMPILER = 'sassc'|g" conf.py
-    - name: Run Nikola action
+    - name: Test site build (via Nikola action)
+      if: ${{ github.event_name == 'pull_request' }}
       uses: getnikola/nikola-action@v8
       with:
+        dry_run: true
+        apt_install: sassc
+    - name: Deploy site (via Nikola action)
+      if: ${{ github.event_name != 'pull_request' }}
+      uses: getnikola/nikola-action@v8
+      with:
+        dry_run: false
         apt_install: sassc
