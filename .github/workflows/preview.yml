@@ -1,0 +1,36 @@
+name: Deploy PR previews
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    name: 'Deploy PR preview to gh-pages'
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Change sass binary in conf.py
+      run: sed -i "s|SASS_COMPILER = 'sass'|SASS_COMPILER = 'sassc'|g" conf.py
+
+    - name: Build the site with Nikola
+      uses: getnikola/nikola-action@v8
+      with:
+        dry_run: true
+        apt_install: sassc
+
+    - name: Deploy preview
+      uses: rossjrw/pr-preview-action@v1
+      with:
+        source-dir: ./output/
+        umbrella-dir: previews/
+        custom-url: ansible-community.github.io/community-website/

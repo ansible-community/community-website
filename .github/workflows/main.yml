@@ -1,9 +1,8 @@
 name: Build and deploy with Nikola
-on: 
+on:
   push:
-    branches: main
-  pull_request:
-    branches: main
+    branches:
+    - main
 
 permissions:
   contents: write
@@ -13,19 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Build and deploy website to gh-pages'
     steps:
+
     - name: Check out
       uses: actions/checkout@v3
+
     - name: Change sass binary in conf.py
       run: sed -i "s|SASS_COMPILER = 'sass'|SASS_COMPILER = 'sassc'|g" conf.py
-    - name: Test site build (via Nikola action)
-      if: ${{ github.event_name == 'pull_request' }}
+
+    - name: Build the site with Nikola
       uses: getnikola/nikola-action@v8
       with:
         dry_run: true
         apt_install: sassc
-    - name: Deploy site (via Nikola action)
-      if: ${{ github.event_name != 'pull_request' }}
-      uses: getnikola/nikola-action@v8
+
+    - name: Deploy to gh-pages 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        dry_run: false
-        apt_install: sassc
+        folder: ./output/
+        clean-exclude: previews/
