@@ -165,7 +165,7 @@ lang="{{ lang }}">
              {% if rel_link(permalink, url) == "#" %}
                  <li class="nav-item active">
 		     <a href="{{ permalink }}" class="nav-link nav-link-color">
-                         <i class="{{ icon }}"> {{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span>
+                         <i class="{{ icon }}"></i> {{ text }} <span class="sr-only">{{ messages("(active)", lang) }}</span>
                      </a>
                  </li>
              {% elif url.startswith("https://")  %}
