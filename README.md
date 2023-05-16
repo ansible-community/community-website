@@ -14,8 +14,8 @@ Please see [Governance](CONTRIBUTING.md#Governance)
 
 ## Contacting the maintainers
 
-The Website Working group can be found in [TBD](#channel-name-here) on Matrix
-or (IRC name here). Alternatively, a GitHub issue is also acceptable for asking
+The Website Working group can be found in [Ansible Website WG](https://matrix.to/#/#website:ansible.com) on Matrix
+or ``#ansible-website`` on IRC. Alternatively, a GitHub issue is also acceptable for asking
 questions.
 
 ## Using this repository
