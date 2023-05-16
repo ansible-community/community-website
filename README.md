@@ -1,4 +1,4 @@
-(code for Matrix shield, etc, goes here)
+[![Discuss at #website:ansible.com on Matrix](https://img.shields.io/matrix/website:ansible.com.svg?server_fqdn=ansible-accounts.ems.host&label=Discuss%20at%20%23website:ansible.com&logo=matrix)](https://matrix.to/#/#website:ansible.com)
 
 This repository contains the assets required to build the Ansible Community website. Welcome!
 
