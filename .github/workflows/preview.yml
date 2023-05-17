@@ -10,8 +10,6 @@ on:
 
 concurrency: preview-${{ github.ref }}
 
-permissions: write-all
-
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
@@ -35,4 +33,5 @@ jobs:
       with:
         source-dir: ./output/
         umbrella-dir: previews/
+        token: ${{ secrets.PR_PREVIEW_ACTION_PAT }}
         custom-url: ansible-community.github.io/community-website/
