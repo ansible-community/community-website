@@ -18,40 +18,45 @@ The Website Working group can be found in [Ansible Website WG](https://matrix.to
 or ``#ansible-website`` on IRC. Alternatively, a GitHub issue is also acceptable for asking
 questions.
 
-## Using this repository
+## Building the website locally
 
-This repo contains the source used to generate a static site using [Nikola](https://getnikola.com/).
+The Ansible community website is static HTML generated from this repository.
+You can build the website locally if you want to evaluate changes or experiment.
 
-Configuration file for the site is ``conf.py``.
+### Setting things up
 
-### Requirements
+We recommend that you use a Python virtual environment.
 
-- Visit [Nikola installation documentation](https://getnikola.com/getting-started.html#install).
-- Install `sass` to compile scss files to css.
+    # Create a virtual environment named "venv" in your current directory.
+    python3 -m venv venv
 
-You can install `sass` as described in the [Sass install docs](https://sass-lang.com/install).
-If you are a Fedora user, you can install and use `sassc` as follows:
+    # Activate the virtual environment.
+    source venv/bin/activate
 
-- `sudo dnf install sassc`
-- `sudo ln -s /usr/bin/sassc /usr/bin/sass` (Nikola expects a sass binary.)
+    # Install the required packages.
+    python -m pip install --upgrade -r ./requirements.txt
 
 ### Building and viewing the site
 
-To build the site::
+The Ansible community website is built with [Nikola](https://getnikola.com/).
 
+    # Build the site with Nikola.
     nikola build
 
-To see it::
-
+    # View the site in your browser.
     nikola serve -b
 
-To check all available commands::
-
+    # List available commands.
     nikola help
+
+> Check the [Nikola handbook](https://getnikola.com/handbook.html) for more details.
+
+> Nikola configuration for the website is in ``conf.py``.
 
 ## Code of Conduct
 
-Please see [CODE OF CONDUCT](CODE_OF_CONDUCT.md)
+The Ansible community team values diverse opinions and is committed to an inclusive
+Please review and abide by our [CODE OF CONDUCT](CODE_OF_CONDUCT.md).
 
 ## License
 

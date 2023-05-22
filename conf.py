@@ -1432,7 +1432,9 @@ except ImportError:
 GLOBAL_CONTEXT_FILLER = []
 
 # Compiler to process Sass files.
-SASS_COMPILER = 'sass'
+# Default is to pip install the "libsass" package and use the pysassc compiler
+# An option for Fedora users is to install and use the "sassc" package.
+SASS_COMPILER = 'pysassc'
 
 # A list of options to pass to the Sass compiler.
 # Final command is: SASS_COMPILER SASS_OPTIONS file.s(a|c)ss
