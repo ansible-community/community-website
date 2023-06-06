@@ -1,8 +1,6 @@
 name: Build and deploy with Nikola
 on:
-  push:
-    branches:
-    - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,14 +14,15 @@ jobs:
     - name: Check out
       uses: actions/checkout@v3
 
-    - name: Change sass binary in conf.py
-      run: sed -i "s|SASS_COMPILER = 'sass'|SASS_COMPILER = 'sassc'|g" conf.py
+    - name: Install Python dependencies
+      uses: py-actions/py-dependency-install@v4
+      with:
+        path: ./requirements.txt
 
     - name: Build the site with Nikola
       uses: getnikola/nikola-action@v8
       with:
         dry_run: true
-        apt_install: sassc
 
     - name: Deploy to gh-pages 🚀
       uses: JamesIves/github-pages-deploy-action@v4
