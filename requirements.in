@@ -1,0 +1,8 @@
+# Nikola is a static site generator.
+nikola
+# Provides the pysassc compiler.
+libsass
+# Jinja templating.
+jinja2
+# Allows Nikola to load data/*.yaml
+ruamel.yaml

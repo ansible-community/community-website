@@ -34,7 +34,7 @@ We recommend that you use a Python virtual environment.
     source venv/bin/activate
 
     # Install the required packages.
-    python -m pip install --upgrade -r ./requirements.txt
+    python -m pip install --upgrade -r ./requirements.in -c ./requirements.txt
 
 ### Building and viewing the site
 
