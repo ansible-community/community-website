@@ -1,0 +1,43 @@
+<div class="grid-wrapper homepage-ecosystem-band">
+  <div class="width-12-12 width-12-12-m">
+    <div class="section-title">
+      <div class="section-top">
+        <img class="section-icon" src="/assets/images/communities.svg" />
+        <h2>{{ homepage.ecosystem.title }}</h2>
+        <div class="section-view-more">
+          <a href="{{ homepage.ecosystem.url }}">{{ homepage.labels.view_more }}</a>
+        </div>
+      </div>
+      <p>{{ homepage.ecosystem.intro }}</p>
+    </div>
+    <div class="ecosystem-top-row">
+      {% for key, item in homepage.ecosystem.top_row.items() %}
+      <div class="ecosystem-box">
+        <div class="ecosystem-content">
+          <h3>{{ item.heading }}</h3>
+          <p>{{ item.description }}</p>
+          <div class="learn-more-button">
+            <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
+          </div>
+        </div>
+        <img class="ecosystem-logo" src="{{ item.logo }}" />
+      </div>
+      {% endfor %}
+    </div>
+    <div class="ecosystem-bottom-row">
+      {% for key, item in homepage.ecosystem.bottom_row.items() %}
+      <div class="ecosystem-box">
+        <div class="ecosystem-content">
+          <h3>{{ item.heading }}</h3>
+          <p>{{ item.description }}</p>
+          <div class="learn-more-button">
+            <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
+          </div>
+        </div>
+        <img class="ecosystem-logo" src="{{ item.logo }}" />
+      </div>
+      {% endfor %}
+    </div>
+    {% include 'homepage-back-to-top.tmpl' %}
+  </div>
+</div>

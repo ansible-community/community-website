@@ -1,0 +1,17 @@
+.learn-more-button {
+  a {
+    background-color: $white;
+    color: $navy;
+    font-weight: 700;
+    padding: 0.625rem 2rem;
+    &:hover {
+      background-color: $navy;
+      color: $white;
+    }
+  }
+  .btn {
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: $navy;
+  }
+}

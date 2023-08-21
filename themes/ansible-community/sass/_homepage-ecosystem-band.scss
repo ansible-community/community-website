@@ -1,0 +1,45 @@
+.homepage-ecosystem-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: $grey94;
+}
+
+.ecosystem-top-row {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ecosystem-bottom-row {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ecosystem-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ecosystem-content {
+  flex: 1;
+  padding-right: 20px;
+  h3 {
+    font-family: $redhat-display;
+    font-size: 1.5rem;
+    text-transform: none;
+  }
+  p {
+    text-align: left;
+  }
+}
+
+.ecosystem-logo {
+  float: right;
+  width: 95px;
+  height: 95px;
+}
