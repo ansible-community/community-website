@@ -13,6 +13,36 @@ platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
   learn: Learn more about Ansible Automation Platform
+ecosystem:
+  title: Ecosystem
+  intro: Projects in the Ansible ecosystem let you expand automation to a virtually unlimited set of use cases.
+  url: https://docs.ansible.com/ecosystem.html
+  top_row:
+    awx:
+      heading: AWX
+      description: A web-based user interface, REST API, and task engine for Ansible automation.
+      link: https://ansible.readthedocs.io/projects/awx/
+      logo: /assets/images/logo-awx.svg
+    runner:
+      heading: Ansible Runner
+      description: A stable and consistent interface abstraction to Ansible execution.
+      link: https://ansible.readthedocs.io/projects/runner/
+      logo: /assets/images/logo-runner.svg
+  bottom_row:
+    builder:
+      heading: Ansible Builder
+      description: Configure and build portable, consistent, customized Ansible control nodes.
+      link: https://ansible.readthedocs.io/projects/builder/
+      logo: /assets/images/logo-builder.svg
+    eda:
+      heading: Event-Driven Ansible Server
+      description: Scalable and flexible automation that can subscribe to a wide variety of event sources.
+      link: https://ansible.readthedocs.io/projects/rulebook/
+      logo: /assets/images/logo-eda.svg
+labels:
+  learn_more: Learn more
+  view_more: View more&nbsp;&rarr;
+  back_to_top: Back to top&nbsp;&uarr;
 links:
   platform:
     home: https://www.ansible.com/

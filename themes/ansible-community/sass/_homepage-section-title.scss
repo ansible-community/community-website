@@ -1,0 +1,33 @@
+.section-title {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-family: $redhat-display;
+    font-size: 1.8rem;
+    text-transform: none;
+  }
+  p {
+    font-family: $redhat-display;
+    font-size: 1rem;
+    text-transform: none;
+  }
+}
+
+.section-top {
+  display: flex;
+  align-items: center;
+}
+
+.section-icon {
+  float: left;
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.section-view-more {
+  font-family: $redhat-display;
+  font-size: 0.9rem;
+  text-transform: none;
+  margin-left: auto;
+}
