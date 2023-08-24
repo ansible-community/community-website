@@ -2,9 +2,6 @@ main: Automation powered by people
 mission: Ansible is an open source, command-line IT automation software application written in Python. It can configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more.
 version: Ansible 7 is now available
 install: pip install ansible
-automation: Agentless automation that is simple, secure, and works everywhere.
-extensible: Extensible framework with collections available for virtually every use case.
-community: Powered by a large, vibrant open-source community.
 bullhorn:
   subscribe: Subscribe to the Bullhorn
   signup: The Bullhorn is a weekly newsletter that delivers the latest news and updates <br />from the Ansible Community right to your inbox.
