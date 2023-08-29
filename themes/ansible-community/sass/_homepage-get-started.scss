@@ -1,0 +1,17 @@
+.get-started-ansible {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-family: $redhat-display;
+  text-align: center;
+  margin: 5px;
+  .btn {
+    font-size: 0.9rem;
+    font-family: $redhat-display;
+    color: $white;
+    background-color: $navy;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: $navy;
+  }
+}

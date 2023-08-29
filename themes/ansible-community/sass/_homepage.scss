@@ -1,0 +1,15 @@
+.homepage {
+  .navbar {
+    margin-bottom: 0 !important;
+    border: 0 !important;
+  }
+  .nav-link-color {
+    color: $black !important;
+    &:hover {
+      color: $light-grey !important;
+    }
+  }
+  #blog-title {
+    color: $black;
+  }
+}

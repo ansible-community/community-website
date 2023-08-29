@@ -1,7 +1,9 @@
-main: Automation powered by people
-mission: Ansible is an open source, command-line IT automation software application written in Python. It can configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more.
-version: Ansible 7 is now available
-install: pip install ansible
+banner:
+  title: Automation Powered by People
+  intro: Configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more!
+  pip_install: pip install ansible
+  latest_version: Ansible 7 is now available.
+  how_to_install: Install by copying the pip command.
 bullhorn:
   subscribe: Subscribe to the Bullhorn
   signup: The Bullhorn is a weekly newsletter that delivers the latest news and updates <br />from the Ansible Community right to your inbox.
@@ -12,7 +14,7 @@ bullhorn:
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
-  learn: Learn more about Ansible Automation Platform
+  learn: Learn more about Red Hat Ansible Automation Platform
 ecosystem:
   title: Ecosystem
   intro: Projects in the Ansible ecosystem let you expand automation to a virtually unlimited set of use cases.
@@ -43,6 +45,9 @@ labels:
   learn_more: Learn more
   view_more: View more
   back_to_top: Back to top
+  get_started: Get started with Ansible
 links:
+  ansible:
+    get_started_url: https://docs.ansible.com/ansible/latest/getting_started/index.html
   platform:
     home: https://www.ansible.com/
