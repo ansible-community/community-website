@@ -157,12 +157,12 @@ NAVIGATION_ALT_LINKS = {
             ("/blog/archive.html", "Post Archive", ""),
             ("/rss.xml", "RSS feed", "fa fa-rss-square"),
           ),
-          "Blog", "fa fa-comment"
+          "Blog", ""
         ),
-        ("/events/", "Events", "fa fa-calendar"),
-        ("https://fosstodon.org/@ansible", "Mastodon", "fab fa-mastodon"),
-        ("https://forum.ansible.com/", "Discourse", "fab fa-discourse"),
-        ("https://github.com/ansible-community", "GitHub", "fab fa-github"),
+        ("https://forum.ansible.com/", "Forum", ""),
+        ("/events/", "Events", ""),
+        ("https://docs.ansible.com/", "Documentation", ""),
+        ("https://docs.ansible.com/ansible/latest/getting_started/index.html", "Get started with Ansible", "fa fa-rocket"),
     )
 }
 
@@ -196,7 +196,9 @@ THEME_CONFIG = {
         # Strip HTML from featured post text.
         'featured_strip_html': False,
         # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
+        'sidebar': '',
+        # Set the navbar theme for blogs and pages other than the homepage.
+        'navbar_light': True,
     }
 }
 # Config for bootstrap4:
@@ -375,7 +377,7 @@ NEW_POST_DATE_PATH = True
 # Nikola supports logo display.  If you have one, you can put the URL here.
 # Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
-# LOGO_URL = ''
+LOGO_URL = '/images/community_logo_black.svg'
 
 # When linking posts to social media, Nikola provides Open Graph metadata
 # which is used to show a nice preview. This includes an image preview

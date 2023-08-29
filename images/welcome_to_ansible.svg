@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="114.55901mm"
+   height="72.531906mm"
+   viewBox="0 0 114.55901 72.531906"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.68862935"
+     inkscape:cx="168.45056"
+     inkscape:cy="234.52384"
+     inkscape:window-width="1920"
+     inkscape:window-height="979"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-60.305256,-86.52525)">
+    <g
+       id="use1"
+       style="fill:#000000;stroke:#000000"
+       transform="matrix(-0.44618895,0,0,0.45120942,207.54761,64.754395)">
+      <title
+         id="title2">Circle Balloon</title>
+      <ellipse
+         cx="205"
+         cy="125"
+         rx="125"
+         ry="70"
+         style="stroke:none"
+         id="ellipse2" />
+      <path
+         d="m 110,166 c 11,21 -10,30 -22,43 32,-3 59,-7 70,-26"
+         style="stroke:none"
+         id="path2" />
+      <ellipse
+         cx="200"
+         cy="120"
+         rx="125"
+         ry="70"
+         style="fill:#eeeeee;stroke-width:3.5"
+         id="ellipse3" />
+      <path
+         d="m 106,162 c 11,21 -10,30 -22,43 32,-3 59,-7 70,-26"
+         style="fill:#eeeeee;stroke-width:3.5"
+         id="path3" />
+      <ellipse
+         cx="197"
+         cy="117"
+         rx="117"
+         ry="63"
+         style="fill:#ffffff;stroke:none"
+         id="ellipse4" />
+      <path
+         d="m 103,149 c 14,25 9,34 -6,47 30,-3 50,-10 58,-31"
+         style="fill:#ffffff;stroke:none"
+         id="path4" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';fill:#000000;stroke-width:0.264583"
+       x="116.78679"
+       y="115.22617"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="116.78679"
+         y="115.22617">Welcome to</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="116.78679"
+         y="131.10117"
+         id="tspan2">Ansible!</tspan></text>
+  </g>
+</svg>

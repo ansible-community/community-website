@@ -9,12 +9,16 @@
 {% endblock %}
 {{ template_hooks['extra_head']() }}
 </head>
-<body id="top">
+<body id="top" {% if permalink == '/' %}class="homepage"{% endif %}>
 <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
 
-<!-- Menubar -->
+<!-- Start menubar -->
 
+{% block navbar %}
 <nav class="navbar navbar-expand-md static-top mb-4 navbar-padding
+{% if permalink == '/' %}
+bg-pool
+{% else %}
 {% if theme_config.get('navbar_light') %}
 navbar-light
 {% else %}
@@ -26,6 +30,7 @@ navbar-dark
 bg-light
 {% else %}
 bg-dark
+{% endif %}
 {% endif %}
 ">
     <div class="container"><!-- This keeps the margins nice -->
@@ -66,8 +71,9 @@ bg-dark
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 </nav>
+{% endblock %}
 
-<!-- End of Menubar -->
+<!-- End default Menubar -->
 
 <div class="container" id="content" role="main">
     <div class="body-content">
