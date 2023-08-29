@@ -41,8 +41,8 @@ ecosystem:
       logo: /assets/images/logo-eda.svg
 labels:
   learn_more: Learn more
-  view_more: View more&nbsp;&rarr;
-  back_to_top: Back to top&nbsp;&uarr;
+  view_more: View more
+  back_to_top: Back to top
 links:
   platform:
     home: https://www.ansible.com/
