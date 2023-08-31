@@ -4,6 +4,30 @@ banner:
   pip_install: pip install ansible
   latest_version: Ansible 7 is now available.
   how_to_install: Install by copying the pip command.
+automate:
+  title: Why Ansible?
+  intro: Working in IT, you're likely doing the same tasks over and over. What if you could solve problems once and then automate your solutions going forward? Ansible is here to help.
+  top_section:
+    heading: Complexity kills productivity.
+    paragraphs:
+      automation: >-
+        Every business is a digital business.
+        Technology is your innovation engine, and delivering your applications faster helps you win.
+        Historically, that required a lot of manual effort and complicated coordination.
+        But today, there is Ansible - the simple, yet powerful IT automation engine that thousands of companies are using to drive complexity out of their environments and accelerate DevOps initiatives.
+  bottom_section:
+    heading: Ansible loves the repetitive work your people hate.
+    paragraphs:
+      time: >-
+        No one likes repetitive tasks.
+        With Ansible, IT admins can begin automating away the drudgery from their daily tasks.
+        Automation frees admins up to focus on efforts that help deliver more value to the business by speeding time to application delivery, and building on a culture of success.
+        Ultimately, Ansible gives teams the one thing they can never get enough of: time.
+        Allowing smart people to focus on smart things.
+      simple: >-
+        Ansible is a simple automation language that can perfectly describe an IT application infrastructure.
+        It's easy-to-learn, self-documenting, and doesn't require a grad-level computer science degree to read.
+        Automation shouldn't be more complex than the tasks it's replacing.
 bullhorn:
   subscribe: Subscribe to the Bullhorn
   signup: The Bullhorn is a weekly newsletter that delivers the latest news and updates <br />from the Ansible Community right to your inbox.
