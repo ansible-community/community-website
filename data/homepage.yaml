@@ -13,7 +13,7 @@ bullhorn:
   button: Subscribe
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
-  discover: Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
+  discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
   learn: Learn more about Red Hat Ansible Automation Platform
 ecosystem:
   title: Ecosystem
@@ -50,4 +50,4 @@ links:
   ansible:
     get_started_url: https://docs.ansible.com/ansible/latest/getting_started/index.html
   platform:
-    home: https://www.ansible.com/
+    home: https://www.redhat.com/en/technologies/management/ansible
