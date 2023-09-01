@@ -11,23 +11,21 @@ automate:
     heading: Complexity kills productivity.
     paragraphs:
       automation: >-
-        Every business is a digital business.
-        Technology is your innovation engine, and delivering your applications faster helps you win.
-        Historically, that required a lot of manual effort and complicated coordination.
-        But today, there is Ansible - the simple, yet powerful IT automation engine that thousands of companies are using to drive complexity out of their environments and accelerate DevOps initiatives.
+        Modern society is built on digital solutions.
+        Technology is the engine of innovation and moving faster helps you stay ahead.
+        Say hello to Ansible - simple, yet powerful IT automation that drives out complexity and accelerates workflows.
   bottom_section:
-    heading: Ansible loves the repetitive work your people hate.
+    heading: Ansible loves the repetitive work you hate.
     paragraphs:
       time: >-
         No one likes repetitive tasks.
-        With Ansible, IT admins can begin automating away the drudgery from their daily tasks.
-        Automation frees admins up to focus on efforts that help deliver more value to the business by speeding time to application delivery, and building on a culture of success.
-        Ultimately, Ansible gives teams the one thing they can never get enough of: time.
-        Allowing smart people to focus on smart things.
+        Automation lets you can eliminate drudgery from your daily routine to focus on efforts that deliver more value and solve problems that really matter.
+        Ultimately, automation gives you the one thing you cannot buy or replace: time.
+        Ansible allows smart people to focus on smart things.
       simple: >-
-        Ansible is a simple automation language that can perfectly describe an IT application infrastructure.
-        It's easy-to-learn, self-documenting, and doesn't require a grad-level computer science degree to read.
-        Automation shouldn't be more complex than the tasks it's replacing.
+        Ansible is a simple automation language that can perfectly describe any IT environment, whether homelab setups or complex IT application infrastructures.
+        It is easy to learn, beautiful code that reads like clear documentation.
+        After all, automation should not be more complex than the tasks it replaces.
 bullhorn:
   subscribe: Subscribe to the Bullhorn
   signup: The Bullhorn is a weekly newsletter that delivers the latest news and updates <br />from the Ansible Community right to your inbox.
