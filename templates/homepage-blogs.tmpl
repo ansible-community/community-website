@@ -1,0 +1,9 @@
+{#  -*- coding: utf-8 -*- #}
+{% if posts %}
+  {% for post in posts %}
+    <div class="blog-content">
+      <h2><a href="{{ post.permalink(lang) }}">{{ post.title(lang)|e }}</a></h2>
+      {{ post.text(teaser_only=True) }}
+    </div>
+  {% endfor %}
+{% endif %}

@@ -41,6 +41,10 @@ ecosystem:
       description: Scalable and flexible automation that can subscribe to a wide variety of event sources.
       link: https://ansible.readthedocs.io/projects/rulebook/
       logo: /assets/images/logo-eda.svg
+blog:
+  title: Blogs
+  intro: Read all about it!
+  url: /blog/
 labels:
   learn_more: Learn more
   view_more: View more
