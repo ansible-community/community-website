@@ -1,0 +1,39 @@
+.homepage-events-band {
+  padding-bottom: 2rem;
+  margin: 6rem auto;
+  text-align: left;
+}
+
+.events-main {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.events-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.events-content {
+  flex: 1;
+  padding-right: 20px;
+  a {
+    font-family: $redhat-display;
+    font-size: 1rem;
+    color: $black;
+    text-transform: none;
+  }
+  h3 {
+    margin-top: 20px;
+    font-family: $redhat-display;
+    font-size: 1.5rem;
+    text-transform: none;
+  }
+  p {
+    text-align: left;
+  }
+}

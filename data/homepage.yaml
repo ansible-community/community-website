@@ -33,6 +33,26 @@ bullhorn:
   label: Email address
   placeholder: Sign me up for Ansible community news
   button: Subscribe
+events:
+  title: Events
+  intro: Join Ansible events, in person or online, to share and learn about automation.
+  url: https://forum.ansible.com/c/events/
+  view_calendar: View all Ansible events
+  events_list:
+    event_one:
+      name: Ansible Community Day
+      description: Get together with a broad community of users, contributors, entusiasts, IT professionals and more to learn and share about Ansible automation.
+      date: September 20, 2023
+      location: Berlin, Germany
+      image: community-day-berlin-2023.png
+      link: https://forum.ansible.com/t/ansible-community-day-berlin-2023/19
+    event_two:
+      name: Ansible Contributor Summit
+      description: Interact with the Ansible contributor community and Ansible at Red Hat engineering teams to improve collaboration and possibly do some hacking.
+      date: October 19, 2023
+      location: Durham, North Carolina, USA
+      image: contributor-summit-durham-2023.png
+      link: https://forum.ansible.com/t/ansible-contributor-summit-durham-2023/28
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.

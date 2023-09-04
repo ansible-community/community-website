@@ -1,0 +1,37 @@
+<div class="grid-wrapper homepage-events-band">
+  <div class="width-12-12 width-12-12-m">
+    <div class="section-title">
+      <div class="section-top">
+        <img class="section-icon" src="/assets/images/calendar.svg" />
+        <h2>{{ homepage.events.title }}</h2>
+        <div class="section-view-more">
+          <a href="{{ homepage.events.url }}">{{ homepage.events.view_calendar }}&nbsp;<i class="fa fa-calendar-check" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <p>{{ homepage.events.intro }}</p>
+    </div>
+    <div class="events-main">
+      {% for key, item in homepage.events.events_list.items() %}
+      <div class="events-box">
+        <div class="events-content">
+          <a href="{{ item.link }}" title="Link to the event in the Discourse calendar.">
+            <img src="/images/{{ item.image }}" alt="Background image for an Ansible community event. Details of the event are available in the preceding text." />
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+      {% for key, item in homepage.events.events_list.items() %}
+      <div class="events-box">
+        <div class="events-content">
+          <a href="{{ item.link }}" title="Link to the event in the Discourse calendar.">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <p><strong>Date:&nbsp;{{ item.date }}<br />Location:&nbsp;{{ item.location }}</strong></p>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% include 'homepage-back-to-top.tmpl' %}
+  </div>
+</div>
