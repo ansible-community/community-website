@@ -1,0 +1,20 @@
+<div class="grid-wrapper homepage-automate-band">
+  <div class="width-12-12 width-12-12-m">
+    <div class="section-title">
+      <div class="section-top">
+        <img class="section-icon" src="/assets/images/automation.svg" />
+        <h2>{{ homepage.automate.title }}</h2>
+      </div>
+      <p>{{ homepage.automate.intro }}</p>
+    </div>
+    <div class="automate-content">
+      <h3>{{ homepage.automate.top_section.heading }}</h3>
+      <p>{{ homepage.automate.top_section.paragraphs.automation }}</p>
+      <h3>{{ homepage.automate.bottom_section.heading }}</h3>
+      <p>{{ homepage.automate.bottom_section.paragraphs.time }}</p>
+      <p>{{ homepage.automate.bottom_section.paragraphs.simple }}</p>
+    </div>
+    {% include 'homepage-get-started.tmpl' %}
+    {% include 'homepage-back-to-top.tmpl' %}
+  </div>
+</div>

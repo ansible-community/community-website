@@ -1,0 +1,20 @@
+<div class="grid-wrapper homepage-automate-band">
+  <div class="width-12-12 width-12-12-m">
+    <div class="section-title">
+      <div class="section-top">
+        <img class="section-icon" src="/assets/images/automation.svg" />
+        <h2>{{ homepage.automate.title }}</h2>
+      </div>
+      <p>{{ homepage.automate.intro }}</p>
+    </div>
+    <div class="automate-content">
+      {% for key,value in homepage.automate.top_section.items() %}
+      <h3>{{ item.heading }}</h3>
+      {% for paragraphs_key, paragraphs_value in value.paragraphs.items() %}
+      <p>{{ item.text }}</p>
+      {% endfor %}
+      {% endfor %}
+    </div>
+    {% include 'homepage-back-to-top.tmpl' %}
+  </div>
+</div>
