@@ -1,0 +1,29 @@
+<div class="grid-wrapper homepage-contribute-band">
+  <div class="width-12-12 width-12-12-m">
+    <div class="section-title">
+      <div class="section-top">
+        <img class="section-icon" src="/assets/images/collaboration.svg" />
+        <h2>{{ homepage.contribute.title }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="contribute-content">
+    <div class="contribute-row">
+      <div class="contribute-box-left">
+        {% for key, item in homepage.contribute.ways.items() %}
+        <ul>
+          <li><i class="fa fa-star" aria-hidden="true"></i>&nbsp;{{ item.text }}</li>
+        </ul>
+        {% endfor %}
+        <p>{{ homepage.contribute.many }}</p>
+      </div>
+    <div class="contribute-box-right">
+      <p>{{ homepage.contribute.talk }}</p>
+      <a href="{{ homepage.contribute.link }}">
+        <img src="/assets/images/conversation.svg" alt="Join us on the forum to talk about contributing to Ansible." />
+      </a>
+    </div>
+    </div>
+  </div>
+  {% include 'homepage-back-to-top.tmpl' %}
+</div>
