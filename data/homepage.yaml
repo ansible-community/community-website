@@ -87,6 +87,22 @@ blog:
   title: Blogs
   intro: Read all about it!
   url: /blog/
+contribute:
+  title: Contribute
+  ways:
+    meetup:
+      text: Organize meetups with other automation enthusiasts.
+    talk:
+      text: Give lighting talks.
+    workshop:
+      text: Host Ansible workshops.
+    code:
+      text: Code a new module or fix a bug.
+    docs:
+      text: Improve the documentation.
+  many: There are so many ways you can contribute to Ansible.
+  talk: If you'd like to contribute to Ansible but aren't sure where to start, come and talk to us.
+  link: https://forum.ansible.com/pub/how-to-contribute
 labels:
   learn_more: Learn more
   view_more: View more

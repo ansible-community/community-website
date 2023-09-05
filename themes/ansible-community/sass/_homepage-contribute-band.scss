@@ -1,0 +1,58 @@
+.homepage-contribute-band {
+  margin-top: 10px;
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.contribute-content {
+  h3 {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.contribute-row {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  gap: 8px;
+}
+
+.contribute-box-left {
+  display: flex;
+  flex-direction: column;
+  padding-left: 80px;
+  p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  .fa-star {
+    font-size: 0.8rem;
+    color: $pool;
+  }
+  ul {
+    font-size: 0.9rem;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+.contribute-box-right {
+  display: flex;
+  flex-direction: row;
+  padding-right: 30px;
+  p {
+    font-size: 0.9rem;
+  }
+  a {
+    color: $navy;
+  }
+  img {
+    width: 65px;
+    height: auto;
+    float: right;
+  }
+}
