@@ -1,0 +1,39 @@
+.homepage-community-band {
+  margin-top: 10px;
+  hr {
+    background-color: $navy;
+  }
+}
+
+.community-intro {
+  p {
+    text-align: justify;
+    padding-top: 10px;
+  }
+}
+
+.community-socials {
+  text-align: center;
+  margin-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 8px;
+}
+
+.community-socials-row {
+  grid-column: span 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 8px;
+}
+
+.community-social-icons {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  a {
+    font-size: 3rem;
+    color: $navy;
+  }
+}

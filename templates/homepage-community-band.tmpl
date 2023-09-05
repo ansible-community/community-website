@@ -1,0 +1,25 @@
+<div class="grid-wrapper homepage-community-band">
+  <div class="width-12-12 width-12-12-m">
+    <div class="section-title">
+      <div class="section-top">
+        <img class="section-icon" src="/assets/images/community.svg" />
+        <h2>{{ homepage.community.title }}</h2>
+      </div>
+    </div>
+    <div class="community-intro">
+      <p>{{ homepage.community.ansible_community }}</p>
+    </div>
+    <hr />
+    <div class="community-socials">
+      <div class="community-socials-row">
+        {% for key, item in homepage.community.socials.links.items() %}
+        <div class="community-social-icons">
+          <a href="{{ item.url }}" title="{{ item.alt }}"><i class="{{ item.icon }}" aria-hidden="true"></i></a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <hr />
+    {% include 'homepage-back-to-top.tmpl' %}
+  </div>
+</div>

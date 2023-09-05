@@ -26,6 +26,34 @@ automate:
         Ansible is a simple automation language that can perfectly describe any IT environment, whether homelab setups or complex IT application infrastructures.
         It is easy to learn, beautiful code that reads like clear documentation.
         After all, automation should not be more complex than the tasks it replaces.
+community:
+  title: Community
+  ansible_community: >-
+    Ansible is built on open source collaboration.
+    Join us and get involved with our amazing community!
+  socials:
+    title: Hang out with us
+    links:
+      forum:
+        url: https://forum.ansible.com/
+        icon: fab fa-discourse
+        alt: Join the Ansible forum.
+      matrix:
+        url: https://matrix.to/#/#social:ansible.com
+        icon: fa fa-matrix-org
+        alt: Chat with us on Matrix.
+      mastodon:
+        url: https://fosstodon.org/@ansible
+        icon: fa fa-mastodon
+        alt: Get in touch on Mastodon.
+      youtube:
+        url: https://www.youtube.com/ansiblecommunity
+        icon: fab fa-youtube
+        alt: Subscribe to our YouTube channel.
+      linkedin:
+        url: https://www.linkedin.com/groups/4648083/
+        icon: fab fa-linkedin
+        alt: Check out our LinkedIn group.
 bullhorn:
   title: Subscribe to the Bullhorn
   subscribe: >-
