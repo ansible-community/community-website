@@ -10,9 +10,9 @@
   <div class="contribute-content">
     <div class="contribute-row">
       <div class="contribute-box-left">
-        {% for key, item in homepage.contribute.ways.items() %}
+        {% for item in homepage.contribute.ways %}
         <ul>
-          <li><i class="fa fa-star" aria-hidden="true"></i>&nbsp;{{ item.text }}</li>
+          <li><i class="fa fa-star" aria-hidden="true"></i>&nbsp;{{ item }}</li>
         </ul>
         {% endfor %}
         <p>{{ homepage.contribute.many }}</p>
