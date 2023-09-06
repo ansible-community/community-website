@@ -10,15 +10,15 @@
   <div class="contribute-content">
     <div class="contribute-row">
       <div class="contribute-box-left">
+        <h3>{{ homepage.contribute.heading }}</h3>
         {% for item in homepage.contribute.ways %}
         <ul>
           <li><i class="fa fa-star" aria-hidden="true"></i>&nbsp;{{ item }}</li>
         </ul>
         {% endfor %}
-        <p>{{ homepage.contribute.many }}</p>
       </div>
     <div class="contribute-box-right">
-      <p>{{ homepage.contribute.talk }}</p>
+      <p>{{ homepage.contribute.main }}</p>
       <a href="{{ homepage.contribute.link }}">
         <img src="/assets/images/conversation.svg" alt="Join us on the forum to talk about contributing to Ansible." />
       </a>
