@@ -8,7 +8,7 @@
 
 .contribute-content {
   h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
   }
 }
@@ -23,14 +23,14 @@
 .contribute-box-left {
   display: flex;
   flex-direction: column;
-  padding-left: 80px;
+  padding-left: 10%;
   p {
     font-size: 0.9rem;
-    margin-top: 10px;
+    margin-top: 8px;
   }
   .fa-star {
     font-size: 0.8rem;
-    color: $pool;
+    color: $navy;
   }
   ul {
     font-size: 0.9rem;
@@ -42,8 +42,7 @@
 
 .contribute-box-right {
   display: flex;
-  flex-direction: row;
-  padding-right: 30px;
+  flex-direction: column;
   p {
     font-size: 0.9rem;
   }
@@ -51,8 +50,9 @@
     color: $navy;
   }
   img {
-    width: 65px;
+    width: 75px;
     height: auto;
-    float: right;
+    float: left;
+    margin-left: 5%;
   }
 }

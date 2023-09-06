@@ -117,14 +117,17 @@ blog:
   url: /blog/
 contribute:
   title: Contribute
+  heading: You can contribute to Ansible in so many ways...
   ways:
     - Organize meetups with other automation enthusiasts.
     - Give lighting talks.
     - Host Ansible workshops.
     - Code a new module or fix a bug.
     - Improve the documentation.
-  many: There are so many ways you can contribute to Ansible.
-  talk: If you'd like to contribute to Ansible but aren't sure where to start, come and talk to us.
+  main: >-
+    If you want to get involved, come talk to us.
+    We're friendly.
+    And we have contributor resources to help you.
   link: https://forum.ansible.com/pub/how-to-contribute
 labels:
   learn_more: Learn more
