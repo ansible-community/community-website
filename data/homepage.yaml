@@ -27,11 +27,11 @@ automate:
         It is easy to learn, beautiful code that reads like clear documentation.
         After all, automation should not be more complex than the tasks it replaces.
 bullhorn:
-  subscribe: Subscribe to the Bullhorn
-  signup: The Bullhorn is a weekly newsletter that delivers the latest news and updates <br />from the Ansible Community right to your inbox.
-  optout: You can easily opt-out of a subscription at any time.
-  label: Email address
-  placeholder: Sign me up for Ansible community news
+  title: Subscribe to the Bullhorn
+  subscribe: >-
+    The Bullhorn is a weekly newsletter that delivers the latest news and updates from the Ansible Community right to your inbox.
+    You can easily opt-out of a subscription at any time.
+  placeholder: Insert email address here
   button: Subscribe
 events:
   title: Events

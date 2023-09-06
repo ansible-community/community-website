@@ -1,38 +1,62 @@
 .homepage-bullhorn-band {
-  text-align: center;
+  background-color: $pool;
+  color: $black;
+}
+
+.bullhorn-content {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+}
+
+.bullhorn-image {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  background-color: $navy;
-  color: $white;
-  padding: 20px;
+  padding: 10px;
+  margin-left: 20%;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: auto;
+}
+
+.bullhorn-subscribe {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding-right: 20%;
   h2 {
-    font-size:2rem;
+    font-size: 1.4rem;
+    text-align: center;
   }
-}
-
-.subscribe-description {
-  p span {
-    font-size:0.9rem;
-  }
-}
-
-.subscribe-input {
   p {
-    font-size:1rem;
+    font-size: 0.9rem;
   }
-}
-
-.clear {
+  .subscribe-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 6px;
+  }
+  .subscribe-input {
+    font-size: 0.8rem;
+    line-height: 25px;
+  }
   .button {
-    background-color: $pool;
+    background-color: $navy;
     color: $white;
     border: 0;
     border-radius: 2px;
-    padding: 8px;
-    width: 15%;
+    padding: 10%;
+    width: fit-content;
+    height: 30px;
     text-transform: none;
     text-align: center;
+    font-size: 0.8rem;
     &:hover {
-      background-color: $pool;
+      background-color: $white;
       color: $black;
     }
   }
