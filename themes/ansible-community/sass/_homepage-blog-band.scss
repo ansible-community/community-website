@@ -1,9 +1,12 @@
 .homepage-blog-band {
+  margin-top: 0;
+  background-color: $grey94;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   grid-column: span 3;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
-  background-color: $grey94;
 }
 
 .blog-box {

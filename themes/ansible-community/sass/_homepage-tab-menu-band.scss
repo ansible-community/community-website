@@ -1,8 +1,9 @@
 .homepage-tab-menu-band {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  margin-top: 0;
   background-color: $grey94;
+  display: grid;
+  grid-template-columns: repeat(5 1fr);
+  gap: 20px;
 }
 
 .tab-menu-row {
