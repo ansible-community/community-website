@@ -1,31 +1,34 @@
 <div class="grid-wrapper homepage-banner-band">
   <div class="width-12-12 width-12-12-m">
-    <img src="/assets/images/unsplash.jpg" class="banner-background-image" alt="Background image for the Ansible community website." />
-  </div>
-  <div class="width-7-12 width-12-12-m">
-    <div class="banner-main-content">
-      <h2>{{ homepage.banner.title }}</h2>
-      <p>{{ homepage.banner.intro }}</p>
-      <div class="banner-row">
-        {% include 'homepage-get-started.tmpl' %}
-        <div class="banner-clipboard">
-          <span class="border">
-            <code id="clip">{{ homepage.banner.pip_install }}</code>
-            <button class="btn text-nowrap" data-clipboard-action="copy" data-clipboard-target="#clip"><i class="fa fa-copy" aria-hidden="true"></i></button>
-          </span>
+    <div class="banner-row">
+      <div class="banner-main-content">
+        <h2>{{ homepage.banner.title }}</h2>
+        <p>{{ homepage.banner.intro }}</p>
+        <div class="banner-main-row">
+          {% include 'homepage-get-started.tmpl' %}
+          <div class="banner-clipboard">
+            <span class="border">
+              <code id="clip">{{ homepage.banner.pip_install }}</code>
+              <button class="btn text-nowrap" data-clipboard-action="copy" data-clipboard-target="#clip">
+                <i class="fa fa-copy" aria-hidden="true"></i>
+              </button>
+            </span>
+          </div>
+          <div class="banner-latest-version">
+            <p>
+              {{ homepage.banner.latest_version }}<br />{{ homepage.banner.how_to_install }}
+            </p>
+          </div>
         </div>
-        <div class="banner-latest-version">
-          <p>{{ homepage.banner.latest_version }}<br />{{ homepage.banner.how_to_install }}</p>
+        <div class="banner-platform-learn">
+          <a href="#platform">
+            <img class="banner-redhat-logo" src="/images/redhat.svg" title="Red Hat Ansible Automation Platform" />{{ homepage.platform.learn }}&nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
-      <div class="banner-platform-learn">
-        <a href="#platform">
-          <img class="banner-redhat-logo" src="/images/redhat.svg" title="Red Hat Ansible Automation Platform" />{{ homepage.platform.learn }}&ensp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-        </a>
+      <div class="banner-welcome-image">
+        <img src="/images/bullito_welcome.svg" alt="Bullito the Ansible community mascot welcomes you." />
       </div>
     </div>
-  </div>
-  <div class="width-5-12 width-12-12-m">
-    <img class="banner-welcome-image" src="/images/bullito_welcome.svg" alt="Bullito the Ansible community mascot welcomes you." />
   </div>
 </div>

@@ -1,0 +1,20 @@
+.hero-container {
+  max-width: 100%;
+  background-image: url(../images/unsplash.jpg);
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+  .navbar {
+    margin-bottom: 0 !important;
+    border: 0 !important;
+  }
+  .nav-link-color {
+    color: $black !important;
+    &:hover {
+      color: $black !important;
+    }
+  }
+  #blog-title {
+    color: $black;
+  }
+}
