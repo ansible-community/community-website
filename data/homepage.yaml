@@ -5,6 +5,7 @@ banner:
   latest_version: Ansible 7 is now available.
   how_to_install: Install by copying the pip command.
 automate:
+  section_icon: /assets/images/automation.svg
   title: Why Ansible?
   intro: Working in IT, you're likely doing the same tasks over and over. What if you could solve problems once and then automate your solutions going forward? Ansible is here to help.
   top_section:
@@ -27,6 +28,7 @@ automate:
         It is easy to learn, beautiful code that reads like clear documentation.
         After all, automation should not be more complex than the tasks it replaces.
 community:
+  section_icon: /assets/images/community.svg
   title: Community
   ansible_community: >-
     Ansible is built on open source collaboration.
@@ -62,6 +64,7 @@ bullhorn:
   placeholder: Insert email address here
   button: Subscribe
 events:
+  section_icon: /assets/images/calendar.svg
   title: Events
   intro: Join Ansible events, in person or online, to share and learn about automation.
   url: https://forum.ansible.com/c/events/
@@ -82,10 +85,12 @@ events:
       image: contributor-summit-durham-2023.png
       link: https://forum.ansible.com/t/ansible-contributor-summit-durham-2023/28
 platform:
+  section_icon: /images/platform.svg
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
   learn: Learn more about Red Hat Ansible Automation Platform
 ecosystem:
+  section_icon: /assets/images/communities.svg
   title: Ecosystem
   intro: Projects in the Ansible ecosystem let you expand automation to a virtually unlimited set of use cases.
   url: https://docs.ansible.com/ecosystem.html
@@ -112,10 +117,12 @@ ecosystem:
       link: https://ansible.readthedocs.io/projects/rulebook/
       logo: logo-eda.svg
 blog:
+  section_icon: /assets/images/blog.svg
   title: Blogs
   intro: Read all about it!
   url: /blog/
 contribute:
+  section_icon: /assets/images/collaboration.svg
   title: Contribute
   heading: You can contribute to Ansible in so many ways...
   ways:
@@ -139,3 +146,4 @@ links:
     get_started_url: https://docs.ansible.com/ansible/latest/getting_started/index.html
   platform:
     home: https://www.redhat.com/en/technologies/management/ansible
+
