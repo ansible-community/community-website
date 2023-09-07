@@ -1,0 +1,33 @@
+.homepage-tab-menu-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  background-color: $grey94;
+}
+
+.tab-menu-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.tab-menu-box {
+  a {
+    text-decoration: none;
+  }
+  .btn {
+    display: flex;
+    padding: 20px;
+    font-size: 0.9rem;
+    align-items: center;
+  }
+  img {
+    float: left;
+    width: auto;
+    height: 40px;
+  }
+  &:hover {
+    background-color: $white;
+    color: $navy;
+  }
+}
