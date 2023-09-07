@@ -85,7 +85,6 @@ events:
       image: contributor-summit-durham-2023.png
       link: https://forum.ansible.com/t/ansible-contributor-summit-durham-2023/28
 platform:
-  section_icon: /images/platform.svg
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
   learn: Learn more about Red Hat Ansible Automation Platform

@@ -1,18 +1,46 @@
 .homepage-platform-band {
   padding-bottom: 2rem;
-  margin: 6rem auto;
-  text-align: left;
+  font-size: 0.9rem;
+  font-family: $redhat-display;
 }
 
-.learn-more {
-  a {
-    background-color: $red-hat-red;
-    color: $white;
-    font-weight: 700;
-    padding: 0.625rem 2rem;
-    &:hover {
+.platform-row {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.platform-box-left {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  margin-top: 5%;
+  img {
+    width: 400px;
+    height: auto;
+    float: left;
+  }
+}
+
+.platform-box-right {
+  display: flex;
+  flex-direction: column;
+  .platform-learn-more {
+    a {
       background-color: $red-hat-red;
-      color: $black;
+      color: $white;
+      font-size: 0.9rem;
+      font-weight: bold;
+      &:hover {
+        background-color: $red-hat-red;
+        color: $black;
+      }
+    }
+    .btn {
+      border-radius: 2px;
+      padding: 14px;
+      width: fit-content;
     }
   }
 }
