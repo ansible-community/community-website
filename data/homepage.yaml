@@ -117,8 +117,8 @@ ecosystem:
       logo: logo-eda.svg
 blog:
   section_icon: /assets/images/blog.svg
-  title: Blogs
-  intro: Read all about it!
+  title: Blog
+  intro: Recent blog posts about all things Ansible.
   url: /blog/
 contribute:
   section_icon: /assets/images/collaboration.svg
