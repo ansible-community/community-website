@@ -18,21 +18,27 @@
 
 .banner-main-content {
   position: relative;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: $white;
+  padding: 2rem;
+  h2 {
+    font-family: $redhat-display;
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }
 
 .banner-main-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .banner-clipboard {
   display: flex;
-  background-color: $white;
   align-items: center;
   font-size: 0.9rem;
   text-align: left;
+  padding-right: 1rem;
   .border {
     border-width: 1px;
     border-radius: 2px;
@@ -47,21 +53,28 @@
     color: $navy;
     background-color: transparent;
   }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .banner-latest-version {
   font-size: 0.8rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .banner-platform-learn {
   font-family: $redhat-display;
   font-size: 0.9rem;
+  padding-top: 1rem;
 }
 
 .banner-redhat-logo {
   width: auto;
   height: 20px;
-  margin: 8px;
+  margin: 0 0.6rem;
 }
 
 .banner-welcome-image {
