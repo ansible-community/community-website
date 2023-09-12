@@ -3,59 +3,39 @@
   background-color: $white;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  grid-column: span 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
 }
 
 .contribute-content {
-  h3 {
-    font-size: 0.9rem;
-    font-weight: bold;
-  }
-}
-
-.contribute-row {
-  grid-column: span 2;
-  display: grid;
-  grid-template-columns: repeat(2, 500px);
-  gap: 8px;
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
 }
 
 .contribute-box-left {
   display: flex;
   flex-direction: column;
-  padding-left: 10%;
-  p {
-    font-size: 0.9rem;
-    margin-top: 8px;
-  }
-  .fa-star {
-    font-size: 0.8rem;
-    color: $navy;
+  h3 {
+    font-size: 1rem;
+    font-weight: bold;
   }
   ul {
     font-size: 0.9rem;
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
+    list-style-type: circle;
+    margin: 0%;
+  }
+  p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
   }
 }
 
 .contribute-box-right {
   display: flex;
-  flex-direction: column;
-  p {
-    font-size: 0.9rem;
-  }
-  a {
-    color: $navy;
-  }
+  flex-direction: row;
   img {
-    width: 75px;
-    height: auto;
-    float: left;
-    margin-left: 5%;
+    height: 172px;
+    width: auto;
+    margin-left: 7rem;
   }
 }
