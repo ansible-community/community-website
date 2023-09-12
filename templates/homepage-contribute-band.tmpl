@@ -4,26 +4,25 @@
       <div class="section-top">
         <img class="section-icon" src="{{ homepage.contribute.section_icon }}" />
         <h2>{{ homepage.contribute.title }}</h2>
+        <div class="section-view-more">
+          <a href="{{ homepage.contribute.url }}">{{ homepage.labels.learn_more }}&ensp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="contribute-content">
-    <div class="contribute-row">
+    <div class="contribute-content">
       <div class="contribute-box-left">
         <h3>{{ homepage.contribute.heading }}</h3>
         {% for item in homepage.contribute.ways %}
         <ul>
-          <li><i class="fa fa-star" aria-hidden="true"></i>&ensp;{{ item }}</li>
+          <li>{{ item }}</li>
         </ul>
         {% endfor %}
+        <p>{{ homepage.contribute.main }}</p>
       </div>
-    <div class="contribute-box-right">
-      <p>{{ homepage.contribute.main }}</p>
-      <a href="{{ homepage.contribute.link }}">
-        <img src="/assets/images/conversation.svg" alt="Join us on the forum to talk about contributing to Ansible." />
-      </a>
+      <div class="contribute-box-right">
+        <img src="/images/bull-builder.svg" alt="Ansible bull builder mascot." />
+      </div>
     </div>
-    </div>
+    {% include 'homepage-back-to-top.tmpl' %}
   </div>
-  {% include 'homepage-back-to-top.tmpl' %}
 </div>
