@@ -160,7 +160,6 @@ NAVIGATION_ALT_LINKS = {
           "Blog", ""
         ),
         ("https://forum.ansible.com/", "Forum", ""),
-        ("https://forum.ansible.com/c/events/", "Events", ""),
         ("https://docs.ansible.com/", "Documentation", ""),
         ("https://docs.ansible.com/ansible/latest/getting_started/index.html", "Get started with Ansible", "fa fa-rocket"),
     )
