@@ -11,24 +11,35 @@
   text-align: center;
   padding: 0.5rem 0;
 
-  .licence {
-    grid-column: 5/9;
-    align-self: center;
-    justify-self: center;
-    a {
-      color: $white;
-      font-size: 0.75rem;
-      font-weight: normal;
-    }
-    @media screen and (max-width: 1024px) {
-      grid-column: 1/5;
-      justify-self: left;
-    }
-    @media screen and (max-width: 480px) {
-      grid-column: 1/13;
+  .footer-left {
+    .licence {
+      grid-column: 5/9;
+      align-self: center;
       justify-self: center;
-      order: 3;
+      i {
+        color: $white;
+      }
+      a {
+        color: $white;
+        font-size: 0.75rem;
+        font-weight: normal;
+      }
+      @media screen and (max-width: 1024px) {
+        grid-column: 1/5;
+        justify-self: left;
+      }
+      @media screen and (max-width: 480px) {
+        grid-column: 1/13;
+        justify-self: center;
+        order: 3;
+      }
     }
+  }
+
+  .footer-left a {
+    color: $white;
+    font-size: 0.75rem;
+    font-weight: normal;
   }
 
   .redhat {
