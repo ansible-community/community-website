@@ -25,10 +25,9 @@
         {% block extra_header %}{% endblock %}
         {% block content %}{% endblock %}
         <!--End of body content-->
-
-        {{ footer.html_footer() }}
     </div>
 </div>
+{{ footer.html_footer() }}
 
 {{ base.late_load_js() }}
     {% if date_fanciness != 0 %}
