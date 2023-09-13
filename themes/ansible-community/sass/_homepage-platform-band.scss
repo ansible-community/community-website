@@ -10,14 +10,14 @@
 .platform-row {
   grid-column: span 2;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
 }
 
 .platform-box-left {
   display: flex;
   flex-direction: column;
-  padding-left: 10%;
+  padding-left: 0;
   margin-top: 5%;
   img {
     width: 400px;
@@ -29,6 +29,8 @@
 .platform-box-right {
   display: flex;
   flex-direction: column;
+  grid-column-start: 2;
+  grid-column-end: 4;
   .platform-learn-more {
     a {
       background-color: $red-hat-red;
@@ -44,6 +46,27 @@
       border-radius: 2px;
       padding: 14px;
       width: fit-content;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-l) {
+  .platform-row {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-box-left {
+    align-items: center;
+    padding-bottom: 40px;
+  }
+
+  .platform-box-right {
+    grid-column-start: initial;
+    grid-column-end: initial;
+    .platform-learn-more {
+      .btn {
+        width: 100%;
+      }
     }
   }
 }
