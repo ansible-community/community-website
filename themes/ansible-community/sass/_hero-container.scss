@@ -8,14 +8,31 @@
   .navbar {
     margin-bottom: 0 !important;
     border: 0 !important;
+    .dropdown-menu {
+      background-color: $pool;
+      a {
+        color: $black !important;
+        &:hover {
+          color: $white !important;
+        }
+      }
+    }
+    .dropdown-item {
+      &:hover {
+        background-color: $pool !important;
+      }
+    }
   }
   .nav-link-color {
     color: $black !important;
     &:hover {
-      color: $black !important;
+      color: $white !important;
     }
   }
   #blog-title {
     color: $black;
+    &:hover {
+      color: $white !important;
+    }
   }
 }
