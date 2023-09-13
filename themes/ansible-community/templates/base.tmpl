@@ -18,7 +18,7 @@
   {% include 'base_nav.tmpl' %}
 {% endif %}
 
-<div class="container" id="content" role="main">
+<div {% if permalink == '/' %}class="homepage-container"{% else %}class="container"{% endif %} id="content" role="main">
     <div class="body-content">
         <!--Body content-->
         {{ template_hooks['page_header']() }}
