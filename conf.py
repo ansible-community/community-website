@@ -154,14 +154,13 @@ NAVIGATION_ALT_LINKS = {
           (
             ("/blog/", "Latest Posts", "fa fa-comment"),
             ("/categories/", "Tags", "fa fa-tag"),
-            ("/blog/archive.html", "Post Archive", ""),
+            ("/blog/archive.html", "Post Archive", "fa fa-archive"),
             ("/rss.xml", "RSS feed", "fa fa-rss-square"),
           ),
           "Blog", ""
         ),
         ("https://forum.ansible.com/", "Forum", ""),
         ("https://docs.ansible.com/", "Documentation", ""),
-        ("https://docs.ansible.com/ansible/latest/getting_started/index.html", "Get started with Ansible", "fa fa-rocket"),
     )
 }
 
