@@ -1,12 +1,10 @@
 .get-started-ansible {
   display: flex;
   align-items: center;
-  font-family: $redhat-display;
   text-align: center;
   padding-right: 1rem;
   .btn {
     font-size: 0.9rem;
-    font-family: $redhat-display;
     color: $white;
     background-color: $cyan;
     border-width: 1px;

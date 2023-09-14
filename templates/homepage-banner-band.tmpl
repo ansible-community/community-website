@@ -7,12 +7,9 @@
         <div class="banner-main-row">
           {% include 'homepage-get-started.tmpl' %}
           <div class="banner-clipboard">
-            <span class="border">
-              <code id="clip">{{ homepage.banner.pip_install }}</code>
-              <button class="btn text-nowrap" data-clipboard-action="copy" data-clipboard-target="#clip">
-                <i class="fa fa-copy" aria-hidden="true"></i>
-              </button>
-            </span>
+            <button class="btn text-nowrap" data-clipboard-text="{{ homepage.banner.pip_install }}">
+              <code>{{ homepage.banner.pip_install }}</code>&ensp;<i class="fa fa-copy" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="banner-latest-version">
             <p>
