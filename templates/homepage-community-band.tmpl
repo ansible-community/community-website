@@ -9,7 +9,6 @@
     <div class="community-intro">
       <p>{{ homepage.community.ansible_community }}</p>
     </div>
-    <hr />
     <div class="community-socials">
       <div class="community-socials-row">
         {% for key, item in homepage.community.socials.links.items() %}
@@ -19,8 +18,6 @@
         {% endfor %}
       </div>
     </div>
-    <hr />
+    {% include 'homepage-back-to-top.tmpl' %}
   </div>
 </div>
-{% include 'homepage-bullhorn-band.tmpl' %}
-{% include 'homepage-back-to-top.tmpl' %}
