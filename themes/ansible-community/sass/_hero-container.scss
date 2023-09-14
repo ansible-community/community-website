@@ -5,6 +5,22 @@
   background-color: $pool;
   background-position: bottom;
   background-repeat: no-repeat;
+
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+
+    .navbar-right {
+      li {
+        margin-left: 10px;
+      }
+    }
+  }
+
   .navbar {
     margin-bottom: 0 !important;
     border: 0 !important;

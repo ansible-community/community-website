@@ -3,13 +3,14 @@
   align-items: center;
   text-align: center;
   margin: 0;
+  padding: 0 10px 0 20px;
   .btn {
     font-size: 0.9rem;
     color: $white;
-    background-color: $navy;
+    background-color: $cyan;
     border-width: 1px;
     border-radius: 2px;
-    border-color: $navy;
+    border-color: $cyan;
     &:hover {
       background-color: $white !important;
       color: $navy !important;
