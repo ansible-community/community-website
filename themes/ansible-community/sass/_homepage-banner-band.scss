@@ -57,19 +57,25 @@ flex: 1;
   font-size: 0.9rem;
   text-align: left;
   padding-right: 1rem;
-  .border {
+  .btn {
+    font-size: 0.9rem;
+    background-color: $white !important;
     border-width: 1px;
     border-radius: 2px;
-    border-color: $navy !important;
+    border-color: $cyan !important;
   }
   code {
-    font-family: $redhat-display;
-    color: $navy;
-    padding-left: 12px;
+    color: $navy !important;
+    &:hover {
+      color: $cyan !important;
+    }
   }
   .fa-copy {
     color: $navy;
     background-color: transparent;
+    &:hover {
+      color: $cyan !important;
+    }
   }
   @media screen and (max-width: 768px) {
     display: none;
