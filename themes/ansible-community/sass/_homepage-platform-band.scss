@@ -1,10 +1,7 @@
 .homepage-platform-band {
-  margin-top: 0;
-  background-color: $white;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-  font-size: 0.9rem;
-  font-family: $redhat-display;
+  background-color: $grey94;
+  padding: 4rem;
+  font-size: 1rem;
 }
 
 .platform-row {
@@ -18,7 +15,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 0;
-  margin-top: 5%;
+  margin-top: 1rem;
   img {
     width: 400px;
     height: auto;
