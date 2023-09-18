@@ -93,26 +93,25 @@ ecosystem:
   title: Ecosystem
   intro: Projects in the Ansible ecosystem let you expand automation to a virtually unlimited set of use cases.
   url: https://docs.ansible.com/ecosystem.html
-  top_row:
+  projects:
     awx:
       heading: AWX
-      description: A web-based user interface, REST API, and task engine for Ansible automation.
+      description: Web-based user interface, REST API, and task engine for performing Ansible automation.
       link: https://ansible.readthedocs.io/projects/awx/
       logo: logo-awx.svg
     runner:
       heading: Ansible Runner
-      description: A stable and consistent interface abstraction to Ansible execution.
+      description: An interface abstraction to Ansible that offers reliable and consistent task execution.
       link: https://ansible.readthedocs.io/projects/runner/
       logo: logo-runner.svg
-  bottom_row:
     builder:
       heading: Ansible Builder
-      description: Configure and build portable, consistent, customized Ansible control nodes.
+      description: Tooling to configure and build customized Ansible control nodes in container images.
       link: https://ansible.readthedocs.io/projects/builder/
       logo: logo-builder.svg
     eda:
-      heading: Event-Driven Ansible Server
-      description: Scalable and flexible automation that can subscribe to a wide variety of event sources.
+      heading: Event-Driven Ansible
+      description: Subscribe to event sources to scale automation and deliver more efficient IT operations.
       link: https://ansible.readthedocs.io/projects/rulebook/
       logo: logo-eda.svg
 blog:

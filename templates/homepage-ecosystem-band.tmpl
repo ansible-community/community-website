@@ -10,30 +10,18 @@
       </div>
       <p>{{ homepage.ecosystem.intro }}</p>
     </div>
-    <div class="ecosystem-row">
-      {% for key, item in homepage.ecosystem.top_row.items() %}
-      <div class="ecosystem-card">
-        <div class="ecosystem-content">
-          <h3>{{ item.heading }}</h3>
-          <p>{{ item.description }}</p>
-          <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
-        </div>
-        <img class="ecosystem-logo" src="/images/{{ item.logo }}" />
-      </div>
-      {% endfor %}
-    </div>
-    <div class="ecosystem-row">
-      {% for key, item in homepage.ecosystem.bottom_row.items() %}
-      <div class="ecosystem-card">
-        <div class="ecosystem-content">
-          <h3>{{ item.heading }}</h3>
-          <p>{{ item.description }}</p>
-          <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
-        </div>
-        <img class="ecosystem-logo" src="/images/{{ item.logo }}" />
-      </div>
-      {% endfor %}
-    </div>
-    {% include 'homepage-back-to-top.tmpl' %}
   </div>
+  {% for key, item in homepage.ecosystem.projects.items() %}
+  <div class="width-6-12 width-12-12-m">
+    <div class="ecosystem-card">
+      <div class="ecosystem-content">
+        <h3>{{ item.heading }}</h3>
+        <p>{{ item.description }}</p>
+        <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
+      </div>
+      <img class="ecosystem-logo" src="/images/{{ item.logo }}" width="95" height="95"/>
+    </div>
+  </div>
+  {% endfor %}
+  {% include 'homepage-back-to-top.tmpl' %}
 </div>
