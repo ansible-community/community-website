@@ -1,0 +1,6 @@
+[tool.djlint]
+files=["./templates/","./themes/ansible-community/templates/"]
+extension=".tmpl"
+profile="jinja"
+indent=2
+ignore="J018"
