@@ -21,7 +21,7 @@ bg-dark
     <div {% if permalink == '/' %}class="masthead"{% else %}class="container"{% endif %}><!-- This keeps the margins nice -->
         <a class="navbar-brand" href="{{ _link("root", None, lang) }}">
         {% if logo_url %}
-            <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo" class="d-inline-block align-top">
+            <img src="{{ logo_url }}" alt="{{ blog_title|e }}" id="logo" class="d-inline-block align-top" width="50" height="50">
         {% endif %}
 
         {% if show_blog_title %}
