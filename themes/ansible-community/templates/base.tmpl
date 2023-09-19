@@ -13,12 +13,20 @@
 <a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
 
 {% if permalink == '/' %}
-  {% block hero_content %}{% endblock %}
-  {% else %}
-  {% include 'base_nav.tmpl' %}
+<div class="homepage-container" id="content" role="main">
+    {% block hero_content %}{% endblock %}
+    <div class="body-content">
+        <!--Body content-->
+        {{ template_hooks['page_header']() }}
+        {% block homepage_content %}{% endblock homepage_content %}
+        <!--End of body content-->
+    </div>
+</div>
 {% endif %}
 
-<div {% if permalink == '/' %}class="homepage-container"{% else %}class="container"{% endif %} id="content" role="main">
+{% if permalink != '/' %}
+{% include 'base_nav.tmpl' %}
+<div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
         {{ template_hooks['page_header']() }}
@@ -27,6 +35,7 @@
         <!--End of body content-->
     </div>
 </div>
+{% endif %}
 {{ footer.html_footer() }}
 
 {{ base.late_load_js() }}

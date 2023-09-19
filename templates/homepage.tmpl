@@ -5,16 +5,14 @@
     {% include 'homepage-banner-band.tmpl' %}
   </div>
 {% endblock %}
-{% block content %}
-  <div class="homepage">
-    {% include 'homepage-tab-menu-band.tmpl' %}
-    {% include 'homepage-automate-band.tmpl' %}
-    {% include 'homepage-ecosystem-band.tmpl' %}
-    {% include 'homepage-community-band.tmpl' %}
-    {% include 'homepage-blog-band.tmpl' %}
-    {% include 'homepage-contribute-band.tmpl' %}
-    {% include 'homepage-bullhorn-band.tmpl' %}
-    {% include 'homepage-events-band.tmpl' %}
-    {% include 'homepage-platform-band.tmpl' %}
-  </div>
-{% endblock %}
+{% block homepage_content %}
+  {% include 'homepage-tab-menu-band.tmpl' %}
+  {% include 'homepage-automate-band.tmpl' %}
+  {% include 'homepage-ecosystem-band.tmpl' %}
+  {% include 'homepage-community-band.tmpl' %}
+  {% include 'homepage-blog-band.tmpl' %}
+  {% include 'homepage-contribute-band.tmpl' %}
+  {% include 'homepage-bullhorn-band.tmpl' %}
+  {% include 'homepage-events-band.tmpl' %}
+  {% include 'homepage-platform-band.tmpl' %}
+{% endblock homepage_content %}
