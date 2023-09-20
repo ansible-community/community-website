@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="b9005e41-fee5-41c6-8fe2-1c28aadbb624"
+   data-name="Icon"
+   viewBox="0 0 36 36"
+   version="1.1"
+   sodipodi:docname="community-cyan.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="18.25"
+     inkscape:cx="18"
+     inkscape:cy="18"
+     inkscape:window-width="1920"
+     inkscape:window-height="979"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="b9005e41-fee5-41c6-8fe2-1c28aadbb624" />
+  <g
+     id="g4"
+     style="fill:#004080;fill-opacity:1">
+    <path
+       d="M12.87,23.29a3.86,3.86,0,1,0-4.74,0A7.11,7.11,0,0,0,3.38,30a.61.61,0,0,0,.62.62H17a.63.63,0,0,0,.63-.62A7.13,7.13,0,0,0,12.87,23.29Zm-5-3a2.62,2.62,0,0,1,5.24,0A2.62,2.62,0,0,1,7.88,20.25ZM4.66,29.38c.84-6.94,10.84-6.93,11.68,0Z"
+       id="path1"
+       style="fill:#004080;fill-opacity:1" />
+    <path
+       d="M13.37,15.38a6,6,0,0,1,9.48.18.61.61,0,0,0,.66-.07c1.07-1-2.27-3-3.13-3.21a3.86,3.86,0,1,0-4.76,0c-.86.25-4.2,2.18-3.13,3.21A.62.62,0,0,0,13.37,15.38Zm2-6.13a2.62,2.62,0,0,1,5.24,0A2.62,2.62,0,0,1,15.38,9.25Z"
+       id="path2"
+       style="fill:#004080;fill-opacity:1" />
+    <path
+       d="M16,19.38a.62.62,0,0,0,0,1.24h4a.62.62,0,0,0,0-1.24Z"
+       id="path3"
+       style="fill:#004080;fill-opacity:1" />
+    <path
+       d="M27.87,23.29a3.86,3.86,0,1,0-4.74,0A7.11,7.11,0,0,0,18.38,30a.61.61,0,0,0,.62.62H32a.63.63,0,0,0,.63-.62A7.13,7.13,0,0,0,27.87,23.29Zm-5-3a2.62,2.62,0,0,1,5.24,0A2.62,2.62,0,0,1,22.88,20.25Zm-3.22,9.13c.84-6.94,10.84-6.93,11.68,0Z"
+       id="path4"
+       style="fill:#004080;fill-opacity:1" />
+  </g>
+</svg>

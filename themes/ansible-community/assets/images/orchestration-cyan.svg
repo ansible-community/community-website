@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="b5d343db-a8db-4a94-aedb-5b3c8a61347d"
+   data-name="Icon"
+   viewBox="0 0 36 36"
+   version="1.1"
+   sodipodi:docname="orchestration-cyan.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5" />
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="21.472222"
+     inkscape:cx="18"
+     inkscape:cy="18"
+     inkscape:window-width="1920"
+     inkscape:window-height="979"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="b5d343db-a8db-4a94-aedb-5b3c8a61347d" />
+  <g
+     id="g5"
+     style="fill:#004080;fill-opacity:1">
+    <path
+       d="M16,11.62h6a.61.61,0,0,0,.62-.62V5A.61.61,0,0,0,22,4.38H16a.61.61,0,0,0-.62.62v6A.61.61,0,0,0,16,11.62Zm.62-6h4.76v4.76H16.62Z"
+       id="path1"
+       style="fill:#004080;fill-opacity:1" />
+    <path
+       d="M28.44,20.56a.62.62,0,0,0-.88,0l-2,2a.61.61,0,0,0,0,.88.67.67,0,0,0,.88,0l.94-.93V24A3.39,3.39,0,0,1,24,27.38H14a.62.62,0,1,0,0,1.24H24A4.62,4.62,0,0,0,28.62,24V22.51l.94.93a.62.62,0,0,0,.88-.88Z"
+       id="path2"
+       style="fill:#004080;fill-opacity:1" />
+    <path
+       d="M13.62,8A.61.61,0,0,0,13,7.38H12A4.62,4.62,0,0,0,7.38,12v8.49l-.94-.93a.62.62,0,0,0-.88.88l2,2a.61.61,0,0,0,.86,0l2-2a.62.62,0,1,0-.88-.88l-.94.93V12A3.39,3.39,0,0,1,12,8.62h1A.61.61,0,0,0,13.62,8Z"
+       id="path3"
+       style="fill:#004080;fill-opacity:1" />
+    <path
+       d="M31,4.38H25a.61.61,0,0,0-.62.62v6a.61.61,0,0,0,.62.62h6a.61.61,0,0,0,.62-.62V5A.61.61,0,0,0,31,4.38Zm-.62,6H25.62V5.62h4.76Z"
+       id="path4"
+       style="fill:#004080;fill-opacity:1" />
+    <rect
+       x="15.38"
+       y="13.38"
+       width="7.25"
+       height="7.25"
+       rx="0.63"
+       id="rect4"
+       style="fill:#004080;fill-opacity:1" />
+    <rect
+       x="4.38"
+       y="24.38"
+       width="7.25"
+       height="7.25"
+       rx="0.63"
+       id="rect5"
+       style="fill:#004080;fill-opacity:1" />
+  </g>
+</svg>

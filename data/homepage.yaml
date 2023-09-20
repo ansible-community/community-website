@@ -7,7 +7,7 @@ banner:
   redhat_logo_alt: Red Hat Ansible Automation product logo.
   welcome_alt: Bullito the Ansible community mascot welcomes you.
 automate:
-  section_icon: /assets/images/automation.svg
+  section_icon: /assets/images/automation-cyan.svg
   icon_alt: Automation icon that represents a control node modifying state of a managed node.
   title: Why Ansible?
   intro: Working in IT, you're likely doing the same tasks over and over. What if you could solve problems once and then automate your solutions going forward? Ansible is here to help.
@@ -31,7 +31,7 @@ automate:
         It is easy to learn, beautiful code that reads like clear documentation.
         After all, automation should not be more complex than the tasks it replaces.
 community:
-  section_icon: /assets/images/community.svg
+  section_icon: /assets/images/community-cyan.svg
   icon_alt: Community icon that represents a group of people collaborating on automation.
   title: Community
   ansible_community: >-
@@ -44,22 +44,27 @@ community:
         url: https://forum.ansible.com/
         icon: fab fa-discourse
         alt: Join the Ansible forum.
+        text: Forum
       matrix:
         url: https://matrix.to/#/#social:ansible.com
         icon: fa fa-matrix-org
         alt: Chat with us on Matrix.
+        text: Matrix
       mastodon:
         url: https://fosstodon.org/@ansible
         icon: fa fa-mastodon
         alt: Get in touch on Mastodon.
+        text: Mastodon
       youtube:
         url: https://www.youtube.com/ansiblecommunity
         icon: fab fa-youtube
         alt: Subscribe to our YouTube channel.
+        text: YouTube
       linkedin:
         url: https://www.linkedin.com/groups/4648083/
         icon: fab fa-linkedin
         alt: Check out our LinkedIn group.
+        text: LinkedIn
 bullhorn:
   title: Subscribe to the Bullhorn
   subscribe: >-
@@ -69,7 +74,7 @@ bullhorn:
   button: Subscribe
   subscribe_alt: Subscribe to the Ansible bullhorn newsletter to receive the latest news and updates.
 events:
-  section_icon: /assets/images/calendar.svg
+  section_icon: /assets/images/calendar-cyan.svg
   icon_alt: Calendar icon for Ansible community events.
   event_alt: Background image for an Ansible community event. You can find details for this community event in the body text next to the image.
   title: Events
@@ -97,7 +102,7 @@ platform:
   learn: Learn more about Red Hat Ansible Automation Platform
   logo_alt: Red Hat Ansible Automation Platform
 ecosystem:
-  section_icon: /assets/images/communities.svg
+  section_icon: /assets/images/communities-cyan.svg
   icon_alt: Ecosystem icon that represents several projects that provide Ansible automation capabilities.
   logo_alt: Ecosystem logo for the associated Ansible project.
   title: Ecosystem
@@ -125,13 +130,13 @@ ecosystem:
       link: https://ansible.readthedocs.io/projects/rulebook/
       logo: logo-eda.svg
 blog:
-  section_icon: /assets/images/blog.svg
+  section_icon: /assets/images/blog-cyan.svg
   icon_alt: Blog icon that represents the Ansible community blog.
   title: Blog
   intro: Recent blog posts about all things Ansible.
   url: /blog/
 contribute:
-  section_icon: /assets/images/collaboration.svg
+  section_icon: /assets/images/collaboration-cyan.svg
   icon_alt: Contribute icon that represents someone getting involved with the Ansible community.
   bull_builder_alt: The Ansible bull builder mascot wears a protective helmet and high visibility jacket to represent a community contributor.
   title: Contribute
