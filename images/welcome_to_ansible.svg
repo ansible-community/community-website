@@ -2,11 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="114.55901mm"
-   height="72.531906mm"
-   viewBox="0 0 114.55901 72.531906"
+   width="200.13411mm"
+   height="130.03067mm"
+   viewBox="0 0 200.13411 130.03067"
    version="1.1"
    id="svg1"
+   sodipodi:docname="welcome_to_ansible.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +24,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.68862935"
-     inkscape:cx="168.45056"
+     inkscape:cx="167.72448"
      inkscape:cy="234.52384"
      inkscape:window-width="1920"
      inkscape:window-height="979"
@@ -36,11 +38,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-60.305256,-86.52525)">
+     transform="translate(-60.308421,-86.521628)">
     <g
        id="use1"
        style="fill:#000000;stroke:#000000"
-       transform="matrix(-0.44618895,0,0,0.45120942,207.54761,64.754395)">
+       transform="matrix(-0.77949018,0,0,0.80890001,317.54018,47.492203)">
       <title
          id="title2">Circle Balloon</title>
       <ellipse
@@ -79,19 +81,44 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';fill:#000000;stroke-width:0.264583"
-       x="116.78679"
-       y="115.22617"
-       id="text1"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.3613px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';fill:#000000;stroke-width:0.380646"
+       x="159.12964"
+       y="140.65511"
+       id="text1"
+       transform="scale(1.0135544,0.98662683)"><tspan
          sodipodi:role="line"
-         id="tspan1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="116.78679"
-         y="115.22617">Welcome to</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.3613px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;text-anchor:middle;stroke-width:0.380646"
+         x="159.12964"
+         y="140.65511"
+         id="tspan2" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.3613px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;text-anchor:middle;fill:#102441;stroke-width:0.380646"
+       x="148.83305"
+       y="132.13972"
+       id="text3"
+       transform="scale(1.0135544,0.98662683)"><tspan
          sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         x="116.78679"
-         y="131.10117"
-         id="tspan2">Ansible!</tspan></text>
+         id="tspan3"
+         style="stroke-width:0.380646"
+         x="148.83305"
+         y="132.13972" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:24.3613px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans';text-align:center;text-anchor:middle;fill:#102441;stroke-width:0.380646"
+       x="159.8645"
+       y="139.55879"
+       id="text4"
+       transform="scale(1.0135544,0.98662683)"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.3613px;font-family:Sans;-inkscape-font-specification:'Sans, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;stroke-width:0.380646"
+         x="159.8645"
+         y="139.55879">Welcome to</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:24.3613px;font-family:Sans;-inkscape-font-specification:'Sans, @wght=500';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;font-variation-settings:'wght' 500;stroke-width:0.380646"
+         x="159.8645"
+         y="170.59085"
+         id="tspan5">Ansible!</tspan></text>
   </g>
 </svg>
