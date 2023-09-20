@@ -2,8 +2,10 @@ banner:
   title: Automation Powered by People
   intro: Configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more!
   pip_install: pip install ansible
-  latest_version: Ansible 7 is now available.
-  how_to_install: Install by copying the pip command.
+  install_tooltip: Copy the pip command to install Ansible.
+  latest_version: Ansible 7 is now available!
+  copy_command: Copy the "pip install ansible" command.
+  copy_success_message: Successfully copied to clipboard!
   redhat_logo_alt: Red Hat Ansible Automation product logo.
   welcome_alt: Bullito the Ansible community mascot welcomes you.
 automate:
@@ -151,6 +153,7 @@ labels:
   view_more: View more
   back_to_top: Back to top
   get_started: Get started with Ansible
+  get_started_tooltip: Quickly get up and running with Ansible automation.
 links:
   ansible:
     get_started_url: https://docs.ansible.com/ansible/latest/getting_started/index.html

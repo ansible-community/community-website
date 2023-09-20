@@ -14,7 +14,7 @@
 }
 
 .banner-welcome-image {
-flex: 1;
+  flex: 1;
   img {
     margin-left: 125px;
   }
@@ -26,51 +26,45 @@ flex: 1;
   padding: 2rem;
   flex: 1;
   h2 {
-    font-family: $redhat-display;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 600;
+    text-decoration: solid;
   }
-  & > p{
-    font-family: $redhat-display;
+  & > p {
+    padding-top: 12px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 500;
+    text-decoration: solid;
   }
 }
 
-.banner-main-row  {
+.banner-main-row {
   display: flex;
   flex-wrap: nowrap;
-  & > *{
-    flex: 1;
-    width: 100%;
-  }
-  & > button {
-    font-weight: bold;
-  }
-
 }
 
 .banner-clipboard {
   display: flex;
-  align-items: center;
   font-size: 0.9rem;
-  text-align: left;
-  padding-right: 1rem;
   .btn {
+    display: flex;
+    flex-direction: row;
     font-size: 0.9rem;
+    text-align: left;
     background-color: $white !important;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: $cyan !important;
+    border-width: 0;
+    border-color: transparent;
   }
   code {
-    color: $navy !important;
+    color: $cyan !important;
     &:hover {
       color: $cyan !important;
     }
   }
   .fa-copy {
-    color: $navy;
+    color: $cyan;
+    font-size: 20px;
+    padding-top: 10px;
     background-color: transparent;
     &:hover {
       color: $cyan !important;
@@ -81,24 +75,34 @@ flex: 1;
   }
 }
 
-.banner-latest-version {
-  font-size: 0.8rem;
-  @media screen and (max-width: 768px) {
-    display: none;
+.banner-platform-learn {
+  font-weight: bold;
+  font-size: 1rem;
+  padding-top: 1rem;
+  & > a {
+    color: $black;
   }
 }
 
-.banner-platform-learn {
-  font-family: $redhat-display;
-  font-weight:bold;
-  font-size: 0.9rem;
-  padding-top: 1rem;
-  & > a {
-    color:black
+.popup {
+  display: inline-block;
+  position: absolute;
+  top: 190px;
+  background-color: $black !important;
+  padding: 3px;
+  border-radius: 1px;
+  p {
+    color: $grey94 !important;
+    &:hover {
+      color: $grey94 !important;
+    }
   }
+}
+
+.popup.hidden {
+  display: none;
 }
 
 .banner-redhat-logo {
   margin-left: 10px;
 }
-
