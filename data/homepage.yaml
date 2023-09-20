@@ -63,8 +63,8 @@ community:
 bullhorn:
   title: Subscribe to the Bullhorn
   subscribe: >-
-    The Bullhorn is a weekly newsletter that delivers the latest news and updates from the Ansible Community right to your inbox.
-    You can easily opt-out of a subscription at any time.
+    The Bullhorn is a weekly newsletter full of the Ansible Community's latest news and updates.
+    You can unsubscribe at any time.
   placeholder: Insert email address here
   button: Subscribe
   subscribe_alt: Subscribe to the Ansible bullhorn newsletter to receive the latest news and updates.
@@ -135,7 +135,9 @@ contribute:
   icon_alt: Contribute icon that represents someone getting involved with the Ansible community.
   bull_builder_alt: The Ansible bull builder mascot wears a protective helmet and high visibility jacket to represent a community contributor.
   title: Contribute
-  url: https://forum.ansible.com/pub/how-to-contribute
+  resources_url: https://forum.ansible.com/pub/how-to-contribute
+  chat_url: https://matrix.to/#/#social:ansible.com
+  how: Find out how you can contribute to Ansible.
   heading: You can contribute to Ansible in so many ways...
   ways:
     - Organize meetups with other automation enthusiasts.
@@ -143,11 +145,7 @@ contribute:
     - Host Ansible workshops.
     - Code a new module or fix a bug.
     - Improve the documentation.
-  main: >-
-    Want to get involved?
-    Come talk to us.
-    We're friendly.
-    And we have contributor resources to help you.
+  involved: Want to get involved?
 labels:
   learn_more: Learn more
   view_more: View more
