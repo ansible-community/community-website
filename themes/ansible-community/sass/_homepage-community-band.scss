@@ -26,11 +26,26 @@
 
 .community-social-icons {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   a {
-    font-size: 3rem;
-    color: $navy;
+    text-decoration: none;
+  }
+}
+
+.community-social-text {
+  font-size: 40px;
+  text-decoration: none;
+  color: $cyan;
+  &:hover {
+    color: $pool !important;
+  }
+  .fa .fa-matrix-org .fa-mastodon {
+    color: $cyan;
+    background-color: transparent;
+  }
+  p {
+    font-size: 1rem;
   }
 }

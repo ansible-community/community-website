@@ -18,11 +18,14 @@
       <div class="community-socials-row">
         {% for key, item in homepage.community.socials.links.items() %}
           <div class="community-social-icons">
-            <a href="{{ item.url }}" title="{{ item.alt }}"><i class="{{ item.icon }}" aria-hidden="true"></i></a>
-          </div>
-        {% endfor %}
-      </div>
+            <a href="{{ item.url }}" title="{{ item.alt }}"><span class="community-social-text"><i class="{{ item.icon }}" aria-hidden="true" />
+              <p>{{ item.text }}</p>
+            </span>
+          </a>
+        </div>
+      {% endfor %}
     </div>
   </div>
-  {% include "homepage-back-to-top.tmpl" %}
+</div>
+{% include "homepage-back-to-top.tmpl" %}
 </div>
