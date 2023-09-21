@@ -14,3 +14,5 @@ jobs:
     uses: ./.github/workflows/reusable-spell-check.yml
   lint-templates:
     uses: ./.github/workflows/reusable-djlint.yml
+  format-templates:
+    uses: ./.github/workflows/reusable-format.yml
