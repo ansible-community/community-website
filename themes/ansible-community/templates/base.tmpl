@@ -6,7 +6,7 @@
 {{ base.html_headstart() }}
 {% block extra_head %}
 {#  Leave this block alone. #}
-{% endblock %}
+{% endblock extra_head %}
 {{ template_hooks['extra_head']() }}
 {# djlint:off #}
 </head>
@@ -14,7 +14,7 @@
 
 {% if permalink == '/' %}
 <div class="homepage-container" id="content" role="main">
-    {% block hero_content %}{% endblock %}
+    {% block hero_content %}{% endblock hero_content %}
     <div class="body-content">
         <!--Body content-->
         {{ template_hooks['page_header']() }}
@@ -25,13 +25,13 @@
 {% endif %}
 
 {% if permalink != '/' %}
-{% include 'base_nav.tmpl' %}
+{% include "base_nav.tmpl" %}
 <div class="container" id="content" role="main">
     <div class="body-content">
         <!--Body content-->
         {{ template_hooks['page_header']() }}
-        {% block extra_header %}{% endblock %}
-        {% block content %}{% endblock %}
+        {% block extra_header %}{% endblock extra_header %}
+        {% block content %}{% endblock content %}
         <!--End of body content-->
     </div>
 </div>
@@ -53,7 +53,7 @@
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
     </script>
-    {% include 'scripts.tmpl' %}
+    {% include "scripts.tmpl" %}
 {{ body_end }}
 {{ template_hooks['body_end']() }}
 </body>
