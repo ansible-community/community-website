@@ -1,4 +1,4 @@
-name: Lint templates
+name: Format templates
 
 on:
   workflow_call:
@@ -6,11 +6,11 @@ on:
 jobs:
   lint_templates:
     runs-on: ubuntu-latest
-    name: 'Lint website templates'
+    name: 'Format website templates'
     steps:
     - name: Check out the website repository
       uses: actions/checkout@v3
     - name: Pip install nox
       run: python -m pip install nox
-    - name: Lint the website template files
-      run: python -m nox -s lint
+    - name: Format the website template files
+      run: python -m nox -s format
