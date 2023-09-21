@@ -1,3 +1,9 @@
+[tool.codespell]
+skip = './cache,./output,./venv,./plugins,conf.py,./posts'
+count = ''
+check-filenames = true
+quiet-level = 3
+
 [tool.djlint]
 files=["./templates/","./themes/ansible-community/templates/"]
 extension=".tmpl"

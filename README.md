@@ -53,10 +53,21 @@ The Ansible community website is built with [Nikola](https://getnikola.com/).
 
 > Nikola configuration for the website is in ``conf.py``.
 
-## Checking and formatting templates
+## Checking your changes
 
-This project includes tooling that checks each Pull Request for issues with the website templates.
-If you modify the templates you should check and format them prior to submitting a PR.
+This project includes some tests and checks that run against pull requests.
+You can also run these checks before you commit changes.
+
+    # Install nox if required.
+    python -m pip install --upgrade nox
+
+    # View available nox sessions.
+    nox --list
+
+### Linting and formatting templates
+
+This project includes a linter and formatter to guard against unintended errors and to ensure high quality templates.
+If you modify the templates you should lint and format prior to commit.
 
     # Check templates for issues.
     nox -s lint
@@ -75,6 +86,17 @@ For more information about configuration options, see:
 
 - [Linter](https://www.djlint.com/docs/linter/)
 - [Formatter](https://www.djlint.com/docs/formatter/)
+
+### Spelling check
+
+    # Use the default session to check all templates, pages, and data for spelling errors.
+    nox -s spelling
+
+    # Check a specific blog post for spelling errors.
+    nox -s spelling -- ./posts/2023/02/24/2023-02-24-ansible_community_strategy_2023.md
+
+    # Automatically correct any spelling errors in a blog post.
+    nox -s spelling -- ./posts/2023/02/24/2023-02-24-ansible_community_strategy_2023.md -w
 
 ## Code of Conduct
 
