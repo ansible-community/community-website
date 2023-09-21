@@ -1,8 +1,13 @@
-<div class="grid-wrapper homepage-contribute-band homepage-body" id="contribute">
+<div class="grid-wrapper homepage-contribute-band homepage-body"
+     id="contribute">
   <div class="width-12-12 width-12-12-m">
     <div class="section-title">
       <div class="section-top">
-        <img class="section-icon" src="{{ homepage.contribute.section_icon }}" alt="{{ homepage.contribute.icon_alt }}" width="40" height="40"/>
+        <img class="section-icon"
+             src="{{ homepage.contribute.section_icon }}"
+             alt="{{ homepage.contribute.icon_alt }}"
+             width="40"
+             height="40" />
         <h2>{{ homepage.contribute.title }}</h2>
         <div class="section-view-more">
           <a href="{{ homepage.contribute.url }}">{{ homepage.labels.learn_more }}&ensp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
@@ -13,14 +18,17 @@
       <div class="contribute-box-left">
         <h3>{{ homepage.contribute.heading }}</h3>
         {% for item in homepage.contribute.ways %}
-        <ul>
-          <li>{{ item }}</li>
-        </ul>
+          <ul>
+            <li>{{ item }}</li>
+          </ul>
         {% endfor %}
         <p>{{ homepage.contribute.main }}</p>
       </div>
       <div class="contribute-box-right">
-        <img src="/images/bull-builder.svg" alt="{{ homepage.contribute.bull_builder_alt }}" width="150" height="172"/>
+        <img src="/images/bull-builder.svg"
+             alt="{{ homepage.contribute.bull_builder_alt }}"
+             width="150"
+             height="172" />
       </div>
     </div>
   </div>

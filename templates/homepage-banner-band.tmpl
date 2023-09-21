@@ -7,24 +7,35 @@
         <div class="banner-main-row">
           {% include "homepage-get-started.tmpl" %}
           <div class="banner-clipboard">
-            <button class="btn text-nowrap" data-clipboard-text="{{ homepage.banner.pip_install }}">
+            <button class="btn text-nowrap"
+                    data-clipboard-text="{{ homepage.banner.pip_install }}">
               <code>{{ homepage.banner.pip_install }}</code>&ensp;<i class="fa fa-copy" aria-hidden="true" />
             </button>
           </div>
           <div class="banner-latest-version">
             <p>
-              {{ homepage.banner.latest_version }}<br />{{ homepage.banner.how_to_install }}
+              {{ homepage.banner.latest_version }}
+              <br />
+              {{ homepage.banner.how_to_install }}
             </p>
           </div>
         </div>
         <div class="banner-platform-learn">
           <a href="#platform">
-            <img class="banner-redhat-logo" src="/images/redhat.svg" alt="{{ homepage.banner.redhat_logo_alt }}" width="20" height="20"/>&ensp;{{ homepage.platform.learn }}
+            <img class="banner-redhat-logo"
+                 src="/images/redhat.svg"
+                 alt="{{ homepage.banner.redhat_logo_alt }}"
+                 width="20"
+                 height="20" />
+            &ensp;{{ homepage.platform.learn }}
           </a>
         </div>
       </div>
       <div class="banner-welcome-image">
-        <img src="/images/bullito_welcome.svg" alt="{{ homepage.banner.welcome_alt }}" width="350" height="300"/>
+        <img src="/images/bullito_welcome.svg"
+             alt="{{ homepage.banner.welcome_alt }}"
+             width="350"
+             height="300" />
       </div>
     </div>
   </div>
