@@ -25,12 +25,16 @@
     font-size: 0.9rem;
     font-weight: bold;
   }
+  a {
+    color: $cyan;
+    text-decoration: underline;
+  }
 }
 
 .contribute-box-right {
   display: flex;
   flex-direction: row;
   img {
-    margin-left: 7rem;
+    margin-left: 2rem;
   }
 }
