@@ -3,6 +3,7 @@
 
 {% macro html_headstart() %}
 <!DOCTYPE html>
+{# djlint:off #}
 <html
 
 prefix='
@@ -201,3 +202,4 @@ lang="{{ lang }}">
         {% endif %}
     {% endfor %}
 {% endmacro %}
+{# djlint:on #}
