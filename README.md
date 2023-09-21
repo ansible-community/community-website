@@ -23,7 +23,27 @@ questions.
 The Ansible community website is static HTML generated from this repository.
 You can build the website locally if you want to evaluate changes or experiment.
 
-### Setting things up
+### Using nox
+
+This project includes a ``nox`` configuration to automate and simplify the build.
+
+Install ``nox``.
+
+    # Install nox with pip
+    python3 -m pip install nox
+
+    # Install nox on MacOS
+    brew install nox
+
+Run ``nox -s build`` to build the website locally.
+To see other available sessions, run ``nox --list``.
+
+### Running nikola directly
+
+The website is built with nikola.
+If you prefer using ``nikola`` commands directly, instead of using ``nox``, you can.
+
+#### Setting things up
 
 We recommend that you use a Python virtual environment.
 
@@ -36,7 +56,7 @@ We recommend that you use a Python virtual environment.
     # Install the required packages.
     python -m pip install --upgrade -r ./requirements.in -c ./requirements.txt
 
-### Building and viewing the site
+#### Building and viewing the site
 
 The Ansible community website is built with [Nikola](https://getnikola.com/).
 

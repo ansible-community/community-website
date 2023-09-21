@@ -1,6 +1,50 @@
 import nox
 
 @nox.session
+def build(session: nox.Session):
+    """
+    Build the Ansible community website.
+    """
+    session.install(
+      "-r", "requirements.in",
+      "-c", "requirements.txt",
+    )
+    session.run("nikola",
+        "build",
+        *session.posargs,
+        )
+
+@nox.session
+def clean(session: nox.Session):
+    """
+    Clean the output directory and nikola cache.
+    """
+    session.install(
+      "-r", "requirements.in",
+      "-c", "requirements.txt",
+    )
+    session.run("nikola",
+        "clean",
+        "--clean-dep",
+        *session.posargs,
+        )
+
+@nox.session
+def serve(session: nox.Session):
+    """
+    Serve the website from a local browser.
+    """
+    session.install(
+      "-r", "requirements.in",
+      "-c", "requirements.txt",
+    )
+    session.run("nikola",
+        "serve",
+        "-b",
+        *session.posargs,
+        )
+
+@nox.session
 def spelling(session: nox.Session):
     """
     Spell check the website and blog
