@@ -2,7 +2,7 @@
   <div class="width-12-12 width-12-12-m">
     <div class="section-title">
       <div class="section-top">
-        <img class="section-icon" src="{{ homepage.ecosystem.section_icon }}" />
+        <img class="section-icon" src="{{ homepage.ecosystem.section_icon }}" alt="{{ homepage.ecosystem.icon_alt }}" width="40" height="40"/>
         <h2>{{ homepage.ecosystem.title }}</h2>
         <div class="section-view-more">
           <a href="{{ homepage.ecosystem.url }}">{{ homepage.labels.view_more }}&ensp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
@@ -19,7 +19,7 @@
         <p>{{ item.description }}</p>
         <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
       </div>
-      <img class="ecosystem-logo" src="/images/{{ item.logo }}" width="95" height="95"/>
+      <img class="ecosystem-logo" src="/images/{{ item.logo }}" alt="{{ homepage.ecosystem.logo_alt }}" width="95" height="95"/>
     </div>
   </div>
   {% endfor %}
