@@ -5,7 +5,7 @@
 {{ set_locale(lang) }}
 {{ base.html_headstart() }}
 {% block extra_head %}
-{#  Leave this block alone. #}
+  {#  Leave this block alone. #}
 {% endblock extra_head %}
 {{ template_hooks['extra_head']() }}
 {# djlint:off #}
@@ -44,7 +44,7 @@
         <script>
         luxon.Settings.defaultLocale = "{{ luxon_locales[lang] }}";
         fancydates({{ date_fanciness }}, {{ luxon_date_format }});
-        </script>
+</script>
         <!-- end fancy dates -->
     {% endif %}
     {% block extra_js %}{% endblock %}
@@ -52,7 +52,7 @@
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
-    </script>
+</script>
     {% include "scripts.tmpl" %}
 {{ body_end }}
 {{ template_hooks['body_end']() }}

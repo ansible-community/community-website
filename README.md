@@ -53,6 +53,29 @@ The Ansible community website is built with [Nikola](https://getnikola.com/).
 
 > Nikola configuration for the website is in ``conf.py``.
 
+## Checking and formatting templates
+
+This project includes tooling that checks each Pull Request for issues with the website templates.
+If you modify the templates you should check and format them prior to submitting a PR.
+
+    # Check templates for issues.
+    nox -s lint
+
+    # Check templates and ignore rules.
+    nox -s lint -- --ignore=H006,H013,T002,T003,T028
+
+    # Check changes before formatting.
+    nox -s format -- --check
+
+    # Format templates.
+    nox -s format
+
+Default configuration for the linter and formatter is in the ``[tool.djlint]`` section of ``pyproject.toml``.
+For more information about configuration options, see:
+
+- [Linter](https://www.djlint.com/docs/linter/)
+- [Formatter](https://www.djlint.com/docs/formatter/)
+
 ## Code of Conduct
 
 The Ansible community team values diverse opinions and is committed to an inclusive

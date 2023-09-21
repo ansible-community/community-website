@@ -1,8 +1,13 @@
-<div class="grid-wrapper homepage-community-band homepage-body" id="community">
+<div class="grid-wrapper homepage-community-band homepage-body"
+     id="community">
   <div class="width-12-12 width-12-12-m">
     <div class="section-title">
       <div class="section-top">
-        <img class="section-icon" src="{{ homepage.community.section_icon }}" alt="{{ homepage.community.icon_alt }}" width="40" height="40"/>
+        <img class="section-icon"
+             src="{{ homepage.community.section_icon }}"
+             alt="{{ homepage.community.icon_alt }}"
+             width="40"
+             height="40" />
         <h2>{{ homepage.community.title }}</h2>
       </div>
     </div>
@@ -12,9 +17,9 @@
     <div class="community-socials">
       <div class="community-socials-row">
         {% for key, item in homepage.community.socials.links.items() %}
-        <div class="community-social-icons">
-          <a href="{{ item.url }}" title="{{ item.alt }}"><i class="{{ item.icon }}" aria-hidden="true"></i></a>
-        </div>
+          <div class="community-social-icons">
+            <a href="{{ item.url }}" title="{{ item.alt }}"><i class="{{ item.icon }}" aria-hidden="true"></i></a>
+          </div>
         {% endfor %}
       </div>
     </div>

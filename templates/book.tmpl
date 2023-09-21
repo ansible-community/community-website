@@ -1,13 +1,14 @@
 ## -*- coding: utf-8 -*-
-<%namespace name="helper" file="post_helper.tmpl"/>
-<%namespace name="pheader" file="post_header.tmpl"/>
-<%namespace name="comments" file="comments_helper.tmpl"/>
-<%inherit file="post.tmpl"/>
-
+<%namespace name="helper" file="post_helper.tmpl" />
+<%namespace name="pheader" file="post_header.tmpl" />
+<%namespace name="comments" file="comments_helper.tmpl" />
+<%inherit file="post.tmpl" />
 <%block name="extra_head">
-    ${parent.extra_head()}
-    <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
-    <style>
+${parent.extra_head()}
+<link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic'
+      rel='stylesheet'
+      type='text/css'>
+<style>
         .smallcaps {
             font-variant: small-caps;
         }
@@ -73,25 +74,25 @@
             margin-bottom: 0;
             text-align: justify;
         }
-    </style>
+</style>
 </%block>
-
 <%block name="content">
-<article class="storypage" itemscope="itemscope" itemtype="http://schema.org/Article">
-    <div class="frame">
+<article class="storypage"
+         itemscope="itemscope"
+         itemtype="http://schema.org/Article">
+  <div class="frame">
     <div class="scrolling-cont" id="scrolling-cont" name="scrolling-cont">
-    <div class="e-content entry-content chapter" itemprop="articleBody text">
-    <h1>${post.title()}</h1>
-    ${post.text()}
+      <div class="e-content entry-content chapter" itemprop="articleBody text">
+        <h1>${post.title()}</h1>
+        ${post.text()}
+      </div>
     </div>
-    </div>
-    </div>
+  </div>
 </article>
 </%block>
-
 <%block name="extra_js">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Flowtype.js/1.1.0/flowtype.min.js"></script>
-    <script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Flowtype.js/1.1.0/flowtype.min.js"></script>
+<script>
         $('#scrolling-cont').flowtype({
             minimum: 500,
             maximum: 1200,
@@ -113,5 +114,5 @@
                 }, 500)
             });
         });
-    </script>
+</script>
 </%block>
