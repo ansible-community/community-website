@@ -15,8 +15,8 @@
     <div class="blog-box">
       {% block content %}
         {{ post.text() }}
-      {% endblock %}
+      {% endblock content %}
     </div>
   </div>
-  {% include 'homepage-back-to-top.tmpl' %}
+  {% include "homepage-back-to-top.tmpl" %}
 </div>

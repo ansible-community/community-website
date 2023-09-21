@@ -47,13 +47,13 @@ bg-dark
                 {% if translations|length > 1 %}
                     <li>{{ base.html_translations() }}</li>
                 {% endif %}
-                {% endblock %}
+                {% endblock belowtitle %}
                 {% if show_sourcelink %}
-                    {% block sourcelink %}{% endblock %}
+                    {% block sourcelink %}{% endblock sourcelink %}
                 {% endif %}
                 {{ template_hooks['menu_alt']() }}
             </ul>
-            {% include 'base_nav_button.tmpl' %}
+            {% include "base_nav_button.tmpl" %}
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
 </nav>
