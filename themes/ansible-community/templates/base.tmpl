@@ -8,9 +8,9 @@
 {#  Leave this block alone. #}
 {% endblock %}
 {{ template_hooks['extra_head']() }}
+{# djlint:off #}
 </head>
 <body id="top">
-<a href="#content" class="sr-only sr-only-focusable">{{ messages("Skip to main content") }}</a>
 
 {% if permalink == '/' %}
 <div class="homepage-container" id="content" role="main">
@@ -58,3 +58,4 @@
 {{ template_hooks['body_end']() }}
 </body>
 </html>
+{# djlint:on #}
