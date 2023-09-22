@@ -6,6 +6,9 @@
   display: grid;
   grid-template-columns: repeat(5 1fr);
   gap: 20px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .tab-menu-row {

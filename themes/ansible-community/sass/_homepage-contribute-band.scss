@@ -4,13 +4,8 @@
 
 .contribute-content {
   display: flex;
-  margin-top: 1rem;
-  gap: 1rem;
-}
-
-.contribute-box-left {
-  display: flex;
   flex-direction: column;
+  margin-right: 2rem;
   h3 {
     font-size: 1rem;
     font-weight: bold;
@@ -21,7 +16,6 @@
     margin: 0%;
   }
   p {
-    margin-top: 1rem;
     font-size: 0.9rem;
     font-weight: bold;
   }
@@ -31,10 +25,11 @@
   }
 }
 
-.contribute-box-right {
+.contribute-bull {
   display: flex;
-  flex-direction: row;
   img {
-    margin-left: 2rem;
+    @media screen and (max-width: 1170px) {
+      width: 15rem;
+    }
   }
 }

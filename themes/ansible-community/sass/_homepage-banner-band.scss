@@ -3,21 +3,12 @@
   position: relative;
   padding-top: 3rem;
   padding-bottom: 6rem;
-  margin-left: 10%;
-  margin-right: 10%;
   gap: 10px;
 }
 
 .banner-row {
   display: flex;
   flex-direction: row;
-}
-
-.banner-welcome-image {
-  flex: 1;
-  img {
-    margin-left: 125px;
-  }
 }
 
 .banner-main-content {
@@ -42,6 +33,9 @@
 .banner-main-row {
   display: flex;
   flex-wrap: nowrap;
+  & > button {
+    font-weight: bold;
+  }
 }
 
 .banner-clipboard {
@@ -86,6 +80,7 @@
   font-weight: bold;
   font-size: 1rem;
   padding-top: 1rem;
+  white-space: nowrap;
   & > a {
     color: $black;
   }
@@ -93,4 +88,35 @@
 
 .banner-redhat-logo {
   margin-left: 10px;
+}
+
+.banner-welcome-image {
+  display: flex;
+  flex: 1;
+  img {
+    width: 25rem;
+    max-width: none;
+    padding-left: 4rem;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .banner-row {
+    flex-direction: column;
+  }
+
+  .banner-platform-learn {
+    white-space: normal;
+  }
+
+  .banner-welcome-image img {
+    width: 25rem;
+    padding-top: 2rem;
+    padding-left: 0;
+  }
+
+  .banner-welcome-image {
+    justify-content: center;
+  }
 }

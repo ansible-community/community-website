@@ -1,50 +1,34 @@
 <div class="grid-wrapper homepage-events-band homepage-body" id="events">
-  <div class="width-12-12 width-12-12-m">
-    <div class="section-title">
-      <div class="section-top">
-        <img class="section-icon"
-             src="{{ homepage.events.section_icon }}"
-             alt="{{ homepage.events.icon_alt }}"
-             width="40"
-             height="40" />
-        <h2>{{ homepage.events.title }}</h2>
-        <div class="section-view-more">
-          <a href="{{ homepage.events.url }}">{{ homepage.events.view_calendar }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <img class="section-icon"
+           src="{{ homepage.events.section_icon }}"
+           alt="{{ homepage.events.icon_alt }}"
+           width="40"
+           height="40" />
+      <h2>{{ homepage.events.title }}</h2>
+      <div class="section-view-more">
+        <a href="{{ homepage.events.url }}">{{ homepage.events.view_calendar }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
       </div>
-      <p>{{ homepage.events.intro }}</p>
     </div>
-    <div class="events-main">
-      {% for key, item in homepage.events.events_list.items() %}
-        <div class="events-box">
-          <div class="events-content">
-            <a href="{{ item.link }}"
-               title="Link to the event in the Discourse calendar.">
-              <img src="/images/{{ item.image }}"
-                   alt="{{ homepage.events.event_alt }}"
-                   width="720"
-                   height="360" />
-            </a>
-          </div>
-        </div>
-      {% endfor %}
-      {% for key, item in homepage.events.events_list.items() %}
-        <div class="events-box">
-          <div class="events-content">
-            <a href="{{ item.link }}"
-               title="Link to the event in the Discourse calendar.">
-              <h3>{{ item.name }}</h3>
-              <p>{{ item.description }}</p>
-              <p>
-                <strong>Date:&ensp;{{ item.date }}
-                  <br />
-                Location:&ensp;{{ item.location }}</strong>
-              </p>
-            </a>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
+    <p>{{ homepage.events.intro }}</p>
   </div>
+  {% for event_key, event_data in homepage.events.events_list.items() %}
+    <div class="events-content width-6-12 width-12-12-m">
+      <a href="{{ event_data.link }}" title="{{ homepage.events.tooltip }}">
+        <img src="/images/{{ event_data.image }}"
+             alt="{{ homepage.events.event_alt }}"
+             width="720"
+             height="360" />
+        <h3>{{ event_data.name }}</h3>
+        <p>{{ event_data.description }}</p>
+        <p>
+          <strong>Date:&ensp;{{ event_data.date }}
+            <br />
+          Location:&ensp;{{ event_data.location }}</strong>
+        </p>
+      </a>
+    </div>
+  {% endfor %}
   {% include "homepage-back-to-top.tmpl" %}
 </div>

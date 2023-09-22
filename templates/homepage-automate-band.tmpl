@@ -1,24 +1,22 @@
 <div class="grid-wrapper homepage-automate-band homepage-body"
      id="automate">
-  <div class="width-12-12 width-12-12-m">
-    <div class="section-title">
-      <div class="section-top">
-        <img class="section-icon"
-             src="{{ homepage.automate.section_icon }}"
-             alt="{{ homepage.automate.icon_alt }}"
-             width="40"
-             height="40" />
-        <h2>{{ homepage.automate.title }}</h2>
-      </div>
-      <p>{{ homepage.automate.intro }}</p>
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <img class="section-icon"
+           src="{{ homepage.automate.section_icon }}"
+           alt="{{ homepage.automate.icon_alt }}"
+           width="40"
+           height="40" />
+      <h2>{{ homepage.automate.title }}</h2>
     </div>
-    <div class="automate-content">
-      <h3>{{ homepage.automate.top_section.heading }}</h3>
-      <p>{{ homepage.automate.top_section.paragraphs.automation }}</p>
-      <h3>{{ homepage.automate.bottom_section.heading }}</h3>
-      <p>{{ homepage.automate.bottom_section.paragraphs.time }}</p>
-      <p>{{ homepage.automate.bottom_section.paragraphs.simple }}</p>
-    </div>
+    <p>{{ homepage.automate.intro }}</p>
+  </div>
+  <div class="automate-content width-12-12 width-12-12-m">
+    <h3>{{ homepage.automate.top_section.heading }}</h3>
+    <p>{{ homepage.automate.top_section.paragraphs.automation }}</p>
+    <h3>{{ homepage.automate.bottom_section.heading }}</h3>
+    <p>{{ homepage.automate.bottom_section.paragraphs.time }}</p>
+    <p>{{ homepage.automate.bottom_section.paragraphs.simple }}</p>
     {% include "homepage-get-started.tmpl" %}
   </div>
   {% include "homepage-back-to-top.tmpl" %}

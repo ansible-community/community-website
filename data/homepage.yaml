@@ -78,9 +78,10 @@ events:
   icon_alt: Calendar icon for Ansible community events.
   event_alt: Background image for an Ansible community event. You can find details for this community event in the body text next to the image.
   title: Events
-  intro: Join Ansible events, in person or online, to share and learn about automation.
+  intro: Share and learn about automation at Ansible events, in person or online.
   url: https://forum.ansible.com/c/events/
   view_calendar: View all Ansible events
+  tooltip: Visit the Ansible event calendar to find more information.
   events_list:
     event_one:
       name: Ansible Community Day
