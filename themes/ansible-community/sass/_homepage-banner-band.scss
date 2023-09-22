@@ -3,8 +3,6 @@
   position: relative;
   padding-top: 3rem;
   padding-bottom: 6rem;
-  margin-left: 10%;
-  margin-right: 10%;
   gap: 10px;
 }
 
@@ -15,8 +13,13 @@
 
 .banner-welcome-image {
 flex: 1;
+display: flex;
   img {
-    margin-left: 125px;
+    width: 25rem;
+    max-width: none;
+    padding-left: 4rem;
+    justify-content: center;
+
   }
 }
 
@@ -102,3 +105,19 @@ flex: 1;
   margin-left: 10px;
 }
 
+@media screen and (max-width: 1170px) {
+
+  .banner-row {
+  flex-direction: column;
+  }
+
+  .banner-welcome-image img  {
+    width: 25rem;
+    padding-top: 2rem;
+    padding-left: 0;
+  }
+
+  .banner-welcome-image {
+  justify-content: center;
+  }
+}

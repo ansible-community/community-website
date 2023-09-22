@@ -44,7 +44,7 @@
   }
 }
 
-@media (max-width: $breakpoint-l) {
+@media screen and (max-width: 768px) {
   .platform-row {
     grid-template-columns: 1fr;
   }

@@ -18,19 +18,12 @@
       {% for key, item in homepage.events.events_list.items() %}
         <div class="events-box">
           <div class="events-content">
-            <a href="{{ item.link }}"
+<a href="{{ item.link }}"
                title="Link to the event in the Discourse calendar.">
               <img src="/images/{{ item.image }}"
                    alt="{{ homepage.events.event_alt }}"
-                   width="720"
-                   height="360" />
+                   />
             </a>
-          </div>
-        </div>
-      {% endfor %}
-      {% for key, item in homepage.events.events_list.items() %}
-        <div class="events-box">
-          <div class="events-content">
             <a href="{{ item.link }}"
                title="Link to the event in the Discourse calendar.">
               <h3>{{ item.name }}</h3>
@@ -46,5 +39,4 @@
       {% endfor %}
     </div>
   </div>
-  {% include "homepage-back-to-top.tmpl" %}
 </div>

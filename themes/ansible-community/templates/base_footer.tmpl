@@ -1,6 +1,7 @@
 {#  -*- coding: utf-8 -*- #}
 {% macro html_footer() %}
   {% if content_footer %}
+  <div class="footer-container">
     <div class="content-slim redhat-footer">
       <div class="footer-left">
         <ul class="footer-left-links">
@@ -29,5 +30,6 @@
         </span>
       </div>
     </div>
+  </div>
   {% endif %}
 {% endmacro %}

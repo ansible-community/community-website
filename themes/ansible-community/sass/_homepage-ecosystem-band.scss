@@ -5,10 +5,10 @@
 
 .ecosystem-card {
   display: flex;
-  height: 160px;
+  min-height: 180px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  padding: 24px;
+  padding: 2rem;
   border-width: 1px;
   border-radius: 5px;
   background-color: $white;
@@ -23,7 +23,7 @@
 .ecosystem-content {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  padding-right: 2rem;
   h3 {
     font-size: 1rem;
     font-weight: 600;
@@ -55,9 +55,15 @@
 }
 
 .ecosystem-logo {
-  width: 20%;
+  width: 8rem;
   float: right;
-  @media screen and (max-width: 992px) {
-    display: none;
+
+    @media screen and (max-width: 1170px) {
+    width: 6rem;
   }
+
+    @media screen and (max-width: 768px) {
+    width: 8rem;
+  }
+
 }

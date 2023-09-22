@@ -11,6 +11,8 @@
 .contribute-box-left {
   display: flex;
   flex-direction: column;
+  margin-right: 2rem;
+
   h3 {
     font-size: 1rem;
     font-weight: bold;
@@ -34,7 +36,9 @@
 .contribute-box-right {
   display: flex;
   flex-direction: row;
-  img {
-    margin-left: 2rem;
+  img { 
+    @media screen and (max-width: 1170px) { 
+    width: 15rem;
+    }
   }
 }

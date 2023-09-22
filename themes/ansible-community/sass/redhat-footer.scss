@@ -1,11 +1,16 @@
 @import "colors";
 @import "fonts";
 
+.footer-container {
+  padding: 0 13rem;
+}
+
 .redhat-footer {
   background-color: $black;
   font-family: $redhat-display;
-  padding: 4rem;
   display: flex;
+  padding: 1rem 13rem;
+  margin: 0 -13rem;
 
   .footer-left {
     flex: 1;
@@ -56,7 +61,39 @@
   list-style-type: none;
   padding-left: unset;
 
-  li:not(:first-child) {
-    margin-top: 1.5rem;
+  li {
+  display: inline;
+  margin-right: 1rem;
+  white-space; nowrap;
+  }
+
+
+}
+
+@media screen and (max-width: 1170px) {
+
+  .footer-container {
+    padding: 0 6rem;
+  }
+
+  .redhat-footer {
+    padding: 1rem 6rem;
+    margin: 0 -6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .footer-container {
+    padding: 0 2rem;
+  }
+
+  .redhat-footer {
+    padding: 1rem 2rem;
+    margin: 0 -2rem;
+  }
+
+.footer-left-links li {
+  display: block;
   }
 }

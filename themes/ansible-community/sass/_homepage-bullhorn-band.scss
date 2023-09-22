@@ -1,48 +1,45 @@
 .homepage-bullhorn-band {
-  margin-top: 0;
   background-color: $pool;
   color: $black;
 }
 
 .bullhorn-content {
-  grid-column: span 2;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 40px;
 }
 
 .bullhorn-image {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 10px;
-  margin-left: 20%;
-  top: 0;
-  right: 0;
+  img {
+    max-width: none;
+  }
 }
 
 .bullhorn-subscribe {
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  padding-right: 20%;
+  grid-column-start: 2;
+  grid-column-end: 4;
+
   h2 {
     font-size: 1.4rem;
     text-align: center;
   }
+
   p {
     font-size: 0.9rem;
   }
+
   .subscribe-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 6px;
   }
+
   .subscribe-input {
     font-size: 0.8rem;
     line-height: 25px;
   }
+  
   .button {
     background-color: $navy;
     color: $white;
@@ -58,5 +55,15 @@
       background-color: $white;
       color: $black;
     }
+  }
+}
+
+
+@media screen and (max-width: 1170px) { }
+
+@media screen and (max-width: 768px) {
+
+  .bullhorn-image { 
+  display: none;
   }
 }
