@@ -21,6 +21,7 @@
 }
 
 .banner-main-content {
+  width: fit-content;
   border-radius: 10px;
   background-color: $white;
   padding: 2rem;
@@ -45,34 +46,40 @@
 
 .banner-clipboard {
   display: flex;
-  font-size: 0.9rem;
   .btn {
     display: flex;
     flex-direction: row;
-    font-size: 0.9rem;
-    text-align: left;
     background-color: $white !important;
-    border-width: 0;
-    border-color: transparent;
-  }
-  code {
     color: $cyan !important;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: $cyan !important;
+    margin-right: 1px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.8rem;
+    align-items: center;
     &:hover {
-      color: $cyan !important;
-    }
-  }
-  .fa-copy {
-    color: $cyan;
-    font-size: 20px;
-    padding-top: 10px;
-    background-color: transparent;
-    &:hover {
-      color: $cyan !important;
+      background-color: $cyan !important;
+      color: $white !important;
     }
   }
   @media screen and (max-width: 768px) {
     display: none;
   }
+}
+
+.popup {
+  display: flex;
+  padding: 0 3px;
+  background-color: $black !important;
+  color: $grey94 !important;
+  border-radius: 1px;
+  font-size: 0.8rem;
+  align-items: center;
+}
+
+.popup.hidden {
+  display: none;
 }
 
 .banner-platform-learn {
@@ -82,25 +89,6 @@
   & > a {
     color: $black;
   }
-}
-
-.popup {
-  display: inline-block;
-  position: absolute;
-  top: 190px;
-  background-color: $black !important;
-  padding: 3px;
-  border-radius: 1px;
-  p {
-    color: $grey94 !important;
-    &:hover {
-      color: $grey94 !important;
-    }
-  }
-}
-
-.popup.hidden {
-  display: none;
 }
 
 .banner-redhat-logo {
