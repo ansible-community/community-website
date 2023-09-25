@@ -2,10 +2,18 @@
   background-color: $grey94;
 }
 
+.contribute-title {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: 1.8rem;
+    text-transform: none;
+  }
+}
+
 .contribute-content {
   display: flex;
   flex-direction: column;
-  margin-right: 2rem;
   h3 {
     font-size: 1rem;
     font-weight: bold;
@@ -27,9 +35,13 @@
 
 .contribute-bull {
   display: flex;
+  width: 30rem;
   img {
     @media screen and (max-width: 1170px) {
       width: 15rem;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 }

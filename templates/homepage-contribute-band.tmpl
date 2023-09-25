@@ -1,6 +1,6 @@
 <div class="grid-wrapper homepage-contribute-band homepage-body"
      id="contribute">
-  <div class="section-title width-12-12 width-12-12-m">
+  <div class="contribute-title width-8-12 width-12-12-m">
     <div class="section-top">
       <img class="section-icon"
            src="{{ homepage.contribute.section_icon }}"
@@ -9,23 +9,26 @@
            height="40" />
       <h2>{{ homepage.contribute.title }}</h2>
     </div>
+    <p>{{ homepage.contribute.intro }}</p>
+    <div class="contribute-content">
+      <h3>{{ homepage.contribute.heading }}</h3>
+      {% for item in homepage.contribute.ways %}
+        <ul>
+          <li>{{ item }}</li>
+        </ul>
+      {% endfor %}
+      <p>
+        {{ homepage.contribute.involved }}&nbsp;Check out our <a href="{{ homepage.contribute.resources_url }}" target="_blank">contributor resources</a> or <a href="{{ homepage.contribute.chat_url }}" target="_blank">chat with community members</a> - we'd love to have you.
+      </p>
+    </div>
   </div>
-  <div class="contribute-content width-10-12 width-12-12-m">
-    <h3>{{ homepage.contribute.heading }}</h3>
-    {% for item in homepage.contribute.ways %}
-      <ul>
-        <li>{{ item }}</li>
-      </ul>
-    {% endfor %}
-    <p>
-      {{ homepage.contribute.involved }}&nbsp;Check out our <a href="{{ homepage.contribute.resources_url }}" target="_blank">contributor resources</a> or <a href="{{ homepage.contribute.chat_url }}" target="_blank">chat with community members</a> - we'd love to have you.
-    </p>
-  </div>
-  <div class="contribute-bull width-2-12 width-12-12-m">
-    <img src="/images/bull-builder.svg"
-         alt="{{ homepage.contribute.bull_builder_alt }}"
-         width="150"
-         height="172" />
+  <div class="contribute-bull width-4-12 width-12-12-m">
+    <a href="{{ homepage.contribute.resources_url }}" target="_blank">
+      <img src="/images/bull-builder.svg"
+           alt="{{ homepage.contribute.bull_builder_alt }}"
+           width="357"
+           height="302" />
+    </a>
   </div>
   {% include "homepage-back-to-top.tmpl" %}
 </div>
