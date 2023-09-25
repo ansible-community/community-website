@@ -1,5 +1,5 @@
 [tool.codespell]
-skip = './cache,./output,./venv,./plugins,conf.py,./posts'
+skip = './cache,./output,./venv,./plugins,conf.py,./posts,*.svg'
 count = ''
 check-filenames = true
 quiet-level = 3
