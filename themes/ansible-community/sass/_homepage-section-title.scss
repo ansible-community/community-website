@@ -2,12 +2,10 @@
   display: flex;
   flex-direction: column;
   h2 {
-    font-family: $redhat-display;
     font-size: 1.8rem;
     text-transform: none;
   }
   p {
-    font-family: $redhat-display;
     font-size: 1rem;
     text-transform: none;
     padding: 1rem 0;
@@ -27,8 +25,7 @@
 }
 
 .section-view-more {
-  font-family: $redhat-display;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-transform: none;
   margin-left: auto;
 }

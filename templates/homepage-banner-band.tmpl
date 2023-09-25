@@ -8,16 +8,13 @@
           {% include "homepage-get-started.tmpl" %}
           <div class="banner-clipboard">
             <button class="btn text-nowrap"
-                    data-clipboard-text="{{ homepage.banner.pip_install }}">
-              <code>{{ homepage.banner.pip_install }}</code>&ensp;<i class="fa fa-copy" aria-hidden="true" />
+                    data-clipboard-text="{{ homepage.banner.pip_install }}"
+                    title="{{ homepage.banner.install_tooltip }}">
+              {{ homepage.banner.pip_install }}&ensp;<i class="fa fa-copy" aria-hidden="true" />
             </button>
-          </div>
-          <div class="banner-latest-version">
-            <p>
-              {{ homepage.banner.latest_version }}
-              <br />
-              {{ homepage.banner.how_to_install }}
-            </p>
+            <div id="clipboard-popup" class="popup hidden">
+              <p>{{ homepage.banner.copy_success_message }}</p>
+            </div>
           </div>
         </div>
         <div class="banner-platform-learn">
@@ -28,6 +25,7 @@
                  width="20"
                  height="20" />
             &ensp;{{ homepage.platform.learn }}
+            <i class="fa fa-arrow-right" aria-hidden="true" />
           </a>
         </div>
       </div>

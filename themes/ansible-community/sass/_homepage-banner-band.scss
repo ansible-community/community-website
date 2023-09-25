@@ -14,66 +14,53 @@
 }
 
 .banner-welcome-image {
-flex: 1;
+  flex: 1;
   img {
     margin-left: 125px;
   }
 }
 
 .banner-main-content {
+  width: fit-content;
   border-radius: 10px;
   background-color: $white;
   padding: 2rem;
   flex: 1;
   h2 {
-    font-family: $redhat-display;
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 600;
+    text-decoration: solid;
   }
-  & > p{
-    font-family: $redhat-display;
+  & > p {
+    padding-top: 12px;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 500;
+    text-decoration: solid;
   }
 }
 
-.banner-main-row  {
+.banner-main-row {
   display: flex;
   flex-wrap: nowrap;
-  & > *{
-    flex: 1;
-    width: 100%;
-  }
-  & > button {
-    font-weight: bold;
-  }
-
 }
 
 .banner-clipboard {
   display: flex;
-  align-items: center;
-  font-size: 0.9rem;
-  text-align: left;
-  padding-right: 1rem;
   .btn {
-    font-size: 0.9rem;
+    display: flex;
+    flex-direction: row;
     background-color: $white !important;
+    color: $cyan !important;
     border-width: 1px;
     border-radius: 2px;
     border-color: $cyan !important;
-  }
-  code {
-    color: $navy !important;
+    margin-right: 1px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.8rem;
+    align-items: center;
     &:hover {
-      color: $cyan !important;
-    }
-  }
-  .fa-copy {
-    color: $navy;
-    background-color: transparent;
-    &:hover {
-      color: $cyan !important;
+      background-color: $cyan !important;
+      color: $white !important;
     }
   }
   @media screen and (max-width: 768px) {
@@ -81,24 +68,29 @@ flex: 1;
   }
 }
 
-.banner-latest-version {
+.popup {
+  display: flex;
+  padding: 0 3px;
+  background-color: $black !important;
+  color: $grey94 !important;
+  border-radius: 1px;
   font-size: 0.8rem;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+  align-items: center;
+}
+
+.popup.hidden {
+  display: none;
 }
 
 .banner-platform-learn {
-  font-family: $redhat-display;
-  font-weight:bold;
-  font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 1rem;
   padding-top: 1rem;
   & > a {
-    color:black
+    color: $black;
   }
 }
 
 .banner-redhat-logo {
   margin-left: 10px;
 }
-
