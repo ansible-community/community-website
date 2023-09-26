@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   h2 {
-    font-size: 1.8rem;
+    font-size: $font-xl;
     text-transform: none;
   }
 }
@@ -15,16 +15,16 @@
   display: flex;
   flex-direction: column;
   h3 {
-    font-size: 1rem;
+    font-size: $font-md;
     font-weight: bold;
   }
   ul {
-    font-size: 0.9rem;
+    font-size: $font-md;
     list-style-type: circle;
     margin: 0%;
   }
   p {
-    font-size: 0.9rem;
+    font-size: $font-md;
     font-weight: bold;
   }
   a {

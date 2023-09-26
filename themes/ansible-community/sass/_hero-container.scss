@@ -16,6 +16,8 @@
     padding: 0 2rem;
   }
 
+  /* masthead applies to the homepage only.
+     size of fonts is set in the global _nav-bar.scss file */
   .masthead {
     display: grid;
     grid-template-columns: 1fr 1fr;

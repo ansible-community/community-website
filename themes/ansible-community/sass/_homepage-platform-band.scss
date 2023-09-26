@@ -1,6 +1,5 @@
 .homepage-platform-band {
   background-color: $grey94;
-  font-size: 1rem;
 }
 
 .platform-row {
@@ -25,11 +24,14 @@
   flex-direction: column;
   grid-column-start: 2;
   grid-column-end: 4;
+  p {
+    font-size: $font-md;
+  }
   .platform-learn-more {
     a {
       background-color: $red-hat-red;
       color: $white;
-      font-size: 0.9rem;
+      font-size: $font-md;
       font-weight: bold;
       &:hover {
         background-color: $red-hat-red;

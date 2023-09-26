@@ -6,17 +6,18 @@
 .events-content {
   flex: 1;
   a {
-    font-size: 1rem;
+    font-size: $font-sm;
     color: $black;
     text-transform: none;
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: $font-lg;
     text-transform: none;
     margin-top: 3rem;
   }
   p {
     text-align: left;
+    font-size: $font-sm;
   }
   img {
     width: auto;
