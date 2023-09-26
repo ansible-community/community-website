@@ -19,7 +19,7 @@
     padding-bottom: 2rem;
   }
   h3 {
-    font-size: 1.5rem;
+    font-size: $font-lg;
     text-transform: none;
   }
   p {
@@ -32,7 +32,7 @@
 
 .blog-author {
   p {
-    font-size: 1rem;
+    font-size: $font-xs;
     text-align: left;
     padding-bottom: 10px;
   }

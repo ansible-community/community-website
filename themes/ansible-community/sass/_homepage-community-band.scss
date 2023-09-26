@@ -20,7 +20,7 @@
 }
 
 .community-social-text {
-  font-size: 40px;
+  font-size: 2.5rem; /* sets the size of the fa icons */
   text-decoration: none;
   color: $cyan;
   &:hover {
@@ -31,6 +31,6 @@
     background-color: transparent;
   }
   p {
-    font-size: 1rem;
+    font-size: $font-sm;
   }
 }

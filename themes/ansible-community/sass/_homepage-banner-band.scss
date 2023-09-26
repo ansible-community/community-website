@@ -18,13 +18,13 @@
   padding: 2rem;
   flex: 1;
   h2 {
-    font-size: 2rem;
+    font-size: $font-xxl;
     font-weight: 600;
     text-decoration: solid;
   }
   & > p {
     padding-top: 12px;
-    font-size: 1rem;
+    font-size: $font-lg;
     font-weight: 500;
     text-decoration: solid;
   }
@@ -50,7 +50,7 @@
     border-color: $cyan !important;
     margin-right: 1px;
     font-family: "Courier New", Courier, monospace;
-    font-size: 0.8rem;
+    font-size: $font-xs;
     align-items: center;
     &:hover {
       background-color: $cyan !important;
@@ -68,7 +68,7 @@
   background-color: $black !important;
   color: $grey94 !important;
   border-radius: 1px;
-  font-size: 0.8rem;
+  font-size: $font-xs;
   align-items: center;
 }
 
@@ -78,7 +78,7 @@
 
 .banner-platform-learn {
   font-weight: bold;
-  font-size: 1rem;
+  font-size: $font-md;
   padding-top: 1rem;
   white-space: nowrap;
   & > a {

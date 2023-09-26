@@ -25,17 +25,17 @@
   flex-direction: column;
   padding-right: 2rem;
   h3 {
-    font-size: 1rem;
+    font-size: $font-lg;
     font-weight: 600;
     text-transform: none;
   }
   p {
-    font-size: 0.9rem;
+    font-size: $font-sm;
     text-transform: none;
     text-align: left;
   }
   a {
-    font-size: 0.9rem;
+    font-size: $font-sm;
     font-weight: 600;
     text-align: center;
   }

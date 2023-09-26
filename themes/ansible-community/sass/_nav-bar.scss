@@ -11,6 +11,19 @@
   }
   #blog-title {
     color: $black;
+    font-size: $font-lg;
+  }
+}
+
+.navbar-nav {
+  a {
+    font-size: $font-sm;
+  }
+}
+
+.dropdown-menu {
+  a {
+    font-size: $font-sm;
   }
 }
 
