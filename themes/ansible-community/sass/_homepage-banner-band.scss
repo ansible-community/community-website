@@ -15,7 +15,7 @@
   width: fit-content;
   border-radius: 10px;
   background-color: $white;
-  padding: 2rem;
+  padding: 3rem;
   flex: 1;
   h2 {
     font-size: $font-xxl;
@@ -92,7 +92,7 @@
 
 .banner-welcome-image {
   display: flex;
-  flex: 1;
+
   img {
     width: 25rem;
     max-width: none;
