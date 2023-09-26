@@ -35,17 +35,17 @@
     margin-bottom: 0 !important;
     border: 0 !important;
     .dropdown-menu {
-      background-color: $pool;
+      background-color: $grey94;
       a {
         color: $black !important;
         &:hover {
-          color: $white !important;
+          color: $black !important;
         }
       }
     }
     .dropdown-item {
       &:hover {
-        background-color: $pool !important;
+        background-color: $white !important;
       }
     }
   }

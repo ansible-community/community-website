@@ -32,24 +32,21 @@
     justify-content: center;
     gap: 6px;
   }
-  .subscribe-input {
-    font-size: 0.8rem;
-    line-height: 25px;
+  .subscribe-input input {
+    height: 3rem;
+    padding-left: 1rem;
   }
   .button {
-    background-color: $cyan;
+    font-size: 0.9rem;
     color: $white;
-    border: 0;
+    background-color: $cyan;
+    border-width: 1px;
     border-radius: 2px;
-    padding: 10%;
-    width: fit-content;
-    height: 30px;
-    text-transform: none;
-    text-align: center;
-    font-size: 0.8rem;
+    border-color: $cyan;
+    padding: .75rem 1rem;
     &:hover {
-      background-color: $white;
-      color: $black;
+      background-color: $white !important;
+      color: $navy !important;
     }
   }
 }
@@ -58,6 +55,17 @@
 }
 
 @media screen and (max-width: 768px) {
+  
+  .bullhorn-subscribe .subscribe-row {
+  flex-direction: column;
+  }
+
+  .bullhorn-subscribe .button {
+  width: 100%;
+  }
+  .bullhorn-subscribe .subscribe-input input {
+  width: 100%;
+  }
   .bullhorn-image {
     display: none;
   }

@@ -52,6 +52,7 @@
     font-family: "Courier New", Courier, monospace;
     font-size: 0.8rem;
     align-items: center;
+    padding: .75rem 1rem;
     &:hover {
       background-color: $cyan !important;
       color: $white !important;
@@ -60,6 +61,12 @@
   @media screen and (max-width: 768px) {
     display: none;
   }
+
+  a {
+      @media screen and (max-width: 768px) {
+      width: 100%;
+      }
+    }
 }
 
 .popup {
