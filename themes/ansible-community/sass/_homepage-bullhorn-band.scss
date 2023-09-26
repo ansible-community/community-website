@@ -3,62 +3,76 @@
   color: $black;
 }
 
-.bullhorn-content {
-  display: grid;
-}
-
-.bullhorn-image {
+.bullhorn-blast {
+  display: flex;
   img {
-    max-width: none;
+    width: 30rem;
+    @media screen and (max-width: 1170px) {
+      width: 15rem;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }
 
 .bullhorn-subscribe {
   display: flex;
   flex-direction: column;
-  grid-column-start: 2;
-  grid-column-end: 4;
+  justify-content: center;
+  text-align: center;
   h2 {
-    font-size: 1.4rem;
-    text-align: center;
+    font-size: $font-xl;
+    padding-bottom: 24px;
   }
-  p {
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  .subscribe-row {
+  .bullhorn-subscribe-call {
     display: flex;
-    flex-direction: row;
+    text-align: left;
     justify-content: center;
-    gap: 6px;
-  }
-  .subscribe-input {
-    font-size: 0.8rem;
-    line-height: 25px;
-  }
-  .button {
-    background-color: $cyan;
-    color: $white;
-    border: 0;
-    border-radius: 2px;
-    padding: 10%;
-    width: fit-content;
-    height: 30px;
-    text-transform: none;
-    text-align: center;
-    font-size: 0.8rem;
-    &:hover {
-      background-color: $white;
-      color: $black;
+    white-space: nowrap;
+    padding-bottom: 24px;
+    p {
+      font-size: $font-md;
+    }
+    @media screen and (max-width: 768px) {
+      white-space: normal;
     }
   }
-}
-
-@media screen and (max-width: 1170px) {
-}
-
-@media screen and (max-width: 768px) {
-  .bullhorn-image {
-    display: none;
+  .bullhorn-subscribe-row {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
+    .bullhorn-subscribe-input {
+      font-size: $font-sm;
+      line-height: 2rem;
+      input {
+        width: 32rem;
+      }
+      @media screen and (max-width: 768px) {
+        input {
+          max-width: 28rem;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        input {
+          max-width: 16rem;
+        }
+      }
+    }
+    .button {
+      background-color: $cyan;
+      color: $white;
+      border: 0;
+      border-radius: 2px;
+      padding: 10%;
+      text-transform: none;
+      text-align: center;
+      font-size: $font-sm;
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
   }
 }
