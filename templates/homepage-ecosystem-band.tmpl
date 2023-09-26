@@ -1,35 +1,31 @@
 <div class="grid-wrapper homepage-ecosystem-band homepage-body"
      id="ecosystem">
-  <div class="width-12-12 width-12-12-m">
-    <div class="section-title">
-      <div class="section-top">
-        <img class="section-icon"
-             src="{{ homepage.ecosystem.section_icon }}"
-             alt="{{ homepage.ecosystem.icon_alt }}"
-             width="40"
-             height="40" />
-        <h2>{{ homepage.ecosystem.title }}</h2>
-        <div class="section-view-more">
-          <a href="{{ homepage.ecosystem.url }}">{{ homepage.labels.view_more }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <img class="section-icon"
+           src="{{ homepage.ecosystem.section_icon }}"
+           alt="{{ homepage.ecosystem.icon_alt }}"
+           width="40"
+           height="40" />
+      <h2>{{ homepage.ecosystem.title }}</h2>
+      <div class="section-view-more">
+        <a href="{{ homepage.ecosystem.url }}">{{ homepage.labels.view_more }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
       </div>
-      <p>{{ homepage.ecosystem.intro }}</p>
     </div>
+    <p>{{ homepage.ecosystem.intro }}</p>
   </div>
   {% for key, item in homepage.ecosystem.projects.items() %}
-    <div class="width-6-12 width-12-12-m">
-      <div class="ecosystem-card">
-        <div class="ecosystem-content">
-          <h3>{{ item.heading }}</h3>
-          <p>{{ item.description }}</p>
-          <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
-        </div>
-        <img class="ecosystem-logo"
-             src="/images/{{ item.logo }}"
-             alt="{{ homepage.ecosystem.logo_alt }}"
-             width="95"
-             height="95" />
+    <div class="ecosystem-card width-6-12 width-12-12-m">
+      <div class="ecosystem-content">
+        <h3>{{ item.heading }}</h3>
+        <p>{{ item.description }}</p>
+        <a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.learn_more }}</a>
       </div>
+      <img class="ecosystem-logo"
+           src="/images/{{ item.logo }}"
+           alt="{{ homepage.ecosystem.logo_alt }}"
+           width="95"
+           height="95" />
     </div>
   {% endfor %}
   {% include "homepage-back-to-top.tmpl" %}

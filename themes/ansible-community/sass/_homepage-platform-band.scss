@@ -6,7 +6,7 @@
 .platform-row {
   grid-column: span 2;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
 }
 
@@ -44,7 +44,7 @@
   }
 }
 
-@media (max-width: $breakpoint-l) {
+@media screen and (max-width: 768px) {
   .platform-row {
     grid-template-columns: 1fr;
   }

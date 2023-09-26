@@ -1,19 +1,19 @@
 <div class="grid-wrapper homepage-blog-band homepage-body" id="blog">
-  <div class="width-12-12 width-12-12-m">
-    <div class="section-title">
-      <div class="section-top">
-        <img class="section-icon"
-             src="{{ homepage.blog.section_icon }}"
-             alt="{{ homepage.blog.icon_alt }}"
-             width="40"
-             height="40" />
-        <h2>{{ homepage.blog.title }}</h2>
-        <div class="section-view-more">
-          <a href="{{ homepage.blog.url }}">{{ homepage.labels.view_more }}&ensp;<i class="fa fa-arrow-right"></i></a>
-        </div>
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <img class="section-icon"
+           src="{{ homepage.blog.section_icon }}"
+           alt="{{ homepage.blog.icon_alt }}"
+           width="40"
+           height="40" />
+      <h2>{{ homepage.blog.title }}</h2>
+      <div class="section-view-more">
+        <a href="{{ homepage.blog.url }}">{{ homepage.labels.view_more }}&ensp;<i class="fa fa-arrow-right"></i></a>
       </div>
-      <p>{{ homepage.blog.intro }}</p>
     </div>
+    <p>{{ homepage.blog.intro }}</p>
+  </div>
+  <div class="width-12-12 width-12-12-m">
     {# shortcodes have to come from the markdown files, they don't work here, so the post_listing call is in pages/index.md #}
     {# the homepage-blog-band class is also applied in index.md, otherwise a stray p element shows up #}
     <div class="blog-box">

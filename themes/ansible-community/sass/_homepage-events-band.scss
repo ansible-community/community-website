@@ -1,37 +1,25 @@
 .homepage-events-band {
-  margin-top: 0;
   background-color: $white;
   text-align: left;
 }
 
-.events-main {
-  grid-column: span 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.events-box {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-}
-
 .events-content {
   flex: 1;
-  padding-right: 20px;
   a {
     font-size: 1rem;
     color: $black;
     text-transform: none;
   }
   h3 {
-    margin-top: 20px;
     font-size: 1.5rem;
     text-transform: none;
+    margin-top: 3rem;
   }
   p {
     text-align: left;
+  }
+  img {
+    width: auto;
+    height: auto;
   }
 }

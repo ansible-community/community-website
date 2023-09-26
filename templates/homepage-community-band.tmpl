@@ -1,30 +1,26 @@
 <div class="grid-wrapper homepage-community-band homepage-body"
      id="community">
-  <div class="width-12-12 width-12-12-m">
-    <div class="section-title">
-      <div class="section-top">
-        <img class="section-icon"
-             src="{{ homepage.community.section_icon }}"
-             alt="{{ homepage.community.icon_alt }}"
-             width="40"
-             height="40" />
-        <h2>{{ homepage.community.title }}</h2>
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <img class="section-icon"
+           src="{{ homepage.community.section_icon }}"
+           alt="{{ homepage.community.icon_alt }}"
+           width="40"
+           height="40" />
+      <h2>{{ homepage.community.title }}</h2>
+    </div>
+    <p>{{ homepage.community.ansible_community }}</p>
+  </div>
+  <div class="community-socials width-12-12 width-12-12-m">
+    <div class="community-socials-row">
+      {% for key, item in homepage.community.socials.links.items() %}
+        <div class="community-social-icons">
+          <a href="{{ item.url }}" title="{{ item.alt }}"><span class="community-social-text"><i class="{{ item.icon }}" aria-hidden="true" />
+            <p>{{ item.text }}</p>
+          </span>
+        </a>
       </div>
-    </div>
-    <div class="community-intro">
-      <p>{{ homepage.community.ansible_community }}</p>
-    </div>
-    <div class="community-socials">
-      <div class="community-socials-row">
-        {% for key, item in homepage.community.socials.links.items() %}
-          <div class="community-social-icons">
-            <a href="{{ item.url }}" title="{{ item.alt }}"><span class="community-social-text"><i class="{{ item.icon }}" aria-hidden="true" />
-              <p>{{ item.text }}</p>
-            </span>
-          </a>
-        </div>
-      {% endfor %}
-    </div>
+    {% endfor %}
   </div>
 </div>
 {% include "homepage-back-to-top.tmpl" %}

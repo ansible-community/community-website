@@ -169,3 +169,10 @@ __pycache__/
 
 # Sass cache directory
 .sass-cache
+
+# macOS desktop services store
+data/.DS_Store
+.DS_Store
+themes/.DS_Store
+themes/ansible-community/.DS_Store
+themes/ansible-community/sass/.DS_Store

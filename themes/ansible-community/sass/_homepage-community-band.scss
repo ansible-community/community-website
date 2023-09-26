@@ -2,33 +2,18 @@
   background-color: $white;
 }
 
-.community-intro {
-  p {
-    text-align: justify;
-    padding-top: 10px;
-  }
-}
-
-.community-socials {
-  text-align: center;
-  margin-top: 10px;
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-bottom: 8px;
-}
-
 .community-socials-row {
-  grid-column: span 5;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 8px;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .community-social-icons {
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   a {
     text-decoration: none;
   }

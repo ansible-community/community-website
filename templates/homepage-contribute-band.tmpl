@@ -1,35 +1,34 @@
 <div class="grid-wrapper homepage-contribute-band homepage-body"
      id="contribute">
-  <div class="width-12-12 width-12-12-m">
-    <div class="section-title">
-      <div class="section-top">
-        <img class="section-icon"
-             src="{{ homepage.contribute.section_icon }}"
-             alt="{{ homepage.contribute.icon_alt }}"
-             width="40"
-             height="40" />
-        <h2>{{ homepage.contribute.title }}</h2>
-      </div>
+  <div class="contribute-title width-8-12 width-12-12-m">
+    <div class="section-top">
+      <img class="section-icon"
+           src="{{ homepage.contribute.section_icon }}"
+           alt="{{ homepage.contribute.icon_alt }}"
+           width="40"
+           height="40" />
+      <h2>{{ homepage.contribute.title }}</h2>
     </div>
+    <p>{{ homepage.contribute.intro }}</p>
     <div class="contribute-content">
-      <div class="contribute-box-left">
-        <h3>{{ homepage.contribute.heading }}</h3>
-        {% for item in homepage.contribute.ways %}
-          <ul>
-            <li>{{ item }}</li>
-          </ul>
-        {% endfor %}
-        <p>
-          {{ homepage.contribute.involved }}&nbsp;Check out our <a href="{{ homepage.contribute.resources_url }}" target="_blank">contributor resources</a> or <a href="{{ homepage.contribute.chat_url }}" target="_blank">chat with community members</a> - we'd love to have you.
-        </p>
-      </div>
-      <div class="contribute-box-right">
-        <img src="/images/bull-builder.svg"
-             alt="{{ homepage.contribute.bull_builder_alt }}"
-             width="150"
-             height="172" />
-      </div>
+      <h3>{{ homepage.contribute.heading }}</h3>
+      {% for item in homepage.contribute.ways %}
+        <ul>
+          <li>{{ item }}</li>
+        </ul>
+      {% endfor %}
+      <p>
+        {{ homepage.contribute.involved }}&nbsp;Check out our <a href="{{ homepage.contribute.resources_url }}" target="_blank">contributor resources</a> or <a href="{{ homepage.contribute.chat_url }}" target="_blank">chat with community members</a> - we'd love to have you.
+      </p>
     </div>
+  </div>
+  <div class="contribute-bull width-4-12 width-12-12-m">
+    <a href="{{ homepage.contribute.resources_url }}" target="_blank">
+      <img src="/images/bull-builder.svg"
+           alt="{{ homepage.contribute.bull_builder_alt }}"
+           width="357"
+           height="302" />
+    </a>
   </div>
   {% include "homepage-back-to-top.tmpl" %}
 </div>

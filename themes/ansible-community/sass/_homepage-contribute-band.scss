@@ -2,13 +2,16 @@
   background-color: $grey94;
 }
 
-.contribute-content {
+.contribute-title {
   display: flex;
-  margin-top: 1rem;
-  gap: 1rem;
+  flex-direction: column;
+  h2 {
+    font-size: 1.8rem;
+    text-transform: none;
+  }
 }
 
-.contribute-box-left {
+.contribute-content {
   display: flex;
   flex-direction: column;
   h3 {
@@ -21,7 +24,6 @@
     margin: 0%;
   }
   p {
-    margin-top: 1rem;
     font-size: 0.9rem;
     font-weight: bold;
   }
@@ -31,10 +33,15 @@
   }
 }
 
-.contribute-box-right {
+.contribute-bull {
   display: flex;
-  flex-direction: row;
+  width: 30rem;
   img {
-    margin-left: 2rem;
+    @media screen and (max-width: 1170px) {
+      width: 15rem;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 }
