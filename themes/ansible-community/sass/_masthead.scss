@@ -1,0 +1,17 @@
+/**
+Global masthead properties.
+**/
+.masthead {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+
+  .navbar-right {
+    li {
+      margin-left: 10px;
+    }
+  }
+}
