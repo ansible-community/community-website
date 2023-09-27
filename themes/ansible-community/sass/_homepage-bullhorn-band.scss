@@ -34,7 +34,7 @@
     p {
       font-size: $font-md;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 992px) {
       white-space: normal;
     }
   }
@@ -47,16 +47,16 @@
       font-size: $font-sm;
       line-height: 2rem;
       input {
-        width: 32rem;
+        width: 40rem;
+      }
+      @media screen and (max-width: 992px) {
+        input {
+          max-width: 24rem;
+        }
       }
       @media screen and (max-width: 768px) {
         input {
-          max-width: 28rem;
-        }
-      }
-      @media screen and (max-width: 600px) {
-        input {
-          max-width: 16rem;
+          max-width: 24rem;
         }
       }
     }
