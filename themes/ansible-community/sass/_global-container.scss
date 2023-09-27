@@ -1,0 +1,40 @@
+.global-container {
+  padding: 0 13rem;
+
+  @media screen and (max-width: 1170px) {
+    padding: 0 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0 2rem;
+  }
+}
+
+/** No vertical padding **/
+.full-width-bg {
+  margin: 0 -13rem;
+  padding: 0 13rem;
+
+  @media screen and (max-width: 1170px) {
+    margin: 0 -6rem;
+    padding: 0 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0 -2rem;
+    padding: 0 2rem;
+  }
+}
+
+/** Uses vertical padding **/
+.full-width-band {
+  margin: 0 -13rem;
+  padding: 4rem 13rem;
+
+  @media screen and (max-width: 1170px) {
+    margin: 0 -6rem;
+    padding: 3rem 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0 -2rem;
+    padding: 2rem 2rem;
+  }
+}
