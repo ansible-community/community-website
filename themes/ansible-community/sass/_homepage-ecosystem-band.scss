@@ -5,18 +5,18 @@
 
 .ecosystem-card {
   display: flex;
-  min-height: 180px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   padding: 2rem;
   border-width: 1px;
   border-radius: 5px;
   background-color: $white;
+  justify-content: stretch;
+
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
   @media screen and (max-width: 992px) {
-    height: max-content;
   }
 }
 
@@ -24,6 +24,8 @@
   display: flex;
   flex-direction: column;
   padding-right: 2rem;
+  justify-content: space-between;
+
   h3 {
     font-size: $font-lg;
     font-weight: 600;
@@ -36,8 +38,7 @@
   }
   a {
     font-size: $font-sm;
-    font-weight: 600;
-    text-align: center;
+    white-space: nowrap;
   }
   .btn {
     color: $navy;
