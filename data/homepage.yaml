@@ -79,22 +79,21 @@ events:
   title: Events
   intro: Share and learn about automation at Ansible events, in person or online.
   url: https://forum.ansible.com/c/events/
-  view_calendar: View all Ansible events
-  tooltip: Visit the Ansible event calendar to find more information.
+  view_calendar: View more
   events_list:
     event_one:
-      name: Ansible Community Day
+      name: Nerdearla 2023
       description: Get together with a broad community of users, contributors, entusiasts, IT professionals and more to learn and share about Ansible automation.
-      date: September 20, 2023
-      location: Berlin, Germany
-      image: community-day-berlin-2023.png
-      link: https://forum.ansible.com/t/ansible-community-day-berlin-2023/19
+      date: October 1, 2023
+      location: Buenos Aires, Argentina
+      image: nerdearla-detailed-no-bg.svg
+      link: https://forum.ansible.com/t/nerdearla-2023-buenos-aires/47
     event_two:
       name: Ansible Contributor Summit
       description: Interact with the Ansible contributor community and Ansible at Red Hat engineering teams to improve collaboration and possibly do some hacking.
       date: October 19, 2023
       location: Durham, North Carolina, USA
-      image: contributor-summit-durham-2023.png
+      image: ansible-contributor-summit.svg
       link: https://forum.ansible.com/t/ansible-contributor-summit-durham-2023/28
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
