@@ -13,14 +13,16 @@
   h3 {
     font-size: $font-lg;
     text-transform: none;
-    margin-top: 3rem;
+    text-decoration: solid;
   }
   p {
     text-align: left;
     font-size: $font-sm;
+    margin-bottom: 1rem;
   }
   img {
-    width: auto;
+    width: 60%;
     height: auto;
+    padding: 1rem 0;
   }
 }
