@@ -6,25 +6,21 @@
   justify-content: start;
   text-align: center;
   img {
-    width: 50px;
+    width: 3.125rem;
     height: auto;
     margin-right: 16px;
   }
   #blog-title {
     color: $black;
     font-size: $font-lg;
+    &:hover {
+      color: $cyan !important;
+    }
   }
-}
-
-.navbar-nav {
-  a {
-    font-size: $font-sm;
-  }
-}
-
-.dropdown-menu {
-  a {
-    font-size: $font-sm;
+  @media screen and (max-width: 992px) {
+    #blog-title {
+      display: none;
+    }
   }
 }
 
@@ -36,6 +32,28 @@ Set overriding homepage properties in the hero-container class.
 .navbar {
   margin-bottom: 0 !important;
   border: 0 !important;
+  a {
+    font-size: $font-sm;
+  }
+  .dropdown-menu {
+    background-color: $grey94;
+    a {
+      color: $black !important;
+      padding: 0.75rem 1rem;
+      &:hover {
+        color: $black !important;
+      }
+    }
+    .dropdown-item.active,
+    .dropdown-item:active {
+      background-color: $grey94;
+    }
+  }
+  .dropdown-item {
+    &:hover {
+      background-color: $white !important;
+    }
+  }
 }
 
 .nav-toggle-icon {
