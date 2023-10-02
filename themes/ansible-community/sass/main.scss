@@ -28,6 +28,9 @@ body {
   font-family: $font-text;
   position: relative;
   min-height: 100vh;
+  a {
+    color: $cyan;
+  }
 }
 h1 {
   font-family: $font-display;
