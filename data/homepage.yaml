@@ -79,7 +79,6 @@ events:
   title: Events
   intro: Share and learn about automation at Ansible events, in person or online.
   url: https://forum.ansible.com/c/events/
-  view_calendar: View more
   events_list:
     event_one:
       name: Nerdearla 2023
