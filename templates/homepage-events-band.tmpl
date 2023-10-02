@@ -15,19 +15,27 @@
   </div>
   {% for event_key, event_data in homepage.events.events_list.items() %}
     <div class="events-content width-6-12 width-12-12-m">
+      <div class="event-image">
+        <a href="{{ event_data.link }}">
+          <img src="/images/events/{{ event_data.image }}"
+               alt="{{ event_data.alt }}"
+               width="auto"
+               height="auto" />
+        </a>
+      </div>
       <a href="{{ event_data.link }}">
         <h3>{{ event_data.name }}</h3>
-        <img src="/images/events/{{ event_data.image }}"
-             alt="{{ homepage.events.event_alt }}"
-             width="210"
-             height="93" />
+      </a>
+      <div class="event-description">
         <p>{{ event_data.description }}</p>
+      </div>
+      <div class="event-details">
         <p>
           <strong>Date:&ensp;{{ event_data.date }}
             <br />
           Location:&ensp;{{ event_data.location }}</strong>
         </p>
-      </a>
+      </div>
     </div>
   {% endfor %}
   {% include "homepage-back-to-top.tmpl" %}
