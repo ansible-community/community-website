@@ -48,7 +48,7 @@
   background-color: $cyan;
   padding: inherit;
   a {
-    font-size: $font-sm;
+    font-size: $font-md;
     color: $white;
     text-decoration: none;
     &:hover {
@@ -68,8 +68,8 @@
     border-radius: 2px;
     border-color: $cyan !important;
     margin-right: 1px;
-    font-family: "Courier New", Courier, monospace;
-    font-size: $font-xs;
+    font-family: $font-monospace;
+    font-size: $font-md;
     align-items: center;
     &:hover {
       background-color: $cyan !important;
@@ -87,7 +87,7 @@
   background-color: $black !important;
   color: $grey94 !important;
   border-radius: 1px;
-  font-size: $font-xs;
+  font-size: $font-sm;
   align-items: center;
 }
 
