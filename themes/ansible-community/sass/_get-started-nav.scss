@@ -2,18 +2,15 @@
   display: flex;
   align-items: center;
   text-align: center;
+  background-color: $cyan;
   margin: 0;
-  padding: 0 10px 0 20px;
-  .btn {
+  padding: 0.5rem;
+  a {
     font-size: $font-sm;
     color: $white;
-    background-color: $cyan;
-    border-width: 1px;
-    border-radius: 2px;
-    border-color: $cyan;
+    text-decoration: none;
     &:hover {
-      background-color: $white !important;
-      color: $navy !important;
+      color: $pool !important;
     }
   }
 }

@@ -32,9 +32,28 @@
 
 .banner-main-row {
   display: flex;
+  flex-direction: row;
+  padding: 0.5rem;
   flex-wrap: nowrap;
+  gap: 0.75rem;
   & > button {
     font-weight: bold;
+  }
+}
+
+.banner-start-ansible {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: $cyan;
+  padding: inherit;
+  a {
+    font-size: $font-sm;
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      color: $pool !important;
+    }
   }
 }
 
