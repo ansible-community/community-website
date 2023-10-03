@@ -65,11 +65,11 @@ community:
         text: LinkedIn
 bullhorn:
   title: Subscribe to the Bullhorn
-  about: The Bullhorn is a weekly newsletter full of the Ansible Community's latest news and updates.
-  unsubscribe: You can unsubscribe at any time.
-  placeholder: Insert email address here
-  button: Subscribe
-  subscribe_alt: Subscribe to the Ansible bullhorn newsletter to receive the latest news and updates.
+  about: The Bullhorn is a weekly newsletter full of Ansible Community news and updates.
+  forum_text: Read the latest edition
+  subscribe: Subscribe
+  forum_link: https://forum.ansible.com/c/news/bullhorn/17
+  forum_feed: https://forum.ansible.com/c/news/bullhorn/17.rss
 events:
   section_icon: /assets/images/calendar-cyan.svg
   icon_alt: Calendar icon for Ansible community events.

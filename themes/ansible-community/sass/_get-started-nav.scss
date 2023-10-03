@@ -9,6 +9,7 @@
     font-size: $font-md;
     color: $white;
     text-decoration: none;
+    white-space: nowrap;
     &:hover {
       color: $pool !important;
     }

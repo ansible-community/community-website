@@ -23,55 +23,28 @@
   text-align: center;
   h2 {
     font-size: $font-xl;
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
   }
-  .bullhorn-subscribe-call {
-    display: flex;
-    text-align: left;
-    justify-content: center;
-    white-space: nowrap;
-    padding-bottom: 24px;
-    p {
-      font-size: $font-md;
-    }
-    @media screen and (max-width: 992px) {
-      white-space: normal;
-    }
+  p {
+    font-size: $font-md;
+    padding-bottom: 1.5rem;
   }
   .bullhorn-subscribe-row {
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 12px;
-    .bullhorn-subscribe-input {
-      font-size: $font-sm;
-      line-height: 2rem;
-      input {
-        width: 40rem;
-      }
-      @media screen and (max-width: 992px) {
-        input {
-          max-width: 24rem;
-        }
-      }
-      @media screen and (max-width: 768px) {
-        input {
-          max-width: 24rem;
-        }
-      }
-    }
-    .button {
-      background-color: $cyan;
+    gap: 1.5rem;
+  }
+  .bullhorn-link {
+    background-color: $cyan;
+    padding: 0.5rem;
+    a {
+      font-size: $font-md;
       color: $white;
-      border: 0;
-      border-radius: 2px;
-      padding: 10%;
-      text-transform: none;
-      text-align: center;
-      font-size: $font-sm;
+      text-decoration: none;
       &:hover {
-        background-color: $white;
-        color: $black;
+        color: $pool !important;
       }
     }
   }
