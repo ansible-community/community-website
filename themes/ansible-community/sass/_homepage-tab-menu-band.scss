@@ -15,22 +15,24 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.tab-menu-box {
   a {
     text-decoration: none;
   }
-  .btn {
-    display: flex;
-    padding: 20px;
-    font-size: $font-lg;
-    align-items: center;
-  }
+}
+
+.tab-menu-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-lg;
   img {
     float: left;
     width: auto;
-    height: 40px;
+    height: 2.5rem;
+  }
+  p {
+    white-space: nowrap;
+    padding: 1.75rem 1rem;
   }
   &:hover {
     background-color: $white;
