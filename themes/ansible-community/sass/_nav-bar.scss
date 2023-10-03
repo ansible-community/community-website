@@ -34,6 +34,7 @@ Set overriding homepage properties in the hero-container class.
   border: 0 !important;
   a {
     font-size: $font-md;
+    white-space: nowrap;
   }
   .dropdown-menu {
     background-color: $grey94;
