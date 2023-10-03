@@ -10,7 +10,7 @@ automate:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Automation icon that represents a control node modifying state of a managed node.
   title: Why Ansible?
-  intro: Working in IT, you're likely doing the same tasks over and over. What if you could solve problems once and then automate your solutions going forward? Ansible is here to help.
+  intro: Ansible is open-source technology that can automate virtually any IT task.
   top_section:
     heading: Complexity kills productivity.
     paragraphs:
@@ -34,9 +34,7 @@ community:
   section_icon: /assets/images/community-cyan.svg
   icon_alt: Community icon that represents a group of people collaborating on automation.
   title: Community
-  ansible_community: >-
-    Ansible is built on open source collaboration.
-    Join us and get involved with our amazing community!
+  ansible_community: Join us and get involved with our amazing community!
   socials:
     title: Hang out with us
     links:
@@ -103,7 +101,7 @@ ecosystem:
   section_icon: /assets/images/communities-cyan.svg
   icon_alt: Ecosystem icon that represents several projects that provide Ansible automation capabilities.
   title: Ecosystem
-  intro: Projects in the Ansible ecosystem let you expand automation to a virtually unlimited set of use cases.
+  intro: Projects in the Ansible ecosystem let you expand automation to an unlimited set of use cases.
   url: https://docs.ansible.com/ecosystem.html
   projects:
     awx:
@@ -134,7 +132,7 @@ blog:
   section_icon: /assets/images/blog-cyan.svg
   icon_alt: Blog icon that represents the Ansible community blog.
   title: Blog
-  intro: Recent blog posts about all things Ansible.
+  intro: Check out some recent blog posts from the Ansible community.
   url: /blog/
 contribute:
   section_icon: /assets/images/collaboration-cyan.svg
