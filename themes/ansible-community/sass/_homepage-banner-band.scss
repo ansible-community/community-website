@@ -49,6 +49,7 @@
   padding: inherit;
   a {
     font-size: $font-md;
+    font-weight: bold;
     color: $white;
     text-decoration: none;
     &:hover {
@@ -69,7 +70,8 @@
     border-color: $cyan !important;
     margin-right: 1px;
     font-family: $font-monospace;
-    font-size: $font-md;
+    font-size: $font-sm;
+    font-weight: bold;
     align-items: center;
     &:hover {
       background-color: $cyan !important;
