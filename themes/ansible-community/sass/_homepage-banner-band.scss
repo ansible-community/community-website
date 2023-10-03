@@ -97,7 +97,7 @@
 .banner-platform-learn {
   font-size: $font-md;
   font-weight: 500;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
   white-space: nowrap;
   & > a {
     color: $black;
@@ -105,7 +105,9 @@
 }
 
 .banner-redhat-logo {
-  margin-left: 10px;
+  margin-left: 8px;
+  width: 2rem;
+  height: auto;
 }
 
 .banner-welcome-image {
