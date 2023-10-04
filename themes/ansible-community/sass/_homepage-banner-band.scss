@@ -49,6 +49,7 @@
     font-weight: 500;
     color: $white;
     text-decoration: none;
+    white-space: nowrap;
     &:hover {
       color: $pool !important;
     }
