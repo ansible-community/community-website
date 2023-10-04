@@ -4,11 +4,11 @@ banner:
   pip_install: pip install ansible
   install_tooltip: Copy the pip command to install the latest version of Ansible.
   copy_success_message: Copied!
-  redhat_logo_alt: Red Hat Ansible Automation product logo.
-  welcome_alt: Bullito the Ansible community mascot welcomes you.
+  redhat_logo_alt: Red Hat logo
+  welcome_alt: Welcome to Ansible
 automate:
   section_icon: /assets/images/automation-cyan.svg
-  icon_alt: Automation icon that represents a control node modifying state of a managed node.
+  icon_alt: Ansible automation icon
   title: Why Ansible?
   intro: Ansible is open-source technology that can automate virtually any IT task.
   top_section:
@@ -32,7 +32,7 @@ automate:
         After all, automation should not be more complex than the tasks it replaces.
 community:
   section_icon: /assets/images/community-cyan.svg
-  icon_alt: Community icon that represents a group of people collaborating on automation.
+  icon_alt: Ansible community icon
   title: Community
   ansible_community: Join us and get involved with our amazing community!
   socials:
@@ -41,27 +41,27 @@ community:
       forum:
         url: https://forum.ansible.com/
         icon: fab fa-discourse
-        alt: Join the Ansible forum.
+        alt: Join the Ansible forum
         text: Forum
       matrix:
         url: https://matrix.to/#/#social:ansible.com
         icon: fa fa-matrix-org
-        alt: Chat with us on Matrix.
+        alt: Chat with us on Matrix
         text: Matrix
       mastodon:
         url: https://fosstodon.org/@ansible
         icon: fa fa-mastodon
-        alt: Get in touch on Mastodon.
+        alt: Get in touch on Mastodon
         text: Mastodon
       youtube:
         url: https://www.youtube.com/ansiblecommunity
         icon: fab fa-youtube
-        alt: Subscribe to our YouTube channel.
+        alt: Subscribe to our YouTube channel
         text: YouTube
       linkedin:
         url: https://www.linkedin.com/groups/4648083/
         icon: fab fa-linkedin
-        alt: Check out our LinkedIn group.
+        alt: Check out our LinkedIn group
         text: LinkedIn
 bullhorn:
   title: Subscribe to the Bullhorn
@@ -72,7 +72,7 @@ bullhorn:
   forum_feed: https://forum.ansible.com/c/news/bullhorn/17.rss
 events:
   section_icon: /assets/images/calendar-cyan.svg
-  icon_alt: Calendar icon for Ansible community events.
+  icon_alt: Ansible community event icon
   title: Events
   intro: Share and learn about automation at Ansible events, in person or online.
   url: https://forum.ansible.com/c/events/
@@ -92,7 +92,7 @@ events:
       date: October 1, 2023
       location: Buenos Aires, Argentina
       image: nerdearla-detailed-no-bg.svg
-      alt: Nerdearla event graphic
+      alt: Nerdearla logo
       link: https://forum.ansible.com/t/nerdearla-2023-buenos-aires/47
     event_two:
       name: Ansible Contributor Summit
@@ -102,16 +102,16 @@ events:
       date: October 19, 2023
       location: Durham, North Carolina, USA
       image: ansible-contributor-summit.svg
-      alt: Ansible Contributor Summit event graphic
+      alt: Ansible Contributor Summit logo
       link: https://forum.ansible.com/t/ansible-contributor-summit-durham-2023/28
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
   learn: View more about Red Hat Ansible Automation Platform
-  logo_alt: Red Hat Ansible Automation Platform
+  logo_alt: Red Hat Ansible Automation Platform logo
 ecosystem:
   section_icon: /assets/images/communities-cyan.svg
-  icon_alt: Ecosystem icon that represents several projects that provide Ansible automation capabilities.
+  icon_alt: Ansible ecosystem icon
   title: Ecosystem
   intro: Projects in the Ansible ecosystem let you expand automation to an unlimited set of use cases.
   url: https://docs.ansible.com/ecosystem.html
@@ -142,14 +142,14 @@ ecosystem:
       alt: Event-Driven Ansible project logo
 blog:
   section_icon: /assets/images/blog-cyan.svg
-  icon_alt: Blog icon that represents the Ansible community blog.
+  icon_alt: Ansible community blog icon
   title: Blog
   intro: Check out some recent blog posts from the Ansible community.
   url: /blog/
 contribute:
   section_icon: /assets/images/collaboration-cyan.svg
   icon_alt: Ansible community contributor icon
-  bull_builder_alt: The Ansible bull builder mascot wears a protective helmet and high visibility jacket to represent a community contributor.
+  bull_builder_alt: Ansible bull contributor logo
   title: Contribute
   resources_url: https://forum.ansible.com/pub/how-to-contribute
   chat_url: https://matrix.to/#/#social:ansible.com
