@@ -15,25 +15,25 @@
   </div>
   {% for event_key, event_data in homepage.events.events_list.items() %}
     <div class="events-content width-6-12 width-12-12-m">
-      <div class="event-image">
-        <a href="{{ event_data.link }}">
+      <a href="{{ event_data.link }}">
+        <div class="event-image">
           <img src="/images/events/{{ event_data.image }}"
                alt="{{ event_data.alt }}"
                width="auto"
                height="auto" />
-        </a>
-      </div>
-      <a href="{{ event_data.link }}">
-        <h3>{{ event_data.name }}</h3>
+        </div>
+        <div class="event-title">
+          <h3>{{ event_data.name }}</h3>
+        </div>
       </a>
       <div class="event-description">
         <p>{{ event_data.description }}</p>
       </div>
       <div class="event-details">
         <p>
-          <strong>Date:&ensp;{{ event_data.date }}
-            <br />
-          Location:&ensp;{{ event_data.location }}</strong>
+          Date:&ensp;{{ event_data.date }}
+          <br />
+          Location:&ensp;{{ event_data.location }}
         </p>
       </div>
     </div>
