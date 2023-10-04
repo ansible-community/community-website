@@ -38,7 +38,7 @@
     .btn {
       border-radius: 2px;
       padding: 14px;
-      width: fit-content;
+      width: 100%;
     }
   }
 }
@@ -55,10 +55,5 @@
   .platform-box-right {
     grid-column-start: initial;
     grid-column-end: initial;
-    .platform-learn-more {
-      .btn {
-        width: 100%;
-      }
-    }
   }
 }

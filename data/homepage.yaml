@@ -107,7 +107,7 @@ events:
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
-  learn: Learn about Red Hat Ansible Automation Platform
+  learn: View more about Red Hat Ansible Automation Platform
   logo_alt: Red Hat Ansible Automation Platform
 ecosystem:
   section_icon: /assets/images/communities-cyan.svg
