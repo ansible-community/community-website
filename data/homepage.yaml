@@ -174,3 +174,4 @@ links:
     get_started_url: https://docs.ansible.com/ansible/latest/getting_started/index.html
   platform:
     home: https://www.redhat.com/en/technologies/management/ansible
+    use_cases: https://www.redhat.com/en/technologies/management/ansible/use-cases
