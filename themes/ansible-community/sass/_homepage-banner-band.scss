@@ -78,9 +78,11 @@
   font-weight: 500;
   padding-top: 1.5rem;
   white-space: nowrap;
-  & > a {
-    color: $black;
-    padding-left: 0.25rem;
+  .banner-platform-link {
+    a {
+      color: $black;
+      padding-left: 0.25rem;
+    }
   }
 }
 

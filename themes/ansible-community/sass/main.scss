@@ -6,7 +6,7 @@
 @import "masthead";
 @import "nav-bar";
 @import "hero-container";
-@import "homepage-anchors";
+@import "homepage-clickable";
 @import "homepage-section-title";
 @import "homepage-back-to-top";
 @import "homepage-banner-band";
@@ -28,7 +28,7 @@ body {
   position: relative;
   min-height: 100vh;
   a {
-    color: $cyan;
+    color: $blue-anchor;
   }
 }
 h1 {

@@ -1,3 +1,5 @@
+/* styles for anchors and links */
+
 /* controls anchors on the homepage
    that act like buttons */
 .homepage-anchor {
@@ -21,6 +23,7 @@
   background-color: $red-hat-red;
 }
 
+/* tabs in the secondary menu */
 .tab-menu-anchor {
   display: flex;
   padding: 1.75rem;
@@ -39,4 +42,11 @@
     background-color: $white;
     color: $navy;
   }
+}
+
+/* controls text elements next to
+   anchors, such as fa icons */
+.homepage-link {
+  color: $blue-anchor;
+  white-space: nowrap;
 }
