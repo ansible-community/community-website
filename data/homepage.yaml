@@ -151,6 +151,7 @@ contribute:
   section_icon: /assets/images/collaboration-cyan.svg
   icon_alt: Ansible community contributor icon
   bull_builder_alt: Ansible bull contributor logo
+  aria_label: Visit the forum and find out how to contribute
   title: Contribute
   resources_url: https://forum.ansible.com/pub/how-to-contribute
   chat_url: https://matrix.to/#/#social:ansible.com
