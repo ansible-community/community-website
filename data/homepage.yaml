@@ -6,6 +6,7 @@ banner:
   copy_success_message: Copied!
   redhat_logo_alt: Red Hat logo
   welcome_alt: Welcome to Ansible
+  platform_learn: Learn about Red Hat Ansible Automation Platform
 automate:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Ansible automation icon
