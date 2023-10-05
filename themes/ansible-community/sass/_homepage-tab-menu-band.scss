@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: center;
   font-size: $font-lg;
+  padding: 1.75rem;
   img {
     float: left;
     width: auto;
@@ -32,7 +33,6 @@
   }
   p {
     white-space: nowrap;
-    padding: 1.75rem 1rem;
   }
   &:hover {
     background-color: $white;
