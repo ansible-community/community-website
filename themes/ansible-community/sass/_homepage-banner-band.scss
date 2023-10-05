@@ -102,12 +102,12 @@
   white-space: nowrap;
   & > a {
     color: $black;
+    padding-left: 0.25rem;
   }
 }
 
 .banner-redhat-logo {
-  margin-left: 8px;
-  width: 2rem;
+  width: 1.125rem;
   height: auto;
 }
 
