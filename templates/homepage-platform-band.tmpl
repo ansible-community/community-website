@@ -3,7 +3,7 @@
   <div class="width-12-12 width-12-12-m">
     <div class="platform-row">
       <div class="platform-box-left">
-        <a href="{{ homepage.links.platform.use_cases }}">
+        <a href="{{ homepage.links.platform.use_cases }}" target="_blank">
           <img src="/images/platform.svg"
                alt="{{ homepage.platform.logo_alt }}"
                width="500"
@@ -13,9 +13,10 @@
       <div class="platform-box-right max-width-prose">
         <p>{{ homepage.platform.main }}</p>
         <p>{{ homepage.platform.discover }}</p>
-        <div class="platform-learn-more">
-          <a class="btn" href="{{ homepage.links.platform.home }}" role="button">{{ homepage.platform.learn }}</a>
-        </div>
+        <a class="homepage-anchor platform-anchor"
+           href="{{ homepage.links.platform.home }}"
+           role="button"
+           target="_blank">{{ homepage.platform.learn }}</a>
       </div>
     </div>
   </div>

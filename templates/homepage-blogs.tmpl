@@ -3,11 +3,11 @@
   {% for post in posts %}
     <div class="blog-content">
       <h2>
-        <a href="{{ post.permalink(lang) }}">{{ post.title(lang) |e }}</a>
+        <a href="{{ post.permalink(lang) }}" target="_blank">{{ post.title(lang) |e }}</a>
       </h2>
       <div class="blog-author">
         <p>
-          by <a href="/authors/{{ post.author() | slugify() }}">{{ post.author() }}</a> - {{ post.date.strftime("%_d %b '%y") }}
+          by <a href="/authors/{{ post.author() | slugify() }}" target="_blank">{{ post.author() }}</a> - {{ post.date.strftime("%_d %b '%y") }}
         </p>
       </div>
       {{ post.text(teaser_only=True) }}

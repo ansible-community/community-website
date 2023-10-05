@@ -9,16 +9,14 @@
     <h2>{{ homepage.bullhorn.title }}</h2>
     <p>{{ homepage.bullhorn.about }}</p>
     <div class="bullhorn-subscribe-row">
-      <div class="bullhorn-link">
-        <a href="{{ homepage.bullhorn.forum_link }}"
-           target="_blank"
-           role="button">{{ homepage.bullhorn.forum_text }}</a>
-      </div>
-      <div class="bullhorn-link">
-        <a href="{{ homepage.bullhorn.forum_feed }}"
-           target="_blank"
-           role="button">{{ homepage.bullhorn.subscribe }}&ensp;<i class="fa fa-rss" aria-hidden="true" /></a>
-      </div>
+      <a class="homepage-anchor"
+         href="{{ homepage.bullhorn.forum_link }}"
+         role="button"
+         target="_blank">{{ homepage.bullhorn.forum_text }}</a>
+      <a class="homepage-anchor"
+         href="{{ homepage.bullhorn.forum_feed }}"
+         role="button"
+         target="_blank">{{ homepage.bullhorn.subscribe }}&ensp;<i class="fa fa-rss" aria-hidden="true" /></a>
     </div>
   </div>
 </div>

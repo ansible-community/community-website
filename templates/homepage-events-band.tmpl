@@ -8,14 +8,14 @@
            height="40" />
       <h2>{{ homepage.events.title }}</h2>
       <div class="section-view-more">
-        <a href="{{ homepage.events.url }}">{{ homepage.labels.view_more }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></a>
+        <a href="{{ homepage.events.url }}" target="_blank">{{ homepage.labels.view_more }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></a>
       </div>
     </div>
     <p>{{ homepage.events.intro }}</p>
   </div>
   {% for event_key, event_data in homepage.events.events_list.items() %}
     <div class="events-content width-6-12 width-12-12-m">
-      <a href="{{ event_data.link }}">
+      <a href="{{ event_data.link }}" target="_blank">
         <div class="event-image">
           <img src="/images/events/{{ event_data.image }}"
                alt="{{ event_data.alt }}"
