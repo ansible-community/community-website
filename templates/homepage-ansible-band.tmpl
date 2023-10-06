@@ -1,0 +1,27 @@
+<div class="grid-wrapper homepage-ansible-band full-width-band"
+     id="ansible">
+  <div class="section-title width-8-12 width-12-12-m">
+    <div class="section-top">
+      <img class="section-icon"
+           src="{{ homepage.ansible.section_icon }}"
+           alt="{{ homepage.ansible.icon_alt }}"
+           width="40"
+           height="40" />
+      <h2>{{ homepage.ansible.title }}</h2>
+    </div>
+    <p>{{ homepage.ansible.intro }}</p>
+    <div class="what-is-ansible max-width-prose">
+      <h3>{{ homepage.ansible.top_section.heading }}</h3>
+      <p>{{ homepage.ansible.top_section.body }}</p>
+      <h3>{{ homepage.ansible.bottom_section.heading }}</h3>
+      <p>{{ homepage.ansible.bottom_section.body }}</p>
+    </div>
+  </div>
+  <div class="community-logo width-4-12 width-12-12-m">
+    <img src="/images/community_logo_black.svg"
+         alt="{{ homepage.ansible.logo_alt }}"
+         width="500px"
+         height="500px" />
+  </div>
+  {% include "homepage-back-to-top.tmpl" %}
+</div>
