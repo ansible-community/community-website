@@ -7,9 +7,10 @@ banner:
   redhat_logo_alt: Red Hat logo
   welcome_alt: Welcome to Ansible
   platform_learn: Learn about Red Hat Ansible Automation Platform
-automate:
+ansible:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Ansible automation icon
+  logo_alt: Ansible community logo
   title: What is Ansible?
   intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
   top_section:

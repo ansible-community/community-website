@@ -1,0 +1,29 @@
+.homepage-ansible-band {
+  background-color: $white;
+}
+
+.what-is-ansible {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: $font-md;
+    font-weight: bold;
+  }
+  p {
+    font-size: $font-md;
+    font-weight: normal;
+  }
+}
+
+.community-logo {
+  display: flex;
+  width: 30rem;
+  img {
+    @media screen and (max-width: 992px) {
+      width: 20rem;
+    }
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
