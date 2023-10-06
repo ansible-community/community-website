@@ -12,8 +12,8 @@
 </head>
 <body id="top">
 
-{% if permalink == '/' %}
 <div class="global-container" id="content" role="main">
+  {% if permalink == '/' %}
     {% block hero_content %}{% endblock hero_content %}
     <div class="body-content">
         <!--Body content-->
@@ -21,11 +21,8 @@
         {% block homepage_content %}{% endblock homepage_content %}
         <!--End of body content-->
     </div>
-</div>
-{% endif %}
-
-{% if permalink != '/' %}
-<div class="global-container" id="content" role="main">
+  {% endif %}
+  {% if permalink != '/' %}
     {% include "base_nav.tmpl" %}
     <div class="body-content full-width-band">
         <!--Body content-->
@@ -34,9 +31,9 @@
         {% block content %}{% endblock content %}
         <!--End of body content-->
     </div>
+  {% endif %}
+    {{ footer.html_footer() }}
 </div>
-{% endif %}
-{{ footer.html_footer() }}
 
 {{ base.late_load_js() }}
     {% if date_fanciness != 0 %}
