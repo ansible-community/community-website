@@ -10,27 +10,19 @@ banner:
 automate:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Ansible automation icon
-  title: Why Ansible?
-  intro: Ansible is open-source technology that can automate virtually any IT task.
+  title: What is Ansible?
+  intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
   top_section:
-    heading: Complexity kills productivity.
-    paragraphs:
-      automation: >-
-        Modern society is built on digital solutions.
-        Technology is the engine of innovation and moving faster helps you stay ahead.
-        Say hello to Ansible - simple, yet powerful IT automation that drives out complexity and accelerates workflows.
+    heading: Code that reads like documentation
+    body: >-
+      Ansible is an automation language that can describe any IT environment, whether homelab or large scale infrastructure.
+      It is easy to learn, beautiful code that reads like clear documentation.
   bottom_section:
-    heading: Ansible loves the repetitive work you hate.
-    paragraphs:
-      time: >-
-        No one likes repetitive tasks.
-        Automation lets you can eliminate drudgery from your daily routine to focus on efforts that deliver more value and solve problems that really matter.
-        Ultimately, automation gives you the one thing you cannot buy or replace: time.
-        Ansible allows smart people to focus on smart things.
-      simple: >-
-        Ansible is a simple automation language that can perfectly describe any IT environment, whether homelab setups or complex IT application infrastructures.
-        It is easy to learn, beautiful code that reads like clear documentation.
-        After all, automation should not be more complex than the tasks it replaces.
+    heading: Freedom from repetitive tasks
+    body: >-
+      As an automation engine, Ansible ensures that your IT environment stays exactly as you describe it, no matter the complexity.
+      Not only that, you can automate any command with Ansible to eliminate drudgery from your daily routine.
+      Ansible gives you tooling to be more productive and solve problems that really matter.
 community:
   section_icon: /assets/images/community-cyan.svg
   icon_alt: Ansible community icon
