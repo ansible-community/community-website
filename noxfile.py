@@ -49,10 +49,10 @@ def spelling(session: nox.Session):
     """
     Spell check the website and blog
     """
-    session.install("codespell", "tomli")
+    session.install("codespell")
     session.run("codespell",
         *session.posargs,
-        "--toml", f"pyproject.toml"
+        "./",
         )
 
 @nox.session

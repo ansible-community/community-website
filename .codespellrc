@@ -1,0 +1,5 @@
+[codespell]
+skip = *.svg,./cache,./output,./venv,./plugins,conf.py,./posts
+count =
+check-filenames = true
+quiet-level = 3
