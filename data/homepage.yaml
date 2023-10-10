@@ -10,7 +10,7 @@ banner:
 ansible:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Ansible automation icon
-  logo_alt: Ansible community logo
+  image_alt: Ansible community collaboration
   title: What is Ansible?
   intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
   top_section:
