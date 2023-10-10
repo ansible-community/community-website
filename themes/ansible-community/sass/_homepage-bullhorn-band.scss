@@ -36,17 +36,13 @@
     flex-direction: row;
     gap: 1.5rem;
   }
-  .bullhorn-link {
-    background-color: $cyan;
-    padding: 0.5rem;
-    a {
-      font-size: $font-md;
-      font-weight: 500;
-      color: $white;
-      text-decoration: none;
-      &:hover {
-        color: $pool !important;
-      }
-    }
+}
+
+@media screen and (max-width: 768px) {
+  .bullhorn-subscribe .bullhorn-subscribe-row {
+    flex-direction: column;
+  }
+  .homepage-anchor {
+    width: 100%;
   }
 }

@@ -5,11 +5,10 @@
         <h1>{{ homepage.banner.title }}</h1>
         <p>{{ homepage.banner.intro }}</p>
         <div class="banner-main-row">
-          <div class="banner-start-ansible">
-            <a href="{{ homepage.links.ansible.get_started_url }}"
-               target="_blank"
-               role="button">{{ homepage.labels.get_started }}</a>
-          </div>
+          <a class="homepage-anchor"
+             href="{{ homepage.links.ansible.get_started_url }}"
+             role="button"
+             target="_blank">{{ homepage.labels.get_started }}</a>
           <div class="banner-clipboard">
             <button class="btn text-nowrap"
                     data-clipboard-text="{{ homepage.banner.pip_install }}">

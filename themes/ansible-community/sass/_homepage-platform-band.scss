@@ -24,23 +24,6 @@
   p {
     font-size: $font-md;
   }
-  .platform-learn-more {
-    a {
-      background-color: $red-hat-red;
-      color: $white;
-      font-size: $font-md;
-      font-weight: 500;
-      &:hover {
-        background-color: $red-hat-red;
-        color: $black;
-      }
-    }
-    .btn {
-      border-radius: 2px;
-      padding: 14px;
-      width: 100%;
-    }
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -49,7 +32,7 @@
   }
 
   .platform-box-left {
-    padding-bottom: 2.25rem;
+    padding-bottom: 2rem;
   }
 
   .platform-box-right {

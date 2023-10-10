@@ -1,0 +1,42 @@
+/* controls anchors on the homepage
+   that act like buttons */
+.homepage-anchor {
+  padding: 0.75rem;
+  background-color: $cyan;
+  color: $white;
+  font-size: $font-md;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  &:hover {
+    text-decoration: none;
+    color: $white !important;
+    background-color: $black !important;
+  }
+}
+
+/* overrides homepage-anchor */
+.platform-anchor {
+  width: 100%;
+  background-color: $red-hat-red;
+}
+
+.tab-menu-anchor {
+  display: flex;
+  padding: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-lg;
+  img {
+    float: left;
+    width: auto;
+    height: 2.5rem;
+  }
+  p {
+    white-space: nowrap;
+  }
+  &:hover {
+    background-color: $white;
+    color: $navy;
+  }
+}
