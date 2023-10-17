@@ -20,7 +20,7 @@ BLOG_AUTHOR = "Ansible Community, et al"  # (translatable)
 BLOG_TITLE = "Ansible Community"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
-SITE_URL = "https://ansible.community/"
+SITE_URL = "https://ansible-community-website.readthedocs.io/"
 # This is the URL where Nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://ansible.community/"
@@ -1064,7 +1064,7 @@ STRIP_INDEXES = True
 # from indexing and other robotic spidering. * is supported. Will only be effective
 # if SITE_URL points to server root. The list is used to exclude resources from
 # /robots.txt and /sitemap.xml, and to inform search engines about /sitemapindex.xml.
-# ROBOTS_EXCLUSIONS = ["/archive.html", "/category/*.html"]
+ROBOTS_EXCLUSIONS = ["*"]
 
 # Instead of putting files in <slug>.html, put them in <slug>/index.html.
 # No web server configuration is required. Also enables STRIP_INDEXES.
