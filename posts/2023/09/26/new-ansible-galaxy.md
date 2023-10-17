@@ -1,6 +1,14 @@
+---
+title: New Ansible Galaxy
+author: John Hardy
+date: 2023-09-26 13:00:00
+slug: new-ansible-galaxy
+category: galaxy
+tags: galaxy
+type: text
+---
 # The Inside Playbook
 # New Ansible Galaxy
-September 26, 2023 by [John Hardy](https://www.ansible.com/blog/author/john-hardy)
 
 For awhile, the Red Hat Ansible team behind the components Ansible automation hub and Ansible cloud automation hub at console.redhat.com have been on a special ops mission to enhance the [galaxy_ng](https://github.com/ansible/galaxy_ng/) code base that serves the aforementioned components to also serve galaxy.ansible.com, with the intention of replacing galaxy.ansible.com with a fresh code base.
 
