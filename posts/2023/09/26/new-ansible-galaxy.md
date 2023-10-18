@@ -51,7 +51,7 @@ This means if the switch is not successful, we can easily switch back or ask the
 ## After the Switch
 @rochacbruno has written up this awesome [table](https://github.com/ansible/galaxy_ng/discussions/1729) to show what was in Galaxy vs the new beta Galaxy site. You will notice not everything has been reimplemented into [galaxy_ng](https://github.com/ansible/galaxy_ng/) due to time constraints, but we are open to discussions on [forum.ansible.com](https://forum.ansible.com) if something should come back, and more importantly, we wish for the community to help design new features to be introduced. 
 
-A good example of features that have not yet been reformulated is the current scoring system.We are retaining the old scores, so nobody loses out on the kudos they have earned already, however, we feel that a new scoring system needs to be implemented,and we’d love to begin soliciting community contributions for how we can improve it. 
+A good example of features that have not yet been reformulated is the current scoring system. We are retaining the old scores, so nobody loses out on the kudos they have earned already, however, we feel that a new scoring system needs to be implemented,and we’d love to begin soliciting community contributions for how we can improve it. 
 
 | Feature                 | Galaxy  | Beta Galaxy | Reason    |
 |-------------------------|-------- |-------------|-----------|
