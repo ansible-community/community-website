@@ -56,7 +56,7 @@ A good example of features that have not yet been reformulated is the current sc
 |-------------------------|---------------- |----------------|----------------|
 | Sign in/up via GitHub   | ✔️     | ✔️         |           |
 | API Key                 | ✔️     | ✔️         |           |
-| E-mail/App Notifications | ✔️     | ❌          | Low usage |
+| E-mail/App Notifications | Available     | Not available          | Low usage |
 | Following authors and content | ✔️ | ❌        | Low usage  |
 | Multiple e-mail address per account | ✔️ | ❌ | Low usage |
 | Search with filters |✔️ | ✔️ | Improved on Beta |
