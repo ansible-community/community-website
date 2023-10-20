@@ -53,7 +53,7 @@ This means if the switch is not successful, we can easily switch back or ask the
 A good example of features that have not yet been reformulated is the current scoring system. We are retaining the old scores, so nobody loses out on the kudos they have earned already, however, we feel that a new scoring system needs to be implemented,and we’d love to begin soliciting community contributions for how we can improve it. 
 
 | Feature                 | Galaxy  | Beta Galaxy | Reason    |
-|-------------------------|-------- |-------------|-----------|
+|-------------------------|---------------- |----------------|----------------|
 | Sign in/up via GitHub   | ✔️     | ✔️         |           |
 | API Key                 | ✔️     | ✔️         |           |
 | E-mail/App Notifications | ✔️     | ❌          | Low usage |
