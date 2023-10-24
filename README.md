@@ -73,7 +73,62 @@ The Ansible community website is built with [Nikola](https://getnikola.com/).
 
 > Nikola configuration for the website is in ``conf.py``.
 
-## Checking your changes
+## Site accessibility
+
+Being considerate of users with assistive technology is a central part of the Ansible community pledge to be inclusive.
+When adding a blog post or making changes to the templates, we ask that you perform some accessibility checks.
+This ensures that everyone can read your post and our site remains open and accessible to all.
+
+### Web Content Accessibility Guidelines (WCAG) 2.1
+
+Changes should always adhere to [WCAG 2.1 guidelines](https://www.w3.org/TR/WCAG21/).
+In most cases the guidelines provide relatively straightforward things to be aware of, such as:
+
+- **Ensure images are not the sole means to convey information.**
+  Images should only supplement the text.
+  For instance, if you want to include a visual depiction of data such as a graph, then your blog post should adequately explain those data points in the surrounding text.
+- **Images must have suitable alternative text.**
+  The `alt` attribute should always be present for any image and provide a short, meaningful description.
+  Think of what the image conveys "at a glance" and put that as the value of the `alt` attribute.
+- **Avoid redundant and suspicious links.**
+  Don't include the same `href` in more than one instance on the page or in a post.
+  Don't use vauge words like "here" or "this page" as your anchor text; make sure it clearly describes where the link takes you.
+- **Think about how colors contrast.**
+  Contrast is super important, kind of fun, and all about being able to tell things apart.
+  Your goal is to make it easy for users to distinguish text or other elements.
+
+### Testing changes for accessibility
+
+Use these resources to check for web accessibility issues:
+
+- [WAVE report](https://wave.webaim.org/)
+- [Contrast checker](https://webaim.org/resources/contrastchecker/)
+- [Link contrast checker](https://webaim.org/resources/linkcontrastchecker/)
+
+To perform an accessibility check for a blog post, do the following:
+
+1. When your final commit is ready, submit a pull request.
+2. Grab the link for your Read the Docs build preview.
+   You can find this in the "checks" section of your PR.
+3. In a browser, append the link for your build preview to `https://wave.webaim.org/report#/`.
+4. Check the WAVE report for errors and alerts.
+
+The full url for your WAVE report should be similar to this one:
+
+```
+https://wave.webaim.org/report#/https://ansible-community-website--278.org.readthedocs.build/en/278/blog/2023/09/26/new-ansible-galaxy/
+```
+
+> If you see errors or alerts related to the underlying style sheets or templates - in other words not a problem with your post but the site itself - please create an issue in the repo and add the `accessibility` label.
+
+#### Additional accessibility tooling
+
+If your changes affect templates, consider using `axe` tooling to detect accessibility issues:
+
+- [axe browser extension](https://www.deque.com/axe/browser-extensions/)
+- [vscode axe linter](https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter)
+
+## Checking your changes before commit
 
 This project includes some tests and checks that run against pull requests.
 You can also run these checks before you commit changes.
@@ -83,6 +138,17 @@ You can also run these checks before you commit changes.
 
     # View available nox sessions.
     nox --list
+
+### Spelling check
+
+    # Spell check the page templates with the default session.
+    nox -s spelling
+
+    # Check a specific blog post for spelling errors.
+    nox -s spelling -- ./posts/2023/02/24/2023-02-24-ansible_community_strategy_2023.md
+
+    # Automatically correct any spelling errors in a blog post.
+    nox -s spelling -- ./posts/2023/02/24/2023-02-24-ansible_community_strategy_2023.md -w
 
 ### Linting and formatting templates
 
@@ -107,16 +173,7 @@ For more information about configuration options, see:
 - [Linter](https://www.djlint.com/docs/linter/)
 - [Formatter](https://www.djlint.com/docs/formatter/)
 
-### Spelling check
 
-    # Use the default session to check all templates, pages, and data for spelling errors.
-    nox -s spelling
-
-    # Check a specific blog post for spelling errors.
-    nox -s spelling -- ./posts/2023/02/24/2023-02-24-ansible_community_strategy_2023.md
-
-    # Automatically correct any spelling errors in a blog post.
-    nox -s spelling -- ./posts/2023/02/24/2023-02-24-ansible_community_strategy_2023.md -w
 
 ## Code of Conduct
 
