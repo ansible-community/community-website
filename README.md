@@ -92,7 +92,7 @@ In most cases the guidelines provide relatively straightforward things to be awa
   Think of what the image conveys "at a glance" and put that as the value of the `alt` attribute.
 - **Avoid redundant and suspicious links.**
   Don't include the same `href` in more than one instance on the page or in a post.
-  Don't use vauge words like "here" or "this page" as your anchor text; make sure it clearly describes where the link takes you.
+  Don't use vague words like "here" or "this page" as your anchor text; make sure it clearly describes where the link takes you.
 - **Think about how colors contrast.**
   Contrast is super important, kind of fun, and all about being able to tell things apart.
   Your goal is to make it easy for users to distinguish text or other elements.
