@@ -10,9 +10,5 @@ on:
 jobs:
   nikola-build:
     uses: ./.github/workflows/reusable-nikola-build.yml
-  spell-check:
-    uses: ./.github/workflows/reusable-spell-check.yml
-  lint-templates:
-    uses: ./.github/workflows/reusable-djlint.yml
-  format-templates:
-    uses: ./.github/workflows/reusable-format.yml
+  nox-sessions:
+    uses: ./.github/workflows/reusable-nox.yml
