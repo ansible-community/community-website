@@ -9,9 +9,9 @@ WORKDIR /community-website
 
 # Install Nikola and build the community website
 RUN pip install -r requirements.in -c requirements.txt
-RUN nikola build
+RUN nikola build --strict
 
-# Host the community website on an nginx web server
+# Host the community website on a caddy web server
 FROM registry.fedoraproject.org/fedora:38
 EXPOSE 8080
 RUN dnf install --setopt=install_weak_deps=False --best -y caddy && dnf clean all
