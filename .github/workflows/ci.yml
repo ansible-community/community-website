@@ -8,7 +8,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  nikola-build:
-    uses: ./.github/workflows/reusable-nikola-build.yml
   nox-sessions:
     uses: ./.github/workflows/reusable-nox.yml
