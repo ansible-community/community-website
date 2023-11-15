@@ -14,7 +14,7 @@ jobs:
       TAGS: latest
       REGISTRY: ghcr.io
       REGISTRY_USER: ${{ github.actor }}
-    name: 'Build and publish the image'
+    name: Build and publish the image
     steps:
     - name: Check out the website repository
       uses: actions/checkout@v3
