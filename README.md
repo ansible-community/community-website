@@ -90,6 +90,7 @@ In most cases the guidelines provide relatively straightforward things to be awa
 - **Images must have suitable alternative text.**
   The `alt` attribute should always be present for any image and provide a short, meaningful description.
   Think of what the image conveys "at a glance" and put that as the value of the `alt` attribute.
+  For adding `alt` attributes to markdown files, [check out the GitHub docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#images).
 - **Avoid redundant and suspicious links.**
   Don't include the same `href` in more than one instance on the page or in a post.
   Don't use vague words like "here" or "this page" as your anchor text; make sure it clearly describes where the link takes you.
