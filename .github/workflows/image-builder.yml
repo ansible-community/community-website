@@ -6,14 +6,15 @@ on:
     - main
   workflow_dispatch:
 
+env:
+  IMAGE_NAME: ansible-community/ansible-website
+  TAGS: latest
+  REGISTRY: ghcr.io
+  REGISTRY_USER: ${{ github.actor }}
+
 jobs:
   build_dockerfile:
     runs-on: ubuntu-20.04
-    env:
-      IMAGE_NAME: ansible-community/ansible-website
-      TAGS: latest
-      REGISTRY: ghcr.io
-      REGISTRY_USER: ${{ github.actor }}
     name: Build and publish the image
     steps:
     - name: Check out the website repository
