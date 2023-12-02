@@ -196,7 +196,8 @@ THEME_CONFIG = {
         # Contents of the sidebar, If empty, the sidebar is not displayed.
         'sidebar': '',
         # Set the navbar theme for blogs and pages other than the homepage.
-        'navbar_light': True,
+        'navbar_light': False,
+        'navbar_custom_bg': 'bg-pool',
     }
 }
 # Config for bootstrap4:

@@ -32,6 +32,8 @@ Set overriding homepage properties in the hero-container class.
 .navbar {
   margin-bottom: 0 !important;
   border: 0 !important;
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
   a {
     font-size: $font-md;
     white-space: nowrap;

@@ -11,6 +11,7 @@ def build(session: nox.Session):
     )
     session.run("nikola",
         "build",
+        "--strict",
         *session.posargs,
         )
 
