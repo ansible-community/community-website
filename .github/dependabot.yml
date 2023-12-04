@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    ignore:
+      # Avoid python version upgrade to 3.12+
+      # until nikola adds support https://github.com/getnikola/nikola/issues/3719
+      - dependency-name: "python*"
     labels:
       - "dockerfile"
       - "dependencies"
