@@ -14,7 +14,7 @@
     color: $black;
     font-size: $font-lg;
     &:hover {
-      color: $cyan !important;
+      color: $white !important;
     }
   }
   @media screen and (max-width: 992px) {
@@ -62,7 +62,7 @@ Set overriding homepage properties in the hero-container class.
 .nav-link-color {
   color: $black !important;
   &:hover {
-    color: $cyan !important;
+    color: $white !important;
   }
 }
 
