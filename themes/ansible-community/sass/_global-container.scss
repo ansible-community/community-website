@@ -39,6 +39,23 @@
   }
 }
 
+/** Centers blog posts **/
+.blog-band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 4rem 13rem;
+
+  @media screen and (max-width: 1170px) {
+    padding: 3rem 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 2rem 2rem;
+  }
+}
+
 .max-width-prose {
-  max-width: 80ch
+  max-width: 80ch;
 }
