@@ -12,13 +12,13 @@ Ansible’s main strengths are simplicity and ease of use. It also has a strong 
 **Comparing community Ansible with Red Hat Ansible Automation Platform?**
 Visit the [Understanding Ansible, AWX, and Ansible Automation Platform](https://www.redhat.com/en/technologies/management/ansible/compare-awx-vs-ansible-automation-platform) to understand the differences.
 
-## Community Ansible
+# Community Ansible
 
 The community distribution of Ansible contains a suite of powerful command line tools supported on most operating systems with Python installed.
 This includes Red Hat Enterprise Linux, Debian, Ubuntu, MacOS, FreeBSD, Microsoft Windows, and more.
 For more information on installing Ansible refer to the [installation documentation](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
 
-## Red Hat Ansible Automation Platform
+# Red Hat Ansible Automation Platform
 
 Red Hat Ansible Automation Platform is a subscription product built on the foundations of Ansible with numerous enterprise features.
 It combines more than a dozen upstream projects into an integrated, streamlined product. Each product component also has a specific purpose with a well-defined scope.
@@ -26,7 +26,7 @@ For example, the automation controller is the WebUI and API for Ansible automati
 This component is bundled into the platform to manage automation.
 Ansible Automation Platform is available to be run on-premise and charged by node (rather than by user), or you can use the managed service offering on Microsoft Azure.
 
-## Efficient architecture
+# Efficient architecture
 
 Both community Ansible and Ansible Automation Platform have the concept of a control node and a managed node.
 The control node is where Ansible is executed from, for example where a user runs the ansible-playbook command.
@@ -51,7 +51,7 @@ There are a variety of documentation guides for each public cloud or web service
 * [Google Cloud Platform Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_gce.html)
 * [Microsoft Azure Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)
 
-## Credentials
+# Credentials
 
 For Ansible to execute, it needs an inventory (what are the managed nodes I am trying to automate?) and credentials (how do I login and connect to those managed nodes?).
 
@@ -65,7 +65,7 @@ Automation controller hashes local automation controller user passwords with the
 Users who authenticate via external account mechanisms (LDAP, SAML, OAuth, and others) do not have any password or secret stored.
 For more information, check the [Secret handling and connection security](https://docs.ansible.com/automation-controller/latest/html/administration/secret_handling.html#ag-secret-handling) documentation.
 
-## Manage your inventory in simple text files
+# Manage your inventory in simple text files
 
 By default, Ansible represents which machines it manages using a very simple INI file that puts all of your managed machines in groups of your own choosing.
 
@@ -91,16 +91,18 @@ Once inventory hosts are listed, variables can be assigned to them in simple tex
 
 Or, as already mentioned, you can use a dynamic inventory to pull your inventory from data sources like AWS and Azure.
 
-## Playbooks: A simple and powerful automation language
+# Playbooks: A simple and powerful automation language
 
 Playbooks can finely orchestrate multiple slices of your IT infrastructure, with very detailed control over how many machines to tackle at a time.
 This is where Ansible starts to get most interesting.
 
-Follow the link to the ["Open Answers: What is patch management?"](https://youtu.be/VRoQLVHdNHE?si=Xc9hG0H9F0NjHpIs) video on YouTube to hear Red Hat's Sean Cavanaugh give an explanation.
-
 Ansible's approach to orchestration is one of finely tuned simplicity, as we believe you should be able to use existing knowledge while not having to remember special syntax or features.
 
-Here's what a playbook looks like. As a reminder, this is only here as a teaser—visit [docs.ansible.com](https://docs.ansible.com/) for the complete documentation, and see all that's possible.
+Visit the ["Open Answers: What is patch management?"](https://youtu.be/VRoQLVHdNHE?si=Xc9hG0H9F0NjHpIs) video to hear Red Hat's Sean Cavanaugh explain things in more detail.
+
+Here's what a playbook looks like.
+As a reminder, this is only here as a teaser.
+Visit [docs.ansible.com](https://docs.ansible.com/) for the complete documentation, and see all that's possible.
 
 An example `apache.yml` playbook might look like:
 
@@ -142,13 +144,13 @@ There are lots of advanced possibilities, but it's [easy to get started](https:/
 
 Most importantly, the language remains readable and transparent, and you never have to do things like declare explicit ordering relationships or write code in a programming language.
 
-## Extend Ansible: plugins, modules, and API
+# Extend Ansible: plugins, modules, and API
 
 Should you want to write your own, Ansible modules can be written in any language that can return JSON (Ruby, Python, Powershell, bash, etc).
 Inventory can also plug in to any datasource by writing a program that speaks to that datasource and returns JSON.
 There's also various Python APIs for extending Ansible’s connection types (SSH is not the only transport possible), callbacks (how Ansible logs, etc), and even for adding new server-side behaviors.
 
-## When would you use Ansible Automation Platform versus community Ansible?
+# When would you use Ansible Automation Platform versus community Ansible?
 
 Red Hat Ansible Automation Platform is a subscription product that builds upon the foundations of community Ansible and is designed to elevate automation across your organization.
 
@@ -167,7 +169,7 @@ Here are three example instances of when Red Hat Ansible Automation Platform mig
 
 To learn more about Red Hat Ansible Automation Platform, check out our knowledgebase article, [What is included in Red Hat Ansible Automation Platform subscription?](https://access.redhat.com/articles/6057451)
 
-## Further reading
+# Further reading
 
 For additional reading, take a look at some of these e-books:
 
