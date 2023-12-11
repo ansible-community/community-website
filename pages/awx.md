@@ -1,6 +1,6 @@
 ---
-slug: awx-project
-title: The AWX project
+slug: awx
+title: Ansible AWX
 type: text
 ---
 
