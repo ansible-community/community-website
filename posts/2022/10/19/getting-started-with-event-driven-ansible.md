@@ -49,9 +49,8 @@ To install ansible-rulebook, we can install our Galaxy Collection, which has a p
 
 Once the Collection is installed, you can run the install-rulebook-cli.yml playbook. This will install everything you need to get started with ansible-rulebook on the command line. This is currently supported for Mac and Fedora.
 
-~~~
 **Note:** Now, you could also skip this method above and install ansible-rulebook with pip, followed by installing the ansible.eda collection. Java 11+ is required if you use this method and we suggest using [openjdk](https://jdk.java.net/19/). (This step is not required if you used the previous install method.)
-
+~~~
 `pip install ansible-rulebook`
 
 `ansible-galaxy collection install ansible.eda`
