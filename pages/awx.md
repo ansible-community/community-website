@@ -1,6 +1,7 @@
 ---
 slug: awx
 title: Ansible AWX
+description: Find out about the AWX project.
 type: text
 ---
 <style>
