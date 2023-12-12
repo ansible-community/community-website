@@ -5,14 +5,11 @@ date: 2023-08-03 13:00:00
 slug: ansible-data-manipulation-with-a-filter
 category: developer
 tags: developer
-type: text
+type: developer, filters, playbook
 ---
 
-# The Inside Playbook
 
-## Ansible data manipulation with a Filter
-
-
+## Background:
 
 This year at Summit, an attendee posed a question about how to work with setting facts and changing data in Ansible. Many times we’ve come across people using task after task to manipulate data, to turn items into lists, filter our options, trying to do heavy data manipulation and to turn data from one source into another. Trying to make these programmatic changes using a mixture of YAML and Jinja inside of roles and playbooks is a headache of its own. While many of these options will work, they aren’t very efficient or easy to implement. Ansible Playbooks were never meant for programming.
 
