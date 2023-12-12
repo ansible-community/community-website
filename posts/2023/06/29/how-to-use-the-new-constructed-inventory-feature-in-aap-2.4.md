@@ -4,7 +4,7 @@ author: Alan Rominger
 date: 2023-06-29 13:00:00
 slug: how-to-use-the-new-constructed-inventory-feature-in-aap-2.4
 category: awx
-tags: awx
+tags: awx, inventory, smart inventory, constructed inventory
 type: text
 ---
 
