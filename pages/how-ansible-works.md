@@ -1,6 +1,6 @@
 ---
 slug: how-ansible-works
-title: How Ansible Works
+title: How Ansible works
 type: text
 ---
 Learn the fundamentals of Ansible, powerful IT automation software that emphasizes simplicity and ease of use.
@@ -150,7 +150,7 @@ Should you want to write your own, Ansible modules can be written in any languag
 Inventory can also plug in to any datasource by writing a program that speaks to that datasource and returns JSON.
 There's also various Python APIs for extending Ansible’s connection types (SSH is not the only transport possible), callbacks (how Ansible logs, etc), and even for adding new server-side behaviors.
 
-# When would you use Ansible Automation Platform versus community Ansible?
+# The difference between Ansible community projects and Red Hat Ansible Automation Platform
 
 Red Hat Ansible Automation Platform is a subscription product that builds upon the foundations of community Ansible and is designed to elevate automation across your organization.
 
