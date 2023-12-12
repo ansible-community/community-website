@@ -4,7 +4,7 @@ author: Andrew Block
 date: 2023-03-16 13:00:00
 slug: kubernetes-meets-event-driven-ansible
 category: event-driven-ansible
-tags: event-driven-ansible
+tags: event-driven-ansible, kubernetes, rulebooks, eda, ansible-rulebook
 type: text
 ---
 
