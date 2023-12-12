@@ -45,11 +45,6 @@ To understand more about how network automation is different, check out the [Ans
 <img src="../images/pages/network-automation-comparison.jpg" alt="Network automation local and remote execution diagram" style="height: auto; width:500px;"/>
 
 For automating public clouds and web services, Ansible will also run modules locally and talk directly to their APIs.
-There are a variety of documentation guides for each public cloud or web service that can be automated:
-
-* [Amazon Web Services Guide](https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/guide_aws.html#ansible-collections-amazon-aws-docsite-aws-intro)
-* [Google Cloud Platform Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_gce.html)
-* [Microsoft Azure Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)
 
 # Credentials
 
