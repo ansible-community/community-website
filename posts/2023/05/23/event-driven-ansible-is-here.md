@@ -27,19 +27,7 @@ When your organization adopts event-driven automation techniques, your entire te
 
 ## New features and enhancements
 
-Transform your work with Event-Driven Ansible
-For many IT teams, there is too much work to do and not enough time to get it all done. Event-Driven Ansible can help your team work smarter, not harder. How often are you doing routine tasks that get in the way of key priorities? How often are you needing to “drop everything” to respond to a ticket enrichment request or handle a user administration issue? Have you had to wake up at night to remediate an issue? How often are you adjusting applications and underlying technologies to support fluctuating workloads? 
 
-You will be happy to know there is a better way, and it is event-driven automation. Many pieces of recurring operational logic and processes can be automated by capturing them in Ansible Rulebooks, including issue remediation, fact gathering for service tickets, user administration tasks, and many more. But what are Ansible Rulebooks? Based on YAML, they are the basis of Event-Driven Ansible and contain conditional “if-this-then-that” logic.
-
-Event-Driven Ansible can also be used with scalability logic, or using rulebooks to codify scalability actions for rapid and seamless response, such as adding capacity or adjusting buffer pool size when an application or workload calls for it, or scaling out hybrid-cloud solutions when certain conditions are met, and so on.
-
-Event-driven patterns of automation make it faster to act on recurring events and also provide a simple way of distributing operational or scalability knowledge as an easy to read and verifiable structure. Event-Driven Ansible is accessible enough to be used by IT domain experts to solve a range of needs across use cases including infrastructure, networking, security, cloud and others. 
-
-When your organization adopts event-driven automation techniques, your entire team can execute in a consistent and accurate way. You gain new levels of efficiency and can better focus on the innovations that give your business an edge. 
-
-
-New features and enhancements
 What can you expect from Event-Driven Ansible as part of this release? Several new components and features have been added.  These include: 
 
 * **Event-Driven Ansible controller**, which enables orchestration of multiple rulebooks and provides a single interface to manage and audit all responses across all event sources. These event sources are often third party monitoring and observability tools, but can be any source that provides intelligence about your IT environment.
