@@ -4,7 +4,7 @@ author: Nuno Martins
 date: 2022-10-19 13:00:00
 slug: getting-started-with-event-driven-ansible
 category: event-driven-ansible
-tags: event-driven-ansible, getting-started
+tags: event-driven-ansible, getting-started, eda, ansible-rulebook, rulebooks
 type: text
 ---
 
@@ -49,12 +49,13 @@ To install ansible-rulebook, we can install our Galaxy Collection, which has a p
 
 Once the Collection is installed, you can run the install-rulebook-cli.yml playbook. This will install everything you need to get started with ansible-rulebook on the command line. This is currently supported for Mac and Fedora.
 
+~~~
 **Note:** Now, you could also skip this method above and install ansible-rulebook with pip, followed by installing the ansible.eda collection. Java 11+ is required if you use this method and we suggest using [openjdk](https://jdk.java.net/19/). (This step is not required if you used the previous install method.)
 
 `pip install ansible-rulebook`
 
 `ansible-galaxy collection install ansible.eda`
-
+~~~
 If you want to contribute to ansible-rulebook, you can also fork the following [GitHub repository](https://github.com/ansible/ansible-rulebook). This repository also contains instructions for setting up your development environment and how to build a test container. 
 
 Let's build an example rulebook that will trigger an action from a webhook. We will be looking for a specific payload from the webhook, and if that condition is met from the webhook event, then ansible-rulebook will trigger the desired action. Below is our example rulebook:
@@ -147,7 +148,7 @@ We can see from the output above, that the condition was met from the webhook an
 
 Event-Driven Ansible opens up the possibilities of faster resolution and greater automated observation of our environments. It has the possibility of simplifying the lives of many technical and sleep-deprived engineers. The current ansible-rulebook is easy to learn and work with, and the graphical user interface EDA-Server will simplify this further. 
 
- ## What can you do next?
+## What can you do next?
 
  Whether you are beginning your automation journey or a seasoned veteran, there are a variety of resources to enhance your automation knowledge:
 
