@@ -24,7 +24,7 @@
   {% endif %}
   {% if permalink != '/' %}
     {% include "base_nav.tmpl" %}
-    <div class="body-content {% if permalink.startswith('/blog/') %}blog-band{% else %}full-width-band{% endif %}">
+    <div class="body-content center-band">
         <!--Body content-->
         {{ template_hooks['page_header']() }}
         {% block extra_header %}{% endblock extra_header %}
