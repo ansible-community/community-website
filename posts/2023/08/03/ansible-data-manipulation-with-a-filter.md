@@ -4,8 +4,8 @@ author: Sean Sullivan
 date: 2023-08-03 13:00:00
 slug: ansible-data-manipulation-with-a-filter
 category: developer
-tags: developer
-type: developer, filters, playbook
+tags: developer, filters, playbook
+type: text
 ---
 
 
