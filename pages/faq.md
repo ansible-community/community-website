@@ -3,6 +3,20 @@ slug: faq
 title: Frequently asked questions
 type: text
 ---
+<style>
+h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.125rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+</style>
 Find answers to frequently asked questions (FAQ) in the Ansible community.
 
 # AWX
