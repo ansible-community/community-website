@@ -87,9 +87,9 @@ ansible-rulebook -i inventory --rulebook k8s-eda-demo.yaml --verbose
 With the rulebook monitoring for ConfigMap changes in the default namespace, create a new ConfigMap in the default namespace to demonstrate events are being captured appropriately. This task can be accomplished by using the Kubernetes CLI (kubectl) by executing the following command:
 
  
-
+~~~
 kubectl create configmap -n default eda-example --from-literal=message=”Kubernetes Meets Event-Driven Ansible”
-
+~~~
 
 Observe the following has been captured and displayed in the window where the ansible-rulebook command is being executed.
 
