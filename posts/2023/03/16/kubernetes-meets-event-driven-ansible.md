@@ -88,10 +88,8 @@ With the rulebook monitoring for ConfigMap changes in the default namespace, cre
 
  
 
- ```
 kubectl create configmap -n default eda-example --from-literal=message=”Kubernetes Meets Event-Driven Ansible”
 
- ```
 
 Observe the following has been captured and displayed in the window where the ansible-rulebook command is being executed.
 
