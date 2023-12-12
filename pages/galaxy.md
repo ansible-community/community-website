@@ -11,14 +11,9 @@ As you iterate over your playbooks and improve them, Ansible Galaxy helps you si
 Discover thousands of automation solutions built by people who use Ansible every day and learn from other Ansible users and contributors.
 Finally, you can import your own roles and collections to make them available to the entire Ansible community.
 
-<br />
-<a style="padding: 1rem; background-color: #004080; color: #ffffff; font-size: 1.125rem; font-weight: 500; text-align: center; white-space: nowrap; border-radius: 4px;" href="https://galaxy.ansible.com/search" role="button" target="_blank">Search Galaxy</a>
-<br />
+<a class="ansible-button" href="https://galaxy.ansible.com/search" role="button" target="_blank">Search Galaxy</a>
 
-# Popular search keywords
-
-Find tips and tools to automate everyday tasks.
-From provisioning infrastructure to deploying applications.
+You can use these popular search keywords to find tips and tools to automate everyday tasks, from provisioning infrastructure to deploying applications:
 
 * [System](https://galaxy.ansible.com/ui/search/?keywords=system)
 * [Development](https://galaxy.ansible.com/ui/search/?keywords=development)
