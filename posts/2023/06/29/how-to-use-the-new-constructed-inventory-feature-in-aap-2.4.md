@@ -10,13 +10,13 @@ type: text
 
 # The New Constructed Inventory Feature
 
-In this blog we introduced the idea for a new smarter way of handling inventory based on the Ansible constructed plugin. Now in Ansible Automation Platform 2.4, we have introduced this as a fully supported feature and this blog aims to introduce you to it! 
+In [this blog](https://www.ansible.com/blog/ansible-automation-platform-moving-towards-smarter-inventory)  we introduced the idea for a new smarter way of handling inventory based on the Ansible constructed plugin. Now in Ansible Automation Platform 2.4, we have introduced this as a fully supported feature and this blog aims to introduce you to it! 
 
-Constructed inventory is the successor to the existing Smart Inventory feature, and  is now presented as another choice when creating an Inventory in Ansible Automation Platform controller. This will take a list of ‘normal’ inventories as input, perform user-defined operations, filter, and produce a resultant inventory with content from the input inventories.
+[Constructed inventory]( https://docs.ansible.com/automation-controller/4.4/html/userguide/inventories.html#ug-inventories-constructed) is the successor to the existing _Smart Inventory_ feature, and  is now presented as another choice when creating an **Inventory** in Ansible Automation Platform controller. This will take a list of ‘normal’ inventories as input, perform user-defined operations, filter, and produce a resultant inventory with content from the input inventories.
 
 # What is Constructed Inventory?
 
-The function is similar to the existing smart inventory - in that it allows users to run jobs against hosts in multiple inventories. 
+The function is similar to the existing smart inventory - in that it allows users to run jobs against hosts in _multiple_ inventories. 
 
 Constructed inventory however introduces new capabilities, including the built in ability to define and use both hostvars and groupvars:
 
@@ -42,15 +42,15 @@ NOTE: The input inventories are ordered so that in the event of host name and va
 
 Don’t worry about these right now, as they will be explored using an example below.
 
-# Constructed Inventory In Its Simplest Form
+## Constructed Inventory In Its Simplest Form
 You must have at least **one** input inventory, but the other fields are not necessary to fill in. In some situations, it might make sense to *provide two or more input inventories and leave limit and source-vars blank.* Then you can run jobs that act on the combination of the inventory content from both of those input inventories. 
 
  
 
-# More Advanced Constructed Inventory Use Cases
+## More Advanced Constructed Inventory Use Cases
 In order to explain the function of *limit* and *Source vars* which provides the ultimate feature power, it will help to have a concrete example.
 
-# Setting up the Constructed Inventory
+## Setting up the Constructed Inventory
 Imagine that you have two inventories that come from the same cloud provider, but cover different regions and so have different sets of hosts. These inventories are kept separate, due to separate accounts, separate functions, and separate locations. In this example, we imagine simple **East / West region** input inventories.
 
 We will source the inventories from Git based *.ini files*, which we maintain using a config-as-code approach using devops type practices.
@@ -90,14 +90,14 @@ So let’s now create a new **Constructed Inventory** in the UI:
 
 ![new constructed inventory ](/images/posts/how-to-use-the-new-constructed-inventory-feature-in-aap-2.4/new-constructed-inventory.png)
 
-We add both cloud inventories as inputs. Then we will use source-vars to construct a new group “target_group”, and then use limit to filter on that group:
+We add both cloud inventories as inputs. Then we will use _source-vars_ to construct a new **group** **“target_group**”, and then use _limit_ to **filter** on that group:
 
 ![target group details](/images/posts/how-to-use-the-new-constructed-inventory-feature-in-aap-2.4/target-group-details.webp)
 
 Once synced, you can see what happens through the job output:
 ![job group output](/images/posts/how-to-use-the-new-constructed-inventory-feature-in-aap-2.4/job-group-output.png)
 
-We now have 4 groups with 4 hosts, which you’ll be able to browse under **Hosts** and **Groups** in the UI to confirm the result. Let’s look at groups for this particular example:
+We now have _4 groups_ with _4 hosts_, which you’ll be able to browse under **Hosts** and **Groups** in the UI to confirm the result. Let’s look at groups for this particular example:
 
 ![constructed combination groups](/images/posts/how-to-use-the-new-constructed-inventory-feature-in-aap-2.4/constructed-combination-groups.png)
 
@@ -114,13 +114,13 @@ Now for the main magic, if you refer to the **source-vars** in the constructed i
     groups:
         target_group: account_alias | default("") == "product_dev"``
 
-The “**target_group**” was not present in the original East and West inventories. It was created by the constructed inventory plugin when the update happened. 
+The “**target_group**” was not present in the original East and West inventories. _It was created by the constructed inventory plugin when the update happened_. 
 
 In this case, hosts are added to the group when the jinja2 template false resolves to a truthy value (like 1, “1”, or True) for a given host. 
 
 During the update, these templates are rendered by Ansible for every host in the input inventories to make these evaluations. For larger input inventories, this can be expected to take in the order of minutes to complete the update. 
 
-Constructed inventories will automatically update before a job run of any template that uses it, but if those updates are taking too long, you can relax the frequency of updates with the **Update cache timeout** option in the Constructed Inventory settings in the UI. Setting this option to a value > 1 will cache the results of the constructed inventory update for that many seconds.
+_Constructed inventories will automatically update before a job run of any template that uses it_, but if those updates are taking too long, you can relax the frequency of updates with the **Update cache timeout** option in the Constructed Inventory settings in the UI. Setting this option to a value > 1 will cache the results of the constructed inventory update for that many seconds.
 
 The jinja2 template to create “**target_group**” will include a host if, when inspecting that host, the hostvar of “**account_alias**” exists **and** is equal to “**product_dev**”. 
 
@@ -146,13 +146,13 @@ To use the prior example, when developing the constructed inventory, consider th
 
 ![constructed groups details](/images/posts/how-to-use-the-new-constructed-inventory-feature-in-aap-2.4/inventory-group--combine-details.webp)
 
-This will run a similar template of and save it to a variable named “effective_account_alias”. By making *limit* blank, we will be sure to get all hosts from the input inventories. This would allow us to inspect fine-grained details of the inclusion criteria on individual hosts, shown below for host3.
+This will run a similar template of and save it to a variable named “effective_account_alias”. By making **limit** blank, we will be sure to get all hosts from the input inventories. This would allow us to inspect fine-grained details of the inclusion criteria on individual hosts, shown below for host3.
 
 ![host3 host details](/images/posts/how-to-use-the-new-constructed-inventory-feature-in-aap-2.4/host3-host-details.webp)
 
 Here, we see the **hostvar**“ effective_account_alias” evaluated value is “sustaining” and not “product_dev”. 
 
-The constructed inventory plugin has a number of other options which can be very useful and powerful. Refer to the plugin documentation at https://docs.ansible.com/ansible/latest/collections/ansible/builtin/constructed_inventory.html for further details.
+The constructed inventory plugin has a number of other options which can be very useful and powerful. Refer to the [plugin documentation](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/constructed_inventory.html) for further details.
 
 A few other examples can also be found in the user guide at https://docs.ansible.com/automation-controller/4.4/html/userguide/inventories.html#ug-inventories-constructed
 
