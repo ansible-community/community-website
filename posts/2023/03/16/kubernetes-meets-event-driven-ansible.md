@@ -57,10 +57,6 @@ A basic rulebook that takes advantage of the k8s event source plugin from the Co
 
 The k8s plugin is modeled in a similar manner to that of the [k8s module](https://docs.ansible.com/ansible/latest/collections/kubernetes/core/k8s_module.html) from the kubernetes.core collection, so anyone with familiarity working with this module will feel at home when working with this k8s source plugin.
 
-
-
-
-
 The logic of this rulebook is as follows:
 
 1. Connect to a remote Kubernetes cluster and consume changes to ConfigMap resources that occur within the default namespace
