@@ -21,6 +21,7 @@ For queries and assistance related to the Ansible community:
 
 * [Find a public working group that matches your interests.](https://forum.ansible.com/g?type=public)
 * [Attend or organize an Ansible community event.](https://forum.ansible.com/upcoming-events)
+* [Submit news or contribute to the Bullhorn newsletter.](https://forum.ansible.com/t/about-the-newsletter-category/166)
 * [Get help by asking questions directly to the Ansible community.](https://forum.ansible.com/c/help/)
 
 If you still have questions or need help, you can get in touch with the Ansible community team at Red Hat.
