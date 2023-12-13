@@ -197,7 +197,3 @@ ok: [localhost] => {
 ```
 
 While this example only prints out a simple message related to the content of the event received, it provides a demonstration of how to make use of the capabilities enabled by the Kubernetes integration. By adding Kuberentes as an event source and into the Event-Driven Ansible ecosystem, it becomes an essential integration to help support organizations that are leveraging Kubernetes to maintain crucial components of their business and to trigger automation as desired.
-
-__Topics:__
-
-[Event-Driven Ansible](https://www.ansible.com/blog/topic/event-driven-ansible)
