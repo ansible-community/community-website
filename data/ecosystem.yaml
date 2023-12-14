@@ -28,6 +28,9 @@ awx:
   name: Ansible AWX
   description: AWX provides a web-based user interface, REST API, and task engine built on top of Ansible.
   resources:
+    page:
+      link: "link://slug/awx"
+      text: The AWX project
     docs:
       link: "https://ansible.readthedocs.io/projects/awx/"
       text: AWX documentation
@@ -110,6 +113,9 @@ galaxy_ng:
   name: Galaxy NG
   description: Galaxy NG jumpstarts automation projects with Ansible community content.
   resources:
+    page:
+      link: "link://slug/galaxy"
+      text: About Ansible Galaxy
     search:
       link: "https://galaxy.ansible.com/search"
       text: Search Galaxy
