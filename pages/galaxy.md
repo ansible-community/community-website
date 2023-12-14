@@ -15,13 +15,23 @@ Finally, you can import your own roles and collections to make them available to
 
 You can use these popular search keywords to find tips and tools to automate everyday tasks, from provisioning infrastructure to deploying applications:
 
-* [System](https://galaxy.ansible.com/ui/search/?keywords=system)
-* [Development](https://galaxy.ansible.com/ui/search/?keywords=development)
-* [Networking](https://galaxy.ansible.com/ui/search/?keywords=networking)
-* [Cloud](https://galaxy.ansible.com/ui/search/?keywords=cloud)
-* [Database](https://galaxy.ansible.com/ui/search/?keywords=database)
-* [Monitoring](https://galaxy.ansible.com/ui/search/?keywords=monitoring)
-* [Packaging](https://galaxy.ansible.com/ui/search/?keywords=packaging)
-* [Playbook bundles](https://galaxy.ansible.com/ui/search/?keywords=apb)
-* [Security](https://galaxy.ansible.com/ui/search/?keywords=security)
-* [Web](https://galaxy.ansible.com/ui/search/?keywords=web)
+<div style="display: flex; flex-direction: row;">
+  <div style="display: flex; flex-direction: column; padding-right: 1.25rem;">
+    <ul>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=system" target="_blank">System</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=development" target="_blank">Development</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=networking" target="_blank">Networking</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=cloud" target="_blank">Cloud</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=database" target="_blank">Database</a></li>
+    </ul>
+  </div>
+  <div style="display: flex; flex-direction: column;">
+    <ul>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=monitoring" target="_blank">Monitoring</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=packaging" target="_blank">Packaging</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=apb" target="_blank">Playbook bundles</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=security" target="_blank">Security</a></li>
+      <li><a href="https://galaxy.ansible.com/ui/search/?keywords=web" target="_blank">Web</a></li>
+    </ul>
+  </div>
+</div>
