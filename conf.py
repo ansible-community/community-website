@@ -162,9 +162,10 @@ NAVIGATION_ALT_LINKS = {
         (
           (
             ("/how-ansible-works/", "How Ansible works", ""),
-            ("/ansible-community-training/", "Ansible training", ""),
+            ("/ansible-community-training/", "Ansible community training", ""),
             ("/awx/", "Ansible AWX", ""),
             ("/galaxy/", "Ansible Galaxy", ""),
+            ("/contact-us/", "Contact us", ""),
           ),
           "Resources", ""
         ),
