@@ -163,6 +163,7 @@ NAVIGATION_ALT_LINKS = {
           (
             ("/how-ansible-works/", "How Ansible works", ""),
             ("/ansible-community-training/", "Ansible community training", ""),
+            ("/ecosystem/", "Ansible ecosystem", ""),
             ("/awx/", "Ansible AWX", ""),
             ("/galaxy/", "Ansible Galaxy", ""),
             ("/contact-us/", "Contact us", ""),
@@ -1432,7 +1433,8 @@ try:
     from nikola.utils import load_data
     GLOBAL_CONTEXT = {
     "meta": load_data('data/meta.yaml'),
-    "homepage": load_data('data/homepage.yaml')
+    "ecosystem": load_data('data/ecosystem.yaml'),
+    "homepage": load_data('data/homepage.yaml'),
     }
 
 except ImportError:

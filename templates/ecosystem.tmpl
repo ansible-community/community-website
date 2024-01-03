@@ -1,0 +1,26 @@
+{% extends "base.tmpl" %}
+{% block content %}
+  <div class="grid-wrapper ecosystem">
+    <div class="width-12-12 width-12-12-m ecosystem-row">
+      <img src="/images/community_logo.svg"
+           height="auto"
+           width="275px"
+           alt="Ansible community logo" />
+      <div class="ecosystem-title">
+        <h1>Ansible ecosystem</h1>
+        <p>Expand your automation to a virtually unlimited set of use cases.</p>
+      </div>
+    </div>
+    <!-- Start ecosystem projects -->
+    {% for key, item in ecosystem.items() %}
+      <div class="width-6-12 width-12-12-m">
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        {% for key, item in item.resources.items() %}
+          <a class="ecosystem-button" href="{{ item.link }}" role="button">{{ item.text }}</a>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <!-- End ecosystem projects -->
+  </div>
+{% endblock content %}

@@ -1,2 +1,4 @@
 # The following line comes from pages/faq.md and should be updated pending https://github.com/ansible/awx-logos/issues/12
 For more details, consult the [AWX trademark guidelines](https://github.com/ansible/awx-logos/blob/master/TRADEMARKS.md).
+# The following line comes from data/ecosystem.yaml
+als:

@@ -103,7 +103,7 @@ ecosystem:
   icon_alt: Ansible ecosystem icon
   title: Ecosystem
   intro: Projects in the Ansible ecosystem let you expand automation to an unlimited set of use cases.
-  url: https://docs.ansible.com/ecosystem.html
+  url: link://slug/ecosystem
   projects:
     awx:
       heading: AWX

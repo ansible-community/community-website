@@ -1,0 +1,62 @@
+.ecosystem {
+  img {
+    padding-right: 1rem;
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    text-transform: none;
+  }
+  gap: 4rem;
+}
+
+.ecosystem-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ecosystem-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 1.2rem;
+  line-height: 1.9rem;
+  p {
+    font-size: 1.45rem;
+    margin: 0 0 1.9rem;
+  }
+}
+
+.ecosystem-button {
+  display: inline-block;
+  width: 80%;
+  padding: 0.125rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  background-color: $cyan;
+  color: $white;
+  font-size: $font-md;
+  font-weight: normal;
+  text-align: center;
+  white-space: normal;
+  &:hover {
+    text-decoration: none;
+    color: $white !important;
+    background-color: $black !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ecosystem {
+    gap: 2rem;
+  }
+  .ecosystem-button {
+    width: 100%;
+  }
+}
