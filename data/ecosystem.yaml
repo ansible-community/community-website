@@ -80,6 +80,36 @@ core:
     github:
       link: "https://github.com/ansible/ansible"
       text: Source code
+creator:
+  name: Ansible Creator
+  description: Ansible Creator is a Command-Line Interface (CLI) tool designed for effortlessly scaffolding all your Ansible content.
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/creator/"
+      text: Ansible Creator documentation
+    github:
+      link: "https://github.com/ansible/ansible-creator"
+      text: Source code
+ade:
+  name: Ansible Development Environment
+  description: A pip-like install for Ansible collections.
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/development-environment/"
+      text: Ansible Development Environment documentation
+    github:
+      link: "https://github.com/ansible/ansible-development-environment"
+      text: Source code
+adt:
+  name: Ansible Development Tools
+  description: Ansible Development Tools (ADT) streamlines the setup and usage of several tools for creating Ansible content.
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/dev-tools/"
+      text: ADT documentation
+    github:
+      link: "https://github.com/ansible/ansible-dev-tools"
+      text: Source code
 eda:
   name: Event-Driven Ansible Server
   description: Event-Driven Ansible Server offers scalable and flexible automation that can subscribe to a wide variety of event sources.
@@ -165,6 +195,16 @@ pylibssh:
     github:
       link: "https://github.com/ansible/pylibssh"
       text: Source code
+pytest:
+  name: Ansible Pytest
+  description: Enables the use of Ansible in tests as well as the use of pytest as a collection unit test runner, and exposes molecule scenarios using a pytest fixture.
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/pytest-ansible/"
+      text: Ansible Pytest documentation
+    github:
+      link: "https://github.com/ansible/pytest-ansible"
+      text: Source code
 rulebook:
   name: Ansible Rulebook
   description: Ansible Rulebook is a command-line tool that listens to events so your automation can react when software or system states change.
@@ -204,6 +244,16 @@ sign:
       text: Ansible Sign documentation
     github:
       link: "https://github.com/ansible/ansible-sign"
+      text: Source code
+tox:
+  name: Tox Ansible
+  description: Tox Ansible is a utility designed to simplify the testing of Ansible content collections.
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/tox-ansible/"
+      text: Tox Ansible documentation
+    github:
+      link: "https://github.com/ansible/tox-ansible"
       text: Source code
 vscode:
   name: Ansible VS Code Extension
