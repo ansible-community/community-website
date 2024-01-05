@@ -21,7 +21,7 @@
   {% if page_links %}
     {{ pagination.page_navigation(current_page, page_links, prevlink, nextlink, prev_next_links_reversed) }}
   {% endif %}
-  <div class="postindex ansible-posts">
+  <div class="postindex ansible-content">
     {% for post in posts %}
       <article class="h-entry post-{{ post.meta("type") }}"
                itemscope="itemscope"
@@ -71,6 +71,9 @@
             {% endif %}
           </div>
       </article>
+      <br/>
+      <hr/>
+      <br/>
     {% endfor %}
   </div>
   {{ helper.html_pager() }}
