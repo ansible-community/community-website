@@ -56,7 +56,8 @@ bullhorn:
   title: Subscribe to the Bullhorn
   about: The Bullhorn is a weekly newsletter full of Ansible Community news and updates.
   forum_text: Read the latest edition
-  subscribe: Subscribe
+  subscribe: Subscribe by email
+  mailchimp_link: https://bit.ly/subscribe-bullhorn
   forum_link: https://forum.ansible.com/c/news/bullhorn/17
   forum_feed: https://forum.ansible.com/c/news/bullhorn/17.rss
 events:
