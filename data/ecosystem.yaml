@@ -185,7 +185,7 @@ navigator:
     github:
       link: "https://github.com/ansible/ansible-navigator"
       text: Source code
-pylibssh:
+ansible-pylibssh:
   name: ansible-pylibssh
   description: ansible-pylibssh provides Python bindings for Ansible with the libssh project.
   resources:
