@@ -28,6 +28,9 @@
   }
   .event-title {
     display: flex;
+    a {
+      color: $blue-anchor;
+    }
     h3 {
       font-size: $font-lg;
       text-transform: none;
