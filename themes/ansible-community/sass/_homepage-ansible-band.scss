@@ -13,6 +13,9 @@
     font-size: $font-md;
     font-weight: normal;
   }
+  @media screen and (max-width: 768px) {
+    padding-right: 2rem;
+  }
 }
 
 .ansible-image {

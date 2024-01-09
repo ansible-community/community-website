@@ -31,6 +31,9 @@
   a {
     color: $blue-anchor;
   }
+  @media screen and (max-width: 768px) {
+    padding-right: 2rem;
+  }
 }
 
 .contribute-bull {

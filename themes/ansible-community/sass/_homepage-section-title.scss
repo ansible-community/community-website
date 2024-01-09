@@ -10,6 +10,9 @@
     text-transform: none;
     padding: 1rem 0;
   }
+  @media screen and (max-width: 768px) {
+    padding-right: 2rem;
+  }
 }
 
 .section-top {
