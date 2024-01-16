@@ -3,12 +3,8 @@ slug: ansible-community-training
 title: Ansible Community Training
 type: text
 ---
-Welcome to Ansible community training!
 
-# Self-paced labs
-
-Here you can find interactive learning scenarios with a pre-configured Ansible environment where you can experiment, learn, and solve real-world problems.
-The environment runs entirely in your browser at your convenience so you can learn Ansible at your own pace.
+Experiment, learn, and solve real-world problems with pre-configured Ansible environments that run in your browser and at your convenience.
 
 <!--first row-->
 <div class="ansible-row">
