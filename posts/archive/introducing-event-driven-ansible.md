@@ -46,9 +46,7 @@ Any event-driven solution must be able to work within multi-vendor
 environments. So, we ask technology partners to not only try the
 Event-Driven Ansible developer preview, but also begin building Ansible
 Content Collections so that our solutions complement each other and make
-it faster and easier for joint customers to use them.  New and existing
-partners can learn more in [this
-blog](https://www.ansible.com/blog/event-driven-ansible-for-partners).
+it faster and easier for joint customers to use them.
 
 ## Designed for simplicity
 

@@ -29,8 +29,7 @@ We will cover different features of ansible-test in brief below.
 
 # How to run ansible-test?
 
-With the general availability[ of Ansible Content Collections with
-Ansible-2.9](https://www.ansible.com/blog/introducing-red-hat-ansible-automation-platform),
+With the general availability of Ansible Content Collections with Ansible-2.9,
 a user can run ansible-test inside a collection to test the collection
 itself. ansible-test needs to be run from the collection root or below
 in order for ansible-test to run tests on the Collection.

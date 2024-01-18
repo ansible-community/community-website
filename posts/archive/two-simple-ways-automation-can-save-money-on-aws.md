@@ -16,12 +16,7 @@ out. I want to look outside the common public cloud use-case of
 provisioning and deprovisioning resources and instead look at automating
 common operational tasks.
 
-![Screen Shot 2022-03-14 at 2.35.05
-PM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png?width=662&name=Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png){width="662"
-loading="lazy"
-style="width: 662px; margin-left: auto; margin-right: auto; display: block;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png?width=331&name=Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png 331w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png?width=662&name=Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png 662w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png?width=993&name=Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png 993w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png?width=1324&name=Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png 1324w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png?width=1655&name=Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png 1655w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png?width=1986&name=Screen%20Shot%202022-03-14%20at%202.35.05%20PM.png 1986w"
-sizes="(max-width: 662px) 100vw, 662px"}
+![cloud engineer diagram](/images/posts/archive/cloud-engineer-diagram.png)
 
 What is an operational task? It is simply anything that an administrator
 has to do outside of creating and deleting cloud resources (e.g.
@@ -52,16 +47,15 @@ thousands of dollars really quickly.
 
 ## Use-case one: dealing with bespoke orphaned instances
 
-So let\'s tackle each of these issues and use Ansible Automation
+So let's tackle each of these issues and use Ansible Automation
 Platform to automate a solution for the first scenario above where
 instances are being spun up outside any automation guard rails (i.e.
 they are not using any automation tools, including Ansible, to spin up
 cloud resources). We require everyone on my team who has access to the
 public cloud account to tag their instances. They must create a key,
-pair tag that says: [owner:
-person]{style="font-family: 'Courier New', Courier, monospace;"}
+pair tag that says: `owner: person`
 
-![](https://lh5.googleusercontent.com/3JdrtaE0NU9JYnrGeUctR9Uj-YwGhvwGRFln5ISEW-qYhOyiHElLE0JUfZwp9LsZLValIGfJ9VZ11yJGYF6GLJihFTwUyGJzeojd11q7ASoWPYapPWCujSyQ1ffr4rQ7g0ekXHnS)
+![inventory tags screenshot](/images/posts/archive/inventory-tags.png)
 
 This creates a really easy way to audit and see who (which person,
 organization, or team) is accountable for billing, which is half the
@@ -70,10 +64,8 @@ enforce this. I will use the fully supported amazon.aws collection to
 demonstrate this.  
 
 -   **amazon.aws**
--   -   downstream content fully supported on [Ansible automation
-        hub](https://cloud.redhat.com/ansible/automation-hub/repo/published/amazon/aws)
-    -   upstream code found on [Ansible
-        Galaxy](https://galaxy.ansible.com/amazon/aws)
+-   downstream content fully supported on [Ansible automation hub](https://cloud.redhat.com/ansible/automation-hub/repo/published/amazon/aws)
+-   upstream code found on [Ansible Galaxy](https://galaxy.ansible.com/amazon/aws)
 
 The primary difference between the community and supported Collections
 here is support with your Red Hat subscription. There is also
@@ -84,10 +76,10 @@ as part of your Red Hat subscription.
 ## Dealing with untagged instances
 
 In my first Ansible Playbook, I want to get a list of all instances that
-have no tags. First, let\'s retrieve all instances in a particular
+have no tags. First, let's retrieve all instances in a particular
 region that are running:
 
-``` 
+```yaml
     - name: grab info for un-tagged instances
       amazon.aws.ec2_instance_info:
         region: "{{ ec2_region }}"
@@ -101,7 +93,7 @@ part of the Amazon namespace. This task retrieves all instances
 (regardless of tags). I found the easiest way was to grab everything
 then filter out for empty tags:
 
-``` 
+```yaml
     - name: set the untagged to a var
       set_fact:
         untagged_instances: "{{ ec2_node_info.instances | selectattr('tags', 'equalto', {}) | map(attribute='instance_id') | list }}"
@@ -110,13 +102,12 @@ then filter out for empty tags:
 This
 [selectattr](https://docs.ansible.com/ansible/latest/user_guide/complex_data_manipulation.html#data-manipulation)
 filter is simply matching any instance that has no tags with the
-[\'tags\', \'equalto\',
-{} ]{style="font-family: 'Courier New', Courier, monospace;"}
+[\'tags\', \'equalto\', {} ]
 
 I can then simply terminate these since my colleague didn't follow my
 well establish guidelines:
 
-``` 
+```yaml
     - name: Terminate every un-tagged running instance in a region.
       amazon.aws.ec2:
         region: "{{ ec2_region }}"
@@ -126,8 +117,7 @@ well establish guidelines:
 ```
 
 However, since you might be more forgiving than me, you could use
-[state:
-stopped]{style="font-family: 'Courier New', Courier, monospace;"} versus
+`state: stopped` versus
 absent which will turn them off versus terminate them.
 
 ## Retrieving any instances with missing tags
@@ -138,7 +128,7 @@ specifically looking for the owner tag. I now want to retrieve any
 instance that is missing the owner tag. I can use the exact same logic
 as above but instead use the selectattr filter to look for undefined. 
 
-``` 
+```yaml
     - name: set the missing tag to a var
       set_fact:
         missing_tag: "{{ ec2_node_info.instances | selectattr('tags.owner', 'undefined') | map(attribute='instance_id') | list }}"
@@ -167,7 +157,7 @@ The above Ansible Playbook in the previous example can catch that.
 
 However another great test is to use a new uptime parameter.
 
-``` 
+```yaml
     - name: grab info
       amazon.aws.ec2_instance_info:
         region: "{{ ec2_region }}"
@@ -198,31 +188,27 @@ tags can be in public cloud infrastructure. 
 ## Automating the automation
 
 So this automation is great and all, but manually running playbooks only
-saves you so much time. I went ahead and used the [Ansible
-workflows](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflows.html)
+saves you so much time. I went ahead and used the [Ansible workflows](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflows.html)
 feature to hit multiple regions at once, and then schedule it so that my
 automation jobs run every hour.
 
-![](https://lh4.googleusercontent.com/vJ_MBsCQts9wENjpcgythZl6sVuIF-wfXKZlh9WJOHcFhEI__2IJRk5tb0gCqicYjyMB_IBl9K_Sape_Q8xZ6_Rarb8LhWqkgBVl_zMQvFQS4GNuWj2lCEio_CkDqaRcmQ6Z9seb){width="624"
-height="627" loading="lazy"}
+![ansible workflow diagrams](/images/posts/archive/automating-automation.png)
 
 Each rectangle on the right represents an automation
 [job](https://docs.ansible.com/ansible-tower/latest/html/userguide/job_templates.html).
 Each job in the same column is run in parallel on my Ansible Automation
 Platform cluster. Each job template is set to a different region. I also
-used the [survey
-feature](https://docs.ansible.com/ansible-tower/latest/html/userguide/job_templates.html#surveys)
+used the [survey feature](https://docs.ansible.com/ansible-tower/latest/html/userguide/job_templates.html#surveys)
 to make this easy to configure from the Web UI.
 
-![](https://lh5.googleusercontent.com/JKwTKK8Kf78EER1THbTRR-jGMNBiLMun91vTcLSqmVWCW9n0AHiZVIu8YURNBJtMB1CtouP04FsoWeOO1ADNINZUoqK6CaSqwjSIv2gyTWyuNA4jwszmN2VJeXpPsjaAMpAWA_tL){width="624"
-height="419" loading="lazy"}
+![screenshot](/images/posts/archive/aws-untagged-instances.png)
 
 In my particular scenario I was running automated testing in four AWS
 regions (us-east-1, ap-northeast-1, ap-southeast-1 and eu-central-1).
 Now that my workflow is complete, it is trivial to schedule my workflow
 to run every hour.
-![](https://lh5.googleusercontent.com/m-fb4eQq7_WBwbZlGldD8TtBPuUhRzW1cDLiWCmUkleDGiGB__ew1spKeAi0i1prMWcSzaL_CbEsZnwATs0jkgL2KK5UGmeDi3Hnxsu76dssYcSzUsRziWZHZsvEpG-phMdTHf3t){width="624"
-height="400" loading="lazy"}
+
+![screenshot](/images/posts/archive/schedule-details-ui.png)
 
 Voila! Now I have automated testing behind the scenes to make sure that
 no orphaned instances are running. For my particular use case this will

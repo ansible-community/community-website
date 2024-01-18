@@ -11,18 +11,10 @@ title: Ansible and ServiceNow Part 2, Parsing facts from network devices using P
 
 # Ansible and ServiceNow Part 2, Parsing facts from network devices using PyATS/Genie
 
-![blog_ansible-and-service-now-part2](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-service-now-part2.png?width=1024&name=blog_ansible-and-service-now-part2.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-service-now-part2.png?width=512&name=blog_ansible-and-service-now-part2.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-service-now-part2.png?width=1024&name=blog_ansible-and-service-now-part2.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-service-now-part2.png?width=1536&name=blog_ansible-and-service-now-part2.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-service-now-part2.png?width=2048&name=blog_ansible-and-service-now-part2.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-service-now-part2.png?width=2560&name=blog_ansible-and-service-now-part2.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-service-now-part2.png?width=3072&name=blog_ansible-and-service-now-part2.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
 This blog is part two in a series covering how Red Hat Ansible
 Automation can integrate with ticket automation. This time we'll cover
 dynamically adding a set of network facts from your switches and routers
-and into your ServiceNow tickets. If you missed Part 1 of this blog
-series, you can refer to it via the following link: [Ansible +
-ServiceNow Part 1: Opening and Closing
-Tickets](/blog/ansible-servicenow-opening-and-closing-tickets){rel=" noopener"}.
+and into your ServiceNow tickets.
 
 Suppose there was a certain network operating system software version
 that contained an issue you knew was always causing problems and making
@@ -45,13 +37,12 @@ in any format we want, in this case pushing them into ServiceNow.
 
 There are many ways to parse facts from network devices with Ansible.
 The following blog example could also all be done via the open source
-[Network Engine Ansible
-Role](https://galaxy.ansible.com/ansible-network/network-engine), but
+[Network Engine Ansible Role](https://galaxy.ansible.com/ansible-network/network-engine), but
 for this example we are using Cisco's sponsored pyATS/Genie
 implementation to parse the following show version command. As you can
 see this is not very friendly to programmatically interact with:
 
-![image7](https://www.ansible.com/hubfs/image7.png)
+![image7](/images/posts/archive/image7.png)
 
 
 # Step 1: Create a Python3 virtual environment in Red Hat Ansible Tower
@@ -76,10 +67,7 @@ dependencies.
 Once a custom virtualenv is created a new field appears in the Job
 Templates section in Ansible Tower. You can select your newly created
 venv from the following dropdown
-menu:![image1-6](https://www.ansible.com/hs-fs/hubfs/image1-6.png?width=930&name=image1-6.png){width="930"
-style="width: 930px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/image1-6.png?width=465&name=image1-6.png 465w, https://www.ansible.com/hs-fs/hubfs/image1-6.png?width=930&name=image1-6.png 930w, https://www.ansible.com/hs-fs/hubfs/image1-6.png?width=1395&name=image1-6.png 1395w, https://www.ansible.com/hs-fs/hubfs/image1-6.png?width=1860&name=image1-6.png 1860w, https://www.ansible.com/hs-fs/hubfs/image1-6.png?width=2325&name=image1-6.png 2325w, https://www.ansible.com/hs-fs/hubfs/image1-6.png?width=2790&name=image1-6.png 2790w"
-sizes="(max-width: 930px) 100vw, 930px"}
+menu:![image1-6](/images/posts/archive/image1-6.png)
 
 Cisco has released two Python3 packages that are very useful for network
 automation - pyATS, and Genie. The first one, pyATS, functions as a
@@ -181,10 +169,7 @@ now easily accessible.
 
 After running the playbook (we did it via Ansible Tower), the following
 is the debug Genie Filter Task from playbook
-run:![image6-2](https://www.ansible.com/hs-fs/hubfs/image6-2.png?width=1930&name=image6-2.png){width="1930"
-style="width: 1930px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/image6-2.png?width=965&name=image6-2.png 965w, https://www.ansible.com/hs-fs/hubfs/image6-2.png?width=1930&name=image6-2.png 1930w, https://www.ansible.com/hs-fs/hubfs/image6-2.png?width=2895&name=image6-2.png 2895w, https://www.ansible.com/hs-fs/hubfs/image6-2.png?width=3860&name=image6-2.png 3860w, https://www.ansible.com/hs-fs/hubfs/image6-2.png?width=4825&name=image6-2.png 4825w, https://www.ansible.com/hs-fs/hubfs/image6-2.png?width=5790&name=image6-2.png 5790w"
-sizes="(max-width: 1930px) 100vw, 1930px"}
+run:![image6-2](/images/posts/archive/image6-2.png)
 
 The full output:
 
@@ -227,10 +212,7 @@ incident ticket Ansible creates.
 
 In the ServiceNow Web dashboard, add these new fields in Configure \>
 Form
-Layout.![image2-6](https://www.ansible.com/hs-fs/hubfs/image2-6.png?width=1590&name=image2-6.png){width="1590"
-style="width: 1590px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/image2-6.png?width=795&name=image2-6.png 795w, https://www.ansible.com/hs-fs/hubfs/image2-6.png?width=1590&name=image2-6.png 1590w, https://www.ansible.com/hs-fs/hubfs/image2-6.png?width=2385&name=image2-6.png 2385w, https://www.ansible.com/hs-fs/hubfs/image2-6.png?width=3180&name=image2-6.png 3180w, https://www.ansible.com/hs-fs/hubfs/image2-6.png?width=3975&name=image2-6.png 3975w, https://www.ansible.com/hs-fs/hubfs/image2-6.png?width=4770&name=image2-6.png 4770w"
-sizes="(max-width: 1590px) 100vw, 1590px"}
+Layout.![image2-6](/images/posts/archive/image2-6.png)
 
 Now when you run your playbook from part one of this blog with the table
 parameter set as incident. When you debug the incident.record dictionary
@@ -238,14 +220,10 @@ it should now have the new fields you just created, such as
 u_device_up_time, u_ios_version, etc.
 
 Snippet of the record dictionary the ServiceNow API sends
-back![image4-3](https://www.ansible.com/hs-fs/hubfs/image4-3.png?width=956&name=image4-3.png){width="956"
-style="width: 956px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/image4-3.png?width=478&name=image4-3.png 478w, https://www.ansible.com/hs-fs/hubfs/image4-3.png?width=956&name=image4-3.png 956w, https://www.ansible.com/hs-fs/hubfs/image4-3.png?width=1434&name=image4-3.png 1434w, https://www.ansible.com/hs-fs/hubfs/image4-3.png?width=1912&name=image4-3.png 1912w, https://www.ansible.com/hs-fs/hubfs/image4-3.png?width=2390&name=image4-3.png 2390w, https://www.ansible.com/hs-fs/hubfs/image4-3.png?width=2868&name=image4-3.png 2868w"
-sizes="(max-width: 956px) 100vw, 956px"}
+back![image4-3](/images/posts/archive/image4-3.png)
 
 We can use these new fields in the data section of our Ansible Playbook
-that uses the [snow_record
-module](https://docs.ansible.com/ansible/latest/modules/snow_record_module.html){rel=" noopener"}.
+that uses the [snow_record module](https://docs.ansible.com/ansible/latest/modules/snow_record_module.html).
 The following is the complete playbook that runs the show version
 command, parses the output and adds the parameters into the new fields:
 
@@ -313,17 +291,12 @@ the uptime of the system). The full dictionary is provided above in step
 The following screenshot is the output of the playbook shown from Red
 Hat Ansible Tower:
 
-![image3-3](https://www.ansible.com/hs-fs/hubfs/image3-3.png?width=1918&name=image3-3.png){width="1918"
-style="width: 1918px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/image3-3.png?width=959&name=image3-3.png 959w, https://www.ansible.com/hs-fs/hubfs/image3-3.png?width=1918&name=image3-3.png 1918w, https://www.ansible.com/hs-fs/hubfs/image3-3.png?width=2877&name=image3-3.png 2877w, https://www.ansible.com/hs-fs/hubfs/image3-3.png?width=3836&name=image3-3.png 3836w, https://www.ansible.com/hs-fs/hubfs/image3-3.png?width=4795&name=image3-3.png 4795w, https://www.ansible.com/hs-fs/hubfs/image3-3.png?width=5754&name=image3-3.png 5754w"
-sizes="(max-width: 1918px) 100vw, 1918px"}The new fields are now
+![image3-3](/images/posts/archive/image3-3.png)
+
+The new fields are now
 populated in our ServiceNow incident ticket:
 
-![image5
-copy](https://www.ansible.com/hs-fs/hubfs/image5%20copy.png?width=900&name=image5%20copy.png){width="900"
-style="width: 900px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/image5%20copy.png?width=450&name=image5%20copy.png 450w, https://www.ansible.com/hs-fs/hubfs/image5%20copy.png?width=900&name=image5%20copy.png 900w, https://www.ansible.com/hs-fs/hubfs/image5%20copy.png?width=1350&name=image5%20copy.png 1350w, https://www.ansible.com/hs-fs/hubfs/image5%20copy.png?width=1800&name=image5%20copy.png 1800w, https://www.ansible.com/hs-fs/hubfs/image5%20copy.png?width=2250&name=image5%20copy.png 2250w, https://www.ansible.com/hs-fs/hubfs/image5%20copy.png?width=2700&name=image5%20copy.png 2700w"
-sizes="(max-width: 900px) 100vw, 900px"}
+![image5 copy](/images/posts/archive/image5-copy.png)
 
 During an outage things can become chaotic. We have all seen how on
 certain days in the network field, tickets can become a very low

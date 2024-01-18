@@ -83,9 +83,8 @@ additional_build_steps:
     - RUN ls -la /etc
 ```
 
-Once I have pushed my execution environment to my p[rivate automation
-hub](https://www.ansible.com/blog/the-ansible-cookie-magic-in-the-middle),
-we are ready to get building! 
+Once I have pushed my execution environment to my private automation
+hub, we are ready to get building! 
 
 I\'m going to work on provisioning with Terraform with a simple use case
 using three files:
@@ -217,9 +216,8 @@ environment. 
 
 # The wheels are turning, but now what?
 
-Ansible Automation Platform allows us to use [dynamic inventory
-plugins](https://www.ansible.com/blog/configuring-an-aws-dynamic-inventory-with-automation-controller),
-so we will use the relevant plugin to allow us to update the inventory
+Ansible Automation Platform allows us to use dynamic inventory
+plugins, so we will use the relevant plugin to allow us to update the inventory
 to accommodate our newly provisioned host. One of the really cool things
 here is that we can provide the tags we want in our Terraform manifest
 files, and in Ansible we can narrow our inventory hosts with filters

@@ -10,38 +10,31 @@ title: Exploring New Possibilities with the AWS Cloud Control Collection
 
 # Exploring New Possibilities with the AWS Cloud Control Collection
 
-![AWS control
-blog](https://www.ansible.com/hs-fs/hubfs/AWS%20control%20blog.png?width=578&name=AWS%20control%20blog.png){width="578"
-loading="lazy" style="width: 578px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/AWS%20control%20blog.png?width=289&name=AWS%20control%20blog.png 289w, https://www.ansible.com/hs-fs/hubfs/AWS%20control%20blog.png?width=578&name=AWS%20control%20blog.png 578w, https://www.ansible.com/hs-fs/hubfs/AWS%20control%20blog.png?width=867&name=AWS%20control%20blog.png 867w, https://www.ansible.com/hs-fs/hubfs/AWS%20control%20blog.png?width=1156&name=AWS%20control%20blog.png 1156w, https://www.ansible.com/hs-fs/hubfs/AWS%20control%20blog.png?width=1445&name=AWS%20control%20blog.png 1445w, https://www.ansible.com/hs-fs/hubfs/AWS%20control%20blog.png?width=1734&name=AWS%20control%20blog.png 1734w"
-sizes="(max-width: 578px) 100vw, 578px"}
-
-[We recently made available an experimental alpha Collection of
+We recently made available an experimental alpha Collection of
 generated modules using the AWS Cloud Control API for interacting with
 AWS Services. This content is not intended for production in its current
 state. We are making this work available because we thought it was
 important to share our research and get your
-feedback. ]{style="color: #000000;"}
+feedback.
 
-[In this post, we'll highlight how to try out this alpha release of the
-new ]{style="color: #000000;"}[amazon.cloud content
-Collection](https://github.com/ansible-collections/amazon.cloud)[.]{style="color: #000000;"}
+In this post, we'll highlight how to try out this alpha release of the
+new [amazon.cloud content Collection](https://github.com/ansible-collections/amazon.cloud)
 
 ## The AWS Cloud Control API
 
-[Launched in September 2021 and featured at AWS re:Invent, AWS Cloud
+Launched in September 2021 and featured at AWS re:Invent, AWS Cloud
 Control API is a set of common application programming interfaces (APIs)
 that provides five operations for developers to create, read, update,
 delete, and list (CRUDL) resources and make it easy for developers and
 partners to manage the lifecycle of AWS and third-party services in a
-standard way.]{style="color: #000000;"}
+standard way.
 
-[The Cloud Control API provides support for hundreds of AWS resources
+The Cloud Control API provides support for hundreds of AWS resources
 today with support for more existing AWS resources across services such
 as Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage
-Service (Amazon S3) in the coming months. ]{style="color: #000000;"}
+Service (Amazon S3) in the coming months.
 
-[AWS delivers a broad and deep portfolio of cloud services. It started
+AWS delivers a broad and deep portfolio of cloud services. It started
 with Amazon Simple Storage Service (Amazon S3) and grew over 200+
 services. Each distinct AWS service has a specific API with its own
 vocabulary, input parameters, and error reporting. As these APIs are
@@ -49,116 +42,101 @@ unique to each service, developers have to understand the behavior
 (input, responses, and error codes) of each API they use. As
 applications have become increasingly sophisticated and developers work
 across more AWS services, it can become challenging to learn and manage
-distinct APIs for developers.]{style="color: #000000;"}
+distinct APIs for developers.
 
-[With the launch of AWS Cloud Control API, developers have a consistent
+With the launch of AWS Cloud Control API, developers have a consistent
 method to manage supported services that are defined as part of their
 cloud infrastructure throughout their lifecycle, so there are fewer APIs
 to learn as developers add new services to their
-infrastructure.]{style="color: #000000;"}
+infrastructure.
 
 ## Why AWS Cloud Control API is important to Ansible
 
-[While not directly affecting Ansible content authors automating AWS
+While not directly affecting Ansible content authors automating AWS
 services, we believe the Cloud Control API will be beneficial in
-providing a better [cloud
-automation](/use-cases/hybrid-cloud){rel="noopener"}
-experience. ]{style="color: #000000;"}
+providing a better cloud automation experience.
 
-[The most noteworthy is that it enables the
-]{style="color: #000000;"}[rapid introduction of new AWS services and
+The most noteworthy is that it enables the
+rapid introduction of new AWS services and
 implementation of new features to existing ones. This will also enable
 more comprehensive coverage of the vast number of AWS services
 available. This can be further extended to include third-party services
 running in the AWS cloud that have adopted the Cloud Control
-API.]{style="color: #222222;"}
+API.
 
-[The modules contained in this Collection are generated using a tool
-called
-]{style="color: #262626;"}[ [amazon_cloud_code_generator]{style="color: #2965a8; text-decoration: underline;"}](https://github.com/ansible-collections/amazon_cloud_code_generator){style="color: #262626;"}[ -
+The modules contained in this Collection are generated using a tool
+called [amazon_cloud_code_generator](https://github.com/ansible-collections/amazon_cloud_code_generator) -
 developed and open sourced by the Ansible Cloud
-team.]{style="color: #262626;"}
+team.
 
-[![](https://lh3.googleusercontent.com/HVsPZ4voiOe2dwa6AHj3x7dnJRl_yiPTrHweCS06oD8yGTZn0LFil9UQBHeq-jaucQxo9hUGKMRggkQG-TdoTXb5_jHpzBhOFt11RRZ7bSNJbjroOm9Ek3S8eL80g7gnstVGvrMZOeXOWZaseg){width="576"
-height="248" loading="lazy"}]{style="color: #000000;"}
+![amazon.cloud collection generation flow diagram](/images/posts/archive/aws-ansible-cloud-collection.jpg)
 
-[As you can see in the flow diagram, the Collection can be easily
-deployed using ]{style="color: #222222;"}[tox -e
-refresh_modules]{style="color: #222222;"}[, and it is generated in the
-]{style="color: #222222;"}[cloud]{style="color: #222222;"}[ subdirectory
-by default.]{style="color: #222222;"}
+As you can see in the flow diagram, the Collection can be easily
+deployed using `tox -e refresh_modules`, and it is generated in the
+`cloud` subdirectory by default.
 
-[Basically, the generation process leverages some Python utility scripts
+Basically, the generation process leverages some Python utility scripts
 that wrap the AWS CloudFormation client to scrape Resource Type
 Definition Schema or meta-schema for each Amazon-supported resource and
 performs the necessary processing to generate module 
-documentation.]{style="color: #222222;"}
+documentation.
 
-[Additional processing logic generates all utilities including modules,
-modules_utils, and tests.]{style="color: #222222;"}
+Additional processing logic generates all utilities including modules,
+modules_utils, and tests.
 
-[For example,
-]{style="color: #000000;"}[module_utils]{style="color: #000000;"}[
-contains a base class that can be used by all resource modules to
+For example, `module_utils` contains a base class that can be used by all resource modules to
 provide all the necessary methods to create, update, delete, describe
 and list with the appropriate logic to wait, paginate, and gracefully
-handle botocore exceptions.]{style="color: #000000;"}
+handle botocore exceptions. 
 
- 
+## Using the amazon.cloud Collection
 
-**[Using the
-]{style="color: #262626;"}[amazon.cloud]{style="color: #262626;"}**
-**[Collection]{style="color: #262626;"}**
-
-[All the modules of this Collection use boto3
-(]{style="color: #262626;"}[Amazon Web Services (AWS) Software
-Development Kit (SDK) for Python]{style="color: #24292f;"}[) and AWS
+All the modules of this Collection use boto3
+Amazon Web Services (AWS) Software
+Development Kit (SDK) for Python and AWS
 Cloud Control API (CloudControlApi) client. It
-]{style="color: #262626;"}[requires:]{style="color: #222222;"}
+requires:
 
--   [boto3](https://github.com/boto/boto3)[ \>=
-    1.20.0]{style="color: #222222;"}[ and
-    ]{style="color: #222222;"}[botocore](https://github.com/boto/botocore)[
-    \>= 1.23.0]{style="color: #222222;"}[.]{style="color: #222222;"}
--   [Python 3.9 or higher.]{style="color: #262626;"}
+-   [boto3](https://github.com/boto/boto3) `>=` 1.20.0 and [botocore](https://github.com/boto/botocore) `>=` 1.23.0
+-   Python 3.9 or higher.
 
 ## The basic task example
 
-[Let's take a look at a practical example of how to use the amazon.cloud
+Let's take a look at a practical example of how to use the amazon.cloud
 Collection. Perhaps you need to provision a simple AWS S3 bucket and
-then describe it.]{style="color: #000000;"}
+then describe it.
 
-[If you are already using the
-]{style="color: #1d1d1d;"}[amazon.aws](https://github.com/ansible-collections/amazon.aws)[
+If you are already using the
+[`amazon.aws`](https://github.com/ansible-collections/amazon.aws)
 and
-]{style="color: #1d1d1d;"}[community.aws](https://github.com/ansible-collections/community.aws)[
+[`community.aws`](https://github.com/ansible-collections/community.aws)
 Collections, you can see the tasks syntax is pretty much
-similar.]{style="color: #1d1d1d;"}
+similar.
 
-[You may notice that we no longer have
-]{style="color: #1d1d1d;"}[\_info]{style="color: #1d1d1d;"}[ modules,
-but the \"get\" or \"describe\" and \"list\" features that the
-]{style="color: #1d1d1d;"}[\_info]{style="color: #1d1d1d;"}[ modules
+You may notice that we no longer have
+`info` modules,
+but the "get" or "describe" and "list" features that the
+`info` modules
 were doing are handled in the main module. This certainly simplifies the
-Collection usage and improves user experience.]{style="color: #1d1d1d;"}
+Collection usage and improves user experience.
 
 ``` yml
 - name: Create a simple S3 bucket with public access block configuration
   amazon.cloud.s3_bucket:
-    state: present  
+    state: present
     bucket_name: “{{ local_bucket_name }}”
     public_access_block_configuration:
-      block_public_acls: true 
-      block_public_policy: true 
+      block_public_acls: true
+      block_public_policy: true
       ignore_public_acls: true
       restrict_public_buckets: true
-  register: _result_create 
+  register: _result_create
 
 - name: Gather information about the S3 bucket
   amazon.cloud.s3_bucket:
-    state: get  
+    state: get
     bucket_name: “{{ local_bucket_name }}”
-  register: _result_info 
+  register: _result_info
 ```
 
  
@@ -166,14 +144,14 @@ Collection usage and improves user experience.]{style="color: #1d1d1d;"}
 ``` yml
 - name: Create a simple S3 bucket with public access block configuration
   amazon.aws.s3_bucket:
-    state: present  
+    state: present
     name: “{{ local_bucket_name }}”
     public_access:
-      block_public_acls: true 
-      block_public_policy: true 
+      block_public_acls: true
+      block_public_policy: true
       ignore_public_acls: true
       restrict_public_buckets: true
-  register: _result_create 
+  register: _result_create
 
 - name: Gather information about the S3 bucket
   community.aws.aws_s3_bucket_info:
@@ -222,16 +200,16 @@ This feature has definitely a positive impact on the user experience.
 
 -   Idempotency (desired state) is a function of the API and may not be
     fully supported. In the Cloud Control API, the idempotency is
-    achieved using the [ClientToken]{style="font-size: 12px;"}. A
-    [ClientToken]{style="font-size: 12px;"}, which is valid for 36 hours
+    achieved using the `ClientToken`. A
+    `ClientToken`, which is valid for 36 hours
     once used. 
 
 -   -   After that, a resource request with the same client token is
         treated as a new request. 
     -   To overcome this limitation, the modules present in this
         Collection handle the idempotency by performing a first
-        [get_resource(TypeName=\'\',
-        Identifier=\'\')]{style="font-size: 12px;"} operation using the
+        get_resource(TypeName=\'\',
+        Identifier=\'\') operation using the
         resource identifier. 
 
 -   Missing server-side pagination may have a severe impact on
@@ -251,7 +229,7 @@ This feature has definitely a positive impact on the user experience.
 -   -   For example, several modules do not allow the user to set a
         primaryIdentifier at creation time. One possible solution would
         be to allow the user to set a resource name and use that name to
-        set [Tag:Name]{style="font-size: 12px;"}, but as the API does
+        set [Tag:Name, but as the API does
         not allow server-side resource filtering, we can only implement
         a client-side filtering using that tag information. This
         approach would definitely have a severe impact on performance. 
@@ -281,12 +259,11 @@ More broadly, what can we do to make API generated modules more usable
 and easier to work with? We'd like to hear what you think.
 
 You can provide feedback by reporting any issue against the
-[amazon.cloud GitHub
-repository](https://github.com/ansible-collections/amazon.cloud/issues.).
+[amazon.cloud GitHub repository](https://github.com/ansible-collections/amazon.cloud/issues.).
 
 Because the modules are auto-generated, you can contribute with GitHub
 Pull Requests by opening them against the
-[[amazon_cloud_code_generator]{style="color: #205097; text-decoration: underline;"}](https://github.com/ansible-collections/amazon_cloud_code_generator)
+[amazon_cloud_code_generator](https://github.com/ansible-collections/amazon_cloud_code_generator)
 tool and not the resulting Collection.
 
 ## In conclusion

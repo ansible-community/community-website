@@ -36,7 +36,7 @@ through short, simple exercises within your browser.  You can find NRE
 Labs at the following location:
 [https://nrelabs.io](https://nrelabs.io/)
 
-With Red Hat Ansible Engine 2.9 [we introduced the concept of resource modules](https://www.ansible.com/blog/network-features-coming-soon-in-ansible-engine-2.9)
+With Red Hat Ansible Engine 2.9 we introduced the concept of resource modules
 and native fact gathering, so I wanted to make sure that these exercises
 covered the latest and greatest aspects of Ansible Network Automation to
 make this turn key for network engineers.  If you are new to resource
@@ -45,10 +45,7 @@ I think it is worth skimming through these exercises!
 
 Lets begin with a network diagram:
 
-![NRE 1](https://www.ansible.com/hs-fs/hubfs/NRE%201.png?width=986&name=NRE%201.png){width="986"
-style="width: 986px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/NRE%201.png?width=493&name=NRE%201.png 493w, https://www.ansible.com/hs-fs/hubfs/NRE%201.png?width=986&name=NRE%201.png 986w, https://www.ansible.com/hs-fs/hubfs/NRE%201.png?width=1479&name=NRE%201.png 1479w, https://www.ansible.com/hs-fs/hubfs/NRE%201.png?width=1972&name=NRE%201.png 1972w, https://www.ansible.com/hs-fs/hubfs/NRE%201.png?width=2465&name=NRE%201.png 2465w, https://www.ansible.com/hs-fs/hubfs/NRE%201.png?width=2958&name=NRE%201.png 2958w"
-sizes="(max-width: 986px) 100vw, 986px"}
+![NRE diagram](/images/posts/archive/NRE_diagram.png)
 
 Each of the four exercises has a different set of objectives outlined,
 step-by-step instructions and takeaways for your Ansible knowledge.

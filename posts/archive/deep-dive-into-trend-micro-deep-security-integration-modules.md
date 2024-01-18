@@ -9,7 +9,7 @@ title: Deep dive into Trend Micro Deep Security integration modules
 
 # Deep dive into Trend Micro Deep Security integration modules
 
-At [AnsibleFest](https://www.ansible.com/ansiblefest) 2020, we announced
+At AnsibleFest 2020, we announced
 the extension of our security automation initiative to support endpoint
 protection use cases. If you have missed it, check out the recording of
 the talk "Automate your endpoint protection using Ansible" on the
@@ -47,8 +47,7 @@ software-as-a-service offering on
 subscribers to quickly find and use content that is supported by Red Hat
 and our technology partners.
 
-The blog post [Getting Started with Automation
-Hub](https://www.ansible.com/blog/getting-started-with-automation-hub)
+The blog post "Getting Started with Automation Hub"
 gives an introduction to Automation Hub and how to configure your
 Ansible command line tools to access Automation Hub for Collection
 downloads.

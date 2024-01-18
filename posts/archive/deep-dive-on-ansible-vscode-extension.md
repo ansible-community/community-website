@@ -12,18 +12,13 @@ title: Deep dive on Ansible VScode extension
 # Deep dive on Ansible VScode extension
 
 Ansible as part of the Red Hat Ansible Automation Platform continues to
-grow and mature. Recent enhancements include Ansible Content
-C[ollections](https://www.ansible.com/blog/the-future-of-ansible-content-delivery),
-automation [execution
-environments](https://www.ansible.com/blog/whats-new-in-ansible-automation-platform-2-automation-execution-environments),
+grow and mature. Recent enhancements include Ansible Content Collections,
+automation execution environments,
 and an increasing list of integrations using plugins and modules. It is
 more important than ever that both new and experienced content creators
 have access to tools that help them write better content faster. The
 newly created Ansible Devtools initiative focuses on developing and
-enhancing tools like
-[ansible-navigator](https://www.ansible.com/blog/whats-new-in-ansible-automation-platform-2-automation-content-navigator)[,
-]{style="font-size: 11px;"}[Ansible VScode
-extension](https://marketplace.visualstudio.com/items?itemName=redhat.ansible),
+enhancing tools like `ansible-navigator`, [Ansible VScode extension](https://marketplace.visualstudio.com/items?itemName=redhat.ansible),
 [ansible-lint](https://pypi.org/project/ansible-lint/) and so on to help
 ease the Ansible automation content creator experience. In this blog, we
 will do a deep dive into the Ansible VSCode extension, giving an
@@ -289,15 +284,3 @@ within the extension either using "**ansible-navigator run**" or
 
 ![](https://lh6.googleusercontent.com/bSBh17BHxqJobAwOWxx8thfEMDwbUvM6k_dDe-0JfmRmp7jrfARPlRO-vc1AjqSbJdlXyoPfoIV2VsEYrL7l6rkMRukcO-V2LiKsv70BdtDFpiRe6WkZS1N8BZAcv1jKm0NBodpU){width="602"
 height="404" loading="lazy"}
-
-Note: 
-
--   There is currently an
-    [issue](https://github.com/ansible/vscode-ansible/issues/468) using
-    this feature when the execution environment setting is enabled. 
-
-**Credit:** Thank you [Brad
-Thornton](https://www.ansible.com/blog/author/brad-thornton), [Colin
-McNaughton](https://www.ansible.com/blog/author/colin-mcnaughton) and
-[Tomasz Maciążek](https://github.com/tomaciazek) for your valuable edits
-and for making this blog more readable.

@@ -17,10 +17,9 @@ that contain various operating systems. One operating system that often
 resides on VMware infrastructure is Red Hat Enterprise Linux. 
 
 With the introduction of VMware REST APIs, we recently announced the
-initial release of the
-[vmware.vmware_rest Collection](https://www.ansible.com/blog/introducing-the-vmware-rest-ansible-content-collection),
+initial release of the `vmware.vmware_rest` Collection,
 for production use. As opposed to the community.vmware Collection, the
-vmware.vmware_rest Collection is based on next generation VMware REST
+`vmware.vmware_rest` Collection is based on next generation VMware REST
 APIs.  This new Collection no longer requires any third party Python
 bindings to communicate with VMware infrastructure. A large part of the
 new Collection that has been introduced is support for automating
@@ -45,8 +44,7 @@ We will be automating RHEL 8 installation using the Kickstart file
 fetched via iso image file. We will not discuss Kickstart file creation
 and management as this has already been covered in
 [the documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/performing_an_advanced_rhel_installation/creating-kickstart-files_installing-rhel-as-an-experienced-user).
-You might want to visit [Kickstart Info Access Labs](https://access.redhat.com/labsinfo/kickstartconfig) to refresh
-your knowledge.
+You might want to visit [Kickstart Info Access Labs](https://access.redhat.com/labsinfo/kickstartconfig) to refresh your knowledge.
 
 ## Gathering information about infrastructure
 
@@ -193,19 +191,11 @@ You can power on the virtual machine using following tasks:
 After powering on the virtual machine, installation will start as
 default option with the given kickstart file:
 
-![rhel blog
-1](https://www.ansible.com/hs-fs/hubfs/rhel%20blog%201.png?width=1600&name=rhel%20blog%201.png){width="1600"
-loading="lazy" style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/rhel%20blog%201.png?width=800&name=rhel%20blog%201.png 800w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%201.png?width=1600&name=rhel%20blog%201.png 1600w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%201.png?width=2400&name=rhel%20blog%201.png 2400w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%201.png?width=3200&name=rhel%20blog%201.png 3200w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%201.png?width=4000&name=rhel%20blog%201.png 4000w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%201.png?width=4800&name=rhel%20blog%201.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![rhel blog one](/images/posts/archive/rhel-blog-one.png)
 
 *Img. Boot menu with Kickstart file as default option*
 
-![rhel blog
-2](https://www.ansible.com/hs-fs/hubfs/rhel%20blog%202.png?width=1600&name=rhel%20blog%202.png){width="1600"
-loading="lazy" style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/rhel%20blog%202.png?width=800&name=rhel%20blog%202.png 800w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%202.png?width=1600&name=rhel%20blog%202.png 1600w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%202.png?width=2400&name=rhel%20blog%202.png 2400w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%202.png?width=3200&name=rhel%20blog%202.png 3200w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%202.png?width=4000&name=rhel%20blog%202.png 4000w, https://www.ansible.com/hs-fs/hubfs/rhel%20blog%202.png?width=4800&name=rhel%20blog%202.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![rhel blog two](/images/posts/archive/rhel-blog-two.png)
 
 * [  Img. Linux Kernel boot parameters looks
 like]{style="font-size: 16px;"}*

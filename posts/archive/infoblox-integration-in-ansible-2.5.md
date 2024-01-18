@@ -94,10 +94,7 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0
 We can login to the web https GUI website and look under **Data
 Management\>IPAM** where we will see the new network listed:
 
-![Ansible-Infoblox-Image-1](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-1.png?width=1196&height=568&name=Ansible-Infoblox-Image-1.png){style="width: 1196px;"
-width="1196" height="568"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-1.png?width=598&height=284&name=Ansible-Infoblox-Image-1.png 598w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-1.png?width=1196&height=568&name=Ansible-Infoblox-Image-1.png 1196w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-1.png?width=1794&height=852&name=Ansible-Infoblox-Image-1.png 1794w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-1.png?width=2392&height=1136&name=Ansible-Infoblox-Image-1.png 2392w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-1.png?width=2990&height=1420&name=Ansible-Infoblox-Image-1.png 2990w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-1.png?width=3588&height=1704&name=Ansible-Infoblox-Image-1.png 3588w"
-sizes="(max-width: 1196px) 100vw, 1196px"}
+![Ansible-Infoblox-Image-1](/images/posts/archive/Ansible-Infoblox-Image-1.png)
 
 The modules can keep state (where applicable) so when we re-run the
 playbook instead of saying **changed** it will just say **OK** and not
@@ -129,10 +126,7 @@ IPAM tab (**Data Management\>IPAM**) I have four top of rack leaf
 switches, and two spine switches defined. I can see them under the list
 view for managed nodes:
 
-![Ansible-Infoblox-Image-2](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-2.png?width=1677&height=838&name=Ansible-Infoblox-Image-2.png){style="width: 1677px;"
-width="1677" height="838"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-2.png?width=839&height=419&name=Ansible-Infoblox-Image-2.png 839w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-2.png?width=1677&height=838&name=Ansible-Infoblox-Image-2.png 1677w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-2.png?width=2516&height=1257&name=Ansible-Infoblox-Image-2.png 2516w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-2.png?width=3354&height=1676&name=Ansible-Infoblox-Image-2.png 3354w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-2.png?width=4193&height=2095&name=Ansible-Infoblox-Image-2.png 4193w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Infoblox-Image-2.png?width=5031&height=2514&name=Ansible-Infoblox-Image-2.png 5031w"
-sizes="(max-width: 1677px) 100vw, 1677px"}
+![Ansible-Infoblox-Image-2](/images/posts/archive/Ansible-Infoblox-Image-2.png)
 
 Let's look at an Ansible Playbook snippet focused on grabbing
 information about a host record:

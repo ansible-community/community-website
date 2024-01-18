@@ -27,7 +27,7 @@ This got me thinking, what is "the zen" of Ansible?
 
 I considered the spirit of "The Zen of Python" and then I returned to
 the Ansible best practices talk that I first co-presented back in 2016
-at Red Hat Summit and [later touched upon here in this blog](https://www.ansible.com/blog/ansible-best-practices-essentials).
+at Red Hat Summit.
 In that talk, I said that Ansible was designed with a philosophy of
 sorts from the very beginning.
 

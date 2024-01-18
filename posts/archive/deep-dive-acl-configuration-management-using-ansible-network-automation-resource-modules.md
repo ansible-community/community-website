@@ -12,18 +12,16 @@ title: Deep Dive, ACL Configuration Management Using Ansible Network Automation 
 
 # Deep Dive, ACL Configuration Management Using Ansible Network Automation Resource Modules
 
-[In October 2019 as part of the Red Hat Ansible Engine 2.9 release, the
-Ansible Network Automation team]{style="color: #333333;"} [introduced
-the first resource
-modules](https://www.ansible.com/blog/network-features-coming-soon-in-ansible-engine-2.9){style="color: #337ab7;"}[.
-]{style="color: #333333;"}[These opinionated network modules make
+In October 2019 as part of the Red Hat Ansible Engine 2.9 release, the
+Ansible Network Automation team introduced the first resource modules.
+
+These opinionated network modules make
 network automation easier and more consistent for those automating
 various network platforms in production. The goal for resource modules
 is to avoid creating and maintaining overly complex jinja2 templates for
-rendering and pushing network configuration. ]{style="color: #333333;"}
+rendering and pushing network configuration.
 
-[This blog post covers the newly released
-]{style="color: #333333;"}[ios_acls]{style="color: #333333; font-family: 'courier new', courier;"}[
+This blog post covers the newly released `ios_acls`
 resource module and how to automate manual processes associated with
 switch and router configurations. These network automation modules are
 used for configuring routers and switches from popular vendors (but not
@@ -35,7 +33,7 @@ automation easier and more consistent for those automating various
 network platforms in production. I'll walk through several examples and
 describe the use cases for each state parameter (including three newly
 released state types) and how these are used in real world
-scenarios.]{style="color: #333333;"}
+scenarios.
 
 ## The Certified Content Collection
 

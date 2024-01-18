@@ -62,31 +62,19 @@ I'm able to view the build logs under the Actions section of my repo. It
 looks like I had some trailing white space and was comparing to an empty
 string on one of my tasks.
 
-![Colin M Blog
-1](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20Blog%201.png?width=1600&name=Colin%20M%20Blog%201.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20Blog%201.png?width=800&name=Colin%20M%20Blog%201.png 800w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20Blog%201.png?width=1600&name=Colin%20M%20Blog%201.png 1600w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20Blog%201.png?width=2400&name=Colin%20M%20Blog%201.png 2400w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20Blog%201.png?width=3200&name=Colin%20M%20Blog%201.png 3200w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20Blog%201.png?width=4000&name=Colin%20M%20Blog%201.png 4000w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20Blog%201.png?width=4800&name=Colin%20M%20Blog%201.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![image one](/images/posts/archive/colin-blog-201.png)
 
 ## Will I get an email notification?
 
 I received an email notification as well, letting me know it had failed.
 
-![Colin M blog
-2](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%202.png?width=1024&name=Colin%20M%20blog%202.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%202.png?width=512&name=Colin%20M%20blog%202.png 512w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%202.png?width=1024&name=Colin%20M%20blog%202.png 1024w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%202.png?width=1536&name=Colin%20M%20blog%202.png 1536w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%202.png?width=2048&name=Colin%20M%20blog%202.png 2048w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%202.png?width=2560&name=Colin%20M%20blog%202.png 2560w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%202.png?width=3072&name=Colin%20M%20blog%202.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
+![image two](/images/posts/archive/colin-m-blog-202.png)
 
 ## Setting it up
 
 To use the action simply create an Ansible Lint.yml (or choose custom `*.yml` name) in the `.github/workflows/` directory.
 
-![Colin M blog
-3](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%203.png?width=1600&name=Colin%20M%20blog%203.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%203.png?width=800&name=Colin%20M%20blog%203.png 800w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%203.png?width=1600&name=Colin%20M%20blog%203.png 1600w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%203.png?width=2400&name=Colin%20M%20blog%203.png 2400w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%203.png?width=3200&name=Colin%20M%20blog%203.png 3200w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%203.png?width=4000&name=Colin%20M%20blog%203.png 4000w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%203.png?width=4800&name=Colin%20M%20blog%203.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![image three](/images/posts/archive/colin-m-blog-203.png)
 
 So here is the really cool part, you can run the action on various
 events! This means every time someone submits a PR, or does a push, the
@@ -113,11 +101,7 @@ hypothetically never fail the GitHub action test.
 
 Example:
 
-![Colin M blog
-4](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%204.png?width=1600&name=Colin%20M%20blog%204.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%204.png?width=800&name=Colin%20M%20blog%204.png 800w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%204.png?width=1600&name=Colin%20M%20blog%204.png 1600w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%204.png?width=2400&name=Colin%20M%20blog%204.png 2400w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%204.png?width=3200&name=Colin%20M%20blog%204.png 3200w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%204.png?width=4000&name=Colin%20M%20blog%204.png 4000w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%204.png?width=4800&name=Colin%20M%20blog%204.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![image four](/images/posts/archive/colin-m-blog-204.png)
 
 [https://pre-commit.com](https://pre-commit.com/)
 
@@ -138,11 +122,7 @@ the following to your local repo's `.pre-commit-config.yaml` file. Make
 sure to change `rev:` to be either a git commit sha or tag of Ansible Lint
 containing `hooks.yaml`.
 
-![Colin M blog
-5](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%205.png?width=1106&name=Colin%20M%20blog%205.png){width="1106"
-style="width: 1106px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%205.png?width=553&name=Colin%20M%20blog%205.png 553w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%205.png?width=1106&name=Colin%20M%20blog%205.png 1106w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%205.png?width=1659&name=Colin%20M%20blog%205.png 1659w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%205.png?width=2212&name=Colin%20M%20blog%205.png 2212w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%205.png?width=2765&name=Colin%20M%20blog%205.png 2765w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%205.png?width=3318&name=Colin%20M%20blog%205.png 3318w"
-sizes="(max-width: 1106px) 100vw, 1106px"}
+![image five](/images/posts/archive/colin-m-blog-205.png)
 
 ## Markdown badge
 
@@ -150,26 +130,14 @@ Once you set up your action, Github will give you a snippet of markdown
 code you can add to the README.md displaying the linting status of your
 repo. A badge for your repo to show if it is passing the linting test.
 
-![Colin M blog
-6](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%206.png?width=1444&name=Colin%20M%20blog%206.png){width="1444"
-style="width: 1444px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%206.png?width=722&name=Colin%20M%20blog%206.png 722w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%206.png?width=1444&name=Colin%20M%20blog%206.png 1444w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%206.png?width=2166&name=Colin%20M%20blog%206.png 2166w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%206.png?width=2888&name=Colin%20M%20blog%206.png 2888w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%206.png?width=3610&name=Colin%20M%20blog%206.png 3610w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%206.png?width=4332&name=Colin%20M%20blog%206.png 4332w"
-sizes="(max-width: 1444px) 100vw, 1444px"}
+![image six](/images/posts/archive/colin-m-blog-206.png)
 
 After removing the trailing whitespace and fixing all issues my PR is
 showing "All checks have passed" and my badge is showing passed.
 
-![Colin M blog
-7](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%207.png?width=1600&name=Colin%20M%20blog%207.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%207.png?width=800&name=Colin%20M%20blog%207.png 800w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%207.png?width=1600&name=Colin%20M%20blog%207.png 1600w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%207.png?width=2400&name=Colin%20M%20blog%207.png 2400w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%207.png?width=3200&name=Colin%20M%20blog%207.png 3200w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%207.png?width=4000&name=Colin%20M%20blog%207.png 4000w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%207.png?width=4800&name=Colin%20M%20blog%207.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![image seven](/images/posts/archive/colin-m-blog-207.png)
 
-![Colin M blog
-8](https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%208.png?width=1600&name=Colin%20M%20blog%208.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%208.png?width=800&name=Colin%20M%20blog%208.png 800w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%208.png?width=1600&name=Colin%20M%20blog%208.png 1600w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%208.png?width=2400&name=Colin%20M%20blog%208.png 2400w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%208.png?width=3200&name=Colin%20M%20blog%208.png 3200w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%208.png?width=4000&name=Colin%20M%20blog%208.png 4000w, https://www.ansible.com/hs-fs/hubfs/Colin%20M%20blog%208.png?width=4800&name=Colin%20M%20blog%208.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![image eight](/images/posts/archive/colin-m-blog-208.png)
 
 ## In conclusion
 

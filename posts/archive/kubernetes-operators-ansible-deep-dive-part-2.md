@@ -10,13 +10,7 @@ title: Kubernetes Operators with Ansible Deep Dive, Part 2
 
 # Kubernetes Operators with Ansible Deep Dive, Part 2
 
-![blog_ansible-and-kubernetes-deep-dive-2](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-2.png?width=1024&name=blog_ansible-and-kubernetes-deep-dive-2.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-2.png?width=512&name=blog_ansible-and-kubernetes-deep-dive-2.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-2.png?width=1024&name=blog_ansible-and-kubernetes-deep-dive-2.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-2.png?width=1536&name=blog_ansible-and-kubernetes-deep-dive-2.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-2.png?width=2048&name=blog_ansible-and-kubernetes-deep-dive-2.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-2.png?width=2560&name=blog_ansible-and-kubernetes-deep-dive-2.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-2.png?width=3072&name=blog_ansible-and-kubernetes-deep-dive-2.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
-In [[part 1 of this
-series](https://www.google.com/url?q=https://www.ansible.com/blog/kubernetes-operators-ansible-deep-dive-part-1&sa=D&ust=1564086512881000){.c14}]{.c10},
+In part 1 of this series,
 we looked at operators overall, and what they do in
 OpenShift/Kubernetes. We peeked at the Operator SDK, and why you\'d want
 to use an Ansible Operator rather than other kinds of operators provided
@@ -24,7 +18,7 @@ by the SDK. We also explored how Ansible Operators are structured and
 the relevant files created by the Operator SDK when building Kubernetes
 Operators with Ansible.
 
-In this the[ second part of this deep dive series, we\'ll:]{.c2 .c9}
+In this the second part of this deep dive series, we'll:
 
 1.  [Take a look at creating an OpenShift Project and deploying a Galera
     Operator]{style="background-color: transparent;"}

@@ -82,9 +82,8 @@ To receive the Ansible Tower logs in Splunk, we need to create a Data
 Input TCP. To do that we will use the [Splunk Enterprise Security
 Content
 Collection](https://cloud.redhat.com/ansible/automation-hub/splunk/es)
-available on Automation Hub as part of the [Red Hat-Maintained Content
-Collections
-release](https://www.ansible.com/blog/now-available-the-new-ansible-content-collections-on-automation-hub).
+available on Automation Hub as part of the Red Hat-Maintained Content
+Collections release.
 
 This Collection has been created to support Splunk Enterprise Security,
 a security product delivered as an add-on application for Splunk
@@ -96,11 +95,8 @@ Collection can be used to support Day 0 and  Day 1 IT Operations use
 cases as well. If you want to read more about how Ansible Content
 Collections developed as part of the Ansible security automation
 initiative can help to overcome security operation challenges, check out
-our blog post [Getting started with Ansible security automation:
-investigation
-enrichment](https://www.ansible.com/blog/getting-started-with-ansible-security-automation-investigation-enrichment)
-from our [Roland
-Wolters](https://www.ansible.com/blog/author/roland-wolters).
+our blog post "Getting started with Ansible security automation: investigation enrichment"
+from our Roland Wolters.
 
 The Splunk Enterprise Security Content Collection has the following
 modules as of today:
@@ -117,15 +113,13 @@ modules as of today:
     Splunk Data Inputs of type TCP or UDP
 
 If you want to learn more about collections in general and how to get
-started with them, check out our blog post [Hands on with Ansible
-collections](https://www.ansible.com/blog/hands-on-with-ansible-collections)
-from our [Ajay
-Chenampara](https://www.ansible.com/blog/author/ajay-chenampara).
+started with them, check out our blog post "Hands on with Ansible
+collections" from our Ajay Chenampara.
 
 Coming back to our use case, we will use the data_input_network module.
-First let\'s install the Collection splunk.es:
+First let's install the Collection splunk.es:
 
-``` 
+```yaml
 $ ansible-galaxy collection install splunk.es
 Process install dependency map
 Starting collection install process
@@ -135,10 +129,10 @@ Installing 'splunk.es:1.0.0' to '/root/.ansible/collections/ansible_collections/
 After the installation of the Collection, the next step is to create our
 inventory:
 
-``` 
+```yaml
 $ cat inventory.ini
 [splunk]
-splunk.customer.com 
+splunk.customer.com
 
 [splunk:vars]
 ansible_network_os=splunk.es.splunk
@@ -190,11 +184,7 @@ To validate if our data input was created, in the Splunk web interface,
 click on Settings\> Data inputs\> TCP. Verify that the TCP port is
 listed as a source type "httpevent" like in the screenshot below:
 
-![Splunk blog
-1](https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%201.png?width=1600&name=Splunk%20blog%201.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%201.png?width=800&name=Splunk%20blog%201.png 800w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%201.png?width=1600&name=Splunk%20blog%201.png 1600w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%201.png?width=2400&name=Splunk%20blog%201.png 2400w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%201.png?width=3200&name=Splunk%20blog%201.png 3200w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%201.png?width=4000&name=Splunk%20blog%201.png 4000w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%201.png?width=4800&name=Splunk%20blog%201.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Splunk blog one](/images/posts/archive/splunk-blog-one.png)
 
 We can also validate the data input by checking if the port 9199 is open
 and does receive connections:
@@ -226,11 +216,7 @@ port, here 9199, and select the right aggregator type, here Splunk. Now
 select protocol TCP, and click first the "Save" button and then, to
 verify our configuration, the "Test" button.
 
-![Splunk blog
-2](https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%202.png?width=1600&name=Splunk%20blog%202.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%202.png?width=800&name=Splunk%20blog%202.png 800w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%202.png?width=1600&name=Splunk%20blog%202.png 1600w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%202.png?width=2400&name=Splunk%20blog%202.png 2400w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%202.png?width=3200&name=Splunk%20blog%202.png 3200w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%202.png?width=4000&name=Splunk%20blog%202.png 4000w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%202.png?width=4800&name=Splunk%20blog%202.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Splunk blog two](/images/posts/archive/splunk-blog-two.png)
 
  
 
@@ -241,21 +227,13 @@ check if the logs are making their way there. In Splunk home, click on
 "Search & Reporting". In "What to Search" pick "Data Summary". A window
 will open up, where you can click on the "Sources" column:
 
-![Splunk blog
-3](https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%203.png?width=1600&name=Splunk%20blog%203.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%203.png?width=800&name=Splunk%20blog%203.png 800w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%203.png?width=1600&name=Splunk%20blog%203.png 1600w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%203.png?width=2400&name=Splunk%20blog%203.png 2400w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%203.png?width=3200&name=Splunk%20blog%203.png 3200w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%203.png?width=4000&name=Splunk%20blog%203.png 4000w, https://www.ansible.com/hs-fs/hubfs/Splunk%20blog%203.png?width=4800&name=Splunk%20blog%203.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Splunk blog three](/images/posts/archive/splunk-blog-three.png)
 
 Click on the source http:tower_logging_collection, this will take us to
 the Search screen, where it is possible to view the records received
 from Ansible Tower:
 
-![splunk blog
-](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%20.png?width=1600&name=splunk%20blog%20.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%20.png?width=800&name=splunk%20blog%20.png 800w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%20.png?width=1600&name=splunk%20blog%20.png 1600w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%20.png?width=2400&name=splunk%20blog%20.png 2400w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%20.png?width=3200&name=splunk%20blog%20.png 3200w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%20.png?width=4000&name=splunk%20blog%20.png 4000w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%20.png?width=4800&name=splunk%20blog%20.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![splunk blog](/images/posts/archive/splunk-blog-four.png)
 
 If all is working fine, you should see the last log events received from
 Ansible Tower, showing that the two tools are now properly connected.
@@ -266,19 +244,11 @@ analyzing the incoming information and making sense of it. So let's
 create a filter: click on the field you'd like to filter, to be filtered
 and then pick \"Add to search\".
 
-![splunk blog
-5](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%205.png?width=1600&name=splunk%20blog%205.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%205.png?width=800&name=splunk%20blog%205.png 800w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%205.png?width=1600&name=splunk%20blog%205.png 1600w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%205.png?width=2400&name=splunk%20blog%205.png 2400w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%205.png?width=3200&name=splunk%20blog%205.png 3200w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%205.png?width=4000&name=splunk%20blog%205.png 4000w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%205.png?width=4800&name=splunk%20blog%205.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![splunk blog five](/images/posts/archive/splunk-blog-five.png)
 
 After that, the search field will be filled with our ﬁlter.
 
-![splunk blog
-6](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%206.png?width=1600&name=splunk%20blog%206.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%206.png?width=800&name=splunk%20blog%206.png 800w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%206.png?width=1600&name=splunk%20blog%206.png 1600w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%206.png?width=2400&name=splunk%20blog%206.png 2400w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%206.png?width=3200&name=splunk%20blog%206.png 3200w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%206.png?width=4000&name=splunk%20blog%206.png 4000w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%206.png?width=4800&name=splunk%20blog%206.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![splunk blog six](/images/posts/archive/splunk-blog-six.png)
 
  
 
@@ -300,11 +270,7 @@ With \"event = \*\" all events are filtered.  After that click on the
 click on exit. That done, click on Visualization and then select the
 Pivot option, in the window select \"Selected Fields (1)\" and click OK.
 
-![splunk blog
-7](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%207.png?width=972&name=splunk%20blog%207.png){width="972"
-style="width: 972px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%207.png?width=486&name=splunk%20blog%207.png 486w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%207.png?width=972&name=splunk%20blog%207.png 972w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%207.png?width=1458&name=splunk%20blog%207.png 1458w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%207.png?width=1944&name=splunk%20blog%207.png 1944w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%207.png?width=2430&name=splunk%20blog%207.png 2430w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%207.png?width=2916&name=splunk%20blog%207.png 2916w"
-sizes="(max-width: 972px) 100vw, 972px"}
+![splunk blog seven](/images/posts/archive/splunk-blog-seven.png)
 
 In this window, we will keep the filters as \"All time\", in \"Split
 Columns\" select event and then \"Add To Table\", after that we can
@@ -312,11 +278,7 @@ already have a view of the information separated in columns with the
 name of the column being the event and their number of appearances in
 the logs.
 
-![splunk blog
-8](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%208.png?width=1600&name=splunk%20blog%208.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%208.png?width=800&name=splunk%20blog%208.png 800w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%208.png?width=1600&name=splunk%20blog%208.png 1600w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%208.png?width=2400&name=splunk%20blog%208.png 2400w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%208.png?width=3200&name=splunk%20blog%208.png 3200w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%208.png?width=4000&name=splunk%20blog%208.png 4000w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%208.png?width=4800&name=splunk%20blog%208.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![splunk blog eight](/images/posts/archive/splunk-blog-eight.png)
 
 After viewing the information in columns, click \"Save As\" and select
 \"Dashboard Panel\".  In \"Dashboard\" select \"New\", in \"Dashboard
@@ -325,22 +287,14 @@ generate the Dashboard ID, in Panel Title and Model Title, define the
 name of this search, for example all_events and click Save and then View
 Dashboard.
 
-![splunk blog
-9](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%209.png?width=1088&name=splunk%20blog%209.png){width="1088"
-style="width: 1088px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%209.png?width=544&name=splunk%20blog%209.png 544w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%209.png?width=1088&name=splunk%20blog%209.png 1088w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%209.png?width=1632&name=splunk%20blog%209.png 1632w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%209.png?width=2176&name=splunk%20blog%209.png 2176w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%209.png?width=2720&name=splunk%20blog%209.png 2720w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%209.png?width=3264&name=splunk%20blog%209.png 3264w"
-sizes="(max-width: 1088px) 100vw, 1088px"}
+![splunk blog nine](/images/posts/archive/splunk-blog-nine.png)
 
 In the following screen, click on Edit in the upper right menu then in
 the all_events panel click on \"Select Visualization\", choose the
 visualization you want, in this example we select "Bar Chart" and click
 "Save".
 
-![splunk blog
-10](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2010.png?width=1600&name=splunk%20blog%2010.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2010.png?width=800&name=splunk%20blog%2010.png 800w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2010.png?width=1600&name=splunk%20blog%2010.png 1600w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2010.png?width=2400&name=splunk%20blog%2010.png 2400w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2010.png?width=3200&name=splunk%20blog%2010.png 3200w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2010.png?width=4000&name=splunk%20blog%2010.png 4000w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2010.png?width=4800&name=splunk%20blog%2010.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![splunk blog ten](/images/posts/archive/splunk-blog-ten.png)
 
 Now that we have our dashboard with a chart listing all events, repeat
 the process of creating filters and in saving the search, select an
@@ -349,11 +303,7 @@ existing dashboard to add new panels to the dashboard we created.
 After creating some panels and adding them to the existing dashboard, we
 will have a visualization like this:
 
-![splunk blog
-11](https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2011.png?width=1600&name=splunk%20blog%2011.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2011.png?width=800&name=splunk%20blog%2011.png 800w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2011.png?width=1600&name=splunk%20blog%2011.png 1600w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2011.png?width=2400&name=splunk%20blog%2011.png 2400w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2011.png?width=3200&name=splunk%20blog%2011.png 3200w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2011.png?width=4000&name=splunk%20blog%2011.png 4000w, https://www.ansible.com/hs-fs/hubfs/splunk%20blog%2011.png?width=4800&name=splunk%20blog%2011.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![splunk blog eleven](/images/posts/archive/splunk-blog-eleven.png)
 
 To use more advanced features of integrating Ansible Tower with Splunk,
 see the Collection

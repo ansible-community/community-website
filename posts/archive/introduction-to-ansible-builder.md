@@ -11,14 +11,11 @@ title: Introduction to Ansible Builder
 # Introduction to Ansible Builder
 
 Hello and welcome to another introductory Ansible blog post, where
-we\'ll be covering a new command-line interface (CLI) tool, Ansible
+we'll be covering a new command-line interface (CLI) tool, Ansible
 Builder. Please note that this article will cover some
 intermediate-level topics such as containers (Ansible Builder uses
 [Podman](https://developers.redhat.com/articles/podman-next-generation-linux-container-tools)
-by default), [virtual
-environments](https://docs.ansible.com/ansible-tower/latest/html/upgrade-migration-guide/virtualenv.html),
-and [Ansible Content
-Collections](https://www.ansible.com/blog/getting-started-with-ansible-collections).
+by default), virtual environments, and Ansible Content Collections.
 If you have some familiarity with those topics, then read on to find out
 what Ansible Builder is, why it was developed, and how to use it. 
 
@@ -32,17 +29,7 @@ this initiative, and start getting the community and customers
 comfortable with our methodologies, thought process, and concept of
 Execution Environments.  Feedback on this upstream project can be
 provided on GitHub via comments and issues, or provided via the various
-methods listed on [our website](https://www.ansible.com/community). 
-There is also a great talk on
-[AnsibleFest.com](https://www.ansible.com/ansiblefest), titled "Creating
-and Using Ansible Execution Environments," available on-demand, which
-can provide additional clarification.
-
-![Screen Shot 2020-12-09 at 4.06.03
-PM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png?width=539&name=Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png){width="539"
-style="width: 539px; display: block; margin-left: auto; margin-right: auto;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png?width=270&name=Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png 270w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png?width=539&name=Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png 539w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png?width=809&name=Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png 809w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png?width=1078&name=Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png 1078w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png?width=1348&name=Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png 1348w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png?width=1617&name=Screen%20Shot%202020-12-09%20at%204.06.03%20PM.png 1617w"
-sizes="(max-width: 539px) 100vw, 539px"}
+methods listed on our website.
 
 # What is Ansible Builder?
 
@@ -85,12 +72,6 @@ by the user. Ansible Builder will produce a directory that acts as the
 build context for the container image build, which will contain the
 [Containerfile]{style="font-family: 'courier new', courier;"}, along
 with any other files that need to be added to the image.
-
-![Screen Shot 2020-12-09 at 4.08.26
-PM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png?width=478&name=Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png){width="478"
-style="width: 478px; display: block; margin-left: auto; margin-right: auto;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png?width=239&name=Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png 239w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png?width=478&name=Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png 478w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png?width=717&name=Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png 717w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png?width=956&name=Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png 956w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png?width=1195&name=Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png 1195w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png?width=1434&name=Screen%20Shot%202020-12-09%20at%204.08.26%20PM.png 1434w"
-sizes="(max-width: 478px) 100vw, 478px"}
 
 ## Getting Started
 
@@ -494,11 +475,7 @@ other version control system) for distribution.  See below for an
 example of a repository that hosts everything necessary for re-building
 a specific image:
 
-![Ansible Builder Blog
-1](https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20Blog%201.png?width=1479&name=Ansible%20Builder%20Blog%201.png){width="1479"
-style="width: 1479px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20Blog%201.png?width=740&name=Ansible%20Builder%20Blog%201.png 740w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20Blog%201.png?width=1479&name=Ansible%20Builder%20Blog%201.png 1479w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20Blog%201.png?width=2219&name=Ansible%20Builder%20Blog%201.png 2219w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20Blog%201.png?width=2958&name=Ansible%20Builder%20Blog%201.png 2958w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20Blog%201.png?width=3698&name=Ansible%20Builder%20Blog%201.png 3698w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20Blog%201.png?width=4437&name=Ansible%20Builder%20Blog%201.png 4437w"
-sizes="(max-width: 1479px) 100vw, 1479px"}
+![Ansible Builder Blog one](/images/posts/archive/ansible-builder-blog-one.png)
 
 [Red Hat
 Quay](https://www.redhat.com/en/technologies/cloud-computing/quay) is a
@@ -507,22 +484,14 @@ distribution, and deployment of containers. Set up an account in quay.io
 and select "Create New Repository". A series of choices will be
 displayed, starting with what's shown below:
 
-![Ansible Builder blog
-2](https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20blog%202.png?width=646&name=Ansible%20Builder%20blog%202.png){width="646"
-style="width: 646px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20blog%202.png?width=323&name=Ansible%20Builder%20blog%202.png 323w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20blog%202.png?width=646&name=Ansible%20Builder%20blog%202.png 646w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20blog%202.png?width=969&name=Ansible%20Builder%20blog%202.png 969w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20blog%202.png?width=1292&name=Ansible%20Builder%20blog%202.png 1292w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20blog%202.png?width=1615&name=Ansible%20Builder%20blog%202.png 1615w, https://www.ansible.com/hs-fs/hubfs/Ansible%20Builder%20blog%202.png?width=1938&name=Ansible%20Builder%20blog%202.png 1938w"
-sizes="(max-width: 646px) 100vw, 646px"}
+![Ansible Builder blog two](/images/posts/archive/ansible-builder-blog-two.png)
 
 From here, you can select your specific GitHub repository (or wherever
 you are hosting your image files), then navigate through other settings
 such as configuring the build triggers, as well as the specific
 Containerfile/Dockerfile and context, amongst other things:
 
-![Ansible builder blog
-3](https://www.ansible.com/hs-fs/hubfs/Ansible%20builder%20blog%203.png?width=1315&name=Ansible%20builder%20blog%203.png){width="1315"
-style="width: 1315px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ansible%20builder%20blog%203.png?width=658&name=Ansible%20builder%20blog%203.png 658w, https://www.ansible.com/hs-fs/hubfs/Ansible%20builder%20blog%203.png?width=1315&name=Ansible%20builder%20blog%203.png 1315w, https://www.ansible.com/hs-fs/hubfs/Ansible%20builder%20blog%203.png?width=1973&name=Ansible%20builder%20blog%203.png 1973w, https://www.ansible.com/hs-fs/hubfs/Ansible%20builder%20blog%203.png?width=2630&name=Ansible%20builder%20blog%203.png 2630w, https://www.ansible.com/hs-fs/hubfs/Ansible%20builder%20blog%203.png?width=3288&name=Ansible%20builder%20blog%203.png 3288w, https://www.ansible.com/hs-fs/hubfs/Ansible%20builder%20blog%203.png?width=3945&name=Ansible%20builder%20blog%203.png 3945w"
-sizes="(max-width: 1315px) 100vw, 1315px"}
+![Ansible builder blog three](/images/posts/archive/ansible-builder-blog-three.png)
 
 There are other ways you can also share your Execution Environment
 images; the above is just a single example of a streamlined and

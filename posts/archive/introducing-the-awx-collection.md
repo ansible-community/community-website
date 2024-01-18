@@ -10,10 +10,7 @@ title: Introducing the AWX and Ansible Tower Collections
 # Introducing the AWX and Ansible Tower Collections
 
 Ansible Content Collections are a new way of distributing content,
-including modules, for Ansible. For detailed information on how to use
-collections in general, please read [Colin McNaughton's blog post about
-the
-topic](https://www.ansible.com/blog/getting-started-with-ansible-collections).  
+including modules, for Ansible. 
 
 The AWX and Ansible Tower Collections allow Ansible Playbooks to
 interact with AWX and Ansible Tower. Much like interacting with AWX or
@@ -25,25 +22,21 @@ this collection, as well as an example playbook and details on how to
 run it successfully.
 
 The AWX Collection
-[awx.awx](https://galaxy.ansible.com/awx/awx){rel=" noopener"} is the
+[awx.awx](https://galaxy.ansible.com/awx/awx) is the
 upstream community distribution available on Ansible Galaxy.  The
 downstream supported Ansible Collection
-[ansible.tower](https://cloud.redhat.com/ansible/automation-hub/ansible/tower){rel=" noopener"}
+[ansible.tower](https://cloud.redhat.com/ansible/automation-hub/ansible/tower)
 is available on Automation Hub alongside the release of Ansible Tower
-3.7.  For more details on the difference between Ansible Galaxy and
-Automation Hub please refer to [Ajay Chenampara's blog
-post](https://www.ansible.com/blog/author/ajay-chenampara).
+3.7.
 
-This collection is a replacement for the [Ansible Tower web
-modules](https://docs.ansible.com/ansible/latest/modules/list_of_web_infrastructure_modules.html#ansible-tower)
-which were previously housed and maintained directly in the [Ansible
-repo](https://github.com/ansible/ansible/tree/stable-2.9/lib/ansible/modules/web_infrastructure/ansible_tower).
-The modules were initially [added to the AWX
-source](https://github.com/ansible/awx/pull/4701) in October of 2019,
-when collections work began; the tower\_\* modules in Ansible Core were
-[marked for official
-migration](https://github.com/ansible/ansible/pull/67233) shortly
-after. 
+This collection is a replacement for the
+[Ansible Tower web modules](https://docs.ansible.com/ansible/latest/modules/list_of_web_infrastructure_modules.html#ansible-tower)
+which were previously housed and maintained directly in the
+[Ansible repo](https://github.com/ansible/ansible/tree/stable-2.9/lib/ansible/modules/web_infrastructure/ansible_tower).
+The modules were initially [added to the AWX source](https://github.com/ansible/awx/pull/4701) in October of 2019,
+when collections work began; the `tower_*` modules in Ansible Core were
+[marked for official migration](https://github.com/ansible/ansible/pull/67233)
+shortly after. 
 
 ## Improvements in the AWX Collection
 
@@ -51,15 +44,14 @@ The modules delivered by Ansible Core and the initial versions of the
 AWX Collection had a dependency on libraries provided by the
 [tower-cli](https://github.com/ansible/tower-cli) project.  Due to the
 deprecation of tower-cli, there is work currently being done to remove
-that dependency. This has led to a major update to the AWX Collection.\
+that dependency. This has led to a major update to the AWX Collection.
 
 During the removal of tower-cli, we have tried to keep the modules
 backwards-compatible with their corresponding version that shipped in
-Ansible Core. This way, if you have already leveraged the tower\_\*
+Ansible Core. This way, if you have already leveraged the `tower_*`
 modules from Ansible Core, there should be very little work required
 when switching to the AWX Collection. For more information, see the
-[**Deprecation
-Updates**](https://docs.google.com/document/d/1HCPVLmLmNVX59MiAWlOAmnJUMKYfQed6pd64sr3tOLg/edit#heading=h.rfgzmyttyslb)
+[Deprecation Updates](https://docs.google.com/document/d/1HCPVLmLmNVX59MiAWlOAmnJUMKYfQed6pd64sr3tOLg/edit#heading=h.rfgzmyttyslb)
 section below.
 
 In addition, we have standardized the modules' operational logic, thus
@@ -92,7 +84,7 @@ install the collection from [Ansible
 Galaxy](https://galaxy.ansible.com/awx/awx) in order to interact with
 Ansible Tower. This can be done with the command:
 
-``` 
+```bash
 ansible-galaxy collection install awx.awx
 ```
 
@@ -117,7 +109,7 @@ The following authentication options are available for use:
 
 Below is an example of a tower_cli.cfg file:
 
-``` 
+```yaml
 host: [$HOST_ADDRESS]
 verify_ssl: False
 tower_username: [$TOWER_USERNAME]
@@ -133,7 +125,7 @@ playbook](https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.htm
 to interact with Ansible Tower. In order to activate the collection, the
 following code snippet is required at the play level of your playbook:
 
-``` 
+```yaml
   collections:
     - awx.awx
 ```
@@ -148,7 +140,7 @@ In the example playbook below, the authentication information is not
 specified in the tasks and would be loaded either from the environment
 variables or a tower_cli.cfg file:
 
-``` 
+```yaml
 ---
 - name: Playbook for Using a Variety of Tower Modules
   hosts: localhost
@@ -216,7 +208,7 @@ variables or a tower_cli.cfg file:
 is to fully qualify the modules' name with the collection namespace, as
 in this example below:
 
-``` 
+```yaml
  - name: Launch the Job Template (w/ extra_vars)
     awx.awx.tower_job_launch:
       job_template: "Job Template to Launch"
@@ -232,53 +224,37 @@ Assuming that the playbook above was saved in your current directory as
 a file named configure_tower.yml, the following command would run this
 playbook:
 
-``` 
+```bash
 $ ansible-playbook -i localhost configure_tower.yml
 ```
-
- 
 
 **Note:** If you have issues with Python on your machine, changing the
 ansible-playbook command to the following might help:
 
-``` 
+```bash
 $ ansible-playbook -i localhost -e ansible_python_interpreter=$(which python) configure_tower.yml
 ```
-
- 
 
 With a properly-installed collection, configured authentication setup
 and a correctly-formatted playbook, you should see output similar to
 this:
 
-![ansible-blog-screenshot-awx-collection](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-screenshot-awx-collection.png?width=1024&name=ansible-blog-screenshot-awx-collection.png){style="width: 1024px;"
-width="1024"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-screenshot-awx-collection.png?width=512&name=ansible-blog-screenshot-awx-collection.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-screenshot-awx-collection.png?width=1024&name=ansible-blog-screenshot-awx-collection.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-screenshot-awx-collection.png?width=1536&name=ansible-blog-screenshot-awx-collection.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-screenshot-awx-collection.png?width=2048&name=ansible-blog-screenshot-awx-collection.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-screenshot-awx-collection.png?width=2560&name=ansible-blog-screenshot-awx-collection.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-screenshot-awx-collection.png?width=3072&name=ansible-blog-screenshot-awx-collection.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
+![ansible-blog-screenshot-awx-collection](/images/posts/archive/ansible-blog-screenshot-awx-collection.png)
 
 Upon completion of the playbook, If you navigate to the web UI of your
 Red Hat Ansible Tower server, you should be able to see that the
 following objects were created:
 
 -   An organization called "New Org"
-
--   An inventory called "New Inventory"
-
--   -   A host called "New Host" within that inventory
-
+-   An inventory called "New Inventory" and host called "New Host" within that inventory
 -   A project called "New Project"
-
 -   A team called "New Team"
-
 -   A job template called "Job Template to Launch"
 
 In addition, you can see on the Jobs page that the playbook invoked the
-job template with the specified extra_vars.  See below:![bianca
-collections
-2](https://www.ansible.com/hs-fs/hubfs/bianca%20collections%202.png?width=1600&name=bianca%20collections%202.png){style="width: 1600px;"
-width="1600"
-srcset="https://www.ansible.com/hs-fs/hubfs/bianca%20collections%202.png?width=800&name=bianca%20collections%202.png 800w, https://www.ansible.com/hs-fs/hubfs/bianca%20collections%202.png?width=1600&name=bianca%20collections%202.png 1600w, https://www.ansible.com/hs-fs/hubfs/bianca%20collections%202.png?width=2400&name=bianca%20collections%202.png 2400w, https://www.ansible.com/hs-fs/hubfs/bianca%20collections%202.png?width=3200&name=bianca%20collections%202.png 3200w, https://www.ansible.com/hs-fs/hubfs/bianca%20collections%202.png?width=4000&name=bianca%20collections%202.png 4000w, https://www.ansible.com/hs-fs/hubfs/bianca%20collections%202.png?width=4800&name=bianca%20collections%202.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+job template with the specified extra_vars.  See below:
+
+![bianca collections tower ui](/images/posts/archive/tower-ui-bianca-collections.png)
 
 ## Deprecation Updates
 
@@ -291,7 +267,7 @@ section of the AWX Collections
 file. Some changes to mention include:
 
 -   extra_vars parameters no longer support load of variables from a
-    file by specifying a @\<file name\> notation. Instead, they now take
+    file by specifying a `@<file name>` notation. Instead, they now take
     dictionaries. If you were previously loading a file, please use the
     lookup plugin to load the file instead.
 -   Some modules no longer return values the way they used to. All

@@ -64,9 +64,6 @@ In the current world of Cloud and DevOps, Automation can be used to
 enable open ways of working in order to build business resilience and
 innovation.
 
-We will post additional information on the
-[AnsibleFest](https://www.ansible.com/ansiblefest) site as we have it.
-
 ### How do I register for  the AnsibleFest virtual experience?
 
 Information and details on registration will be announced within the

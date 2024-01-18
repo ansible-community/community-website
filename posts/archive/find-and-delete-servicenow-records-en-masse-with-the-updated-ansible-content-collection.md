@@ -11,10 +11,9 @@ title: Find and delete ServiceNow records en masse with the updated Ansible Cont
 
 Have you ever had to query and remove a long list of ServiceNow records?
 Yeah, neither have I until recently. Nobody broke into my instance, and
-this isn\'t a one-time operation, I just happen to maintain an instance
-that we use to test our Red Hat Ansible Certified[ Content Collection
-for ServiceNow
-ITSM](https://www.ansible.com/blog/certified-collection-servicenow). 
+this isn't a one-time operation, I just happen to maintain an instance
+that we use to test our Red Hat Ansible Certified Content Collection
+for ServiceNow ITSM. 
 
 To set up the environment, I use a demo system and another workflow to
 create a random user and then allow a learner to progress through some

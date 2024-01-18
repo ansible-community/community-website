@@ -11,11 +11,6 @@ title: Deep Dive on cli_command for Network Automation
 
 # Deep Dive on cli_command for Network Automation
 
-![Ansible-Agnostic-Network-Automation](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic-Network-Automation.png?width=1024&name=Ansible-Agnostic-Network-Automation.png){style="width: 1024px;"
-width="1024"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic-Network-Automation.png?width=512&name=Ansible-Agnostic-Network-Automation.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic-Network-Automation.png?width=1024&name=Ansible-Agnostic-Network-Automation.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic-Network-Automation.png?width=1536&name=Ansible-Agnostic-Network-Automation.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic-Network-Automation.png?width=2048&name=Ansible-Agnostic-Network-Automation.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic-Network-Automation.png?width=2560&name=Ansible-Agnostic-Network-Automation.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic-Network-Automation.png?width=3072&name=Ansible-Agnostic-Network-Automation.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
 In October Ansible 2.7 was released and brought us two powerful agnostic
 network modules,
 [cli_command](https://docs.ansible.com/ansible/latest/modules/cli_command_module.html)
@@ -33,11 +28,7 @@ playbook examples and common use cases to help illustrate how you can
 use these new platform agnostic modules.
 
 Both the **cli_command** and **cli_config** only work with the
-network_cli connection plugin. For those unfamiliar with the
-[network_cli connection
-plugin](https://docs.ansible.com/ansible/latest/plugins/connection/network_cli.html)
-check out this [blog post I did last
-April](https://www.ansible.com/blog/porting-ansible-network-playbooks-with-new-connection-plugins).
+network_cli connection plugin.
 The goal of network_cli is to make playbooks look, feel and operate on
 network devices, the same way Ansible works on Linux hosts.
 
@@ -85,10 +76,7 @@ like this:
 Both Ansible Playbooks are simple and will output identically. This is
 what it would look like:
 
-![Ansible-Agnostic\--Network-Automation-Screen](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic--Network-Automation-Screen.png?width=616&name=Ansible-Agnostic--Network-Automation-Screen.png){style="width: 616px;"
-width="616"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic--Network-Automation-Screen.png?width=308&name=Ansible-Agnostic--Network-Automation-Screen.png 308w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic--Network-Automation-Screen.png?width=616&name=Ansible-Agnostic--Network-Automation-Screen.png 616w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic--Network-Automation-Screen.png?width=924&name=Ansible-Agnostic--Network-Automation-Screen.png 924w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic--Network-Automation-Screen.png?width=1232&name=Ansible-Agnostic--Network-Automation-Screen.png 1232w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic--Network-Automation-Screen.png?width=1540&name=Ansible-Agnostic--Network-Automation-Screen.png 1540w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Agnostic--Network-Automation-Screen.png?width=1848&name=Ansible-Agnostic--Network-Automation-Screen.png 1848w"
-sizes="(max-width: 616px) 100vw, 616px"}
+![screenshot](/images/posts/archive/Ansible-Agnostic--Network-Automation-Screen.png)
 
 Now these two playbooks don't look much different yet, but when you add
 multiple vendors the playbook complexity without these new agnostic

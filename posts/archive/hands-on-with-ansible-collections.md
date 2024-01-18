@@ -12,10 +12,8 @@ title: Hands on with Ansible collections
 # Hands on with Ansible collections
 
 Ansible collections have been introduced previously through two of our
-blogs [Getting Started with Ansible Content
-Collections](https://www.ansible.com/blog/getting-started-with-ansible-collections)
-and [The Future of Ansible Content
-Delivery](https://www.ansible.com/blog/the-future-of-ansible-content-delivery).
+blogs "Getting Started with Ansible Content Collections"
+and "The Future of Ansible Content Delivery".
 In essence, Ansible Automation content is going to be delivered using
 the collection packaging mechanism.  Ansible Content refers to Ansible
 Playbooks, modules, module utilities and plugins. Basically all the
@@ -54,11 +52,7 @@ obtain the Ansible Collections you want to use.
 
 Here is my setup for this demonstration of Ansible Collections:
 
-![Ajay blog
-1](https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%201.png?width=177&name=Ajay%20blog%201.png){width="177"
-style="width: 177px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%201.png?width=89&name=Ajay%20blog%201.png 89w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%201.png?width=177&name=Ajay%20blog%201.png 177w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%201.png?width=266&name=Ajay%20blog%201.png 266w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%201.png?width=354&name=Ajay%20blog%201.png 354w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%201.png?width=443&name=Ajay%20blog%201.png 443w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%201.png?width=531&name=Ajay%20blog%201.png 531w"
-sizes="(max-width: 177px) 100vw, 177px"}
+![Ajay blog one](/images/posts/archive/ajay-blog-one.png)
 
 -   ansible.cfg is the Ansible configuration file.  I will elaborate on
     this in the next section.
@@ -71,11 +65,7 @@ For my example this is a development environment where I just want to
 download the latest and greatest.  I will use a gitignore file to ignore
 the downloaded content and only track the requirements file.
 
-![Ajay blog
-2](https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%202.png?width=551&name=Ajay%20blog%202.png){width="551"
-style="width: 551px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%202.png?width=276&name=Ajay%20blog%202.png 276w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%202.png?width=551&name=Ajay%20blog%202.png 551w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%202.png?width=827&name=Ajay%20blog%202.png 827w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%202.png?width=1102&name=Ajay%20blog%202.png 1102w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%202.png?width=1378&name=Ajay%20blog%202.png 1378w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%202.png?width=1653&name=Ajay%20blog%202.png 1653w"
-sizes="(max-width: 551px) 100vw, 551px"}
+![Ajay blog two](/images/posts/archive/ajay-blog-two.png)
 
 This gitignore file helps ensure that your playbook repository content
 in the version control system only tracks your playbook and related
@@ -92,33 +82,17 @@ to first get the token for authentication. Do this by logging into
 [https://cloud.redhat.com](https://cloud.redhat.com/) and then
 navigating to <https://cloud.redhat.com/ansible/automation-hub/token> 
 
-![Ajay blog
-3](https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%203.png?width=1600&name=Ajay%20blog%203.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%203.png?width=800&name=Ajay%20blog%203.png 800w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%203.png?width=1600&name=Ajay%20blog%203.png 1600w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%203.png?width=2400&name=Ajay%20blog%203.png 2400w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%203.png?width=3200&name=Ajay%20blog%203.png 3200w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%203.png?width=4000&name=Ajay%20blog%203.png 4000w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%203.png?width=4800&name=Ajay%20blog%203.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Ajay blog three](/images/posts/archive/ajay-blog-three.png)
 
-Clicking on the ![ajay blog
-4](https://www.ansible.com/hs-fs/hubfs/ajay%20blog%204.png?width=114&name=ajay%20blog%204.png){width="114"
-style="width: 114px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ajay%20blog%204.png?width=57&name=ajay%20blog%204.png 57w, https://www.ansible.com/hs-fs/hubfs/ajay%20blog%204.png?width=114&name=ajay%20blog%204.png 114w, https://www.ansible.com/hs-fs/hubfs/ajay%20blog%204.png?width=171&name=ajay%20blog%204.png 171w, https://www.ansible.com/hs-fs/hubfs/ajay%20blog%204.png?width=228&name=ajay%20blog%204.png 228w, https://www.ansible.com/hs-fs/hubfs/ajay%20blog%204.png?width=285&name=ajay%20blog%204.png 285w, https://www.ansible.com/hs-fs/hubfs/ajay%20blog%204.png?width=342&name=ajay%20blog%204.png 342w"
-sizes="(max-width: 114px) 100vw, 114px"} button will reveal your
+Clicking on the `Load token` button will reveal your
 authentication token. Save this information somewhere, we will need to
 enter this into the ansible.cfg file. Ansible Galaxy also has an API
 token used for authentication and can be accessed by navigating to
 <https://galaxy.ansible.com/me/preferences> after logging in.
 
-![Ajay blog
-5](https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%205.png?width=1600&name=Ajay%20blog%205.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%205.png?width=800&name=Ajay%20blog%205.png 800w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%205.png?width=1600&name=Ajay%20blog%205.png 1600w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%205.png?width=2400&name=Ajay%20blog%205.png 2400w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%205.png?width=3200&name=Ajay%20blog%205.png 3200w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%205.png?width=4000&name=Ajay%20blog%205.png 4000w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%205.png?width=4800&name=Ajay%20blog%205.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Ajay blog five](/images/posts/archive/ajay-blog-five.png)
 
-Click on the ![Ajay blog
-6](https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%206.png?width=95&name=Ajay%20blog%206.png){width="95"
-style="width: 95px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%206.png?width=48&name=Ajay%20blog%206.png 48w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%206.png?width=95&name=Ajay%20blog%206.png 95w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%206.png?width=143&name=Ajay%20blog%206.png 143w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%206.png?width=190&name=Ajay%20blog%206.png 190w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%206.png?width=238&name=Ajay%20blog%206.png 238w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%206.png?width=285&name=Ajay%20blog%206.png 285w"
-sizes="(max-width: 95px) 100vw, 95px"} button to reveal your API key.
+Click on the `Show API key` button to reveal your API key.
 
 ## Configuring your Ansible.cfg
 
@@ -142,7 +116,7 @@ server to list them in server_list. The list should be in precedence
 order with your primary location choice first, in this case Automation
 Hub.
 
-``` {.line-numbers .language-yaml}
+```yaml
 [defaults]
 stdout_callback = yaml
 inventory = inventory/hosts
@@ -166,9 +140,8 @@ Note the *url* and *auth_url* keys that define the Automation Hub
 repository and authentication endpoint. Also note that this file defines
 where the collections should be downloaded to via the collections_paths
 parameter (e.g.. ./collections).  For more information on configuration
-for Ansible Galaxy and Automation Hub please refer to the [Galaxy User
-Guide](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#galaxy-user-guide).\
-\
+for Ansible Galaxy and Automation Hub please refer to the
+[Galaxy User Guide](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#galaxy-user-guide).
 
 ## Using a requirements file
 
@@ -177,12 +150,12 @@ can install all the collections from a single list. If you are familiar
 with the use of *requirements.yml*  file with roles, the file is very
 similar for collections. This is best understood through an example:
 
-``` {.line-numbers .language-yaml}
+```yaml
 » cat collections/requirements.yml
 collections:
   - name: junipernetworks.junos
     source: https://galaxy.ansible.com
- 
+
   - name: f5networks.f5_modules
     source: https://cloud.redhat.com/api/automation-hub/
 ```
@@ -196,35 +169,27 @@ downloaded from Automation Hub.
 
 The collections can now be installed using the command:
 
-``` {.line-numbers .language-yaml}
-ansible-galaxy collection install -r collections/requirements.yml 
+```yaml
+ansible-galaxy collection install -r collections/requirements.yml
 ```
 
 Running this command in verbose mode helps us look at the endpoints
 being accessed:
 
-![Ajay Blog
-7](https://www.ansible.com/hs-fs/hubfs/Ajay%20Blog%207.png?width=1600&name=Ajay%20Blog%207.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ajay%20Blog%207.png?width=800&name=Ajay%20Blog%207.png 800w, https://www.ansible.com/hs-fs/hubfs/Ajay%20Blog%207.png?width=1600&name=Ajay%20Blog%207.png 1600w, https://www.ansible.com/hs-fs/hubfs/Ajay%20Blog%207.png?width=2400&name=Ajay%20Blog%207.png 2400w, https://www.ansible.com/hs-fs/hubfs/Ajay%20Blog%207.png?width=3200&name=Ajay%20Blog%207.png 3200w, https://www.ansible.com/hs-fs/hubfs/Ajay%20Blog%207.png?width=4000&name=Ajay%20Blog%207.png 4000w, https://www.ansible.com/hs-fs/hubfs/Ajay%20Blog%207.png?width=4800&name=Ajay%20Blog%207.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Ajay Blog seven](/images/posts/archive/ajay-blog-seven.png)
 
 To test the availability of modules from these new collections, you can
 use the *ansible-doc* command:
 
-``` {.line-numbers .language-yaml}
-» ansible-doc f5networks.f5_modules.bigip_device_info 
+```yaml
+ansible-doc f5networks.f5_modules.bigip_device_info
 ```
 
 Our simple playbook will collect facts from the Juniper and F5 device
 (<https://github.com/termlen0/collections_demo/blob/master/play.yaml>).
 We can test the playbook by running it from the command line:
 
-![Ajay blog
-8](https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%208.png?width=1163&name=Ajay%20blog%208.png){width="1163"
-style="width: 1163px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%208.png?width=582&name=Ajay%20blog%208.png 582w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%208.png?width=1163&name=Ajay%20blog%208.png 1163w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%208.png?width=1745&name=Ajay%20blog%208.png 1745w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%208.png?width=2326&name=Ajay%20blog%208.png 2326w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%208.png?width=2908&name=Ajay%20blog%208.png 2908w, https://www.ansible.com/hs-fs/hubfs/Ajay%20blog%208.png?width=3489&name=Ajay%20blog%208.png 3489w"
-sizes="(max-width: 1163px) 100vw, 1163px"}
+![Ajay blog eight](/images/posts/archive/ajay-blog-eight.png)
 
 If you don\'t want to dynamically load the latest collection content
 every time, comment out or remove the requirements file.  This means you
@@ -233,8 +198,8 @@ installing each collection required for your Ansible Playbook into the
 correct virtual environment.  For example to install the F5 Networks
 collections you would perform this command:
 
-``` {.line-numbers .language-yaml}
-ansible-galaxy collection install f5networks.f5_modules 
+```yaml
+ansible-galaxy collection install f5networks.f5_modules
 ```
 
 Another way would be to package the required collections in your SCM

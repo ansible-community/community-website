@@ -16,12 +16,6 @@ Collection, which is available on Ansible Galaxy. The goal is to show
 some of the capabilities that make NetBox a terrific tool and why you
 will want to use NetBox as your network Source of Truth for automation!
 
-![Screen Shot 2020-12-08 at 9.27.19
-AM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png?width=2034&name=Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png){width="2034"
-style="width: 2034px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png?width=1017&name=Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png 1017w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png?width=2034&name=Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png 2034w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png?width=3051&name=Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png 3051w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png?width=4068&name=Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png 4068w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png?width=5085&name=Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png 5085w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png?width=6102&name=Screen%20Shot%202020-12-08%20at%209.27.19%20AM.png 6102w"
-sizes="(max-width: 2034px) 100vw, 2034px"}
-
 ## Source of Truth
 
 Why a Source of Truth? The Source of Truth is where you go to get the

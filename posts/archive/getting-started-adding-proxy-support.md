@@ -9,8 +9,6 @@ title: Adding Proxy Support within Red Hat Ansible Tower
 
 # Adding Proxy Support within Red Hat Ansible Tower
 
-![Getting-Started-with-Tower-Adding-Proxy-Support.png](https://www.ansible.com/hubfs/2017_Images/Blog/Getting-Started-with-Tower-Adding-Proxy-Support.png)
-
 ## Getting Started with Adding Proxy Support
 
 There are many reasons why proxies are implemented into an environment.
@@ -19,8 +17,7 @@ systems. No matter the use, if you have a proxy in place, Red Hat
 Ansible Tower may need to utilize it. For a more in-depth look at what
 we will be doing in this post, you can visit our docs specifically on
 Proxy Support within Ansible Tower
-[here](http://docs.ansible.com/ansible-tower/3.2.1/html/administration/proxy-support.html){linktext="here"
-rel=" noopener" target="_blank"}.
+[here](http://docs.ansible.com/ansible-tower/3.2.1/html/administration/proxy-support.html).
 
 ## Adding a Load Balancer (Reverse Proxy)
 
@@ -90,12 +87,4 @@ Tower interface to configure these settings.
 Now you can use Ansible Tower's power to automate while allowing it to
 utilize your proxy server, ELB or whichever form of filtering you have
 in place for your environment. It is not a hard process to implement,
-but does require some prior knowledge about your particular
-infrastructure.
-
-If you are new to Ansible and want to get started with it, visit our
-[Getting Started page](/get-started){linktext="Getting Started page"
-rel=" noopener" target="_blank"} to get up and running quickly and gain
-the knowledge of automation with [Ansible
-Tower](//www.ansible.com/tower){target="_blank"}.
-
+but does require some prior knowledge about your particular infrastructure.

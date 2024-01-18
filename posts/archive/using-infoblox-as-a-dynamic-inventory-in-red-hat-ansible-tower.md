@@ -10,13 +10,8 @@ title: Using Infoblox as a dynamic inventory in Red Hat Ansible Tower
 
 # Using Infoblox as a dynamic inventory in Red Hat Ansible Tower
 
-![Ansible_and_Infoblox-3](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_and_Infoblox-3.png?width=1024&name=Ansible_and_Infoblox-3.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_and_Infoblox-3.png?width=512&name=Ansible_and_Infoblox-3.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_and_Infoblox-3.png?width=1024&name=Ansible_and_Infoblox-3.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_and_Infoblox-3.png?width=1536&name=Ansible_and_Infoblox-3.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_and_Infoblox-3.png?width=2048&name=Ansible_and_Infoblox-3.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_and_Infoblox-3.png?width=2560&name=Ansible_and_Infoblox-3.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_and_Infoblox-3.png?width=3072&name=Ansible_and_Infoblox-3.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}\
-\
 Do you still use spreadsheets to keep track of all your device
-inventory*?* Do you have Infoblox Appliances deployed in your
+inventory? Do you have Infoblox Appliances deployed in your
 infrastructure? Do you want to start automating without the burden of
 maintaining a static register of devices? If you answered yes to any of
 these questions, this blog is for you.
@@ -24,9 +19,9 @@ these questions, this blog is for you.
 Operations teams often struggle to keep their *Configuration Management
 Databases* (CMDBs) up-to-date, primarily because they were not involved
 in the specification process to share what pieces of information are
-relevant to them, or even if they were, once it is put in place**: Teams
-are not allowed to change any of their** ***Configuration Items***
-**(CI) because they have only read-only access!**
+relevant to them, or even if they were, once it is put in place:
+
+Teams are not allowed to change any of their **Configuration Items (CI) because they have only read-only access!**
 
 The reality is that a lot of the time when we talk about a *CMDB*, we
 are talking about tables in a database without any version control
@@ -38,7 +33,7 @@ through a fastidious and manual process until they give up changing CIs
 (Configuration Items) in the CMDB and just leave everything as it is.
 **What happens next?** Different teams start to rely on their own
 *CMDBs* (A.K.A spreadsheets), to track subnets, IP allocations, DNS
-records, Zones, Views, etc. **What\'s the end result?** End users
+records, Zones, Views, etc. **What's the end result?** End users
 request their machines and still need to wait at least a week before
 someone from the NetOps team consults their own CMDB (yes, the
 spreadsheet) to provide them DNS records and IP addresses.
@@ -68,10 +63,10 @@ file required by the infoblox inventory script:
     # source /var/lib/awx/venv/awx/bin/activate
     # pip install infoblox-client
 
-*NOTE: You could also create a* [*playbook to
-do*](https://gist.github.com/victorock/493b2d41f5a148efbed9e66dc2e8dee1){rel=" noopener"}
-*this, using the Ansible*
-[*pip_module*](https://docs.ansible.com/ansible/latest/pip_module.html)*.*
+NOTE: You could also create a [playbook to
+do](https://gist.github.com/victorock/493b2d41f5a148efbed9e66dc2e8dee1)
+this, using the Ansible
+[pip_module](https://docs.ansible.com/ansible/latest/pip_module.html).
 
 Create the [infoblox configuration
 file](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/infoblox.yaml)
@@ -107,10 +102,9 @@ in the left menu.
 
 Create a new credential type: *INFOBLOX_INVENTORY* (Green + sign)
 
-![Credential Types - Infoblox Inventory
-](https://www.ansible.com/hubfs/image12.png)
+![Credential Types - Infoblox Inventory](/images/posts/archive/image12.png)
 
-![](https://www.ansible.com/hubfs/image5-2.png)
+![screenshot](/images/posts/archive/image5-2.png)
 
 Define the inputs required in the *INPUT CONFIGURATION* field:
 
@@ -144,27 +138,25 @@ Tower, we can use it to create a new credential, specifying the
 information to communicate with the Infoblox Appliance.
 
 Create a credential to communicate with Infoblox Appliance:
-infoblox-ip.ip.ip.ip
+`infoblox-ip.ip.ip.ip`
 
-![Create credential ](https://www.ansible.com/hubfs/image2-4.png)
+![Create credential](/images/posts/archive/image2-4.png)
 
 *NOTE: In the example, the name includes the IP or FQDN, so we can know
 what appliance this particular credential refers to.*
 
-#### Inventory Script* *
+#### Inventory Script
 
 Creation of custom inventory script to query Infoblox Appliances and
 parse the output to the format expected by Ansible inventory.
 
-Create a new [custom inventory
-script](https://docs.ansible.com/ansible-tower/latest/html/administration/custom_inventory_script.html)
-: \_infoblox-inventory-script.py\...
+Create a new [custom inventory script](https://docs.ansible.com/ansible-tower/latest/html/administration/custom_inventory_script.html): `_infoblox-inventory-script.py`
 
 Get the
 [infoblox.py](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/infoblox.py)
-from Ansible\'s GitHub and paste into the *CUSTOM SCRIPT* field:
+from Ansible's GitHub and paste into the *CUSTOM SCRIPT* field:
 
-![Create inventory script](https://www.ansible.com/hubfs/image14.png)
+![Create inventory script](/images/posts/archive/image14.png)
 
 #### Inventory Source
 
@@ -172,27 +164,21 @@ Creation of inventory with the infoblox dynamic script as dynamic source
 and sync to populate our inventory with entries returned by Infoblox
 Appliance.
 
-Go to Inventories and [create a new
-Inventory](https://docs.ansible.com/ansible-tower/latest/html/quickstart/create_inventory.html):
-\`netops\`
+Go to Inventories and [create a new Inventory](https://docs.ansible.com/ansible-tower/latest/html/quickstart/create_inventory.html): `netops`
 
-*![Create inventory](https://www.ansible.com/hubfs/image8.png)*
+![Create inventory](/images/posts/archive/image8.png)
 
-[Add
-Source](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html#add-source)
-referring to the infoblox-dynamic-script.py:
+[Add Source](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html#add-source) referring to the infoblox-dynamic-script.py:
 
-![add source](https://www.ansible.com/hubfs/image2-5.png)
+![add source](/images/posts/archive/image2-5.png)
 
-[Sync the Inventory
-Source](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html#add-source):
+[Sync the Inventory Source](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html#add-source):
 
-![sync inventory source](https://www.ansible.com/hubfs/image10.png)
+![sync inventory source](/images/posts/archive/image10.png)
 
-[Check Sync
-Status](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html#view-completed-jobs):
+[Check Sync Status](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html#view-completed-jobs):
 
-![check sync status](https://www.ansible.com/hubfs/image1-5.png)
+![check sync status](/images/posts/archive/image1-5.png)
 
 #### Inventory Entries
 
@@ -200,18 +186,17 @@ Verification if the hosts, groups and variables are being populated
 correctly in the inventory, based on existing entries in Infoblox
 Appliance:
 
-Check host entries in inventory:  \`netops\` -\> hosts
+Check host entries in inventory:  `netops` -> `hosts`
 
-![check host inventory ](https://www.ansible.com/hubfs/image11.png)
+![check host inventory ](/images/posts/archive/image11.png)
 
-Check variables associate to a host entry: netops -\> hosts -\>
-rtr01.acme.com
+Check variables associate to a host entry: `netops` -> `hosts` -> `rtr01.acme.com`
 
-![check variables](https://www.ansible.com/hubfs/image4-2.png)
+![check variables](/images/posts/archive/image4-2.png)
 
-![host details ](https://www.ansible.com/hubfs/image13.png)
+![host details ](/images/posts/archive/image13.png)
 
-![check inventories](https://www.ansible.com/hubfs/image6-1.png)
+![check inventories](/images/posts/archive/image6-1.png)
 
 At this point we have servers and routers in our dynamic inventory,
 therefore from now on we can execute any Ansible Playbooks against them.
@@ -230,8 +215,7 @@ WEBUI:
 Extensible Attributes Configuration in Infoblox, for the variable
 \"ansible_host\":
 
-![Extensible Attributes Configuration in
-Infoblox](https://www.ansible.com/hubfs/image9.png)
+![Extensible Attributes Configuration in Infoblox](/images/posts/archive/image9.png)
 
 #### Why are we using Extensible Attributes?
 

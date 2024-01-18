@@ -10,12 +10,6 @@ title: The anatomy of automation execution environments
 
 # The anatomy of automation execution environments
 
-![anatomy of EE
-blog](https://www.ansible.com/hs-fs/hubfs/anatomy%20of%20EE%20blog.png?width=1200&name=anatomy%20of%20EE%20blog.png){width="1200"
-loading="lazy" style="width: 1200px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/anatomy%20of%20EE%20blog.png?width=600&name=anatomy%20of%20EE%20blog.png 600w, https://www.ansible.com/hs-fs/hubfs/anatomy%20of%20EE%20blog.png?width=1200&name=anatomy%20of%20EE%20blog.png 1200w, https://www.ansible.com/hs-fs/hubfs/anatomy%20of%20EE%20blog.png?width=1800&name=anatomy%20of%20EE%20blog.png 1800w, https://www.ansible.com/hs-fs/hubfs/anatomy%20of%20EE%20blog.png?width=2400&name=anatomy%20of%20EE%20blog.png 2400w, https://www.ansible.com/hs-fs/hubfs/anatomy%20of%20EE%20blog.png?width=3000&name=anatomy%20of%20EE%20blog.png 3000w, https://www.ansible.com/hs-fs/hubfs/anatomy%20of%20EE%20blog.png?width=3600&name=anatomy%20of%20EE%20blog.png 3600w"
-sizes="(max-width: 1200px) 100vw, 1200px"}
-
 Red Hat Ansible Automation Platform 2 introduced  major architectural
 changes, like automation mesh and automation execution environments,
 that help extend Ansible automation across your organization in a
@@ -36,8 +30,7 @@ In general, an automation execution environment includes:
 -   Python modules/dependencies.
 -   Ansible Content Collections (optional).
 
-![](https://lh4.googleusercontent.com/d8rMe2HZgYqwI4WHtghHMZSSsB2_sl_0vCkoR3ko7mD6t9-MPmGhXXb6Cxbe0edqbuF8lUDRiGMOPE75Hxa7cdHhpXgTk5vJju5pHGwZnpJFncflulDkRNvn8-l_m7pNnPQQn9KpPW42e8FjbDwKeGyYVv6gRZtdfz2ldfpt2IhJUe5jV1PJVt0fNQ){width="623"
-height="254" loading="lazy"}
+![diagram of an execution environment](/images/posts/archive/execution-environment-ubi.png)
 
 In this blog, I will take you through the inner workings of
 ansible-builder and **how** all the above requirements are packaged
@@ -173,15 +166,7 @@ EE_BUILDER_IMAGE. The next section explains this in more detail.
 
 # Automation execution environment design
 
-[![diagram picture of automation execution environment
-design](https://lh3.googleusercontent.com/3UvyqZJsz9qsBSpU78Uhb4lVuuQPzDmVbP6mP_tnz7WEAK04pG6oC8xbHkttKd4E7o7UxGw8X_x302l4x9O8fvhxC6T6FtUStqVfWfSkTe2MKQ1XusDe-pGAyAP4GltAxpOoBDHUvIw2DZw_DbXgDTwhgCXAuUJAyKjHofByuJkbqyDhLwZCAbnLUg){width="808"
-height="432"
-loading="lazy"}](https://lh3.googleusercontent.com/3UvyqZJsz9qsBSpU78Uhb4lVuuQPzDmVbP6mP_tnz7WEAK04pG6oC8xbHkttKd4E7o7UxGw8X_x302l4x9O8fvhxC6T6FtUStqVfWfSkTe2MKQ1XusDe-pGAyAP4GltAxpOoBDHUvIw2DZw_DbXgDTwhgCXAuUJAyKjHofByuJkbqyDhLwZCAbnLUg){rel="noopener"
-target="_blank" linktext=""}
-
-[Click to open image in new
-tab](https://lh3.googleusercontent.com/3UvyqZJsz9qsBSpU78Uhb4lVuuQPzDmVbP6mP_tnz7WEAK04pG6oC8xbHkttKd4E7o7UxGw8X_x302l4x9O8fvhxC6T6FtUStqVfWfSkTe2MKQ1XusDe-pGAyAP4GltAxpOoBDHUvIw2DZw_DbXgDTwhgCXAuUJAyKjHofByuJkbqyDhLwZCAbnLUg){rel="noopener"
-target="_blank"}
+![diagram picture of automation execution environment design](/images/posts/archive/execution-environment-diagram.png)
 
 The above diagram outlines how automation execution environments are
 designed. I have mentioned the upstream image name and the downstream

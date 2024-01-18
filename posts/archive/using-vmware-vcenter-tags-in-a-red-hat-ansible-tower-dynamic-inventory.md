@@ -26,7 +26,7 @@ Ansible Automation Platform 1.2 brings completely native Ansible
 inventory plugin support to Ansible Tower 3.8. In previous versions,
 there were specific inventory plugin configurations based on the old
 inventory scripts where a specific set of parameters surfaced in Ansible
-Tower\'s user interface. For example: cloud region and a specific subset
+Tower's user interface. For example: cloud region and a specific subset
 of variables you could pass to those inventory scripts surfaced as
 variables you could pass to the inventory source, which means that new
 configuration parameters that come with Ansible inventory plugins are
@@ -43,11 +43,7 @@ panel difference between an older version of Ansible Tower (3.7 in this
 case) and the new source configuration in Ansible Tower 3.8. This
 specific example is for an Amazon EC2 source in Ansible Tower 3.8:
 
-![vcenter tags blog
-1](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%201.png?width=1489&name=vcenter%20tags%20blog%201.png){width="1489"
-loading="lazy" style="width: 1489px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%201.png?width=745&name=vcenter%20tags%20blog%201.png 745w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%201.png?width=1489&name=vcenter%20tags%20blog%201.png 1489w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%201.png?width=2234&name=vcenter%20tags%20blog%201.png 2234w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%201.png?width=2978&name=vcenter%20tags%20blog%201.png 2978w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%201.png?width=3723&name=vcenter%20tags%20blog%201.png 3723w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%201.png?width=4467&name=vcenter%20tags%20blog%201.png 4467w"
-sizes="(max-width: 1489px) 100vw, 1489px"}
+![vcenter tags blog one](/images/posts/archive/vcenter-blog-one.png)
 
 As you can see, the "Instance Filters" and "Regions" configuration
 options are no longer a part of the user interface in Ansible Tower 3.8,
@@ -78,44 +74,24 @@ the installation steps.
 
 For this example, we will be using six VMs that were created:
 
-+-----------------------+-----------------------+-----------------------+
-| Name                  | Type                  | Tags                  |
-+-----------------------+-----------------------+-----------------------+
-| testvm_1              | RHEL7                 | Dev\                  |
-|                       |                       | TestVM\               |
-|                       |                       | Linux                 |
-+-----------------------+-----------------------+-----------------------+
-| testvm_2              | RHEL7                 | Prod\                 |
-|                       |                       | TestVM\               |
-|                       |                       | Linux                 |
-+-----------------------+-----------------------+-----------------------+
-| testvm_3              | RHEL8                 | Dev\                  |
-|                       |                       | TestVM\               |
-|                       |                       | Linux                 |
-+-----------------------+-----------------------+-----------------------+
-| testvm_4              | RHEL8                 | Prod\                 |
-|                       |                       | TestVM\               |
-|                       |                       | Linux                 |
-+-----------------------+-----------------------+-----------------------+
-| testvm_5              | Win2019               | Dev\                  |
-|                       |                       | TestVM\               |
-|                       |                       | Windows               |
-+-----------------------+-----------------------+-----------------------+
-| testvm_6              | Win2019               | Prod\                 |
-|                       |                       | TestVM\               |
-|                       |                       | Windows               |
-+-----------------------+-----------------------+-----------------------+
+| Name      | Type    | Tags          |
+|-----------|---------|---------------|
+| testvm_1  | RHEL7   | Dev, TestVM, Linux |
+| testvm_2  | RHEL7   | Prod, TestVM, Linux |
+| testvm_3  | RHEL8   | Dev, TestVM, Linux |
+| testvm_4  | RHEL8   | Prod, TestVM, Linux |
+| testvm_5  | Win2019 | Dev, TestVM, Windows |
+| testvm_6  | Win2019 | Prod, TestVM, Windows |
 
 First step is to make sure that our Ansible Tower nodes have the
 required library to use this feature. As we can use an inventory source
 with a custom python virtual environment, we will create a new python
-virtual environment under /opt/towervenvs called vmware-venv, and will
+virtual environment under `/opt/towervenvs` called `vmware-venv`, and will
 be installing the required libraries in that environment (you can read
-more about Ansible Tower's virtual environments and how to use them in
-the
+more about Ansible Tower's virtual environments and how to use them in the
 [documentation](https://docs.ansible.com/ansible-tower/latest/html/upgrade-migration-guide/virtualenv.html)).
 
-```
+```bash
 $ sudo /opt/towervenvs/vmware-venv/bin/pip3 install --upgrade pip setuptools
 $ sudo /opt/towervenvs/vmware-venv/bin/pip3 install --upgrade  git+https://github.com/vmware/vsphere-automation-sdk-python.git
 ```
@@ -123,14 +99,10 @@ $ sudo /opt/towervenvs/vmware-venv/bin/pip3 install --upgrade  git+https://githu
 Make sure that the virtual environment and the required libraries are
 installed on all nodes in the Ansible Tower cluster, and that Ansible
 Tower is configured to look for virtual environments under the directory
-they are defined in. This setting can be found under Settings →  System
-→ CUSTOM VIRTUAL ENVIRONMENT PATHS
+they are defined in. This setting can be found under
+**Settings > System > CUSTOM VIRTUAL ENVIRONMENT PATHS**
 
-![vcenter tags blog
-2](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%202.png?width=1501&name=vcenter%20tags%20blog%202.png){width="1501"
-loading="lazy" style="width: 1501px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%202.png?width=751&name=vcenter%20tags%20blog%202.png 751w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%202.png?width=1501&name=vcenter%20tags%20blog%202.png 1501w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%202.png?width=2252&name=vcenter%20tags%20blog%202.png 2252w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%202.png?width=3002&name=vcenter%20tags%20blog%202.png 3002w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%202.png?width=3753&name=vcenter%20tags%20blog%202.png 3753w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%202.png?width=4503&name=vcenter%20tags%20blog%202.png 4503w"
-sizes="(max-width: 1501px) 100vw, 1501px"}
+![vcenter tags blog two](/images/posts/archive/vcenter-blog-two.png)
 
 Next, we need to configure a credential for vCenter that Ansible Tower
 will use when syncing the inventory. 
@@ -142,11 +114,7 @@ and choose "VMware vCenter" as the credential type and fill in the
 required information - here is what the credential definition looks
 like:
 
-![vcenter tags blog
-3](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%203.png?width=1479&name=vcenter%20tags%20blog%203.png){width="1479"
-loading="lazy" style="width: 1479px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%203.png?width=740&name=vcenter%20tags%20blog%203.png 740w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%203.png?width=1479&name=vcenter%20tags%20blog%203.png 1479w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%203.png?width=2219&name=vcenter%20tags%20blog%203.png 2219w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%203.png?width=2958&name=vcenter%20tags%20blog%203.png 2958w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%203.png?width=3698&name=vcenter%20tags%20blog%203.png 3698w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%203.png?width=4437&name=vcenter%20tags%20blog%203.png 4437w"
-sizes="(max-width: 1479px) 100vw, 1479px"}
+![vcenter tags blog three](/images/posts/archive/vcenter-blog-three.png)
 
 # Creating the dynamic inventory source in Ansible Tower
 
@@ -156,11 +124,7 @@ and add a new inventory. Give the inventory a name and select an
 organization for the inventory - we\'ll call ours \"VMware
 Inventory\'\', and assign it to Red Hat Organization.
 
-![vcenter tags blog
-4](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%204.png?width=1498&name=vcenter%20tags%20blog%204.png){width="1498"
-loading="lazy" style="width: 1498px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%204.png?width=749&name=vcenter%20tags%20blog%204.png 749w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%204.png?width=1498&name=vcenter%20tags%20blog%204.png 1498w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%204.png?width=2247&name=vcenter%20tags%20blog%204.png 2247w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%204.png?width=2996&name=vcenter%20tags%20blog%204.png 2996w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%204.png?width=3745&name=vcenter%20tags%20blog%204.png 3745w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%204.png?width=4494&name=vcenter%20tags%20blog%204.png 4494w"
-sizes="(max-width: 1498px) 100vw, 1498px"}
+![vcenter tags blog four](/images/posts/archive/vcenter-blog-four.png)
 
 Click "Save" and the sources tab is now enabled. Now go to the sources
 tab, click the add icon to add a new source - Give it a name, and choose
@@ -168,11 +132,11 @@ VMware vCenter as the source, and choose the credential that we created
 earlier (the credential may already be auto populated if it's the only
 credential of the type "VMware vCenter" defined), and make sure to
 select the virtual environment that has the required library installed
-under it.[ ]{style="font-size: 11px;"}
+under it.
 
 Under source variables we will add the following and click save:
 
-```
+```yaml
 ---
 plugin: community.vmware.vmware_vm_inventory
 hostnames:
@@ -191,11 +155,7 @@ with_nested_properties: true
 with_tags: true
 ```
 
-![vcenter tags blog
-5](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%205.png?width=1497&name=vcenter%20tags%20blog%205.png){width="1497"
-loading="lazy" style="width: 1497px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%205.png?width=749&name=vcenter%20tags%20blog%205.png 749w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%205.png?width=1497&name=vcenter%20tags%20blog%205.png 1497w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%205.png?width=2246&name=vcenter%20tags%20blog%205.png 2246w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%205.png?width=2994&name=vcenter%20tags%20blog%205.png 2994w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%205.png?width=3743&name=vcenter%20tags%20blog%205.png 3743w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%205.png?width=4491&name=vcenter%20tags%20blog%205.png 4491w"
-sizes="(max-width: 1497px) 100vw, 1497px"}
+![vcenter tags blog five](/images/posts/archive/vcenter-blog-five.png)
 
 Our new inventory source is now created and will appear under sources
 Let's now click on the sync icon to pull in our list of virtual machines
@@ -204,17 +164,9 @@ source turns green, we can now go into the list of hosts and see all the
 hosts that are in vCenter, and if we click on any of the hosts we can
 see the associated tags under the "tags" key. Awesome!
 
-![vcenter tags
-blog6](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog6.png?width=1498&name=vcenter%20tags%20blog6.png){width="1498"
-loading="lazy" style="width: 1498px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog6.png?width=749&name=vcenter%20tags%20blog6.png 749w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog6.png?width=1498&name=vcenter%20tags%20blog6.png 1498w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog6.png?width=2247&name=vcenter%20tags%20blog6.png 2247w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog6.png?width=2996&name=vcenter%20tags%20blog6.png 2996w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog6.png?width=3745&name=vcenter%20tags%20blog6.png 3745w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog6.png?width=4494&name=vcenter%20tags%20blog6.png 4494w"
-sizes="(max-width: 1498px) 100vw, 1498px"}
+![vcenter tags blog six](/images/posts/archive/vcenter-blog-six.png)
 
-![vcenter tags blog
-7](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%207.png?width=1489&name=vcenter%20tags%20blog%207.png){width="1489"
-loading="lazy" style="width: 1489px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%207.png?width=745&name=vcenter%20tags%20blog%207.png 745w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%207.png?width=1489&name=vcenter%20tags%20blog%207.png 1489w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%207.png?width=2234&name=vcenter%20tags%20blog%207.png 2234w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%207.png?width=2978&name=vcenter%20tags%20blog%207.png 2978w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%207.png?width=3723&name=vcenter%20tags%20blog%207.png 3723w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%207.png?width=4467&name=vcenter%20tags%20blog%207.png 4467w"
-sizes="(max-width: 1489px) 100vw, 1489px"}
+![vcenter tags blog seven](/images/posts/archive/vcenter-blog-seven.png)
 
 # Creating inventory groups based on tags
 
@@ -227,7 +179,7 @@ state and their guest ID. So let\'s add some filters, as well as some
 keyed groups definition. Go back to the inventory source we defined, and
 replace the definition under source variables with the following:
 
-```
+```yaml
 ---
 plugin: community.vmware.vmware_vm_inventory
 hostnames:
@@ -264,17 +216,9 @@ And just like that, we have a list of only the hosts that are tagged
 with TestVM, as well as groups created based on the tags defined in
 vCenter.
 
-![vcenter tags blog
-8](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%208.png?width=1497&name=vcenter%20tags%20blog%208.png){width="1497"
-loading="lazy" style="width: 1497px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%208.png?width=749&name=vcenter%20tags%20blog%208.png 749w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%208.png?width=1497&name=vcenter%20tags%20blog%208.png 1497w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%208.png?width=2246&name=vcenter%20tags%20blog%208.png 2246w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%208.png?width=2994&name=vcenter%20tags%20blog%208.png 2994w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%208.png?width=3743&name=vcenter%20tags%20blog%208.png 3743w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%208.png?width=4491&name=vcenter%20tags%20blog%208.png 4491w"
-sizes="(max-width: 1497px) 100vw, 1497px"}
+![vcenter tags blog eight](/images/posts/archive/vcenter-blog-eight.png)
 
-![vcenter tags blog
-9](https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%209.png?width=1480&name=vcenter%20tags%20blog%209.png){width="1480"
-loading="lazy" style="width: 1480px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%209.png?width=740&name=vcenter%20tags%20blog%209.png 740w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%209.png?width=1480&name=vcenter%20tags%20blog%209.png 1480w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%209.png?width=2220&name=vcenter%20tags%20blog%209.png 2220w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%209.png?width=2960&name=vcenter%20tags%20blog%209.png 2960w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%209.png?width=3700&name=vcenter%20tags%20blog%209.png 3700w, https://www.ansible.com/hs-fs/hubfs/vcenter%20tags%20blog%209.png?width=4440&name=vcenter%20tags%20blog%209.png 4440w"
-sizes="(max-width: 1480px) 100vw, 1480px"}
+![vcenter tags blog nine](/images/posts/archive/vcenter-blog-nine.png)
 
 The new native Ansible inventory plugin support may upgrade the level of
 difficulty, as you will have to know how to configure the inventory

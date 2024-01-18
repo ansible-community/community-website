@@ -60,10 +60,8 @@ Now, let's make something happen. Run the gather job template. Then look
 at the resulting facts that got gathered in the UI for the Inventory
 Autobots.
 
-![Tower-Facts-2-Screen](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-2-Screen.png?width=816&name=Tower-Facts-2-Screen.png){width="816"
-style="width: 816px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-2-Screen.png?width=408&name=Tower-Facts-2-Screen.png 408w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-2-Screen.png?width=816&name=Tower-Facts-2-Screen.png 816w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-2-Screen.png?width=1224&name=Tower-Facts-2-Screen.png 1224w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-2-Screen.png?width=1632&name=Tower-Facts-2-Screen.png 1632w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-2-Screen.png?width=2040&name=Tower-Facts-2-Screen.png 2040w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-2-Screen.png?width=2448&name=Tower-Facts-2-Screen.png 2448w"
-sizes="(max-width: 816px) 100vw, 816px"}\
+![Tower-Facts-2-Screen](/images/posts/archive/Tower-Facts-2-Screen.png)
+
 Above is an example of how you view the results from the fact gathering
 process in the UI. Now let's see how we can create a Smart Inventory
 from the facts gathered.
@@ -74,19 +72,13 @@ We will create a smart inventory that contains only Red Hat hosts. In my
 example, optimus and bumblebee are both Red Hat hosts while jazz is an
 Ubuntu host.
 
-![Tower-Smart-Iventory-Screen](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Smart-Iventory-Screen.png?width=986&name=Tower-Smart-Iventory-Screen.png){width="986"
-style="width: 986px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Smart-Iventory-Screen.png?width=493&name=Tower-Smart-Iventory-Screen.png 493w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Smart-Iventory-Screen.png?width=986&name=Tower-Smart-Iventory-Screen.png 986w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Smart-Iventory-Screen.png?width=1479&name=Tower-Smart-Iventory-Screen.png 1479w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Smart-Iventory-Screen.png?width=1972&name=Tower-Smart-Iventory-Screen.png 1972w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Smart-Iventory-Screen.png?width=2465&name=Tower-Smart-Iventory-Screen.png 2465w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Smart-Iventory-Screen.png?width=2958&name=Tower-Smart-Iventory-Screen.png 2958w"
-sizes="(max-width: 986px) 100vw, 986px"}\
+![Tower-Smart-Iventory-Screen](/images/posts/archive/Tower-Smart-Iventory-Screen.png)
 
 Create a smart inventory with host filter: `ansible_facts.ansible_distribution:RedHat`
 
 My new smart inventory, Red Hat Autobots, contains 2 hosts (see below image).
 
-![Tower-Inventories-Screen](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Inventories-Screen.png?width=984&name=Tower-Inventories-Screen.png){width="984"
-style="width: 984px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Inventories-Screen.png?width=492&name=Tower-Inventories-Screen.png 492w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Inventories-Screen.png?width=984&name=Tower-Inventories-Screen.png 984w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Inventories-Screen.png?width=1476&name=Tower-Inventories-Screen.png 1476w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Inventories-Screen.png?width=1968&name=Tower-Inventories-Screen.png 1968w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Inventories-Screen.png?width=2460&name=Tower-Inventories-Screen.png 2460w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Inventories-Screen.png?width=2952&name=Tower-Inventories-Screen.png 2952w"
-sizes="(max-width: 984px) 100vw, 984px"}
+![Tower-Inventories-Screen](/images/posts/archive/Tower-Inventories-Screen.png)
 
 ### 3. Inject playbook facts
 
@@ -96,18 +88,13 @@ a playbook and have that fact stored in Ansible Tower.
 
 Run the job template `set_fact_cacheable`. Below is the result of that run.
 
-![Tower-Jobs-Screen](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Jobs-Screen.png?width=986&name=Tower-Jobs-Screen.png){width="986"
-style="width: 986px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Jobs-Screen.png?width=493&name=Tower-Jobs-Screen.png 493w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Jobs-Screen.png?width=986&name=Tower-Jobs-Screen.png 986w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Jobs-Screen.png?width=1479&name=Tower-Jobs-Screen.png 1479w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Jobs-Screen.png?width=1972&name=Tower-Jobs-Screen.png 1972w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Jobs-Screen.png?width=2465&name=Tower-Jobs-Screen.png 2465w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Jobs-Screen.png?width=2958&name=Tower-Jobs-Screen.png 2958w"
+![Tower-Jobs-Screen](/images/posts/archive/Tower-Jobs-Screen.png)
 
 Now, let's look at the facts for any of the 3 hosts that this playbook
 ran against. Notice how bumblebee now has a new set of facts (see below
 image).
 
-![Tower-Facts-Screen](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-Screen.png?width=984&name=Tower-Facts-Screen.png){width="984"
-style="width: 984px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-Screen.png?width=492&name=Tower-Facts-Screen.png 492w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-Screen.png?width=984&name=Tower-Facts-Screen.png 984w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-Screen.png?width=1476&name=Tower-Facts-Screen.png 1476w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-Screen.png?width=1968&name=Tower-Facts-Screen.png 1968w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-Screen.png?width=2460&name=Tower-Facts-Screen.png 2460w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Tower%20Smart%20Inventories%20Screens/Tower-Facts-Screen.png?width=2952&name=Tower-Facts-Screen.png 2952w"
-sizes="(max-width: 984px) 100vw, 984px"}
+![Tower-Facts-Screen](/images/posts/archive/Tower-Facts-Screen.png)
 
 Specifically:
 

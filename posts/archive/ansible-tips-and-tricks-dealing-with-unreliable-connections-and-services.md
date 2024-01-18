@@ -243,11 +243,7 @@ instances for students to use).
 
 This prints out a very easy to understand message to the terminal window:
 
-![Terminal
-Readout](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png?width=884&name=Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png){style="width: 884px;"
-width="884"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png?width=442&name=Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png 442w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png?width=884&name=Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png 884w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png?width=1326&name=Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png 1326w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png?width=1768&name=Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png 1768w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png?width=2210&name=Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png 2210w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png?width=2652&name=Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png 2652w"
-sizes="(max-width: 884px) 100vw, 884px"}
+![Terminal Readout](/images/posts/archive/Ansible-Networking-Tips-Tricks-Terminal-Screenshot.png)
 
 In conclusion, Ansible is extremely flexible at adding some additional
 logic when it is necessary. The until loop can add robustness and the

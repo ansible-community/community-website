@@ -66,7 +66,7 @@ are few good ones to get started with:
 -   Administering user requests ... like "I can't log in" or "I cannot access the application".
 
 We are excited about the future of automation and what is possible with
-Event-Driven Ansible. Learn more about this latest announcement [here.](https://www.ansible.com/blog/introducing-event-driven-ansible)
+Event-Driven Ansible.
 
 # Project Wisdom
 
@@ -87,14 +87,13 @@ Ansible Automation Platform 2 is built to enable a trusted automation
 supply chain. In the upcoming  Ansible Automation Platform 2.3 release,
 digital signing will be supported for containers, playbooks and
 collections. We're also excited to introduce
-[Ansible validated content](https://www.ansible.com/products/content-collections), which
+Ansible validated content, which
 complements the  existing  ecosystem of Red Hat Ansible Certified
 Content Collections. Ansible validated content helps your teams to start
 automating faster by following a trusted, expert-led, opinionated path
 for performing operations and tasks on both Red Hat and third party
 platforms. Initially, Ansible validated content will be pre-loaded into
-private automation hub. [Learn more](https://www.ansible.com/products/content-collections) about Ansible
-validated content. 
+private automation hub.
 
 ## Community
 
@@ -111,12 +110,3 @@ members and nearly 80k messages sent in the past 6 months. Matrix's
 ability to bridge with IRC gave us a strong foundation upon which to
 build. Join the Working Groups and become a part of the conversation:
 [https://matrix.to/#/#social:ansible.com](https://matrix.to/#/#social:ansible.com)
-
-
-## What next?
-
-Looking to dive deeper into these announcements and other AnsibleFest
-content?  Explore the AnsibleFest 2022 [Content Hub](https://events.experiences.redhat.com/widget/redhat/rhaf22/SessionCatalog2022)
-to access sessions on demand and find all-new resources for automation
-lovers like you!
-

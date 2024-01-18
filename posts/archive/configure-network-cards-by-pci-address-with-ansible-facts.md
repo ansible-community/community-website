@@ -10,11 +10,6 @@ title: Configure Network Cards by PCI Address with Ansible Facts
 
 # Configure Network Cards by PCI Address with Ansible Facts
 
-![Ansible-Blog-Network-Pool-Gradient-Header](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Blog-Network-Pool-Gradient-Header.png?width=1024&name=Ansible-Blog-Network-Pool-Gradient-Header.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Blog-Network-Pool-Gradient-Header.png?width=512&name=Ansible-Blog-Network-Pool-Gradient-Header.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Blog-Network-Pool-Gradient-Header.png?width=1024&name=Ansible-Blog-Network-Pool-Gradient-Header.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Blog-Network-Pool-Gradient-Header.png?width=1536&name=Ansible-Blog-Network-Pool-Gradient-Header.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Blog-Network-Pool-Gradient-Header.png?width=2048&name=Ansible-Blog-Network-Pool-Gradient-Header.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Blog-Network-Pool-Gradient-Header.png?width=2560&name=Ansible-Blog-Network-Pool-Gradient-Header.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible-Blog-Network-Pool-Gradient-Header.png?width=3072&name=Ansible-Blog-Network-Pool-Gradient-Header.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
 In this post, you will learn advanced applications of Ansible facts to
 configure Linux networking. Instead of hard-coding device names, you
 will find out how to specify network devices by PCI addresses. This
