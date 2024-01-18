@@ -8,7 +8,8 @@ type: text
 .contact-page-row {
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  align-items: flex-start;
+  margin-top: 2.25rem;
 }
 .contact-page-community-column {
   display: flex;
@@ -22,27 +23,27 @@ type: text
 .contact-page-platform-column {
   display: flex;
   flex-direction: column;
-  padding-left: 1.25rem;
   h2 {
   font-size: 1.5rem;
   font-weight: normal;
   text-transform: none;
-  }
-  @media screen and (max-width: 992px) {
-    padding-left: 0px;
   }
 }
 .contact-page-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right: 1.5rem;
+  padding-right: 2.5rem;
   img {
     max-width: 100%;
     @media screen and (max-width: 992px) {
       display: none;
     }
   }
+}
+.contact-page-rule {
+  margin-top: 2.75rem;
+  margin-bottom: 4rem;
 }
 </style>
 Get in touch with us if you need help or have questions.
@@ -51,7 +52,7 @@ Get in touch with us if you need help or have questions.
   <div class="contact-page-logo">
     <img src="../images/community_logo.svg"
          alt="Ansible community logo"
-         style="height: auto; width: 200px;"/>
+         style="height: auto; width: 125px;"/>
   </div>
   <div class="contact-page-community-column">
     <h1>Ansible community</h1>
@@ -77,12 +78,12 @@ Get in touch with us if you need help or have questions.
     <p>If you still have questions or need help, you can get in touch with the Ansible community team at Red Hat. Please send an email to <a href="mailto:ansible-community@redhat.com">ansible-community@redhat.com</a></p>
   </div>
 </div>
-<hr />
+<hr class="contact-page-rule" />
 <div class="contact-page-row">
   <div class="contact-page-logo">
     <img src="../images/redhat.svg"
          alt="Red Hat logo"
-         style="height: 120px; width: auto; margin-left: 1.25rem;"/>
+         style="height: auto; width: 125px;"/>
   </div>
   <div class="contact-page-platform-column">
     <h1>Red Hat Ansible Automation Platform</h1>
