@@ -64,11 +64,11 @@ against the LDAP server. Begin with a basic search and dive
 incrementally to refine your searches.
 
 ```yml
-ldapsearch -x  -H ldap://10.10.10.254 -D "CN=jarvis,CN=Users,DC=shield,DC=team" -w 01Password! -b "cn=Users,dc=shield,dc=team" 
+ldapsearch -x  -H ldap://10.10.10.254 -D "CN=jarvis,CN=Users,DC=shield,DC=team" -w 01Password! -b "cn=Users,dc=shield,dc=team"
 ```
 
 This search is general and will list results in the location specified
-`(-b \"cn=Users,dc=shield,dc=team\")` with the location
+`(-b "cn=Users,dc=shield,dc=team")` with the location
 matching what you would use for your LDAP search scope against your
 server.
 
@@ -109,7 +109,7 @@ authentication to attribute user and organization mapping. The LDAP User
 Attribute Map is where the LDAP attributes are mapped to Ansible Tower
 attributes. Examples include first name, last name, email, etc. In this
 case the email attribute is mapping to the
-[userPrincipalName]{.monospace} in the Active Directory Server being
+[userPrincipalName] in the Active Directory Server being
 used. The default is "mail" for most LDAP layouts, but you will need to
 know your structure in order to map accordingly.
 
@@ -123,7 +123,7 @@ mapped to the superusers group in Ansible Tower in the example below:
 
 More complex mapping will get equally more complex when mapping to teams
 and organizations in Ansible Tower. The example being used has a single
-organization with org admins defined as the OU named \"secret\" that was
+organization with org admins defined as the OU named "secret" that was
 matched in User Flags By Group.
 
 ```yml
