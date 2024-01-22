@@ -12,8 +12,7 @@ title: Installing and using collections on Ansible Tower
 
 Ansible Collections are the new way to distribute and manage content.
 Ansible content can be modules, roles, plugins and even Ansible
-Playbooks. In my [previous
-blog](https://www.ansible.com/blog/hands-on-with-ansible-collections) I
+Playbooks. In my previous blog, I
 provide a walkthrough of using Ansible Collections from Ansible Galaxy
 and Automation Hub.  Ansible Galaxy is the upstream community for
 sharing Ansible Collections.  Any community user can create a namespace
@@ -32,11 +31,9 @@ However, it is really easy and I will show you how!
 
 If the Ansible Collections are included in your project you do not need
 to authenticate to Automation Hub. This method is where you are
-downloading dynamically using a requirements file as outlined in my
-[blog
-post](https://www.ansible.com/blog/hands-on-with-ansible-collections).
+downloading dynamically using a requirements file.
 In general there are three strategies for using Ansible Collections with
-your environment:\
+your environment:
 
 1.  Install the collection into your runtime environment or virtual
     environment
@@ -58,11 +55,7 @@ You will need to enter these details in the Ansible Tower settings*
 In order to do this, navigate to the *Settings \> Jobs*  sidebar link
 from the Ansible Tower administration section.
 
-![Screen Shot 2020-06-01 at 12.07.38
-PM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png?width=578&name=Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png){width="578"
-style="width: 578px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png?width=289&name=Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png 289w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png?width=578&name=Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png 578w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png?width=867&name=Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png 867w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png?width=1156&name=Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png 1156w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png?width=1445&name=Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png 1445w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png?width=1734&name=Screen%20Shot%202020-06-01%20at%2012.07.38%20PM.png 1734w"
-sizes="(max-width: 578px) 100vw, 578px"}
+![tower jobs ui](/images/posts/archive/tower-jobs-ui.png)
 
 Click on *Jobs* and update the following fields:
 
@@ -79,11 +72,7 @@ Click on *Jobs* and update the following fields:
 
  
 
-![Screen Shot 2020-06-01 at 12.09.22
-PM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png?width=569&name=Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png){width="569"
-style="width: 569px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png?width=285&name=Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png 285w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png?width=569&name=Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png 569w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png?width=854&name=Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png 854w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png?width=1138&name=Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png 1138w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png?width=1423&name=Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png 1423w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png?width=1707&name=Screen%20Shot%202020-06-01%20at%2012.09.22%20PM.png 1707w"
-sizes="(max-width: 569px) 100vw, 569px"}
+![tower ui screenshot](/images/posts/archive/tower-galaxy-connect-parameters.png)
 
 This is the only step you need to do in Ansible Tower in order to
 download the certified collection from Automation Hub which was defined
@@ -91,21 +80,13 @@ in the *collections/requirements.yml* file.
 
 The playbook is invoked via a job template as usual.
 
-![Screen Shot 2020-06-01 at 12.09.44
-PM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png?width=578&name=Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png){width="578"
-style="width: 578px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png?width=289&name=Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png 289w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png?width=578&name=Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png 578w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png?width=867&name=Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png 867w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png?width=1156&name=Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png 1156w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png?width=1445&name=Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png 1445w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png?width=1734&name=Screen%20Shot%202020-06-01%20at%2012.09.44%20PM.png 1734w"
-sizes="(max-width: 578px) 100vw, 578px"}
+![tower ui screenshot](/images/posts/archive/tower-ui-demo-collections.png)
 
 Launching this job template results in the collections being pulled down
 from Automation Hub and Galaxy and invoking modules made available
 through those collections.
 
-![ajay collections blog
-5](https://www.ansible.com/hs-fs/hubfs/ajay%20collections%20blog%205.png?width=1600&name=ajay%20collections%20blog%205.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ajay%20collections%20blog%205.png?width=800&name=ajay%20collections%20blog%205.png 800w, https://www.ansible.com/hs-fs/hubfs/ajay%20collections%20blog%205.png?width=1600&name=ajay%20collections%20blog%205.png 1600w, https://www.ansible.com/hs-fs/hubfs/ajay%20collections%20blog%205.png?width=2400&name=ajay%20collections%20blog%205.png 2400w, https://www.ansible.com/hs-fs/hubfs/ajay%20collections%20blog%205.png?width=3200&name=ajay%20collections%20blog%205.png 3200w, https://www.ansible.com/hs-fs/hubfs/ajay%20collections%20blog%205.png?width=4000&name=ajay%20collections%20blog%205.png 4000w, https://www.ansible.com/hs-fs/hubfs/ajay%20collections%20blog%205.png?width=4800&name=ajay%20collections%20blog%205.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![ajay collections](/images/posts/archive/ajay-blog-collections.png)
 
 ## Conclusion
 

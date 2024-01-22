@@ -10,16 +10,8 @@ title: Providing Terraform with that Ansible Magic
 
 # Providing Terraform with that Ansible Magic
 
-![ansible terraform magic
-blog](https://www.ansible.com/hs-fs/hubfs/ansible%20terraform%20magic%20blog.png?width=1200&height=675&name=ansible%20terraform%20magic%20blog.png){width="1200"
-height="675" loading="lazy"
-style="height: auto; max-width: 100%; width: 1200px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ansible%20terraform%20magic%20blog.png?width=600&height=338&name=ansible%20terraform%20magic%20blog.png 600w, https://www.ansible.com/hs-fs/hubfs/ansible%20terraform%20magic%20blog.png?width=1200&height=675&name=ansible%20terraform%20magic%20blog.png 1200w, https://www.ansible.com/hs-fs/hubfs/ansible%20terraform%20magic%20blog.png?width=1800&height=1013&name=ansible%20terraform%20magic%20blog.png 1800w, https://www.ansible.com/hs-fs/hubfs/ansible%20terraform%20magic%20blog.png?width=2400&height=1350&name=ansible%20terraform%20magic%20blog.png 2400w, https://www.ansible.com/hs-fs/hubfs/ansible%20terraform%20magic%20blog.png?width=3000&height=1688&name=ansible%20terraform%20magic%20blog.png 3000w, https://www.ansible.com/hs-fs/hubfs/ansible%20terraform%20magic%20blog.png?width=3600&height=2025&name=ansible%20terraform%20magic%20blog.png 3600w"
-sizes="(max-width: 1200px) 100vw, 1200px"}
-
-Late last year, we introduced a Red Hat Ansible [Certified Collection
-Collection for
-Terraform](https://www.ansible.com/blog/walking-on-clouds-with-ansible).
+Late last year, we introduced a Red Hat Ansible Certified Collection
+Collection for Terraform.
 This was an important step in automation, as these two tools really are
 great together and leveraging Ansible\'s ability to orchestrate other
 tools in the enterprise made this a no-brainer. Terraform with its

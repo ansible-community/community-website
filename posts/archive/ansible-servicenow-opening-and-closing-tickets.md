@@ -114,10 +114,7 @@ variable name to that dictionary and then using `debug` to view it in the
 terminal. The following is just a portion of the full dictionary for the
 sake of brevity:
 
-![blog_leverage-servicenow-api](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api.png?width=1160&name=blog_leverage-servicenow-api.png){style="width: 1160px;"
-width="1160"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api.png?width=580&name=blog_leverage-servicenow-api.png 580w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api.png?width=1160&name=blog_leverage-servicenow-api.png 1160w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api.png?width=1740&name=blog_leverage-servicenow-api.png 1740w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api.png?width=2320&name=blog_leverage-servicenow-api.png 2320w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api.png?width=2900&name=blog_leverage-servicenow-api.png 2900w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api.png?width=3480&name=blog_leverage-servicenow-api.png 3480w"
-sizes="(max-width: 1160px) 100vw, 1160px"}\
+![blog_leverage-servicenow-api](/images/posts/archive/Images/blog-social/blog_leverage-servicenow-api.png)
 
 This is very handy in spelling out the parameters you can add under the
 `data` section of your
@@ -132,10 +129,7 @@ This variable (var) is defined as pulling from the stored register
 `record` and the parameter
 of that dictionary called `number`.
 
-![blog_leverage-servicenow-api-2](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api-2.png?width=1294&name=blog_leverage-servicenow-api-2.png){style="width: 1294px;"
-width="1294"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api-2.png?width=647&name=blog_leverage-servicenow-api-2.png 647w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api-2.png?width=1294&name=blog_leverage-servicenow-api-2.png 1294w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api-2.png?width=1941&name=blog_leverage-servicenow-api-2.png 1941w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api-2.png?width=2588&name=blog_leverage-servicenow-api-2.png 2588w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api-2.png?width=3235&name=blog_leverage-servicenow-api-2.png 3235w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_leverage-servicenow-api-2.png?width=3882&name=blog_leverage-servicenow-api-2.png 3882w"
-sizes="(max-width: 1294px) 100vw, 1294px"}\
+![blog_leverage-servicenow-api-2](/images/posts/archive/Images/blog-social/blog_leverage-servicenow-api-2.png)
 
 You could do the same thing with any parameter of the record dictionary
 such as `close_code`, `state`, `comments`, and many
@@ -147,19 +141,13 @@ Next, log into your developers instance of ServiceNow and view the
 **Change->all** section in the left menu bar. You should see your change
 request in the list.
 
-![blog_servicenow-screen](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen.png?width=1999&name=blog_servicenow-screen.png){style="width: 1999px;"
-width="1999"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen.png?width=1000&name=blog_servicenow-screen.png 1000w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen.png?width=1999&name=blog_servicenow-screen.png 1999w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen.png?width=2999&name=blog_servicenow-screen.png 2999w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen.png?width=3998&name=blog_servicenow-screen.png 3998w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen.png?width=4998&name=blog_servicenow-screen.png 4998w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen.png?width=5997&name=blog_servicenow-screen.png 5997w"
-sizes="(max-width: 1999px) 100vw, 1999px"}\
+![blog_servicenow-screen](/images/posts/archive/Images/blog-social/blog_servicenow-screen.png)
 
 Notice that the short description has been filled out by our Ansible
 Playbook task: This is a test opened by Ansible as well as the priority
 `2 - High`.
 
-![blog_servicenow-screen-2](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen-2.png?width=1999&name=blog_servicenow-screen-2.png){style="width: 1999px;"
-width="1999"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen-2.png?width=1000&name=blog_servicenow-screen-2.png 1000w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen-2.png?width=1999&name=blog_servicenow-screen-2.png 1999w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen-2.png?width=2999&name=blog_servicenow-screen-2.png 2999w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen-2.png?width=3998&name=blog_servicenow-screen-2.png 3998w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen-2.png?width=4998&name=blog_servicenow-screen-2.png 4998w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_servicenow-screen-2.png?width=5997&name=blog_servicenow-screen-2.png 5997w"
-sizes="(max-width: 1999px) 100vw, 1999px"}\
+![blog_servicenow-screen-2](/images/posts/archive/Images/blog-social/blog_servicenow-screen-2.png)
 
 ## Closing a ServiceNow ticket
 
@@ -176,10 +164,7 @@ The following is a snippet from the
 `record` dictionary when
 we created our ticket:
 
-![blog_closing-servicenow-ticket](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_closing-servicenow-ticket.png?width=914&name=blog_closing-servicenow-ticket.png){style="width: 914px;"
-width="914"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_closing-servicenow-ticket.png?width=457&name=blog_closing-servicenow-ticket.png 457w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_closing-servicenow-ticket.png?width=914&name=blog_closing-servicenow-ticket.png 914w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_closing-servicenow-ticket.png?width=1371&name=blog_closing-servicenow-ticket.png 1371w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_closing-servicenow-ticket.png?width=1828&name=blog_closing-servicenow-ticket.png 1828w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_closing-servicenow-ticket.png?width=2285&name=blog_closing-servicenow-ticket.png 2285w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_closing-servicenow-ticket.png?width=2742&name=blog_closing-servicenow-ticket.png 2742w"
-sizes="(max-width: 914px) 100vw, 914px"}\
+![blog_closing-servicenow-ticket](/images/posts/archive/Images/blog-social/blog_closing-servicenow-ticket.png)
 
 Notice the original `state` was `-5`. The Ansible task
 below will change it to `-3`, which results in a

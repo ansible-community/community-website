@@ -164,20 +164,12 @@ For this scenario consider we have three CSRv routers which are running
 cisco ios xe. All of them are BGP neighbors to each other and advertise
 three networks each.
 
-![utils blog 2 image
-1](https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%201.png?width=512&name=utils%20blog%202%20image%201.png){width="512"
-loading="lazy" style="width: 512px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%201.png?width=256&name=utils%20blog%202%20image%201.png 256w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%201.png?width=512&name=utils%20blog%202%20image%201.png 512w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%201.png?width=768&name=utils%20blog%202%20image%201.png 768w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%201.png?width=1024&name=utils%20blog%202%20image%201.png 1024w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%201.png?width=1280&name=utils%20blog%202%20image%201.png 1280w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%201.png?width=1536&name=utils%20blog%202%20image%201.png 1536w"
-sizes="(max-width: 512px) 100vw, 512px"}
+![utils blog 2 image one](/images/posts/archive/utils-blog-one.png)
 
 Lets check running configuration and operation state data related to
 BGP.
 
-![utils blog 2 image
-2](https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%202.jpeg?width=512&name=utils%20blog%202%20image%202.jpeg){width="512"
-loading="lazy" style="width: 512px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%202.jpeg?width=256&name=utils%20blog%202%20image%202.jpeg 256w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%202.jpeg?width=512&name=utils%20blog%202%20image%202.jpeg 512w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%202.jpeg?width=768&name=utils%20blog%202%20image%202.jpeg 768w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%202.jpeg?width=1024&name=utils%20blog%202%20image%202.jpeg 1024w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%202.jpeg?width=1280&name=utils%20blog%202%20image%202.jpeg 1280w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%202.jpeg?width=1536&name=utils%20blog%202%20image%202.jpeg 1536w"
-sizes="(max-width: 512px) 100vw, 512px"}
+![utils blog 2 image two](/images/posts/archive/utils-blog-two.jpeg)
 
 Let\'s check the CSRv1 node. Lets execute command **show running-config
 \| section bgp**. As you can see it has two neighbors configured, where
@@ -187,11 +179,7 @@ them. This node also advertises three networks.
 
 Now let\'s execute the command **show bgp summary**.
 
-![utils blog 2 image
-3](https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%203.png?width=512&name=utils%20blog%202%20image%203.png){width="512"
-loading="lazy" style="width: 512px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%203.png?width=256&name=utils%20blog%202%20image%203.png 256w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%203.png?width=512&name=utils%20blog%202%20image%203.png 512w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%203.png?width=768&name=utils%20blog%202%20image%203.png 768w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%203.png?width=1024&name=utils%20blog%202%20image%203.png 1024w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%203.png?width=1280&name=utils%20blog%202%20image%203.png 1280w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%203.png?width=1536&name=utils%20blog%202%20image%203.png 1536w"
-sizes="(max-width: 512px) 100vw, 512px"}
+![utils blog 2 image three](/images/posts/archive/utils-blog-three.png)
 
 The above screenshot tells us the neighbor relationships with the other
 two nodes established and the current node receiving 3 prefixes from the
@@ -200,11 +188,7 @@ other two nodes.
 Now let\'s validate it using routing table entries. Lets execute command
 **show ip route bgp.**
 
-**![utils blog 2 image
-4](https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%204.png?width=512&name=utils%20blog%202%20image%204.png){width="512"
-loading="lazy" style="width: 512px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%204.png?width=256&name=utils%20blog%202%20image%204.png 256w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%204.png?width=512&name=utils%20blog%202%20image%204.png 512w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%204.png?width=768&name=utils%20blog%202%20image%204.png 768w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%204.png?width=1024&name=utils%20blog%202%20image%204.png 1024w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%204.png?width=1280&name=utils%20blog%202%20image%204.png 1280w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%204.png?width=1536&name=utils%20blog%202%20image%204.png 1536w"
-sizes="(max-width: 512px) 100vw, 512px"}**
+**![utils blog 2 image four](/images/posts/archive/utils-blog-four.png)
 
 The above screenshot shows route table entries from node 1. As you can
 see, this node is aware of six routes, with the next hop being the
@@ -215,9 +199,8 @@ Similarly we have configured CSRv2 and CSRv3.
 Now let\'s check the playbooks which we are using in this example with
 detailed steps.
 
-[Checkout this
-]{style="color: #333333;"}[code](https://github.com/ashwini-mhatre/bgp_demo/)[
-if you want to learn more details.]{style="color: #333333;"}
+Checkout this [code](https://github.com/ashwini-mhatre/bgp_demo/)
+if you want to learn more details.
 
 Playbooks are divided into two parts:
 
@@ -234,11 +217,7 @@ Playbooks are divided into two parts:
 ]{style="color: #333333;"}[facts.yaml](https://github.com/ashwini-mhatre/bgp_demo/blob/main/playbooks/facts.yaml)[.
 ]{style="color: #333333;"}
 
-[![utils blog 2 image
-5](https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%205.png?width=567&name=utils%20blog%202%20image%205.png){width="567"
-loading="lazy" style="width: 567px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%205.png?width=284&name=utils%20blog%202%20image%205.png 284w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%205.png?width=567&name=utils%20blog%202%20image%205.png 567w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%205.png?width=851&name=utils%20blog%202%20image%205.png 851w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%205.png?width=1134&name=utils%20blog%202%20image%205.png 1134w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%205.png?width=1418&name=utils%20blog%202%20image%205.png 1418w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%205.png?width=1701&name=utils%20blog%202%20image%205.png 1701w"
-sizes="(max-width: 567px) 100vw, 567px"}]{style="color: #333333;"}
+[![utils blog 2 image five](/images/posts/archive/utils-blog-five.png)
 
 In the first task we are gathering bgp_global and bgp_address_family
 facts from target devices. In the second task we are storing them in a
@@ -253,11 +232,7 @@ docs for more details).
 [How does this data look after execution of the playbook? Let\'s check
 [playbooks/host_vars/csrv-1.yaml.](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/host_vars/csrv-1.yaml)]{style="color: #333333;"}
 
-[![utils blog 2 image
-6](https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%206.png?width=642&name=utils%20blog%202%20image%206.png){width="642"
-loading="lazy" style="width: 642px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%206.png?width=321&name=utils%20blog%202%20image%206.png 321w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%206.png?width=642&name=utils%20blog%202%20image%206.png 642w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%206.png?width=963&name=utils%20blog%202%20image%206.png 963w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%206.png?width=1284&name=utils%20blog%202%20image%206.png 1284w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%206.png?width=1605&name=utils%20blog%202%20image%206.png 1605w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%206.png?width=1926&name=utils%20blog%202%20image%206.png 1926w"
-sizes="(max-width: 642px) 100vw, 642px"}]{style="color: #333333;"}
+![utils blog 2 image six](/images/posts/archive/utils-blog-six.png)
 
 
 **Validate structured data against SOT and rectify drift if it is detected**
@@ -271,11 +246,7 @@ or if there is any configuration drift.
 playbook which will validate and rectify drift if it is
 present.]{style="color: #333333;"}
 
-[![utils blog 2 image
-7](https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%207.png?width=590&name=utils%20blog%202%20image%207.png){width="590"
-loading="lazy" style="width: 590px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%207.png?width=295&name=utils%20blog%202%20image%207.png 295w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%207.png?width=590&name=utils%20blog%202%20image%207.png 590w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%207.png?width=885&name=utils%20blog%202%20image%207.png 885w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%207.png?width=1180&name=utils%20blog%202%20image%207.png 1180w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%207.png?width=1475&name=utils%20blog%202%20image%207.png 1475w, https://www.ansible.com/hs-fs/hubfs/utils%20blog%202%20image%207.png?width=1770&name=utils%20blog%202%20image%207.png 1770w"
-sizes="(max-width: 590px) 100vw, 590px"}]{style="color: #333333;"}
+![utils blog 2 image seven](/images/posts/archive/utils-blog-seven.png)
 
 In the first task we have used the **ansible.utils.cli_parse** plugin to
 execute the **show ip route bgp** command on the target device and then
@@ -306,8 +277,7 @@ receive or not.
 file](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/bgp_schema/csrv-1.json)
 for node CSRv1.]{style="color: #333333;"}
 
-[![](https://lh6.googleusercontent.com/dj26Q2nkjSIwA7sFRxHz-ORag95D7raU-jbJYRLeWHcUCDul8VkZHhCxY_O3FSjAX2VGXXkHE26y9LiPzOzuIEJhl2JvS1oWtjc5qJtJe-fOyoVAG49Ujfwu_rjwWCZpstNBMYhM){width="421"
-height="879" loading="lazy"}]{style="color: #333333;"}
+![utils-blog-eight](/images/posts/archive/utils-blog-eight.png)
 
 Let's check further tasks of
 [verify.yaml](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/verify.yaml)
@@ -325,16 +295,14 @@ schema validation passes. (See
 [**ansible-navigator**](https://ansible-navigator.readthedocs.io/en/latest/)
 docs for more details.)]{style="color: #333333;"}
 
-[![](https://lh6.googleusercontent.com/b2xBhKJl369wp9jp3Ww9ISWkkhORnnNESinC3cKC9vEFG3AR1nkYuAJHtecp-pOchgjWx6peNJXFggyy-2eANz1TIGXULuMgIsKsWjxuwO_HbVsH2fPdd_l_jxU2hkNNHtksxvxO){width="624"
-height="201" loading="lazy"}]{style="color: #333333;"}
+![utils-blog-nine](/images/posts/archive/utils-blog-nine.png)
 
 [Let\'s manually introduce erroneous changes on all devices. Then we
 will run the same playbook again and see how it behaves. Let\'s remove
 the routes to make the erroneous changes they are
 advertising.]{style="color: #333333;"}
 
-[![](https://lh5.googleusercontent.com/tTr8wyzDwJaWMAOWo_aY_FIGaTuZq3mr7RIYQnkhe7G-wFzVo3aS6mjFL8iw2QvM4D6OZmUr-pOdPPapSn1EOzZlCCgmkEMr-auIVQtQ_9VKb7U9XdCW1AnRjpYlqGQgWnYu3KTq){width="624"
-height="612" loading="lazy"}]{style="color: #333333;"}
+![utils-blog-ten](/images/posts/archive/utils-blog-ten.png)
 
 Now we have made changes in all the routers. Let\'s run the playbook
 again with **ansible-navigator run playbooks/verify.yaml.**
@@ -343,8 +311,7 @@ This time the schema validation fails. Remediation tasks are executed
 and they add facts that are missing prefixes on all three nodes. Let\'s
 take a detailed look into this.
 
-![](https://lh4.googleusercontent.com/ILxMNbKI38VU_ubzs6T1sycqOWSxrtkOVMj8-tk2t5qztbbzRpHN7uguqw5HF9LPZ0R-LiK8yH5m4Sk725zOjBrihnNYFkk2D8IUoT4I4vE1zIHXqk4e2tyhx4nNKK0yYkQyG1sD){width="624"
-height="781" loading="lazy"}
+![utils-blog-eleven](/images/posts/archive/utils-blog-eleven.jpg)
 
 The first task, as usual, fetches the output of the show command and
 converts it to structured data.

@@ -20,7 +20,7 @@ Management) or SOAR (Security Orchestration Automation and Response)
 platforms.
 
 In October of 2019 the Ansible network automation team
-[introduced the concept of resource modules](https://www.ansible.com/blog/network-features-coming-soon-in-ansible-engine-2.9):
+introduced the concept of resource modules.
 
 So what exactly is a "resource module?" Sections of a device's
 configuration can be thought of as a resource provided by that device.
@@ -50,8 +50,7 @@ modules targeting use cases or workflows of the corresponding target
 environment. Therefore, there is little standardization or generic
 abstraction in terms of product agnostic resources.
 
-For example, if you have a closer look at our
-[investigation enrichment blog post](https://www.ansible.com/blog/getting-started-with-ansible-security-automation-investigation-enrichment),
+For example, if you have a closer look at our investigation enrichment blog post,
 you will see that while we used a certain amount of modules, those were
 usually very product specific and didn't offer much in terms of generic
 resources.

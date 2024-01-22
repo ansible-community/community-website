@@ -10,12 +10,6 @@ title: Pump up your ITIL with Automation
 
 # Pump up your ITIL with Automation
 
-![pump up ITIL
-blog](https://www.ansible.com/hs-fs/hubfs/pump%20up%20ITIL%20blog.png?width=512&name=pump%20up%20ITIL%20blog.png){width="512"
-loading="lazy" style="width: 512px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/pump%20up%20ITIL%20blog.png?width=256&name=pump%20up%20ITIL%20blog.png 256w, https://www.ansible.com/hs-fs/hubfs/pump%20up%20ITIL%20blog.png?width=512&name=pump%20up%20ITIL%20blog.png 512w, https://www.ansible.com/hs-fs/hubfs/pump%20up%20ITIL%20blog.png?width=768&name=pump%20up%20ITIL%20blog.png 768w, https://www.ansible.com/hs-fs/hubfs/pump%20up%20ITIL%20blog.png?width=1024&name=pump%20up%20ITIL%20blog.png 1024w, https://www.ansible.com/hs-fs/hubfs/pump%20up%20ITIL%20blog.png?width=1280&name=pump%20up%20ITIL%20blog.png 1280w, https://www.ansible.com/hs-fs/hubfs/pump%20up%20ITIL%20blog.png?width=1536&name=pump%20up%20ITIL%20blog.png 1536w"
-sizes="(max-width: 512px) 100vw, 512px"}
-
 In the world of automation and agility, it seems that Information
 Technology Infrastructure Library (ITIL) doesn't have a role to play
 anymore, being marked as an "old school" framework. Can it be the end of
@@ -76,11 +70,7 @@ structure our database, as it contains multiple kinds of data:
 As data can be only desired, only actual or both, we have three
 categories, which we'll reference with A to C for sake of simplicity:
 
-![Screen Shot 2022-06-07 at 9.29.28
-AM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png?width=612&name=Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png){width="612"
-loading="lazy" style="width: 612px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png?width=306&name=Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png 306w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png?width=612&name=Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png 612w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png?width=918&name=Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png 918w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png?width=1224&name=Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png 1224w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png?width=1530&name=Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png 1530w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png?width=1836&name=Screen%20Shot%202022-06-07%20at%209.29.28%20AM.png 1836w"
-sizes="(max-width: 612px) 100vw, 612px"}
+![database category diagram](/images/posts/archive/database-category-diagram.png)
 
 Because admins don't want to maintain the desired state twice, you use
 the desired state in your CMDB (type A and B) as inventory source for
@@ -106,11 +96,7 @@ Once you've reached this first stage, you can go to the next level and
 use Ansible Automation Platform to automatically populate the desired
 state in your CMDB.
 
-![Screen Shot 2022-06-07 at 9.29.43
-AM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png?width=636&name=Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png){width="636"
-loading="lazy" style="width: 636px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png?width=318&name=Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png 318w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png?width=636&name=Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png 636w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png?width=954&name=Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png 954w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png?width=1272&name=Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png 1272w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png?width=1590&name=Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png 1590w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png?width=1908&name=Screen%20Shot%202022-06-07%20at%209.29.43%20AM.png 1908w"
-sizes="(max-width: 636px) 100vw, 636px"}
+![database population](/images/posts/archive/database-population-diagram.png)
 
 Let\'s assume you have a service portal where customers can order new
 services or modify and decommission them, using a service catalogue and

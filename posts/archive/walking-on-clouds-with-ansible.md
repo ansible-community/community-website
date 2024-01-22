@@ -32,14 +32,8 @@ have different technologies to meet specific requirements and needs. One
 of the technologies widely used is Terraform.  
 
 We have done a number of blogs recently on the topic, ranging from a
-simple example of using Terraform with Ansible Automation Platform -
-[Terraforming Clouds with
-Ansible](https://www.ansible.com/blog/terraforming-clouds-with-ansible),
-to in-depth looks at the differences between the tools - [Ansible vs
-Terraform
-Demystified](https://www.ansible.com/blog/ansible-vs.-terraform-demystified)
-and [Ansible vs Terraform,
-clarified](https://www.redhat.com/en/topics/automation/ansible-vs-terraform).
+simple example of using Terraform with Ansible Automation Platform,
+to in-depth looks at the differences between the tools.
 AnsibleFest 2022 even featured a lab where we got to work with Terraform
 through automation controller, allowing us to centralize the
 provisioning and de-provisioning of cloud infrastructure with Terraform

@@ -10,14 +10,7 @@ title: Using the win_dsc Module in Ansible
 
 # Using the win_dsc Module in Ansible
 
-[![Ansible-Get-Started-Windows](https://www.ansible.com/hs-fs/hubfs/social-suggested-images/Ansible-Get-Started-Windows-1-2.png?width=1024&name=Ansible-Get-Started-Windows-1-2.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/social-suggested-images/Ansible-Get-Started-Windows-1-2.png?width=512&name=Ansible-Get-Started-Windows-1-2.png 512w, https://www.ansible.com/hs-fs/hubfs/social-suggested-images/Ansible-Get-Started-Windows-1-2.png?width=1024&name=Ansible-Get-Started-Windows-1-2.png 1024w, https://www.ansible.com/hs-fs/hubfs/social-suggested-images/Ansible-Get-Started-Windows-1-2.png?width=1536&name=Ansible-Get-Started-Windows-1-2.png 1536w, https://www.ansible.com/hs-fs/hubfs/social-suggested-images/Ansible-Get-Started-Windows-1-2.png?width=2048&name=Ansible-Get-Started-Windows-1-2.png 2048w, https://www.ansible.com/hs-fs/hubfs/social-suggested-images/Ansible-Get-Started-Windows-1-2.png?width=2560&name=Ansible-Get-Started-Windows-1-2.png 2560w, https://www.ansible.com/hs-fs/hubfs/social-suggested-images/Ansible-Get-Started-Windows-1-2.png?width=3072&name=Ansible-Get-Started-Windows-1-2.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"} ]{#hs_cos_wrapper_post_body
-.hs_cos_wrapper .hs_cos_wrapper_meta_field
-
-Hello, and welcome to another [Getting
-Started](/blog/topic/getting-started) with Ansible + Windows post! In
+Hello, and welcome to another Getting Started with Ansible + Windows post! In
 this article we'll be exploring what Desired State Configuration is, why
 it's useful, and how to utilize it with Ansible to manage your Windows
 nodes.
@@ -38,7 +31,7 @@ the DSC execution engine that runs on each node).
 Microsoft fosters a community effort to build and maintain DSC resources
 for a variety of technologies. The results of these efforts are curated
 and published each month to the Powershell Gallery as the [DSC Resource
-Kit](https://github.com/PowerShell/DscResources). If there isn\'t a
+Kit](https://github.com/PowerShell/DscResources). If there isn't a
 native Ansible module available for the technology you need to manage,
 there may be a DSC resource.
 
@@ -112,6 +105,5 @@ invoking the win_dsc module in an Ansible Playbook. To read more about
 Ansible + DSC, check out our official [documentation page](https://docs.ansible.com/ansible/latest/user_guide/windows_dsc.html)
 on the topic.
 
-Special thanks to my teammate [John Lieske](/blog/author/john-lieske)
-for lots of technical assistance with this post. And as always, happy
-automating!
+Special thanks to my teammate John Lieske for lots of technical assistance with this post.
+And as always, happy automating!

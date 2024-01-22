@@ -9,18 +9,12 @@ title: Thoughts on Restructuring the Ansible Project
 
 # Thoughts on Restructuring the Ansible Project
 
-![Blog_restructuring-the-Ansible-Project](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Blog_restructuring-the-Ansible-Project.png?width=1024&name=Blog_restructuring-the-Ansible-Project.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Blog_restructuring-the-Ansible-Project.png?width=512&name=Blog_restructuring-the-Ansible-Project.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Blog_restructuring-the-Ansible-Project.png?width=1024&name=Blog_restructuring-the-Ansible-Project.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Blog_restructuring-the-Ansible-Project.png?width=1536&name=Blog_restructuring-the-Ansible-Project.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Blog_restructuring-the-Ansible-Project.png?width=2048&name=Blog_restructuring-the-Ansible-Project.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Blog_restructuring-the-Ansible-Project.png?width=2560&name=Blog_restructuring-the-Ansible-Project.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Blog_restructuring-the-Ansible-Project.png?width=3072&name=Blog_restructuring-the-Ansible-Project.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
 Ansible became popular largely because we adopted some key principles
 early, and stuck to them.
 
-[The first key principle was simplicity: simple to install, simple to
+The first key principle was simplicity: simple to install, simple to
 use, simple to find documentation and examples, simple to write
-playbooks, and simple to make contributions.\
-]{style="background-color: transparent;"}
+playbooks, and simple to make contributions.
 
 The second key principle was modularity: Ansible functionality could be
 easily extended by writing modules, and anyone could write a module and
@@ -51,10 +45,10 @@ complexity, but as we continue towards hyperscale, even as we merge more
 and more community code, we're seeing more pull requests and issues fall
 through the cracks.
 
-![](https://lh3.googleusercontent.com/-CqdKe-c8JhzeftlVF_ci8dKJuzdVoYMPoe2QEMgpgThor-IbOo9aH-KkyBRowFsb4iQiJyAh3RXyi0zSk1xIN0x3JHQ2Nvv_TeDp_MynIl5d1g-RPb4eY5c28xgI9B4cuDZSWKn)
+Consider the following visual representation of the evolution of contributions to the Ansible project:
 
-*a visual representation of the evolution of contributions to the
-Ansible project*
+![visual representation of the evolution of contributions to the
+Ansible project](/images/posts/archive/evolution-of-contributions.gif)
 
 Most of our current challenges stem from **increased complexity that our
 simple model was not built to handle**. If we want to break through our
@@ -137,7 +131,7 @@ these questions.
 Which brings us to the **new module contributor challenge**.
 
  
-![](https://lh5.googleusercontent.com/fheqVeSdUZaHSOdl_XvU4G_W1YJRPOr4FccUgwrv2jZOa6-g10fTV_FkXP0CQAn-f5qzph44feyiXrKZqXoZEtLEFqICeSTnUTG2gqqTEBcwCL72WFDxyW0NMKpmGGka4im0gcE1)
+![graph of survival curves for Ansible PRs in the past year](/images/posts/archive/ansible-survival-curves.png)
 
 *the average merge time for PRs. New Modules (blue) vs everything else
 (Red). Notice that over the past year, on average 80% of non-new-module
@@ -262,12 +256,12 @@ licensing questions, release policy questions, and others. We will be
 discussing some of those questions in an upcoming webinar. 
 
 We will also be digging deeply into these questions at our community
-contributor conference at [AnsibleFest Atlanta](https://www.ansible.com/ansiblefest) in September. We hope to
+contributor conference at AnsibleFest Atlanta in September. We hope to
 see our contributors there in person, but we strive for [full remote participation](https://etherpad.openstack.org/p/ansible-summit-atlanta-2019)
 as well, as always. Please join us however you can.
 
 In the early days of Ansible, we could only have dreamt of this kind of
-success. In our seven years of existence, we have built 
+success. In our seven years of existence, we have built
 [one of the top open source projects in the world](https://octoverse.github.com/projects), with a dedicated
 community pushing us and supporting us from the very beginning. Had we
 imagined the kinds of challenges we face today, we would surely have put

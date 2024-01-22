@@ -11,25 +11,6 @@ title: Large Scale Deployments Using Ansible
 
 # Large Scale Deployments Using Ansible
 
-[![Ansible-Tower-Large-Scale-Deployment](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Tower-Large-Scale-Deployment.png?width=1024&name=Ansible-Tower-Large-Scale-Deployment.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Tower-Large-Scale-Deployment.png?width=512&name=Ansible-Tower-Large-Scale-Deployment.png 512w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Tower-Large-Scale-Deployment.png?width=1024&name=Ansible-Tower-Large-Scale-Deployment.png 1024w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Tower-Large-Scale-Deployment.png?width=1536&name=Ansible-Tower-Large-Scale-Deployment.png 1536w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Tower-Large-Scale-Deployment.png?width=2048&name=Ansible-Tower-Large-Scale-Deployment.png 2048w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Tower-Large-Scale-Deployment.png?width=2560&name=Ansible-Tower-Large-Scale-Deployment.png 2560w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Tower-Large-Scale-Deployment.png?width=3072&name=Ansible-Tower-Large-Scale-Deployment.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"} ]{#hs_cos_wrapper_post_body
-.hs_cos_wrapper .hs_cos_wrapper_meta_field
-
-![Ansible-Simple-Powerful-Agentless](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Simple-Powerful-Agentless.png?width=1024&name=Ansible-Simple-Powerful-Agentless.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Simple-Powerful-Agentless.png?width=512&name=Ansible-Simple-Powerful-Agentless.png 512w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Simple-Powerful-Agentless.png?width=1024&name=Ansible-Simple-Powerful-Agentless.png 1024w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Simple-Powerful-Agentless.png?width=1536&name=Ansible-Simple-Powerful-Agentless.png 1536w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Simple-Powerful-Agentless.png?width=2048&name=Ansible-Simple-Powerful-Agentless.png 2048w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Simple-Powerful-Agentless.png?width=2560&name=Ansible-Simple-Powerful-Agentless.png 2560w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Simple-Powerful-Agentless.png?width=3072&name=Ansible-Simple-Powerful-Agentless.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}[This has been the Ansible
-messaging since the journey began. As time has gone on, the definition
-of simple we're talking about may have been
-misunderstood\...]{style="background-color: transparent;"}
-
-![Simple-Def](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Simple-Def.png?width=417&name=Simple-Def.png){width="417"
-style="width: 417px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Simple-Def.png?width=209&name=Simple-Def.png 209w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Simple-Def.png?width=417&name=Simple-Def.png 417w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Simple-Def.png?width=626&name=Simple-Def.png 626w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Simple-Def.png?width=834&name=Simple-Def.png 834w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Simple-Def.png?width=1043&name=Simple-Def.png 1043w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Simple-Def.png?width=1251&name=Simple-Def.png 1251w"
-sizes="(max-width: 417px) 100vw, 417px"}
-
 The Ansible simplicity is about being easy to understand, learn and
 share. It's about people. The often peddled notion that "Ansible doesn't
 scale past 500 hosts" is shadowed by the customers we have with over
@@ -39,10 +20,7 @@ much more, scale is about the context in your business.
 
 ## What is scale?
 
-![Scale-Def](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Scale-Def.png?width=336&name=Scale-Def.png){width="336"
-style="width: 336px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Scale-Def.png?width=168&name=Scale-Def.png 168w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Scale-Def.png?width=336&name=Scale-Def.png 336w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Scale-Def.png?width=504&name=Scale-Def.png 504w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Scale-Def.png?width=672&name=Scale-Def.png 672w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Scale-Def.png?width=840&name=Scale-Def.png 840w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Scale-Def.png?width=1008&name=Scale-Def.png 1008w"
-sizes="(max-width: 336px) 100vw, 336px"}
+According to most dictionaries, scale is a noun that means the relative size or extent of something.
 
 ## Technological Scale
 

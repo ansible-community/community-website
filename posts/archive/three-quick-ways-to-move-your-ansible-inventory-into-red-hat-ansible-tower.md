@@ -9,9 +9,6 @@ title: Three quick ways to move your Ansible inventory into Red Hat Ansible Towe
 
 # Three quick ways to move your Ansible inventory into Red Hat Ansible Tower
 
-![3 Ways quick ways to your Ansible inventory to Red Hat Ansible
-Tower](https://www.ansible.com/hubfs/Images/blog-social/Ansible-Blog-Instances.png)
-
 If you've been using Ansible at the command line for a while, you
 probably have a lot of servers, network devices, and other target nodes
 listed in your inventory. You know that Red Hat Ansible Tower makes it
@@ -30,9 +27,6 @@ Ansible inventory into Ansible Tower:
     (awx-manage)
 2.  Migrating an inventory file from anywhere with a playbook
 3.  Setting Tower to access a git source-controlled inventory file
-
-If you don't have Ansible Tower yet and want to download and try it out,
-please visit: <https://www.ansible.com/products/tower>
 
 If you're using [dynamic inventory](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html),
 you don\'t need to import your inventory into Ansible Tower. Dynamic
@@ -63,11 +57,9 @@ point to your existing inventory file then Ansible Tower will be loaded
 with all the hosts.
 
 1.  Using the WebUI login to Ansible Tower and create an empty
-    inventory.\
-    ![inventory](https://www.ansible.com/hs-fs/hubfs/inventory.gif?width=960&name=inventory.gif){width="960"
-    style="width: 960px;"
-    srcset="https://www.ansible.com/hs-fs/hubfs/inventory.gif?width=480&name=inventory.gif 480w, https://www.ansible.com/hs-fs/hubfs/inventory.gif?width=960&name=inventory.gif 960w, https://www.ansible.com/hs-fs/hubfs/inventory.gif?width=1440&name=inventory.gif 1440w, https://www.ansible.com/hs-fs/hubfs/inventory.gif?width=1920&name=inventory.gif 1920w, https://www.ansible.com/hs-fs/hubfs/inventory.gif?width=2400&name=inventory.gif 2400w, https://www.ansible.com/hs-fs/hubfs/inventory.gif?width=2880&name=inventory.gif 2880w"
-    sizes="(max-width: 960px) 100vw, 960px"}
+    inventory.
+
+    ![inventory](/images/posts/archive/inventory.gif)
 
 2.  Login via SSH to your Ansible Tower control node (This is the Linux
     machine that has Ansible Tower installed on it).
@@ -81,18 +73,16 @@ with all the hosts.
     On the terminal window you will receive some output similar to the
     following:
 
-        1.387 INFO Updating inventory 3: My Inventory 
-        1.475 INFO Reading Ansible inventory source: /path/to/hosts 
-        2.119 INFO Processing JSON output... 
-        2.120 INFO Loaded 6 groups, 6 hosts 
+        1.387 INFO Updating inventory 3: My Inventory
+        1.475 INFO Reading Ansible inventory source: /path/to/hosts
+        2.119 INFO Processing JSON output...
+        2.120 INFO Loaded 6 groups, 6 hosts
         2.329 INFO Inventory import completed for (My Inventory - 9) in 0.9s
 
 5.  Now when you login via the WebUI you will see all the hosts under
-    the inventory\
-    ![loaded_inventory](https://www.ansible.com/hs-fs/hubfs/loaded_inventory.gif?width=960&name=loaded_inventory.gif){width="960"
-    style="width: 960px;"
-    srcset="https://www.ansible.com/hs-fs/hubfs/loaded_inventory.gif?width=480&name=loaded_inventory.gif 480w, https://www.ansible.com/hs-fs/hubfs/loaded_inventory.gif?width=960&name=loaded_inventory.gif 960w, https://www.ansible.com/hs-fs/hubfs/loaded_inventory.gif?width=1440&name=loaded_inventory.gif 1440w, https://www.ansible.com/hs-fs/hubfs/loaded_inventory.gif?width=1920&name=loaded_inventory.gif 1920w, https://www.ansible.com/hs-fs/hubfs/loaded_inventory.gif?width=2400&name=loaded_inventory.gif 2400w, https://www.ansible.com/hs-fs/hubfs/loaded_inventory.gif?width=2880&name=loaded_inventory.gif 2880w"
-    sizes="(max-width: 960px) 100vw, 960px"}
+    the inventory
+
+    ![loaded_inventory](/images/posts/archive/loaded_inventory.gif)
 
 The awx-manage command line tool is very simple and fast. It only took
 me a couple seconds to take my existing inventory and import it into
@@ -107,21 +97,19 @@ the GitHub option described below.
 
 ## Migrating an inventory file from anywhere with a playbook
 
-You can use the [Ansible Tower
-modules](https://docs.ansible.com/ansible/latest/modules/list_of_web_infrastructure_modules.html#ansible-tower)
+You can use the [Ansible Tower modules](https://docs.ansible.com/ansible/latest/modules/list_of_web_infrastructure_modules.html#ansible-tower)
 to automate the transfer of your inventory into Ansible Tower. These
 modules make it possible to use Ansible Playbooks to automate and manage
 everything, including inventory, in your Ansible Tower instance. There
-is a [tower_inventory
-module](https://docs.ansible.com/ansible/latest/modules/tower_inventory_module.html#tower-inventory-module)
-that will let us create an inventory, and there is a [tower_host
-module](https://docs.ansible.com/ansible/latest/modules/tower_host_module.html#tower-host-module)
+is a [tower_inventory module](https://docs.ansible.com/ansible/latest/modules/tower_inventory_module.html#tower-inventory-module)
+that will let us create an inventory, and there is a [tower_host module](https://docs.ansible.com/ansible/latest/modules/tower_host_module.html#tower-host-module)
 that lets us add a host to an existing inventory. Assume that we already
 created an inventory called "Network Routers" and I will build an
 Ansible Playbook to add all my routers in the group routers to that
 inventory using the tower_host module. The Ansible Playbook will look
 like this:
 
+```yaml
     - name: NETWORK SETUP
       hosts: routers
       connection: local
@@ -142,16 +130,12 @@ like this:
                   ansible_connection: "{{ansible_connection}}"
                   ansible_become: yes
                   ansible_become_method: enable
-
-\
+```
 
 The Ansible Playbook will add all devices in the group routers
 simultaneously. The playbook output will look similar to this: 
 
-![Ansible-Playbook](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Tower-Instances-Screenshots/Ansible-Playbook.png?width=632&name=Ansible-Playbook.png){width="632"
-style="width: 632px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Tower-Instances-Screenshots/Ansible-Playbook.png?width=316&name=Ansible-Playbook.png 316w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Tower-Instances-Screenshots/Ansible-Playbook.png?width=632&name=Ansible-Playbook.png 632w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Tower-Instances-Screenshots/Ansible-Playbook.png?width=948&name=Ansible-Playbook.png 948w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Tower-Instances-Screenshots/Ansible-Playbook.png?width=1264&name=Ansible-Playbook.png 1264w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Tower-Instances-Screenshots/Ansible-Playbook.png?width=1580&name=Ansible-Playbook.png 1580w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Tower-Instances-Screenshots/Ansible-Playbook.png?width=1896&name=Ansible-Playbook.png 1896w"
-sizes="(max-width: 632px) 100vw, 632px"}
+![Ansible-Playbook](/images/posts/archive/Ansible-Playbook.png)
 
 The advantage of this method is you don't have to be on the control
 node, you can run the Ansible Playbook from anywhere. Like the
@@ -180,7 +164,7 @@ system supported by Ansible Tower, including Git, Subversion, and
 Mercurial. I will add a Project named Sean's Github, set the SCM Type to
 Git, and put the SCM URL I listed above.
 
-![](https://lh3.googleusercontent.com/HNPw9OckoCLq6hcamxwnWfLqbPz10_EsrGh3iR--Iwk4Etz1iivre2fVVpq3LndsqH5QFwyplDZNPc-cDy4sJ5BhDhS-O_LVOxeGB0_etGC4RADu7SaWij2zJfYi6Z7x7qcT1TWp)
+![Tower project ui](/images/posts/archive/tower-project-ui.gif)
 
 Now I need to create an Inventory that will use this Ansible Tower
 project. I will:
@@ -194,12 +178,7 @@ project. I will:
     sync button. The hosts and groups will automatically show up under
     the hosts button as shown in the animation below.
 
- ![github_inventory](https://www.ansible.com/hs-fs/hubfs/github_inventory.gif?width=960&name=github_inventory.gif){width="960"
-style="width: 960px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/github_inventory.gif?width=480&name=github_inventory.gif 480w, https://www.ansible.com/hs-fs/hubfs/github_inventory.gif?width=960&name=github_inventory.gif 960w, https://www.ansible.com/hs-fs/hubfs/github_inventory.gif?width=1440&name=github_inventory.gif 1440w, https://www.ansible.com/hs-fs/hubfs/github_inventory.gif?width=1920&name=github_inventory.gif 1920w, https://www.ansible.com/hs-fs/hubfs/github_inventory.gif?width=2400&name=github_inventory.gif 2400w, https://www.ansible.com/hs-fs/hubfs/github_inventory.gif?width=2880&name=github_inventory.gif 2880w"
-sizes="(max-width: 960px) 100vw, 960px"}
-
-![](https://lh3.googleusercontent.com/hj8LwyoHsmi9ldcO9Ny4SEOiyCK9x53wXC-lfSS14fV_iUpcVZub-PbXaGQojhdJ4AOFC_PNMlMLwKdSO97NjWM6aHAWd3cGBEnoqmpnCZXYA1hSHApwzW2G381_kGfERt12J_qw)
+![github_inventory](/images/posts/archive/github_inventory.gif)
 
 Using source control for managing inventory is popular with Ansible
 Tower users and can scale really well.

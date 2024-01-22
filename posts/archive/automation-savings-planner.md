@@ -56,11 +56,7 @@ First in the side navigation in Automation Analytics, select the
 **Savings Planner** navigation item. Then, click on the blue button
 labeled **Add plan**.
 
-![ROI blog
-1](https://www.ansible.com/hs-fs/hubfs/ROI%20blog%201.png?width=1600&name=ROI%20blog%201.png){width="1600"
-loading="lazy" style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ROI%20blog%201.png?width=800&name=ROI%20blog%201.png 800w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%201.png?width=1600&name=ROI%20blog%201.png 1600w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%201.png?width=2400&name=ROI%20blog%201.png 2400w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%201.png?width=3200&name=ROI%20blog%201.png 3200w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%201.png?width=4000&name=ROI%20blog%201.png 4000w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%201.png?width=4800&name=ROI%20blog%201.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![ROI blog one](/images/posts/archive/roi-blog-one.png)
 
 Within the **Create new plan** section, fill out the details for the
 task you want to automate. The questions include:
@@ -72,11 +68,7 @@ task you want to automate. The questions include:
 -   How many hosts do you plan to run the automation on? (e.g., 1)
 -   How often do you plan to run the automation? (e.g., weekly)
 
-![ROI blog
-2](https://www.ansible.com/hs-fs/hubfs/ROI%20blog%202.png?width=1364&name=ROI%20blog%202.png){width="1364"
-loading="lazy" style="width: 1364px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ROI%20blog%202.png?width=682&name=ROI%20blog%202.png 682w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%202.png?width=1364&name=ROI%20blog%202.png 1364w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%202.png?width=2046&name=ROI%20blog%202.png 2046w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%202.png?width=2728&name=ROI%20blog%202.png 2728w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%202.png?width=3410&name=ROI%20blog%202.png 3410w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%202.png?width=4092&name=ROI%20blog%202.png 4092w"
-sizes="(max-width: 1364px) 100vw, 1364px"}
+![ROI blog two](/images/posts/archive/roi-blog-two.png)
 
 Once you've completed the **Details** section, select the blue **Next**
 button on the lower left pane of the window.
@@ -95,11 +87,7 @@ server, we'd likely include tasks such as:
 -   Configure VirtualHost
 -   Secure Apache web server
 
-![ROI blog
-3](https://www.ansible.com/hs-fs/hubfs/ROI%20blog%203.png?width=1369&name=ROI%20blog%203.png){width="1369"
-loading="lazy" style="width: 1369px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ROI%20blog%203.png?width=685&name=ROI%20blog%203.png 685w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%203.png?width=1369&name=ROI%20blog%203.png 1369w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%203.png?width=2054&name=ROI%20blog%203.png 2054w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%203.png?width=2738&name=ROI%20blog%203.png 2738w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%203.png?width=3423&name=ROI%20blog%203.png 3423w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%203.png?width=4107&name=ROI%20blog%203.png 4107w"
-sizes="(max-width: 1369px) 100vw, 1369px"}
+![ROI blog three](/images/posts/archive/roi-blog-three.png)
 
 Once you've completed the **Tasks** section for your specific plan,
 select **Next**. 
@@ -113,11 +101,7 @@ template to link to this plan and click **Save**. 
 
 Once saved, you can view the newly created plan details. 
 
-![ROI blog
-4](https://www.ansible.com/hs-fs/hubfs/ROI%20blog%204.png?width=1376&name=ROI%20blog%204.png){width="1376"
-loading="lazy" style="width: 1376px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ROI%20blog%204.png?width=688&name=ROI%20blog%204.png 688w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%204.png?width=1376&name=ROI%20blog%204.png 1376w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%204.png?width=2064&name=ROI%20blog%204.png 2064w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%204.png?width=2752&name=ROI%20blog%204.png 2752w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%204.png?width=3440&name=ROI%20blog%204.png 3440w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%204.png?width=4128&name=ROI%20blog%204.png 4128w"
-sizes="(max-width: 1376px) 100vw, 1376px"}
+![ROI blog four](/images/posts/archive/roi-blog-four.png)
 
 In this **Details** view you will find a summary of all the options
 created and selected for your plan. 
@@ -151,11 +135,7 @@ show you the cumulative benefits for automating the plan over time.
 Click between **Money** and **Time** to view the different types of
 savings for automating the plan. An example is shown below.
 
-![ROI blog
-5](https://www.ansible.com/hs-fs/hubfs/ROI%20blog%205.png?width=1366&name=ROI%20blog%205.png){width="1366"
-loading="lazy" style="width: 1366px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/ROI%20blog%205.png?width=683&name=ROI%20blog%205.png 683w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%205.png?width=1366&name=ROI%20blog%205.png 1366w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%205.png?width=2049&name=ROI%20blog%205.png 2049w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%205.png?width=2732&name=ROI%20blog%205.png 2732w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%205.png?width=3415&name=ROI%20blog%205.png 3415w, https://www.ansible.com/hs-fs/hubfs/ROI%20blog%205.png?width=4098&name=ROI%20blog%205.png 4098w"
-sizes="(max-width: 1366px) 100vw, 1366px"}
+![ROI blog five](/images/posts/archive/roi-blog-five.png)
 
 ##  How are the Money and Time values determined?
 

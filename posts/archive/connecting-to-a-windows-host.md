@@ -16,12 +16,9 @@ Would you like to automate some of your Windows hosts with Red Hat
 Ansible Tower, but don't know how to set everything up? Are you worried
 that Red Hat Ansible Engine won't be able to communicate with your
 Windows servers without installing a bunch of extra software? Do you
-want to easily automate everyone's best friend, Clippy?\
-\
-![Ansible-Windows-Clippy](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Clippy.png?width=1440&height=774&name=Ansible-Windows-Clippy.png){width="1440"
-height="774" style="width: 1440px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Clippy.png?width=720&height=387&name=Ansible-Windows-Clippy.png 720w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Clippy.png?width=1440&height=774&name=Ansible-Windows-Clippy.png 1440w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Clippy.png?width=2160&height=1161&name=Ansible-Windows-Clippy.png 2160w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Clippy.png?width=2880&height=1548&name=Ansible-Windows-Clippy.png 2880w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Clippy.png?width=3600&height=1935&name=Ansible-Windows-Clippy.png 3600w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Clippy.png?width=4320&height=2322&name=Ansible-Windows-Clippy.png 4320w"
-sizes="(max-width: 1440px) 100vw, 1440px"}
+want to easily automate everyone's best friend, Clippy?
+
+![Ansible-Windows-Clippy](/images/posts/archive/Ansible-Windows/Ansible-Windows-Clippy.png)
 
 We can't help with the last thing, but if you said yes to the other two
 questions, you\'ve come to the right place. In this post, we'll walk you
@@ -53,12 +50,9 @@ version of Ansible Engine to get the latest features!\
 \
 For the target hosts, you should be running at least Windows 7 SP1 or
 later or Windows Server 2008 SP1 or later. You don't want to be running
-something from the 90's like Windows NT, because this might happen:\
-\
-![Ansible-Windows-90s](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-90s.jpg?width=1280&height=720&name=Ansible-Windows-90s.jpg){width="1280"
-height="720" style="width: 1280px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-90s.jpg?width=640&height=360&name=Ansible-Windows-90s.jpg 640w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-90s.jpg?width=1280&height=720&name=Ansible-Windows-90s.jpg 1280w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-90s.jpg?width=1920&height=1080&name=Ansible-Windows-90s.jpg 1920w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-90s.jpg?width=2560&height=1440&name=Ansible-Windows-90s.jpg 2560w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-90s.jpg?width=3200&height=1800&name=Ansible-Windows-90s.jpg 3200w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-90s.jpg?width=3840&height=2160&name=Ansible-Windows-90s.jpg 3840w"
-sizes="(max-width: 1280px) 100vw, 1280px"}
+something from the 90's like Windows NT, because this might happen:
+
+![Ansible-Windows-90s](/images/posts/archive/Ansible-Windows-90s.jpg)
 
 Lastly, since Ansible connects to Windows machines and runs PowerShell
 scripts by using [Windows Remote
@@ -95,10 +89,8 @@ console as an Admin) to turn on WinRM. To set up an https listener,
 build a self-signed cert and execute PowerShell commands, just run the
 script like in the example below (if you've got the `.ps1` file stored
 locally on your machine):\
-![Ansible-Windows-Powershell](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Powershell.png?width=1716&height=631&name=Ansible-Windows-Powershell.png){width="1716"
-height="631" style="width: 1716px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Powershell.png?width=858&height=316&name=Ansible-Windows-Powershell.png 858w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Powershell.png?width=1716&height=631&name=Ansible-Windows-Powershell.png 1716w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Powershell.png?width=2574&height=947&name=Ansible-Windows-Powershell.png 2574w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Powershell.png?width=3432&height=1262&name=Ansible-Windows-Powershell.png 3432w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Powershell.png?width=4290&height=1578&name=Ansible-Windows-Powershell.png 4290w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Powershell.png?width=5148&height=1893&name=Ansible-Windows-Powershell.png 5148w"
-sizes="(max-width: 1716px) 100vw, 1716px"}\
+![Ansible-Windows-Powershell](/images/posts/archive/Ansible-Windows-Powershell.png)
+
 Note: The
 [win_psexec](http://docs.ansible.com/ansible/latest/modules/win_psexec_module.html)
 module will help you enable WinRM on multiple machines if you have lots
@@ -152,13 +144,10 @@ ansible_winrm_server_cert_validation=ignore
 Let's check to see if everything is working. To do this, go to your
 control node's terminal and type
 `ansible [host_group_name_in_inventory_file] -i hosts -m win_ping`. Your
-output should look like this:\
-\
-![Ansible-Windows-Screen-Grab](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Screen-Grab.jpg?width=1136&height=224&name=Ansible-Windows-Screen-Grab.jpg){width="1136"
-height="224" style="width: 1136px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Screen-Grab.jpg?width=568&height=112&name=Ansible-Windows-Screen-Grab.jpg 568w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Screen-Grab.jpg?width=1136&height=224&name=Ansible-Windows-Screen-Grab.jpg 1136w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Screen-Grab.jpg?width=1704&height=336&name=Ansible-Windows-Screen-Grab.jpg 1704w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Screen-Grab.jpg?width=2272&height=448&name=Ansible-Windows-Screen-Grab.jpg 2272w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Screen-Grab.jpg?width=2840&height=560&name=Ansible-Windows-Screen-Grab.jpg 2840w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Windows/Ansible-Windows-Screen-Grab.jpg?width=3408&height=672&name=Ansible-Windows-Screen-Grab.jpg 3408w"
-sizes="(max-width: 1136px) 100vw, 1136px"}\
-\
+output should look like this:
+
+![Ansible-Windows-Screen-Grab](/images/posts/archive/Ansible-Windows-Screen-Grab.jpg)
+
 Note: The `win_` prefix on all of the Windows modules indicates that
 they are implemented in PowerShell and not Python.
 

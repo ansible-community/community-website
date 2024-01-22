@@ -49,10 +49,6 @@ To download the amazon.aws collection, you can download it from
     hub](https://console.redhat.com/ansible/automation-hub/repo/published/amazon/aws) -
     Fully supported and signed with your Red Hat subscription
 
-To learn more about Ansible automation hub, check out
-www.ansible.com/products/automation-hub
-
-
 ## Use Case 1 - Get maximum visibility
 
 Unless a trail is used for a specific activity in a specific region, it

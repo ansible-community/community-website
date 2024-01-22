@@ -12,12 +12,10 @@ title: Using Ansible and Packer, From Provisioning to Orchestration
 
 Red Hat Ansible Automation Platform can help you orchestrate,
 operationalize and govern your hybrid cloud deployments.  In my last
-public cloud blog, I talked about [Two Simple Ways Automation Can Save
-You Money on Your AWS
-Bill](https://www.ansible.com/blog/two-simple-ways-automation-can-save-money-on-aws)
-and similarly to Ashton's blog [Bringing Order to the Cloud: Day 2
-Operations in AWS with
-Ansible](https://www.ansible.com/blog/bringing-order-to-the-cloud-day-2-operations-in-aws-with-ansible),
+public cloud blog, I talked about "Two Simple Ways Automation Can Save
+You Money on Your AWS Bill"
+and similarly to Ashton's blog "Bringing Order to the Cloud: Day 2
+Operations in AWS with Ansible",
 we both wanted to look outside the common public cloud use-case of
 provisioning and deprovisioning resources and instead look at automating
 common operational tasks.  For this blog post I want to cover how the
@@ -27,8 +25,7 @@ and workshops with Ansible and how we integrate that with custom AMIs
 Packer is an open source tool that allows IT operators to standardize
 and automate the process of building system images.
 
-For some of our [self-paced interactive hands-on labs on
-Ansible.com](https://red.ht/ansible_labs), we can quickly spin up images
+For some of our [self-paced interactive hands-on labs on Ansible.com](https://red.ht/ansible_labs), we can quickly spin up images
 in seconds.  In an example automation pipeline we will:
 
 1.  Provision a virtual instance.
@@ -96,8 +93,7 @@ Platform create the new image immediately, and even test it!
 Once we create a pre_built AMI, we need to make sure we can use it in
 multiple regions, and on other accounts. With public marketplace
 instances you can use cool automation tricks like using the
-[ec2_ami_info module](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_ami_info_module.html)
-for [dynamic lookups](https://www.ansible.com/blog/find-the-right-ami-everytime-make-your-aws-application-work-in-any-region),
+[ec2_ami_info module](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_ami_info_module.html) for dynamic lookups,
 but we have now essentially created private AMIs we can copy to other
 regions, or share to other AWS accounts so they have access to these
 pre_built images.  To solve this problem we can use automation, and I

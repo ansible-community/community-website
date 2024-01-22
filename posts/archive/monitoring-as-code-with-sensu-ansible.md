@@ -17,8 +17,7 @@ infrastructure under management results in a symbiotic relationship in
 which failures are detected automatically, enabling event-driven code
 changes and new deployments.
 
-In this post, I'll recap a [webinar I hosted with Tadej
-Borovšak](https://www.ansible.com/resources/webinars-training/monitoring-as-code-with-sensu-ansible-on-demand),
+In this post, I'll recap a webinar I hosted with Tadej Borovšak,
 Ansible Evangelist at [XLAB Steampunk](https://steampunk.si/) (who we
 collaborated with on our certified Ansible Content Collection for Sensu
 Go). You'll learn how monitoring as code can serve as a feedback loop
@@ -77,8 +76,7 @@ you want to make a small monitoring change.
 
 ## Sensu Automation with the Ansible Content Collection for Sensu Go
 
-[The Ansible Content Collection for Sensu
-Go](https://www.ansible.com/blog/ansible-content-collections-the-sensu-go-use-case)
+The Ansible Content Collection for Sensu Go
 makes it easier for you to create a fully functioning automated
 deployment of the Sensu Go monitoring agent and backend. The following
 demo shows a minimal Sensu setup: how to install a backend and two
@@ -90,7 +88,7 @@ case, our inventory file includes two defined groups: the backend group
 and the agent group. The information in our inventory file tells Ansible
 how to securely connect our hosts via SSH.
 
-``` 
+```yaml
 ---
 all:
   vars:
@@ -116,13 +114,13 @@ all:
           ansible_user: vagrant
 ```
 
-[https://gist.github.com/tadeboro/00cabf8fa79f4c9c90cda8cdf9645f32#file-inventory-yaml]{style="font-size: 12px;"}
+https://gist.github.com/tadeboro/00cabf8fa79f4c9c90cda8cdf9645f32#file-inventory-yaml
 
 We also need a way to specify which state we want the resource to be in.
 Enter the Ansible Playbook, which we'll use to set up the backend. It's
 a YAML file, both human-readable and machine-executable.
 
-``` 
+```yam.
 ---
 - name: Install, configure and run Sensu backend
   hosts: backends
@@ -174,7 +172,7 @@ and commit into your version control system. 
 
 We'll enter the following command to execute the playbook:
 
-``` 
+```bash
 ansible-playbook -i inventory.yaml backend.yaml
 ```
 
@@ -190,7 +188,7 @@ UI](https://docs.sensu.io/sensu-go/latest/web-ui/), but won't see
 anything yet because we still have to set up our agents, which we'll
 prepare with our agent playbook. 
 
-``` 
+```yaml
 ---
 - name: Install, configure and run Sensu agent
   hosts: agents
@@ -229,7 +227,7 @@ stored in our Ansible inventory file. 
 To execute the agent playbook and install the agent, I run the same
 command (switching out the file name):
 
-``` 
+```bash
 ansible-playbook -i inventory.yaml agent.yaml
 ```
 
@@ -239,22 +237,16 @@ and installation happens concurrently on both machines. 
 Switching over to the Sensu web UI in the default namespace, under
 entities, you see our two entities are ready.
 
-![Sensu Blog
-1](https://www.ansible.com/hs-fs/hubfs/Sensu%20Blog%201.png?width=1600&name=Sensu%20Blog%201.png){width="1600"
-loading="lazy" style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Sensu%20Blog%201.png?width=800&name=Sensu%20Blog%201.png 800w, https://www.ansible.com/hs-fs/hubfs/Sensu%20Blog%201.png?width=1600&name=Sensu%20Blog%201.png 1600w, https://www.ansible.com/hs-fs/hubfs/Sensu%20Blog%201.png?width=2400&name=Sensu%20Blog%201.png 2400w, https://www.ansible.com/hs-fs/hubfs/Sensu%20Blog%201.png?width=3200&name=Sensu%20Blog%201.png 3200w, https://www.ansible.com/hs-fs/hubfs/Sensu%20Blog%201.png?width=4000&name=Sensu%20Blog%201.png 4000w, https://www.ansible.com/hs-fs/hubfs/Sensu%20Blog%201.png?width=4800&name=Sensu%20Blog%201.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Sensu Blog one](/images/posts/archive/sensu-blog-one.png)
 
 Now, we need to configure an event for us to observe. 
 
-*Note:* [*as of Sensu Go
-6*](https://sensu.io/blog/managing-sensu-go-6-using-ansible)*,
-subscriptions can be updated on the fly, without having to restart the
-agent.*
+Note: [as of Sensu Go 6](https://sensu.io/blog/managing-sensu-go-6-using-ansible),
+subscriptions can be updated on the fly, without having to restart the agent.
 
 Here's our Sensu configuration file:
 
-``` 
+```yaml
 ---
 - name: Manage Sensu Go resources
   hosts: localhost
@@ -300,7 +292,7 @@ Finally, we create a simple check that echoes our secret. 
 
 We run our config playbook:
 
-``` 
+```bash
 ansible-playbook -i inventory.yaml config.yaml
 ```
 
@@ -309,11 +301,7 @@ subscription. Going to events and listing all, you can see that agent-0
 executed secret check and our secret value "value-is-here" makes it
 securely from the backend to the agent. 
 
-![sensu blog
-2](https://www.ansible.com/hs-fs/hubfs/sensu%20blog%202.png?width=1600&name=sensu%20blog%202.png){width="1600"
-loading="lazy" style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/sensu%20blog%202.png?width=800&name=sensu%20blog%202.png 800w, https://www.ansible.com/hs-fs/hubfs/sensu%20blog%202.png?width=1600&name=sensu%20blog%202.png 1600w, https://www.ansible.com/hs-fs/hubfs/sensu%20blog%202.png?width=2400&name=sensu%20blog%202.png 2400w, https://www.ansible.com/hs-fs/hubfs/sensu%20blog%202.png?width=3200&name=sensu%20blog%202.png 3200w, https://www.ansible.com/hs-fs/hubfs/sensu%20blog%202.png?width=4000&name=sensu%20blog%202.png 4000w, https://www.ansible.com/hs-fs/hubfs/sensu%20blog%202.png?width=4800&name=sensu%20blog%202.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![sensu blog two](/images/posts/archive/sensu-blog-two.png)
 
 As you can see, our Ansible Content Collection allows you to succinctly
 describe your infrastructure, letting Ansible deal with the intricacies
@@ -350,15 +338,14 @@ another way to manage Sensu.
 We provision the agent so it will communicate to the backend, and I use
 the Ansible Content Collection to define a new namespace just for this
 demo --- interacting with the Sensu API to set up a new namespace. I
-also set up [role-based access control
-(RBAC)](https://sensu.io/blog/intro-to-rbac-in-sensu-go), which allows
+also set up [role-based access control (RBAC)](https://sensu.io/blog/intro-to-rbac-in-sensu-go), which allows
 me to give access to a user just for auditing (i.e., they don't need to
 have write access to a namespace). Then, I set up an NGINX host on the
 same host that the agent is running on.
 
 With our NGINX service up and running, I set up our CLI client with
-sensuctl configure \--insecure-skip-tls-verify (for the purposes of this
-demo; you wouldn\'t use this flag in production!). With sensuctl entity
+sensuctl configure `--insecure-skip-tls-verify` (for the purposes of this
+demo; you wouldn't use this flag in production!). With sensuctl entity
 list, I can see all our entities and subscriptions available (in our
 demo, the webinar-agent0). We don't have any checks defined yet, so
 sensuctl check list doesn't show anything. I use our declarative YAML

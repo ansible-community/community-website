@@ -33,7 +33,7 @@ content can be used to:
 ## Gathering state data from a remote host
 
 The recently released
-[ansible.utils](https://galaxy.ansible.com/ansible/utils){rel="noopener"}
+[ansible.utils](https://galaxy.ansible.com/ansible/utils)
 version 1.0.0 Collection has added support for
 [ansible.utils.cli_parse](https://github.com/ansible-collections/ansible.utils/blob/main/docs/ansible.utils.cli_parse_module.rst)
 module, which converts text data into structured JSON format.  The
@@ -46,27 +46,21 @@ and the module relies on well-known text parser libraries for this
 conversion. The current supported CLI parser sub plugin engines are as
 below:
 
-1.  [ansible.utils.textfsm](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/textfsm_parser.py){rel="noopener"}
+1.  [ansible.utils.textfsm](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/textfsm_parser.py)
     Uses[ textfsm python library](https://pypi.org/project/textfsm/)
-2.  [ansible.utils.ttp](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/ttp_parser.py){rel="noopener"}
+2.  [ansible.utils.ttp](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/ttp_parser.py)
     Uses[ ttp python library](https://pypi.org/project/ttp/)
-3.  [ansible.netcommon.native](https://github.com/ansible-collections/ansible.netcommon/blob/main/plugins/sub_plugins/cli_parser/native_parser.py){rel="noopener"}
+3.  [ansible.netcommon.native](https://github.com/ansible-collections/ansible.netcommon/blob/main/plugins/sub_plugins/cli_parser/native_parser.py)
     Uses netcommon inbuilt parser engine
-4.  [ansible.netcommon.ntc_templates](https://github.com/ansible-collections/ansible.netcommon/blob/main/plugins/sub_plugins/cli_parser/ntc_templates_parser.py){rel="noopener"}
-    Uses [ntc_templates python
-    library](https://pypi.org/project/ntc-templates/)
-5.  [ansible.netcommon.pyats](https://github.com/ansible-collections/ansible.netcommon/blob/main/plugins/sub_plugins/cli_parser/pyats_parser.py){rel="noopener"}
+4.  [ansible.netcommon.ntc_templates](https://github.com/ansible-collections/ansible.netcommon/blob/main/plugins/sub_plugins/cli_parser/ntc_templates_parser.py)
+    Uses [ntc_templates python library](https://pypi.org/project/ntc-templates/)
+5.  [ansible.netcommon.pyats](https://github.com/ansible-collections/ansible.netcommon/blob/main/plugins/sub_plugins/cli_parser/pyats_parser.py)
     Uses [pyats python library](https://pypi.org/project/pyats/)
-6.  [ansible.utils.xml
-    ](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/xml_parser.py){rel="noopener"}Uses
+6.  [ansible.utils.xml](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/xml_parser.py)Uses
     [xmltodict python library](https://pypi.org/project/xmltodict/) 
-7.  [ansible.utils.json](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/json_parser.py){rel="noopener"}
+7.  [ansible.utils.json](https://github.com/ansible-collections/ansible.utils/blob/main/plugins/sub_plugins/cli_parser/json_parser.py)
 
-![state assessment blog
-1](https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%201.png?width=575&name=state%20assessment%20blog%201.png){width="575"
-style="width: 575px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%201.png?width=288&name=state%20assessment%20blog%201.png 288w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%201.png?width=575&name=state%20assessment%20blog%201.png 575w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%201.png?width=863&name=state%20assessment%20blog%201.png 863w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%201.png?width=1150&name=state%20assessment%20blog%201.png 1150w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%201.png?width=1438&name=state%20assessment%20blog%201.png 1438w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%201.png?width=1725&name=state%20assessment%20blog%201.png 1725w"
-sizes="(max-width: 575px) 100vw, 575px"}
+![state assessment blog](/images/posts/archive/state-assessment-blog.png)
 
 The examples described in this blog uses Cisco network switch, NXOS
 version 7.3(0)D1(1), as the remote endpoint and Ansible version 2.9.15
@@ -76,14 +70,13 @@ running on the control node and requires
 [cisco.nxos ](https://galaxy.ansible.com/cisco/nxos)Collections to be
 installed on the control node.
 
-The below [Ansible
-snippet](https://gist.github.com/ganeshrn/f763e299cb4896b548c586b57041ee73)
+The below [Ansible snippet](https://gist.github.com/ganeshrn/f763e299cb4896b548c586b57041ee73)
 fetches the operational state of the interfaces and translates it to
 structured data using **ansible.netcommon.pyats** parser. This parse
 requires [pyats](https://pypi.org/project/pyats/) library to be
 installed on the control node.
 
-``` 
+```yaml
 ---
 - hosts: nxos
   connection: ansible.netcommon.network_cli
@@ -117,7 +110,7 @@ sub plugins.
 After running the playbook, the output of **ansible.utils.cli_parse**
 task for the given host is as shown for reference:
 
-``` 
+```json
 ok: [nxos] => {
    "changed": false,
    "parsed": {
@@ -161,7 +154,7 @@ the interfaces to always be in **up** state the [criteria for
 jsonschema](https://gist.github.com/ganeshrn/0a479d580caa96326a7c8186c4b12d7d)
 will look like:
 
-```
+```json
 $cat criterias/nxos_show_interface_admin_criteria.json
 {
         "type" : "object",
@@ -184,7 +177,7 @@ current state of the resource matches with the desired state as shown in
 the below
 [task](https://gist.github.com/ganeshrn/d9a3049673bd8bec1cbd4b717cf56c99).
 
-```
+```yaml
 - name: validate interface for admin state
   ansible.utils.validate:
     data: "{{ nxos_pyats_show_interface['parsed'] }}"
@@ -218,13 +211,13 @@ in **up** state. The reference output can be seen
 (note: the output will vary based on the state of the interfaces on the
 remote host).
 
-```
+```bash
 TASK [validate interface for admin state] ***********************************************************************************************************
 fatal: [nxos02]: FAILED! => {"changed": false, "errors": [{"data_path": "Ethernet2/1.admin_state", "expected": "up", "found": "down", "json_path": "$.Ethernet2/1.admin_state", "message": "'down' does not match 'up'", "relative_schema": {"pattern": "up", "type": "string"}, "schema_path": "patternProperties.^.*.properties.admin_state.pattern", "validator": "pattern"}, {"data_path": "Ethernet2/10.admin_state", "expected": "up", "found": "down", "json_path": "$.Ethernet2/10.admin_state", "message": "'down' does not match 'up'", "relative_schema": {"pattern": "up", "type": "string"}, "schema_path": "patternProperties.^.*.properties.admin_state.pattern", "validator": "pattern"}], "msg": "Validation errors were found.\nAt 'patternProperties.^.*.properties.admin_state.pattern' 'down' does not match 'up'. \nAt 'patternProperties.^.*.properties.admin_state.pattern' 'down' does not match 'up'. \nAt 'patternProperties.^.*.properties.admin_state.pattern' 'down' does not match 'up'. "}
 ...ignoring
 ```
 
-```
+```bash
 TASK [print the interface names that does not satisfy the desired state] ****************************************************************************
 Monday 14 December 2020  11:05:38 +0530 (0:00:01.661)       0:00:28.676 *******
 ok: [nxos] => {
@@ -254,7 +247,7 @@ resource module to configure the given interfaces in admin **up** state
 as shown in the below
 [snippet](https://gist.github.com/ganeshrn/58f1346aa3dad4ce771fe4cb9420349f).
 
-``` 
+```yaml
 - name: Configure interface with drift in admin up state
   cisco.nxos.nxos_interfaces:
     config:
@@ -274,15 +267,10 @@ It is often required to validate the data before giving it as an input
 to the task to ensure the input data structure is  per the expected data
 model.  This allows us to validate data model adherence prior to pushing
 configuration to the network device. This use case is explained in the
-[data
-validation](https://www.ipspace.net/kb/DataModels/70-Validation.html)
+[data validation](https://www.ipspace.net/kb/DataModels/70-Validation.html)
 blog from [Ivan Pepelnjak](https://www.ipspace.net/Main_Page).
 
-![state assessment blog
-2](https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%202.png?width=807&name=state%20assessment%20blog%202.png){width="807"
-style="width: 807px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%202.png?width=404&name=state%20assessment%20blog%202.png 404w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%202.png?width=807&name=state%20assessment%20blog%202.png 807w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%202.png?width=1211&name=state%20assessment%20blog%202.png 1211w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%202.png?width=1614&name=state%20assessment%20blog%202.png 1614w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%202.png?width=2018&name=state%20assessment%20blog%202.png 2018w, https://www.ansible.com/hs-fs/hubfs/state%20assessment%20blog%202.png?width=2421&name=state%20assessment%20blog%202.png 2421w"
-sizes="(max-width: 807px) 100vw, 807px"}
+![state assessment blog two](/images/posts/archive/state-assessment-blog-two.png)
 
 The blog uses command-line tools to validate the input data, however
 with the support of the **ansible.utils.validate** module, this
@@ -290,7 +278,7 @@ functionality can now be added in the Ansible Playbook itself as shown
 in the below
 [snippet](https://gist.github.com/ganeshrn/11ef6cf725ee8fbc4f7a1bbffe5eb92b).
 
-``` 
+```yaml
 - name: validate bgp data data with jsonschema bgp model criteria
   ansible.utils.validate:
     data: "{{ hostvars }}"
@@ -305,9 +293,9 @@ locally can be referred
 [here](https://gist.github.com/ganeshrn/aef7f74d132199b5ddb379d49fe314f7) 
 (modified example from the [original blog
 post](https://www.ipspace.net/kb/DataModels/70-Validation.html)) and the
-sample host_vars file as below:
+sample `host_vars` file as below:
 
-```
+```bash
 $cat host_vars/nxos.yaml
 ---
 bgp_as: 0
@@ -316,7 +304,7 @@ description: Unexpected
 
 The output of the above task run can be seen as below:
 
-```
+```bash
 TASK [validate bgp data data with jsonschema bgp model criteria] *******************************************************************************************
 fatal: [nxos]: FAILED! => {"changed": false, "errors": [{"data_path": "nxos.bgp_as", "expected": 1, "found": 0, "json_path": "$.nxos.bgp_as", "message": "0 is less than the minimum of 1", "relative_schema": {"maximum": 65535, "minimum": 1, "type": "number"}, "schema_path": "patternProperties..*.properties.bgp_as.minimum", "validator": "minimum"}], "msg": "Validation errors were found.\nAt 'patternProperties..*.properties.bgp_as.minimum' 0 is less than the minimum of 1. "}
 ```

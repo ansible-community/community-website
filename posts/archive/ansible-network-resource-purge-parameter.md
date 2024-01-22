@@ -14,18 +14,14 @@ Red Hat Ansible Automation Platform. We have continually developed
 additional [resource modules](https://docs.ansible.com/ansible/latest/network/user_guide/network_resource_modules.html)
 to make automating network appliances easier, and more approachable, for
 novices and experts alike. These resource modules provide a consistent
-experience across [multiple network vendors](https://www.ansible.com/integrations/networks). There are seven
+experience across multiple network vendors. There are seven
 main state parameters for resource modules: merged, replaced,
 overridden, deleted, gathered, rendered and parsed. The Ansible network
 team is adding one more parameter, purged, to this tool chest for
 resource modules. This blog will cover the purged parameter and show
 use-cases through a practical example.
 
-![network purge blog
-](https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%20.png?width=1203&name=network%20purge%20blog%20.png){width="1203"
-loading="lazy" style="width: 1203px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%20.png?width=602&name=network%20purge%20blog%20.png 602w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%20.png?width=1203&name=network%20purge%20blog%20.png 1203w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%20.png?width=1805&name=network%20purge%20blog%20.png 1805w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%20.png?width=2406&name=network%20purge%20blog%20.png 2406w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%20.png?width=3008&name=network%20purge%20blog%20.png 3008w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%20.png?width=3609&name=network%20purge%20blog%20.png 3609w"
-sizes="(max-width: 1203px) 100vw, 1203px"}
+![network purge blog one](/images/posts/archive/network-purge-blog-one.png)
 
 For this example, we will be using two BGP resource modules to configure
 a Cisco network device. We will be using the `bgp_global` module
@@ -101,11 +97,7 @@ ansible-playbook merge_ios_bgp.yaml
 
 The output will look similar to the following:
 
-![network purge blog
-2](https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%202.png?width=837&name=network%20purge%20blog%202.png){width="837"
-loading="lazy" style="width: 837px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%202.png?width=419&name=network%20purge%20blog%202.png 419w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%202.png?width=837&name=network%20purge%20blog%202.png 837w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%202.png?width=1256&name=network%20purge%20blog%202.png 1256w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%202.png?width=1674&name=network%20purge%20blog%202.png 1674w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%202.png?width=2093&name=network%20purge%20blog%202.png 2093w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%202.png?width=2511&name=network%20purge%20blog%202.png 2511w"
-sizes="(max-width: 837px) 100vw, 837px"}
+![network purge blog two](/images/posts/archive/network-purge-blog-two.png)
 
 Finally let's look at the generated configuration on our Cisco IOS
 network device:
@@ -155,11 +147,7 @@ simplifying your Ansible Playbooks.
 Now we can execute the playbook and manually check the configuration to
 see what it did:
 
-![network purge blog
-3](https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%203.png?width=1600&name=network%20purge%20blog%203.png){width="1600"
-loading="lazy" style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%203.png?width=800&name=network%20purge%20blog%203.png 800w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%203.png?width=1600&name=network%20purge%20blog%203.png 1600w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%203.png?width=2400&name=network%20purge%20blog%203.png 2400w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%203.png?width=3200&name=network%20purge%20blog%203.png 3200w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%203.png?width=4000&name=network%20purge%20blog%203.png 4000w, https://www.ansible.com/hs-fs/hubfs/network%20purge%20blog%203.png?width=4800&name=network%20purge%20blog%203.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![network purge blog three](/images/posts/archive/network-purge-blog-three.png)
 
 In the above screenshot (from the Ansible Automation Platform Web UI)
 you can see that the playbook ran successfully and the BGP configuration

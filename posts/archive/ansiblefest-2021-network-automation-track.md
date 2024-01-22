@@ -68,5 +68,4 @@ And of course, check out the [Telco track](https://events.ansiblefest.redhat.com
 to find sessions by customers Cox Communications and Bell Canada. 
 
 We can't wait for AnsibleFest 2021 to kick off and hope to see you
-there, virtually! Register [here](http://ansible.com/ansiblefest) for
-free.
+there, virtually!

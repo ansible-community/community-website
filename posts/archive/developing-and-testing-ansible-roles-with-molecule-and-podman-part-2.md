@@ -12,9 +12,8 @@ title: Developing and Testing Ansible Roles with Molecule and Podman - Part 2
 
 Molecule is a complete testing framework that helps you develop and test
 Ansible roles, which allows you to focus on role content instead of
-focusing on managing testing infrastructure. In the [first
-part](https://www.ansible.com/blog/developing-and-testing-ansible-roles-with-molecule-and-podman-part-1)
-of this series, we've successfully installed, configured and used
+focusing on managing testing infrastructure. In the first
+part of this series, we've successfully installed, configured and used
 Molecule to set up new testing instances.
 
 Now that the instances are running, let's start developing the new role
@@ -32,9 +31,7 @@ worrying about managing the instances and test environment. It provides
 quick feedback, allowing you to focus on the role content, ensuring it
 works in all platforms.
 
-In the [first
-part](https://www.ansible.com/blog/developing-and-testing-ansible-roles-with-molecule-and-podman-part-1)
-of this series, we initialized a new role "mywebapp". If you're not
+In the first part of this series, we initialized a new role "mywebapp". If you're not
 there yet, switch to the role directory "mywebapp" and add the first
 task, installing the Apache package "httpd" using the "package" Ansible
 module. Edit the file "tasks/main.yaml" and include this task:

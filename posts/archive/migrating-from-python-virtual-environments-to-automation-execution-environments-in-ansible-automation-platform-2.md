@@ -29,16 +29,11 @@ with its own set of limitations:]{style="color: #333333;"}
     custom dependencies across Ansible Automation Platform
     deployments.]{style="color: #333333;"}
 
-[Ansible Automation Platform 2 introduced
-]{style="color: #333333;"}[automation execution
-environments](https://www.ansible.com/blog/whats-new-in-ansible-automation-platform-2-automation-execution-environments)[.
+Ansible Automation Platform 2 introduced automation execution environments.
 These are container images in which all automation is packaged and run,
-which includes components such as Ansible Core,
-]{style="color: #333333;"}[Ansible
-[C]{style="color: #1155cc; text-decoration: underline;"}[ontent
-Collections]{style="color: #1155cc; text-decoration: underline;"}](http://ansible.com/blog/getting-started-with-ansible-collections)[,
-a version of Python, Red Hat Enterprise Linux UBI 8, and any additional
-package dependencies.]{style="color: #333333;"}
+which includes components such as Ansible Core, Ansible Content
+Collections, a version of Python, Red Hat Enterprise Linux UBI 8, and any additional
+package dependencies.
 
 # Why should you upgrade?
 
@@ -51,10 +46,7 @@ enable easier to scale automation across the globe and allow you to run
 your automation as close to the source as possible without being bound
 to running automation in a single data center. It's more dynamic,
 scalable, resilient and secure compared to Ansible Automation Platform
-1.2. For an even deeper look into the features introduced in Ansible
-Automation Platform 2, check out this
-]{style="color: #333333;"}[blog](https://www.ansible.com/blog/introducing-red-hat-ansible-automation-platform-2.1)[
-by Sean Cavanaugh.]{style="color: #333333;"}
+1.2.
 
 [If you are an existing Red Hat customer using Ansible Automation
 Platform 1.2 (Ansible Tower 3.8), an important migration recommendation
@@ -62,17 +54,10 @@ is to convert any custom Python virtual environments in your cluster to
 automation execution environments. This one-time effort opens the door
 to take advantage of the latest Ansible Automation Platform 2
 capabilities and the ability to execute consistent automation across
-multiple platforms with lower long-term maintenance. For more
-information into automation execution environments, please refer to
-]{style="color: #333333;"}[this
-blog](https://www.ansible.com/blog/whats-new-in-ansible-automation-platform-2-automation-execution-environments?hs_preview=batunIYu-56182547470)[.]{style="color: #333333;"}
-
- 
+multiple platforms with lower long-term maintenance.
 
 [![](https://lh6.googleusercontent.com/nxS9BOYsSwYK-3ShH-dcn26-3CZAWb8kwqUujs5AoX5RHNsmjWomNZ4AQwTOhvIySeun7is1s522_ttVBUhW7pHaJoQE_S_ICTY8cJ-g3FYbK42Xqf-rC5SLkrgeXu0Acs1V7uyL){width="624"
 height="216" loading="lazy"}]{style="font-size: 11px;"}
-
- 
 
 [We will now explain this specific migration consideration and provide
 you with some best practices on how to migrate to automation execution
@@ -231,9 +216,6 @@ Collection]{style="color: #1155cc; text-decoration: underline;"}](https://galaxy
 called
 ]{style="color: #333333;"}[ee_builder](https://github.com/redhat-cop/ee_utilities/tree/main/roles/ee_builder)[;
 its use case is to automate the execution environment creation process.
-For more information on how to automate your own execution environments
-using GitHub Actions, please refer to this
-]{style="color: #333333;"}[blog](https://www.ansible.com/blog/automating-execution-environment-image-builds-with-github-actions)[.]{style="color: #333333;"}
 
 Briefly summing things up:
 

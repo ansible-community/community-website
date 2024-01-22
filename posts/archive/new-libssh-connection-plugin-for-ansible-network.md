@@ -32,11 +32,7 @@ enabling FIPS readiness, but it was also designed to be [more performant
 than the existing Paramiko SSH
 subsystem](https://elegantnetwork.github.io/posts/comparing-ssh/).
 
-![Screen Shot 2020-11-20 at 8.52.53
-AM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png?width=687&name=Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png){width="687"
-style="width: 687px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png?width=344&name=Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png 344w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png?width=687&name=Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png 687w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png?width=1031&name=Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png 1031w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png?width=1374&name=Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png 1374w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png?width=1718&name=Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png 1718w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png?width=2061&name=Screen%20Shot%202020-11-20%20at%208.52.53%20AM.png 2061w"
-sizes="(max-width: 687px) 100vw, 687px"}
+![diagram of module code execution](/images/posts/archive/module-code-execution-diagram.png)
 
 The top level
 [network_cli]{style="font-family: 'courier new', courier;"} connection

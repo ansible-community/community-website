@@ -8,12 +8,6 @@ title: Shell Scripts to Ansible
 
 # Shell Scripts to Ansible
 
-[![Shell-Scripts-to-Ansible](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Dynatrace-Screenshots/Shell-Scripts-to-Ansible.png?width=1024&name=Shell-Scripts-to-Ansible.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Dynatrace-Screenshots/Shell-Scripts-to-Ansible.png?width=512&name=Shell-Scripts-to-Ansible.png 512w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Dynatrace-Screenshots/Shell-Scripts-to-Ansible.png?width=1024&name=Shell-Scripts-to-Ansible.png 1024w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Dynatrace-Screenshots/Shell-Scripts-to-Ansible.png?width=1536&name=Shell-Scripts-to-Ansible.png 1536w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Dynatrace-Screenshots/Shell-Scripts-to-Ansible.png?width=2048&name=Shell-Scripts-to-Ansible.png 2048w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Dynatrace-Screenshots/Shell-Scripts-to-Ansible.png?width=2560&name=Shell-Scripts-to-Ansible.png 2560w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Dynatrace-Screenshots/Shell-Scripts-to-Ansible.png?width=3072&name=Shell-Scripts-to-Ansible.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"} ]{#hs_cos_wrapper_post_body
-.hs_cos_wrapper .hs_cos_wrapper_meta_field
-
 During a recent client visit, we were asked to help migrate the
 following script for deploying a centralized sudoers file to RHEL and
 AIX servers. This is a common scenario which can provide some good

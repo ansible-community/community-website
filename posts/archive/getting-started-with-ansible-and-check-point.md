@@ -11,11 +11,6 @@ title: Getting started with Ansible and Check Point
 
 # Getting started with Ansible and Check Point
 
-![ansible-blog-and-social_guy-on-laptop-1](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-and-social_guy-on-laptop-1.jpeg?width=1024&name=ansible-blog-and-social_guy-on-laptop-1.jpeg){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-and-social_guy-on-laptop-1.jpeg?width=512&name=ansible-blog-and-social_guy-on-laptop-1.jpeg 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-and-social_guy-on-laptop-1.jpeg?width=1024&name=ansible-blog-and-social_guy-on-laptop-1.jpeg 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-and-social_guy-on-laptop-1.jpeg?width=1536&name=ansible-blog-and-social_guy-on-laptop-1.jpeg 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-and-social_guy-on-laptop-1.jpeg?width=2048&name=ansible-blog-and-social_guy-on-laptop-1.jpeg 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-and-social_guy-on-laptop-1.jpeg?width=2560&name=ansible-blog-and-social_guy-on-laptop-1.jpeg 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/ansible-blog-and-social_guy-on-laptop-1.jpeg?width=3072&name=ansible-blog-and-social_guy-on-laptop-1.jpeg 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
 The scale and complexity of modern infrastructures require not only that
 you be able to define a security policy for your systems, but also be
 able to apply that security policy programmatically or make changes as a
@@ -23,24 +18,22 @@ response to external events.  As such, the proper automation tooling is
 a necessary building block to allow you to apply the appropriate actions
 in a fast, simple and consistent manner.
 
-[Check Point has a certified Ansible Content Collection of
-modules](https://cloud.redhat.com/ansible/automation-hub/check_point/mgmt)
+[Check Point has a certified Ansible Content Collection of modules](https://cloud.redhat.com/ansible/automation-hub/check_point/mgmt)
 to help enable organizations to automate their response and remediation
 practices, and to embrace the DevOps model to accelerate application
 deployment with operational efficiency. The modules, based on Check
-Point security management APIs\* are also available on Ansible Galaxy,
-in the upstream version of [Check Point Collection for the Management
-Server](https://galaxy.ansible.com/check_point/mgmt). 
+Point security management APIs are also available on Ansible Galaxy,
+in the upstream version of
+[Check Point Collection for the Management Server](https://galaxy.ansible.com/check_point/mgmt). 
 
 The operational flow is exactly the same for the API as it is for the
-Check Point security management GUI SmartConsole, *i.e.* Login \> Get
-Session \> Do changes \> Publish \> Logout. 
+Check Point security management GUI SmartConsole, *i.e.* Login > Get
+Session > Do changes > Publish > Logout. 
 
 Security professionals can leverage these modules to automate various
 tasks for the identification, search, and response to security events. 
 Additionally, in combination with other modules that are part of
-[Ansible security
-automation](https://www.ansible.com/use-cases/security-automation),
+Ansible security automation,
 existing Check Point infrastructures can be integrated in orchestrated
 processes involving multiple security technologies.  
 
@@ -50,9 +43,8 @@ virtualized next-generation firewalls.
 
 To better understand how these new modules can be consumed, I'll provide
 a series of examples based on the code in the security automation
-community project, under the **Ansible security automation** [Sample
-Plays GH
-repo](https://github.com/ansible-security/ansible-security-playbooks/tree/master/playbooks/checkpoint). 
+community project, under the **Ansible security automation**
+[Sample Plays GH repo](https://github.com/ansible-security/ansible-security-playbooks/tree/master/playbooks/checkpoint). 
 The pre-requisite for the integrations to work and function as expected
 is that Check Point R80 versions are supported by this integration given
 this
@@ -63,7 +55,7 @@ is applied.
 
 ## Ansible Check Point Modules
 
-**cp_mgmt\_\*** modules have been released with Ansible 2.9. They can be
+`cp_mgmt_*` modules have been released with Ansible 2.9. They can be
 currently found in the '*latest*' branch of the
 [documentation](https://docs.ansible.com/ansible/latest/modules/list_of_network_modules.html#check-point).
 
@@ -71,41 +63,30 @@ There are quite a few modules available to manage the Check Point
 appliance, in the Check Point Mgmt Collection they are structured in two
 categories:
 
--   -   **cp_mgmt\_\*:** All these modules use the aforementioned API to
-        **post** API objects on the Check Point appliance.
-    -   **cp_mgmt\_\*\_facts**: All the facts modules use the same API
-        to get facts from the Check Point appliance.
+- `cp_mgmt_*`: All these modules use the aforementioned API to **post** API objects on the Check Point appliance.
+- `cp_mgmt_*_facts`: All the facts modules use the same API to get facts from the Check Point appliance.
 
 As an example, if we look at the modules dedicated to *host objects*
 this is reflected in the following way:
 
--   -   [cp_mgmt_host](https://docs.ansible.com/ansible/latest/modules/cp_mgmt_host_module.html) -
-        [Manages host objects on Check Point devices including creating,
-        updating and removing objects.]{style="font-weight: normal;"}
+- [cp_mgmt_host](https://docs.ansible.com/ansible/latest/modules/cp_mgmt_host_module.html) - Manages host objects on Check Point devices including creating, updating and removing objects.
+- [cp_mgmt_host_facts](https://docs.ansible.com/ansible/latest/modules/cp_mgmt_host_facts_module.html) - Gets host objects facts on Check Point devices.
 
-    -   [cp_mgmt_host_facts](https://docs.ansible.com/ansible/latest/modules/cp_mgmt_host_facts_module.html)[ -
-        ]{style="background-color: transparent;"}[Get host objects facts
-        on Check Point devices]{style="background-color: transparent;"}
-
-[There are also a total of
-]{style="background-color: transparent;"}**Nine**
-[checkpoint\_\*](https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html#checkpoint)[
+There are also a total of nine
+[checkpoint\_\*](https://docs.ansible.com/ansible/2.8/modules/list_of_network_modules.html#checkpoint)
 modules which were introduced with
-]{style="background-color: transparent;"}**Ansible** **2.8**[, but these
+**Ansible** **2.8**, but these
 modules are deprecated and it's encouraged and advisable to use the
-latest ]{style="background-color: transparent;"}**cp_mgmt\_\*** [modules
+latest `cp_mgmt_*` modules
 that were introduced in
-]{style="background-color: transparent;"}**Ansible 2.9** [unless
-required.]{style="background-color: transparent;"}
-
- 
+**Ansible 2.9** unless required.
 
 ## cp_mgmt_* modules example: How to perform host configuration
 
 Here is an example of how to use the  **cp_mgmt_host** module to
 configure a **host**:
 
-``` 
+```yaml
 ---
 - hosts: check_point
   connection: httpapi
@@ -133,21 +114,13 @@ changes done will take effect on your Check Point appliance.
 
 To run the playbook use the ansible-playbook command:
 
-![Checkpoint blog
-1](https://www.ansible.com/hs-fs/hubfs/Checkpoint%20blog%201.png?width=1600&name=Checkpoint%20blog%201.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Checkpoint%20blog%201.png?width=800&name=Checkpoint%20blog%201.png 800w, https://www.ansible.com/hs-fs/hubfs/Checkpoint%20blog%201.png?width=1600&name=Checkpoint%20blog%201.png 1600w, https://www.ansible.com/hs-fs/hubfs/Checkpoint%20blog%201.png?width=2400&name=Checkpoint%20blog%201.png 2400w, https://www.ansible.com/hs-fs/hubfs/Checkpoint%20blog%201.png?width=3200&name=Checkpoint%20blog%201.png 3200w, https://www.ansible.com/hs-fs/hubfs/Checkpoint%20blog%201.png?width=4000&name=Checkpoint%20blog%201.png 4000w, https://www.ansible.com/hs-fs/hubfs/Checkpoint%20blog%201.png?width=4800&name=Checkpoint%20blog%201.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Checkpoint blog one](/images/posts/archive/checkpoint-blog-one.png)
 
 To check if this has effectively changed the Check Point configuration
 as expected, login to the Check Point SmartConsole and look under
 **Network objects \> Hosts** where we will see the new host listed:
 
-![checkpoint blog
-2](https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%202.png?width=690&name=checkpoint%20blog%202.png){width="690"
-style="width: 690px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%202.png?width=345&name=checkpoint%20blog%202.png 345w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%202.png?width=690&name=checkpoint%20blog%202.png 690w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%202.png?width=1035&name=checkpoint%20blog%202.png 1035w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%202.png?width=1380&name=checkpoint%20blog%202.png 1380w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%202.png?width=1725&name=checkpoint%20blog%202.png 1725w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%202.png?width=2070&name=checkpoint%20blog%202.png 2070w"
-sizes="(max-width: 690px) 100vw, 690px"}
+![checkpoint blog two](/images/posts/archive/checkpoint-blog-two.png)
 
 The modules can keep state (where applicable) so when we re-run the
 playbook instead of \"**changed\"** it will just say **OK** without
@@ -155,11 +128,7 @@ performing any changes to the Check Point appliance. This is also
 referred to as ***idempotency*** (also see the [Ansible
 Docs](http://docs.ansible.com/ansible/latest/glossary.html)).
 
-![checkpoint blog
-3](https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%203.png?width=512&name=checkpoint%20blog%203.png){width="512"
-style="width: 512px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%203.png?width=256&name=checkpoint%20blog%203.png 256w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%203.png?width=512&name=checkpoint%20blog%203.png 512w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%203.png?width=768&name=checkpoint%20blog%203.png 768w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%203.png?width=1024&name=checkpoint%20blog%203.png 1024w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%203.png?width=1280&name=checkpoint%20blog%203.png 1280w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%203.png?width=1536&name=checkpoint%20blog%203.png 1536w"
-sizes="(max-width: 512px) 100vw, 512px"}
+![checkpoint blog three](/images/posts/archive/checkpoint-blog-three.png)
 
 ## Example: How to collect hosts facts
 
@@ -186,11 +155,7 @@ playbook:
 
 Run the playbook with the ansible-playbook command as:
 
-![checkpoint blog
-4](https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%204.jpg?width=1435&name=checkpoint%20blog%204.jpg){width="1435"
-style="width: 1435px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%204.jpg?width=718&name=checkpoint%20blog%204.jpg 718w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%204.jpg?width=1435&name=checkpoint%20blog%204.jpg 1435w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%204.jpg?width=2153&name=checkpoint%20blog%204.jpg 2153w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%204.jpg?width=2870&name=checkpoint%20blog%204.jpg 2870w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%204.jpg?width=3588&name=checkpoint%20blog%204.jpg 3588w, https://www.ansible.com/hs-fs/hubfs/checkpoint%20blog%204.jpg?width=4305&name=checkpoint%20blog%204.jpg 4305w"
-sizes="(max-width: 1435px) 100vw, 1435px"}
+![checkpoint blog four](/images/posts/archive/checkpoint-blog-four.jpg)
 
 Play output: All of the host facts related to queried host name *i.e.*
 ***"New CP_MGMT Host 1".*** 
@@ -207,11 +172,7 @@ documentation](http://docs.ansible.com/ansible/latest/playbooks_variables.html).
 
 ## How to use Check Point modules in response and remediation scenarios
 
-[Ansible security
-automation](https://www.ansible.com/use-cases/security-automation)
-supports interoperability between the many security technologies used by
-SOCs or security teams as part of their response and remediation
-activities. 
+Ansible security automation supports interoperability between the many security technologies used by SOCs or security teams as part of their response and remediation activities. 
 
 To help security professionals adopt Ansible as the common automation
 language for security, we have written a number of roles that can be

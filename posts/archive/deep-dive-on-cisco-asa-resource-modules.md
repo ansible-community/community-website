@@ -11,12 +11,9 @@ title: Deep dive on Cisco ASA resource modules
 
 # Deep dive on Cisco ASA resource modules
 
-Recently, we [published our
-thoughts](https://www.ansible.com/blog/ansible-security-automation-resource-modules)
-on resource modules applied to the use cases targeted by the [Ansible
-security
-automation](https://www.ansible.com/use-cases/security-automation)
-initiative. The principle is well known from the network automation
+Recently, we published our thoughts on resource modules applied to
+the use cases targeted by the Ansible security automation initiative.
+The principle is well known from the network automation
 space and we follow the established path. While the last blog post
 covered a few basic examples, we'd like to show more detailed use cases
 and how those can be solved with resource modules.
@@ -26,13 +23,10 @@ which was already introduced in the previous article. We will walk
 through several examples and describe the use cases and how we envision
 the Collection being used in real world scenarios.
 
- 
-
 # The Cisco ASA Certified Content Collection: what is it about?
 
-The Cisco ASA Content Collection provides means to automate the [Cisco
-Adaptive Security Appliance family of security
-devices](https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software/index.html) -
+The Cisco ASA Content Collection provides means to automate the
+[Cisco Adaptive Security Appliance family of security devices](https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software/index.html) -
 short Cisco ASA, hence the name. With a focus on firewall and network
 security they are well known in the market.
 
@@ -51,15 +45,9 @@ service offering on [cloud.redhat.com](https://cloud.redhat.com/) and a
 place for Red Hat subscribers to quickly find and use content that is
 supported by Red Hat and our technology partners.
 
-Read more about Automation Hub in the blog post "[Getting Started with
-Automation
-Hub](https://www.ansible.com/blog/getting-started-with-automation-hub)".
-There you will also learn how to configure your Ansible command line
-tools to access Automation Hub for collection downloads.
-
 Once that is done, the Collection is easily installed:
 
-``` 
+```bash
 ansible-galaxy collection install cisco.asa
 ```
 

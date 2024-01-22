@@ -12,10 +12,10 @@ title: Announcing the Community Ansible 3.0.0 Package
 
 Version 3.0.0 of the Ansible community package marks the end of the
 restructuring of the Ansible ecosystem. This work culminates what began
-in 2019 to [restructure the Ansible
-project](https://www.ansible.com/blog/thoughts-on-restructuring-the-ansible-project)
-and shape how [Ansible content was
-delivered](https://www.ansible.com/blog/the-future-of-ansible-content-delivery).
+in 2019 to restructure the Ansible
+project
+and shape how Ansible content was
+delivered.
 Starting with Ansible 3.0.0, the versioning and naming reflects the new
 structure of the project in the following ways: 
 

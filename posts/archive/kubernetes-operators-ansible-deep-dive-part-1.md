@@ -10,11 +10,6 @@ title: Kubernetes Operators with Ansible Deep Dive, Part 1
 
 # Kubernetes Operators with Ansible Deep Dive, Part 1
 
-![blog_ansible-and-kubernetes-deep-dive-1](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-1.png?width=1024&name=blog_ansible-and-kubernetes-deep-dive-1.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-1.png?width=512&name=blog_ansible-and-kubernetes-deep-dive-1.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-1.png?width=1024&name=blog_ansible-and-kubernetes-deep-dive-1.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-1.png?width=1536&name=blog_ansible-and-kubernetes-deep-dive-1.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-1.png?width=2048&name=blog_ansible-and-kubernetes-deep-dive-1.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-1.png?width=2560&name=blog_ansible-and-kubernetes-deep-dive-1.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-deep-dive-1.png?width=3072&name=blog_ansible-and-kubernetes-deep-dive-1.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}\
-\
 This deep dive series assumes the reader has access to a Kubernetes test
 environment. A tool like minikube is an acceptable platform for the
 purposes of this article. If you are an existing Red Hat customer,
@@ -76,9 +71,7 @@ has to know a relatively low-level programming language to get started.
 On top of this, you must also be familiar with Kubernetes internals,
 such as the API and how events are generated for resources.]{.c6}
 
-The [[Ansible
-Operator](https://ansible.com/operators/%26sa=D%26ust=1563546779220000){.c8
-rel=" noopener"}]{.c9} was created to address this short-coming. The
+The Ansible Operator was created to address this short-coming. The
 Ansible Operator consists of two main pieces:
 
 1.  [A small chunk of Golang code, which handles the interface between

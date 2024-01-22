@@ -266,10 +266,7 @@ command was run in.
 So what happens if we run on two or more network devices at the same
 time?
 
-![Ansible-Multiple-Network-Device-Run](https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Multiple-Network-Device-Run.png?width=1804&name=Ansible-Multiple-Network-Device-Run.png){width="1804"
-style="width: 1804px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Multiple-Network-Device-Run.png?width=902&name=Ansible-Multiple-Network-Device-Run.png 902w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Multiple-Network-Device-Run.png?width=1804&name=Ansible-Multiple-Network-Device-Run.png 1804w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Multiple-Network-Device-Run.png?width=2706&name=Ansible-Multiple-Network-Device-Run.png 2706w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Multiple-Network-Device-Run.png?width=3608&name=Ansible-Multiple-Network-Device-Run.png 3608w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Multiple-Network-Device-Run.png?width=4510&name=Ansible-Multiple-Network-Device-Run.png 4510w, https://www.ansible.com/hs-fs/hubfs/2018_Images/Social-Blog/Ansible-Multiple-Network-Device-Run.png?width=5412&name=Ansible-Multiple-Network-Device-Run.png 5412w"
-sizes="(max-width: 1804px) 100vw, 1804px"}
+![diagram of Ansible running multiple network devices](/images/posts/archive/ansible-multiple-network-devices-run.png)
 
 The variable output is saved uniquely as a [host
 variable](http://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#magic-variables-and-how-to-access-information-about-other-hosts)

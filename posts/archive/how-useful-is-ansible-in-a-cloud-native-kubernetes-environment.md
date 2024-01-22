@@ -9,12 +9,7 @@ title: How useful is Ansible in a Cloud-Native Kubernetes Environment?
 
 # How useful is Ansible in a Cloud-Native Kubernetes Environment?
 
-![blog_ansible-and-kubernetes-c](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-c.png?width=1024&name=blog_ansible-and-kubernetes-c.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-c.png?width=512&name=blog_ansible-and-kubernetes-c.png 512w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-c.png?width=1024&name=blog_ansible-and-kubernetes-c.png 1024w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-c.png?width=1536&name=blog_ansible-and-kubernetes-c.png 1536w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-c.png?width=2048&name=blog_ansible-and-kubernetes-c.png 2048w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-c.png?width=2560&name=blog_ansible-and-kubernetes-c.png 2560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_ansible-and-kubernetes-c.png?width=3072&name=blog_ansible-and-kubernetes-c.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
-A question I\'ve been hearing a lot lately is \"why are you still using
+A question I've been hearing a lot lately is \"why are you still using
 Ansible in your Kubernetes projects?\" Followed often by \"what\'s the
 point of writing your book [Ansible for
 Kubernetes](https://www.ansibleforkubernetes.com/) when Ansible isn\'t
@@ -40,22 +35,13 @@ fallacy](https://en.wikipedia.org/wiki/Law_of_the_instrument). No single
 infrastructure tool---not even the best Kubernetes-as-a-service
 platform---can fill the needs of an entire business\'s IT operation. If
 anything, we have seen an explosion of specialist tools as is evidenced
-by the [CNCF landscape](https://landscape.cncf.io/):
-
-![Geerling blog
-1](https://www.ansible.com/hs-fs/hubfs/Geerling%20blog%201.png?width=1200&name=Geerling%20blog%201.png){width="1200"
-style="width: 1200px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Geerling%20blog%201.png?width=600&name=Geerling%20blog%201.png 600w, https://www.ansible.com/hs-fs/hubfs/Geerling%20blog%201.png?width=1200&name=Geerling%20blog%201.png 1200w, https://www.ansible.com/hs-fs/hubfs/Geerling%20blog%201.png?width=1800&name=Geerling%20blog%201.png 1800w, https://www.ansible.com/hs-fs/hubfs/Geerling%20blog%201.png?width=2400&name=Geerling%20blog%201.png 2400w, https://www.ansible.com/hs-fs/hubfs/Geerling%20blog%201.png?width=3000&name=Geerling%20blog%201.png 3000w, https://www.ansible.com/hs-fs/hubfs/Geerling%20blog%201.png?width=3600&name=Geerling%20blog%201.png 3600w"
-sizes="(max-width: 1200px) 100vw, 1200px"}
+by the [CNCF landscape](https://landscape.cncf.io/).
 
 Ansible fits into multiple areas of cloud-native infrastructure
 management, but I would like to specifically highlight three areas in
 this post:
 
-![Ansible_cloud-native-venn-diagram](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_cloud-native-venn-diagram.png?width=457&name=Ansible_cloud-native-venn-diagram.png){width="457"
-style="width: 457px; display: block; margin-left: auto; margin-right: auto;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_cloud-native-venn-diagram.png?width=229&name=Ansible_cloud-native-venn-diagram.png 229w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_cloud-native-venn-diagram.png?width=457&name=Ansible_cloud-native-venn-diagram.png 457w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_cloud-native-venn-diagram.png?width=686&name=Ansible_cloud-native-venn-diagram.png 686w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_cloud-native-venn-diagram.png?width=914&name=Ansible_cloud-native-venn-diagram.png 914w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_cloud-native-venn-diagram.png?width=1143&name=Ansible_cloud-native-venn-diagram.png 1143w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Ansible_cloud-native-venn-diagram.png?width=1371&name=Ansible_cloud-native-venn-diagram.png 1371w"
-sizes="(max-width: 457px) 100vw, 457px"}
+![Ansible_cloud-native-venn-diagram](/images/posts/archive/Ansible_cloud-native-venn-diagram.png)
 
 Namely, how Ansible fits into the processes for Container Builds,
 Cluster Management, and Application Lifecycles.
@@ -96,11 +82,7 @@ the Dockerfile, which was nothing more than a shell script with some
 Docker-specific DSL and hacky inline commands to solve image layer size
 issues, is still used in many places as the *de facto* app build script.
 
-![Geerling Blog
-3](https://www.ansible.com/hs-fs/hubfs/Geerling%20Blog%203.png?width=1600&name=Geerling%20Blog%203.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Geerling%20Blog%203.png?width=800&name=Geerling%20Blog%203.png 800w, https://www.ansible.com/hs-fs/hubfs/Geerling%20Blog%203.png?width=1600&name=Geerling%20Blog%203.png 1600w, https://www.ansible.com/hs-fs/hubfs/Geerling%20Blog%203.png?width=2400&name=Geerling%20Blog%203.png 2400w, https://www.ansible.com/hs-fs/hubfs/Geerling%20Blog%203.png?width=3200&name=Geerling%20Blog%203.png 3200w, https://www.ansible.com/hs-fs/hubfs/Geerling%20Blog%203.png?width=4000&name=Geerling%20Blog%203.png 4000w, https://www.ansible.com/hs-fs/hubfs/Geerling%20Blog%203.png?width=4800&name=Geerling%20Blog%203.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![Geerling Blog 3](/images/posts/archive/geerling-blog-three.png)
 
 How many times have you encountered an indecipherable Dockerfile like
 this?

@@ -11,17 +11,11 @@ title: Rebooting Network Devices with Ansible
 
 # Rebooting Network Devices with Ansible
 
-![blog_Rebooting-Network-Devices-with-Ansible](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_Rebooting-Network-Devices-with-Ansible.jpg?width=1120&name=blog_Rebooting-Network-Devices-with-Ansible.jpg){width="1120"
-style="width: 1120px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_Rebooting-Network-Devices-with-Ansible.jpg?width=560&name=blog_Rebooting-Network-Devices-with-Ansible.jpg 560w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_Rebooting-Network-Devices-with-Ansible.jpg?width=1120&name=blog_Rebooting-Network-Devices-with-Ansible.jpg 1120w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_Rebooting-Network-Devices-with-Ansible.jpg?width=1680&name=blog_Rebooting-Network-Devices-with-Ansible.jpg 1680w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_Rebooting-Network-Devices-with-Ansible.jpg?width=2240&name=blog_Rebooting-Network-Devices-with-Ansible.jpg 2240w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_Rebooting-Network-Devices-with-Ansible.jpg?width=2800&name=blog_Rebooting-Network-Devices-with-Ansible.jpg 2800w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/blog_Rebooting-Network-Devices-with-Ansible.jpg?width=3360&name=blog_Rebooting-Network-Devices-with-Ansible.jpg 3360w"
-sizes="(max-width: 1120px) 100vw, 1120px"}
-
 With the Red Hat Ansible Automation Platform release in November, we
 released over 50 network resource modules to help make automating
 network devices easier and more turn-key for network engineers.  In
 addition to the new resource modules, Andrius also discussed fact
-gathering enhancements [in his blog
-post](https://www.ansible.com/blog/network-features-coming-soon-in-ansible-engine-2.9),
+gathering enhancements in his blog post,
 which means with every new resource module, users gain increased fact
 coverage for network devices.  For this blog post I want to cover
 another cool enhancement that may have gone unnoticed. This is the
@@ -76,18 +70,13 @@ For example on a Juniper vSRX device:
     admin@rtr3> request system reboot
     Reboot the system ? [yes,no] (no)
 
-[The user has to confirm the reload to be able to proceed.  Something I
-neglected to cover on my ]{style="background-color: transparent;"}[deep
-dive with cli_command
-blog](https://www.ansible.com/blog/deep-dive-on-cli-command-for-network-automation)[
-was that ]{style="background-color: transparent;"}[cli_command
-module](https://docs.ansible.com/ansible/latest/modules/cli_command_module.html)[
-can handle prompts. The cli_command module can even handle multiple
+The user has to confirm the reload to be able to proceed. Something I
+neglected to cover on my deep dive with `cli_command` blog
+was that [cli_command module](https://docs.ansible.com/ansible/latest/modules/cli_command_module.html) can handle prompts. The cli_command module can even handle multiple
 prompts!  For this example the Cisco router had not saved its config,
 and we are performing a reload.  First the Cisco router will alert me
 that the System configuration has been modified, and ask me if I want to
-save this before I lose my
-running-configuration:]{style="background-color: transparent;"}
+save this before I lose my running-configuration:
 
     rtr1#reload
 

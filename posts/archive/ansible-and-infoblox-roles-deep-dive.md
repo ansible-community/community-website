@@ -240,10 +240,7 @@ creating filters, you can test expected values locally, or leverage
 see the results of your filters before you use them in a playbook or
 role. 
 
-![Infoblox-Roles-Deep-Dive-Ansible-Template-Tester](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png?width=1999&name=Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png){width="1999"
-style="width: 1999px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png?width=1000&name=Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png 1000w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png?width=1999&name=Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png 1999w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png?width=2999&name=Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png 2999w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png?width=3998&name=Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png 3998w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png?width=4998&name=Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png 4998w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png?width=5997&name=Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png 5997w"
-sizes="(max-width: 1999px) 100vw, 1999px"}
+![Infoblox-Roles-Deep-Dive-Ansible-Template-Tester](/images/posts/archive/Infoblox-Roles-Deep-Dive-Ansible-Template-Tester.png)
 
 ### Using loops and host_count to generate host records
 
@@ -292,10 +289,7 @@ out-of-the-box method using the
 create some records across different zones and/or subnets. Infoblox also
 supports a csv record import feature for static records.
 
-![Infoblox-Roles-Deep-Dive-Records](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Records.png?width=1178&name=Infoblox-Roles-Deep-Dive-Records.png){width="1178"
-style="width: 1178px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Records.png?width=589&name=Infoblox-Roles-Deep-Dive-Records.png 589w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Records.png?width=1178&name=Infoblox-Roles-Deep-Dive-Records.png 1178w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Records.png?width=1767&name=Infoblox-Roles-Deep-Dive-Records.png 1767w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Records.png?width=2356&name=Infoblox-Roles-Deep-Dive-Records.png 2356w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Records.png?width=2945&name=Infoblox-Roles-Deep-Dive-Records.png 2945w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Records.png?width=3534&name=Infoblox-Roles-Deep-Dive-Records.png 3534w"
-sizes="(max-width: 1178px) 100vw, 1178px"}
+![Infoblox-Roles-Deep-Dive-Records](/images/posts/archive/Infoblox-Roles-Deep-Dive-Records.png)
 
 ### Predefine Infoblox Grids with Ansible
 
@@ -338,10 +332,7 @@ Grid Master Candidates and Grid Members like this:
 ```
 
 
- ![Infoblox-Roles-Deep-Dive-Members](https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Members.png?width=1156&name=Infoblox-Roles-Deep-Dive-Members.png){width="1156"
-style="width: 1156px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Members.png?width=578&name=Infoblox-Roles-Deep-Dive-Members.png 578w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Members.png?width=1156&name=Infoblox-Roles-Deep-Dive-Members.png 1156w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Members.png?width=1734&name=Infoblox-Roles-Deep-Dive-Members.png 1734w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Members.png?width=2312&name=Infoblox-Roles-Deep-Dive-Members.png 2312w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Members.png?width=2890&name=Infoblox-Roles-Deep-Dive-Members.png 2890w, https://www.ansible.com/hs-fs/hubfs/Images/blog-social/Infoblox-Roles-Deep-Dive-Members.png?width=3468&name=Infoblox-Roles-Deep-Dive-Members.png 3468w"
-sizes="(max-width: 1156px) 100vw, 1156px"}
+ ![Infoblox-Roles-Deep-Dive-Members](/images/posts/archive/Infoblox-Roles-Deep-Dive-Members.png)
 
 As you can see from these five examples, Ansible and Infoblox work
 together to manage your network infrastructure and the traffic it

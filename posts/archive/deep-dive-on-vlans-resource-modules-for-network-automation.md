@@ -12,8 +12,7 @@ title: Deep dive on VLANS resource modules for network automation
 # Deep dive on VLANS resource modules for network automation
 
 In October of 2019, as part of Red Hat Ansible Engine 2.9, the Ansible
-Network Automation team [introduced the concept of resource
-modules](https://www.ansible.com/blog/network-features-coming-soon-in-ansible-engine-2.9). 
+Network Automation team introduced the concept of resource modules. 
 These opinionated network modules make network automation easier and
 more consistent for those automating various network platforms in
 production.  The goal for resource modules was to avoid creating overly
@@ -231,11 +230,7 @@ the original example to the following:
 
 Now run the Ansible Playbook:
 
-![Sean Blog
-2](https://www.ansible.com/hs-fs/hubfs/Sean%20Blog%202.png?width=1600&name=Sean%20Blog%202.png){width="1600"
-style="width: 1600px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Sean%20Blog%202.png?width=800&name=Sean%20Blog%202.png 800w, https://www.ansible.com/hs-fs/hubfs/Sean%20Blog%202.png?width=1600&name=Sean%20Blog%202.png 1600w, https://www.ansible.com/hs-fs/hubfs/Sean%20Blog%202.png?width=2400&name=Sean%20Blog%202.png 2400w, https://www.ansible.com/hs-fs/hubfs/Sean%20Blog%202.png?width=3200&name=Sean%20Blog%202.png 3200w, https://www.ansible.com/hs-fs/hubfs/Sean%20Blog%202.png?width=4000&name=Sean%20Blog%202.png 4000w, https://www.ansible.com/hs-fs/hubfs/Sean%20Blog%202.png?width=4800&name=Sean%20Blog%202.png 4800w"
-sizes="(max-width: 1600px) 100vw, 1600px"}
+![screenshot](/images/posts/archive/sean-blog-two.png)
 
 The Ansible Playbook now has changed=1.  But did it remove the
 artisanal_vlan 100?

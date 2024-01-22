@@ -11,13 +11,7 @@ title: The Total Economic Impact of Red Hat Ansible Tower
 
 # The Total Economic Impact of Red Hat Ansible Tower
 
-![RH-Ansible-Tower-Header](https://www.ansible.com/hs-fs/hubfs/2017_Images/Blog/RH-Ansible-Tower-Header.png?width=1024&name=RH-Ansible-Tower-Header.png){width="1024"
-style="width: 1024px;"
-srcset="https://www.ansible.com/hs-fs/hubfs/2017_Images/Blog/RH-Ansible-Tower-Header.png?width=512&name=RH-Ansible-Tower-Header.png 512w, https://www.ansible.com/hs-fs/hubfs/2017_Images/Blog/RH-Ansible-Tower-Header.png?width=1024&name=RH-Ansible-Tower-Header.png 1024w, https://www.ansible.com/hs-fs/hubfs/2017_Images/Blog/RH-Ansible-Tower-Header.png?width=1536&name=RH-Ansible-Tower-Header.png 1536w, https://www.ansible.com/hs-fs/hubfs/2017_Images/Blog/RH-Ansible-Tower-Header.png?width=2048&name=RH-Ansible-Tower-Header.png 2048w, https://www.ansible.com/hs-fs/hubfs/2017_Images/Blog/RH-Ansible-Tower-Header.png?width=2560&name=RH-Ansible-Tower-Header.png 2560w, https://www.ansible.com/hs-fs/hubfs/2017_Images/Blog/RH-Ansible-Tower-Header.png?width=3072&name=RH-Ansible-Tower-Header.png 3072w"
-sizes="(max-width: 1024px) 100vw, 1024px"}
-
-[The Total Economic Impact of Red Hat Ansible
-Tower](https://www.redhat.com/en/resources/ansible-automation-forrester-total-ecomonic-impact-study)
+[The Total Economic Impact of Red Hat Ansible Tower](https://www.redhat.com/en/resources/ansible-automation-forrester-total-ecomonic-impact-study)
 is a Red Hat commissioned Forrester Consulting study published in June
 2018. This study demonstrates the cost savings and business benefits
 enabled by Ansible. Let's dive into the what Ansible Tower enables, the
@@ -73,10 +67,10 @@ less time but, junior staff could be empowered to take on higher level
 tasks. Complex tasks could be delegated to greener team members. Ansible
 Tower eliminated dull, boring, and repetitive tasks through automation.
 
-Red Hat Ansible Tower\'s ease of use shined in this study. The lead
-infrastructure architect said, \"We had the ability for Tower to be used
+Red Hat Ansible Tower's ease of use shined in this study. The lead
+infrastructure architect said, "We had the ability for Tower to be used
 within our environment in under a week with the tools provided out of
-the box.\" Ansible Tower democratizes the flexibility and power of
+the box." Ansible Tower democratizes the flexibility and power of
 Ansible. Infrastructure staff built functionality to enable end users to
 act safely in their own environments. End users of Ansible Tower
 functionality required only one hour of training to be qualified and
@@ -102,7 +96,7 @@ Rather than purchase name-brand appliances for cloud configuration,
 backups, etc. in its data centers, the customer stood up Ansible Tower
 and ran the automated functionality using generic Linux systems." The
 organization avoided purchasing 10 name brand infrastructure appliances,
-representing a three-year present value of \$389,707."
+representing a three-year present value of $389,707."
 
 In conclusion, we believe that Red Hat Ansible Tower can enable
 organizations to do what they've done successfully for years at scale.

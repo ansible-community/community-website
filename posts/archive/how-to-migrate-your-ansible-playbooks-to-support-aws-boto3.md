@@ -18,12 +18,7 @@ automation. There are many other use-cases that Ansible Automation
 Platform is great at automating, such as your AWS, Azure or Google
 public cloud 
 
-![Screen Shot 2022-03-07 at 3.34.34
-PM](https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png?width=596&name=Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png){width="596"
-loading="lazy"
-style="width: 596px; margin-left: auto; margin-right: auto; display: block;"
-srcset="https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png?width=298&name=Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png 298w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png?width=596&name=Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png 596w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png?width=894&name=Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png 894w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png?width=1192&name=Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png 1192w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png?width=1490&name=Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png 1490w, https://www.ansible.com/hs-fs/hubfs/Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png?width=1788&name=Screen%20Shot%202022-03-07%20at%203.34.34%20PM.png 1788w"
-sizes="(max-width: 596px) 100vw, 596px"}
+![diagram of Ansible on public clouds](/images/posts/archive/ansible-public-clouds.png)
 
 Ansible Automation Platform can automate deployments, migrations and
 operational tasks for your public cloud. This is extremely powerful
@@ -38,12 +33,10 @@ Specifically for this blog, I wanted to cover converting your Ansible
 Playbooks for provisioning an instance on AWS from the unsupported ec2
 module to the fully supported ec2_instance module. Amazon has deprecated
 their Software Development Kit (SDK) Boto in favor of the newer fully
-supported SDK Boto3. Alina Buzachis announced [What\'s New: The Ansible
-AWS Collection 2.0
-Release](https://www.ansible.com/blog/whats-new-the-ansible-aws-collection-2.0-release)
-back in October 2021, which includes full support in our Red Hat Ansible
-Certified Content Collection for the amazon.aws.ec2_instance module,
-which uses Python 3 and Boto3.
+supported SDK Boto3. Alina Buzachis announced "What's New: The Ansible
+AWS Collection 2.0 Release" back in October 2021, which includes full
+support in our Red Hat Ansible Certified Content Collection for the
+amazon.aws.ec2_instance module, which uses Python 3 and Boto3.
 
 The supported ec2_instance module has existed for some time, but I had
 not adopted it for my use-case yet because we needed one last feature
