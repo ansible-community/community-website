@@ -14,3 +14,9 @@ updates:
     labels:
       - "pip"
       - "dependencies"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "actions"
