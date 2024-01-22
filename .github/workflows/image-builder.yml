@@ -18,7 +18,7 @@ jobs:
     name: Build and publish the image
     steps:
     - name: Check out the website repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
     - name: Buildah build the website image
       id: build_image
       uses: redhat-actions/buildah-build@v2
