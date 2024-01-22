@@ -21,7 +21,7 @@ Use the [network automation track](https://events.ansiblefest.redhat.com/widget/
 to understand the benefits that come with automating network management
 the Ansible way. 
 
-Let's take a closer look at this track for [AnsibleFest 2021](http://ansiblefest.com)`.
+Let's take a closer look at this track for [AnsibleFest 2021](http://ansiblefest.com).
 
 ## Network Automation at AnsibleFest
 
