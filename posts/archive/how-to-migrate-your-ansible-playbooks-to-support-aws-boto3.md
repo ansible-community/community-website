@@ -47,18 +47,18 @@ exact_count: 50, it will spin up 50 identical Red Hat Enterprise Linux 8
 instances.  
 
 Using exact_count can save hours of time versus using a loop, and I
-don't need a massive declarative file to represent my 50 servers; it\'s
+don't need a massive declarative file to represent my 50 servers; it's
 just a tweak of a single parameter to make identical copies. [Luckily we
 know that we have
 parameter](https://github.com/ansible-collections/amazon.aws/pull/539),
 so I started converting all workshops and demos that the technical
 marketing team uses to Boto3.
 
-Let\'s look at an older version of a task file from our technical
+Let's look at an older version of a task file from our technical
 workshops so I can show you how to convert from ec2 to
 [ec2_instance](https://docs.ansible.com/ansible/latest/collections/amazon/aws/ec2_instance_module.html#ansible-collections-amazon-aws-ec2-instance-module):
 
-``` yml
+```yaml
 ---
 - name: Create EC2 instances for RHEL8
   ec2:
@@ -95,15 +95,11 @@ an AMI for RHEL8) and a network interface or VPC subnet id
 The rest of the parameters in my task above are for:
 
 -   tweaking the instance
-
--   -    adding a public IP address, increasing storage
-
+-   adding a public IP address, increasing storage
 -   changing the module behavior
-
--   -   wait refers to waiting for the instance to reach running state,
+    -   wait refers to waiting for the instance to reach running state,
     -   exact_count refers to provisioning multiple instances in
         parallel
-
 -   tagging, which is just adding key value tags to the instance so we
     can filter on them in subsequent automation, or just sort easily in
     the AWS web console.
@@ -111,52 +107,77 @@ The rest of the parameters in my task above are for:
 To convert this to ec2_instance, there are only a few small tweaks you
 need to make!
 
+<table>
+  <tr>
+    <th>ec2:</th>
+    <th>ec2_instance:</th>
+  </tr>
+  <tr>
+    <td>
+      <pre><code>assign_public_ip: true</code></pre>
+    </td>
+    <td>
+      <pre><code>network:
+          assign_public_ip: true</code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre><code>group: "{{ ec2_security_group }}"</code></pre>
+    </td>
+    <td>
+      <pre><code>security_group: "{{ ec2_security_group }}"</code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre><code>image: "{{ node_ami_rhel.image_id }}"</code></pre>
+    </td>
+    <td>
+      <pre><code>image_id: "{{ node_ami_rhel.image_id }}"</code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre><code>count_tag:
+  Workshop_node1": "{{ ec2_name_prefix }}-node1"</code></pre>
+    </td>
+    <td>
+      <pre><code>filters:
+  "tag:Workshop_node1": "{{ ec2_name_prefix }}-node1"
+</code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre><code>instance_tags:</code></pre>
+    </td>
+    <td>
+      <pre><code>tags:</code></pre>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre><code>volumes:
+  - device_name: /dev/sda1
+  volume_type: gp2
+  volume_size: "{{ ec2_info[control_type].disk_space }}"
+  delete_on_termination: true</code></pre>
+    </td>
+    <td>
+      <pre><code>volumes:
+- device_name: /dev/sda1
+  ebs:
+  volume_type: gp2
+  volume_size: "{{ ec2_info[rhel].disk_space }}"
+  delete_on_termination: true</code></pre>
+    </td>
+  </tr>
+</table>
  
-
-+-----------------------------------+-----------------------------------+
-| ```  | ```  |
-| ec2:                              | ec2_instance:                     |
-| ```                               | ```                               |
-+-----------------------------------+-----------------------------------+
-| ```  | ```  |
-| assign_public_ip: true            | network:                          |
-| ```                               |   assign_public_ip: true          |
-|                                   | ```                               |
-+-----------------------------------+-----------------------------------+
-| ```  | ```  |
-| group: "{{ ec2_security_group }}" | security_                         |
-| ```                               | group: "{{ ec2_security_group }}" |
-|                                   | ```                               |
-+-----------------------------------+-----------------------------------+
-| ```  | ```  |
-| imag                              | image_i                           |
-| e: "{{ node_ami_rhel.image_id }}" | d: "{{ node_ami_rhel.image_id }}" |
-| ```                               | ```                               |
-+-----------------------------------+-----------------------------------+
-| ```  | ```  |
-| count_tag:                        | filters:                          |
-|   Workshop_node                   |   "tag:Workshop_node              |
-| 1": "{{ ec2_name_prefix }}-node1" | 1": "{{ ec2_name_prefix }}-node1" |
-| ```                               | ```                               |
-+-----------------------------------+-----------------------------------+
-| ```  | ```  |
-| instance_tags:                    | tags:                             |
-| ```                               | ```                               |
-+-----------------------------------+-----------------------------------+
-| ```  | ```  |
-| volumes:                          | volumes:                          |
-|   - device_name: /dev/sda1        | - device_name: /dev/sda1          |
-|   volume_type: gp2                |   ebs:                            |
-|   volume_size: "{{ ec2_           |   volume_type: gp2                |
-| info[control_type].disk_space }}" |   volume_size:                    |
-|   delete_on_termination: true     | "{{ ec2_info[rhel].disk_space }}" |
-| ```                               |   delete_on_termination: true     |
-|                                   | ```                               |
-+-----------------------------------+-----------------------------------+
-
 The entire modified task looks like the following:
 
-``` 
+```yaml
 - name: Create EC2 instances for node1
   ec2_instance:
     key_name: "{{ ec2_name_prefix }}-key"
@@ -197,7 +218,7 @@ instances match. It will make sure that exact_count of instances exist
 with the tag Workshop_node1. This can also be used in subsequent
 automation to filter and retrieve just the instances you want.
 
-``` 
+```yaml
 - name: grab instance ids to tag rtr1
   ec2_instance_info:
     region: "{{ ec2_region }}"
@@ -212,7 +233,7 @@ recommend the ec2_tag module, where
 [looping](https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html)
 is less time intensive (versus looping with the ec2_instance module):
 
-``` 
+```yaml
 - name: Ensure tags are present for node1
   ec2_tag:
     region: "{{ ec2_region }}"
@@ -228,23 +249,15 @@ is less time intensive (versus looping with the ec2_instance module):
   when: node1_output.instances|length > 0
 ```
 
-[The ec2_tag module is great for when you need unique tags for a
+The ec2_tag module is great for when you need unique tags for a
 particular cloud resource. In the example above, the name, index,
 student identifier and launch time are unique for that resource. Again
 there is no time punishment or cost to additional tags, so tag as much
 as you want. So the workflow for provisioning a bunch of instances on
-AWS would look like the following:]{style="color: #000000;"}
+AWS would look like the following:
 
-1.  [provisioning in bulk
-    ]{style="color: #000000;"}[exact_count]{style="color: #000000;"}[
-    amount of instances ]{style="color: #000000;"}
-2.  [register the output to a variable with either
-    ]{style="color: #000000;"}[ec2_instance]{style="color: #000000;"}[
-    or
-    ]{style="color: #000000;"}[ec2_instance_info]{style="color: #000000;"}
-3.  [for unique tags, loop over the instances with the
-    ]{style="color: #000000;"}[ec2_tag]{style="color: #000000;"}[
-    module]{style="color: #000000;"}
+1.  provisioning in bulk `exact_count` amount of instances
+2.  register the output to a variable with either `ec2_instance` or `ec2_instance_info`
+3.  for unique tags, loop over the instances with the `ec2_tag` module
 
-Thank you for reading through my blog and I hope this helped you on
-your Ansible cloud automation journey.
+Thank you for reading through my blog and I hope this helped you on your Ansible cloud automation journey.

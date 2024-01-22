@@ -21,14 +21,13 @@ Hat Ansible Automation Platform and the principles of Infrastructure as
 Code (IaC), can help bring some of the ITIL topics into the agile and
 automated bliss:
 
--   [Configuration
-    management](https://www.redhat.com/en/technologies/management/ansible/configuration-management){rel="noopener"}
+-   [Configuration management](https://www.redhat.com/en/technologies/management/ansible/configuration-management)
 -   Change and release management
 -   Incident and problem management
 
 So let's step into the topic of configuration management and what
 everybody still knows as
-[CMDB](https://www.redhat.com/en/technologies/management/ansible/configuration-management){rel="noopener"}
+[CMDB](https://www.redhat.com/en/technologies/management/ansible/configuration-management)
 (Configuration Management Database) even if ITIL has since long titled
 it as CMS (Configuration Management System). This name change was meant
 to highlight the fact that the function can be fulfilled by a
@@ -116,7 +115,7 @@ connect Ansible Automation Platform to your CMDB and add value and
 quality to your CMDB with automation.
 
 [Learn more about using Ansible Automation Platform for configuration
-management](https://www.redhat.com/en/technologies/management/ansible/configuration-management){rel="noopener"}
+management](https://www.redhat.com/en/technologies/management/ansible/configuration-management)
 
 ## Take a video tour
 

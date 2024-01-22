@@ -36,7 +36,7 @@ there yet, switch to the role directory "mywebapp" and add the first
 task, installing the Apache package "httpd" using the "package" Ansible
 module. Edit the file "tasks/main.yaml" and include this task:
 
-``` 
+```yaml
 $ vi tasks/main.yml
 ---
 # tasks file for mywebapp
@@ -53,14 +53,14 @@ not restart the instances if they are already running. It tries to
 converge those instances by making their configuration match the desired
 state described by the role currently testing.
 
-``` 
+```bash
 $ molecule converge
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
    TASK [mywebapp : Ensure httpd installed] ***************************************
     Saturday 27 June 2020  08:45:01 -0400 (0:00:00.060)       0:00:04.277 *********
 fatal: [ubuntu]: FAILED! => {"changed": false, "msg": "No package matching 'httpd' is available"}
     changed: [rhel8]
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
 ```
 
 Notice that the current version worked well on the RHEL8 instance, but
@@ -74,7 +74,7 @@ So let's modify the role to include variables with the correct package
 name for each platform. Start with RHEL8 by adding a file "RedHat.yaml"
 under the "vars" sub-directory with this content:
 
-``` 
+```yaml
 $ vi vars/RedHat.yaml
 ---
 httpd_package: httpd
@@ -83,9 +83,7 @@ httpd_package: httpd
 Save this file and add the corresponding file "vars/Debian.yaml" for
 Ubuntu:
 
-[]{style="background-color: transparent;"}
-
-``` 
+```yaml
 $ vi vars/Debian.yaml
 ---
 httpd_package: apache2
@@ -93,25 +91,24 @@ httpd_package: apache2
 
 Save this file and modify the "tasks/main.yaml" file to include these
 variable files according to the OS family identified by Ansible via the
-[system fact
-variable](https://docs.ansible.com/ansible/devel/user_guide/playbooks_vars_facts.html)
+[system fact variable](https://docs.ansible.com/ansible/devel/user_guide/playbooks_vars_facts.html)
 "ansible_os_family". We also have to include a task to update the
 package cache for systems in the "Debian" family since their package
 manager caches results otherwise. Last, we update the install task to
 use the variable "httpd_package" that you defined in the variables
 files:
 
-``` 
+```yaml
 $ vi tasks/main.yml
 - name: Include OS-specific variables.
   include_vars: "{{ ansible_os_family }}.yaml"
- 
+
 - name: Ensure package cache up-to-date
   apt:
     update_cache: yes
     cache_valid_time: 3600
   when: ansible_os_family == "Debian"
- 
+
 - name: Ensure httpd installed
   package:
     name: "{{ httpd_package }}"
@@ -121,9 +118,9 @@ $ vi tasks/main.yml
 Save this file, and "converge" the instances again to ensure it works
 this time:
 
-``` 
+``bash
 $ molecule converge
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
    TASK [mywebapp : Ensure httpd installed] ***************************************
     Saturday 27 June 2020  08:59:13 -0400 (0:00:07.338)       0:00:12.925 *********
     ok: [rhel8]
@@ -140,7 +137,7 @@ the service itself: they are named differently in RHEL and Ubuntu. So we
 add service name variables to the playbooks and variable files. Start
 with RHEL8:
 
-``` 
+```yaml
 $ vi vars/RedHat.yaml
 ---
 httpd_package: httpd
@@ -149,7 +146,7 @@ httpd_service: httpd
 
 Save this file and then edit the file "vars/Debian.yaml" for Ubuntu:
 
-``` 
+```yaml
 $ vi vars/Debian.yaml
 ---
 httpd_package: apache2
@@ -159,7 +156,7 @@ httpd_service: apache2
 Save the file and add the new task at the end of the "tasks/main.yml"
 file:
 
-``` 
+```yaml
 $ vi tasks/main.yml
 - name: Ensure httpd svc started
   service:
@@ -171,9 +168,9 @@ $ vi tasks/main.yml
 Save the file and "converge" the instances again to start the Apache
 httpd service:
 
-``` 
+```bash
 $ molecule converge
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
    TASK [mywebapp : Ensure httpd svc started] *************************************
     Saturday 27 June 2020  09:34:38 -0400 (0:00:06.776)       0:00:17.233 *********
     changed: [ubuntu]
@@ -185,7 +182,7 @@ Let's add a final task to create some content for the web application.
 Each platform requires the HTML files owned by different groups. Add new
 variables to each variable file to define the group name:
 
-``` 
+```yaml
 $ vi vars/RedHat.yaml
 ---
 httpd_package: httpd
@@ -195,7 +192,7 @@ httpd_group: apache
 
 Save this file then edit the file "vars/Debian.yaml" for Ubuntu:
 
-``` 
+```yaml
 $ vi vars/Debian.yaml
 ---
 httpd_package: apache2
@@ -206,7 +203,7 @@ httpd_group: www-data
 Save the file and add the new task at the end of the "tasks/main.yml"
 file:
 
-``` 
+```yaml
 $ vi tasks/main.yml
 - name: Ensure HTML Index
   copy:
@@ -221,7 +218,7 @@ This task allows the role user to specify the content by using the
 variable "web_content" when calling the role. Add a default value to
 this variable in case the user does not specify it:
 
-``` 
+```yaml
 $ vi defaults/main.yml
 ---
 # defaults file for mywebapp
@@ -231,9 +228,9 @@ web_content: There's a web server here
 Save this file and "converge" the instances one more time to add the
 content:
 
-``` 
+```bash
 $ molecule converge
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
    TASK [mywebapp : Ensure HTML Index] ********************************************
     Saturday 27 June 2020  09:50:11 -0400 (0:00:03.261)       0:00:17.753 *********
     changed: [rhel8]
@@ -245,10 +242,10 @@ At this time, both instances are converged. Manually verify that the
 role worked by using the molecule login command to log into one of the
 instances and running the "curl" command to get the content:
 
-``` 
+```bash
 $ molecule login -h rhel8
 [root@2ce0a0ea8692 /]# curl http://localhost
-There's a web server here 
+There's a web server here
 [root@2ce0a0ea8692 /]# exit
 ```
 
@@ -272,11 +269,11 @@ verification. Update this playbook to test this role result by using the
 Ansible's "uri" module to obtain the content from the running web server
 and the "assert" module to ensure it's the correct content:
 
-``` 
-$ vi molecule/default/verify.yml 
+```yaml
+$ vi molecule/default/verify.yml
 ---
 # This is an example playbook to execute Ansible tests.
- 
+
 - name: Verify
   hosts: all
   vars:
@@ -288,12 +285,12 @@ $ vi molecule/default/verify.yml
       return_content: yes
     register: this
     failed_when: "expected_content not in this.content"
- 
+
   - name: Ensure content type is text/html
     assert:
       that:
       - "'text/html' in this.content_type"
- 
+
   - name: Debug results
     debug:
       var: this.content
@@ -302,9 +299,9 @@ $ vi molecule/default/verify.yml
 Save and close this file. Verify the results by running "molecule
 verify":
 
-``` 
+```bash
 $ molecule verify
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
    TASK [Ensure content type is text/html] ****************************************
     Saturday 27 June 2020  10:03:18 -0400 (0:00:03.131)       0:00:07.255 *********
     ok: [rhel8] => {
@@ -315,7 +312,7 @@ $ molecule verify
         "changed": false,
         "msg": "All assertions passed"
     }
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
 Verifier completed successfully.
 ```
 
@@ -325,7 +322,7 @@ results match the expected values.
 You can change the default values for the test by editing the converge
 playbook to update the "web_content" variable:
 
-``` 
+```yaml
 $ vi molecule/default/converge.yml
 ---
 - name: Converge
@@ -340,11 +337,11 @@ $ vi molecule/default/converge.yml
 
 Then, update the "expected_content" variable in the verifier playbook:
 
-``` 
-$ vi molecule/default/verify.yml 
+```yaml
+$ vi molecule/default/verify.yml
 ---
 # This is an example playbook to execute Ansible tests.
- 
+
 - name: Verify
   hosts: all
   vars:
@@ -355,16 +352,16 @@ $ vi molecule/default/verify.yml
 Converge the instances one more time to update the web server content,
 then verify the results:
 
-``` 
+```bash
 $ molecule converge
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
    TASK [mywebapp : Ensure HTML Index] ********************************************
     Saturday 27 June 2020  10:09:34 -0400 (0:00:03.331)       0:00:19.607 *********
     changed: [rhel8]
     changed: [ubuntu]
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
 $ molecule verify
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
    TASK [Debug results] ***********************************************************
     Saturday 27 June 2020  10:10:15 -0400 (0:00:00.299)       0:00:10.142 *********
     ok: [rhel8] => {
@@ -373,7 +370,7 @@ $ molecule verify
     ok: [ubuntu] => {
         "this.content": "New content for testing only"
     }
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
 Verifier completed successfully.
 ```
 
@@ -413,11 +410,11 @@ information, consult the official
 
 Execute the test scenario:
 
-``` 
+```bash
 $ molecule test
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
 --> Test matrix
-    
+
 └── default
     ├── dependency
     ├── lint
@@ -432,9 +429,9 @@ $ molecule test
     ├── verify
     ├── cleanup
     └── destroy
-    
+
 --> Scenario: 'default'
-... TRUNCATED OUTPUT ... 
+... TRUNCATED OUTPUT ...
 ```
 
 If the test workflow fails at any point, the command returns a status

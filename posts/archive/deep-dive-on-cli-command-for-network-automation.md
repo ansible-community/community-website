@@ -27,7 +27,7 @@ modules and contrast them to platform specific modules. I'll show some
 playbook examples and common use cases to help illustrate how you can
 use these new platform agnostic modules.
 
-Both the **cli_command** and **cli_config** only work with the
+Both the `cli_command` and `cli_config` only work with the
 network_cli connection plugin.
 The goal of network_cli is to make playbooks look, feel and operate on
 network devices, the same way Ansible works on Linux hosts.
@@ -38,40 +38,44 @@ The cli_command allows you to run arbitrary commands on network devices.
 Let's show a simple example using the cli_command, on an Arista vEOS
 device.
 
-    ---
-    - name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
-      hosts: arista
-      gather_facts: false
+```yaml
+---
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: arista
+  gather_facts: false
 
-      tasks:
+  tasks:
 
-        - name: RUN ARISTA COMMAND
-          cli_command:
-            command: show ip interface brief
-          register: command_output
+- name: RUN ARISTA COMMAND
+  cli_command:
+    command: show ip interface brief
+  register: command_output
 
-        - name: PRINT TO TERMINAL WINDOW
-          debug:
-            msg: "{{command_output.stdout}}"
+- name: PRINT TO TERMINAL WINDOW
+  debug:
+    msg: "{{command_output.stdout}}"
+```
 
- Previously this would require the eos_command module and would look
+Previously this would require the eos_command module and would look
 like this:
 
-    ---
-    - name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
-      hosts: arista
-      gather_facts: false
+```yaml
+---
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: arista
+  gather_facts: false
 
-      tasks:
+  tasks:
 
-        - name: RUN ARISTA COMMAND
-          eos_command:
-            commands: show ip interface brief
-          register: command_output
+- name: RUN ARISTA COMMAND
+  eos_command:
+    commands: show ip interface brief
+  register: command_output
 
-        - name: PRINT TO TERMINAL WINDOW
-          debug:
-            msg: "{{command_output.stdout}}"
+- name: PRINT TO TERMINAL WINDOW
+  debug:
+    msg: "{{command_output.stdout}}"
+```
 
 Both Ansible Playbooks are simple and will output identically. This is
 what it would look like:
@@ -85,25 +89,29 @@ environment, I would see the playbook evolve a couple different ways.
 Sometimes they would contain numerous conditionals (the when statement)
 like this:
 
-    - name: RUN ARISTA COMMAND
-      eos_command:
-        commands: show ip int br
-      when: ansible_network_os == 'eos'
+```yaml
+- name: RUN ARISTA COMMAND
+  eos_command:
+    commands: show ip int br
+  when: ansible_network_os == 'eos'
 
-    - name: RUN CISCO NXOS COMMAND
-      nxos_command:
-        commands: show ip int br
-      when: ansible_network_os == 'nxos'
+- name: RUN CISCO NXOS COMMAND
+  nxos_command:
+    commands: show ip int br
+  when: ansible_network_os == 'nxos'
 
-    - name: RUN JUNOS COMMAND
-      junos_command:
-        commands: show interface terse
-      when: ansible_network_os == 'junos'
+- name: RUN JUNOS COMMAND
+  junos_command:
+    commands: show interface terse
+  when: ansible_network_os == 'junos'
+```
 
 Or somewhat better, network automation playbooks would evolve like this:
 
-    - name: RUN JUNOS COMMAND
-      include_tasks: “{{ansible_network_os}}”
+```yaml
+- name: RUN JUNOS COMMAND
+  include_tasks: “{{ansible_network_os}}”
+```
 
 This second method is much cleaner. The include_tasks calls an Ansible
 Playbook named eos.yml, ios.yml, nxos.yml, etc and runs the
@@ -122,26 +130,26 @@ versus show interface terse).
 With the cli_command let's look at how we can make this agnostic
 playbook for Cisco, Juniper and Arista extremely simple:
 
-    ---
-    - name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
-      hosts: routers
-      gather_facts: false
+```yaml
+---
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: routers
+  gather_facts: false
 
-      tasks:
-        - name: RUN SHOW COMMAND
-          cli_command:
-            command: "{{show_interfaces}}"
-          register: command_output
+  tasks:
+    - name: RUN SHOW COMMAND
+      cli_command:
+        command: "{{show_interfaces}}"
+      register: command_output
 
-        - name: PRINT TO TERMINAL WINDOW
-          debug:
-            msg: "{{command_output.stdout}}"
+    - name: PRINT TO TERMINAL WINDOW
+      debug:
+        msg: "{{command_output.stdout}}"
+```
 
 Three `*os_command` tasks are reduced to one task. The show_interfaces
 variable is stored as a group variable on a per-platform basis. For a
-full example look at this [GitHub
-repository](https://github.com/network-automation/agnostic_example){rel=" noopener"
-target="_blank"}.
+full example look at this [GitHub repository](https://github.com/network-automation/agnostic_example).
 
 ## Backup example
 
@@ -151,16 +159,18 @@ Network Automation modules have a backup parameter that helps network
 engineers automate this mundane, yet critical, task. For example with
 Arista EOS we can do this:
 
-    ---
-    - name: BACKUP NETWORK CONFIGURATIONS
-      hosts: arista
-      gather_facts: false
+```yaml
+---
+- name: BACKUP NETWORK CONFIGURATIONS
+  hosts: arista
+  gather_facts: false
 
-      tasks:
+  tasks:
 
-        - name: BACKUP CONFIG
-          eos_config:
-            backup: yes
+    - name: BACKUP CONFIG
+      eos_config:
+        backup: yes
+```
 
 The cli_command module does not have a backup parameter. Why? Because
 the backup parameter can be quite inflexible and hard to manipulate. One
@@ -170,22 +180,24 @@ recreate an incredible amount of logic and code in each config module,
 we can reuse an existing module. In this case we can leverage the
 already widely used copy module!
 
-    ---
-    - name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
-      hosts: arista
-      gather_facts: false
+```yaml
+---
+- name: RUN COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: arista
+  gather_facts: false
 
-      tasks:
+  tasks:
 
-        - name: RUN ARISTA COMMAND
-          cli_command:
-            command: show run
-          register: backup
+- name: RUN ARISTA COMMAND
+  cli_command:
+    command: show run
+  register: backup
 
-        - name: PRINT TO TERMINAL WINDOW
-          copy:
-            content: "{{backup.stdout}}"
-            dest: "{{inventory_hostname}}.backup"
+- name: PRINT TO TERMINAL WINDOW
+  copy:
+    content: "{{backup.stdout}}"
+    dest: "{{inventory_hostname}}.backup"
+```
 
 This becomes easy to manipulate what command output we want to save. In
 this case it is the running configuration, but now we can switch to
@@ -193,7 +205,8 @@ startup-config just as easily. It also gives the user the control to
 pick the backup destination directory and file name. An example of an
 agnostic playbook for backups for Arista EOS, Juniper Junos and Cisco
 IOS can be found here:
-<https://github.com/network-automation/agnostic_example>
+
+https://github.com/network-automation/agnostic_example
 
 There are a lot of incredible things we can do with the agnostic modules
 that help make our Ansible Network Automation Playbooks much more

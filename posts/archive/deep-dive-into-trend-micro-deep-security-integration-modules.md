@@ -20,13 +20,6 @@ Content Collection for Trend Micro Deep Security. We will walk through
 several examples and describe the use cases and how we envision the
 Collection being used in real world scenarios.
 
-If you want to refresh your memory about our endpoint protection support
-with Ansible in general, head over to the the [introducing blog post
-Automating Endpoint Protection with
-Ansible](/blog/automating-endpoint-protection-with-ansible){rel="noopener"}.
-
- 
-
 ## About Trend Micro Deep Security
 
 Trend Micro Deep Security is one of the latest additions to the Ansible
@@ -34,8 +27,6 @@ security automation initiative. As an endpoint protection solution it
 secures services and applications in virtual, cloud and container
 environments. It provides automated security policies and consolidates
 the security aspects across different environments in a single platform.
-
- 
 
 ## How to install the Certified Ansible Content Collection for Trend Micro Deep Security
 
@@ -54,7 +45,7 @@ downloads.
 
 Once that is done, the Collection is easily installed:
 
-``` 
+```bash
 ansible-galaxy collection install trendmicro.deepsec
 ```
 
@@ -62,9 +53,7 @@ ansible-galaxy collection install trendmicro.deepsec
 
 The focus of the Collection is on modules and plugins supporting them:
 there are modules for interacting with Trend Micro Deep Security agents,
-like [deepsec_firewallrules]{style="background-color: #efefef;"},
-[deepsec_anti_malware]{style="background-color: #efefef;"},
-[deepsec_log_inspectionrules]{style="background-color: #efefef;"} and
+like `deepsec_firewallrules`, `deepsec_anti_malware`, `deepsec_log_inspectionrules` and
 others. Basically the integration modules cover the REST APIs exposed by
 TM Deep security firewall.  If you are familiar with firewall
 Collections and modules of Ansible, you will recognize this pattern: all
@@ -80,10 +69,7 @@ Collection can help automate. Being modules they have a precise scope,
 but enable users of the Collection to focus on that particular
 resource/REST API scenario without being disturbed by other content or
 configuration items. They also enable a simpler cross-product automation
-since other security Collections follow the same
-pattern.[]{style="font-size: 24px;"}
-
- 
+since other security Collections follow the same pattern.
 
 ## Connect to Trend Micro Deep Security, the Collection way
 
@@ -93,51 +79,41 @@ Trend Micro Deep security currently supports two ways for how their REST
 API can be interacted with, and for each of the respective cases, the
 Ansible inventory will be changed slightly as mentioned below:
 
-1.  1.  1.  In case of the [newer REST
-            APIs](https://automation.deepsecurity.trendmicro.com/article/fr/api-reference/)
-            the Ansible inventory will work with the network OS
-            [trendmicro.deepsec.deepsec]{style="background-color: #efefef;"},
-            a Trend Micro API secret key and ab api-version key:\
+In case of the [newer REST APIs](https://automation.deepsecurity.trendmicro.com/article/fr/api-reference/)
+the Ansible inventory will work with the network OS `trendmicro.deepsec.deepsec`, a Trend Micro API secret key and ab api-version key:
 
-            ``` 
-            [deepsec]
-            host_deepsec.example.com
+```ini
+[deepsec]
+host_deepsec.example.com
 
-            [deepsec:vars]
-            ansible_network_os=trendmicro.deepsec.deepsec
-            ansible_httpapi_use_ssl=true
-            ansible_httpapi_validate_certs=false
-            ansible_connection=httpapi
-            ansible_python_interpreter=/usr/bin/python
-            ansible_httpapi_session_key={'api-secret-key': 'secret-key', 'api-version': 'v1'}
-            ```
+[deepsec:vars]
+ansible_network_os=trendmicro.deepsec.deepsec
+ansible_httpapi_use_ssl=true
+ansible_httpapi_validate_certs=false
+ansible_connection=httpapi
+ansible_python_interpreter=/usr/bin/python
+ansible_httpapi_session_key={'api-secret-key': 'secret-key', 'api-version': 'v1'}
+```
 
-        2.  In case of APIs using the [legacy REST
-            APIs](https://automation.deepsecurity.trendmicro.com/legacy-rest/12_5/index.html?env=onprem#overview),
-            the Ansible inventory will also require the network OS
-            [trendmicro.deepsec.deepsec]{style="background-color: #efefef;"},
-            but uses  a username and a password.
+In case of APIs using the [legacy REST APIs](https://automation.deepsecurity.trendmicro.com/legacy-rest/12_5/index.html?env=onprem#overview), the Ansible inventory will also require the network OS `trendmicro.deepsec.deepsec`, but uses a username and a password.
 
-            ``` 
-            [deepsec]
-            host_deepsec.example.com
+```ini
+[deepsec]
+host_deepsec.example.com
 
-            [deepsec:vars]
-            ansible_network_os=trendmicro.deepsec.deepsec
-            ansible_user=admin
-            ansible_httpapi_pass=password
-            ansible_httpapi_use_ssl=true
-            ansible_httpapi_validate_certs=false
-            ansible_connection=ansible.netcommon.httpapi
-            ansible_python_interpreter=python
-            ```
+[deepsec:vars]
+ansible_network_os=trendmicro.deepsec.deepsec
+ansible_user=admin
+ansible_httpapi_pass=password
+ansible_httpapi_use_ssl=true
+ansible_httpapi_validate_certs=false
+ansible_connection=ansible.netcommon.httpapi
+ansible_python_interpreter=python
+```
 
 Note that in a productive environment those variables should be
-supported in a secure way, for example, with the help of Red Hat
-[Ansible Tower
-credentials](https://docs.ansible.com/ansible-tower/latest/html/userguide/credentials.html#network).
-
- 
+supported in a secure way, for example, with the help of
+[Red Hat Ansible Tower credentials](https://docs.ansible.com/ansible-tower/latest/html/userguide/credentials.html#network)
 
 ## Use Case: Firewall Rule Configuration
 
@@ -156,7 +132,7 @@ permitted.
 A playbook to implement the "deny all traffic" approach is shown in the
 following listing:
 
-``` 
+```yaml
 ---
 - name: Deny all traffic
   hosts: deepsec
@@ -181,18 +157,13 @@ following listing:
 
 Running this play will create a firewall rule that'll explicitly
 **deny** all TCP **syn** bound traffic. Keep in mind that the
-[state]{style="color: #337ab7; background-color: #efefef;"} keyword is
-used and set to [present]{style="background-color: #efefef;"}. It means
+`state` keyword is used and set to `present`. It means
 that the specified rule is created and that the module will go ahead and
 create the config rule. On the contrary, if the user wants to
-delete/drop any specific firewall rule, then the
-[state]{style="color: #337ab7; background-color: #efefef;"} should be
-set to [absent]{style="background-color: #efefef;"}: in that case,
-during the play run, the module will check if the specified firewall
-rule pre-exists and if so the module will go ahead and delete/drop the
-respective firewall rule config.
-
- 
+delete/drop any specific firewall rule, then the `state` should be
+set to `absent`: in that case, during the play run, the module will
+check if the specified firewall rule pre-exists and if so the module
+will go ahead and delete/drop the respective firewall rule config.
 
 ## Use Case: Antimalware Rule Configuration
 
@@ -210,7 +181,7 @@ The playbook example we'll be discussing here will be with respect to
 real time scans as based on incident responses. Users can check for the
 threats and quarantine the observed threats.
 
-``` 
+```yaml
 ---
 - name: Scan and Quarantine in TrendMicro agents
   hosts: deepsec
@@ -244,8 +215,6 @@ the agents will display the information with respect to the infected
 file and the respective files will be quarantined as specified in the
 playbook.
 
- 
-
 ## Use Case: Log Inspection Rule Configuration
 
 The log inspection integration module helps users to identify events
@@ -257,7 +226,7 @@ server for analytics, reporting and archiving.
 Log inspection helps in real-time monitoring of third parties log files
 as well. The playbook listed below creates a rule for log inspection.
 
-``` 
+```yaml
 ---
 - name: Set up log inspection
   hosts: deepsec

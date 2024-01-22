@@ -1,9 +1,9 @@
 ---
 author: Timothy Appnel
 date: 2023-01-26 00:00 UTC
-description: \"The Ansible way\" is to provide an automation tool that is
+description: The Ansible way is to provide an automation tool that is
   simple, powerful and agentless. Ansible enables users with no special
-  coding skills to do powerful things across multiple IT domains"
+  coding skills to do powerful things across multiple IT domains.
 lang: en-us
 title: The Zen of Ansible
 ---
@@ -38,8 +38,9 @@ readable automation can be utilized and shared by every IT team so they
 can get productive quickly and contribute their expertise. Its agentless
 architecture provides the flexibility to be applied across all IT
 infrastructure
-domains.![](https://lh6.googleusercontent.com/dh0Z6u1V9aggmVz5o_Co5kAVZ0CtyiBc8fN1LUWo_kqSbDv23A-O6BkcP-zk7Zz7ODkrrNjxKPYq1ZFPdOiiiha-70MSRHAND57rzst8BQAKrB-AAVjCO8lbJer692XUemiHtcA8sf85uKrXjcAXiuV3Be2QDAs6kydbchebo0BmBV2Nq6k0Z9oh9pkjOw){width="720"
-height="405" loading="lazy"}
+domains.
+
+![Ansible simple powerful agentless](/images/posts/archive/ansible-simple-powerful-agentless.png)
 
 It is this thinking behind its design that everything in this post
 relates back to in one way or another.
@@ -49,37 +50,28 @@ considered what I've heard talking to hundreds of you in my many years
 within the Ansible ecosystem. What I came up with are these 20 aphorisms
 for Ansible.
 
-![](https://lh3.googleusercontent.com/MnWdwfKQCuYAZoMV3PaicYgmoFNwxfre5d_J0VWxCg4cOcBpIMcmXM1tGA5WWnXyaCl3jSFMzQQNYGK6PEBScOZmy1FWCrrL4Cn1p1v2jeTZxIrVd6kyXYfWK2cTWi4n3mKLmMagxRGB-aXHdFTYxW59ACBLnWQkCa4Y7Ns5yiArEvBcBZl8V6tDXyx_sg){width="257"
-height="257" loading="lazy"}
+![Ansible zen image](/images/posts/archive/ZenOfAnsibleEmoji.png)
 
-1.  [Ansible is not Python.]{style="color: #000000;"}
-2.  [YAML sucks for coding.]{style="color: #000000;"}
-3.  [Playbooks are not for programming.]{style="color: #000000;"}
-4.  [Ansible users are (most likely) not
-    programmers.]{style="color: #000000;"}
-5.  [Clear is better than cluttered.]{style="color: #000000;"}
-6.  [Concise is better than verbose.]{style="color: #000000;"}
-7.  [Simple is better than complex.]{style="color: #000000;"}
-8.  [Readability counts.]{style="color: #000000;"}
-9.  [Helping users get things done matters
-    most.]{style="color: #000000;"}
-10. [User experience beats ideological purity.]{style="color: #000000;"}
-11. ["Magic" conquers the manual.]{style="color: #000000;"}
-12. [When giving users options, use convention over
-    configuration.]{style="color: #000000;"}
-13. [Declarative is better than imperative -- most of the
-    time.]{style="color: #000000;"}
-14. [Focus avoids complexity.]{style="color: #000000;"}
-15. [Complexity kills productivity.]{style="color: #000000;"}
-16. [If the implementation is hard to explain, it\'s a bad
-    idea.]{style="color: #000000;"}
-17. [Every shell command and UI interaction is an opportunity to
-    automate.]{style="color: #000000;"}
-18. [Just because something works, doesn't mean it can't be
-    improved.]{style="color: #000000;"}
-19. [Friction should be eliminated whenever
-    possible.]{style="color: #000000;"}
-20. [Automation is a journey that never ends.]{style="color: #000000;"}
+1.  Ansible is not Python.
+2.  YAML sucks for coding.
+3.  Playbooks are not for programming.
+4.  Ansible users are (most likely) not programmers.
+5.  Clear is better than cluttered.
+6.  Concise is better than verbose.
+7.  Simple is better than complex.
+8.  Readability counts.
+9.  Helping users get things done matters most.
+10.  User experience beats ideological purity.
+11.  "Magic" conquers the manual.
+12.  When giving users options, use convention over configuration.
+13.  Declarative is better than imperative -- most of the time.
+14.  Focus avoids complexity.
+15.  Complexity kills productivity.
+16.  If the implementation is hard to explain, it's a bad idea.
+17.  Every shell command and UI interaction is an opportunity to automate.
+18.  Just because something works, doesn't mean it can't be improved.
+19.  Friction should be eliminated whenever possible.
+20.  Automation is a journey that never ends.
 
 Your Ansible automation content doesn't necessarily have to follow this
 guidance, but they're good ideas to keep in mind. These aphorisms are
@@ -95,12 +87,12 @@ mean to your automation practice.
 These aphorisms are at the heart of why applying guidelines for a
 programming language to good Ansible automation content didn't seem
 right to me. As I said, it would give the wrong impression and would
-reinforce a mindset we don\'t recommend -- that Ansible is a programming
+reinforce a mindset we don't recommend -- that Ansible is a programming
 language for coding your playbooks. 
 
 These aphorisms are all saying the same thing in different ways --
-certainly the first 3. If you\'re trying to \"write code\" in your plays
-and roles, you\'re setting yourself up for failure. Ansible's YAML-based
+certainly the first 3. If you're trying to "write code" in your plays
+and roles, you're setting yourself up for failure. Ansible's YAML-based
 playbooks were never meant to be for programming.
 
 So it bothers me when I see Python-isms bleeding into what Ansible users
@@ -166,12 +158,11 @@ done.
 
 **When giving users options, use convention over configuration.**
 
-I am a big proponent of [convention over
-configuration](https://en.wikipedia.org/wiki/Convention_over_configuration)
+I am a big proponent of [convention over configuration](https://en.wikipedia.org/wiki/Convention_over_configuration)
 and don't think it gets enough consideration in the Ansible community.
 Convention over configuration is a design paradigm that attempts to
 decrease the number of decisions that a developer is required to make
-without necessarily losing flexibility so they don\'t have to repeat
+without necessarily losing flexibility so they don't have to repeat
 themselves. It was popularized by Ruby on Rails.
 
 A playbook developer utilizing your work should only need to specify
@@ -204,17 +195,16 @@ you need to do, rather than strictly adhere to one paradigm.
 **Focus avoids complexity. Complexity kills productivity.**
 
 Remember that complexity kills productivity. The Ansible team at Red Hat
-really means it and believes that. That\'s not just a marketing slogan.
+really means it and believes that. That's not just a marketing slogan.
 Automation can crush complexity and give you the one thing you can't get
 enough of ⎯ time. 
 
-Follow [Linux principles of doing one thing, and one thing
-well](https://en.wikipedia.org/wiki/Unix_philosophy#:~:text=This%20is%20the%20Unix%20philosophy,that%20is%20a%20universal%20interface.).
+Follow [Linux principles of doing one thing, and one thing well](https://en.wikipedia.org/wiki/Unix_philosophy#:~:text=This%20is%20the%20Unix%20philosophy,that%20is%20a%20universal%20interface.).
 Keep roles and playbooks focused on a specific purpose. Multiple simple
 ones are better than having a huge single playbook full of conditionals
 and "programming" that Ansible is not well suited for.
 
-We strive to reduce complexity in how we\'ve designed Ansible and
+We strive to reduce complexity in how we've designed Ansible and
 encourage you to do the same. Strive for simplification in what you
 automate. 
 
@@ -223,8 +213,7 @@ automate. 
 This aphorism, like "readability counts", is also taken directly from
 "The Zen of Python" because you cannot improve upon perfection.
 
-In his essay on [Literate Programming, Charles
-Knuth](https://www-cs-faculty.stanford.edu/~knuth/lp.html) wrote,
+In his essay on [Literate Programming, Charles Knuth](https://www-cs-faculty.stanford.edu/~knuth/lp.html) wrote,
 "Instead of imagining that our main task is to instruct a computer what
 to do, let us concentrate rather on explaining to human beings what we
 want a computer to do." So it goes that if you cannot explain or
@@ -258,7 +247,7 @@ matter if we were talking about RHEL, Windows, networking
 infrastructure, security, edge devices, or cloud services, my response
 has essentially been the same over the years. I have repeated it so
 often, that I have jokingly formulated the point into my own theorem on
-automation. So call it "Appnel\'s Theorem on Automation" if you will.
+automation. So call it "Appnel's Theorem on Automation" if you will.
 
 If you are wondering what should be automated, look for anything anyone
 is typing into a Linux shell and clicking through in a user interface.
@@ -287,8 +276,8 @@ opportunities to apply your automation practices to eliminate them.
 
 **Automation is a journey that never ends.**
 
-Heraclitus, a Greek philosopher, said \"change is the only constant in
-life. Nothing endures but change.\" 
+Heraclitus, a Greek philosopher, said "change is the only constant in
+life. Nothing endures but change." 
 
 Anyone who has been around the IT industry for any length of time knows
 there is constant change. This is why it is so vital to be agile and

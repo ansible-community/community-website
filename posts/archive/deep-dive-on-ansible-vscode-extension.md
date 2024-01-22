@@ -29,11 +29,8 @@ working after installation.
 
 The [Ansible VSCode
 extension](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
-was initially a fork of [Tomasz
-Maciążek](https://github.com/tomaciazek)'s VSCode extension. After the
-fork, the server and client-side code were decoupled into their own
-separate repositories to allow independent releases for both server and
-client.
+was initially a fork of [Tomasz Maciążek](https://github.com/tomaciazek)'s VSCode extension.
+After the fork, the server and client-side code were decoupled into their own separate repositories to allow independent releases for both server and client.
 
 1.  [Ansible language
     server](https://github.com/ansible/ansible-language-server)
@@ -63,15 +60,9 @@ language-specific features. The goal of the protocol is to allow
 programming language support to be implemented and distributed
 independently of any given editor or IDE.
 
- 
+![LSP diagram](/images/posts/archive/lsp-diagram.png)
 
-![](https://lh4.googleusercontent.com/lWCkrg0DKBsyQFukrQ5T-4S1PGGeyw8GOT41HpuwlC-2DVSDU7uf_mbChNgiixX8Hgl4JmNofKAPJcC3uqfx5YuPGuTHmrloTWlwCeJdlg7KUwlA-jRHGnme8eJsAhNueV-ZwbLC){width="602"
-height="280" loading="lazy"}
-
-[Source:
-]{style="font-size: 8px;"}[https://code.visualstudio.com/api/language-extensions/language-server-extension-guide](https://code.visualstudio.com/api/language-extensions/language-server-extension-guide){style="font-size: 8px;"}
-
- 
+Source: https://code.visualstudio.com/api/language-extensions/language-server-extension-guide
 
 As seen from the above diagram, the language server protocol allows a
 single language server implementation to be reused by multiple code
@@ -79,13 +70,11 @@ editors or IDEs, thus avoiding the need to duplicate language-related
 support for each editor as in the case of no LSP. The language server
 runs as a separate process and the development tools like VSCode
 communicate with the server using the language protocol over JSON-RPC.
-For more details refer to the language server specification
-[here](https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/).
+For more details refer to the [language server specification](https://microsoft.github.io/language-server-protocol/overviews/lsp/overview/).
 
 ## Ansible Language Server
 
-![](https://lh5.googleusercontent.com/YUrkbA0DepDWGL7kQI2TYZCC1pHd_iJdAkBhIWoeLih09CPbMRzFmCmpb21R2nuHuzuDimWe0wRVw47T_z1Tr6d6PGsEl5e7QH_ulj-Hpb6Vq3iRf3lWqSJA4_mxCBZaBMSqTFnE){width="602"
-height="319" loading="lazy"}
+![Ansible language server diagram](/images/posts/archive/ansible-language-server-diagram.png)
 
 The Ansible Language Server provides features like:
 
@@ -107,23 +96,13 @@ optionally ansible-lint should be included.
 
 ## Extension installation
 
-In the VSCode Extensions tab, search and install the "Ansible VS Code
-Extension" as shown in the snapshot
-
-![](https://lh4.googleusercontent.com/jysdtN7z0-uhXwBLGo5H0jjZIVKYKhxRPxV_cMCfkma0kW24DDycvpsP2pUZDbLOoeFBxrWATHzuW3lqD7TZ-b6_mOpmz4ZSLZIizo12A8o9ttxORZsdvNFb7irqe6FsNfd0b3GK){width="602"
-height="363" loading="lazy"}
-
- 
+In the VSCode Extensions tab, search and install the **Ansible VS Code Extension**.
 
 Note: 
 
--   When the extension is installed for the first time, the "Runtime
-    Status" is "Not yet activated" which indicates that the extension is
-    not yet running. The status will be activated only after a file is
-    opened in the editor and the language identified for the file is
-    "**Ansible**".
--   For Windows users, the extension works with WSL2 and not on native
-    Windows.
+- When the extension is installed for the first time, the "Runtime Status" is "Not yet activated" which indicates that the extension is not yet running.
+The status will be activated only after a file is opened in the editor and the language identified for the file is "**Ansible**".
+- For Windows users, the extension works with WSL2 and not on native Windows.
 
 ## Ansible extension settings
 
@@ -133,11 +112,10 @@ python interpreter and so on. There is also an option to enable the
 automation execution environment and users can choose the container
 engine, image name, pull policy and more. To see and change the
 configuration options in the VSCode window, go to
-"Code-\>Preference-\>Settings" and in the Search settings box type
+**Code->Preference->Settings** and in the Search settings box type
 "**ansible**" as shown in the below snapshot.
 
-![](https://lh6.googleusercontent.com/RF8l-qI0wM0k12ozA7zpmEJnZ7qvzi4dfGpTDtwviV3iPJKPJyoZexZLJqLZPzZo7uUQaeX1F1697ttrYIKbHHkxPZuhdHV_EyEfsV87BaCwSmKZfYPy49OWrQ4Gj9py65O9Us6d){width="602"
-height="363" loading="lazy"}
+![](/images/posts/archive/ansible-vscode-ext-screenshot.png)
 
 The preferences can be set for a given user or workspace, and depending
 on the environment, also for remote type and workspace folder. Settings
@@ -150,15 +128,13 @@ Alternatively, for workspace settings, you can also provide the Ansible
 settings by editing the **.vscode/settings.json** file within the
 workspace root folder as shown below.
 
-![](https://lh4.googleusercontent.com/Yq0LfHcG7o_TeJkeIBOjxHMiVfHjE4MxowDPw_UIVfWlRGFMQIQY00oCFYwtmRONwbxbH8viAOwy67hBBwpXNcs0g7R94soKIEH48ySST_AgxPxQrfw7QuupcFQl9mnnFN8WWRsp){width="602"
-height="365" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-one.png)
 
 ## Activating and using Ansible extension
 
 As stated above, the
 [vscode-ansible](https://marketplace.visualstudio.com/items?itemName=redhat.ansible)
-extension depends on the [ansible-language-server
-](https://www.npmjs.com/package/@ansible/ansible-language-server)running
+extension depends on the [ansible-language-server](https://www.npmjs.com/package/@ansible/ansible-language-server)running
 as a background process to provide features for Ansible Playbooks and
 task files like auto-completion, hover, diagnostics, goto and more. The
 extension also depends on the Red Hat
@@ -168,18 +144,13 @@ other related files like Ansible vars file, ansible-navigator settings
 file,  ansible-galaxy requirements and metafiles, ansible-lint
 configuration file and other YAML files. The extension uses file pattern
 match to associate the file with the YAML language. For details about
-the file pattern and associated schema file used by the [vscode-yaml
-](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)extension,
+the file pattern and associated schema file used by the [vscode-yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)extension,
 read more
 [here](https://github.com/ansible/vscode-ansible/blob/v0.8.1/package.json#L54-L125).
 
-With this context set, you can now go ahead and open the root of your
-Ansible project in the VSCode window. That folder will be a root of your
-workspace, also treated as the current working directory by the Ansible
-Language Server while executing Ansible commands in the background. If
-you try to open an Ansible file without first setting up a workspace,
-the plugin might not be able to determine the context (such as CWD)
-correctly.
+With this context set, you can now go ahead and open the root of your Ansible project in the VSCode window.
+That folder will be a root of your workspace, also treated as the current working directory by the Ansible Language Server while executing Ansible commands in the background.
+If you try to open an Ansible file without first setting up a workspace, the plugin might not be able to determine the context (such as CWD) correctly.
 
 After an Ansible file is opened in the VSCode window, it might not be
 identified correctly as an **Ansible** language type as seen in the
@@ -187,11 +158,9 @@ below snapshot. Most likely, the file will be identified as "**YAML**"
 language since Ansible files have either "**yaml**" or "**yml**"
 extension and installing the
 [vscode-ansible](http://ketplace.visualstudio.com/items?itemName=redhat.ansible)
-extension, in turn, installs the [vscode-yaml
-](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)extension.
+extension, in turn, installs the [vscode-yaml](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)extension.
 
-![](https://lh4.googleusercontent.com/X26H_z5K-nrVrFI0zlRaxlVSSqRZCdCT4ssssbCKussty-rDvogYeRICO81RrGvUnnuhqzgeCf1zBMMWqse00yGRyxH_A9ixmPq6WCEXz-6r7gR5-v-DCW0R9ix6i-J731veo45Y){width="602"
-height="365" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-two.png)
 
 Hovering the cursor on the language identified (YAML in this case) in
 the bottom right corner you will see "Select Language Mode". By clicking
@@ -200,8 +169,7 @@ type "**Ansible**" in the tab and then select it. After doing this, you
 will notice the identified language for the file is changed to
 "**Ansible**" as shown in the below snapshot.
 
-![](https://lh3.googleusercontent.com/ng6QgvzHpsdw2ygx_18202VC5LRpqS7mznpg_hr2IQuDATH2j8AC6mPQiMBAStTriGAkPZOq8hEyzvTrRs0by0PhtnaDrsILo1G5z9gOzdn_NmEGFKSBPokzUZi4nq26vRFQnrCd){width="602"
-height="363" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-three.png)
 
 When the file language is identified as Ansible for the first time, the
 **vscode-ansible** extension will be activated and the extension will
@@ -220,8 +188,7 @@ Settings**" and typing "**file associations**" in the search box. Add an
 item to associate the extension with the language type as shown in the
 below snapshot.
 
-![](https://lh5.googleusercontent.com/tVaVotRSS7lcWWWDDQSqDCwMz6O9uAiy90o8B52GVow_iuAMRcoVWe9eeOPCyJNO19zzon-9o7m6ajzcsAE8S9dXYqvBekajULu0iLFjZV4_0hDuV89Wyl97HiiXZl9PKG5nMAo7){width="602"
-height="363" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-four.png)
 
 For more information on file associations, refer to the document
 [here](https://code.visualstudio.com/docs/languages/identifiers).
@@ -232,8 +199,7 @@ To see the automation execution environments supported by extension, you
 can go to settings (Code -\> Preferences -\> Settings) and type
 "**ansible.execution environment**".
 
-![](https://lh3.googleusercontent.com/g8GBE9PSktpwQfUHYtcLriY5xH33y5D0sBoYZVodZa_z6y97IFAbYxLwcOkdhWLQOQ__xb6omQCfI2f45FHHprtcp1-4WNXfVQq3opKDDtKPqk8DSXjJARisMx7X_1S14hUsZNYE){width="602"
-height="432" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-five.png)
 
 After enabling the execution environment (EE), the extension will pull
 the "**quay.io/ansible/creator-ee:latest**" image by default, if it is
@@ -248,8 +214,7 @@ within the EE and run "**ansible-lint**" or **"ansible-playbook
 ---syntax-check**" based on settings to provide diagnostics information
 in editor.
 
-![](https://lh6.googleusercontent.com/J6kYUbNCThka84g7Ed-7Z8HTlFALOQPjCFg7PiPZRIkG7h3d5S6scVMV74nAjzBepz66u_AKam65yxG5Va5Q71p_IriwRY_qbdp5NKXnXKtY2crvmsWTP1q4l5vBnZHRzGd2wf25){width="602"
-height="325" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-six.png)
 
 Note: 
 
@@ -267,14 +232,12 @@ Note: 
 The auto-completions will now provide suggestions for plugins that are
 part of the given execution environment image name.
 
-![](https://lh6.googleusercontent.com/qC73awYh0bk7L1eRRCLOkvbL5alfqTX8uqnZ0OL-MLvNvht8xYHGS9AYbMIPdBT2XrqQw1Y1UbrEFd-9U5mu1fFfeFG3-Q8YwzuG0Sb22p1iMD1O5OlDeuk2P2ae0dkehRjb7_fn){width="602"
-height="347" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-seven.png)
 
 The "trigger suggest" key depends on the keyboard shortcut. To view the
-associated keys, go to "Code -\> Preferences -\> Keyboard Shortcuts"
+associated keys, go to **Code -> Preferences -> Keyboard Shortcuts**.
 
-![](https://lh3.googleusercontent.com/SvlOi0AkZz9oxMx7J9n4tuvB_xpBE8hB_vq31dPPamBtKLA_l_E31V6X3yIH4x5TrwsVKHco1UK8CynE1QbG1MgMJRwggj3OGVbWqQlYG5aw7RvqGSpRqkdK5tDkFjojtoTXW6xp){width="602"
-height="245" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-eight.png)
 
 ## Ansible Playbook run entry point
 
@@ -282,5 +245,4 @@ The extension also provides an option to run an Ansible Playbook from
 within the extension either using "**ansible-navigator run**" or
 "**ansible-playbook**" command as shown in the below snapshot.
 
-![](https://lh6.googleusercontent.com/bSBh17BHxqJobAwOWxx8thfEMDwbUvM6k_dDe-0JfmRmp7jrfARPlRO-vc1AjqSbJdlXyoPfoIV2VsEYrL7l6rkMRukcO-V2LiKsv70BdtDFpiRe6WkZS1N8BZAcv1jKm0NBodpU){width="602"
-height="404" loading="lazy"}
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot-nine.png)

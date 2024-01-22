@@ -86,11 +86,10 @@ automatically implements the documented changes or response in the
 rulebook to handle the event. In our outage example, this may be an
 action such as resetting or rebooting the non-responding asset.
 
-![](https://lh5.googleusercontent.com/4ib-UuFC47hOa3jGkoFiYan-VZBcovZHeapDpRcVoQCWXjEKt72Irvswn7q8wUOJmqsRCx3jidkF1wWk8RIEPArFL0I53SJ4JHqIJ-lMHo-8k3som7TZwm4c4yAJUBQap_gDIsP3lR-f21plkJsXiAj2uxRA_2EILD26iC7GA5znZTZlsId_tlm49g){width="624"
-height="275" loading="lazy"}
+![EDA diagram](/images/posts/archive/eda-rulebooks.png)
 
 There are three major building blocks in the Event-Driven Ansible model,
- sources, rules and actions that play key roles in completing the
+sources, rules and actions that play key roles in completing the
 workflow described above:
 
 -   **Sources** are third party vendor tools that provide the events.
@@ -125,13 +124,13 @@ Event-Driven Ansible to process a number of different events. They
 include: 
 
 -   Kafka for event streams
--    webhooks
+-   webhooks
 -   watchdog, a file system watcher
 -   url_check to check the status of a url 
 -   Range, an event generation plugin
 -   File, which loads facts from YAML
--   [Roadmap integrations support processing from the cloud service
-    providers]{style="color: #1d1c1d;"}
+-   Roadmap integrations support processing from the cloud service
+    providers
 
 In addition to all these integrations that enable events to prompt
 action, it is important to note that Red Hat Ansible Automation Platform
@@ -161,8 +160,7 @@ Ansible Rulebooks is easy.
 
 ## Getting started and sharing feedback
 
-Start by reviewing this [web
-page](http://ansible.com/event-driven){rel="noopener"} where you will
+Start by reviewing this [web page](http://ansible.com/event-driven) where you will
 find more details on Event-Driven Ansible and can access additional
 resources such as a self-paced lab, how-to-video and more details about
 this solution. You will also find a registration link to our first
@@ -174,9 +172,7 @@ Once you have some familiarity, use the developer preview code found
 your basic steps will be to download and install Event-Driven Ansible
 from the GitHub repository, configure sources of events so Event-Driven
 Ansible is subscribed, write your Ansible Rulebook(s) and start
-listening to events. Review [this
-blog](/blog/getting-started-with-event-driven-ansible){rel="noopener"}
-for more detail and getting started information.  
+listening to events.
 
 As a community project, we ask for your feedback through GitHub
 comments, on our Office Hours, or via email at

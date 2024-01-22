@@ -31,8 +31,6 @@ Event-Driven Ansible to your own solution? The good news is, developing
 event source plugins for Event-Driven Ansible can be a relatively
 painless endeavor.
 
- 
-
 ## What is a source plugin?
 
 Event-Driven Ansible leverages rulebooks to codify the response to an
@@ -40,7 +38,7 @@ event. Rulebooks combine sources, conditions and actions. An action is
 executed based on one or more conditions of an event coming from a
 source. Event source plugins allow rulebooks to receive events from
 things like cloud services, applications and brokers. Without an event
-source, events aren\'t received and actions aren\'t taken.
+source, events aren't received and actions aren't taken.
 
 Event sources are Python scripts contained within an Ansible Content
 Collection. Within a rulebook, event sources are called by name and
@@ -48,43 +46,30 @@ parameters included in the rulebook source configuration are passed into
 the event source plugin. Within the event source plugin, routines should
 be written as asynchronous to prevent blocking, allowing events to be
 received and addressed as efficiently as possible across multiple event
-sources. For this reason, you\'ll notice that all of the initial source
+sources. For this reason, you'll notice that all of the initial source
 plugins like Kafka and webhook take advantage of the asynchronous IO
 paradigm.
 
 ## Source plugin guidelines
 
 Scoping a new event source plugin should be straightforward. For that
-reason, there aren\'t many requirements for the plugin. To get started
+reason, there aren't many requirements for the plugin. To get started
 with plugin development, here are some guidelines for source plugins:
 
-1.  [[ The source plugin
-    ]{style="color: #000000;"}[must]{style="color: #000000; text-decoration: underline;"}[
-    contain a specific entry
-    point.]{style="color: #000000;"}]{style="font-size: 18px;"}
-2.  [[ Each source
-    ]{style="color: #000000;"}[must]{style="color: #000000; text-decoration: underline;"}[
-    have nested keys which match arguments expected by the main
-    function.]{style="color: #000000;"}]{style="font-size: 18px;"}
-3.  [ Source plugins should be documented with intended purpose,
-    expected arguments, and a rulebook
-    example.]{style="font-size: 18px; color: #000000;"}
-4.  [ Event source plugins should be distributed within
-    Collections.]{style="font-size: 18px; color: #000000;"}
-5.  [ Python routines should be written as non-blocking or
-    asynchronous.]{style="font-size: 18px; color: #000000;"}
-6.  [ Source plugins should include a way to test the plugin outside of
-    Event-Driven Ansible.]{style="font-size: 18px; color: #000000;"}
+1. The source plugin **must** contain a specific entry point.
+2. Each source **must** have nested keys which match arguments expected by the main function.
+3. Source plugins should be documented with intended purpose, expected arguments, and a rulebook example.
+4. Event source plugins should be distributed within Collections.
+5. Python routines should be written as non-blocking or asynchronous.
+6. Source plugins should include a way to test the plugin outside of Event-Driven Ansible.
 
-To demonstrate some of these guidelines, I\'ll use an example source
+To demonstrate some of these guidelines, I'll use an example source
 plugin that I created. My source plugin is called new_records and it
 watches a table within ServiceNow for new records to be created (e.g.
-new incidents, problems and change requests). If you\'d like to test
-[this source
-plugin](https://github.com/cloin/snow-demo-setup/tree/main/eda){rel="noopener"}
-for yourself, you\'ll need a ServiceNow instance which you can provision
-as part of the [ServiceNow developer
-program](https://developer.servicenow.com/dev.do). 
+new incidents, problems and change requests). If you'd like to test
+[this source plugin](https://github.com/cloin/snow-demo-setup/tree/main/eda)
+for yourself, you'll need a ServiceNow instance which you can provision
+as part of the [ServiceNow developer program](https://developer.servicenow.com/dev.do). 
 
 **Before** you go out and test my example
 plugin, please know that this plugin is coming from a sub-par python
@@ -103,7 +88,7 @@ there is already an event source plugin!).
 A source plugin requires a pretty specific entrypoint configuration.
 This entrypoint represents a function within the Python script that will
 be called by ansible-rulebook, the component of Event-Driven Ansible
-responsible for executing rulebooks. Let\'s take a look at the very
+responsible for executing rulebooks. Let's take a look at the very
 beginning of my custom source plugin for ServiceNow:
 
 ``` yml
@@ -315,6 +300,6 @@ is really just for testing the Python script directly. If you want to
 test this code yourself, you can define the four environment variables
 (e.g. export SN_TABLE=incident...) and then execute the script. From
 there, open up your ServiceNow instance and create a new record in the
-table you\'re watching (in the case of SN_TABLE=incident,  you'd want to
+table you're watching (in the case of SN_TABLE=incident,  you'd want to
 create a new incident) and see that the script prints out the newly
 created record.

@@ -10,9 +10,6 @@ title: Let Ansible keep an eye on your AWS environment
 
 # Let Ansible keep an eye on your AWS environment
 
-![](https://lh3.googleusercontent.com/wnD_tVJOsdCuKcbGSj5HICH-2u2iUClJws9FFApathtciNREwPSdVyPvu0JK9EIXGvfgOCR3MVRF9JqX8EmW6ROWkVI5GBcEEJNrac-g6RYDTomeiXs8xmDXLXcucUpGQIiJo-4d8Rzll2gklU2-1LlWgd4gGKGYIhz6ou6GS6b_yn6EaSnv0tlL2g){width="624"
-height="364" loading="lazy"}
-
 In a cloud model, the security of the environment and compliance becomes
 the responsibility of both the end users and the cloud provider. This is
 what we call the shared responsibility model in which every part of the
@@ -45,8 +42,7 @@ same.
 To download the amazon.aws collection, you can download it from
 
 -   [Ansible Galaxy](https://galaxy.ansible.com/amazon/aws) - Community
--   [Ansible automation
-    hub](https://console.redhat.com/ansible/automation-hub/repo/published/amazon/aws) -
+-   [Ansible automation hub](https://console.redhat.com/ansible/automation-hub/repo/published/amazon/aws) -
     Fully supported and signed with your Red Hat subscription
 
 ## Use Case 1 - Get maximum visibility
@@ -75,8 +71,7 @@ a particular trail or all the trails present. If a trail name is not
 provided as input to this module, this module will get the information
 of all trails, including shadow trails, by default. The shadow trails
 can be skipped by setting
-[include_shadow_trails]{style="color: #ff0000;"} to
-[False]{style="color: #ff0000;"}.
+[include_shadow_trails] to [False].
 
 ``` yml
 # Gather information about the multi-region trail
@@ -135,7 +130,7 @@ the destination for the trail-generated logs.
        block_public_policy: false
        restrict_public_buckets: false
 
-- name: Create trail with secured s3 bucket 
+- name: Create trail with secured s3 bucket
   amazon.aws.cloudtrail:
     state: present
     name: myCloudTrail
@@ -163,7 +158,7 @@ which is used to check if the log files are valid and not tampered with.
     log_file_validation_enabled: true
     tags:
       environment: dev
- 
+
 # Gather information about the trail
 - amazon.aws.cloudtrail_info:
     trail_names:
@@ -202,7 +197,7 @@ trail_info :
 
 By default, the S3 buckets are protected by an A[mazon server-side
 encryption method and Amazon S3-managed encryption keys.
-]{style="color: #222222;"}To add an extra layer of security, you can use
+To add an extra layer of security, you can use
 the AWS Key Management Service. This is directly manageable and helps
 protect the log files from any attacker's survey of the environment.
 
@@ -213,7 +208,7 @@ protect the log files from any attacker's survey of the environment.
     policy: "{{ lookup('template', 'kms_iam_policy_template.json.j2') }}"
     state: present
   register: kms_key_for_logs
- 
+
 - name: Create a CloudTrail with kms_key for encryption
   amazon.aws.cloudtrail:
      state: present

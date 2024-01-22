@@ -33,12 +33,12 @@ problems of scale that are becoming more challenging to solve. Jan-Piet
 Mens, who has continued to be a close friend to Ansible since our very
 earliest days, recently described those problems [quite
 succinctly](https://jpmens.net/2019/06/21/i-care-about-ansible/) from
-his perspective as a long-time contributor \-- and I think his analysis
+his perspective as a long-time contributor -- and I think his analysis
 of the problems we face is quite accurate. Simply, we've become victims
 of our own success.
 
 Success means growth, and growth means more users, more customers, more
-contributors, and more responsibilities \-- which  bring increases in
+contributors, and more responsibilities -- which  bring increases in
 complexity. We've continued to build tools like
 [Ansibot](https://github.com/ansible/ansibullbot) to help us manage that
 complexity, but as we continue towards hyperscale, even as we merge more
@@ -47,16 +47,15 @@ through the cracks.
 
 Consider the following visual representation of the evolution of contributions to the Ansible project:
 
-![visual representation of the evolution of contributions to the
-Ansible project](/images/posts/archive/evolution-of-contributions.gif)
+![visual representation of the evolution of contributions to the Ansible project](/images/posts/archive/evolution-of-contributions.gif)
 
 Most of our current challenges stem from **increased complexity that our
 simple model was not built to handle**. If we want to break through our
 current constraints, we're going to need to build a new organizational
 model to do it.
 
-That's exactly what we've been working on \-- and it's taking some time,
-because it's a complex set of challenges \-- but we're getting there.
+That's exactly what we've been working on -- and it's taking some time,
+because it's a complex set of challenges -- but we're getting there.
 
 So let's discuss some of our key challenges.
 
@@ -82,8 +81,8 @@ completely reliant upon our community to keep the modules working.
 Some of our community maintainers are exceptionally responsive. Some are
 less responsive. That's the nature of community developed software. But
 because all of the modules live in the same place, and are a part of our
-"batteries included" model, many people \-- including paying customers
-\-- don't realize that such a distinction exists.
+"batteries included" model, many people -- including paying customers
+-- don't realize that such a distinction exists.
 
 It's unfair for us to place an enterprise support burden on volunteer
 contributors. It's also important that we're as clear as possible with
@@ -123,7 +122,7 @@ contributions that have previously been good enough, but no longer meet
 the new standards? How do we deal with contributors who are not
 necessarily able or willing to do the work necessary to reach these
 standards? What do we do about existing modules that don't keep up with
-our rising quality standard \-- do we mark them in some way, or do we
+our rising quality standard -- do we mark them in some way, or do we
 kick them out of Ansible entirely, even if they're relatively stable
 modules that a lot of people depend upon? We continue to grapple with
 these questions.
@@ -138,7 +137,7 @@ Which brings us to the **new module contributor challenge**.
 PRs are merged within 22.4 days.*
 
 As the quality bar goes up, our ability to bring new contributors
-onboard goes down \-- or at least slows down. It just takes contributors
+onboard goes down -- or at least slows down. It just takes contributors
 more time and effort to get their new modules accepted than it once did.
 
 It's comparatively easy to bring in PRs to extant modules, because those
@@ -170,7 +169,7 @@ Ansible, and easy ways to contribute to Ansible.
 
 To those of us who lived through the old days at Red Hat, these problems
 are eerily similar to the problems we experienced around the original
-Red Hat Linux product \-- problems that led to the creation of the
+Red Hat Linux product -- problems that led to the creation of the
 Fedora Project and Red Hat Enterprise Linux. Our problems aren't
 identical, but similar.
 

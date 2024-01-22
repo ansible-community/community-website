@@ -22,9 +22,7 @@ the Ansible team showing how Red Hat Ansible Automation Platform can
 extend and connect different technologies. This has been a crucial
 component of Ansible's success in cloud automation for many customers.
 
-![](https://lh4.googleusercontent.com/6oMDqzqtZumAj0ecMols413I2wj8Hw73CbxlgQ86PmYieO3HQyRW61NCEaq4qpEixEh_uWVSNGuYDdMfq_tvi44qnQ-RgncujC-RxYIWDZ_lTjxEJo8xfga7Wp31UsyRo_pzjXf_LKwpYmXynnI6m6VFVPz2LglzZYAFNZSz8cEXFxfa1ORbpqS_tv28){width="624"
-height="360" loading="lazy"}
-
+![cloud automation uses diagram](/images/posts/archive/cloud-automation-uses.png)
 
 Cloud automation requires the ability to perform many different
 complicated tasks and cover just as many domains. Often, organizations
@@ -44,7 +42,7 @@ community, however, with the greater demand for an official Collection
 with the backing of Red Hat support, we have announced cloud.terraform,
 a Red Hat Ansible Certified Collection for Terraform. 
 
-# So what is the cloud.terraform collection?
+## So what is the cloud.terraform collection?
 
 This Collection is available on Ansible automation hub as of today and
 allows for the management and provisioning of cloud infrastructure as
@@ -113,7 +111,7 @@ allows you to store them as facts.
     ansible_user: "{{ item[mapping_variables.user] }}"
   loop: "{{ terraform_output.outputs[mapping_variables.host_list].value }}"
   vars:
-    terraform_output: "{{ (terraform_output_project_path is success) | ternary(terraform_output_project_path, 
+    terraform_output: "{{ (terraform_output_project_path is success) | ternary(terraform_output_project_path,
 terraform_output_state_file) }}”
 ```
 
@@ -133,6 +131,6 @@ building their Terraform manifests do not need to replace Terraform but
 rather allow Ansible Automation Platform to orchestrate the provisioning
 as well as configuration management. These tools are better together! 
 
-![](https://lh3.googleusercontent.com/rtg3sXKmZsNfW0LqNTQ_WPKrjyw7jZYHY64e1SeX8BSOvuacOqoOLBQxFW3mwcIdnZlOiHdY19MkNdSvAnUtgz73yWeTpFARZ0d9WmiHhI176L33r1VaKvolpkbNWkr9V-ca8LmnPEiCugs5aS6ZbbFsYPT6XyS__dV1eIDoEntSyiGnNa-0gWVTUIKW8Q)
+![tooling diagram](/images/posts/archive/github-platform-terraform.png)
 
 This is just the beginning, but great things are coming!

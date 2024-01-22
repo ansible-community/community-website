@@ -43,7 +43,7 @@ As all projects in Red Hat, ansible-builder follows an open development
 model and an upstream-first approach. The upstream project for
 [ansible-builder](https://github.com/ansible/ansible-builder) is
 distributed as a Python package, and then packaged into an RPM for
-Ansible Automation Platform downstream[.]{style="font-size: 11px;"}This
+Ansible Automation Platform downstream. This
 also means that there are different ways to install the upstream package
 and the downstream ansible-builder.
 
@@ -52,13 +52,13 @@ Automation Platform repos from Red Hat.
 
 Upstream:
 
-``` yml
+```bash
 pip3 install ansible-builder
 ```
 
 Downstream: 
 
-``` yml
+```bash
 dnf install ansible-builder
 ```
 
@@ -76,14 +76,14 @@ with a base image; that is where the upstream and downstream packages
 for ansible-builder differ. The base images used in upstream
 ansible-builder (Python package) as predefined constants are as follows:
 
-``` yml
+```bash
 EE_BASE_IMAGE='quay.io/ansible/ansible-runner:latest'
 EE_BUILDER_IMAGE='quay.io/ansible/ansible-builder:latest'
 ```
 
 Base images in the downstream package are as follows:
 
-``` yml
+```bash
 EE_BASE_IMAGE='registry.redhat.io/ansible-automation-platform-22/ee-minimal-rhel8:latest'
 EE_BUILDER_IMAGE='registry.redhat.io/ansible-automation-platform-22/ansible-builder-rhel8:latest'
 ```
@@ -112,9 +112,9 @@ Continuing from the previous section that introduce the upstream and
 downstream base images for ansible-builder, there are two arguments that
 specify which images to use:
 
--   The EE_BASE_IMAGE build argument specifies the parent image for the
+-   The `EE_BASE_IMAGE` build argument specifies the parent image for the
     automation execution environment.
--   The EE_BUILDER_IMAGE build argument specifies the image used for
+-   The `EE_BUILDER_IMAGE` build argument specifies the image used for
     compiling type tasks.
 
 For most container images, you generally only need one base image on top
@@ -122,7 +122,7 @@ of which you add different instructions, also known as build steps, to
 create your final container image.
 
 However, the base automation execution environment (ee-minimal) is built
-using the multi-stage build concept of containers. The EE_BUILDER_IMAGE
+using the multi-stage build concept of containers. The `EE_BUILDER_IMAGE`
 build argument serves as the intermediary step to install Collections
 and build dependencies to keep the base image size as low as possible.
 
@@ -132,29 +132,27 @@ on a Python package that needs to be compiled using python-dev package
 necessarily need it in the final package (you just need the NumPy
 package). You wouldn't want to include python-dev in the final image to
 keep the image size as low as possible. For this purpose, the
-EE_BUILDER_IMAGE is used to build dependencies and then copy over only
+`EE_BUILDER_IMAGE` is used to build dependencies and then copy over only
 the package wheels needed for the final automation execution
 environment.
 
 ## Does this matter if I want to build a custom automation execution environment?
 
 In most cases it doesn't matter. When you build your automation
-execution environment using ansible-builder, you just need EE_BASE_IMAGE
-and not EE_BUILDER_IMAGE. However, you should understand how a compile
+execution environment using ansible-builder, you just need `EE_BASE_IMAGE`
+and not `EE_BUILDER_IMAGE`. However, you should understand how a compile
 time binary dependency is applied in the execution-environment
 definition file called bindep.txt. For the above example, if you need to
 install the NumPy Python package as a dependency for your Collection on
 UBI8, you specify the bindep.txt and requirements.txt as follows:
 
-bindep.txt
-
-``` yml
+```bash
+# bindep.txt
 python38-devel [compile platform:rhel-8] #compile time dependency
 ```
 
-requirements.txt
-
-``` yml
+```bash
+# requirements.txt
 NumPy
 ```
 
@@ -197,11 +195,11 @@ downstream) and the ansible-builder image.
 # Verifying your base images
 
 To start building your custom automation execution environments, you
-should first verify which EE_BASE_IMAGE and EE_BUILDER_IMAGE are used in
+should first verify which `EE_BASE_IMAGE` and `EE_BUILDER_IMAGE` are used in
 ansible-builder by default. To verify, first create an empty automation
 execution environment definition file called execution-environment.yml
 
-``` yml
+```bash
 touch execution-environment.yml
 ```
 
@@ -209,7 +207,7 @@ Then create a build context from the empty definition file by running
 this command in the same directory where you created the empty
 definition file:
 
-``` yml
+```bash
 ansible-builder create
 ```
 
@@ -223,7 +221,7 @@ content:
 
  
 
-``` yml
+```bash
 ARG EE_BASE_IMAGE=quay.io/ansible/ansible-runner:latest
 ARG EE_BUILDER_IMAGE=quay.io/ansible/ansible-builder:latest
 
@@ -257,7 +255,7 @@ that pulls the BUILDER and BASE images from a private automation hub
 instance:
 
 ``` yml
-# cat execution-environment.yml 
+# cat execution-environment.yml
 ---
 version: 1
 build_arg_defaults:
@@ -270,15 +268,15 @@ dependencies:
 
 And the contents of the requirements.txt file are as follows:
 
-``` yml
-# cat requirements.txt 
+```bash
+# cat requirements.txt
 dnspython==1.15.0
 ```
 
 Let's create a context for the above definition file,
 execution-environment.yml:
 
-``` yml
+```bash
 # ansible-builder create
 Complete! The build context can be found at: /root/disconnected_ee/context
 ```
@@ -296,13 +294,13 @@ account the building of a downstream image):
 
 Firstly, create a pip.conf that points to the local mirror:
 
-``` yml
-# cat context/pip.conf 
+```bash
+# cat context/pip.conf
 [global]
 index-url = https://nexus-nexus.apps.celeron.demolab.local/repository/pypi-proxy/simple/
 ```
 
-You add the above pip.conf file and the certificate to the context/
+You add the above pip.conf file and the certificate to the context
 folder for the targeted automation execution environment creation to add
 these files inside your custom execution-environment.
 
@@ -311,8 +309,8 @@ Containerfile. Note the sections marked in bold text as well as some
 comments. These are the changes to build an automation execution
 environment in a disconnected fashion.
 
-``` yml
-# cat Containerfile 
+```bash
+# cat Containerfile
 ARG EE_BASE_IMAGE=automation-hub.demolab.local/ansible-automation-platform-21/ee-supported-rhel8:latest
 ARG EE_BUILDER_IMAGE=automation-hub.demolab.local/ansible-automation-platform-21/ansible-builder-rhel8:latest
 
@@ -369,13 +367,13 @@ endless customizations to your custom automation execution environments.
 Finally let's build the above execution-environment with the following
 command:
 
-``` yml
+``` bash
 podman build -f context/Containerfile -t disconnected_ee:1.0
 ```
 
 When the build succeeds, you should see a message like this:
 
-``` yml
+```bash
 --> 2316db485a1
 Successfully tagged localhost/disconnected_ee:1.0
 2316db485a1c4e7be4a687c682d0fc90335372d7e5564774f1ff6451840ac35f
@@ -394,6 +392,6 @@ participate in community discussions and provide your thoughts and
 feedback through IRC. Please follow the link
 [here](https://docs.ansible.com/ansible/latest/community/communication.html#ansible-community-on-irc)
 to join us. One of the main enhancements to the automation execution
-environment experience is being discussed in this [GitHub pull
-request](https://github.com/ansible/ansible-builder/pull/411), so you
-can participate in the GitHub discussions as well.
+environment experience is being discussed in this
+[GitHub pull request](https://github.com/ansible/ansible-builder/pull/411),
+so you can participate in the GitHub discussions as well.

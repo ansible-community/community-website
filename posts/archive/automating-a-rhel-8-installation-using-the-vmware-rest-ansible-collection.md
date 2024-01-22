@@ -50,7 +50,7 @@ You might want to visit [Kickstart Info Access Labs](https://access.redhat.com/l
 
 We will use environment variables to specify VMware credentials. This
 will make playbooks short and tidy. In order to do this, you need
-specify following environment variables - 
+specify following environment variables:
 
 -   VMWARE_HOST
 -   VMWARE_USER
@@ -68,29 +68,29 @@ placed. This information comprises MoIDs of cluster, datastore, folder
 and resource pool. We can use existing modules from vmware.vmware_rest
 Collection to collect this information.
 
-```
-   - name: Get Cluster info
-      vmware.vmware_rest.vcenter_cluster_info:
-            filter_names:
-            - "{{ cluster_name }}"
-      register: cluster_info
+```yaml
+- name: Get Cluster info
+   vmware.vmware_rest.vcenter_cluster_info:
+         filter_names:
+         - "{{ cluster_name }}"
+   register: cluster_info
 
-    - name: Get Resource info for {{ cluster_name }}
-      vmware.vmware_rest.vcenter_cluster_info:
-            cluster: "{{ cluster_info.value[0].cluster }}"
-      register: resource_pool_info
+ - name: Get Resource info for {{ cluster_name }}
+   vmware.vmware_rest.vcenter_cluster_info:
+         cluster: "{{ cluster_info.value[0].cluster }}"
+   register: resource_pool_info
 
-    - name: Get datastore info
-      vmware.vmware_rest.vcenter_datastore_info:
-            filter_names:
-            - "{{ datastore_name }}"
-      register: datastore_info
+ - name: Get datastore info
+   vmware.vmware_rest.vcenter_datastore_info:
+         filter_names:
+         - "{{ datastore_name }}"
+   register: datastore_info
 
-    - name: Get folder info
-      vmware.vmware_rest.vcenter_folder_info:
-            filter_names:
-            - '{{ folder_name }}'
-      register: folder_info
+ - name: Get folder info
+   vmware.vmware_rest.vcenter_folder_info:
+         filter_names:
+         - '{{ folder_name }}'
+   register: folder_info
 ```
 
 We will need information about the standard portgroup to which the
@@ -98,80 +98,80 @@ virtual machine is going to be attached to. Gathering information about
 the MoID of a standard portgroup can be done using
 vmware.vmware_rest.vcenter_network_info module.
 
-```
-      - name: Get a list of the networks with a filter
-      vmware.vmware_rest.vcenter_network_info:
-            filter_types: STANDARD_PORTGROUP
-            filter_names:
-            - "VM Network"
-      register: network_info
+```yaml
+- name: Get a list of the networks with a filter
+vmware.vmware_rest.vcenter_network_info:
+      filter_types: STANDARD_PORTGROUP
+      filter_names:
+      - "VM Network"
+register: network_info
 ```
 
 # Creating a virtual machine
 
 Once we have all the information required for create a virtual machine,
 let us move on to the module which creates the virtual machine that is
-vcenter_vm
+`vcenter_vm`:
 
-```
-  - name: Create a VM
-    vmware.vmware_rest.vcenter_vm:
-        boot:
-        delay: 0
-        enter_setup_mode: false
-        retry: false
-        retry_delay: 10000
-        type: "BIOS"
-        boot_devices: []
-        cdroms:
-        - allow_guest_control: true
+```yaml
+- name: Create a VM
+  vmware.vmware_rest.vcenter_vm:
+      boot:
+      delay: 0
+      enter_setup_mode: false
+      retry: false
+      retry_delay: 10000
+      type: "BIOS"
+      boot_devices: []
+      cdroms:
+      - allow_guest_control: true
+        backing:
+          type: "ISO_FILE"
+          iso_file: "[ds_200] iso/rhel_8.3_ks.iso"
+        ide:
+          master: true
+          primary: true
+        label: "CD/DVD drive 1"
+        start_connected: true
+        type: "IDE"
+      cpu:
+      cores_per_socket: 1
+      count: 1
+      hot_add_enabled: false
+      hot_remove_enabled: false
+      disks:
+      - new_vmdk:
+           capacity: 536870912
+        label: "Hard disk 1"
+        scsi:
+          bus: 0
+          unit: 0
+        type: "SCSI"
+      guest_OS: "OTHER_LINUX_64"
+      hardware_version: "VMX_13"
+      memory:
+      hot_add_enabled: true
+      size_MiB: 4096
+      name: test_vm_3
+      nics:
+      - start_connected: true
+        type: VMXNET3
+          mac_type: GENERATED
           backing:
-            type: "ISO_FILE"
-            iso_file: "[ds_200] iso/rhel_8.3_ks.iso"
-          ide:
-            master: true
-            primary: true
-          label: "CD/DVD drive 1"
-          start_connected: true
-          type: "IDE"
-        cpu:
-        cores_per_socket: 1
-        count: 1
-        hot_add_enabled: false
-        hot_remove_enabled: false
-        disks:
-        - new_vmdk:
-             capacity: 536870912
-          label: "Hard disk 1"
-          scsi:
-            bus: 0
-            unit: 0
-          type: "SCSI"
-        guest_OS: "OTHER_LINUX_64"
-        hardware_version: "VMX_13"
-        memory:
-        hot_add_enabled: true
-        size_MiB: 4096
-        name: test_vm_3
-        nics:
-        - start_connected: true
-          type: VMXNET3
-            mac_type: GENERATED
-            backing:
-              type: STANDARD_PORTGROUP
-              network: "{{ network_id }}"
-        scsi_adapters:
-        - label: "SCSI controller 0"
-          scsi:
-            bus: 0
-            unit: 7
-          sharing: "NONE"
-          type: "PVSCSI"
-        placement:
-         datastore: '{{ datastore_id }}'
-         folder: '{{ folder_id }}'
-         resource_pool: '{{ resource_pool_id }}'
-    register: vm_info
+            type: STANDARD_PORTGROUP
+            network: "{{ network_id }}"
+      scsi_adapters:
+      - label: "SCSI controller 0"
+        scsi:
+          bus: 0
+          unit: 7
+        sharing: "NONE"
+        type: "PVSCSI"
+      placement:
+       datastore: '{{ datastore_id }}'
+       folder: '{{ folder_id }}'
+       resource_pool: '{{ resource_pool_id }}'
+  register: vm_info
 ```
 
 Here, we specified to create a virtual machine with 4 GB memory with 1
@@ -181,11 +181,11 @@ it. 
 
 You can power on the virtual machine using following tasks:
 
-```
-   - name: Turn the power-on the VM
-      vmware.vmware_rest.vcenter_vm_power:
-            state: start
-            vm: '{{ vm_info.id }}'
+```yaml
+- name: Turn the power-on the VM
+   vmware.vmware_rest.vcenter_vm_power:
+         state: start
+         vm: '{{ vm_info.id }}'
 ```
 
 After powering on the virtual machine, installation will start as
@@ -193,12 +193,11 @@ default option with the given kickstart file:
 
 ![rhel blog one](/images/posts/archive/rhel-blog-one.png)
 
-*Img. Boot menu with Kickstart file as default option*
+*Boot menu with Kickstart file as default option*
 
 ![rhel blog two](/images/posts/archive/rhel-blog-two.png)
 
-* [  Img. Linux Kernel boot parameters looks
-like]{style="font-size: 16px;"}*
+*Linux Kernel boot parameters*
 
 It will take some time to install the new operating system, depending
 upon the configurations. You can mark this newly installed virtual

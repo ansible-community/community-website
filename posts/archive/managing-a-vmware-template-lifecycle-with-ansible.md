@@ -20,8 +20,7 @@ In this blog, we will see how one can create and use a new golden image.
 
 # Prepare the golden image
 
-[![](https://lh4.googleusercontent.com/8YjF12uPblcLs3gzRrsF4lYhH3p24BIeaBXsybHQ1rnG6-5hKKY-oDudqvXTfyfVVfi4YtZQBhTNQgXEwBTNL9MLQrDmDszf7rdkzvH5XqqN-hvN9Or6q1VSs4pdRfnXs4NDWYBc53cS9zLg8nG4mZg){width="624"
-height="376" loading="lazy"}]{style="font-size: 11px;"}
+![screenshot](/images/posts/archive/my-golden-image.png)
 
 We use [image
 builder](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/composing_a_customized_rhel_system_image/composer-description_composing-a-customized-rhel-system-image#doc-wrapper)
@@ -31,8 +30,7 @@ server and tmux. The result image is a file in the VMDK4 format that is
 not totally supported by VMware vSphere 7, so this is the reason why we
 use a .vmdk-4 suffix.
 
-[![](https://lh4.googleusercontent.com/nESfGeDPrK3oBIOXPmygURRJ-p9MAosRcCTVk4XyKUB5d30L-PKNhkUawI5dHLvNBLs0WGoOCuHo0Hi8El9voed7SaOixrodrR_7DIW2bT96k83unSoOfQctSACG5GNkgDQh8SHoWJaj3Ylc__3lmu0){width="624"
-height="591" loading="lazy"}]{style="font-size: 11px;"}
+![create image ui screenshot](/images/posts/archive/create-image-screenshot.png)
 
 We upload the image using the *uri* module. Uploading large files using
 this method is rather slow. If you can,  you may want to drop the file
@@ -223,8 +221,7 @@ example, *my_vm* is not running and the content library is called
     state: present
 ```
 
-![](https://lh4.googleusercontent.com/rBVwhvYsruvB84SzYdHBOcHlo-C1TiRFaBIbhYgmrg6reR21nqvAQ-AKUc8hjt4_bBMiYgnMsTeqYL9w5n1jEUxDElEPNgZlW70BVjwLHFfodhylbSJxDY10cVMAH7JmOMjF52r133_49U3I_fTxHpc){width="624"
-height="176" loading="lazy"}
+![vsphere client screenshot](/images/posts/archive/vsphere-client-screenshot.png)
 
 To spawn a new VM based on this OVF package, you need first to identify
 its item entry on the content library.
@@ -275,8 +272,7 @@ registered in the *my_vm* variable.
       resource_pool: "{{ lookup('vmware.vmware_rest.resource_pool_moid', '/my_dc/host/my_cluster/Resources') }}"
 ```
 
-![](https://lh4.googleusercontent.com/yGyoHuxhxZYk7rTlZqKGp-PNTQpepMyEAK47uZo9fqR7FT-OC27u_v6km-eNJ5s-4hu0bgxODxvDm6UOMqGed5WF-XVV4rpqZfkmufzIByiG9rSd1Ecc-D6mPWHe2AkeqcwuJ0rAoTXzPijWkNtZguY){width="624"
-height="219" loading="lazy"}
+![vsphere client screenshot](/images/posts/archive/vsphere-client-screenshot-one.png)
 
 To spawn a new VM based on this template, we once again need to identify
 the item on the content library.

@@ -43,7 +43,7 @@ without having to check in with the device first.
 
 For a Source of Truth, one popular open source choice is NetBox. From
 the primary documentation site
-[netbox.readthedocs.io](https://netbox.readthedocs.io/){rel="noopener"},
+[netbox.readthedocs.io](https://netbox.readthedocs.io/),
 *"NetBox is an open source web application designed to help manage and
 document computer networks".* NetBox is currently designed to help
 manage your:
@@ -89,7 +89,7 @@ Source of Truth. It represents what the environment should look like. 
 
 You will find the Collection within the netbox-community GitHub
 organization
-([github.com/netbox-community/](https://github.com/netbox-community/){rel="noopener"}).
+([github.com/netbox-community/](https://github.com/netbox-community/)).
 Here you find a [Docker container
 image](https://github.com/netbox-community/netbox-docker), [device-type
 library](https://github.com/netbox-community/devicetype-library),
@@ -101,7 +101,7 @@ If you are unfamiliar with what an Ansible Content Collection is, please
 watch this brief [YouTube video.](https://youtu.be/WOcqhk7TdYc)
 
 The Galaxy link for the Collection is at
-[galaxy.ansible.com/netbox/netbox](https://galaxy.ansible.com/netbox/netbox){rel="noopener"}. 
+[galaxy.ansible.com/netbox/netbox](https://galaxy.ansible.com/netbox/netbox). 
 
 The NetBox Collection allows you to get started quickly in adding
 information into a NetBox instance. The only requirements are  to supply
@@ -375,15 +375,14 @@ One of the more recent feature additions to NetBox itself is the ability
 to extend it via your own or community driven plugins. From the wiki:
 "Plugins are packaged Django apps that can be installed alongside NetBox
 to provide custom functionality not present in the core application"
-([GitHub
-Link](https://github.com/netbox-community/netbox/wiki/Plugins)). You can
+([GitHub Link](https://github.com/netbox-community/netbox/wiki/Plugins)). You can
 find some of the featured plugins in the community at that link. Some
 include:
 
 -   [Dynamic DNS Connector](https://github.com/sjm-steffann/netbox-ddns)
 -   [NetBox Onboarding Plugin (from Network to Code) - This will read
     additional information about the device and make updates to
-    NetBox](https://github.com/networktocode/ntc-netbox-plugin-onboarding){rel="noopener"}
+    NetBox](https://github.com/networktocode/ntc-netbox-plugin-onboarding)
 -   [NetBox QR Code - Generate QR Codes about the
     device](https://github.com/k01ek/netbox-qrcode)
 -   [SSO using

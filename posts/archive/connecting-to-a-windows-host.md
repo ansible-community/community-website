@@ -9,9 +9,8 @@ title: Connecting to a Windows Host
 
 # Connecting to a Windows Host
 
-Welcome to the first installment of our Windows-specific [Getting
-Started](/blog/topic/getting-started) series!\
-\
+Welcome to the first installment of our Windows-specific Getting Started series!
+
 Would you like to automate some of your Windows hosts with Red Hat
 Ansible Tower, but don't know how to set everything up? Are you worried
 that Red Hat Ansible Engine won't be able to communicate with your
@@ -21,7 +20,7 @@ want to easily automate everyone's best friend, Clippy?
 ![Ansible-Windows-Clippy](/images/posts/archive/Ansible-Windows/Ansible-Windows-Clippy.png)
 
 We can't help with the last thing, but if you said yes to the other two
-questions, you\'ve come to the right place. In this post, we'll walk you
+questions, you've come to the right place. In this post, we'll walk you
 through all the steps you need to take in order to set up and connect to
 your Windows hosts with Ansible Engine.
 
@@ -46,8 +45,8 @@ requirements](http://docs.ansible.com/ansible/latest/user_guide/windows_setup.ht
 First, your control machine (where Ansible Engine will be executing your
 chosen Windows modules from) needs to run Linux. Second, Windows support
 has been evolving rapidly, so make sure to use the newest possible
-version of Ansible Engine to get the latest features!\
-\
+version of Ansible Engine to get the latest features!
+
 For the target hosts, you should be running at least Windows 7 SP1 or
 later or Windows Server 2008 SP1 or later. You don't want to be running
 something from the 90's like Windows NT, because this might happen:
@@ -71,8 +70,8 @@ Object Access
 Protocol](https://msdn.microsoft.com/en-us/library/ms995800.aspx)
 (commonly referred to as [SOAP](https://en.wikipedia.org/wiki/SOAP)).
 With WinRM, you can do cool stuff like access, edit and update data from
-local and remote computers as a network administrator.\
-\
+local and remote computers as a network administrator.
+
 The reason WinRM is perfect for using with Ansible Engine is because you
 can obtain hardware data from WS-Management protocol implementations
 running on non-Windows operating systems (in this specific case, Linux).
@@ -88,7 +87,8 @@ script you can run on the remote Windows machine (in a PowerShell
 console as an Admin) to turn on WinRM. To set up an https listener,
 build a self-signed cert and execute PowerShell commands, just run the
 script like in the example below (if you've got the `.ps1` file stored
-locally on your machine):\
+locally on your machine):
+
 ![Ansible-Windows-Powershell](/images/posts/archive/Ansible-Windows-Powershell.png)
 
 Note: The
@@ -113,24 +113,24 @@ In order to connect to your Windows hosts properly, you need to make
 sure that you put in `ansible_connection=winrm` in the [host
 vars](http://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#host-variables)
 section of your inventory file so that Ansible Engine doesn't just keep
-trying to connect to your Windows host via SSH.\
-\
+trying to connect to your Windows host via SSH.
+
 Also, the WinRM connection plugin defaults to communicating via https,
 but it supports different modes like message-encrypted http. Since the
 "Configure Remoting for Ansible" script we ran earlier set things up
 with the self-signed cert, we need to tell Python, "Don't try to
 validate this certificate because it's not going to be from a valid CA."
 So in order to prevent an error, one more thing you need to put into the
-`host vars` section is: `ansible_winrm_server_cert_validation=ignore`\
-\
+`host vars` section is: `ansible_winrm_server_cert_validation=ignore`
+
 Just so you can see it in one place, here is an example host file
 (please note, some details for your particular environment will be
-different):\
+different):
 
-``` {.line-numbers .language-yaml}
+```yaml
 [win]
-172.16.2.5 
-172.16.2.6 
+172.16.2.5
+172.16.2.6
 
 [win:vars]
 ansible_user=vagrant
@@ -169,9 +169,9 @@ however, that even if you've followed the instructions above, some
 Windows modules have additional specifications (e.g., a newer OS or more
 recent PowerShell version). The best way to figure out if you're meeting
 the right requirements is to check the
-[module-specific](https://docs.ansible.com/ansible/latest/collections/index_module.html#ansible-windows){rel="noopener"}
-documentation pages.\
-\
+[module-specific](https://docs.ansible.com/ansible/latest/collections/index_module.html#ansible-windows)
+documentation pages.
+
 For more in-depth information on how to use Ansible Engine to automate
 your Windows hosts, check out our [Windows
 FAQ](http://docs.ansible.com/ansible/latest/user_guide/windows_faq.html)
