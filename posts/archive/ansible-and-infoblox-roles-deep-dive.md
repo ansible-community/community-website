@@ -217,7 +217,7 @@ line:
     ```ansible_subnet => 198.168.1.0/24```
     b. Uses the retrieved ansible_subnet value and supplies it to the
     ipaddr('first_usable') filter plugin to obtain first usable IP
-    ```192.168.1.0/24 | ipaddr('first_usable') \> 192.168.1.1```
+    ```192.168.1.0/24 | ipaddr('first_usable') => 192.168.1.1```
     c. Formats the resulting IP with underscores instead of dots
     ```192.168.1.1 | replace('.', '_') => 192_168_1_1```
     d. Adds a `.` separator before the subnet value
