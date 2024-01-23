@@ -33,13 +33,12 @@
   }
 }
 
+
+
 .contribute-bull {
   display: flex;
-  width: 30rem;
   img {
-    @media screen and (max-width: 1170px) {
-      width: 15rem;
-    }
+
     @media screen and (max-width: 768px) {
       display: none;
     }
