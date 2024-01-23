@@ -21,7 +21,7 @@ better together! Organizations are now in the position to utilize their
 existing infrastructure as code manifests and extend their automation
 with Terraform and Ansible together.  
 
-Now, we are back [ ]{style="font-size: 11px; color: #000000;"}with help
+Now, we are back with help
 from our partners at Kyndryl and XLAB and adding more value and magic to
 infrastructure as code - This time we have some extra muscle with an
 addition to the Red Hat Ansible Certified Content Collection: The
@@ -31,7 +31,7 @@ So what does the provider help us with?
 
 Without a provider, we would need to rely on inventory plugins for the
 different cloud platforms and use filters to grab instance information
-from our freshly \"Terraformed\" infrastructure. This allows us to
+from our freshly "Terraformed" infrastructure. This allows us to
 update our inventory so we can run automated tasks against these hosts.
 This is pretty smooth in a workflow especially if you are using the
 automation controller with a workflow. However, this scenario is not
@@ -41,13 +41,13 @@ bring these two tools together? The Ansible provider for Terraform is
 here to help us!
 
 With the Ansible provider in the Collection, we are able to define the
-use of an Ansible inventory in the main.tf file and once the project is
+use of an Ansible inventory in the `main.tf` file and once the project is
 initialized and built by Terraform, we can gather Terraform resource
 information from the state file and push it into an inventory.
 
 Let's look a bit closer:
 
-``` yml
+```yml
 …main.tf
 
 terraform {
@@ -71,20 +71,16 @@ resource "ansible_host" "my_ec2" {          #### ansible host details
     ansible_user                 = "ansible",
     ansible_ssh_private_key_file = "~/.ssh/id_rsa",
     ansible_python_interpreter   = "/usr/bin/python3"
-
-  
-  
 ```
 
-[Using the provider in the
-]{style="color: #000000;"}[main.tf]{style="color: #000000;"}[ allows us
+Using the provider in the `main.tf` allows us
 to indicate that we want to use an Ansible inventory and allows us to
 specify Ansible host details for the inventory. Terraform can then
 initialize and plan the project and embed the details. If we look at the
 resulting Terraform state file we can see host details
-defined:]{style="color: #000000;"}
+defined:
 
-``` yml
+```yml
 …terraform.tfstate                      #### Inside main.tf
 
 
@@ -111,11 +107,11 @@ defined:]{style="color: #000000;"}
 
 ```
 
-[Taking a deeper look at the inventory, we can see that the plugin has
+Taking a deeper look at the inventory, we can see that the plugin has
 populated instance data from the defined resource in the Terraform state
-file.]{style="color: #000000;"}
+file.
 
-``` yml
+```yml
 …inventory.yml
 ---
 plugin: cloud.terraform.terraform_provider
@@ -133,11 +129,11 @@ ansible-inventory -i inventory.yml --graph --vars
   |--@ungrouped:
 ```
 
-[We are now able to run playbooks against this inventory and automate
+We are now able to run playbooks against this inventory and automate
 the configuration or additional post-provisioning tasks on our hosts
-without any hassle.]{style="font-size: 18px; color: #000000;"}
+without any hassle.
 
-``` yml
+```yml
 Step 1: …terraform plan
 Step 2: …terraform apply
 
@@ -168,11 +164,5 @@ PLAY RECAP *********************************************************************
 ec2-18-130-240-228.eu-west-2.compute.amazonaws.com : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-[This new provider is extremely useful when you are
-using]{style="color: #000000;"}[ [Terraform for deployments while
-leveraging Ansible for cloud operations like application deployments and
-CI/CD pipelines, Lifecycle management and enforcement, OS patching and
-maintenance.]{style="font-size: 18px;"}]{style="font-size: 12px; color: #000000;"}[[
-]{style="font-size: 18px;"}With this provider being part of the Red Hat
-Ansible Certified Content Collection, we also have ongoing maintenance
-and support available! ]{style="color: #000000;"}
+This new provider is extremely useful when you are using Terraform for deployments while leveraging Ansible for cloud operations like application deployments and CI/CD pipelines, Lifecycle management and enforcement, OS patching and maintenance.
+With this provider being part of the Red Hat Ansible Certified Content Collection, we also have ongoing maintenance and support available!

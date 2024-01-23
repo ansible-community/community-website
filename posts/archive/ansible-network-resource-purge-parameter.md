@@ -31,7 +31,7 @@ models associated with them.
 
 Let's start with a data model:
 
-```
+```yaml
 bgp_global:
     as_number: '65000'
     bgp:
@@ -71,7 +71,7 @@ and save that configuration to structured data (e.g. YAML) 
 We can push this data model configuration to our Cisco network device
 very easily with a simple Ansible Playbook:
 
-```
+```yaml
 ---
 - name: configure BGP for blog
   hosts: cisco
@@ -91,7 +91,7 @@ You can copy this playbook directly from
 
 To execute the playbook:
 
-```
+```bash
 ansible-playbook merge_ios_bgp.yaml
 ```
 
@@ -99,10 +99,9 @@ The output will look similar to the following:
 
 ![network purge blog two](/images/posts/archive/network-purge-blog-two.png)
 
-Finally let's look at the generated configuration on our Cisco IOS
-network device:
+Finally let's look at the generated configuration on our Cisco IOS network device:
 
-```
+```bash
 rtr1#sh run | s router bgp
 router bgp 65000
  bgp router-id 192.168.1.1
@@ -120,28 +119,28 @@ router bgp 65000
  exit-address-family
 ```
 
-So finally here is the easy part, using our new state: purged parameter:
+So finally here is the easy part, using our new `state: purged` parameter:
 you can delete the entire bgp configuration on a device using one task.
 This might be often relevant on lab networks or when you want to start
 with a clean-state configuration.
 
-```
-  - name: Use the bgp_global resource module
-    cisco.ios.ios_bgp_global:
-      state: purged
+```yaml
+- name: Use the bgp_global resource module
+  cisco.ios.ios_bgp_global:
+    state: purged
 ```
 
 ## Difference between purged and deleted
 
-The state: deleted parameter is very similar, however it has two primary
+The `state: deleted` parameter is very similar, however it has two primary
 purposes different than purged. Deleted has the ability to remove the
 specified configuration with the config parameter. If no configuration
 is specified it will delete that entire resource (e.g. all address
 family configuration if using the bgp_address_family module). However,
 there are multiple resource modules that make up BGP configuration. This
-means you would need multiple modules running state: deleted to remove
-all the BGP configuration. The state: purged parameter allows you to
-use  bgp_global resource module to remove all BGP configuration
+means you would need multiple modules running `state: deleted` to remove
+all the BGP configuration. The `state: purged` parameter allows you to
+use `bgp_global` resource module to remove all BGP configuration
 simplifying your Ansible Playbooks.
 
 Now we can execute the playbook and manually check the configuration to
@@ -153,10 +152,9 @@ In the above screenshot (from the Ansible Automation Platform Web UI)
 you can see that the playbook ran successfully and the BGP configuration
 is now removed.
 
-Checking the running configuration on the Cisco router will reflect the
-change:
+Checking the running configuration on the Cisco router will reflect the change:
 
-```
+```bash
 rtr1#sh run | s router bgp
 rtr1#
 ```
@@ -172,5 +170,5 @@ method. This is just another tool in your resource module toolbelt!
 
 ## Where do I go next?
 
-All the examples in this blog post are on 
+All the examples in this blog post are on
 [Github here](https://github.com/network-automation/purge_blog_post).

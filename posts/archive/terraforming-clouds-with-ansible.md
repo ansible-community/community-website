@@ -29,7 +29,7 @@ workflow. 
 Let's take Terraform. Terraform is a tool used often for
 infrastructure-as-code. It is a great tool to use when provisioning infrastructure in a repeatable way across multiple large public cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). Many organizations use Terraform for quick infrastructure provisioning every day, but if we combine it with the power of Ansible, we can see that it builds into an efficient workflow.
 
-# Don't replace tooling - reuse, enhance and master it
+## Don't replace tooling - reuse, enhance and master it
 
 As I said, Ansible has a way of enhancing existing tools and giving them
 an overhaul. If an organization already uses Terraform, it would be a
@@ -122,8 +122,6 @@ resource "aws_instance" "ioc_basic" {
 …
 ```
 
- 
-
 ``` yml
 … variables.j2 > Summarized Example
 
@@ -143,7 +141,7 @@ variable "instance_type" {
 …
 ```
 
-# Provision Infrastructure
+## Provision Infrastructure
 
 ![diagram three](/images/posts/archive/terraforming-clouds-with-ansible-three.png)
 
@@ -201,7 +199,7 @@ can use Ansible to encrypt these files before we push them to our source
 of truth using the secrets file we embedded in our execution
 environment. 
 
-# The wheels are turning, but now what?
+## The wheels are turning, but now what?
 
 Ansible Automation Platform allows us to use dynamic inventory
 plugins, so we will use the relevant plugin to allow us to update the inventory
@@ -232,7 +230,7 @@ create a listing of all the projects in our Terraform repository, and we
 can pass this on to create a survey specification, which we update
 whenever we run a create or destroy job. 
 
-# Destroy Infrastructure
+## Destroy Infrastructure
 
 ![diagram four](/images/posts/archive/terraforming-clouds-with-ansible-four.png)
 
@@ -246,13 +244,13 @@ like load balancers, and then trigger Terraform to destroy the instance
 it created from our playbook. 
 
 ``` yml
- - name: Destroy Terraform Instance
-          community.general.terraform:
-            project_path: /{{ working_dir }}/{{ my_terraform_build }}
-            state: absent
+- name: Destroy Terraform Instance
+  community.general.terraform:
+    project_path: /{{ working_dir }}/{{ my_terraform_build }}
+    state: absent
 ```
 
-# Start your engines! Post-provisioning
+## Start your engines! Post-provisioning
 
 We have created a renewable method of building and destroying
 infrastructure using Ansible and Terraform. To extend the automation

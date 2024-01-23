@@ -91,13 +91,13 @@ the API when at all possible.  
 
 Example with curl:
 
-    ```bash
-    curl -X GET -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==’
-    https://<tower-host>/api/v2/credentials -k -L
+```bash
+curl -X GET -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==’
+https://<tower-host>/api/v2/credentials -k -L
 
-    # the --user flag adds this Authorization header for us
-    curl -X GET --user 'user:password' https://<tower-host>/api/v2/credentials -k -L
-    ```
+# the --user flag adds this Authorization header for us
+curl -X GET --user 'user:password' https://<tower-host>/api/v2/credentials -k -L
+```
 
 For more information about the Basic HTTP Authentication scheme, see
 [RFC 7617](https://tools.ietf.org/html/rfc7617).
@@ -238,8 +238,7 @@ method), and log you in.
     sign-on authentication service, so that authentication is consistent
     for the user across multiple services used by their team. SAML is
     particularly useful for maintaining permission groups across
-    services. There is a useful blog post about configuring SAML
-    [here](/blog/using-saml-with-red-hat-ansible-tower).
+    services.
 -   [GitHub](https://docs.ansible.com/ansible-tower/latest/html/administration/social_auth.html#github-oauth2-settings) -
     allows Ansible Tower users to authenticate with their GitHub
     credentials if they are in the Github Organization, Team or User

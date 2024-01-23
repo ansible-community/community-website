@@ -85,7 +85,7 @@ repository added in your Kubernetes cluster. 
 
 Let us now add a Helm Repository using helm_repository module:
 
-```
+```yaml
 ---
 - hosts: localhost
   vars:
@@ -101,7 +101,7 @@ Here, we are installing a new Helm Chart Repository by specifying URL
 and name. After running this playbook, you will have Bitnami Chart
 Repository installed in your environment.
 
-```
+```bash
 # helm repo list
 NAME     URL
 stable     https://kubernetes-charts.storage.googleapis.com/
@@ -113,7 +113,7 @@ bitnami    https://charts.bitnami.com/bitnami
 Now, we have the Helm repository configured. Let us now install nginx charts
 from the Bitnami repository.
 
-```
+```yaml
 ---
 - hosts: localhost
   tasks:
@@ -127,7 +127,7 @@ from the Bitnami repository.
 After running this playbook, you can see nginx-server deployment running
 in your *testing* environment.
 
-```
+```bash
 # kubectl -n testing get deploy
 NAME            READY   UP-TO-DATE   AVAILABLE   AGE
 nginx-server      1/1     1            1           48s
@@ -138,7 +138,7 @@ nginx-server      1/1     1            1           48s
 Gathering information about the Helm Chart is also easy using the
 helm_info module.
 
-```
+```yaml
 ---
 - hosts: localhost
   tasks:
@@ -163,7 +163,7 @@ Let us now try to install the Helm plugin called
 [helm env](https://github.com/adamreese/helm-env). This helm plugin allows
 users to view the environment variables available to a helm plugin.
 
-```
+```yaml
 ---
 - hosts: localhost
   tasks:
@@ -179,7 +179,7 @@ users to view the environment variables available to a helm plugin.
 Users can gather information about installed Helm plugins from the given
 Kubernetes cluster.
 
-```
+```yaml
 ---
 - hosts: localhost
   tasks:

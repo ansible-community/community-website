@@ -57,8 +57,7 @@ Committee members:
 -   Identify and train individuals from the community who are interested
     in contributing to Ansible.
 
-
-**Be a catalyst for the Ansible Community**
+## Be a catalyst for the Ansible Community
 
 We encourage all Ansible users to participate in the public Ansible
 Community Meeting that occurs weekly in the #ansible-community IRC

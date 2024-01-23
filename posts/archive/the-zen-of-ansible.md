@@ -21,7 +21,7 @@ good advice to "The Zen of Python" that can be applied to Ansible
 content, adopting it in its entirety would not provide the best user
 experience that Ansible is capable of and known for. Its presence as a
 guiding principle for content design gives the wrong impression and
-re-enforces a mindset we don\'t want to recommend.
+re-enforces a mindset we don't want to recommend.
 
 This got me thinking, what is "the zen" of Ansible?
 

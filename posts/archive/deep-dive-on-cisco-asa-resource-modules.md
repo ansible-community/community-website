@@ -23,7 +23,7 @@ which was already introduced in the previous article. We will walk
 through several examples and describe the use cases and how we envision
 the Collection being used in real world scenarios.
 
-# The Cisco ASA Certified Content Collection: what is it about?
+## The Cisco ASA Certified Content Collection: what is it about?
 
 The Cisco ASA Content Collection provides means to automate the
 [Cisco Adaptive Security Appliance family of security devices](https://www.cisco.com/c/en/us/products/security/adaptive-security-appliance-asa-software/index.html) -
@@ -55,8 +55,6 @@ Alternatively you can also [find the collection in Ansible
 Galaxy](https://galaxy.ansible.com/cisco/asa), our open source hub for
 sharing content in the community.
 
- 
-
 ## What's in the Cisco ASA Content Collection?
 
 The focus of the Collection is on the mentioned modules (and the plugins
@@ -83,16 +81,14 @@ resource modules, those are deprecated modules, which previously were
 used to configure ACLs and OGs. They are superseded by the resource
 modules.
 
- 
-
-# Connect to Cisco ASA, the Collection way
+## Connect to Cisco ASA, the Collection way
 
 The Collection supports network_cli as a connection type. Together with
 the network OS cisco.asa.asa, a username and a password, you are good to
 go. To get started quickly, you can simply provide these details as part
 of the variables in the inventory:
 
-``` 
+```ini
 [asa01]
 host_asa.example.com
 
@@ -111,9 +107,7 @@ Note that in a productive environment those variables should be
 supported in a secure way, for example, with the help of [Ansible Tower
 credentials](https://docs.ansible.com/ansible-tower/latest/html/userguide/credentials.html#network).
 
- 
-
-# Use Case: ACLs
+## Use Case: ACLs
 
 After all this is setup, we are now ready to dive into the actual
 Collections and how they can be used. For the first use case, we want to
@@ -182,7 +176,7 @@ security tooling.
 To showcase how to store existing configuration as a flat file, let's
 take the following device configuration:
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -199,7 +193,7 @@ mapping our devices and then store the configuration there, in our case
 as YAML files. The following playbook does exactly that. Note the
 parameter state: gathered in the first task.
 
-``` 
+```yaml
 ---
 - name: convert interface to structured data
   hosts: asa
@@ -231,7 +225,7 @@ The state "gathered" only collects existing data. In contrast to most
 other states, it does not change any configuration. The resulting data
 structure from reading in a brownfield configuration can be seen below:
 
-``` 
+```yaml
 $ cat lab_inventory/host_vars/ciscoasa/acls.yaml
 - acls:
    - aces:
@@ -256,8 +250,6 @@ You can the full detailed listing of all the commands and outputs of the
 example in the [state: gathered reference
 gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Gathered.txt).
 
- 
-
 ## State Merged: Add/Update configuration
 
 After the first, non-changing state we now have a look at a state which
@@ -268,7 +260,7 @@ simple.
 
 For example, let's take the following existing device configuration:
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -282,7 +274,7 @@ file is basically one variable called "acls". Given this flat file and
 the variable name, we can use the following playbook to deploy the
 configuration on a device:
 
-``` 
+```yaml
 ---
 - name: Merged state play
   hosts: cisco
@@ -302,7 +294,7 @@ pushed and configured on the Cisco ASA appliance.
 
 Afterwards, the network device configuration is changed:
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -348,9 +340,7 @@ user that all of the provided configurations in the play are already
 configured on the Cisco ASA device.
 
 You can the full detailed listing of all the commands and outputs of the
-example in the [state: merged reference
-gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Merged.txt).
-
+example in the [state: merged reference gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Merged.txt).
 
 ## State Replaced: Old out, new in
 
@@ -368,7 +358,7 @@ given as input by the user inside the replace play.
 
 Let's take the following brown field configuration:
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -384,7 +374,7 @@ and we want to replace the already existing "test_access" ACL
 configuration with a new source and destination IP. The corresponding
 ACL configuration for our new desired state is:
 
-``` 
+```yaml
 - acls:
    - name: test_access
      acl_type: extended
@@ -427,7 +417,7 @@ Note that the definition is again effectively contained in the variable
 the asa_acls module just as we did in the last example. Only the value
 for the state parameter is different this time:
 
-``` 
+```yaml
 ---
 - name: Replaced state play
   hosts: cisco
@@ -447,7 +437,7 @@ as intended: the old configuration was replaced with the new one. In
 cases where there was no corresponding configuration in place to be
 replaced, the new one was added:
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -459,12 +449,10 @@ access-list test_global_access; 1 elements; name hash: 0xaa83124c
 access-list test_global_access line 1 extended deny tcp 192.0.4.0 255.255.255.0 eq telnet 192.0.5.0 255.255.255.0 eq www (hitcnt=0) 0x243cead5
 ```
 
-Note that the ACL test_R1_traffic was not modified or removed in this
-example!
+Note that the ACL test_R1_traffic was not modified or removed in this example!
 
 You can the full detailed listing of all the commands and outputs of the
-example in the [state: replaced reference
-gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Replaced.txt).
+example in the [state: replaced reference gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Replaced.txt).
 
 ## State Overridden: Drop what is not needed
 
@@ -481,7 +469,7 @@ quite different:
 
 Brownfield device configuration before deploying the ACLs:
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -495,7 +483,7 @@ access-list test_R1_traffic line 1 extended deny tcp 2001:db8:0:3::/64 eq www 20
 Device configuration after deploying the ACLs via the resource module
 just list last time, but this time with state "overridden":
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -511,8 +499,7 @@ ACL definition which was deployed. This showcases the difference between
 "replaced" and "overridden" state.
 
 You can the full detailed listing of all the commands and outputs of the
-example in the [state: overridden reference
-gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Overridden.txt).
+example in the [state: overridden reference gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Overridden.txt).
 
 ## State Deleted: Remove what is not wanted
 
@@ -526,7 +513,7 @@ As an example, let's take our brown field configuration already used in
 the other examples. To delete the ACL test_access we name it in the
 input variable:
 
-``` 
+```yaml
 - acls:
    - name: test_access
 ```
@@ -535,7 +522,7 @@ The playbook looks just like the one in the other examples, just with
 the parameter and value state: deleted. After executing it, the
 configuration of the device is:
 
-``` 
+```bash
 ciscoasa# sh access-list
 access-list cached ACL log flows: total 0, denied 0 (deny-flow-max 4096)
             alert-interval 300
@@ -547,10 +534,7 @@ The output is clearly shorter than the previous configuration since an
 entire ACL is missing.
 
 You can the full detailed listing of all the commands and outputs of the
-example in the [state: deleted reference
-gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Deleted.txt).
-
- 
+example in the [state: deleted reference gist](https://gist.githubusercontent.com/justjais/d4ec1481f6963b573340651465b41685/raw/5b22104a1d79eec17b3c04b94f97ba01000b1c27/Deleted.txt).
 
 ## State Rendered and State Parsed: For development and offline work
 
@@ -565,7 +549,7 @@ executed to apply the provided configuration. The content of the
 returned values given the above used configuration against our brown
 field device configuration:
 
-``` 
+```yaml
 "rendered": [
    "access-list test_access line 1 extended deny tcp 192.0.2.0 255.255.255.0 192.0.3.0 255.255.255.0 eq www log default",
    "access-list test_access line 2 extended deny icmp 198.51.100.0 255.255.255.0 198.51.110.0 255.255.255.0 alternate-address log errors",

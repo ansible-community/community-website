@@ -22,32 +22,26 @@ useful in operational state assessment as an example use case.
 In general, state assessment workflow has following steps:
 
 -  Retrieve (Source of Truth)
-
--   -   Collect the current operational state from the remote host. 
+    -   Collect the current operational state from the remote host. 
     -   Convert it into normalized structured data. Structured data can
         be in json, yaml format or any other format.
     -   Store is an inventory variable.
 
 -  Validate
-
--   -   Define the desired state criteria in a standard based format,
+    -   Define the desired state criteria in a standard based format,
         for example, as defined in a json schema format.
     -   Retrieve operational state at runtime.
     -   Validate the current state data against the pre-defined criteria
         to identify if there is any deviation.
 
 -   Remediate
-
--   -    Implement required configuration changes to correct drift. 
+    -    Implement required configuration changes to correct drift. 
     -   Report on the change as an audit trail.
-
- 
 
 ### How can ansible.utils collection help in this workflow?
 
 The ansible.utils collection makes it easier to retrieve and parse the
-data so it can then be further assessed from a structured
-format.
+data so it can then be further assessed from a structured format.
 
 #### Retrieving operational state in structured format using Ansible.utils.cli_parse
 
@@ -60,11 +54,11 @@ command, parse and set facts.
 
 Before the utils collection was available, we would need to write three
 different tasks to run commands, parse the output from command and set
-facts. But thanks to cli_parse we only have one task which will return
+facts. But thanks to `cli_parse` we only have one task which will return
 structured data from the "show command"
 output.
 
-Let's see an example of ansible.utils.cli_parse task:
+Let's see an example of `ansible.utils.cli_parse` task:
 
 ```yml
   tasks:
@@ -78,7 +72,7 @@ Let's see an example of ansible.utils.cli_parse task:
 ```
 
 In this task we need to provide a command which will execute on the
-device. Parser, which is a subplugin of cli_parse, plugin.set_fact sets
+device. Parser, which is a subplugin of `cli_parse`, `plugin.set_fact` sets
 the converted structure in the interfaces key. We can then refer to the
 interfaces key in our playbook. 
 
@@ -90,7 +84,7 @@ The above task will perform following operation:
 -   Set parsed data as fact
 -   Return command output as stdout
 
-Currently ansible.utils.cli_parse plugin has following parsers:
+Currently `ansible.utils.cli_parse` plugin has following parsers:
 
 -   `ansible.utils.textfsm`: Python module for parsing semi-formatted
     text
@@ -104,14 +98,14 @@ Currently ansible.utils.cli_parse plugin has following parsers:
     Solution (11 OSs/2500 parsers) 
 -    `ansible.utils.from_xml`: convert XML to json using xmltodict 
 
-All of the generic parsers are part of the ansible.utils collection and
-all network-related parsers are part of the ansible.netcommon
+All of the generic parsers are part of the `ansible.utils` collection and
+all network-related parsers are part of the `ansible.netcommon`
 collection.
 
 #### Validating structured data and report errors using ansible.utils.validate
 
-The Ansible.utils.validate module is a new module available as part of
-the ansible.utils collection which works with all platforms. It has
+The `Ansible.utils.validate` module is a new module available as part of
+the `ansible.utils` collection which works with all platforms. It has
 extensible engine support and currently works with the jsonschema
 validation engine which uses the jsonschema python library underneath.
 It is a single task, which reads structured data and validates it
@@ -119,17 +113,17 @@ against the data model provided in the task. This task will report
 success or error in case the data is valid or invalid as per the
 schema. 
 
-Let's see an example of ansible.utils.validate task:
+Let's see an example of `ansible.utils.validate` task:
 
 ```yml
-  tasks:
+tasks:
 
-  - name:  Validate structured data
-     ansible.utils.validate:
-         data: "{{ input_data }}"
-         criteria:
-         - "{{ lookup('file', './criteria.json') | from_json }}"
-         engine: ansible.utils.xxxx
+- name:  Validate structured data
+   ansible.utils.validate:
+       data: "{{ input_data }}"
+       criteria:
+       - "{{ lookup('file', './criteria.json') | from_json }}"
+       engine: ansible.utils.xxxx
 ```
 
 In this task we need to provide data which is supposed to be structured

@@ -82,7 +82,7 @@ modules have also undergone several deprecations.
 ## Code quality and CI improvement
 
 Part of the effort in this release was dedicated to improving the
-quality of the collection\'s code. We have adopted several linting and
+quality of the collection's code. We have adopted several linting and
 formatting tools that help enforce coding conventions and best
 practices, with all code following the same style and standards. The
 linting tools help detect and flag code that may not be optimal, such as

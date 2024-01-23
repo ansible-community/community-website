@@ -33,9 +33,9 @@ According to its official
 [documentation](https://molecule.readthedocs.io/en/latest/index.html#),
 Molecule is a project:
 
-* "designed to aid in the development and testing of Ansible roles. It
+"designed to aid in the development and testing of Ansible roles. It
 encourages an approach that results in consistently developed roles that
-are well-written, easily understood and maintained."*
+are well-written, easily understood and maintained."
 
 Molecule allows you to test your role with many instances, ensuring it
 works properly across different combinations of operating systems and
@@ -102,7 +102,7 @@ Molecule is available as a Python package and thus can be installed via
 pip. As a first step, we create a dedicated Python environment for our
 Molecule installation, and install it there:
 
-``` 
+```bash
 $ mkdir molecule-blog
 $ cd molecule-blog
 $ python3 -m venv molecule-venv
@@ -118,7 +118,7 @@ ensuring it complies with Ansible coding standards.
 The installation downloads all of the dependencies from the Internet,
 including Ansible. Verify the installed version:
 
-``` 
+```bash
 $ molecule --version
 molecule 3.0.4
    ansible==2.9.10 python==3.6
@@ -136,13 +136,13 @@ and the basic boilerplate code required to run Molecule tests.
 
 By default, Molecule uses the Docker driver to execute tests. Since we
 want to execute tests using "podman", we need to specify the driver name
-using the option "\--driver-name=podman" when initializing the role with
+using the option `--driver-name=podman` when initializing the role with
 "molecule". 
 
 Switch back to the "molecule-blog" directory and initialize the new role
 "mywebapp" with this command: 
 
-``` 
+```bash
 $ molecule init role mywebapp --driver-name=podman
 --> Initializing new role mywebapp...
 Initialized role in /home/ricardo/molecule-blog/mywebapp successfully.
@@ -152,7 +152,7 @@ Molecule created the structure for your new role in a directory named
 "mywebapp". Switch into this directory and check the content created by
 Molecule:
 
-``` 
+```bash
 $ cd mywebapp
 $ tree
 .
@@ -178,7 +178,7 @@ $ tree
 │   └── test.yml
 └── vars
     └── main.yml
- 
+
 10 directories, 12 files
 ```
 
@@ -188,11 +188,10 @@ scenario named "default". Later, you can add more scenarios to test
 different conditions. For this tutorial, we'll use the "default"
 scenario.
 
-Verify the basic configuration in the file
-"molecule/default/molecule.yml":
+Verify the basic configuration in the file `molecule/default/molecule.yml`:
 
-``` 
-$ cat molecule/default/molecule.yml 
+```bash
+$ cat molecule/default/molecule.yml
 ---
 dependency:
   name: galaxy
@@ -210,13 +209,13 @@ verifier:
 
 As per our requirements, this file specifies the Podman driver for
 tests. It also defines a default platform "instance" using the container
-image "docker.io/pycontribs/centos:7" that you'll change later.
+image `docker.io/pycontribs/centos:7` that you'll change later.
 
 Unlike Molecule v2, Molecule v3 does not specify a linter by default.
-Open the configuration file "molecule/default/molecule.yml" using your
+Open the configuration file `molecule/default/molecule.yml` using your
 favorite editor to include the lint configuration at the end:
 
-``` 
+```bash
 $ vi molecule/default/molecule.yml
 ...
 verifier:
@@ -230,7 +229,7 @@ lint: |
 Save and close the configuration file. Run "molecule lint" from the
 project root to lint the entire project:
 
-``` 
+```bash
 $ molecule lint
 ```
 
@@ -240,40 +239,40 @@ missing some required values. Fix these issues by editing the file
 and removing the blank line at the end. Without comments - for brevity -
 the "meta/main.yaml" looks like this:
 
-``` 
+```yaml
 $ vi meta/main.yml
 galaxy_info:
   author: Ricardo Gerardi
-  description: Mywebapp role deploys a sample web app 
-  company: Red Hat 
- 
-  license: MIT 
- 
+  description: Mywebapp role deploys a sample web app
+  company: Red Hat
+
+  license: MIT
+
   min_ansible_version: 2.9
- 
+
   platforms:
   - name: rhel
     versions:
-    - 8 
+    - 8
   - name: ubuntu
     versions:
     - 20.04
- 
+
   galaxy_tags: []
- 
+
 dependencies: []
 ```
 
 Now re-lint the project and verify that there are no errors this time.
 
-``` 
+```bash
 $ molecule lint
 --> Test matrix
-    
+
 └── default
     ├── dependency
     └── lint
-    
+
 --> Scenario: 'default'
 --> Action: 'dependency'
 Skipping, missing the requirements file.
@@ -282,11 +281,11 @@ Skipping, missing the requirements file.
 --> Action: 'lint'
 --> Executing: set -e
 yamllint .
-ansible-lint . 
+ansible-lint .
 ```
 
-The role is initialized and the basic molecule configuration is in
-place. Let's set up the test instances next.
+The role is initialized and the basic molecule configuration is in place.
+Let's set up the test instances next.
 
 ## Setting up Instances
 
@@ -296,23 +295,22 @@ our role works with RHEL 8 and Ubuntu 20.04. In addition, because this
 role starts the Apache web server as a system service, we need to use
 container images that enable "systemd".
 
-Red Hat provides an official [Universal Base
-Image](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image)
+Red Hat provides an official [Universal Base Image](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image)
 for RHEL 8, which enables "systemd": 
 
--   registry.access.redhat.com/ubi8/ubi-init
+-   `registry.access.redhat.com/ubi8/ubi-init`
 
 For Ubuntu, there's no official "systemd" enabled images so we'll use an
 image maintained by Jeff Geerling from the Ansible open-source
 community:
 
--   geerlingguy/docker-ubuntu2004-ansible
+-   `geerlingguy/docker-ubuntu2004-ansible`
 
 To enable the "systemd" instances, modify the
 "molecule/default/molecule.yml" configuration file, remove the
 "centos:7" instance and add the two new instances.
 
-``` 
+```bash
 $ vi molecule/default/molecule.yml
 ---
 dependency:
@@ -363,7 +361,7 @@ boolean to true to allow containers to run Systemd. See the RHEL 8
 [documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#starting_services_within_a_container_using_systemd)
 for more details:
 
-``` 
+```bash
 sudo setsebool -P container_manage_cgroup 1
 ```
 
@@ -378,7 +376,7 @@ to "auto_silent" to prevent warnings. Enable the "profile_tasks",
 with the playbook output. Then, add the "ssh_connection" section and
 disable SSH pipelining because it does not work with Podman:
 
-``` 
+```yaml
 provisioner:
   name: ansible
   config_options:
@@ -392,14 +390,14 @@ provisioner:
 Save the configuration file and create the instances by running
 "molecule create" from the role root directory:
 
-``` 
+```bash
 $ molecule create
 ```
 
 Molecule runs the provisioning playbook and creates both instances. You
 can check the instances by running "molecule list":
 
-``` 
+```bash
 $ molecule list
 Instance Name    Driver Name    Provisioner Name    Scenario Name    Created    Converged
 ---------------  -------------  ------------------  ---------------  ---------  -----------
@@ -409,7 +407,7 @@ ubuntu           podman         ansible             default          true       
 
 You can also verify that both containers are running in Podman:
 
-``` 
+```bash
 $ podman ps
 CONTAINER ID  IMAGE                                                   COMMAND               CREATED             STATUS                 PORTS  NAMES
 2e2f14eaa37b  docker.io/geerlingguy/docker-ubuntu2004-ansible:latest  /lib/systemd/syst...  About a minute ago  Up About a minute ago         ubuntu

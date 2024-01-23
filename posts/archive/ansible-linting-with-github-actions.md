@@ -80,9 +80,9 @@ So here is the really cool part, you can run the action on various
 events! This means every time someone submits a PR, or does a push, the
 action will be triggered and a container will spin up and run Ansible
 lint on your repo. You can define what events will trigger the action
-using the on: parameter.
+using the `on: parameter`.
 
-```
+```yaml
 on: [push, pull_request]
 ```
 
@@ -107,13 +107,13 @@ Example:
 
 To set this up on my MacBook I simply did a pip install.
 
-```
+```bash
 pip install pre-commit
 ```
 
 To set it up on your repo just make sure you...​
 
-```
+```bash
 pre-commit install
 ```
 

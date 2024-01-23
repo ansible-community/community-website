@@ -118,7 +118,7 @@ To run the playbook use the ansible-playbook command:
 
 To check if this has effectively changed the Check Point configuration
 as expected, login to the Check Point SmartConsole and look under
-**Network objects \> Hosts** where we will see the new host listed:
+**Network objects -> Hosts** where we will see the new host listed:
 
 ![checkpoint blog two](/images/posts/archive/checkpoint-blog-two.png)
 
@@ -157,8 +157,7 @@ Run the playbook with the ansible-playbook command as:
 
 ![checkpoint blog four](/images/posts/archive/checkpoint-blog-four.jpg)
 
-Play output: All of the host facts related to queried host name *i.e.*
-***"New CP_MGMT Host 1".*** 
+Play output: All of the host facts related to queried host name *i.e.* **"New CP_MGMT Host 1"**
 
 The above playbook shows how we can query Check Point to collect
 specific information about objects (in this case, hosts). These facts
@@ -167,8 +166,6 @@ group of appliances, to act as a single source of truth for information
 that may be changing. To read more about Ansible variables, facts and
 the set_fact module, refer to the [Ansible variables
 documentation](http://docs.ansible.com/ansible/latest/playbooks_variables.html).
-
- 
 
 ## How to use Check Point modules in response and remediation scenarios
 

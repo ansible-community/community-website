@@ -9,11 +9,11 @@ title: How useful is Ansible in a Cloud-Native Kubernetes Environment?
 
 # How useful is Ansible in a Cloud-Native Kubernetes Environment?
 
-A question I've been hearing a lot lately is \"why are you still using
-Ansible in your Kubernetes projects?\" Followed often by \"what\'s the
+A question I've been hearing a lot lately is "why are you still using
+Ansible in your Kubernetes projects?" Followed often by "what's the
 point of writing your book [Ansible for
-Kubernetes](https://www.ansibleforkubernetes.com/) when Ansible isn\'t
-really necessary once you start using Kubernetes?\"
+Kubernetes](https://www.ansibleforkubernetes.com/) when Ansible isn't
+really necessary once you start using Kubernetes?"
 
 I spent a little time thinking about these questions, and the motivation
 behind them, and wanted to write a blog post addressing them, because it
@@ -28,12 +28,12 @@ book:
 *While Ansible can do almost everything for you, it may not be the right
 tool for every aspect of your infrastructure automation. Sometimes there
 are other tools which may more cleanly integrate with your application
-developers\' workflows, or have better support from app vendors.*
+developers' workflows, or have better support from app vendors.*
 
 We should always guard against the [golden hammer
 fallacy](https://en.wikipedia.org/wiki/Law_of_the_instrument). No single
 infrastructure tool---not even the best Kubernetes-as-a-service
-platform---can fill the needs of an entire business\'s IT operation. If
+platform---can fill the needs of an entire business's IT operation. If
 anything, we have seen an explosion of specialist tools as is evidenced
 by the [CNCF landscape](https://landscape.cncf.io/).
 
@@ -89,7 +89,7 @@ this?
 
 We can do better. Ansible can build and manage containers using
 Dockerfiles, sure, but Ansible is also very good at building container
-images directly---and nowadays, you don\'t even need to install Docker!
+images directly---and nowadays, you don't even need to install Docker!
 There are lighter-weight open source build tools like
 [Buildah](https://buildah.io/) that integrate with an Ansible container
 build tool
@@ -105,13 +105,13 @@ tools like Ansible which produce the same end result.
 
 ## Cluster Management
 
-Kubernetes Clusters don\'t appear out of thin air. Depending on the type
-of clusters you\'re using, they require management for upgrades and
+Kubernetes Clusters don't appear out of thin air. Depending on the type
+of clusters you're using, they require management for upgrades and
 integrations. Cluster management can become crippling, especially if,
 like most organizations, you're managing multiple clusters (multiple
 production clusters, staging and QA clusters, etc.).
 
-If you\'re running inside a private cloud, or on bare metal servers, you
+If you're running inside a private cloud, or on bare metal servers, you
 will need a way to install Kubernetes and manage individual servers in
 the cluster. Ansible has a proven track record of being able to
 orchestrate multi-server applications, and Kubernetes itself is a
@@ -132,7 +132,7 @@ which manage clusters, along with thousands of other modules which
 simplify and somewhat standardize cluster management among different
 cloud providers.
 
-Even if you don\'t need multi-cloud capabilities, Ansible offers useful
+Even if you don't need multi-cloud capabilities, Ansible offers useful
 abstractions like managing CloudFormation template deployments on AWS
 with the
 [cloudformation](https://docs.ansible.com/ansible/latest/modules/cloudformation_module.html)
@@ -140,12 +140,12 @@ module, or Terraform deployments with the
 [terraform](https://docs.ansible.com/ansible/latest/modules/terraform_module.html)
 module.
 
-It\'s extremely rare to have an application which can live entirely
+It's extremely rare to have an application which can live entirely
 within Kubernetes and not need to be coordinated with any external
 resource (e.g. networking device, storage, external database service,
-etc.). If you\'re lucky, there may be a Kubernetes Operator to help you
+etc.). If you're lucky, there may be a Kubernetes Operator to help you
 integrate your applications with external services, but more often
-there\'s not. Here, too, Ansible helps by managing a Kubernetes
+there's not. Here, too, Ansible helps by managing a Kubernetes
 application along with external integrations, all in one playbook
 written in cloud-native's *lingua franca*, YAML.
 
@@ -158,10 +158,10 @@ and manage your cluster---especially if you have more than one cluster!
 The final area where Ansible shows great promise is in managing
 applications inside of Kubernetes. Using Ansible to build operators with
 the [Operator SDK](https://github.com/operator-framework/operator-sdk),
-you can encode all your application\'s lifecycle management (deployment,
+you can encode all your application's lifecycle management (deployment,
 upgrades, backups, etc.) inside of a [Kubernetes
 operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
-to be placed in any Kubernetes cluster---even if you don\'t use Ansible
+to be placed in any Kubernetes cluster---even if you don't use Ansible
 to manage anything else in that cluster.
 
 Rather than forcing developers and ops teams to learn Go or another
@@ -171,11 +171,11 @@ and Ansible.
 There is a lot of promise here, though there are scenarios---at least,
 in the current state of the Operator SDK---where you might need to drop
 back to Go for more advanced use cases. The power comes in the ability
-to rely on Ansible\'s thousands of modules from within your running
+to rely on Ansible's thousands of modules from within your running
 Application operator in the cluster, and in the ease of adoption for any
 kind of development team.
 
-For teams who already use Ansible, it\'s a no-brainer to migrate their
+For teams who already use Ansible, it's a no-brainer to migrate their
 existing Ansible knowledge, roles, modules, and playbooks into
 Kubernetes management playbooks and Ansible-based operators. For teams
 new to Ansible, its flexibility for all things related to IT automation

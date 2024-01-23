@@ -45,7 +45,7 @@ do that we login to our Ansible Tower server, clone the corresponding
 git repository and change into the repository directory. See the listing
 shown below for reference:
 
-``` 
+```bash
 $ git clone https://github.com/redhat-cop/tower_grafana_dashboards 
 
 $ cd tower_grafana_dashboards/
@@ -64,7 +64,7 @@ Luckily, a playbook to install it is included. Run the
 install_node_exporter.yaml playbook to perform the installation of
 node_exporter. 
 
-``` 
+```bash
 $ ansible-playbook install_node_exporter.yaml
 ...
 ```
@@ -87,7 +87,7 @@ Next let's shift our focus towards Ansible Tower. Validate that the
 Ansible Tower metrics are being displayed correctly by accessing the url
 below:
 
-``` 
+```
 https://tower.customer.com/api/v2/metrics
 ```
 
@@ -113,18 +113,18 @@ below. Choose the scope "read" and click the green "SAVE" button.
 # Setting up Prometheus to receive metrics
 
 With the token in our hands, we can now configure Prometheus, adding the
-node_exporters scrape config and the scrape for Ansible Tower\'s
+node_exporters scrape config and the scrape for Ansible Tower's
 metrics. Open the configuration of your Prometheus installation with an
 editor of your choice: 
 
-``` 
+```bash
 $ vim /etc/prometheus/prometheus.yml
 ```
 
 Next, add the configuration for Ansible Tower and the operating system.
 Below is an example:
 
-``` 
+```yaml
 ## Scrape Config - Tower
   - job_name: 'tower'
     metrics_path: /api/v2/metrics
@@ -161,7 +161,7 @@ metrics.
 
 Restart Prometheus to apply the changes:
 
-``` 
+```bash
 $ systemctl restart prometheus
 ```
 
@@ -173,7 +173,7 @@ UP status as shown below:
 
 # Grafana configuration to import the dashboards
 
-Now let\'s import the dashboards into Grafana. Grafana can be configured
+Now let's import the dashboards into Grafana. Grafana can be configured
 through json files. In the repo mentioned above we provide two json
 files to configure two dashboards: metric_servers.json for the OS
 metrics, and metric_tower.json for the Ansible Tower metrics. Let's
@@ -245,6 +245,6 @@ have a view more managerial of your environment, such as capacity,
 licensing and jobs in execution, using graphics and counters, you can
 identify problems and take actions quickly.
 
-If you\'re interested in detailed views across your entire automation
+If you're interested in detailed views across your entire automation
 environment, you can also try Automation Analytics on
 [cloud.redhat.com](https://cloud.redhat.com/).

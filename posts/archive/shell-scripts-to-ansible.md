@@ -241,7 +241,7 @@ requirement.
 We started with the idea of creating a role and placing the sudoers file
 into Git for version control. This also removes the need for NFS mounts.
 
-With the \"validate\" and \"backup\" parameters for the `copy` and
+With the "validate" and "backup" parameters for the `copy` and
 `template` modules, we can eliminate the need for code to backup and
 restore the file. The validation is run before the file is placed in the
 destination and, if failed, the module errors out.
@@ -249,7 +249,7 @@ destination and, if failed, the module errors out.
 We'll need tasks, templates and vars for the role. Here's the file
 layout:
 
-```
+```bash
 ├── README.md
 ├── roles
 │ └── sudoers
@@ -262,10 +262,9 @@ layout:
 └── sudoers.yml
 ```
 
-[The role playbook, `sudoers.yml`, is
-simple:]{style="background-color: transparent;"}
+The role playbook, `sudoers.yml`, is simple:
 
-```
+```yaml
 ---
 ##
 # Role playbook
@@ -283,7 +282,7 @@ sudoers.d include to "hd" hosts.
 
 Below is what is in the `vars/main.yml` file:
 
-```
+```yaml
 ---
 MD5FILE: /root/.sudoer.md5
 EXCLUDE: la
@@ -299,7 +298,7 @@ jinja2 template.
 
 In the first line, we add the following to [manage whitespace and indentations](https://ansiblemaster.wordpress.com/2016/07/29/jinja2-lstrip_blocks-to-manage-indentation/):
 
-```
+```yaml
 #jinja2: lstrip_blocks: True, trim_blocks: True
 ```
 
@@ -308,21 +307,21 @@ Note that newer versions of the `template` module include parameters for
 
 Here is the code to insert the `include` line at the end of the file:
 
-```
+```yaml
 {% if ansible_hostname[0:2] == INCLUDE %}
 #includedir /etc/sudoers.d
 {% endif %}
 ```
 
-[We use a conditional ( `{% if %}`, `{% endif %}` ) to replace the shell
+We use a conditional ( `{% if %}`, `{% endif %}` ) to replace the shell
 that inserts the line for hosts where "hd" is in the first two
 characters of the hostname. We leverage Ansible facts and the filter
-`[0:2]` to parse the hostname.]{style="background-color: transparent;"}
+`[0:2]` to parse the hostname.
 
 Now for the tasks. First, set a fact to parse the hostname. We will use
 the "parhost" fact in conditionals.
 
-```
+```yaml
 ---
 ##
 # Parse hostnames to grab 1st 2 characters
@@ -337,10 +336,9 @@ of the checksum binary. Note that further coding may be needed if that
 differs between AIX, Solaris and Linux. As the customer was not
 concerned with the Solaris hosts, I skipped that development.
 
-We\'ll also deal with the difference in root\'s groups between AIX and
-RHEL.
+We'll also deal with the difference in root's groups between AIX and RHEL.
 
-```
+```yaml
 ##
 # Conditionally set name of checksum binary
 ##
@@ -360,19 +358,19 @@ Blocks will allow us to provide a conditional around the tasks. We'll
 use a conditional at the end of the block to exclude the "la"
 hosts.
 
-```
+```yaml
 ##
 # Enclose in block so we can use parhost to exclude hosts
 ##
 - block:
 ```
 
-[The template module validates and deploys the file. We register the
+The template module validates and deploys the file. We register the
 result so we can determine if there was a change in this task. Using the
 validate parameter of the module ensures the new sudoers file is valid
-before putting it in place.]{style="background-color: transparent;"}
+before putting it in place.
 
-```
+```yaml
 ##
 # Validate will prevent bad files, no need to revert
 # Jinja2 template will add include line
@@ -389,23 +387,19 @@ before putting it in place.]{style="background-color: transparent;"}
     register: sudochg
 ```
 
-[If a new template was deployed, we run shell to generate the checksum
-file.  The conditional updates the checksum file when the sudoers
-template is deployed, or if the checksum file is missing.  As the
-existing process also monitors other files, we use the shell code
-provided in the original
-script:]{style="background-color: transparent;"}
+If a new template was deployed, we run shell to generate the checksum file.
+The conditional updates the checksum file when the sudoers template is deployed, or if the checksum file is missing.
+As the existing process also monitors other files, we use the shell code provided in the original script:
 
-```
+```yaml
 - name: sudoers checksum
   shell: "grep -v '/etc/sudoers' {{ MD5FILE }} > {{ MD5FILE }}.tmp ; {{ csbin }} /etc/sudoers >> {{ MD5FILE }} ; mv {{ MD5FILE }}.tmp {{ MD5FILE }}"
   when: sudochg.changed or MD5STAT.exists == false
 ```
 
-[The file module enforces the
-permissions:]{style="background-color: transparent;"}
+The file module enforces the permissions:
 
-```
+```yaml
 - name: Ensure MD5FILE permissions
   file:
   path: "{{ MD5FILE }}"
@@ -415,12 +409,10 @@ permissions:]{style="background-color: transparent;"}
   state: file
 ```
 
-[Since the backup parameter does not provide any options for cleanup of
-older backups, we\'ll add some code to handle that for us. This also
-demonstrates leveraging the \"register\" and \"stdout_lines\"
-features.]{style="background-color: transparent;"}
+Since the backup parameter does not provide any options for cleanup of older backups, we'll add some code to handle that for us.
+This also demonstrates leveraging the "register" and "stdout_lines" features.
 
-```
+```yaml
 ##
 # List and clean up backup files. Retain 3 copies.
 ##
@@ -439,7 +431,7 @@ features.]{style="background-color: transparent;"}
 
 Closing the block:
 
-```
+```yaml
 ##
 # This conditional restricts what hosts this block runs on
 ##
@@ -464,4 +456,4 @@ have to have conversations with their Security team first. If desired,
 the sudoers template can be protected with Ansible Vault. Finally, use
 of groups could replace the logic around the includes and excludes.
 
-You can find the role on GitHub [here](https://github.com/AJEastwood/sudoers).
+You can find the [role on GitHub](https://github.com/AJEastwood/sudoers).

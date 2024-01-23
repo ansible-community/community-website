@@ -35,8 +35,7 @@ network devices, the same way Ansible works on Linux hosts.
 ## What can you do with the cli_command?
 
 The cli_command allows you to run arbitrary commands on network devices.
-Let's show a simple example using the cli_command, on an Arista vEOS
-device.
+Let's show a simple example using the cli_command, on an Arista vEOS device.
 
 ```yaml
 ---
@@ -153,7 +152,7 @@ full example look at this [GitHub repository](https://github.com/network-automat
 
 ## Backup example
 
-Let\'s look at another use-case with the cli_command module. Backing up
+Let's look at another use-case with the cli_command module. Backing up
 network configurations is a common network operational task. Ansible
 Network Automation modules have a backup parameter that helps network
 engineers automate this mundane, yet critical, task. For example with

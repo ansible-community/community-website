@@ -3,7 +3,7 @@ author: Gonéri Le Bouder
 date: 2020-09-29 00:00 UTC
 description: The Ansible VMware modules as part of the current
   community.vmware Collection are extremely popular. According to
-  GitHub, it\'s the second most forked Collection.
+  GitHub, it's the second most forked Collection.
 lang: en-us
 title: Introducing the VMware REST Ansible Content Collection
 ---

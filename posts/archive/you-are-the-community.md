@@ -18,7 +18,7 @@ a OpenStack private cloud. Anyone who has ever stood up or experimented
 with OpenStack knows that this is a tall order. Imagine having to stand
 up that platform over and over again on a daily basis. My focus was to
 find a way---a tool---that could help me do that, so I could focus on
-helping solve the customers\' true challenges. Fast forward to now, and
+helping solve the customers' true challenges. Fast forward to now, and
 the decision to do it with Ansible still stands as the best choice hands
 down.
 
@@ -49,8 +49,7 @@ That vision consists of:
 -   **A strong and focused mission**
 
 Rally the community around desired work streams by creating a
-centralized space to attract more community involvement and accelerate
-their impact.** **
+centralized space to attract more community involvement and accelerate their impact.
 
 -   **Cultivation of inclusiveness**
 
@@ -71,7 +70,6 @@ points quickly---then pivot when needed.
 -   **More frequent recognition of success**
 
 Call out, reward, and celebrate the wins of the community members often.
-
 
 We formed the strategy for the community from these tenets...big shout
 out to Greg Sutcliffe and Carol Chen for leading that charge. This

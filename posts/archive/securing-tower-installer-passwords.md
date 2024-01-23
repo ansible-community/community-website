@@ -31,18 +31,18 @@ protect the passwords in your installation files.
 
 # Ansible Tower's setup.sh
 
-For some quick background, setup.sh is the script used to install
+For some quick background, `setup.sh` is the script used to install
 Ansible Tower and is provided in both the regular and bundled installer.
-The setup.sh script only performs a couple of tasks, such as validating
+The `setup.sh` script only performs a couple of tasks, such as validating
 that Ansible is installed on the local system and setting up the
 installer logs; but most importantly, it launches Ansible to handle the
 installation of Ansible Tower. An inventory file can be specified to the
-installer using the -i parameter or, if unspecified, the default
-provided inventory file (which sits alongside setup.sh) is used. In the
+installer using the `-i` parameter or, if unspecified, the default
+provided inventory file (which sits alongside `setup.sh`) is used. In the
 first section of the inventory file, we have groups to specify the
 servers that Ansible Tower and the database will be installed on:
 
-``` 
+```ini
 [tower]
 localhost ansible_connection=local
 
@@ -50,10 +50,10 @@ localhost ansible_connection=local
 ```
 
 And, after those group specifications, there are variables that can be
-used to set the connections and passwords ,and is where you would
+used to set the connections and passwords, and is where you would
 normally enter your plain text passwords, such as:
 
-``` 
+```ini
 [all:vars]
 admin_password='T0w3r123!'
 
@@ -72,15 +72,14 @@ Once Ansible Tower is installed, this file can be safely removed, but if
 you ever need to modify your installation to add a node to a cluster or
 add/remove inventory groups, this file will need to be regenerated.
 Likewise, if you want to use the backup and restore functions of
-setup.sh, you will also need the inventory file with all of the
+`setup.sh`, you will also need the inventory file with all of the
 passwords as it was originally installed.
 
 # Vault to the Rescue
 
 Since the installer is using Ansible to install Ansible Tower, we can
 leverage some Ansible concepts to secure our passwords. Specifically, we
-will use [Ansible
-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) to
+will use [Ansible vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html) to
 have an encrypted password instead of a plain text password. If you are
 not familiar with Ansible vault, it is a program shipped with Red Hat
 Ansible Automation Platform itself and is a mechanism to encrypt and
@@ -93,12 +92,12 @@ versus just being able to say an encrypted file changed (but not being
 able to show which password within the encrypted file changed).
 
 To start, we are going to encrypt our admin password with the following
-command (fields in \<\> indicate input to ansible-vault):
+command (fields in `<>` indicate input to ansible-vault):
 
-``` 
+```bash
 $ ansible-vault encrypt_string --stdin-name admin_password
-New Vault password: 
-Confirm New Vault password: 
+New Vault password:
+Confirm New Vault password:
 Reading plaintext input from stdin. (ctrl-d to end input)
 <t0w3r123!>admin_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -113,17 +112,17 @@ Encryption successful
 
 In this example, we are running ansible-vault and asking it to encrypt a
 string. We've told ansible-vault that this variable will be called
-admin_password and it will have a value of **T0w3r123!** (what we would
+`admin_password` and it will have a value of **T0w3r123!** (what we would
 have entered into our inventory file). In the example, we used a
 password of '**password**' to encrypt these values. In a production
 environment, a much stronger password should be used to perform your
 vault encryption. In the output of the command, after the two ctrl-d
 inputs, our encrypted variable is displayed on the screen. We will take
-this output and put it into a file called passwords.yml next to our
-inventory file. After encrypting the second pg_password our password.yml
+this output and put it into a file called `passwords.yml` next to our
+inventory file. After encrypting the second `pg_password` our `password.yml`
 file looks like this:
 
-``` 
+```bash
 ---
 admin_password: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -141,37 +140,34 @@ pg_password: !vault |
           3435
 ```
 
-Now that we have our completed passwords.yml file, we have to tell the
+Now that we have our completed `passwords.yml` file, we have to tell the
 installer to load the passwords from this file and also to prompt us for
 the vault password to decrypt the value. To do this we will add three
-parameters to our setup.sh command. The first option is
-[-e@passwords.yml]{style="background-color: #f3f3f3;"}, which is a
+parameters to our `setup.sh` command. The first option is
+`-e@passwords.yml`, which is a
 standard syntax to tell Ansible to load variables from a specified file
-name (in this case passwords.yml). The second option will be
-**[\--]{style="background-color: #f3f3f3;"}**, which will tell the
-setup.sh script that any following options should be passed on to
-Ansible instead of being processed by setup.sh. The final option will be
-[\--ask-vault-pass]{style="background-color: #f3f3f3;"}, which tells
-Ansible to prompt us for the password to be able to decrypt the vault
-secrets. All together our setup command will become:
+name (in this case `passwords.yml`). The second option will be `--`, which will tell the
+`setup.sh` script that any following options should be passed on to
+Ansible instead of being processed by `setup.sh`.
+The final option will be `--ask-vault-pass`, which tells Ansible to prompt us for the
+password to be able to decrypt the vault secrets.
+All together our setup command will become:
 
-``` 
+```bash
 $ ./setup.sh -e@passwords.yml -- --ask-vault-pass
 ```
 
-If you normally add arguments to setup.sh, they will need to be merged
-into this command structure. Arguments to setup.sh will need to go
-before the [\--]{style="background-color: #f3f3f3;"} and any arguments
-you passed to Ansible would go after the
-[\--]{style="background-color: #f3f3f3;"}. 
+If you normally add arguments to `setup.sh`, they will need to be merged
+into this command structure. Arguments to `setup.sh` will need to go
+before the `--` and any arguments you passed to Ansible would go after the `--`. 
 
-When running setup.sh with these options you will now be prompted to
+When running `setup.sh` with these options you will now be prompted to
 enter the vault password before the Ansible installer begins:
 
-``` 
+```bash
 $ ./setup.sh -e@passwords.yml -- --ask-vault-pass
 Using /etc/ansible/ansible.cfg as config file
-Vault <password>: 
+Vault <password>:
 
 PLAY [tower:database:instance_group_*:isolated_group_*] ******************************************************************************************
 ```
@@ -180,12 +176,11 @@ Here I have to enter my weak vault password of 'password' for the
 decryption process to work. 
 
 This technique will work even if you leave the blank password variables
-in the inventory file because of the [variable precedence from
-Ansible](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable).
+in the inventory file because of the
+[variable precedence from Ansible](https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable).
 The highest precedence any variable can take comes from extra_vars
-(which is the [-e]{style="background-color: #f3f3f3;"} option we added
-to the installer), so values in our vault file will override any values
-specified in the inventory file.
+(which is the `-e` option we added to the installer), so values in
+our vault file will override any values specified in the inventory file.
 
 Using this method allows you to keep the inventory file and password
 files on disk or in an SCM and not have plain text passwords contained
@@ -197,9 +192,9 @@ Another option you could take if you only wanted a single inventory file
 would be to convert the existing ini inventory file into a yaml based
 inventory. This would allow you to embed the variables as vault
 encrypted values directly. While the scope of doing that is beyond this
-article, an example inventory.yml file might look similar to this:
+article, an example `inventory.yml` file might look similar to this:
 
-``` 
+```yaml
 all:
   children:
     database: {}
@@ -235,9 +230,9 @@ all:
     tower_package_version: 3.6.3
 ```
 
-Using a file like this, setup.sh could then be called as:
+Using a file like this, `setup.sh` could then be called as:
 
-``` 
+```bash
 $ ./setup.sh -i inventory.yml -- --ask-vault-pass
 ```
 

@@ -1,7 +1,7 @@
 ---
 author: Ajay Chenampara
 date: 2020-06-01 00:00 UTC
-description: In this blog post we\'ll walk through using Ansible
+description: In this blog post we'll walk through using Ansible
   Collections with Ansible Tower, part of the Red Hat Ansible Automation
   Platform.
 lang: en-us
@@ -21,7 +21,7 @@ a Red Hat Ansible Automation Platform subscription. Automation Hub only
 contains fully supported and certified content from Red Hat and our
 partners.
 
-In this blog post we\'ll walk through using Ansible Collections with
+In this blog post we'll walk through using Ansible Collections with
 Ansible Tower, part of the Red Hat Ansible Automation Platform.  There
 are a few differences between using command-line Ansible for syncing
 with Ansible Galaxy or the Automation Hub versus using Ansible Tower.
@@ -52,25 +52,19 @@ You will need to enter these details in the Ansible Tower settings*
 
  
 
-In order to do this, navigate to the *Settings \> Jobs*  sidebar link
+In order to do this, navigate to the *Settings > Jobs*  sidebar link
 from the Ansible Tower administration section.
 
 ![tower jobs ui](/images/posts/archive/tower-jobs-ui.png)
 
 Click on *Jobs* and update the following fields:
 
-1.  PRIMARY GALAXY SERVER URL:
-    https://cloud.redhat.com/api/automation-hub/
-2.  PRIMARY GALAXY AUTHENTICATION URL: 
-    https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
-3.  PRIMARY GALAXY SERVER TOKEN: xxxxxxxxxxxxxxxxxxxxxxxxx......\
-    \
+1.  PRIMARY GALAXY SERVER URL: `https://cloud.redhat.com/api/automation-hub/`
+2.  PRIMARY GALAXY AUTHENTICATION URL: `https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token`
+3.  PRIMARY GALAXY SERVER TOKEN: `xxxxxxxxxxxxxxxxxxxxxxxxx......`
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Red Hat recommends using Automation Hub for your primary Galaxy Server URL to ensure you are using certified content that is fully supported via your Red Hat Ansible Automation Platform subscription
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
- 
+> Red Hat recommends using Automation Hub for your primary Galaxy Server URL to ensure you are using certified content that is fully supported via your Red Hat Ansible Automation Platform subscription
 
 ![tower ui screenshot](/images/posts/archive/tower-galaxy-connect-parameters.png)
 

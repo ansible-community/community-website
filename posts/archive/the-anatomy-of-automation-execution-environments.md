@@ -159,7 +159,7 @@ NumPy
 There will be instances where the configuration in the automation
 execution environment specification isn't reflected or errors occur when
 you're building the automation execution environment. In these
-instances, it\'s important to understand the role for the
+instances, it's important to understand the role for the
 EE_BUILDER_IMAGE. The next section explains this in more detail.
 
 # Automation execution environment design

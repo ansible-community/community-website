@@ -29,7 +29,7 @@ Ansible inventory into Ansible Tower:
 3.  Setting Tower to access a git source-controlled inventory file
 
 If you're using [dynamic inventory](https://docs.ansible.com/ansible-tower/latest/html/userguide/inventories.html),
-you don\'t need to import your inventory into Ansible Tower. Dynamic
+you don't need to import your inventory into Ansible Tower. Dynamic
 inventory retrieves your inventory from an existing source. With dynamic
 inventory, you don't need to manage an inventory file at all, you just
 retrieve the latest and most up-to-date listing every time. Ansible
@@ -151,7 +151,8 @@ time you changed your inventory.
 The final method I want to cover in this post is using source control to
 manage my inventory. I have a flat-file inventory file stored in a
 Github repo. I made an example repo to illustrate this concept here:
-<https://github.com/ipvsean/sample_inventory>
+
+https://github.com/ipvsean/sample_inventory
 
 Unlike the previous two methods, this is not meant as a migration
 strategy, but a more permanent way to manage your Ansible inventory

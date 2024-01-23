@@ -87,8 +87,7 @@ PLAY RECAP *********************************************************************
 localhost                  : ok=1    changed=1    unreachable=0    failed=0
 ```
 
-We can login to the web https GUI website and look under **Data
-Management\>IPAM** where we will see the new network listed:
+We can login to the web https GUI website and look under **Data Management -> IPAM** where we will see the new network listed:
 
 ![Ansible-Infoblox-Image-1](/images/posts/archive/Ansible-Infoblox-Image-1.png)
 

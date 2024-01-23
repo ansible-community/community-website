@@ -212,7 +212,7 @@ groups.
 
 Latest version is pulled automatically, but you can specify the exact
 version as well. You don't need to use :latest - that's what you get
-automatically, assuming it doesn\'t have something like "-beta" or
+automatically, assuming it doesn't have something like "-beta" or
 prerelease versions (using hyphens) as part of it, which are not
 considered GA releases (and skipped).
 

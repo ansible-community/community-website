@@ -48,7 +48,7 @@ sure that you have the correct version of PowerShell installed on your
 Windows nodes, using DSC is as easy as executing a task using the
 `win_dsc` module.
 
-Let\'s look at it in action. For this example we\'ll ensure a DNS server
+Let's look at it in action. For this example we'll ensure a DNS server
 is installed, the `xDnsServer` DSC resource module is present, and also
 use a couple of the DSC resources under it to define a zone and an A
 Record:
@@ -93,7 +93,6 @@ A couple more points to remember:
 
 -   The `resource_name` must be set to the name of a DSC resource
     already installed on the target when defining the task.
-
 -   Matching the case to the documentation is best practices; this also
     makes it easier to tell the difference of DSC resource options from
     Ansible's `win_dsc` options.

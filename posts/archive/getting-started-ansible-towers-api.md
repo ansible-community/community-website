@@ -10,16 +10,16 @@ title: Getting Started with Ansible Tower's API
 
 # Getting Started with Ansible Tower's API
 
-Welcome to another entry in the [Getting Started
-series](/blog/topic/getting-started). The API (Application Programming
+Welcome to another entry in the Getting Started series.
+The API (Application Programming
 Interface) or, as I like to refer to it, the Magical Land of Automation
 Information, can be used in quite a few ways. In this Getting Started
 post, we will be discussing Red Hat Ansible Tower's API and how you can
 use it to extract information to utilize in your playbooks and other
 tools.
 
-The idea for this blog post came about when [David
-Federlein](/blog/author/david-federlein) was developing a new Ansible
+The idea for this blog post came about when David
+Federlein was developing a new Ansible
 Tower demo and presentation. I will be making references to [that
 codebase](https://github.com/dfederlein/ansible-tower-demo), which you
 can follow along with throughout this post. Please note that this demo
@@ -33,7 +33,7 @@ instance's REST API by typing this into your
 browser: `http://<Tower server name>/api/v2`. Once there, you can click
 any of the listed links and view the current objects loaded for that
 particular attribute in Ansible Tower. Everything you can do in Ansible
-Tower\'s UI can be done from the API; you can also use it to view
+Tower's UI can be done from the API; you can also use it to view
 everything from credentials to users. As we'll review in the next
 section, you can manually post to the API or make calls through a
 playbook.
@@ -48,28 +48,26 @@ today we are going to focus on two of the most basic:
 
 What I mean by "basic" here is that these methods are done only through
 Ansible Tower. As most of you might know, you can do some pretty amazing
-stuff with the information from Ansible Tower with other applications.\
-\
+stuff with the information from Ansible Tower with other applications.
+
 We'll not only be able to configure and modify Ansible Tower via these
 methods, but we'll also demonstrate that you can kick off jobs via API
 call as well. This will allow tighter integration with other aspects of
-your enterprise infrastructure and give the ability to run [Red Hat
-Ansible Engine](/products/engine) workloads while still restrained by
+your enterprise infrastructure and give the ability to run Red Hat
+Ansible Engine workloads while still restrained by
 the role-based access controls configured around those resources and Job
-Templates.\
-\
+Templates.
 
 ### Posting Manually
 
 For starters, the easiest (albeit not the quickest or most automated)
 way to post to the API is from the API interface. Here you can select an
 object to post to. Each object has a template at the bottom of the page
-that displays the fields that can be contained in a post.\
-\
+that displays the fields that can be contained in a post.
+
 For example, let's say you want to add a project to your Ansible Tower
 instance via the API. All you would have to do is navigate to your
-Ansible Tower's API screen
-[`(`]{style="background-color: #ffffff;"}`https://<towerip>/api/v2)`
+Ansible Tower's API screen `(https://<towerip>/api/v2)`
 select the project URL `(/api/v2/projects/)` and then scroll down to the
 bottom. Displayed there will be the content, which will look like this:
 
@@ -116,7 +114,7 @@ for POST, PUT and PATCH for the specific object or endpoint you are
 wishing to post to.
 
 Once the error you have found is fixed in the content field, hit
-\"Post\" one more time and note that the object has now been added to
+"Post" one more time and note that the object has now been added to
 Ansible Tower successfully.
 
 ### Posting Via a Playbook
@@ -132,11 +130,11 @@ construction of Ansible Playbooks. If you need help or want to brush up
 on your playbook knowledge, you can visit our
 [documentation](http://docs.ansible.com/ansible/latest/playbooks.html).
 
-The play that kicks off the job sync utilizes the [URI
-module](http://docs.ansible.com/ansible/latest/modules/uri_module.html)
+The play that kicks off the job sync utilizes the
+[URI module](http://docs.ansible.com/ansible/latest/modules/uri_module.html)
 within Ansible. This module is used to interact with web services, such
 as the Ansible Tower API. This exact play can be found in the codebase
-that I linked above at `` `/roles/tower/main.yml` ``.
+that I linked above at `/roles/tower/main.yml`.
 
 ```yml
 - name: kick off project sync
@@ -181,15 +179,15 @@ isn't that hard in Ansible Tower." This is correct, but for this
 example, we are going to kick off a job in Ansible Tower from a playbook
 task, which is yet another thing you can do by making a call to the API.
 The specific example I am going to reference can be found in the
-vagrant-common role (/roles/vagrant-common/main.yml).\
-\
+vagrant-common role (`/roles/vagrant-common/main.yml`).
+
 Now once you get your spectacles out, the task that I am narrowing is
 found in the example below:
 
 ```yml
 name: kick off the provisioning job template
-  shell:  "curl -f -H 'Content-Type: application/json' -XPOST --user 
-admin:{{ towerpass }} 
+  shell:  "curl -f -H 'Content-Type: application/json' -XPOST --user
+admin:{{ towerpass }}
 https://172.16.2.42/api/v2/job_templates/8/launch/ --insecure"
   when: inventory_hostname == 'demovm4'
 ```
@@ -202,8 +200,8 @@ That specific job template is assigned a number in Ansible Tower. In
 order to not have to go digging through the API to find your specific
 job template endpoint, a quick and easy way to find it is to navigate to
 the job template that you want to launch via the API. Once there, look
-at the URL and the number it\'s assigned to will be there.
+at the URL and the number it's assigned to will be there.
 
 Once you find the correct job template, the https endpoint will look
 something like `api/v2/job_templates/8/launch/`. Hit that endpoint with
-a \`-XPOST\` in a curl command and you should be cooking with gas.
+a `-XPOST` in a curl command and you should be cooking with gas.

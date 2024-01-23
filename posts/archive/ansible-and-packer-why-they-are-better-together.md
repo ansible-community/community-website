@@ -58,7 +58,7 @@ Configuration Language ) file I have an Ansible provisioner:
       command = "ansible-playbook"
       playbook_file = "pre_build_controller.yml"
       user = "ec2-user"
-      inventory_file_template = "controller ansible_host={{ .Host }} ansible_user={{ .User }} ansible_port={{ .Port }}\n"
+      inventory_file_template = "controller ansible_host={{ .Host }} ansible_user={{ .User }} ansible_port={{ .Port }}"
       extra_arguments = local.extra_args
 
     }
@@ -76,7 +76,6 @@ image.  This means there is less automation I need to do at boot time
 new process looks like this diagram:
 
 ![create pre-built image diagram](/images/posts/archive/ansible-packer-blog-two.png)
-
 
 These two processes, building images and serving a demo environment, are
 actually independent of each other.  Depending on how often a pre-built
@@ -110,12 +109,12 @@ Ansible take care of copying it to any other regions and return you with
 a list of new AMIs per region.
 
 ```yml
-  - name: copy ami
-      include_role:
-        name: ansible_cloud.share_ami.copy
-      vars:
-        ami_list: "{{ my_ami_list }}"
-        copy_to_regions: "{{ my_copy_to_regions }}"
+- name: copy ami
+    include_role:
+      name: ansible_cloud.share_ami.copy
+    vars:
+      ami_list: "{{ my_ami_list }}"
+      copy_to_regions: "{{ my_copy_to_regions }}"
 ```
 
 Where your variable file looks like this:
@@ -143,12 +142,12 @@ This allows you to share your pre_built AMIs to as many accounts as you
 want really quickly.
 
 ```yml
-    - name: share ami
-      include_role:
-        name: ansible_cloud.share_ami.share
-      vars:
-        user_id_list: "{{ account_list }}"
-        ami_list: "{{ my_ami_list }}"
+- name: share ami
+  include_role:
+    name: ansible_cloud.share_ami.share
+  vars:
+    user_id_list: "{{ account_list }}"
+    ami_list: "{{ my_ami_list }}"
 ```
 
 Where your variable file looks like this:

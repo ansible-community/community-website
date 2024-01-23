@@ -19,7 +19,7 @@ To set up the environment, I use a demo system and another workflow to
 create a random user and then allow a learner to progress through some
 challenges using full Red Hat Ansible Automation Platform deployments
 and a shared ServiceNow instance. Because this is a real live instance,
-there\'s no telling what sort of records learners will create. For this
+there's no telling what sort of records learners will create. For this
 reason, I recently had to develop some automation to clean up records
 created by these demo user accounts.
 
@@ -34,11 +34,9 @@ servicenow.itsm Collection equal to or greater than 2.0.0 (Community on
 Certified on [Ansible automation
 hub](https://console.redhat.com/ansible/automation-hub/servicenow/itsm)).
 
- 
+## How did I do it?
 
-# How did I do it?
-
-## Using sys_tags
+### Using sys_tags
 
 I have a tag setup in ServiceNow that gets applied to everything these
 demo users create. I like this approach because tag creation and
@@ -74,7 +72,7 @@ incident table for active records that have that tag applied:
   register: incidents
 ```
 
-*What\'s* sysparm_display_value*?* Fair enough, good question. This
+*What's* sysparm_display_value*?* Fair enough, good question. This
 parameter instructs my query to return the actual values, and not the
 display values. Display values vary depending on the type of field, and,
 in this case, sys_tags does not include the name of the tag returned by
@@ -102,12 +100,12 @@ Each object in the array should look something like:
 ```
 
 For my use case, having the time the record was created is super useful.
-I don\'t really want to destroy records that were created less than two
-hours ago. After all, I don\'t want to remove records in use by learners
+I don't really want to destroy records that were created less than two
+hours ago. After all, I don't want to remove records in use by learners
 progressing through my challenges.
 
 The last task is to take my list of incidents, and remove them if
-they\'re over two hours old. For this, I use the
+they're over two hours old. For this, I use the
 servicenow.itsm.incident module and some conditional check against the
 record creation time:
 
@@ -119,24 +117,24 @@ record creation time:
     close_code: "Solved (Permanently)"
     close_notes: "Closed with ansible servicenow.itsm"
   loop: "{{ incident_list }}"
-  when: 
+  when:
     - incident_list is defined
     - (( (ansible_date_time.date + ' ' + ansible_date_time.time) | to_datetime) - (item.opened_at | to_datetime)).total_seconds() > 7200
 ```
 
-**See that second line under** **when?** It\'s not super pretty, but
-it\'s basically making sure that the two time formats are the same
+**See that second line under** **when?** It's not super pretty, but
+it's basically making sure that the two time formats are the same
 before trying to evaluate the difference in seconds between the two
 dates. The first date/time is current execution time, the second
 date/time is the time the record was created. If the difference is
 greater than two hours (7200 seconds), then the condition is true, the
 task continues and the record is closed.
 
-## Without using sys_tags
+### Without using sys_tags
 
 What if I didn't have tags automatically applied to all of these
 records? In that case, I can query records by other keys using
-servicenow.itsm.\*\_info modules. For instance, I can query and close
+`servicenow.itsm.*_info` modules. For instance, I can query and close
 all active incident records created by a specific user:
 
 ``` yml
@@ -166,7 +164,7 @@ all active incident records created by a specific user:
     - incident_list is defined
 ```
 
-# Completing the picture
+## Completing the picture
 
 I have tasks that do similar things for different record types like
 problems, change requests, etc., but they all follow the same pattern as
@@ -198,7 +196,7 @@ automation strategy to other mainstay ITSM processes is made so much
 easier by leveraging Ansible Automation Platform and the Red Hat Ansible
 Certified Content Collection for ServiceNow ITSM.
 
-# Anything else?
+## Anything else?
 
 Yeah! Did you know there is a place to get hands-on experience with
 Ansible Automation Platform right

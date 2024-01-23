@@ -46,8 +46,8 @@ Benchmarks](https://www.cisecurity.org/cis-benchmarks/) across systems.
 CIS Benchmarks are, "guidelines for various technology groups to
 safeguard systems against today's evolving cyber threats." This enabled
 the customer interviewed for the study to navigate an ever changing
-security landscape. Using trusted automation workflows that \"maintain
-the latest and greatest standards\" created a more secure environment.
+security landscape. Using trusted automation workflows that "maintain
+the latest and greatest standards" created a more secure environment.
 
 Additionally, the study found Ansible Tower reduced response times to
 security incidents by 94%. When you consider something as impactful as

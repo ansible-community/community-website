@@ -12,7 +12,7 @@ Welcome to the second installment of our Windows-centric Getting Started series!
 
 Last time we walked you through how Ansible connects to a Windows
 host. We've also previously
-explored logging into Ansible Tower while [authenticating against an LDAP](/blog/getting-started-ldap-authentication-in-ansible-tower)
+explored logging into Ansible Tower while authenticating against an LDAP
 directory. In this post, we'll go over a few ways you can use Ansible to
 manage Microsoft's Active Directory. Since AD plays a role in many
 Windows environments, using Ansible to manage Windows will probably

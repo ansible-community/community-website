@@ -12,8 +12,6 @@ title: Continuous Detection and Mitigation (CDM)
 
 # Continuous Detection and Mitigation (CDM)
 
-# Overview
-
 Per
 [NASCIO](https://www.nascio.org/resource-center/resources/state-cio-top-ten-policy-and-technology-priorities-for-2022/),
 the top priority for state CIOs is cybersecurity and risk management. A
@@ -25,7 +23,7 @@ Ansible's role in security automation and finally understand how Ansible
 can help agencies with Day 0 through Day 2 tasks while working with the
 CDM framework.
 
-# What is CDM?
+## What is CDM?
 
 Today more than ever, cyber threats mean that securing and defending our
 networks are of utmost importance. A [recent
@@ -51,7 +49,7 @@ network, and what's happening on the network. CISA's CDM is leading that
 effort to reduce cyber risk by delivering tools to federal/state
 agencies to strengthen their ability to monitor and manage the threat of cyber vulnerabilities.
 
-# The CDM model
+## The CDM model
 
 The CDM framework provides an opinionated four layer architecture. The
 first layer, layer A, consists of sensors and scanners that are deployed
@@ -73,7 +71,7 @@ After normalization, the data is fed up into the C&D layers that consist of agen
 
 Agency security personnel then reviews the dashboards and makes decisions on prioritizing and mitigating the alerts.
 
-# Ansible for security automation
+## Ansible for security automation
 
 Ansible has been a leader in the infrastructure automation domain for
 years now. The value that Ansible brings to the infrastructure domain
@@ -96,8 +94,7 @@ multiple security tools within the CDM architecture,integrating between
 the tools and using the tool data to effectively manage changes to their
 end-points.
 
- 
-# Ansible for the CDM use case
+## Ansible for the CDM use case
 
 CDM has an opinionated architecture and an [approved product
 list](https://www.gsa.gov/technology/technology-products-services/it-security/continuous-diagnostics-mitigation-cdm/buy-continuous-diagnostics-and-mitigation-tools)
@@ -155,8 +152,7 @@ needed to look into a certain alert, Ansible could fire off tickets
 automatically to the appropriate teams who can then start their triage
 (and even use Ansible for that triage process).
 
-
-# Summary
+## Summary
 
 In summary, CDM is an opinionated security framework laid out by CISA
 and adopted by agencies as a way to address cybersecurity and threat

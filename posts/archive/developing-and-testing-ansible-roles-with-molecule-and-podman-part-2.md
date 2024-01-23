@@ -23,7 +23,7 @@ This basic role deploys a web application supported by the Apache web
 server. It must support Red Hat Enterprise Linux (RHEL) 8 and Ubuntu
 20.04.
 
-# Developing the Ansible Role with Molecule
+## Developing the Ansible Role with Molecule
 
 Molecule helps in the development stage by allowing you to "converge"
 the instances with the role content. You can test each step without
@@ -118,7 +118,7 @@ $ vi tasks/main.yml
 Save this file, and "converge" the instances again to ensure it works
 this time:
 
-``bash
+```bash
 $ molecule converge
 ... TRUNCATED OUTPUT ...
    TASK [mywebapp : Ensure httpd installed] ***************************************
@@ -254,7 +254,7 @@ is working properly across multiple platforms for each step of the way.
 
 Next, let's automate the verification process.
 
-# Verifying the Role with Molecule
+## Verifying the Role with Molecule
 
 In addition to helping you converge the instance to aid with the role
 development, Molecule can also automate the testing process by executing
@@ -379,7 +379,7 @@ ensure the role produces the required results.
 
 In the final step, let's put it all together with automated tests.
 
-# Automating the Complete Test Workflow
+## Automating the Complete Test Workflow
 
 Now that all of the pieces are together, automate the complete testing
 process workflow using the command "molecule test".
@@ -438,7 +438,7 @@ If the test workflow fails at any point, the command returns a status
 code different than zero. You can use that return code to automate the
 process or integrate Molecule with CI/CD workflows.
 
-# Conclusion
+## Conclusion
 
 Now that you've successfully applied Molecule to develop and test a role
 that is well written and works reliably across different environments,

@@ -86,7 +86,7 @@ Code languages can be found in their
 
 ## A Quick Tour of Ansible Lightspeed: Generating Your First Task
 
-Now that you are connected to Ansible Lightspeed, it\'s time to
+Now that you are connected to Ansible Lightspeed, it's time to
 experience its AI-enhanced content creation experience.
 
 Let's use an

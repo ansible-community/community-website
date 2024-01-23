@@ -187,16 +187,14 @@ variables with the [Network RHEL System Role](https://github.com/linux-system-ro
 
 This will configure the connection profile internal_network. It limits
 the profile to the device at the PCI address
-`0000:00:1f.6` using the
-device\'s MAC address.
+`0000:00:1f.6` using the device's MAC address.
 
 ## Outlook
 
 Since the on-disk configuration still uses the MAC address, changing a
 network card will require to run the playbook again. To avoid this,
 NetworkManager would need to allow specifying the PCI address in the
-configuration directly. I filed an [RFE
-proposal](https://bugzilla.redhat.com/show_bug.cgi?id=1673321) for
+configuration directly. I filed an [RFE proposal](https://bugzilla.redhat.com/show_bug.cgi?id=1673321) for
 NetworkManager to support this in the future. Depending on the installed
 version of the Jinja2 templating engine, the
 `dict()` constructor allows
@@ -210,9 +208,8 @@ vars:
   }}"
 ```
 
-This works on RHEL 8 and recent versions of Fedora now. But, [RHEL 7
-does not support it,
-yet](https://bugzilla.redhat.com/show_bug.cgi?id=1697237).
+This works on RHEL 8 and recent versions of Fedora now.
+But, [RHEL 7 does not support it, yet](https://bugzilla.redhat.com/show_bug.cgi?id=1697237).
 
 ## Conclusion
 
