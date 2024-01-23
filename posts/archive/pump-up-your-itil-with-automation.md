@@ -97,7 +97,7 @@ state in your CMDB.
 
 ![database population](/images/posts/archive/database-population-diagram.png)
 
-Let\'s assume you have a service portal where customers can order new
+Let's assume you have a service portal where customers can order new
 services or modify and decommission them, using a service catalogue and
 a dialog driving them through the choices they need to make. Using the
 input variables grabbed through the dialog, the service portal can,

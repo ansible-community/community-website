@@ -75,7 +75,7 @@ sn_priority: 2
 
 The following is the Ansible Playbook to create a ServiceNow ticket:
 
-```
+```yaml
 ---
 - name: Create ticket with notes
   hosts: localhost
@@ -99,7 +99,7 @@ The following is the Ansible Playbook to create a ServiceNow ticket:
         short_description: "This is a test opened by Ansible"
     register: new_incident
 
-  - debug: 
+  - debug:
       var: new_incident.record
 ```
 
@@ -114,7 +114,7 @@ variable name to that dictionary and then using `debug` to view it in the
 terminal. The following is just a portion of the full dictionary for the
 sake of brevity:
 
-![blog_leverage-servicenow-api](/images/posts/archive/Images/blog-social/blog_leverage-servicenow-api.png)
+![blog_leverage-servicenow-api](/images/posts/archive/blog_leverage-servicenow-api.png)
 
 This is very handy in spelling out the parameters you can add under the
 `data` section of your
@@ -129,7 +129,7 @@ This variable (var) is defined as pulling from the stored register
 `record` and the parameter
 of that dictionary called `number`.
 
-![blog_leverage-servicenow-api-2](/images/posts/archive/Images/blog-social/blog_leverage-servicenow-api-2.png)
+![blog_leverage-servicenow-api-2](/images/posts/archive/blog_leverage-servicenow-api-2.png)
 
 You could do the same thing with any parameter of the record dictionary
 such as `close_code`, `state`, `comments`, and many
@@ -141,13 +141,13 @@ Next, log into your developers instance of ServiceNow and view the
 **Change->all** section in the left menu bar. You should see your change
 request in the list.
 
-![blog_servicenow-screen](/images/posts/archive/Images/blog-social/blog_servicenow-screen.png)
+![blog_servicenow-screen](/images/posts/archive/blog_servicenow-screen.png)
 
 Notice that the short description has been filled out by our Ansible
 Playbook task: This is a test opened by Ansible as well as the priority
 `2 - High`.
 
-![blog_servicenow-screen-2](/images/posts/archive/Images/blog-social/blog_servicenow-screen-2.png)
+![blog_servicenow-screen-2](/images/posts/archive/blog_servicenow-screen-2.png)
 
 ## Closing a ServiceNow ticket
 
@@ -164,7 +164,7 @@ The following is a snippet from the
 `record` dictionary when
 we created our ticket:
 
-![blog_closing-servicenow-ticket](/images/posts/archive/Images/blog-social/blog_closing-servicenow-ticket.png)
+![blog_closing-servicenow-ticket](/images/posts/archive/blog_closing-servicenow-ticket.png)
 
 Notice the original `state` was `-5`. The Ansible task
 below will change it to `-3`, which results in a

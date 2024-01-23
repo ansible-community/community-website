@@ -4,6 +4,7 @@ date: 2022-09-13 00:00 UTC
 description: Comparing and contrasting Red Hat Ansible Automation
   Platform and Hashicorp Terraform
 lang: en-us
+slug: ansible-vs.-terraform-demystified
 title: Ansible versus Terraform Demystified
 ---
 

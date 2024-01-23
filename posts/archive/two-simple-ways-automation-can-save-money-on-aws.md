@@ -20,7 +20,7 @@ common operational tasks.
 
 What is an operational task? It is simply anything that an administrator
 has to do outside of creating and deleting cloud resources (e.g.
-instances, networks, keys, etc.) to help maintain their company\'s
+instances, networks, keys, etc.) to help maintain their company's
 public cloud account. One of the problems I've encountered is instances
 being left on, running up our public cloud bill in the background while
 we were focusing our attention elsewhere. The more users you have, the
@@ -80,12 +80,12 @@ have no tags. First, let's retrieve all instances in a particular
 region that are running:
 
 ```yaml
-    - name: grab info for un-tagged instances
-      amazon.aws.ec2_instance_info:
-        region: "{{ ec2_region }}"
-        filters:
-          instance-state-name: running
-      register: ec2_node_info
+- name: grab info for un-tagged instances
+  amazon.aws.ec2_instance_info:
+    region: "{{ ec2_region }}"
+    filters:
+      instance-state-name: running
+  register: ec2_node_info
 ```
 
 I am using the ec2_instance_info module found in the AWS Collection,
@@ -94,26 +94,26 @@ part of the Amazon namespace. This task retrieves all instances
 then filter out for empty tags:
 
 ```yaml
-    - name: set the untagged to a var
-      set_fact:
-        untagged_instances: "{{ ec2_node_info.instances | selectattr('tags', 'equalto', {}) | map(attribute='instance_id') | list }}"
+- name: set the untagged to a var
+  set_fact:
+    untagged_instances: "{{ ec2_node_info.instances | selectattr('tags', 'equalto', {}) | map(attribute='instance_id') | list }}"
 ```
 
 This
 [selectattr](https://docs.ansible.com/ansible/latest/user_guide/complex_data_manipulation.html#data-manipulation)
 filter is simply matching any instance that has no tags with the
-[\'tags\', \'equalto\', {} ]
+`['tags', 'equalto', {} ]`
 
 I can then simply terminate these since my colleague didn't follow my
 well establish guidelines:
 
 ```yaml
-    - name: Terminate every un-tagged running instance in a region.
-      amazon.aws.ec2:
-        region: "{{ ec2_region }}"
-        state: absent
-        instance_ids: "{{ untagged_instances }}"
-      when: untagged_instances | length  > 0
+- name: Terminate every un-tagged running instance in a region.
+  amazon.aws.ec2:
+    region: "{{ ec2_region }}"
+    state: absent
+    instance_ids: "{{ untagged_instances }}"
+  when: untagged_instances | length  > 0
 ```
 
 However, since you might be more forgiving than me, you could use
@@ -129,9 +129,9 @@ instance that is missing the owner tag. I can use the exact same logic
 as above but instead use the selectattr filter to look for undefined. 
 
 ```yaml
-    - name: set the missing tag to a var
-      set_fact:
-        missing_tag: "{{ ec2_node_info.instances | selectattr('tags.owner', 'undefined') | map(attribute='instance_id') | list }}"
+- name: set the missing tag to a var
+  set_fact:
+    missing_tag: "{{ ec2_node_info.instances | selectattr('tags.owner', 'undefined') | map(attribute='instance_id') | list }}"
 ```
 
 I wanted to show both examples above to give a path to
@@ -158,14 +158,14 @@ The above Ansible Playbook in the previous example can catch that.
 However another great test is to use a new uptime parameter.
 
 ```yaml
-    - name: grab info
-      amazon.aws.ec2_instance_info:
-        region: "{{ ec2_region }}"
-        uptime: 121
-        filters:
-          instance-state-name: [ "running" ]
-          "tag:ansible-workshops": true
-      register: ec2_node_info
+- name: grab info
+  amazon.aws.ec2_instance_info:
+    region: "{{ ec2_region }}"
+    uptime: 121
+    filters:
+      instance-state-name: [ "running" ]
+      "tag:ansible-workshops": true
+  register: ec2_node_info
 ```
 
 In this task there are two parameters I want to call out. First is the

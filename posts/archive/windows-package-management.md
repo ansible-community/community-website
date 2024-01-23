@@ -2,7 +2,7 @@
 author: Jake Jackson
 date: 2018-05-14 00:00 UTC
 description: Ansible and Ansible Tower to help manage your Active
-  Directory environment. We\'ll show you how you can configure some of
+  Directory environment. We'll show you how you can configure some of
   those machines on your domain.
 lang: en-us
 title: Windows Package Management
@@ -58,8 +58,8 @@ http://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9A
 ```
 
 Above, we see that the product ID is listed. While Ansible can and does
-extract the ID from the MSI when it\'s local, we don\'t want to force
-the host to download the MSI if it\'s not necessary. When you supply the
+extract the ID from the MSI when it's local, we don't want to force
+the host to download the MSI if it's not necessary. When you supply the
 product ID, Ansible can quickly check to see if the package is already
 installed without downloading a potentially huge MSI from the internet
 first. You can install without the product ID. An example of this can be
@@ -96,7 +96,7 @@ a whole lot of those products are making their way into data centers.
 There is, however, a community project called Chocolatey that provides a
 full package management experience for Windows users. It helps take away
 some of the pain that comes with managing raw `setup.exe` and `.msi`
-files. And wouldn\'t you know, we have a module for it!
+files. And wouldn't you know, we have a module for it!
 
 But before we get into talking about the module, let's talk a little bit
 more about Chocolatey. A good comparison for people who might be Mac

@@ -29,7 +29,6 @@ content can be used to:
 -   Take corrective remediation action as required.
 -   Validate input data as per the data model schema
 
-
 ## Gathering state data from a remote host
 
 The recently released
@@ -226,8 +225,6 @@ ok: [nxos] => {
 ok: [nxos] => {
    "msg": "Ethernet2/10"
 }
-
-
 
 PLAY RECAP ******************************************************************************************************************************************
 nxos                       : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=1

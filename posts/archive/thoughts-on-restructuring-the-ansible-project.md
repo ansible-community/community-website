@@ -207,9 +207,7 @@ policies would be up to the discretion of the individual partners.
 
 All of these different components would be built in the form of
 **Ansible Content Collections**, which we first introduced in Ansible
-2.8, and which Dylan Silva, product manager for Ansible, describes in
-more detail
-[here](/blog/the-future-of-ansible-content-delivery).
+2.8.
 
 From a **deployment perspective**, Ansible would be delivered in one of
 two fundamental ways:

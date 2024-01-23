@@ -37,7 +37,7 @@ Once you are in the Ansible Tower Configuration, select the System tab
 up at the top next to Jobs. Once there, we are going to be making an
 edit to the Remote Host Headers box. There will already be some text in
 there that is set after the installation. By default REMOTE_HOST_HEADERS
-is set to [\[\'REMOTE_ADDR\', \'REMOTE_HOST\'\]]{.monospace}.
+is set to `['REMOTE_ADDR', 'REMOTE_HOST']`.
 
 The edit you are going to make should reflect the following line with
 the relevant information from your organization\'s environment.

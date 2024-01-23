@@ -37,7 +37,7 @@ network platform. We will walk through several examples and describe the
 use cases for each state parameter and how we envision these being used
 in real world scenarios.
 
-# OSPFv2 resource modules example: Vyos
+## OSPFv2 resource modules example: Vyos
 
 The goal of OSPFv2 resource modules is to make sure configurations are
 consistently applied across the infrastructure with less effort. It
@@ -63,7 +63,7 @@ Also, to better showcase the effect of the modules, we will start with
 some [OSPF version 2 specific attributes](https://gist.github.com/rohitthakur2590/4446ba7c274659395381495e28229943)
 already configured. Check out the linked listing for further details.
 
-## Accessing and using the VyOS Collection
+### Accessing and using the VyOS Collection
 
 To download the VyOS Collection, refer to Automation Hub (fully
 supported, requires a Red Hat Ansible Automation Platform subscription)
@@ -97,9 +97,9 @@ Ansible facts gathering and resource
 module approach, which is more closely aligned with network professionals day
 to day working.
 
-# Use Case: OSPFv2 configuration changes
+## Use Case: OSPFv2 configuration changes
 
-## Using state gathered - Building an Ansible inventory
+### Using state gathered - Building an Ansible inventory
 
 Resource modules allow the user to read in existing network
 configuration and convert that into a structured data model. The
@@ -168,7 +168,7 @@ ospfv2:
 You can check out the full detailed listing of the output of this
 example in the [state: gathered reference gist](https://gist.github.com/rohitthakur2590/0e18173ee73a07a050d5b02ec6777c3d).
 
-## Using state merged - Pushing configuration changes
+### Using state merged - Pushing configuration changes
 
 The state merged will take your Ansible configuration data (i.e.
 Ansible variables) and merges them into the network device's running
@@ -248,7 +248,7 @@ charm of Idempotency comes to picture. If nothing's changed, play run
 results into changed=False, which confirms to the user that all of
 the provided configurations in the play are already configured on the IOS device.
 
-## Using state replaced - Replacing configuration
+### Using state replaced - Replacing configuration
 
 If the user wants to re-configure the VyOS device entirely
 pre-configured OSPFV2 with the provided OSPFV2 configuration, then the
@@ -354,7 +354,7 @@ With the second run of the above play, there
 are no changes reported which satisfies the Ansible
 idempotency.
 
-## Using state deleted - Delete configuration
+### Using state deleted - Delete configuration
 
 Now that we've talked about how we can configure OSPFV2 specific
 attributes on the VyOS device by using vyos_ospfv2 resource module
@@ -393,7 +393,7 @@ If we dig into the above output briefly, we can see that all the ospfv2
 resource-specific config has been removed from the network
 configuration.
 
-## Using state rendered - Development and working offline
+### Using state rendered - Development and working offline
 
 Ansible renders the provided configuration in the task in the
 device-native format (for example, VyOS CLI). Ansible returns this
@@ -445,7 +445,7 @@ If we dig into the above output, we can see that nothing has changed at
 all; rendered doesn't even require the connection establishment with an
 actual network device.
 
-## Using state parsed - Development and working offline
+### Using state parsed - Development and working offline
 
 Ansible parses the configuration from the running_configuration option
 into Ansible structured data in the parsed key in the result. Note this
@@ -463,7 +463,7 @@ set protocols ospf area 4 network '192.0.2.0/24'
 set protocols ospf area 4 range 192.0.3.0/24 cost '10'
 ```
 
-[The playbook to apply this configuration is:
+The playbook to apply this configuration is:
 
 ```yaml
 ---
@@ -480,8 +480,7 @@ set protocols ospf area 4 range 192.0.3.0/24 cost '10'
         state: parsed
 ```
 
-[Execute the playbook generates the following
-output:
+Execute the playbook generates the following output:
 
 ```yaml
 "parsed": {
@@ -506,7 +505,7 @@ with an actual network device.
 
 Note: parsed input to be provided as value to running_config key.
 
-# Takeaways & Next Steps
+## Takeaways & Next Steps
 
 As shown above, with the help of the resource modules management of
 OSPFV2, resource-specific configurations can be greatly simplified.

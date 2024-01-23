@@ -34,12 +34,10 @@ though automation will save them time and money in the long run. I
 fundamentally believe that network automation is not an all or nothing
 situation.  You need to adopt network automation in small increments so
 you can earn yourself, and your team more time.  In other words, start
-small and think big. I put together this [video to help network
-engineers brainstorm five great use cases for network
-automation](https://youtu.be/wXUgYfZKMHU). This list is not exhaustive;
-there are many more use-cases that you can do with network automation,
-but this is meant to give network administrators an idea of what is
-possible.
+small and think big. I put together this
+[video to help network engineers brainstorm five great use cases for network automation](https://youtu.be/wXUgYfZKMHU).
+This list is not exhaustive; there are many more use-cases that you can do with network automation,
+but this is meant to give network administrators an idea of what is possible.
 
 If you're looking to learn more about a specific use-case, you can jump
 right to it:

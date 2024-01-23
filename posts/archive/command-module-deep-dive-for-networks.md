@@ -64,7 +64,6 @@ Here is a simple playbook using eos_command to run **show version**:
        var: output
 ```
 
-
 There are two tasks; the first task uses eos_command with a single
 parameter called **commands**. Since I am only running one command I can
 just type `show version` on the same line as commands. If I had more
@@ -283,11 +282,9 @@ The list number directly corresponds to the order the command was run in.
 | `show ip int br`        | `output.stdout_lines[1]` |
 | `show int status`       | `output.stdout_lines[2]` |
 
-
 ## Scaling Command Module Use: Host Variables
 
-So what happens if we run on two or more network devices at the same
-time?
+So what happens if we run on two or more network devices at the same time?
 
 ![diagram of Ansible running multiple network devices](/images/posts/archive/ansible-multiple-network-devices-run.png)
 
@@ -447,8 +444,6 @@ Let's quickly elaborate on the match parameter:
       - result[0] contains 172.16.1.2
 ```
 
-
-
 With `match: any` set, the task will succeed if the result contains
 either FULL or 172.16.1.2. With `match: all` (which is the default),
 both must be true before the task can successfully pass. It is far more
@@ -469,8 +464,7 @@ five. Just remember that **any** implies OR versus **all** which implies
 | match: any    | Implicit OR, any conditional can be met            |
 | match: all    | Implicit AND, all conditionals must be met         |
 
-
-Negative Conditions: Handling Inverse Logic
+## Negative Conditions: Handling Inverse Logic
 
 Sometimes you are looking for absences or other negative conditions in
 command output. It's tempting to use the `neq` comparison for any

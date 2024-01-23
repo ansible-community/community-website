@@ -182,8 +182,6 @@ initial cost = (C1 + C2) * COST
 year 1 cost = (C1 + C2) * COST²
 ```
 
-
-
 The next two years after the first year, the formula uses the following
 variables for its calculation. 
 
@@ -232,11 +230,11 @@ S3 = S2 * RISK * COST²
 Year One Savings = S2 - S3 - Year One Cost
 ```
 
-HOSTS - number of hosts
-TIME - manual time in minutes
-FREQUENCY - yearly frequency of automation
-RECAPTURE - 50% productivity recapture
-RISK - 5% Risk Adjustment
+- HOSTS - number of hosts
+- TIME - manual time in minutes
+- FREQUENCY - yearly frequency of automation
+- RECAPTURE - 50% productivity recapture
+- RISK - 5% Risk Adjustment
 
 The formula used to capture savings for year two:
 

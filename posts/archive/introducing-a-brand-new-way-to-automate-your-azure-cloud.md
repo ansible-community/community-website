@@ -55,7 +55,7 @@ active directory (AD) environment for authentication.
 ![screenshot](/images/posts/archive/azure-ad-integration.png)
 
 There's great automation content available for you to leverage with
-examples to learn from if you\'re new to Red Hat Ansible Automation
+examples to learn from if you're new to Red Hat Ansible Automation
 Platform on Azure.
 
 Here's a GitHub repository that has automation content for automating

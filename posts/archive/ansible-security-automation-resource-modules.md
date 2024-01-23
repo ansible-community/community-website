@@ -114,7 +114,7 @@ As an example, let's first check the current documentation. For that, we
 can use the capability of the module to gather the existing ACLs
 configuration:
 
-```
+```yaml
 ---
 - name: Get structured data
   hosts: cisco
@@ -134,7 +134,7 @@ configuration:
 
 The output will be something along the lines of:
 
-```
+```yaml
 - acls:
    - aces:
        - destination:
@@ -155,7 +155,7 @@ Given the configuration at hand, let's assume for the sake of this
 example that we analyze the gathered configuration, and want to make a
 change to it. The next configuration looks like:
 
-```
+```yaml
 - acls:
   - name: global_access
     acl_type: extended
@@ -183,7 +183,7 @@ agnostic and can be used with other systems as well.
 Given this description is available as the variable acls this can be
 deployed with the cisco_acls module:
 
-```
+```yaml
 ---
 - name: Replace ACLs device configuration
   hosts: cisco

@@ -40,7 +40,7 @@ business-critical applications. Historically, AIX systems were managed
 using the tools that ship with AIX, complimented by shell scripts
 written by AIX system administrators. The problem with this approach is
 that these scripts can become extremely complex over the years, and
-often wind up being held together with "duct tape and zip ties".\
+often wind up being held together with "duct tape and zip ties".
 
 As enterprises move to a modern, enterprise-wide automation strategy
 with Ansible Automation Platform, extending automation to AIX is a great
@@ -51,7 +51,7 @@ across the enterprise.
 ## Ansible Concepts
 
 First let us cover some basic Ansible concepts that will be used in the
-example. Further information can be found on the 
+example. Further information can be found on the
 [Ansible documentation site](https://docs.ansible.com).
 
 Playbooks, which are ordered lists of tasks and variables that are
@@ -75,14 +75,14 @@ inventory, other than the host that the Ansible run is targeted against.
 In this example, I'm using a Fedora Linux 34 workstation, so I'm going
 to use the dnf package manager to install Ansible:
 
-```
+```bash
 $ sudo dnf install -y ansible
 ```
 
 Once Ansible is installed, I'm going to install the ibm.power_aix
 Collection:
 
-```
+```bash
 $ ansible-galaxy collection install ibm.power_aix
 ```
 
@@ -95,7 +95,7 @@ hosts used in this example:
 -   bruce is an AIX 7.2 NIM client registered to the nim01 NIM master.
 -   freddie is an AIX 7.2 NIM client registered to the nim01 NIM master.
 
-```
+```bash
 $ cat /etc/ansible/hosts
 nim01 ansible_host=10.0.0.5 ansible_user=root
 bruce ansible_host=10.0.0.6 ansible_user=root
@@ -108,7 +108,7 @@ for this example I will use "root" in our lab environment. Using the
 ssh-copy-id command, I can distribute my SSH public key to the AIX
 servers.
 
-```
+```bash
 $ ssh-copy-id root@nim01
 $ ssh-copy-id root@bruce
 $ ssh-copy-id root@freddie
@@ -117,7 +117,7 @@ $ ssh-copy-id root@freddie
 The next step is to use the Ansible ping module to check that I can
 connect to the three hosts in our inventory.
 
-```
+```bash
 $ ansible -m ping all
 
 PLAY [Ansible Ad-Hoc] ************************************************************************************************************************************************************************************************************************
@@ -142,7 +142,7 @@ system and manage it.
 The playbook below uses the IBM provided role to prepare an AIX system
 for Ansible automation.
 
-```
+```bash
 cat aix_bootstrap.yml
 ---
 
@@ -161,7 +161,7 @@ see that the hosts Ansible is running against already have "python" and
 "yum" installed, so there is no need for any changes to be made to these
 hosts.
 
-```
+```bash
 $ ansible-playbook aix_bootstrap.yml
 
 PLAY [Prep AIX for Ansible] ******************************************************************************************************************************************************************************************************************
@@ -218,7 +218,7 @@ ready to automate AIX operations.
 First off, I'll use a simple playbook to see what "oslevel" our NIM
 master and NIM clients are on, before I start.
 
-```
+```bash
 $ cat aix_oslevel_check.yml
 ---
 
@@ -238,7 +238,7 @@ $ cat aix_oslevel_check.yml
 Running that playbook delivers the below result. I can see that bruce
 and freddie are a service pack behind.
 
-```
+```bash
 $ ansible-playbook aix_oslevel_check.yml
 
 PLAY [AIX oslevel checking playbook ] *****************************************************************************************************************************************************************************************************************
@@ -272,7 +272,7 @@ download the latest service pack. It should define an "lpp_source" on
 our NIM master. Make sure that the name of the "lpp_source" matches the
 example below, or the Ansible module will not detect the "oslevel".
 
-```
+```bash
 $ cat aix_download.yml
 ---
 
@@ -298,7 +298,7 @@ Next step is to run the *download playbook*. It will download the
 required updates from IBM Fix Central and define an "lpp_source" on the
 NIM master:
 
-```
+```bash
 $ ansible-playbook aix_download.yml
 
 PLAY [AIX Patching Playbook] *****************************************************************************************************************************************************************************************************************
@@ -326,7 +326,7 @@ the following tasks:
 -   Reboot.
 -   Run an application start script.
 
-```
+```yaml
 ---
 
 - name: AIX Patching Playbook
@@ -367,7 +367,7 @@ the following tasks:
 Now I will run the playbook and patch the NIM client systems "bruce" and
 "freddie":
 
-```
+```bash
 $ ansible-playbook aix_patching.yml
 
  PLAY [AIX Patching Playbook] *****************************************************************************************************************************************************************************************************************
@@ -408,7 +408,7 @@ freddie               : ok=7    changed=6    unreachable=0    failed=0    skippe
 Next, I will run the aix_oslevel_check.yml playbook again and see that
 the systems are all on AIX 7.2 TL5 SP2.
 
-```
+```bash
 $ ansible-playbook aix_oslevel_check.yml
 
 PLAY [AIX oslevel checking playbook ] *****************************************************************************************************************************************************************************************************************

@@ -43,14 +43,13 @@ Enough talking about it, let's see an example. We are going to have to
 create objects in Ansible Tower. Specifically, the objects in the table
 below.
 
-  ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-       Resource                                                                                                                                                                                                      Value 
-     Organization                                                                                                                                                                                                 Transformers
-      Inventory                                                                                                                                                                                                     Autobots 
-       Project                                                                                                                                                                             [Facts](https://github.com/chrismeyersfsu/ansible-examples)
-         Hosts                                                                                                                                                                                              optimus, bumblebee, jazz
-    Job Templates\*    [gather](https://github.com/chrismeyersfsu/ansible-examples/blob/master/gather_facts/main.yml), [clear](https://github.com/chrismeyersfsu/ansible-examples/blob/master/clear_facts/main.yml), [subnet](https://github.com/chrismeyersfsu/ansible-examples/blob/master/subnet/main.yml), [set_fact_cacheable](https://github.com/chrismeyersfsu/ansible-examples/blob/master/set_fact/cacheable.yml)
-  ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Resource         | Value                                                       |
+| ---------------- | ----------------------------------------------------------- |
+| Organization     | Transformers                                                |
+| Inventory        | Autobots                                                    |
+| Project          | [Facts](https://github.com/chrismeyersfsu/ansible-examples) |
+| Hosts            | optimus, bumblebee, jazz                                    |
+| Job Templates    | [gather](https://github.com/chrismeyersfsu/ansible-examples/blob/master/gather_facts/main.yml), [clear](https://github.com/chrismeyersfsu/ansible-examples/blob/master/clear_facts/main.yml), [subnet](https://github.com/chrismeyersfsu/ansible-examples/blob/master/subnet/main.yml), [set_fact_cacheable](https://github.com/chrismeyersfsu/ansible-examples/blob/master/set_fact/cacheable.yml) |
 
 > Enable fact cache for all the job templates
 
@@ -98,16 +97,16 @@ image).
 
 Specifically:
 
-```
-    a:
-       b:
-          c:
-            - a
-            - b
+```yaml
+a:
+   b:
+      c:
+        - a
+        - b
 ```
 
 These facts were set by this playbook which uses the set_fact Ansible
-module with cacheable: true set.
+module with `cacheable: true` set.
 
 ### Create a Smart Inventory
 
@@ -133,20 +132,20 @@ we can construct a Smart Inventory host filter like
 playbook [accomplishes this](https://github.com/chrismeyersfsu/ansible-examples/blob/master/subnet/main.yml).
 
 ```yml
-    - hosts: all
-      vars:
-        subnet: '172.18.0.0/16'
-      tasks:
-        - name: "Presume host to not belong to subnet"
-          set_fact:
-            is_subnet: False
-            cacheable: True
+- hosts: all
+  vars:
+    subnet: '172.18.0.0/16'
+  tasks:
+    - name: "Presume host to not belong to subnet"
+      set_fact:
+        is_subnet: False
+        cacheable: True
 
-        - name: "Figure out if host belongs to subnet"
-          set_fact:
-            is_subnet: True
-            cacheable: True
-          when: ansible_all_ipv4_addresses | ipaddr(subnet)
+    - name: "Figure out if host belongs to subnet"
+      set_fact:
+        is_subnet: True
+        cacheable: True
+      when: ansible_all_ipv4_addresses | ipaddr(subnet)
 ```
 
 ### Future

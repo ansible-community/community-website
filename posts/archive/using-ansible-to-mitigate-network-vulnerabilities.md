@@ -18,22 +18,22 @@ security vulnerabilities that span multiple teams (networking, servers,
 storage, etc.). Since the majority of network operations is still
 manual, the need to mitigate quickly and reliably across multiple
 platforms consisting of hundreds of network devices becomes extremely
-important.\
-\
+important.
+
 In Cisco's *March 2018 Semiannual Cisco IOS and IOS XE Software Security
 Advisory Bundled Publication*, 22 vulnerabilities were detailed. While
 Red Hat does not report or keep track of individual networking vendors
 CVEs, [Red Hat Ansible Engine](/products/engine) can be used to quickly
 automate mitigation of CVEs based on instructions from networking
-vendors.\
-\
+vendors.
+
 In this blog post we are going to walk through
 [CVE-2018-0171](https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-smi2)
 which is titled "Cisco IOS and IOS XE Software Smart Install Remote Code
 Execution Vulnerability." This CVE is labeled as critical by Cisco, with
 the following headline summary:
 
-> *"\...a vulnerability in the Smart Install feature of Cisco IOS
+> *"...a vulnerability in the Smart Install feature of Cisco IOS
 > Software and Cisco IOS XE Software could allow an unauthenticated,
 > remote attacker to trigger a reload of an affected device, resulting
 > in a denial of service (DoS) condition, or to execute arbitrary code
@@ -53,8 +53,8 @@ which returns key-value pairs for use in subsequent tasks. For example:
 the image file the device is running. For a full list see the ios_facts
 module
 [documentation](http://docs.ansible.com/ansible/latest/modules/ios_facts_module.html)
-page.\
-\
+page.
+
 
 ```yml
 - name: gather facts for ios platforms
@@ -64,8 +64,8 @@ page.\
 - name: output facts to terminal window
   debug:
     msg: >
-      Device {{ansible_net_hostname}}, model 
-{{ansible_net_model}}, running {{ansible_net_version}}            
+      Device {{ansible_net_hostname}}, model
+{{ansible_net_model}}, running {{ansible_net_version}}
 ```
 
 When executing the playbook we get nice output like this:
@@ -79,15 +79,15 @@ ok: [rtr2] => {
 }
 ok: [switch] => {
     "msg": "Device c3850-1, model WS-C3850-24T, running 16.06.01\n"
-}        
+}
 ```
 
 This allows us to quickly grab useful information about our network, and
 check it against Cisco Security Advisory. In a demo on the [GitHub
 network-automation
 project](https://github.com/network-automation/ansible_inventory_report)
-we show how to use network facts to quickly build a nice HTML report.\
-\
+we show how to use network facts to quickly build a nice HTML report.
+
 The vulnerability CVE-2018-0171 specifies that to see if a device is
 vulnerable we must run the `show vstack config` command. In my network,
 I have three devices running IOS-XE, two are CSR1000V devices, and one
@@ -106,7 +106,7 @@ the `show vstack config` command.
     ios_command:
       commands:
         - show vstack config
-    register: showvstack            
+    register: showvstack
 ```
 
 In the playbook above I used the `register: showvstack`. The
@@ -134,20 +134,23 @@ Next, we will use my new favorite module, the [assert
 module](http://docs.ansible.com/ansible/latest/modules/assert_module.html).
 This enables us to check if given expressions are true, failing the task
 if they are not. Cisco provides two outputs that we need to check for in
-the result of the `show vstack config` command :
+the result of the `show vstack config` command:
 
-`switch1# show vstack config`\
-`Role: Client (SmartInstall enabled)`
+```bash
+switch1# show vstack config
+Role: Client (SmartInstall enabled)
+```
 
 or
 
-`switch2# show vstack config`\
-`Capability: Client`\
-`Oper Mode: Enabled`\
-`Role: Client`
+```bash
+switch2# show vstack config
+Capability: Client
+Oper Mode: Enabled
+Role: Client
+```
 
-We can use the assert module to check the text we saved in the
-`showvstack` variable:
+We can use the assert module to check the text we saved in the `showvstack` variable:
 
 ```yml
 - name: Check to make sure Cisco's Smart Install Client Feature is not enabled (1/2)
@@ -155,12 +158,12 @@ We can use the assert module to check the text we saved in the
     that:
       - "'SmartInstall enabled' not in showvstack.stdout"
       - "'Role' not in showvstack.stdout"
-      - "'Client' not in showvstack.stdout" 
+      - "'Client' not in showvstack.stdout"
 ```
 
 Each line in the assert module that is added means there is an implicit
-AND, meaning all three need to be true for the task to pass.\
-\
+AND, meaning all three need to be true for the task to pass.
+
 Similarly we can check the second statement:
 
 ```yml
@@ -170,7 +173,7 @@ Similarly we can check the second statement:
       - "'Oper Mode' not in showvstack.stdout"
       - "'Enabled' not in showvstack.stdout"
       - "'Role' not in showvstack.stdout"
-      - "'Client' not in showvstack.stdout"  
+      - "'Client' not in showvstack.stdout"
 ```
 
 For this particular CVE it lists that there are no workarounds
@@ -182,19 +185,16 @@ the ios_command module. It also recommends for older releases to block
 traffic on TCP port 4786, which could be pushed using the ios_config
 module. Since no workaround is provided on the CVE, a network operator
 needs to make an educated decision based on their environment.
-Alternatively, for
-[CVE-2018-0150](https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-xesc#workarounds)
+Alternatively, for [CVE-2018-0150](https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20180328-xesc#workarounds)
 there is a workaround provided, and the ios_config could simply send
-`no username cisco` to mitigate the CVE.\
-\
+`no username cisco` to mitigate the CVE.
+
 Red Hat Ansible Engine and Red Hat Ansible Tower can be used to help
 network operators and administrators scale repetitive tasks like
 checking these dozens of CVEs and make sure their network is safe from
 vulnerabilities. On the server side, when system administrators are
-using [Red Hat
-Insights](https://www.redhat.com/en/technologies/management/insights),
-they can automatically [generate
-playbooks](https://access.redhat.com/documentation/en-us/red_hat_insights/1.0/html/creating_insights_maintenance_plans_with_ansible_playbook_integration/running_a_playbook#running_ansible_playbook)
+using [Red Hat Insights](https://www.redhat.com/en/technologies/management/insights),
+they can automatically [generate playbooks](https://access.redhat.com/documentation/en-us/red_hat_insights/1.0/html/creating_insights_maintenance_plans_with_ansible_playbook_integration/running_a_playbook#running_ansible_playbook)
 for Red Hat Enterprise Linux to help with vulnerabilities and
 proactively identify threats to security, performance, and stability.
 Ansible can be the common way to execute tasks across your entire IT

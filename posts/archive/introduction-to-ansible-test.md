@@ -54,7 +54,7 @@ ansible-test, it has to be in the form of:
 ```
 
 When you install a collection from Ansible Galaxy or Automation Hub, the default installation location is:
-`{\...}/ansible_collections/{namespace}/{collection}/`, which already satisfies the above directory convention.
+`{...}/ansible_collections/{namespace}/{collection}/`, which already satisfies the above directory convention.
 
 Even if you specify the installation path to the ansible-galaxy cli
 (using the -p option), it will also install a collection inside the

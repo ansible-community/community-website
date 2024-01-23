@@ -2,7 +2,7 @@
 author: Bianca Henderson
 date: 2020-12-10 00:00 UTC
 description: Hello and welcome to another introductory Ansible blog
-  post, where we\'ll be covering a new command-line interface (CLI)
+  post, where we'll be covering a new command-line interface (CLI)
   tool, Ansible Builder.
 lang: en-us
 title: Introduction to Ansible Builder

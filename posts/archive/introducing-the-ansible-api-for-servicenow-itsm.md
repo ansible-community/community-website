@@ -27,12 +27,11 @@ Content Collection, available exclusively through the [ServiceNow
 store](https://store.servicenow.com/) to enhance and support the
 integration between the two platforms.   
 
-
 # What is the Ansible API for ServiceNow ITSM?
 
 The API for Red Hat Ansible Automation Platform Certified Content
 Collection integrates Ansible's certified content with your ServiceNow
-instance. Prior to the launch of ServiceNow\'s Rome API, Ansible users
+instance. Prior to the launch of ServiceNow's Rome API, Ansible users
 could download the Red Hat Ansible Certified Content Collection for
 ServiceNow ITSM from the Ansible automation hub and directly manage
 ServiceNow resources using their REST API. 

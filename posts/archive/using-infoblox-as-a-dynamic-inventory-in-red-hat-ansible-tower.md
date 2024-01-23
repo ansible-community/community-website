@@ -45,8 +45,7 @@ Ansible Tower. Dynamic Inventory allows Ansible to query external
 systems and use the response data to construct its inventory. Red Hat
 Ansible Tower provides some out-of-the-box integrations through dynamic
 inventory scripts, and also allows users to extend these capabilities by
-providing their own [custom dynamic inventory
-script](https://docs.ansible.com/ansible-tower/latest/html/administration/custom_inventory_script.html).
+providing their own [custom dynamic inventory script](https://docs.ansible.com/ansible-tower/latest/html/administration/custom_inventory_script.html).
 
 ### Red Hat Ansible Tower and Infoblox
 
@@ -57,26 +56,26 @@ source of truth.
 #### Install infoblox-client
 
 First we need to install the infoblox-client python library in Red Hat
-Ansible Tower\'s venv of each node of the cluster, and the configuration
+Ansible Tower's venv of each node of the cluster, and the configuration
 file required by the infoblox inventory script:
 
-    # source /var/lib/awx/venv/awx/bin/activate
-    # pip install infoblox-client
+```bash
+# source /var/lib/awx/venv/awx/bin/activate
+# pip install infoblox-client
+```
 
-NOTE: You could also create a [playbook to
-do](https://gist.github.com/victorock/493b2d41f5a148efbed9e66dc2e8dee1)
-this, using the Ansible
-[pip_module](https://docs.ansible.com/ansible/latest/pip_module.html).
+NOTE: You could also create a [playbook to do](https://gist.github.com/victorock/493b2d41f5a148efbed9e66dc2e8dee1)
+this, using the Ansible [pip_module](https://docs.ansible.com/ansible/latest/pip_module.html).
 
-Create the [infoblox configuration
-file](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/infoblox.yaml)
-in
-[/etc/ansible/infoblox.yaml](https://gist.github.com/victorock/3c28056b41e3489d731cc5a2801f2166):
+Create the [infoblox configuration file](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/infoblox.yaml)
+in [/etc/ansible/infoblox.yaml](https://gist.github.com/victorock/3c28056b41e3489d731cc5a2801f2166):
 
-    ---
-    filters:
-      extattrs: {}
-      view: null
+```yaml
+---
+filters:
+  extattrs: {}
+  view: null
+```
 
 *NOTE: Follow* [*this Ansible GitHub
 Issue*](https://github.com/ansible/ansible/issues/53526) *where I
@@ -88,8 +87,8 @@ file for added flexibility.*
 After the installation in the previous step completes successfully in
 all the nodes of the cluster, we need to specify in Ansible Tower the
 credential and hostname to establish communication with Infoblox
-Appliances. As of today we don\'t have any specific Ansible Tower
-Credential for Infoblox, so let\'s create a [custom credential
+Appliances. As of today we don't have any specific Ansible Tower
+Credential for Infoblox, so let's create a [custom credential
 type](https://docs.ansible.com/ansible-tower/latest/html/userguide/credential_types.html).
 We can then provide the information required to communicate with
 Infoblox, have the password protected by Ansible Tower and
@@ -108,28 +107,31 @@ Create a new credential type: *INFOBLOX_INVENTORY* (Green + sign)
 
 Define the inputs required in the *INPUT CONFIGURATION* field:
 
-    fields:
-      - type: string
-        id: hostname
-        label: Hostname
-      - type: string
-        id: username
-        label: Username
-      - secret: true
-        type: string
-        id: password
-        label: Password
-    required:
-      - username
-      - password
+```yaml
+fields:
+  - type: string
+    id: hostname
+    label: Hostname
+  - type: string
+    id: username
+    label: Username
+  - secret: true
+    type: string
+    id: password
+    label: Password
+required:
+  - username
+  - password
+```
 
-Define the injection of inputs as environment variables in *INJECTOR
-CONFIGURATION* field:
+Define the injection of inputs as environment variables in *INJECTOR CONFIGURATION* field:
 
-    env:
-      INFOBLOX_HOST: '{{ hostname }}'
-      INFOBLOX_PASSWORD: '{{ password }}'
-      INFOBLOX_USERNAME: '{{ username }}'
+```bash
+env:
+  INFOBLOX_HOST: '{{ hostname }}'
+  INFOBLOX_PASSWORD: '{{ password }}'
+  INFOBLOX_USERNAME: '{{ username }}'
+```
 
 #### Credential
 
@@ -152,8 +154,7 @@ parse the output to the format expected by Ansible inventory.
 
 Create a new [custom inventory script](https://docs.ansible.com/ansible-tower/latest/html/administration/custom_inventory_script.html): `_infoblox-inventory-script.py`
 
-Get the
-[infoblox.py](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/infoblox.py)
+Get the [infoblox.py](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/infoblox.py)
 from Ansible's GitHub and paste into the *CUSTOM SCRIPT* field:
 
 ![Create inventory script](/images/posts/archive/image14.png)
@@ -200,20 +201,19 @@ Check variables associate to a host entry: `netops` -> `hosts` -> `rtr01.acme.co
 
 At this point we have servers and routers in our dynamic inventory,
 therefore from now on we can execute any Ansible Playbooks against them.
- In the next section we\'ll cover how the configurations looks like in
+ In the next section we'll cover how the configurations looks like in
 the infoblox side.
 
-Infoblox
+#### Infoblox
 
 At this point you may be wondering: How are these variables in Ansible
-Tower\'s Inventory specified in my Infoblox Appliance? The answer is
+Tower's Inventory specified in my Infoblox Appliance? The answer is
 that we are using *Extensible Attributes* in Infoblox to fulfill
-ansible\_\* variables, so they are automatically populated in Ansible
-Tower\'s inventory. Follow below some screenshots taken from Infoblox\'s
+ansible_* variables, so they are automatically populated in Ansible
+Tower's inventory. Follow below some screenshots taken from Infoblox's
 WEBUI:
 
-Extensible Attributes Configuration in Infoblox, for the variable
-\"ansible_host\":
+Extensible Attributes Configuration in Infoblox, for the variable "ansible_host":
 
 ![Extensible Attributes Configuration in Infoblox](/images/posts/archive/image9.png)
 
@@ -229,7 +229,7 @@ interface.
 
 Additionally, we could rely on Extensible Attributes variable to specify
 if an entry is managed by Ansible Tower or not (*Ex: ansible_managed:
-true/false*), and update our \"*Dynamic Inventory Configuration File*\"
+true/false*), and update our "*Dynamic Inventory Configuration File*"
 accordingly, to use this particular attribute as a filter. The result is
-that Ansible Tower\'s inventory will only populate with entries that we
+that Ansible Tower's inventory will only populate with entries that we
 want to automate (*ansible_managed: true*).

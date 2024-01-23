@@ -88,18 +88,17 @@ there are some fundamentals you can start with.
 Ensure the hardware you're working with fits the use case.
 Documentation which will help ...
 
-[Red Hat Ansible Tower Requirements](https://docs.ansible.com/ansible-tower/latest/html/quickinstall/prepare.html#prerequisites-and-requirements)
-[Ansible Networking](https://docs.ansible.com/ansible/latest/network/user_guide/faq.html?highlight=memory#how-can-i-improve-performance-for-network-playbooks)
-[Ansible Performance Tuning](/blog/ansible-performance-tuning)
+- [Red Hat Ansible Tower Requirements](https://docs.ansible.com/ansible-tower/latest/html/quickinstall/prepare.html#prerequisites-and-requirements)
+- [Ansible Networking](https://docs.ansible.com/ansible/latest/network/user_guide/faq.html?highlight=memory#how-can-i-improve-performance-for-network-playbooks)
 
 Most important will be the way you manage inventory (how you group
 hosts). Spend time thinking about smallest viable reach. If you had to
 upgrade the whole stack, which bits could you upgrade independently of
 the others?
 
-Ansible is fundamentally an orchestrator -- it doesn\'t have to be doing
+Ansible is fundamentally an orchestrator -- it doesn't have to be doing
 the actual operation. You may already have a tool which Ansible can
-instruct, so leverage the fact there\'s no new learning. You get the
+instruct, so leverage the fact there's no new learning. You get the
 best of all worlds, not least that the high level instruction set is an
 easy to read Ansible Playbook.
 
@@ -116,8 +115,8 @@ Everything else spans from these two starting points.
 **Education**
 
 From here two branches emerge -- first, adoption. For a new technology
-to take hold it needs to be quick to [get up and
-running](/resources/get-started), and easy to learn. When you can solve
+to take hold it needs to be quick to get up and
+running, and easy to learn. When you can solve
 a problem in a few minutes it makes it easy to show to others -- and the
 adoption spreads.
 
@@ -129,7 +128,7 @@ We once saw a customer put in place a great system for helping their
 staff learn Ansible from colleagues. New commits had to be submitted to
 a source code repository as a 'pull request', which was reviewed by
 more experienced staff. A feedback loop mimicking open source culture
-was introduced and reinforced. We\'ve also seen customers push commit
+was introduced and reinforced. We've also seen customers push commit
 messages to their chat systems. Another great way to encourage sharing.
 
 **Organisation**
@@ -148,15 +147,15 @@ tens of thousands of devices is cumbersome without technological help.
 Source code repositories, coding standards, credential management and
 access control can all help put organisational structure around Ansible.
 Bring together the simplicity of getting the job done, but wrap it in a
-[security blanket](/products/tower) to enable safe, managed, scaling.
+security blanket to enable safe, managed, scaling.
 
 ### Ansible, scaled
 
 Scaling anything brings about new challenges, and not just around
 numbers of hosts. But, a lot of those challenges are met by our
 customers on a daily basis. If you have a scaling challenge on your
-hands and would like some help, please [get in touch](/contact-us). Our
+hands and would like some help, please get in touch. Our
 consulting team have worked across every business segment, from the
-smallest to the largest companies in the world. We\'ll have a story or
+smallest to the largest companies in the world. We'll have a story or
 two you can relate to, and we can help you solve those difficult
 problems.

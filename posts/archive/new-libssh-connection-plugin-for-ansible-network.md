@@ -21,24 +21,22 @@ that uses the [libssh](https://www.libssh.org/) library.
 
 ## Ansible Network SSH Connection Basics
 
-Since most network appliances don\'t support or have limited capability
+Since most network appliances don't support or have limited capability
 for the local execution of a third party software, the Ansible network
 modules are not copied to the remote host unlike linux hosts; instead,
 they run on the control node itself. Hence, Ansible network can't use
 the typical Ansible SSH connection plugin that is used with linux host.
 Furthermore, due to this behavior, performance of the underlying SSH
 subsystem is critical. Not only is the new LibSSH connection plugin
-enabling FIPS readiness, but it was also designed to be [more performant
-than the existing Paramiko SSH
-subsystem](https://elegantnetwork.github.io/posts/comparing-ssh/).
+enabling FIPS readiness, but it was also designed to be
+[more performant than the existing Paramiko SSH subsystem](https://elegantnetwork.github.io/posts/comparing-ssh/).
 
 ![diagram of module code execution](/images/posts/archive/module-code-execution-diagram.png)
 
-The top level
-[network_cli]{style="font-family: 'courier new', courier;"} connection
+The top level `network_cli` connection
 plugin, provided by the ansible.netcommon Collection (specifically
-ansible.netcommon.network_cli), provides an SSH based connection to the
-network appliance. It in turn calls the ansible.builtin.paramiko_ssh
+`ansible.netcommon.network_cli`), provides an SSH based connection to the
+network appliance. It in turn calls the `ansible.builtin.paramiko_ssh`
 connection plugin that depends on the paramiko python library to
 initialize the session between control node and the remote host. After
 that, it creates a pseudo terminal (PTY) to send commands from the
@@ -50,67 +48,60 @@ The primary reason to replace the paramiko library is that it doesn't
 guarantee FIPS readiness and thus limits the Ansible network capability
 to run in environments that mandate FIPS mode to be enabled. Paramiko
 also isn't the speediest of connection plugins, so that can also be
-enhanced. Therefore, the new ansible.netcommon.libssh connection plugin
-can now be easily swapped in for paramiko. The ansible.netcommon
+enhanced. Therefore, the new `ansible.netcommon.libssh` connection plugin
+can now be easily swapped in for paramiko. The `ansible.netcommon`
 Collection now contains this by default, and can be used for testing
 purposes until the codebase becomes more stable (it is currently
 [Technology Preview](https://access.redhat.com/solutions/21101)).
 
 Comparing the connection flow to the above, the top level
-[network_cli]{style="font-family: 'courier new', courier;"} connection
-plugin that is provided by the ansible.netcommon Collection
-(specifically ansible.netcommon.network_cli) still provides an SSH based
+`network_cli` connection plugin that is provided by the `ansible.netcommon` Collection
+(specifically `ansible.netcommon.network_cli`) still provides an SSH based
 connection to the network appliance. It in turn calls the
-ansible.netcommon.libssh connection plugin that depends on the
-[ansible-pylibssh
-[python]{style="color: #1155cc; text-decoration: underline;"}
-[library]{style="color: #1155cc; text-decoration: underline;"}](https://pypi.org/project/ansible-pylibssh/)
+`ansible.netcommon.libssh` connection plugin that depends on the
+[`ansible-pylibssh` python library](https://pypi.org/project/ansible-pylibssh/)
 to initialize the session between control node and the remote host. This
-python library is essentially a cython wrapper on top of the [libssh C
-library](https://www.libssh.org/). It then creates pseudo terminals
+python library is essentially a cython wrapper on top of the
+[libssh C library](https://www.libssh.org/). It then creates pseudo terminals
 (PTY) over SSH using python.
 
 ## Switching Ansible Playbooks to use LibSSH
 
-With the ansible.netcommon Collection version 1.0.0, a new configuration
-parameter within ansible.netcommon.network_cli connection plugin was
-added, which allows for
-[ssh_type]{style="font-family: 'courier new', courier;"} be set to
-either libssh or paramiko. 
+With the `ansible.netcommon` Collection version 1.0.0, a new configuration
+parameter within `ansible.netcommon.network_cli` connection plugin was
+added, which allows for `ssh_type` be set to either `libssh` or `paramiko`. 
 
-If the value of the configuration parameter is set to
-[libssh]{style="font-family: 'courier new', courier;"}, it will use the
-ansible.netcommon.libssh connection plugin, which in turn uses the
-ansible-pylibssh python library that supports FIPS readiness. If the
-value is set to paramiko, it will continue to use the default
-ansible.builtin.paramiko connection plugin that relies on the
-[paramiko]{style="font-family: 'courier new', courier;"} python
-library. 
+If the value of the configuration parameter is set to `libssh`, it will use the
+`ansible.netcommon.libssh` connection plugin, which in turn uses the
+`ansible-pylibssh` python library that supports FIPS readiness. If the
+value is set to `paramiko`, it will continue to use the default
+`ansible.builtin.paramiko` connection plugin that relies on the
+`paramiko` python library. 
 
-Again, the default value is set to paramiko, but in the future plans are
-to change the default to libssh.
+Again, the default value is set to `paramiko`, but in the future plans are
+to change the default to `libssh`.
 
 ## Installing and Configuring LibSSH
 
 In order to utilize the LibSSH plugin, you must first install the
-ansible-pylibssh python library from PyPI via the following command:
+`ansible-pylibssh` python library from PyPI via the following command:
 
-``` 
+```bash
 pip install ansible-pylibssh
 ```
 
 NOTES:
 
 -   The current PyPI installation method bundles the correct version of
-    LibSSH library and its dependencies as [platform-specific
+    `LibSSH` library and its dependencies as [platform-specific
     wheels](https://packaging.python.org/glossary/#term-Built-Distribution)
     that don't rely on any OS-level libraries in runtime.
 -   Future plans include creation, publishing, and maintenance of
-    stand-alone RPM and DEB packages for the ansible-pylibssh library
+    stand-alone RPM and DEB packages for the `ansible-pylibssh` library
     that can be installed with well-known Linux package managers. These
-    will install the required system libssh version and its dependencies
+    will install the required system `libssh` version and its dependencies
     on the control node. FYI, Red Hat Enterprise Linux 8.1 and later
-    contains the proper libssh package version and its dependencies.
+    contains the proper `libssh` package version and its dependencies.
 -   The current primary use case for using LibSSH with Ansible is for
     connecting to network devices. Connecting to other types of
     endpoints (such as Linux) will be officially enabled at a later
@@ -118,48 +109,40 @@ NOTES:
 
 ## Using LibSSH in Ansible Playbooks
 
-Method 1:  The [ssh_type]{style="font-family: 'courier new', courier;"}
-configuration parameter can be set to use
-[libssh]{style="font-family: 'courier new', courier;"} in the active
-[ansible.cfg]{style="font-family: 'courier new', courier;"} file of your
-project as shown below:
+Method 1:  The `ssh_type` configuration parameter can be set to use
+`libssh` in the active `ansible.cfg` file of your project as shown below:
 
-``` 
+```ini
 [persistent_connection]
 ssh_type = libssh
 ```
 
-Method 2:  Set the ANSIBLE_NETWORK_CLI_SSH_TYPE environment variable as
-shown below:
+Method 2:  Set the `ANSIBLE_NETWORK_CLI_SSH_TYPE` environment variable as shown below:
 
-``` 
+```bash
 $export ANSIBLE_NETWORK_CLI_SSH_TYPE=libssh
 ```
 
-Method 3:  Set the
-[ansible_network_cli_ssh_type]{style="font-family: 'courier new', courier;"}
-parameter to [libssh]{style="font-family: 'courier new', courier;"}
+Method 3:  Set the `ansible_network_cli_ssh_type` parameter to `libssh`
 within your playbook at the play level (as shown in below example).
 
 NOTE: This setting can be made at the individual task level, but only if
 the connection to the remote network device is not already established.
-That is, if the first task uses paramiko, then all subsequent tasks in
-the play must use paramiko even if libssh is specified in any subsequent
+That is, if the first task uses `paramiko`, then all subsequent tasks in
+the play must use `paramiko` even if `libssh` is specified in any subsequent
 tasks.
 
 ## Troubleshooting LibSSH Connections
 
 To quickly verify the libssh transport is set correctly, you can run the
-below playbook using the
-[ansible-playbook]{style="font-family: 'courier new', courier;"} command
-line with verbose flag (-vvvv) added. Before running, ensure the
-inventory file is set correctly.
+below playbook using the `ansible-playbook` command line with verbose flag
+(-vvvv) added. Before running, ensure the inventory file is set correctly.
 
-This example playbook uses the cisco.ios Collection and must first be
+This example playbook uses the `cisco.ios` Collection and must first be
 installed from Ansible Galaxy or Ansible Automation Platform on your
 Ansible control node.
 
-``` 
+```yaml
 - hosts: "changeme"
   gather_facts: no
   connection: ansible.netcommon.network_cli
@@ -180,8 +163,7 @@ Ansible control node.
 
 [https://gist.github.com/ganeshrn/78149adca85c809b69ed1b5f5262844c](https://gist.github.com/ganeshrn/78149adca85c809b69ed1b5f5262844c)
 
-In the output verbose logs, you should see the line *"ssh type is set to
-libssh"* displayed on the console, which confirms the configuration is
+In the output verbose logs, you should see the line *"ssh type is set to libssh"* displayed on the console, which confirms the configuration is
 set correctly.
 
 ## Next Steps and Resources

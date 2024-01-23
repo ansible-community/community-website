@@ -122,7 +122,7 @@ stuck to using the default View.
 
 ### Using the Infoblox API to set up a reverse DNS zone
 
-So far you\'ve seen how to use Ansible modules to automate Infoblox
+So far you've seen how to use Ansible modules to automate Infoblox
 changes. Our next example shows how to use the Infoblox WAPI REST API to
 automate a task that may not be available in your current version of
 Ansible. Reverse DNS zones allow a client to look up an address name if
@@ -228,7 +228,7 @@ The gateway host name, passing the values listed above through the
 example template, would be:
 
 ```
-gateway192_168_1\_1.ansible.local
+gateway192_168_1_1.ansible.local
 ```
 
 Jinja2 filters are a complex Ansible topic; you should have a solid

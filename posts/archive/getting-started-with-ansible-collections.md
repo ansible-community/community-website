@@ -71,31 +71,19 @@ Ansible content:
  This format has a simple, predictable data structure, with a
 straightforward definition:
 
--   docs/: local documentation for the collection
-
--   galaxy.yml: source data for the MANIFEST.json that will be part of
+-   `docs/`: local documentation for the collection
+-   `galaxy.yml`: source data for the MANIFEST.json that will be part of
     the collection package
-
--   playbooks/: playbooks reside here 
-
--   -   tasks/: this holds \'task list files\' for
-        include_tasks/import_tasks usage
-
--   plugins/: all ansible plugins and modules go here, each in its own
-    subdir
-
--   -   modules/: ansible modules
-    -   lookups/: [lookup
-        plugins](https://docs.ansible.com/ansible/latest/plugins/lookup.html)
-    -   filters/: [Jinja2 filter
-        plugins](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html)
-    -   connection/: [connection
-        plugins](https://docs.ansible.com/ansible/latest/plugins/connection.html)
+-   `playbooks/`: playbooks reside here 
+    -   `tasks/`: this holds 'task list files' for `include_tasks/import_tasks` usage
+-   `plugins/`: all ansible plugins and modules go here, each in its own subdir
+    -   `modules/`: ansible modules
+    -   `lookups/`: [lookup plugins](https://docs.ansible.com/ansible/latest/plugins/lookup.html)
+    -   `filters/`: [Jinja2 filter plugins](https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html)
+    -   `connection/`: [connection plugins](https://docs.ansible.com/ansible/latest/plugins/connection.html)
         required if not using default
-
--   roles/: directory for ansible roles
-
--   tests/: tests for the collection\'s content
+-   `roles/`: directory for ansible roles
+-   `tests/`: tests for the collection's content
 
 [More information regarding collection
 metadata](https://docs.ansible.com/ansible/latest/dev_guide/collections_galaxy_meta.html)

@@ -15,10 +15,8 @@ technology cycles. Over the past couple of decades, we have seen various
 transformations within the high-tech area:
 
 -   From mainframe to distributed computing to hybrid cloud and now edge
--   From databases to data warehouse to advanced analytics and machine
-    learning
--   From the challenges of storing a gigabyte of data, now grown to
-    storing zetabytes+ of data per day.
+-   From databases to data warehouse to advanced analytics and machine learning
+-   From the challenges of storing a gigabyte of data, now grown to storing zetabytes+ of data per day.
 
 All of this has moved businesses forward, driving great innovation. When
 it comes to infrastructure, nothing is more impactful than a core

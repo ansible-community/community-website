@@ -9,15 +9,12 @@ title: Getting Started with Workflow Job Templates
 
 # Getting Started with Workflow Job Templates
 
-Welcome to another post in the [Getting
-Started](/blog/topic/getting-started) series! Today we're going to get
+Welcome to another post in the Getting Started series! Today we're going to get
 into the topic of Workflow Job Templates. If you don't know what regular
-Job Templates are in Red Hat Ansible Tower, please read the [previously
-published](/blog/getting-started-setting-up-an-ansible-job-template)
-article that describes them. It'll provide you with some technical
-details that'll be a useful jumping-off point for the topic of
-workflows.\
-\
+Job Templates are in Red Hat Ansible Tower, please read the previously
+published article that describes them. It'll provide you with some technical
+details that'll be a useful jumping-off point for the topic of workflows.
+
 Once you're familiar with the basics, read on! We'll be covering what
 exactly Workflow Job Templates are, what makes them useful, how to
 generate/edit one, and a few extra pointers as well as best practices to
@@ -41,8 +38,8 @@ have permissions to access it. Not everyone involved will need to know
 what job run goes after what, since the structure is set up for them by
 the user who created the workflow. This connects disparate job types and
 unifies projects without each team needing to know everything about what
-the other does.\
-\
+the other does.
+
 Another reason workflows are useful is because they allow the user to
 take any number of playbooks and "daisy chain" them, with the ability to
 make a decision tree depending on a job's success or failure. You can
@@ -50,7 +47,7 @@ make them as simple or as complex as they need to be!
 
 ### How Do You Create One?
 
-[Go into the Templates section on the top menu of Ansible Tower:\
+[Go into the Templates section on the top menu of Ansible Tower:
 
 ![Getting-Started-Tower-Workflows-13](/images/posts/archive/Getting-Started-Tower-Workflows-13.jpg)
 
@@ -78,11 +75,11 @@ always.
 [**![Getting-Started-Tower-Workflows-9](/images/posts/archive/Getting-Started-Tower-Workflows-9.jpg)
 
 As mentioned in the previous section, you can make your Ansible workflow
-as simple\...
+as simple...
 
 ![Getting-Started-Tower-Workflows-4](/images/posts/archive/Getting-Started-Tower-Workflows-4.jpg)
 
-\...or complex as you need to!
+...or complex as you need to!
 
 ![Getting-Started-Tower-Workflows-12](/images/posts/archive/Getting-Started-Tower-Workflows-12.jpg)
 
@@ -94,34 +91,30 @@ you'd like to run:
 
 ### What More Can You Do With Workflows?
 
-You can [schedule your
-workflows](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html#scheduling)
+You can [schedule your workflows](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html#scheduling)
 to run when you need them to! Just click on the calendar icon next to
 any workflow job template:
 
 ![Getting-Started-Tower-Workflows-5](/images/posts/archive/Getting-Started-Tower-Workflows-5.jpg)
 
-\... and fill out the information for when you want the specified
+... and fill out the information for when you want the specified
 workflow to automatically run:
 
 ![Getting-Started-Tower-Workflows-8](/images/posts/archive/Getting-Started-Tower-Workflows-8.jpg)
  
-
 If you have a workflow template created that works very well for you and
 you'd like to copy it, click on the button highlighted below:
 
 ![Getting-Started-Tower-Workflows-2](/images/posts/archive/Getting-Started-Tower-Workflows-2.jpg)
 
 Keep in mind that copying a workflow won't also copy over any of the
-permissions, notifications, or schedules associated with the original.\
-\
+permissions, notifications, or schedules associated with the original.
+
 If you need to set extra variables for the playbooks involved in a
 workflow template and/or allow for authorization of user input, then
-[setting up
-surveys](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html#surveys)
+[setting up surveys](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html#surveys)
 is the way to go. In order to set one up, select a workflow template and
-click on the "Add Survey" button:\
-\
+click on the "Add Survey" button:
 
 ![Getting-Started-Tower-Workflows-3](/images/posts/archive/Getting-Started-Tower-Workflows-3.jpg)
 
@@ -159,11 +152,8 @@ an enterprise-only feature, so no matter your Ansible Tower license
 type, you can log into your instance and have fun creating workflows!
 
 To read more about how to create and modify workflow job templates,
-check out our [official documentation
-page](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html)
-on the topic. There is also an [on-demand
-webinar](/resources/webinars-training/ansible-tower-basics-workflows)
-that can provide additional information.
+check out our [official documentation page](https://docs.ansible.com/ansible-tower/latest/html/userguide/workflow_templates.html)
+on the topic.
 
 I hope this article was helpful, and that it enables you to take
 advantage of the powerful automation features that are possible with

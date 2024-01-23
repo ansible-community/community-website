@@ -61,18 +61,18 @@ following contents:
 ---
 - hosts: all
   gather_facts: false
-  
+
   vars_prompt:
     - name: password
       prompt: "Enter the password for the node"
-  
+
   vars:
       ansible_user: ansible
       ansible_password: "{{ password }}"
       ansible_connection: winrm
       ansible_winrm_transport: ntlm
       ansible_winrm_server_cert_validation: ignore
-  
+
   tasks:
       - name: Install Notepad++ version 7.8
         win_chocolatey:
@@ -101,18 +101,18 @@ contents:
 ---
 - hosts: all
   gather_facts: false
-  
+
   vars_prompt:
     - name: password
       prompt: "Enter the password for the node"
-  
+
   vars:
     ansible_user: ansible
     ansible_password: "{{ password }}"
     ansible_connection: winrm
     ansible_winrm_transport: ntlm
     ansible_winrm_server_cert_validation: ignore
-  
+
   tasks:
     - name: Install latest Notepad++
       win_chocolatey:
@@ -120,7 +120,7 @@ contents:
         state: latest
 ```
 
-Run `ansible-playbook upgrade_notepadplusplus.yaml -i \<ip address\>,`
+Run `ansible-playbook upgrade_notepadplusplus.yaml -i <ip address>,`
 (note the comma after the IP address) to update, or install, the latest
 Notepad++ on your remote computer. Once installed, open Notepad++ and
 press `F1` to ensure we have installed the latest version. 

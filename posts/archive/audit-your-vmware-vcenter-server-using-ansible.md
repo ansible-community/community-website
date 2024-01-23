@@ -72,14 +72,13 @@ We can pass the authentication keys either through some environment
 variables or with the module parameters. In the following example, we
 use the first option. For example:
 
-```
+```bash
 VMWARE_HOST=<vsphere_host>
 VMWARE_PASSWORD=<vsphere_password>
 VMWARE_USER=<vsphere_username>
 ```
 
-Note: The community.vmware Collection uses the same environment
-variables.
+Note: The community.vmware Collection uses the same environment variables.
 
 We will try to explain some sample use cases below for the readers to
 understand how you can start using these modules.
@@ -91,7 +90,7 @@ potential user interfaces. The REST interface that the modules use
 remains available. Here's how you can check that using the modules
 available.
 
-```
+```bash
 - name: Shell access should be disabled
   vmware.vmware_rest.appliance_access_shell_info:
 - name: The Direct Console User Interface should also be disabled
@@ -102,7 +101,7 @@ available.
 
 Response:
 
-```
+```json
 {
     "changed": false,
     "value": {
@@ -128,7 +127,7 @@ We can rely either on the appliance_health modules or the other info
 modules to audit the state of your VCSA. For instance, here we check
 that the system load and the database are in a *green* state.
 
-```
+```bash
 - name: Ensure the database health status is green
   vmware.vmware_rest.appliance_health_database_info:
 
@@ -143,7 +142,7 @@ that the system load and the database are in a *green* state.
 
 Response:
 
-```
+```json
 {
     "changed": false,
     "value": {
@@ -181,14 +180,14 @@ Ansible is also able to read and set the network configuration of the
 VCSA. The appliance_networking_info modules return a system-wide
 overview of the network configuration:
 
-```
+```bash
 - name: Get network information
   vmware.vmware_rest.appliance_networking_info:
 ```
 
 Response: 
 
-```
+```json
 {
     "changed": false,
     "value": {
@@ -220,7 +219,7 @@ Response: 
 
 But we can also collect the details one specific NIC:
 
-```
+```yaml
 - name: Get details about one network interfaces
   vmware.vmware_rest.appliance_networking_interfaces_info:
     interface_name: nic0
@@ -228,7 +227,7 @@ But we can also collect the details one specific NIC:
 
 Response:
 
-```
+```json
 {
     "changed": false,
     "id": "nic0",
@@ -252,14 +251,14 @@ Response:
 The appliance_networking_dns_hostname_info module can be use to retrieve
 the hostname of the VCSA.
 
-```
+```yaml
 - name: Get the hostname configuration
   vmware.vmware_rest.appliance_networking_dns_hostname_info:
 ```
 
 Response:
 
-```
+```json
 {
     "changed": false,
     "value": "vcenter.test"
@@ -269,14 +268,14 @@ Response:
 Use the appliance_networking_dns_servers_info to get DNS servers
 currently in use:
 
-```
+```yaml
 - name: Get the DNS servers
   vmware.vmware_rest.appliance_networking_dns_servers_info:
 ```
 
 Response:
 
-```
+```json
 {
     "changed": false,
     "value": {

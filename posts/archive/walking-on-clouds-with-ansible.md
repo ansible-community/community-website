@@ -11,7 +11,7 @@ title: Walking on Clouds with Ansible
 
 # Walking on Clouds with Ansible
 
-Today is a good day, and when it\'s a day like this we often feel like
+Today is a good day, and when it's a day like this we often feel like
 we are walking on clouds. With this latest announcement for the newest
 Red Hat Ansible Certified Collections available to our customers on the
 28th of November, I am sure many cloud practitioners will be

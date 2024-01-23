@@ -416,18 +416,18 @@ the CI/CD pipeline. SensuFlow also has a set of optional environment
 variables that let you customize several operational behaviors, such as
 the label selection criteria that sensuctl prune uses to delete Sensu
 resources no longer represented by files in the repository (e.g. if a
-monitoring code template is deleted or renamed).\
- \
+monitoring code template is deleted or renamed).
+
 To learn more about sensuctl prune, please check out our blog post on
-[https://sensu.io/blog/keep-your-configs-in-good-order-with-sensuctl-prune](https://sensu.io/blog/keep-your-configs-in-good-order-with-sensuctl-prune) \
-\
+[https://sensu.io/blog/keep-your-configs-in-good-order-with-sensuctl-prune](https://sensu.io/blog/keep-your-configs-in-good-order-with-sensuctl-prune)
+
 SensuFlow is designed to be CI/CD platform agnostic, and can be used
 locally in your development environment (so long as it has sensuctl, yq
 and jq installed). But we\'re also actively developing a reference
 implementation for the GitHub Action CI/CD platform that can be used
 with any GitHub repository. The SensuFlow GitHub Action effectively
-provides a direct integration between GitHub and Sensu Go!\
-\
+provides a direct integration between GitHub and Sensu Go!
+
 Take a look at this [monitoring as code example
 repository](https://github.com/jspaleta/sensu-monitoring-as-code-examples),
 configured to run SensuFlow GitHub action on commit into the main

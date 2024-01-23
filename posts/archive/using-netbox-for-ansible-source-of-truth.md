@@ -42,11 +42,11 @@ without having to check in with the device first.
 ## NetBox
 
 For a Source of Truth, one popular open source choice is NetBox. From
-the primary documentation site
-[netbox.readthedocs.io](https://netbox.readthedocs.io/),
-*"NetBox is an open source web application designed to help manage and
-document computer networks".* NetBox is currently designed to help
-manage your:
+the primary documentation site [netbox.readthedocs.io](https://netbox.readthedocs.io/):
+
+"NetBox is an open source web application designed to help manage and document computer networks".
+
+NetBox is currently designed to help manage your:
 
 -   DCIM (Data Center Infrastructure Management)
 -   IPAM (IP Address Management)
@@ -87,16 +87,13 @@ Source of Truth. It represents what the environment should look like. 
 
 ## Ansible Content Collection for NetBox
 
-You will find the Collection within the netbox-community GitHub
-organization
+You will find the Collection within the netbox-community GitHub organization
 ([github.com/netbox-community/](https://github.com/netbox-community/)).
-Here you find a [Docker container
-image](https://github.com/netbox-community/netbox-docker), [device-type
-library](https://github.com/netbox-community/devicetype-library),
-[community generated NetBox
-reports](https://github.com/netbox-community/reports), and [source code
-for NetBox](https://github.com/netbox-community/netbox) itself.\
-\
+Here you find a [Docker container image](https://github.com/netbox-community/netbox-docker),
+[device-type library](https://github.com/netbox-community/devicetype-library),
+[community generated NetBox reports](https://github.com/netbox-community/reports),
+and [source code for NetBox](https://github.com/netbox-community/netbox) itself.
+
 If you are unfamiliar with what an Ansible Content Collection is, please
 watch this brief [YouTube video.](https://youtu.be/WOcqhk7TdYc)
 
@@ -111,13 +108,10 @@ Truth populated very quickly. 
 
 Let's walk through the base setup to get to a place where you are
 starting to use the NetBox Inventory Plugin as your Ansible inventory.
-First is the example group_vars/all.yml file that will have the list of
+First is the example `group_vars/all.yml` file that will have the list of
 items to be used with the tasks.
 
-*Example -*
-[*group_vars/all.yml*](https://gist.github.com/jvanderaa/c11f42c5dd6247808ec3d1acd8604f02)
-
-``` 
+```yaml
 ---
 site_list:
   - name: “NYC”
@@ -165,24 +159,25 @@ platforms:
     slug: “junos”
 ```
 
+[Example group_vars/all.yml](https://gist.github.com/jvanderaa/c11f42c5dd6247808ec3d1acd8604f02)
+
 The first step is to create a site. Since NetBox models physical gear,
 you install equipment at a physical location. Whether that is in your
 own facilities or inside of a cloud, this is a site. The module for this
-is the
-[netbox.netbox.netbox_site]{style="font-family: 'courier new', courier;"}
-module. A task in the playbook may be:
+is the `netbox.netbox.netbox_site` module.
 
-[*Example - Sites
-Task*](https://gist.github.com/jvanderaa/e926451a17284bb6c5ec8cd7daa0c73e)
+A task in the playbook may be:
 
-``` 
-    - name: "TASK 10: SETUP SITES"
-      netbox.netbox.netbox_site:
-        netbox_url: "{{ lookup('ENV', 'NETBOX_URL') }}"
-        netbox_token: "{{ lookup('ENV', 'NETBOX_API_KEY') }}"
-        data: "{{ item }}"
-      loop: "{{ site_list }}"
+```yaml
+- name: "TASK 10: SETUP SITES"
+  netbox.netbox.netbox_site:
+    netbox_url: "{{ lookup('ENV', 'NETBOX_URL') }}"
+    netbox_token: "{{ lookup('ENV', 'NETBOX_API_KEY') }}"
+    data: "{{ item }}"
+  loop: "{{ site_list }}"
 ```
+
+[Example: Sites Task](https://gist.github.com/jvanderaa/e926451a17284bb6c5ec8cd7daa0c73e)
 
 The next two pieces are the base to add devices to NetBox. In order to
 create a specific device, you also need to have the device type and
@@ -193,10 +188,7 @@ is using---something like IOS, NXOS, and EOS are good choices and should
 match up to your ansible_network_os choices. These tasks look like the
 following:
 
-[*Example - Manufacturers, Device Types, and
-Platforms*](https://gist.github.com/jvanderaa/de4a57f05d963f9291c3f3a4adbb0f45)
-
-``` 
+```yaml
 - name: "TASK 20: SETUP MANUFACTURERS"
       netbox.netbox.netbox_manufacturer:
         netbox_url: "{{ lookup('ENV', 'NETBOX_URL') }}"
@@ -235,6 +227,8 @@ Platforms*](https://gist.github.com/jvanderaa/de4a57f05d963f9291c3f3a4adbb0f45)
         label: "{{ platform['name'] }}"
 ```
 
+[Example: Manufacturers, Device Types, and Platforms](https://gist.github.com/jvanderaa/de4a57f05d963f9291c3f3a4adbb0f45)
+
 At this stage you are set to add devices and device information to
 NetBox. The following tasks leverage the ansible_facts that Ansible
 automatically gathers. So for these particular device types, no
@@ -244,10 +238,7 @@ to gather facts. In this example for adding a device, you will notice
 field already defined, you can set your own fields and use them within
 the tool.
 
-[Example - Add Devices &
-Interfaces](https://gist.github.com/jvanderaa/b5881c5fa778b0601f494d3b73259c23){style="font-style: normal;"}
-
-``` 
+```yaml
 - name: "TASK 100: NETBOX >> ADD DEVICE TO NETBOX"
       netbox.netbox.netbox_device:
         netbox_url: "{{ lookup('ENV', 'NETBOX_URL') }}"
@@ -277,16 +268,14 @@ Interfaces](https://gist.github.com/jvanderaa/b5881c5fa778b0601f494d3b73259c23){
         - "{{ ansible_facts['net_interfaces'] }}"
 ```
 
+[Example: Add Devices and Interfaces](https://gist.github.com/jvanderaa/b5881c5fa778b0601f494d3b73259c23)
+
 Once you have the interfaces you can add in IP address information that
 is included in the ansible_facts data, I show three steps. First is to
 add a temporary interface (TASK 200), then add the IP address (TASK
 210), and finally associate the IP address to the device (TASK 220).
 
-[*Example - Add temp interface, add IP address, re-add device with the
-IP address
-associated*](https://gist.github.com/jvanderaa/5d890fc7906390e1dfdc01d297336965)
-
-``` 
+```yaml
 - name: "TASK 200: NETBOX >> Add temporary interface"
       netbox.netbox.netbox_device_interface:
         netbox_url: "{{ lookup('ENV', 'NETBOX_URL') }}"
@@ -322,6 +311,8 @@ associated*](https://gist.github.com/jvanderaa/5d890fc7906390e1dfdc01d297336965)
           primary_ip4: "{{ ansible_host }}/24"
 ```
 
+[Example: Add temp interface, add IP address, re-add device with the IP address associated](https://gist.github.com/jvanderaa/5d890fc7906390e1dfdc01d297336965)
+
 ## Ansible Inventory Source
 
 At this point you have NetBox populated with all of your devices that
@@ -350,10 +341,7 @@ are defined in NetBox and the platforms. So you would be able to access
 all platforms_ios devices or platforms_eos as an example, based on the
 information in the Source of Truth.
 
-[*Example -
-netbox_inventory.yml*](https://gist.github.com/jvanderaa/6bc8f36e2ca1e45e4a4e5e61be4de435)
-
-``` 
+```yaml
 ---
 plugin: netbox.netbox.nb_inventory
 api_endpoint: http://netbox03
@@ -369,15 +357,18 @@ query_filters:
  - has_primary_ip: True
 ```
 
+[Example: netbox_inventory.yml](https://gist.github.com/jvanderaa/6bc8f36e2ca1e45e4a4e5e61be4de435)
+
 ## Extending NetBox with Plugins
 
 One of the more recent feature additions to NetBox itself is the ability
 to extend it via your own or community driven plugins. From the wiki:
-"Plugins are packaged Django apps that can be installed alongside NetBox
-to provide custom functionality not present in the core application"
-([GitHub Link](https://github.com/netbox-community/netbox/wiki/Plugins)). You can
-find some of the featured plugins in the community at that link. Some
-include:
+
+"Plugins are packaged Django apps that can be installed alongside NetBox to provide custom functionality not present in the core application"
+
+https://github.com/netbox-community/netbox/wiki/Plugins
+
+You can find some of the featured plugins in the community at that link. Some include:
 
 -   [Dynamic DNS Connector](https://github.com/sjm-steffann/netbox-ddns)
 -   [NetBox Onboarding Plugin (from Network to Code) - This will read
@@ -389,10 +380,9 @@ include:
     SAML2](https://github.com/jeremyschulman/netbox-plugin-auth-saml2)
 
 There are many plugins available to the community for you to choose
-from---or you can write your own add ons! [Search on
-GitHub](https://github.com/topics/netbox-plugi) for the topic *NetBox
-Plugin.*
+from---or you can write your own add ons!
 
+Search [https://github.com/topics/netbox-plugi](https://github.com/topics/netbox-plugi) for the topic *NetBox Plugin.*
 
 ## Summary
 
@@ -409,6 +399,5 @@ of Truth. NetBox delivers on each of these. 
 This post was inspired by a presentation done in March 2020 at the
 Minneapolis Ansible Meetup. For additional material on this, I have many
 of these tasks available as a working example on
-[GitHub](https://github.com/jvanderaa/ansible_netbox_demo). The YouTube
-recording of the presentation from the [Ansible Meetup is
-available](https://www.youtube.com/watch?v=GyQf5F0gr3w).  
+[ansible_netbox_demo](https://github.com/jvanderaa/ansible_netbox_demo). The YouTube
+recording of the presentation from the [Ansible Meetup is available](https://www.youtube.com/watch?v=GyQf5F0gr3w).  

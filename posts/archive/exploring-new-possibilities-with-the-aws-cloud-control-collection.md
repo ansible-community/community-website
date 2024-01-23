@@ -139,8 +139,6 @@ Collection usage and improves user experience.
   register: _result_info
 ```
 
- 
-
 ``` yml
 - name: Create a simple S3 bucket with public access block configuration
   amazon.aws.s3_bucket:
@@ -190,7 +188,7 @@ This feature has definitely a positive impact on the user experience.
 ## Known issues and shortcomings
 
 -   Generated modules like these are only as good as the API and its
-    schema. Documentation may not be complete for all the modules\'
+    schema. Documentation may not be complete for all the modules
     options.
 
 -   Missing supportability for important AWS resources like, EC2
@@ -208,8 +206,7 @@ This feature has definitely a positive impact on the user experience.
         treated as a new request. 
     -   To overcome this limitation, the modules present in this
         Collection handle the idempotency by performing a first
-        get_resource(TypeName=\'\',
-        Identifier=\'\') operation using the
+        `get_resource(TypeName='', Identifier='')` operation using the
         resource identifier. 
 
 -   Missing server-side pagination may have a severe impact on
@@ -236,8 +233,6 @@ This feature has definitely a positive impact on the user experience.
 
 -   Not all the resources support the available states. In practice this
     means that some resources cannot be updated or listed.
-
- 
 
 ## What is next?
 

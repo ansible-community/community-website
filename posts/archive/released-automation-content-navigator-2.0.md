@@ -36,8 +36,7 @@ Within navigator 2.0, you will find:
 -   Automatic mode selection (stdout vs. interactive) 
 -   Technology preview lint support, UI improvements, Collections view
     support for Ansible built-ins, time zone support, color
-    enhancements, and more!\
-    \
+    enhancements, and more!
 
 ## Looking closer
 
@@ -63,7 +62,7 @@ support from within navigator.
 -   Add the arista.avd Collection to the supported execution
     environment:
 
-*==\> ./builder/execution-environment.yml*
+*==> ./builder/execution-environment.yml*
 
 ``` yml
 ---
@@ -76,7 +75,7 @@ dependencies:
   python: ""
 ```
 
-*==\> ./builder/requirements.yml*
+*==> ./builder/requirements.yml*
 
 ``` yml
 ---
@@ -242,20 +241,20 @@ which Collections are available in the environment to figure out which
 modules can be leveraged in automated workflows.
 
 Additionally, navigator now supports automatic mode selection for
-commands that are only offered in a single mode. Previously the \--mode
+commands that are only offered in a single mode. Previously the `--mode`
 command line argument was necessary for commands that only supported
 mode stdout.
 
 ### Why should I care?
 
-Navigator is easily adapted to individual creators\' workflows and
+Navigator is easily adapted to individual creators' workflows and
 preferences. Even more, by adding standard out support for more
 commands, navigator can now be utilized in automated build environments.
 
 ### Things to try:
 
 -   Show the help for the ansible-playbook command without specifying
-    \`\--mode stodut\`
+    `--mode stodut`
 
 ``` bash
 $ ansible-navigator run --help-playbook

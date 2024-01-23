@@ -46,14 +46,14 @@ The module
 allows us to create an AWS Virtual Private Cloud.
 
 ```yml
-    - name: Create AWS VPC sean-vpc
-      ec2_vpc_net:
-        name: "sean-vpc”
-        cidr_block: "192.168.1.0/16”
-        region: "us-east-1”
-      register: create_vpc
-      until: create_vpc is not failed
-      retries: 5
+- name: Create AWS VPC sean-vpc
+  ec2_vpc_net:
+    name: "sean-vpc”
+    cidr_block: "192.168.1.0/16”
+    region: "us-east-1”
+  register: create_vpc
+  until: create_vpc is not failed
+  retries: 5
 ```
 
 The name, cidr_block and region are module parameters for the
@@ -67,18 +67,18 @@ there are some common variables that the task returns to let us know how
 the task performed:
 
 ```yml
-    - name: test local playbook
-      hosts: localhost
-      gather_facts: false
+- name: test local playbook
+  hosts: localhost
+  gather_facts: false
 
-      tasks:
-          - name: dumb easy command
-            shell: ls -la
-            register: task_variable
+  tasks:
+      - name: dumb easy command
+        shell: ls -la
+        register: task_variable
 
-          - name: debug the var
-            debug:
-              var: task_variable
+      - name: debug the var
+        debug:
+          var: task_variable
 ```
 
 When we run this playbook with ansible-playbook test_output.yml we get
@@ -86,15 +86,15 @@ some standard output (via the debug module) printed to the terminal
 window (or browser window when using Ansible Tower).
 
 ```yml
-    TASK [debug the var] **************************************************************
-    ok: [localhost] =>
-     task_variable:
-          changed: true
-          cmd: ls -la
-          delta: '0:00:00.011018'
-          end: '2018-12-07 09:53:14.595811'
-          failed: false
-    ...
+TASK [debug the var] **************************************************************
+ok: [localhost] =>
+ task_variable:
+      changed: true
+      cmd: ls -la
+      delta: '0:00:00.011018'
+      end: '2018-12-07 09:53:14.595811'
+      failed: false
+...
 ```
 
 One of the key, value pairs we always get returned from any Ansible task
@@ -103,9 +103,9 @@ return a failed: false. If the task failed, the task will return a
 failed: true. Looking back at the until loop logic for the AWS VPC task:
 
 ```yml
-    register: create_vpc
-    until: create_vpc is not failed
-    retries: 5
+register: create_vpc
+until: create_vpc is not failed
+retries: 5
 ```
 
 We are registering the result of the task so we can look at the failed
@@ -150,21 +150,21 @@ but the playbook will continue on.
 What happens if we want to combine the until loop with an ignore_errors?
 
 ```yml
-    - name: failure test playbook
-      hosts: localhost
-      gather_facts: false
-      tasks:
+- name: failure test playbook
+  hosts: localhost
+  gather_facts: false
+  tasks:
 
-        - name: purposely fail
-          shell: /bin/false
-          register: task_register_var
-          until: task_register_var is not failed
-          retries: 5
-          ignore_errors: yes
+    - name: purposely fail
+      shell: /bin/false
+      register: task_register_var
+      until: task_register_var is not failed
+      retries: 5
+      ignore_errors: yes
 
-        - name: debug task_register_var
-          debug:
-            msg: "{{ task_register_var }}"
+    - name: debug task_register_var
+      debug:
+        msg: "{{ task_register_var }}"
 ```
 
 We actually get the best of both worlds with an unreliable task. We get
@@ -178,31 +178,31 @@ not 100% required for me to have an SSL cert to start using the web app
 The Ansible Playbook outputs like this:
 
 ```yml
-    TASK [purposely fail] *************************************************************
-    FAILED - RETRYING: purposely fail (5 retries left).
-    FAILED - RETRYING: purposely fail (4 retries left).
-    FAILED - RETRYING: purposely fail (3 retries left).
-    FAILED - RETRYING: purposely fail (2 retries left).
-    FAILED - RETRYING: purposely fail (1 retries left).
-    fatal: [localhost]: FAILED! => changed=true
-      attempts: 5
-      cmd: /bin/false
-      delta: '0:00:00.007936'
-      end: '2018-12-07 13:23:13.277624'
-      msg: non-zero return code
-      rc: 127
-      start: '2018-12-07 13:23:13.269688'
-      stderr: '/bin/sh: /bin/false: No such file or directory'
-      stderr_lines:
-      - '/bin/sh: /bin/false: No such file or directory'
-      stdout: ''
-      stdout_lines: 
-    ...ignoring
+TASK [purposely fail] *************************************************************
+FAILED - RETRYING: purposely fail (5 retries left).
+FAILED - RETRYING: purposely fail (4 retries left).
+FAILED - RETRYING: purposely fail (3 retries left).
+FAILED - RETRYING: purposely fail (2 retries left).
+FAILED - RETRYING: purposely fail (1 retries left).
+fatal: [localhost]: FAILED! => changed=true
+  attempts: 5
+  cmd: /bin/false
+  delta: '0:00:00.007936'
+  end: '2018-12-07 13:23:13.277624'
+  msg: non-zero return code
+  rc: 127
+  start: '2018-12-07 13:23:13.269688'
+  stderr: '/bin/sh: /bin/false: No such file or directory'
+  stderr_lines:
+  - '/bin/sh: /bin/false: No such file or directory'
+  stdout: ''
+  stdout_lines:
+...ignoring
 
-    TASK [debug task_register_var] ****************************************************
-      msg:
-        attempts: 5
-        changed: true
+TASK [debug task_register_var] ****************************************************
+  msg:
+    attempts: 5
+    changed: true
 ```
 
 In the Ansible workshops I am actually using this combination of error
@@ -213,32 +213,32 @@ the workshop playbook (the playbook responsible for provisioning
 instances for students to use).
 
 ```yml
-    - name: failure test playbook
-      hosts: localhost
-      gather_facts: false
-      vars:
-        summary_information: |
-          PROVISIONER SUMMARY
-          *******************
+- name: failure test playbook
+  hosts: localhost
+  gather_facts: false
+  vars:
+    summary_information: |
+      PROVISIONER SUMMARY
+      *******************
 
-      tasks:
-        - name: ISSUE CERT
-          shell: certbot certonly --standalone -d student1.testworkshop.rhdemo.io --email ansible-network@redhat.com --noninteractive --agree-tos
-          register: issue_cert
-          until: issue_cert is not failed
-          retries: 5
-          ignore_errors: yes
+  tasks:
+    - name: ISSUE CERT
+      shell: certbot certonly --standalone -d student1.testworkshop.rhdemo.io --email ansible-network@redhat.com --noninteractive --agree-tos
+      register: issue_cert
+      until: issue_cert is not failed
+      retries: 5
+      ignore_errors: yes
 
-        - name: set facts for output
-          set_fact:
-          summary_information: |
-            {{summary_information}}
-            - The Lets Encrypt certbot failed, please check https://letsencrypt.status.io/ to make sure the service is running
-          when: issue_cert is failed
+    - name: set facts for output
+      set_fact:
+      summary_information: |
+        {{summary_information}}
+        - The Lets Encrypt certbot failed, please check https://letsencrypt.status.io/ to make sure the service is running
+      when: issue_cert is failed
 
-        - name: print out summary information
-          debug:
-            msg: "{{summary_information}}"
+    - name: print out summary information
+      debug:
+        msg: "{{summary_information}}"
 ```
 
 This prints out a very easy to understand message to the terminal window:

@@ -22,13 +22,12 @@ In this blog, we will see how one can create and use a new golden image.
 
 ![screenshot](/images/posts/archive/my-golden-image.png)
 
-We use [image
-builder](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/composing_a_customized_rhel_system_image/composer-description_composing-a-customized-rhel-system-image#doc-wrapper)
+We use [image builder](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/composing_a_customized_rhel_system_image/composer-description_composing-a-customized-rhel-system-image#doc-wrapper)
 to prepare a new image. The tool provides a user interface that allows
 users to define custom images. In this example, we include the SSH
 server and tmux. The result image is a file in the VMDK4 format that is
 not totally supported by VMware vSphere 7, so this is the reason why we
-use a .vmdk-4 suffix.
+use a `.vmdk-4` suffix.
 
 ![create image ui screenshot](/images/posts/archive/create-image-screenshot.png)
 
@@ -55,7 +54,7 @@ upload the image.
 
 Now that we've uploaded our file, we will convert it as an up to date
 VMDK file. For this purpose, we use
-[[vmkfstools]{style="color: #1155cc; text-decoration: underline;"}](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-A5D85C33-A510-4A3E-8FC7-93E6BA0A048F.html).
+[vmkfstools](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.storage.doc/GUID-A5D85C33-A510-4A3E-8FC7-93E6BA0A048F.html).
 The tool is available on the ESXi7 hosts by default. In the task below,
 we use delegate_to: esxi1.test to run the command on one of our hosts.
 
@@ -104,8 +103,7 @@ At this stage, the disk is ready and we can connect it to a VM.
 ```
 
 There are four different ways to clone a VM with Ansible's
-[vmware.vmware_rest
-](https://console.redhat.com/ansible/automation-hub/repo/published/vmware/vmware_rest)collection.
+[vmware.vmware_rest](https://console.redhat.com/ansible/automation-hub/repo/published/vmware/vmware_rest) collection.
 This article explains the difference between them and how to use them
 with Ansible.
 
@@ -116,13 +114,12 @@ original can still evolve and a second clone from the same VM is likely
 to be different. There is no guarantee that two clones will be based on
 exactly the same image.
 
-The *vmware.vmware_rest.vcenter_vm* module allows us to prepare either
+The `vmware.vmware_rest.vcenter_vm` module allows us to prepare either
 an instant clone or a regular clone.
 
 ### Instant clone
 
-According to the [VMware official
-documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-853B1E2B-76CE-4240-A654-3806912820EB),
+According to the [VMware official documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-853B1E2B-76CE-4240-A654-3806912820EB),
 an instant clone is a lightweight copy of a live VM. It shares memory
 blocks with the original VM. This is the reason why the original VM must
 be running before we can clone it.
@@ -160,8 +157,7 @@ Now we've got the VM up and running, we can instant clone it:
 
 ### Regular clone
 
-We can also[ clone an existing
-VM](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-1E185A80-0B97-4B46-A32B-3EF8F309BEED.html).
+We can also [clone an existing VM](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-1E185A80-0B97-4B46-A32B-3EF8F309BEED.html).
 The operation takes more time, up to several hours, if the VM comes with
 large disks. The operation creates a full clone of the original VM. This
 time, the original VM doesn't need to be running.
@@ -236,7 +232,7 @@ its item entry on the content library.
     golden_image_id: '{{ (lib_items.value|selectattr("name", "equalto", "golden_image")|first).id }}'
 ```
 
-Once we\'ve got the item ID, we can call *vcenter_ovf_libraryitem* to
+Once we've got the item ID, we can call `vcenter_ovf_libraryitem` to
 spawn a new VM. Since the ID is immutable, we can save for a future use.
 
 ``` yml
@@ -254,11 +250,11 @@ spawn a new VM. Since the ID is immutable, we can save for a future use.
 ### Export a VM as a VM template on a content library
 
 The template creation is done with one call of the
-*vmware.vmware_rest.vcenter_vmtemplate_libraryitems* module. This module
+`vmware.vmware_rest.vcenter_vmtemplate_libraryitems` module. This module
 was introduced in the vmware_rest collection 2.2.0.
 
-Here, *nfs_lib* is your content library and your VM details are
-registered in the *my_vm* variable.
+Here, `nfs_lib` is your content library and your VM details are
+registered in the `my_vm` variable.
 
 ``` yml
 - name: Create a VM template on the library

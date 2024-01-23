@@ -44,29 +44,26 @@ availability of systems and data.
 
 ###  Confidentiality
 
-[As Bianca mentioned in the [first
-installment](/blog/connecting-to-a-windows-host) of this series, Ansible
+As Bianca mentioned in the first installment of this series, Ansible
 uses WinRM and sends user/password with variables (or, in the case of
 Ansible Tower, by using credentials). In the example below, which shows
 an inventory file that includes variables as `[win:vars]`, the
 certificate is ignored:
 
 ```yml
-    [win:vars]
-    ansible_user=vagrant
-    ansible_connection=winrm
-    ansible_winrm_server_cert_validation=ignore
+[win:vars]
+ansible_user=vagrant
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
 ```
 
 In an Active Directory environment the domain-joined hosts won't
 require ignoring certificates that validate if your control node has
-been set to trust the Active Directory
-CS.
+been set to trust the Active Directory CS.
 
-###  Integrity
+### Integrity
 
-Active Directory, discussed by John in the [second
-installment](/blog/active-directory-ansible-tower), adds more
+Active Directory, discussed by John in the second installment, adds more
 verification to credentials and authority for validating certificates on
 domains in its scope. The directory services provide added strength to
 confidentiality by being the authoritative credential store. Joining a
@@ -83,7 +80,7 @@ or hosts
 securely and with valid domain credentials. See the example below for
 how these tasks can be done with the use of a playbook:
 
-```
+```yaml
 - name: Join to domain
   win_domain_membership:
     dns_domain_name: tycho.local
@@ -102,7 +99,7 @@ how these tasks can be done with the use of a playbook:
     ignore_protection: no
 ```
 
-###  Availability
+### Availability
 
 In the a recent Windows-related
 post, which was about package
@@ -132,12 +129,12 @@ Roles](https://github.com/ansible/ansible-lockdown) related to security
 automation. Here you can see the win_updates module in action:
 
 ```yml
-     tasks:
-      - name: Install security updates
-        win_updates:
-          category_names:
-            - SecurityUpdates
-          Notify: reboot windows system
+tasks:
+ - name: Install security updates
+   win_updates:
+     category_names:
+       - SecurityUpdates
+     Notify: reboot windows system
 ```
 
 Another example shows how you can use this module within a playbook for
@@ -145,13 +142,13 @@ patching Windows nodes, along with the win_reboot module which is used
 for--- you guessed it!--- automating the restarting of Windows machines:
 
 ```yml
-     – name: Install missing updates
-       win_updates:
-         Category_names:
-            – ServicePacks
-            – UpdateRollups
-            – CriticalUpdates
-         Reboot: yes
+– name: Install missing updates
+  win_updates:
+    Category_names:
+       – ServicePacks
+       – UpdateRollups
+       – CriticalUpdates
+    Reboot: yes
 ```
 
 ###  Conclusion

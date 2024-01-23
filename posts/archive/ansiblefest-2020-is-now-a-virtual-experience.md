@@ -31,8 +31,8 @@ up-to-date on all things AnsibleFest. 
 **Call for proposals is open**
 
 We are still working through the details for the virtual event, but are
-very excited to announce that the [call for proposals](https://ansiblefest2020.eventpoint.com/cfp) is **now open
-through July 15**. We will post additional information on the Ansible Blog
+very excited to announce that the [call for proposals](https://ansiblefest2020.eventpoint.com/cfp) is
+**now open through July 15**. We will post additional information on the Ansible Blog
 and on the AnsibleFest site as it
 becomes available. Stay tuned! 
 

@@ -31,7 +31,7 @@ deprecated the singular form. This was done so that those using existing
 network modules would not have their Ansible Playbooks stop working and
 have sufficient time to migrate to the new network automation modules.
 
-# VLAN Example
+## VLAN Example
 
 Let's start with an example of the
 [eos_vlans](https://docs.ansible.com/ansible/latest/modules/eos_vlans_module.html)
@@ -62,7 +62,7 @@ will be merged into the running configuration of any device in the
 arista group.  The show vlan output on a new Arista switch will look
 like the following:
 
-```yml
+```bash
 rtr2#show vlan
 VLAN  Name                             Status    Ports
 ----- -------------------------------- --------- -------------------------------
@@ -75,7 +75,7 @@ VLAN  Name                             Status    Ports
 
 while the running configuration will look like the following:
 
-```yml
+```bash
 rtr2#show running-config | s vlan
 vlan 20
    name desktops
@@ -92,7 +92,7 @@ vlan 50
 
 Now let's make a change manually to the network configuration:
 
-```yml
+```bash
 rtr2(config)#vlan 100
 rtr2(config-vlan-100)#name artisanal_vlan
 rtr2(config-vlan-100)#end
@@ -134,7 +134,7 @@ the previous example to the following:
 The Ansible Playbook ran just like before with changed=0. Can we tell if
 it removed the artisanal_vlan 100?
 
-```yml
+```bash
 rtr2#show vlan
 VLAN  Name                             Status    Ports
 ----- -------------------------------- --------- -------------------------------
@@ -169,14 +169,14 @@ Let's look at the following example:
 
 **Data Model Sent**
 
-```
+```yaml
 - name: desktops
   vlan_id: 20
 ```
 
 **Existing Arista Config**
 
-```
+```bash
 vlan 200
    state suspend
 !
@@ -186,7 +186,7 @@ This is how merged compares to replaced:
 
 **merged**
 
-```
+```bash
 vlan 200
   name desktops
   state suspend
@@ -195,7 +195,7 @@ vlan 200
 
 **replaced**
 
-```
+```bash
 vlan 200
    name desktops
 !
@@ -241,7 +241,7 @@ artisanal_vlan 100?
 
 Logging into one of the Arista devices confirms it did!
 
-```yml
+```bash
 rtr2#show vlan
 VLAN  Name                             Status    Ports
 ----- -------------------------------- --------- -------------------------------

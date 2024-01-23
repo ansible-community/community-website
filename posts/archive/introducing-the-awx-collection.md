@@ -26,8 +26,7 @@ The AWX Collection
 upstream community distribution available on Ansible Galaxy.  The
 downstream supported Ansible Collection
 [ansible.tower](https://cloud.redhat.com/ansible/automation-hub/ansible/tower)
-is available on Automation Hub alongside the release of Ansible Tower
-3.7.
+is available on Automation Hub alongside the release of Ansible Tower 3.7.
 
 This collection is a replacement for the
 [Ansible Tower web modules](https://docs.ansible.com/ansible/latest/modules/list_of_web_infrastructure_modules.html#ansible-tower)
@@ -131,14 +130,14 @@ following code snippet is required at the play level of your playbook:
 ```
 
 Even if you are running on a version of Ansible that still ships with
-the tower\_\* modules, this will cause Ansible to load the modules from
+the `tower_*` modules, this will cause Ansible to load the modules from
 the AWXCollection instead of the versions shipped in Ansible Core. The
 rest of your playbook would look identical to a playbook that did not
 use the collection. 
 
 In the example playbook below, the authentication information is not
 specified in the tasks and would be loaded either from the environment
-variables or a tower_cli.cfg file:
+variables or a `tower_cli.cfg` file:
 
 ```yaml
 ---
@@ -202,7 +201,6 @@ variables or a tower_cli.cfg file:
         var2: My Second Variable
         var3: My Third Variable
 ```
-
 
 **Note:** Another way to tell Ansible to use a module from a collection
 is to fully qualify the modules' name with the collection namespace, as
@@ -273,7 +271,6 @@ file. Some changes to mention include:
 -   Some modules no longer return values the way they used to. All
     returns have been unified across the modules and primarily return
     the ID of the object modified.
-
 
 ## Conclusion
 

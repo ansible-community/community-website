@@ -115,7 +115,7 @@ configuration options in the VSCode window, go to
 **Code->Preference->Settings** and in the Search settings box type
 "**ansible**" as shown in the below snapshot.
 
-![](/images/posts/archive/ansible-vscode-ext-screenshot.png)
+![vscode extension screenshot](/images/posts/archive/ansible-vscode-ext-screenshot.png)
 
 The preferences can be set for a given user or workspace, and depending
 on the environment, also for remote type and workspace folder. Settings

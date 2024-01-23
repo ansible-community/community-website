@@ -30,7 +30,7 @@ structure of the project in the following ways: 
 First, a little history. In Ansible 2.9 and prior, every plugin and
 module was in the Ansible project
 ([https://github.com/ansible/ansible](https://github.com/ansible/ansible))
-itself. When you installed the \"ansible\" package, you got the
+itself. When you installed the "ansible" package, you got the
 language, runtime, and all content (modules and other plugins). Over
 time, the overwhelming popularity of Ansible created scalability
 concerns. Users had to wait many months for updated content. Developers

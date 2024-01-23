@@ -53,7 +53,7 @@ My playbook to deploy IIS is *very* simple:
       dest: C:\Inetpub\wwwroot\index.html
 ```
 
-All that I am doing here is adding the \`Web-Server\` feature, starting
+All that I am doing here is adding the `Web-Server` feature, starting
 IIS and copying my site's html file to the default location for web
 content being served by IIS. 
 
@@ -144,7 +144,7 @@ enable webhooks, and configured a Project Hook on GitLab to respond to
 merge request events on my project, I'm ready to make a test commit of
 my html file.
 
-Here, I add text to the \`\<title\>\` and \`\<body\>\` tags of my html
+Here, I add text to the `<title>` and `<body>` tags of my html
 document and save the file:
 
 ![Colin blog eight](/images/posts/archive/colin-blog-eight.png)

@@ -14,8 +14,7 @@ maintainable projects, because many of my projects---like Hosted Apache
 Solr---have been in operation for over a decade! If it's hard to
 maintain the project or it's hard to make major architecture changes,
 then I can lose customers to more nimble competitors, I can lose money,
-and---most importantly---I can lose my
-sanity!
+and---most importantly---I can lose my sanity!
 
 I'm presenting a session at AnsibleFest Austin this year,
 "Make your Ansible Playbooks flexible, maintainable, and scalable",
@@ -44,7 +43,7 @@ of software, copying a configuration for that software, then starting
 `ansible-galaxy init ROLE_NAME`,
 and then put those tasks into that role.
 
-If the role is generic enough, I\'ll either put it on GitHub and submit
+If the role is generic enough, I'll either put it on GitHub and submit
 it to Ansible Galaxy, or put it into a separate, private Git repository.
 Now I can add a generic set of tests for the role (with
 [Molecule](https://github.com/metacloud/molecule/)
@@ -131,8 +130,7 @@ file defaults section and run the playbook, and find that one or two
 tasks or roles takes a really long time, compared to the rest of the
 playbook.
 
-For example, one playbook used the
-copy module
+For example, one playbook used the copy module
 for a large directory with dozens of files. Because of the way Ansible
 performs a file copy internally, this meant there were many seconds
 wasted waiting for Ansible to ferry each file across the SSH

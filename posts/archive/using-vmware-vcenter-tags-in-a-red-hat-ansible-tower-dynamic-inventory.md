@@ -118,11 +118,11 @@ like:
 
 # Creating the dynamic inventory source in Ansible Tower
 
-Now it\'s time to create the inventory. In Ansible Tower, from the left
+Now it's time to create the inventory. In Ansible Tower, from the left
 hand panel under resources, select "Inventories" and click the add icon
 and add a new inventory. Give the inventory a name and select an
-organization for the inventory - we\'ll call ours \"VMware
-Inventory\'\', and assign it to Red Hat Organization.
+organization for the inventory - we'll call ours "VMware
+Inventory", and assign it to Red Hat Organization.
 
 ![vcenter tags blog four](/images/posts/archive/vcenter-blog-four.png)
 
@@ -175,7 +175,7 @@ their associated tags, and the guest attributes we defined based on what
 is available in the inventory plugin's documentation. But we only want
 to pull in VMs that have the tag "TestVM", and we want to create groups
 based on the tags associated with the VMs that are imported, their power
-state and their guest ID. So let\'s add some filters, as well as some
+state and their guest ID. So let's add some filters, as well as some
 keyed groups definition. Go back to the inventory source we defined, and
 replace the definition under source variables with the following:
 
