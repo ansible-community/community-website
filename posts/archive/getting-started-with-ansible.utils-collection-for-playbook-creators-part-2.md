@@ -14,8 +14,7 @@ title: Getting Started with Ansible.utils Collection for Playbook Creators, Part
 In ansible.utils, there are a variety of plugins which we can use for
 operational state assessment of network devices. I overviewed the
 ansible.utils collection in part one of this two part blog series. If
-you have not reviewed [part
-one](/blog/getting-started-with-ansible.utils-collection-for-playbook-creators-part-1){rel="noopener"},
+you have not reviewed part one,
 I recommend you do so, since I will build on this information in this
 part two blog. We will see how the ansible.utils collection can be
 useful in operational state assessment as an example use case.
@@ -57,7 +56,7 @@ of parsers which help to parse CLI output or text output. It can work
 with multiple remote hosts like network, Linux, or windows.it. It
 supports multiple parsing engines and it is extensible which means you
 can create your own parsing engine. It is a single task to run a
-command, parse and set facts. []{style="font-size: 20px;"}
+command, parse and set facts.
 
 Before the utils collection was available, we would need to write three
 different tasks to run commands, parse the output from command and set
@@ -65,17 +64,17 @@ facts. But thanks to cli_parse we only have one task which will return
 structured data from the "show command"
 output.
 
-Let\'s see an example of ansible.utils.cli_parse task:
+Let's see an example of ansible.utils.cli_parse task:
 
 ```yml
   tasks:
 
-  - name:  Run a command and parse results 
-    ansible.utils.cli_parse: 
-        command: show interfaces 
-        parser: 
-            name: ansible.utils.xxxx 
-            set_fact: interfaces  
+  - name:  Run a command and parse results
+    ansible.utils.cli_parse:
+        command: show interfaces
+        parser:
+            name: ansible.utils.xxxx
+            set_fact: interfaces
 ```
 
 In this task we need to provide a command which will execute on the
@@ -93,23 +92,21 @@ The above task will perform following operation:
 
 Currently ansible.utils.cli_parse plugin has following parsers:
 
--   **ansible.utils.textfsm**: Python module for parsing semi-formatted
+-   `ansible.utils.textfsm`: Python module for parsing semi-formatted
     text
--   **ansible.utils.ttp**: Template based parsing, low regex use,
+-   `ansible.utils.ttp`: Template based parsing, low regex use,
     jinja-like DSL
--   **ansible.netcommon.native**: Internal jinja, regex, yaml without
+-   `ansible.netcommon.native`: Internal jinja, regex, yaml without
     additional 3rd party libraries required
--   **ansible.netcommon.ntc_templates**: Predefined textfsm templates
+-   `ansible.netcommon.ntc_templates`: Predefined textfsm templates
     packaged as python library 
--   **ansible.netcommon.pyats**: Cisco Test Automation & Validation
+-   `ansible.netcommon.pyats`: Cisco Test Automation & Validation
     Solution (11 OSs/2500 parsers) 
--    **ansible.utils.from_xml**: convert XML to json using xmltodict 
+-    `ansible.utils.from_xml`: convert XML to json using xmltodict 
 
 All of the generic parsers are part of the ansible.utils collection and
 all network-related parsers are part of the ansible.netcommon
 collection.
-
- 
 
 #### Validating structured data and report errors using ansible.utils.validate
 
@@ -128,7 +125,7 @@ Let's see an example of ansible.utils.validate task:
   tasks:
 
   - name:  Validate structured data
-     ansible.utils.validate: 
+     ansible.utils.validate:
          data: "{{ input_data }}"
          criteria:
          - "{{ lookup('file', './criteria.json') | from_json }}"
@@ -145,16 +142,14 @@ The above task will perform following operation:
 
 -   Reads the input JSON data and the criteria for data (schema mode)
 -   Validate using the 'xxxx' engine
--   Returns list of errors if data does not conform to the schema
-    criteria
+-   Returns list of errors if data does not conform to the schema criteria
 
 Currently ansible.utils.validate plugin supports following validation
 engine:
 
--   **ansible.utils.jsonschema**: Python module to validate json data
-    against a schema. 
+-   `ansible.utils.jsonschema`: Python module to validate json data against a schema. 
 
-Now let\'s use the above plugins from ansible.utils to see how we can
+Now let's use the above plugins from ansible.utils to see how we can
 use them in actual scenarios. In this example we will see how to use
 ansible.utils to fetch BGP operational state data, validate it against
 predefined json schema and also remediate configuration drift when
@@ -166,18 +161,17 @@ three networks each.
 
 ![utils blog 2 image one](/images/posts/archive/utils-blog-one.png)
 
-Lets check running configuration and operation state data related to
-BGP.
+Lets check running configuration and operation state data related to BGP.
 
 ![utils blog 2 image two](/images/posts/archive/utils-blog-two.jpeg)
 
-Let\'s check the CSRv1 node. Lets execute command **show running-config
-\| section bgp**. As you can see it has two neighbors configured, where
+Let's check the CSRv1 node. Lets execute command `show running-config | section bgp`.
+As you can see it has two neighbors configured, where
 both of them have the same Remote AS, so they are IBGP neighbors. The
 neighbors are activated and soft reconfiguration inbound is enabled on
 them. This node also advertises three networks.
 
-Now let\'s execute the command **show bgp summary**.
+Now let's execute the command `show bgp summary`.
 
 ![utils blog 2 image three](/images/posts/archive/utils-blog-three.png)
 
@@ -185,10 +179,10 @@ The above screenshot tells us the neighbor relationships with the other
 two nodes established and the current node receiving 3 prefixes from the
 other two nodes.
 
-Now let\'s validate it using routing table entries. Lets execute command
-**show ip route bgp.**
+Now let's validate it using routing table entries.
+Lets execute command `show ip route bgp`.
 
-**![utils blog 2 image four](/images/posts/archive/utils-blog-four.png)
+![utils blog 2 image four](/images/posts/archive/utils-blog-four.png)
 
 The above screenshot shows route table entries from node 1. As you can
 see, this node is aware of six routes, with the next hop being the
@@ -196,7 +190,7 @@ respective BGP neighbors advertising them.
 
 Similarly we have configured CSRv2 and CSRv3.
 
-Now let\'s check the playbooks which we are using in this example with
+Now let's check the playbooks which we are using in this example with
 detailed steps.
 
 Checkout this [code](https://github.com/ashwini-mhatre/bgp_demo/)
@@ -204,36 +198,27 @@ if you want to learn more details.
 
 Playbooks are divided into two parts:
 
--   Gather facts and store them in a yaml file as the Source of Truth
-    (SOT)
--   Validate structured data against SOT and rectify drift if it is
-    detected
-
- 
+-   Gather facts and store them in a yaml file as the Source of Truth (SOT)
+-   Validate structured data against SOT and rectify drift if it is detected
 
 **Gather facts and store it in a yaml file for SOT**
 
-[Let\'s check the content of
-]{style="color: #333333;"}[facts.yaml](https://github.com/ashwini-mhatre/bgp_demo/blob/main/playbooks/facts.yaml)[.
-]{style="color: #333333;"}
+Let's check the content of [facts.yaml](https://github.com/ashwini-mhatre/bgp_demo/blob/main/playbooks/facts.yaml).
 
-[![utils blog 2 image five](/images/posts/archive/utils-blog-five.png)
+![utils blog 2 image five](/images/posts/archive/utils-blog-five.png)
 
 In the first task we are gathering bgp_global and bgp_address_family
 facts from target devices. In the second task we are storing them in a
 flat file under the hostvars directory. These files will act as SOT
 (source of truth) for BGP config on target devices.
 
-Lets run the above playbook with "**ansible-navigator run
-playbooks/facts.yaml** " using this command. (See[**
-ansible-navigator**](https://ansible-navigator.readthedocs.io/en/latest/)
-docs for more details).
+Lets run the above playbook with `ansible-navigator run playbooks/facts.yaml` using this command.
+See [ansible-navigator](https://ansible-navigator.readthedocs.io/en/latest/) docs for more details.
 
-[How does this data look after execution of the playbook? Let\'s check
-[playbooks/host_vars/csrv-1.yaml.](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/host_vars/csrv-1.yaml)]{style="color: #333333;"}
+How does this data look after execution of the playbook? Let's check
+[playbooks/host_vars/csrv-1.yaml.](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/host_vars/csrv-1.yaml)
 
 ![utils blog 2 image six](/images/posts/archive/utils-blog-six.png)
-
 
 **Validate structured data against SOT and rectify drift if it is detected**
 
@@ -241,22 +226,21 @@ In this step we will inspect BGP operational state data for all the
 nodes in our topology and then determine if they are running as expected
 or if there is any configuration drift.
 
-[Now let\'s see the
+Now let's see the
 [playbooks/verify.yaml](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/verify.yaml)
-playbook which will validate and rectify drift if it is
-present.]{style="color: #333333;"}
+playbook which will validate and rectify drift if it is present.
 
 ![utils blog 2 image seven](/images/posts/archive/utils-blog-seven.png)
 
-In the first task we have used the **ansible.utils.cli_parse** plugin to
-execute the **show ip route bgp** command on the target device and then
-pass the output of this command to **pyats parser**.
+In the first task we have used the `ansible.utils.cli_parse` plugin to
+execute the `show ip route bgp` command on the target device and then
+pass the output of this command to `pyats parser`.
 
 The pyats parser then converts the output to structured data which is
 stored in the result variable.
 
 In the next task we pass the value in the result variable along with a
-predefined schema to the **ansible.utils.validate** plugin. The plugin
+predefined schema to the `ansible.utils.validate` plugin. The plugin
 then compares the data against the schema or the criteria using the
 jsonschema engine. Each node has a schema file that defines the prefix
 ranges which they received from the other two neighbors .
@@ -273,9 +257,9 @@ validating against the schema will always tell us whether the devices
 are receiving exactly the set of routes which they are supposed to
 receive or not.
 
-[Following is the example of a [schema
-file](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/bgp_schema/csrv-1.json)
-for node CSRv1.]{style="color: #333333;"}
+Following is the example of a
+[schema file](https://github.com/ashwini-mhatre/bgp_demo/blob/fest21/playbooks/bgp_schema/csrv-1.json)
+for node CSRv1.
 
 ![utils-blog-eight](/images/posts/archive/utils-blog-eight.png)
 
@@ -288,27 +272,27 @@ enforce the SOT which we have saved previously in yaml files on the
 target devices. The end result will be remediating any configuration
 drift which causes failure in operation state validation.
 
-[ If we execute the verify.yaml playbook with the **ansible-navigator
-run playbooks/verify.yaml** command, as we have not made changes to any
+If we execute the verify.yaml playbook with the `ansible-navigator run playbooks/verify.yaml`
+command, as we have not made changes to any
 of the target devices, we see that they are working as expected and
-schema validation passes. (See
-[**ansible-navigator**](https://ansible-navigator.readthedocs.io/en/latest/)
-docs for more details.)]{style="color: #333333;"}
+schema validation passes. See
+[ansible-navigator](https://ansible-navigator.readthedocs.io/en/latest/)
+docs for more details.
 
 ![utils-blog-nine](/images/posts/archive/utils-blog-nine.png)
 
-[Let\'s manually introduce erroneous changes on all devices. Then we
-will run the same playbook again and see how it behaves. Let\'s remove
+Let's manually introduce erroneous changes on all devices. Then we
+will run the same playbook again and see how it behaves. Let's remove
 the routes to make the erroneous changes they are
-advertising.]{style="color: #333333;"}
+advertising.
 
 ![utils-blog-ten](/images/posts/archive/utils-blog-ten.png)
 
-Now we have made changes in all the routers. Let\'s run the playbook
-again with **ansible-navigator run playbooks/verify.yaml.**
+Now we have made changes in all the routers. Let's run the playbook
+again with `ansible-navigator run playbooks/verify.yaml.`
 
 This time the schema validation fails. Remediation tasks are executed
-and they add facts that are missing prefixes on all three nodes. Let\'s
+and they add facts that are missing prefixes on all three nodes. Let's
 take a detailed look into this.
 
 ![utils-blog-eleven](/images/posts/archive/utils-blog-eleven.jpg)
@@ -330,7 +314,7 @@ reconfigures the missing prefixes. 
 As we can see in the commands sent for all the target devices, the
 playbook adds facts to the routes that are deleted.
 
- If we run this playbook once again it will be idempotent and report no
+If we run this playbook once again it will be idempotent and report no
 changes, thereby indicating everything working as expected. 
 
 In a production environment, this playbook can be triggered based on

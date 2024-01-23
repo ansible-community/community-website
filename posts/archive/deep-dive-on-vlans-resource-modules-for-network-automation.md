@@ -31,8 +31,6 @@ deprecated the singular form. This was done so that those using existing
 network modules would not have their Ansible Playbooks stop working and
 have sufficient time to migrate to the new network automation modules.
 
- 
-
 # VLAN Example
 
 Let's start with an example of the
@@ -108,7 +106,7 @@ because we have the state parameter set to merged by default, so it only
 will merged the data model it knows about. It is just enforcing
 configuration policy of the VLANs I am sending.
 
-## Using the \'state\' parameter
+## Using the 'state' parameter
 
 What happens if I change the state parameter to replaced?  Just change
 the previous example to the following:
@@ -167,39 +165,45 @@ There are three parameters currently used for the **vlans** resource:
 -   state (active or suspend)
 -   vlan_id (range between 1-4094)
 
-Let\'s look at the following example:
+Let's look at the following example:
 
-+-----------------------------------+-----------------------------------+
-| ::: {style="line-height: 1;"}     | ::: {style="line-height: 1;"}     |
-| **  [Data Model Sent\             | **  [Existing Arista Config \     |
-| \                                 | \                                 |
-| \                                 | ]{style="font-size: 16px;"}**     |
-| ]{style="font-size: 16px;"}**     | :::                               |
-| :::                               |                                   |
-|                                   |     vlan 200                      |
-|     - name: desktops              |        state suspend              |
-|       vlan_id: 200                |     !                             |
-+-----------------------------------+-----------------------------------+
+**Data Model Sent**
+
+```
+- name: desktops
+  vlan_id: 20
+```
+
+**Existing Arista Config**
+
+```
+vlan 200
+   state suspend
+!
+```
 
 This is how merged compares to replaced:
 
-+-----------------------------------+-----------------------------------+
-| ::: {style="line-height: 1;"}     | ::: {style="l                     |
-| ** [merged\                       | ine-height: 1; font-size: 16px;"} |
-| \                                 | **replaced\                       |
-| ]{style="font-size: 16px;"}**     | \                                 |
-| :::                               | \                                 |
-|                                   | **                                |
-|     vlan 200                      | :::                               |
-|       name desktops               |                                   |
-|       state suspend               |     vlan 200                      |
-|     !                             |        name desktops              |
-|                                   |     !                             |
-+-----------------------------------+-----------------------------------+
+**merged**
+
+```
+vlan 200
+  name desktops
+  state suspend
+!
+```
+
+**replaced**
+
+```
+vlan 200
+   name desktops
+!
+```
 
 The replaced parameter enforces the data model on the network device for
-each configured VLAN.  In the example above it will remove the \`state
-suspend\` because it is not within the data model.  To think of this
+each configured VLAN.  In the example above it will remove the `state suspend`
+because it is not within the data model.  To think of this
 another way, the replaced parameter is aware of commands that shouldn't
 be there as well as what should.
 

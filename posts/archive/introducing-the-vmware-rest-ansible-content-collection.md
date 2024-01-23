@@ -10,24 +10,22 @@ title: Introducing the VMware REST Ansible Content Collection
 
 # Introducing the VMware REST Ansible Content Collection
 
-The VMware Ansible modules as part of the current [community.vmware[
-Collection]{style="color: #1155cc;"}](https://galaxy.ansible.com/community/vmware){style="text-decoration: none;"}
-are extremely popular. According to GitHub, it\'s the second most forked
-Collection^1^, just after
-[community.general](https://galaxy.ansible.com/community/general){rel="noopener"}.
+The VMware Ansible modules as part of the current [community.vmware Collection](https://galaxy.ansible.com/community/vmware)
+are extremely popular. According to GitHub, it's the second most forked Collection, just after
+[community.general](https://galaxy.ansible.com/community/general).
 The VMware modules and plugins for Ansible have benefited from a stream
 of contributions from dozens of users. Many IT infrastructure engineers
 rely on managing their VMware infrastructure by means of a simple
 Ansible Playbook. The vast majority of the current VMware modules are
 built on top of a dependent python library called
-[pyVmomi](https://github.com/vmware/pyvmomi){rel="noopener"}[](https://github.com/vmware/pyvmomi),
+[pyVmomi](https://github.com/vmware/pyvmomi),
 also known as vSphere Automation SDK for Python.
 
 ## Why a new VMware Ansible Content Collection?
 
 VMware has recently introduced the vSphere REST API for vSphere 6.0 and
 later, which will likely replace the existing SOAP SDK used in the
-[community.vmware](https://galaxy.ansible.com/community/vmware){rel="noopener"}
+[community.vmware](https://galaxy.ansible.com/community/vmware)
 Collection.
 
 Since the REST API's initial release, vSphere support for the REST API
@@ -51,17 +49,18 @@ future Collection enablement and much more.
 
 ## Using the VMware REST API
 
-In order to understand how the new modules function against the new REST
-API, let's take a look at the REST API itself first. For example, the
-[com.vmware.vcenter.vm.power]{style="font-family: 'courier new', courier;"}
-API endpoint changes the power state of a VM. It\'s equivalent to the
-following sample URL: https://vcenter.test/rest/vcenter/vm/\$vm/power
+In order to understand how the new modules function against the new REST API, let's take a look at the REST API itself first.
+For example, the `com.vmware.vcenter.vm.power` API endpoint changes the power state of a VM.
+It's equivalent to the following sample URL:
+
+```bash
+https://vcenter.test/rest/vcenter/vm/\$vm/power
+```
 
 With the vCenter 7.0 release, 723 total REST endpoints are exposed,
-which can be discovered using the following
-[curl]{style="font-family: 'courier new', courier;"} command:
+which can be discovered using the following `curl` command:
 
-``` 
+```bash
 $ curl -k https://vcenter.test/rest/com/vmware/vapi/metadata/cli/command|jq -r ".[][].path"|uniq|wc -l
 723
 ```
@@ -70,7 +69,7 @@ The VMware REST APIs are documented in the Swagger 2.0 format. You can
 find the JSON files on your vCenter node in the following directory
 path:
 
-``` 
+```bash
 root@vcenter [ /etc/vmware-vapi/apiexplorer/json ]# ls -lh
 total 3.3M
 -rw-r--r-- 1 vapiEndpoint users  145 Aug 31 15:37 api.json
@@ -84,7 +83,7 @@ total 3.3M
 ```
 
 To summarize, the
-[vmware.vmware_rest](https://galaxy.ansible.com/vmware/vmware_rest){rel="noopener"}
+[vmware.vmware_rest](https://galaxy.ansible.com/vmware/vmware_rest)
 Collection has all these REST endpoints ready to be consumed with the
 descriptions in a well documented format.
 
@@ -92,7 +91,7 @@ descriptions in a well documented format.
 
 The modules contained in this Collection are generated using a tool
 called 
-[[vmware_rest_code_generator](https://github.com/ansible-collections/vmware_rest_code_generator)]{style="font-family: 'courier new', courier;"},
+[vmware_rest_code_generator](https://github.com/ansible-collections/vmware_rest_code_generator),
 which was developed and open sourced by the Ansible team. It loads the
 Swagger files and then auto-generates a module per each resource,
 generating more than 300 modules this way. You'll notice that not every
@@ -104,22 +103,21 @@ expand and extend the number of modules over time.
 
 ## Using the vmware_rest Collection
 
-The following tasks retrieve a list of the VM, shuts them down, and then
-deletes them:
+The following tasks retrieve a list of the VM, shuts them down, and then deletes them:
 
-``` 
+```yaml
 - name: Collect the list of the existing VM
   vcenter_vm_info:
   register: existing_vms
   until: existing_vms is not failed
- 
+
 - name: Turn off the VM
   vcenter_vm_power:
     state: stop
     vm: '{{ item.vm }}'
   with_items: "{{ existing_vms.value }}"
   ignore_errors: yes
- 
+
 - name: Delete some VM
   vcenter_vm:
     state: absent
@@ -141,33 +139,26 @@ following:
 
 -   Ansible 2.9 or later 
 -   Python 3.6 or later
--   The [aiohttp]{style="font-family: 'courier new', courier;"} package
+-   The `aiohttp` package
 
-Use the [ansible-galaxy]{style="font-family: 'courier new', courier;"}
-command to retrieve the Collection:
+Use the `ansible-galaxy` command to retrieve the Collection:
 
-``` 
+```bash
 # ansible-galaxy collection install vmware.vmware_rest
 ```
 
-If you use a virtualenv, you can install
-[aiohttp]{style="font-family: 'courier new', courier;"} with following
-command:
+If you use a virtualenv, you can install `aiohttp` with following command:
 
-``` 
+```bash
 # pip install aiohttp
 ```
 
-Else, you will need to download and install the
-[python3-aiohttp]{style="font-family: 'courier new', courier;"} package.
+Else, you will need to download and install the `python3-aiohttp` package.
 
-To read the module documentation, use the
-[ansible-doc]{style="font-family: 'courier new', courier;"} command. For
-example, to read documentation for the
-[vcenter_cluster_info]{style="font-family: 'courier new', courier;"}
-module, refer to the following command:
+To read the module documentation, use the `ansible-doc` command.
+For example, to read documentation for the `vcenter_cluster_info` module, refer to the following command:
 
-``` 
+```bash
 # ansible-doc -t module vmware.vmware_rest.vcenter_cluster_info
 ```
 
@@ -186,11 +177,10 @@ resource without any time consuming preliminary look up.
 ## How can I contribute?
 
 Because the modules are auto-generated, it GitHub pull requests should
-be raised against the [code
-generator](https://github.com/ansible-collections/vmware_rest_code_generator)
+be raised against the [code generator](https://github.com/ansible-collections/vmware_rest_code_generator)
 itself, and not the resulting Collection contents.
 
-Don\'t hesitate to report any issues on the GitHub project at
+Don't hesitate to report any issues on the GitHub project at
 [https://github.com/ansible-collections/vmware_rest/issues](https://github.com/ansible-collections/vmware_rest/issues).
 
 
@@ -204,4 +194,3 @@ This can be sorted, for example:
 ```bash
 method: curl -s https://api.github.com/orgs/ansible-collections/repos|jq -r -c --sort-keys '.|sort_by(.forks)|reverse|.[]|[.name, .forks]'
 ```
-

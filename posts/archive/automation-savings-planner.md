@@ -156,8 +156,7 @@ The cost portion of the formula includes hours spent in
 -   Implementation
 -   Deployment
 -   Training
--   Other expenditures for creating, maintaining & running the
-    automation
+-   Other expenditures for creating, maintaining & running the automation
 
 The hours (cost of investment) are typically higher on the onset and are
 greatly reduced once the automation has been created and only
@@ -166,43 +165,46 @@ maintenance is required. 
 For the initial period (including the first year), the formula uses the
 following variables for its calculation.
 
--   TIME - time for manual run on one host (in hours) multiplied by 10
--   BufferTime -extra time for unforeseen and unaccounted delays and
-    familiarization with requirements
--   RISK - a 40% risk adjustment¹ is applied for unforeseen situations
+- TIME - time for manual run on one host (in hours) multiplied by 10
+- BufferTime -extra time for unforeseen and unaccounted delays and familiarization with requirements
+- RISK - a 40% risk adjustment¹ is applied for unforeseen situations
 
 The formula for the initial period and first year is represented as
 follows:
 
-*C1 = TIME + BufferTime*
+```
+C1 = TIME + BufferTime
 
-*C2 = C1 \* RISK*
+C2 = C1 * RISK
 
-*initial cost = (C1 + C2) \* COST*
+initial cost = (C1 + C2) * COST
 
-*year 1 cost = (C1 + C2) \* COST²*
+year 1 cost = (C1 + C2) * COST²
+```
+
+
 
 The next two years after the first year, the formula uses the following
 variables for its calculation. 
 
--   TIME - time for manual run on one host (in hours) multiplied by 4
--   RISK - a 40% risk adjustment¹ to account for unforeseen situations
+- TIME - time for manual run on one host (in hours) multiplied by 4
+- RISK - a 40% risk adjustment¹ to account for unforeseen situations
 
-The formula for the next two years is represented as follows: 
+The formula for the next two years is represented as follows:
 
-*C1 = TIME*
+```
+C1 = TIME
 
-*C2 = C1 \* RISK*
+C2 = C1 * RISK
 
-*year 2 cost = (C1 + C2) \* COST²*
+year 2 cost = (C1 + C2) * COST²
 
-*year 3 cost = (C1 + C2) \* COST²*
+year 3 cost = (C1 + C2) * COST²
+```
 
-With the details on how cost is calculated for the plan, let's talk
-about savings.
+With the details on how cost is calculated for the plan, let's talk about savings.
 
-The savings indicates the time and money saved as a result of automating
-the plan. 
+The savings indicates the time and money saved as a result of automating the plan. 
 
 A 50% productivity recapture rate is taken to account for the
 productivity that is gained by repeated manual implementation of a task
@@ -211,42 +213,46 @@ situations that may arise and need to be handled.
 
 A savings growth rate of 15% year over year is used. 
 
-The initial period of money savings results in \$0. As such no formula
+The initial period of money savings results in $0. As such no formula
 is necessary for that period. 
 
 The formula to calculate savings for the initial period is shown below:
 
-*Initial period of Savings = \$0 - initialCost*
+```
+Initial period of Savings = $0 - initialCost
 
 The  formula used for savings for year one are:
 
-*S1 = (HOSTS \* (TIME/60) \* FREQUENCY)*
+S1 = (HOSTS * (TIME/60) * FREQUENCY)
 
-*S2 = S1 \* RECAPTURE*
+S2 = S1 * RECAPTURE
 
-*S3 = S2 \* RISK \* COST²
+S3 = S2 * RISK * COST²
 
-Year One Savings = S2 - S3 - Year One Cost*
+Year One Savings = S2 - S3 - Year One Cost
+```
 
-* *HOSTS - number of hosts
+HOSTS - number of hosts
 TIME - manual time in minutes
-FREQUENCY - yearly frequency of automation\
-RECAPTURE - 50% productivity recapture\
+FREQUENCY - yearly frequency of automation
+RECAPTURE - 50% productivity recapture
 RISK - 5% Risk Adjustment
 
 The formula used to capture savings for year two:
 
-*S1 = Year One Savings \* GROWTH*
+```
+S1 = Year One Savings * GROWTH
 
-*Year Two Savings = Year One Savings  + S1 - Year 2 Cost*
+Year Two Savings = Year One Savings  + S1 - Year 2 Cost
 
 GROWTH - 15% Growth
 
 The formula used to capture savings for year three:
 
-*S2 = Year Two Savings \* GROWTH*
+S2 = Year Two Savings * GROWTH
 
-*Year Three Savings = Year Two Savings + S2 -Year 2 Cost*
+Year Three Savings = Year Two Savings + S2 -Year 2 Cost
+```
 
 And there you have it! The inner workings of how money and savings are
 calculated to give you the projected savings of automating tasks your
@@ -259,7 +265,6 @@ money, but allows businesses to expand their automation capabilities to
 deliver applications, meet expectations and improve their relationships
 with their customers. 
 
-*1 - [A Forrester Total Economic Impact™
-Study](https://www.redhat.com/rhdc/managed-files/ma-forrester-ansible-economic-impact-analyst-paper-f13019bf-201808-en_0.pdf){rel="noopener"}*
+¹ [A Forrester Total Economic Impact™ Study](https://www.redhat.com/rhdc/managed-files/ma-forrester-ansible-economic-impact-analyst-paper-f13019bf-201808-en_0.pdf)
 
-*2 - Cost per hour in USD if applicable, based on display*
+² Cost per hour in USD if applicable, based on display.

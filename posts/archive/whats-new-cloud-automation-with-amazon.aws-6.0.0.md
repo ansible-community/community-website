@@ -20,15 +20,14 @@ process from development to production.
 This blog post goes through changes and highlights what's new in the
 6.0.0 release of this Ansible Content Collection. We have included
 numerous bug fixes, features, and code quality improvements that further
-enhance the amazon.aws Collection. Let\'s go through some of them!
+enhance the amazon.aws Collection. Let's go through some of them!
 
 ## Forward-looking Changes
 
 ### New boto3/botocore Versioning
 
 The amazon.aws Collection has dropped support for
-[botocore\<1.25.0]{style="font-family: terminal, monospace;"} and
-[boto3\<1.22.0]{style="font-family: terminal, monospace;"}. Most modules
+`botocore<1.25.0` and `boto3<1.22.0`. Most modules
 will continue to work with older versions of the AWS Software
 Development Kit (SDK), however, compatibility with older versions of the
 AWS SDK is not guaranteed and will not be tested. When using older
@@ -50,78 +49,35 @@ will deprecate support for Python versions less than 3.7 by this
 collection. However, support for Python versions less than 3.7 by this
 collection will be removed in release 7.0.0. Additionally, support for
 Python versions less than 3.8 is expected to be removed in a release
-after 2024-12-01 based on currently available[
-]{style="color: #1f2328;"}[schedules](https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/)[. ]{style="color: #1f2328;"}
+after 2024-12-01 based on currently available
+[schedules](https://aws.amazon.com/blogs/developer/python-support-policy-updates-for-aws-sdks-and-tools/).
 
 ## Removed Features
 
 The following features have been removed from this collection release.
 
-+-----------------------------------+-----------------------------------+
-| **[M                              | **[Features                       |
-| odule]{style="color: #262626;"}** | Re                                |
-|                                   | moved]{style="color: #262626;"}** |
-+-----------------------------------+-----------------------------------+
-| [ec2_vpc_endpoint_info]{style="fo | Support for the query parameter   |
-| nt-family: terminal, monospace;"} | has been removed.                 |
-|                                   |                                   |
-|                                   | The                               |
-|                                   | [amazon.aws                       |
-|                                   | .ec2_vpc_endpoint_info]{style="fo |
-|                                   | nt-family: terminal, monospace;"} |
-|                                   | module now only queries for       |
-|                                   | endpoints.                        |
-|                                   |                                   |
-|                                   | Services can be queried using the |
-|                                   | [amazon.aws.ec2_vpc_              |
-|                                   | endpoint_service_info]{style="fon |
-|                                   | t-family: terminal, monospace;"}  |
-|                                   | module.                           |
-+-----------------------------------+-----------------------------------+
-| [s3_object]{style="fo             | Support for creating and deleting |
-| nt-family: terminal, monospace;"} | S3 buckets using the              |
-|                                   | [amazon.aws.s3_object]{style="fo  |
-|                                   | nt-family: terminal, monospace;"} |
-|                                   | module has been removed. S3       |
-|                                   | buckets  can be created and       |
-|                                   | deleted using the                 |
-|                                   | [amazon.aws.s3_bucket]{style="fo  |
-|                                   | nt-family: terminal, monospace;"} |
-|                                   | module.                           |
-+-----------------------------------+-----------------------------------+
+- `ec2_vpc_endpoint_info` - Support for the query parameter has been removed.
+  The `amazon.aws.ec2_vpc_endpoint_info` module now only queries for endpoints.
+  Services can be queried using the amazon.aws.ec2_vpc_endpoint_service_info module.
+- `s3_object` - Support for creating and deleting S3 buckets using the `amazon.aws.s3_object` module has been removed.
+  S3 buckets can be created and deleted using the `amazon.aws.s3_bucket` module.
 
 ## Deprecated Features
 
 This collection release also introduces some deprecations. For
 consistency between the collection and AWS documentation, the
-[boto3_profile]{style="font-family: terminal, monospace;"} alias for the
-[profile]{style="font-family: terminal, monospace;"} option has been
-deprecated. Please use
-[profile]{style="font-family: terminal, monospace;"} instead.
+`boto3_profile` alias for the `profile` option has been
+deprecated. Please use `profile` instead.
 
-The [amazon.aws.s3_object]{style="font-family: terminal, monospace;"}
-and
-[amazon.aws.s3_object_info]{style="font-family: terminal, monospace;"}
+The `amazon.aws.s3_object` and `amazon.aws.s3_object_info`
 modules have also undergone several deprecations.
 
--   Passing contemporarily
-    [dualstack]{style="font-family: terminal, monospace;"}  and
-    [endpoint_url]{style="font-family: terminal, monospace;"} has been
-    deprecated. The
-    [dualstack]{style="font-family: terminal, monospace;"} parameter is
-    ignored when
-    [endpoint_url]{style="font-family: terminal, monospace;"}  is
-    passed. Support will be removed in a release after 2024-12-01 .
--   Support for passing values of
-    [overwrite]{style="font-family: terminal, monospace;"} other than
-    [always]{style="font-family: terminal, monospace;"},
-    [never]{style="font-family: terminal, monospace;"},
-    [different]{style="font-family: terminal, monospace;"} or
-    [last]{style="font-family: terminal, monospace;"} has been
-    deprecated. Boolean values should be replaced by the strings
-    [always]{style="font-family: terminal, monospace;"} or
-    [never]{style="font-family: terminal, monospace;"}. Support will be
-    removed in a release after 2024-12-01.
+-   Passing contemporarily `dualstack` and `endpoint_url` has been deprecated.
+    The `dualstack` parameter is ignored when `endpoint_url`  is passed.
+    Support will be removed in a release after 2024-12-01 .
+-   Support for passing values of `overwrite` other than `always`, `never`, `different` or `last` has been deprecated.
+    Boolean values should be replaced by the strings `always` or `never`.
+    Support will be removed in a release after 2024-12-01.
 
 ## Code quality and CI improvement
 
@@ -159,37 +115,22 @@ in future releases.
 As naming might be generally tedious, a misleading module or option's
 name may complicate the user experience.
 
-We decided to rename the
-[amazon.aws.aws_secret]{style="font-family: terminal, monospace;"}
-lookup plugin in this collection release. This decision is a follow up
-of the renaming initiative started in release 5.0.0 of this collection.
-Therefore, the
-[amazon.aws.aws_secret]{style="font-family: terminal, monospace;"}
-module has been renamed to
-[amazon.aws.secretsmanager_secret]{style="font-family: terminal, monospace;"}. 
+We decided to rename the `amazon.aws.aws_secret` lookup plugin in this collection release.
+This decision is a follow up of the renaming initiative started in release 5.0.0 of this collection.
+Therefore, the `amazon.aws.aws_secret` module has been renamed to `amazon.aws.secretsmanager_secret`. 
 
-We have also decided to rename the
-[amazon.aws.aws_ssm]{style="font-family: terminal, monospace;"} lookup
-plugin to
-[amazon.aws.ssm_parameter]{style="font-family: terminal, monospace;"}.
+We have also decided to rename the `amazon.aws.aws_ssm` lookup plugin to `amazon.aws.ssm_parameter`.
 
-However, [aws_secret]{style="font-family: terminal, monospace;"} and
-[aws_ssm]{style="font-family: terminal, monospace;"} remain as aliases
-and they will be deprecated in the future. 
+However, `aws_secret` and `aws_ssm` remain as aliases and they will be deprecated in the future. 
 
-For consistency amongst our plugins and modules,we renamed the following
-options:
+For consistency amongst our plugins and modules, we renamed the following options:
 
-  ----------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------
-  **[Option]{style="color: #262626;"}**                             **[Renamed to]{style="color: #262626;"}**
-  [aws_profile]{style="font-family: terminal, monospace;"}          [profile]{style="font-family: terminal, monospace;"} ([aws_profile]{style="font-family: terminal, monospace;"} remains as an alias)
-  [aws_access_key]{style="font-family: terminal, monospace;"}       [access_key]{style="font-family: terminal, monospace;"} ([aws_access_key]{style="font-family: terminal, monospace;"} remains as an alias)
-  [aws_secret_key]{style="font-family: terminal, monospace;"}       [secret_key]{style="font-family: terminal, monospace;"} ([aws_secret_key]{style="font-family: terminal, monospace;"} remains as an alias)
-  [aws_security_token]{style="font-family: terminal, monospace;"}   [security_token]{style="font-family: terminal, monospace;"} ([aws_security_token]{style="font-family: terminal, monospace;"} remains as an alias)
-  ----------------------------------------------------------------- ---------------------------------------------------------------------------------------------------------------------------------------------------
+- `aws_profile` renamed to `profile` (`aws_profile` remains as an alias)
+- `aws_access_key` renamed to `access_key` (`aws_access_key` remains as an alias)
+- `aws_secret_key` renamed to `secret_key` (`aws_secret_key`  remains as an alias)
+- `aws_security_token` renamed to `security_token` (`aws_security_token` remains as an alias)
 
-These changes should not have observable effect for users outside the
-module/plugin documentation.
+These changes should not have observable effect for users outside the module/plugin documentation.
 
 ## New Modules
 
@@ -209,31 +150,21 @@ file systems, and Amazon EC2 instances. 
 The following table highlights the functionalities covered by these new
 Red Hat supported modules:
 
-  ---------------------------------------------------------------------- -----------------------------------------------------------------------------------------------
-  **[Module]{style="color: #262626;"}**                                  **[Description]{style="color: #262626;"}**
-  [backup_restore_job_info]{style="font-family: terminal, monospace;"}   Get detailed information about AWS Backup restore jobs initiated to restore a saved resource.
-  [backup_vault]{style="font-family: terminal, monospace;"}              Manage AWS Backup vaults.
-  [backup_vault_info]{style="font-family: terminal, monospace;"}         Get detailed information about an AWS Backup vault.
-  [backup_plan]{style="font-family: terminal, monospace;"}               Manage AWS Backup plans.
-  [backup_plan_info]{style="font-family: terminal, monospace;"}          Get detailed information about an AWS Backup Plan.
-  [backup_selection]{style="font-family: terminal, monospace;"}          Manages AWS Backup selections.
-  [backup_selection_info]{style="font-family: terminal, monospace;"}     Get detailed information about AWS Backup selections.
-  [backup_tag]{style="font-family: terminal, monospace;"}                Manage tags on an  AWS backup plan, AWS backup vault, AWS recovery point.
-  [backup_tag_info]{style="font-family: terminal, monospace;"}           List tags on AWS Backup resources.
-  ---------------------------------------------------------------------- -----------------------------------------------------------------------------------------------
-
- 
+- `backup_restore_job_info` - Get detailed information about AWS Backup restore jobs initiated to restore a saved resource.
+- `backup_vault` - Manage AWS Backup vaults.
+- `backup_vault_info` - Get detailed information about an AWS Backup vault.
+- `backup_plan` - Manage AWS Backup plans.
+- `backup_plan_info` - Get detailed information about an AWS Backup Plan.
+- `backup_selection` - Manages AWS Backup selections.
+- `backup_selection_info` - Get detailed information about AWS Backup selections.
+- `backup_tag` - Manage tags on an  AWS backup plan, AWS backup vault, AWS recovery point.
+- `backup_tag_info` - List tags on AWS Backup resources.
 
 ### Automate backups of your AWS resources with the new AWS Backup supported modules
 
-In this example, I show you how to backup an RDS instance tagged
-"[backup]{style="font-family: terminal, monospace;"}":
-"[daily]{style="font-family: terminal, monospace;"}". This example can
-be extended to all currently supported resource types (e.g., EC2, EFS,
-EBS, DynamoDB) which are tagged with
-"[backup]{style="font-family: terminal, monospace;"}":
-"[daily]{style="font-family: terminal, monospace;"}". The following
-playbook shows the the steps necessary to achieve that:
+In this example, I show you how to backup an RDS instance tagged `backup: "daily"`. This example can
+be extended to all currently supported resource types (e.g., EC2, EFS, EBS, DynamoDB) which are tagged with
+`backup: "daily"`. The following playbook shows the the steps necessary to achieve that:
 
 ``` yml
 - name: Automated backups of your AWS resources with AWS Backup
@@ -309,7 +240,7 @@ playbook shows the the steps necessary to achieve that:
 
 
    - name: Create an AWS Backup selection
-     # AWS Backup selection supports tag-based resource selection. This means that resources that should be backed up by the AWS Backup plan needs to be tagged with “backup”: “daily” and they are then automatically backed up by AWS Backup. 
+     # AWS Backup selection supports tag-based resource selection. This means that resources that should be backed up by the AWS Backup plan needs to be tagged with “backup”: “daily” and they are then automatically backed up by AWS Backup.
      amazon.aws.backup_selection:
       selection_name: "demo-backup-selection"
       backup_plan_name: "demo-backup-plan"
@@ -328,15 +259,14 @@ playbook shows the the steps necessary to achieve that:
 
 Once this playbook has finished the execution, AWS Backup will start to
 create daily backups of the resources tagged with
-[backup=daily]{style="font-family: terminal, monospace;"}. You can
+`backup=daily`. You can
 monitor the status of the backup service demo on the AWS console. If we
 go to Jobs, we see some backup jobs that have already been completed. A
 backup job is the result of an AWS Backup plan rule and resource
 selection. It will attempt to backup the selected resources, within the
 time window defined in the backup plan rule.
 
-[![](https://lh4.googleusercontent.com/NfVrKkCd5wXmcdZWFuqRmyWk2obRdFYkVZvLPvlrG2JoejtjaDtNZJUKnEnA6uym6FU9gIOlejSSEbU-vnQIBwHyjrYWynOIieDnyFdDDiLwaGMWCka-V--3tG1Mmtoc4TCSUHHbksN4tRHGB26sAnM){width="624"
-height="201" loading="lazy"}]{style="font-size: 9px; color: #000000;"}
+![screenshot](/images/posts/archive/aws-backup-jobs.png)
 
 If we're taking a look at the AWS Backup vault we created, you can see
 it contains the recovery points of the RDS instance. A recovery point is
@@ -345,16 +275,14 @@ recovery point cannot be edited. Tags and retention period can be
 changed if the backup vault allows it. You can use the recovery point to
 restore data.
 
-[![](https://lh5.googleusercontent.com/UWHVERbqZdT_EGK7x7QUQUUxpB1EDmHtKTVV8RSHjVS1b68BshP-FfOFfhwe91tKuDxNxcm9t7nw4TWoHsEwFBNCZT4Or9i4JUWL2PViLivuU_8R6OOYmAMrD_9nU4Gq3S6TlKo1pFsYjmZp0o4Ip8w){width="624"
-height="149" loading="lazy"}]{style="font-size: 9px; color: #000000;"}
+![screenshot](aws-recovery-points.png)
 
 An AWS Backup restore job is used to restore data from backups taken
 with AWS Backup service. This release does not include the module that
 enables you to create an AWS backup restore job, but we are planning to
 include this feature in the future. However, in this release, we have
-included the
-[amazon.aws.backup_restore_job_info]{style="font-family: terminal, monospace;"} 
-module to get information about the restore job.
+included the `amazon.aws.backup_restore_job_info` module to get
+information about the restore job.
 
 ``` yml
 - name: Get detailed information about the AWS Backup restore job

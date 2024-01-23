@@ -173,17 +173,17 @@ This feature has definitely a positive impact on the user experience.
 
 ``` yml
 [
-            {
-                "identifier": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb",
-                "properties": {
-                    "arn": "arn:aws:s3:::090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb",
-                    "bucket_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb",
-                    "domain_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3.amazonaws.com",
-                    "dual_stack_domain_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3.dualstack.us-east-1.amazonaws.com",
-                    "regional_domain_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3.us-east-1.amazonaws.com",
-                    "website_url": "http://090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3-website-us-east-1.amazonaws.com"
-                }
-            }
+{
+    "identifier": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb",
+    "properties": {
+        "arn": "arn:aws:s3:::090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb",
+        "bucket_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb",
+        "domain_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3.amazonaws.com",
+        "dual_stack_domain_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3.dualstack.us-east-1.amazonaws.com",
+        "regional_domain_name": "090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3.us-east-1.amazonaws.com",
+        "website_url": "http://090ba2aa-cc0c-5a40-9b5f-a2d2b8fc6ceb.s3-website-us-east-1.amazonaws.com"
+    }
+}
 ]
 ```
 

@@ -14,9 +14,6 @@ title: Continuous Detection and Mitigation (CDM)
 
 # Overview
 
-![](https://lh6.googleusercontent.com/D9ATQOEShXCphHdiTFoeVPlnBDL5pwgm9YxFKFdzBQhcW4SU9UDt_tz5wnFGyEo4xLh2UYHT9E2ue1PWVHw27-28d4j-rbu9f6VFSweGjCTFvFr7mBSSC9QsP7pqrHjBECx_PhxDSDKhacp7gg){width="624"
-height="301" loading="lazy"}
-
 Per
 [NASCIO](https://www.nascio.org/resource-center/resources/state-cio-top-ten-policy-and-technology-priorities-for-2022/),
 the top priority for state CIOs is cybersecurity and risk management. A
@@ -27,8 +24,6 @@ post we will explore a high level view of the CDM framework, review
 Ansible's role in security automation and finally understand how Ansible
 can help agencies with Day 0 through Day 2 tasks while working with the
 CDM framework.
-
-[]{#whatisCDM hs-anchor="true"}
 
 # What is CDM?
 
@@ -41,13 +36,9 @@ even hourly. So it is not surprising to see that cybersecurity and risk
 management is the number one priority for our state CIOs. With that
 background, let's understand the CDM program.
 
-![](https://lh4.googleusercontent.com/Ep2ca1JDo7KgvzfnQtoHFdgVKh2SqcQSA0Lu-dI9MeLdp3TRWTNYfO5yBdJau2CI5tGoF4KVM-wW8E130sH-ZJ5UmmIG11K7EP4mvJzhRTqN8FyUN2nRIa3mVYk_nyhj4QAmz8zYsh2oDSRPJg){width="624"
-height="355" loading="lazy"}
+![CDM program diagram](/images/posts/archive/cdm-diagram.png)
 
-Source:
-[https://www.cisa.gov/cdm-training]{style="font-size: 14px; color: #ee0000;"}
-
- 
+Source: https://www.cisa.gov/cdm-training
 
 The CDM framework is defined by CISA. CDM provides capabilities and
 tools that help identify cybersecurity risks on an ongoing basis,
@@ -58,12 +49,7 @@ At its core it provides tools and dashboards that enable cybersecurity
 professionals to understand what is on the network, who is on the
 network, and what's happening on the network. CISA's CDM is leading that
 effort to reduce cyber risk by delivering tools to federal/state
-agencies to strengthen their ability to monitor and manage the threat of
-cyber vulnerabilities.
-
- 
-
-[]{#CDMmodel hs-anchor="true"}
+agencies to strengthen their ability to monitor and manage the threat of cyber vulnerabilities.
 
 # The CDM model
 
@@ -73,36 +59,19 @@ in the network. These scanners and sensors continuously collect data
 that match against fingerprints and send it up to the second layer,
 layer B, or the integration layer. 
 
-![](https://lh4.googleusercontent.com/hD08KUp3DTFPp37AUXLh2IQ35u4p1M2nalc0fG4qcJTR_ROrgFVS6f_MEbc3Lph6I2acgbChHyssmuT3VMVgz_xYQ1j5tEPmH0ctLokvjSbh1-GLENQwBWKIAIFXKXZQXBSPV0tx9veEEokOXw){width="384"
-height="216" loading="lazy"}
+![CDM model layer a](/images/posts/archive/cdm-model-a.png)
 
-**Source**: [CISA\'s YouTube
-channel](https://www.youtube.com/watch?v=BPR_sTWgjPc){style="font-size: 14px; color: #ee0000;"}
+The second layer, Layer B, normalizes the data sent in by the Layer A sensors and scanners. This serves as the correlation point.
 
-The second layer, Layer B, normalizes the data sent in by the Layer A
-sensors and scanners. This serves as the correlation point.
+![CDM model layer b](/images/posts/archive/cdm-model-b.png)
 
-**![](https://lh4.googleusercontent.com/6nACWQrEMJz5v4KGBNBYv8Be8af-KL3lr92jbFmdPY5ChKW5gN9Bj5Vbk8O2Z2l7jfXiQYXu8c6MeZLtbwCffcNZWrHmXuAc4W9reAuGMrhTVa5M1XF6wCAuxz3y6AWZYhSUb-dM0RFb-UjQKw){width="384"
-height="219" loading="lazy"}**
+After normalization, the data is fed up into the C&D layers that consist of agency level and federal level dashboards.
 
-**Source:** [CISA\'s YouTube
-channel](https://www.youtube.com/watch?v=BPR_sTWgjPc){style="font-size: 14px; color: #ee0000;"}
+![CDM model layer c](/images/posts/archive/cdm-model-c.png)
 
-After normalization, the data is fed up into the C&D layers that consist
-of agency level and federal level dashboards.
+**Source:** [CISA's YouTube channel](https://www.youtube.com/watch?v=BPR_sTWgjPc)
 
-![](https://lh5.googleusercontent.com/Q5Sxxij2NwN1A8oT9ZhGxgFaJpVBw0UJMTZuqvhYoCfVHZNVasaRDtyQJTbrjW0nkX_IJldJIdIWS3sTXZ8H4T1IyVZypdcDkyQ62z8jv-wx5SGsXT4Oq9EssXO21qLaDQ-GscqB8OITLiKu-A){width="401"
-height="209" loading="lazy"}
-
-**Source:** [CISA\'s YouTube
-channel](https://www.youtube.com/watch?v=BPR_sTWgjPc){style="font-size: 14px; color: #ee0000;"}
-
-Agency security personnel then reviews the dashboards and makes
-decisions on prioritizing and mitigating the alerts.
-
- 
-
-[]{#ansiblesecurity hs-anchor="true"}
+Agency security personnel then reviews the dashboards and makes decisions on prioritizing and mitigating the alerts.
 
 # Ansible for security automation
 
@@ -113,16 +82,8 @@ easily translates into the security automation space, including:
 -   **Increases speed:** Reduce the number of manual steps and
     GUI-clicks. Enables the integration between numerous security
     solutions at the agency.
-
-```{=html}
-<!-- -->
-```
 -   **Reduces human errors:** Minimizes risk with automated workflows
     and human operator errors in time-sensitive, stressful situations.
-
-```{=html}
-<!-- -->
-```
 -   **Enforces consistency:** Enables auditable and verifiable security
     processes by using a single framework across multiple security
     tools.
@@ -136,9 +97,6 @@ the tools and using the tool data to effectively manage changes to their
 end-points.
 
  
-
-[]{#AnsibleforCDMusecase hs-anchor="true"}
-
 # Ansible for the CDM use case
 
 CDM has an opinionated architecture and an [approved product
@@ -150,10 +108,7 @@ of the approved products sanctioned for the CDM use case. So where does
 Ansible fit in this four layered CDM model? Let's take a look at layer A
 that consists of sensor and scanners:
 
- 
-
-![](https://lh4.googleusercontent.com/OusI5gJs98uMszK9-8qpyKgJ46h93Yzvj96kaaHov8n8C0NW1U2XzSH1QHBn3WyTAL-JO1bPqyRJmwdmyvh5XasM4sZk2iJljjf81OyHifLtTl2LqfZIDNpUjBp3MrkxWbYxl-8c7GbrAMC9Zw){width="456"
-height="251" loading="lazy"}
+![CDM Ansible](/images/posts/archive/cdm-ansible-fit.png)
 
 The two use cases that are immediately apparent for this layer are:
 
@@ -174,14 +129,12 @@ case for the CDM layer A sensors and scanners. 
 Scanners and sensors that make up layer A will need timely updates to
 fingerprints based on newer attack vectors. Imagine having to manually
 update these fingerprints across thousands of sensors! Ansible can be a
-good solution to automate this Day 2 operational task needed for layer
-A.
+good solution to automate this Day 2 operational task needed for layer A.
 
 What about layer B? If you recall, layer B collates the logs from layer
 A and normalizes the data along with correlating it.
 
-![](https://lh6.googleusercontent.com/_CADMtCRSHvHcR7FgkfBtYc2uY1OU6JEa5XYTTCxjjd-N-3w_-j_kOClsBTGDTDK60Q_VdRbcjdYe2SaQHiOUaQ0dAWT0Vgezwnh1afg02FBuIn0tfD6a70jYgfQ6y4QQ_yFh-vfzaglTmJa9g){width="479"
-height="256" loading="lazy"}
+![CDM model layer b with Ansible](/images/posts/archive/cdm-model-b-ansible.png)
 
 These devices are servers, which are subject to all the traditional Day
 2 operations that automation can help, such as patching, OS upgrades,
@@ -190,8 +143,7 @@ and software updates. 
 Finally, the C and D layers serve dashboards that a SOC personnel
 reviews and acts on. 
 
-![](https://lh3.googleusercontent.com/K6K0MYWOey8WXsQjJcBIC0syOmrryZbEKnOI6wBJ26MYvL7GWbIxveXhHvdtYpE73OFhz6rqUBi8c4QHRUYW9jKD8JmGjKTNnS19H4R9EutCkK4SgxpIAUIX-JMRAPoALHoO8gZ7XBoOpf7btw){width="624"
-height="307" loading="lazy"}
+![CDM dashboard with Ansible](/images/posts/archive/cdm-dash-ansible.png)
 
 Having Ansible Playbooks to mitigate known vulnerabilities could be
 leveraged at this layer with API integration with automation controller
@@ -214,17 +166,13 @@ Automation Platform can be a valuable platform for automating the
 different layers of CDM. Benefits include:
 
 1.  Sensors and scanners: 
+    - Log enrichment
+    - Update signatures
 
-2.  1.  Log enrichment
-    2.  Update signatures
+2.  Integration layer: 
+    - Patching
+    - Day 2 Operations
 
-3.  Integration layer: 
-
-4.  1.  Patching
-    2.  Day 2 Operations
-
-5.  Mitigation
-
-6.  1.  Automated mitigation
-    2.  Triage coordination
-
+3.  Mitigation
+    - Automated mitigation
+    - Triage coordination

@@ -41,7 +41,7 @@ are unlikely to be patient.  The Netflix era means that people want
 instant gratification!  Installing automation controller might take five
 to 10 minutes, so I need a faster method to deploy.
 
-![](https://lh3.googleusercontent.com/uCdkHAIYl2LCg_J7dgkrY_msHqdQRmnl2MPDgVuar20I5j49jnvTDQT1ipgz75b024UBbUzNsTxgXDzr8BWVd35Byjhl4gWP-rAgV6k-Gwq2Bb9XzMrNWROVrrvIfWXF9_WOTx2S1WLaO7-AFCQGP_d1_9mbByp0jxD41JIGAd1x1mRxI-jqEuqURg){
+![cloud automation pipeline diagram](/images/posts/archive/ansible-packer-blog-one.png)
 
 What I can do is combine our normal Ansible automation pipeline with
 Packer and pre-build the cloud instances so they already have the
@@ -75,8 +75,7 @@ image.  This means there is less automation I need to do at boot time
 (or what is sometimes referred to as "automation just in time").  The
 new process looks like this diagram:
 
-![](https://lh6.googleusercontent.com/B_20XvdYrI0W6ps4YeEmqWscRVpFqLGYO4UUL8NCdUGPWis3NnLuemS-HL1VWuocn6U7bgGFpCWS_nq5oMEgnOB6DEiIjN4MBAcrDdEwdOVIwR7FamntrktW4BCr8Jesp80DHUVfzQ6ihAsZ8nwO5iVihIXmw6m_n86-Hka7J2c56crDGF2ri7Jh6A){loading="lazy"
-width="624" height="197"}
+![create pre-built image diagram](/images/posts/archive/ansible-packer-blog-two.png)
 
 
 These two processes, building images and serving a demo environment, are

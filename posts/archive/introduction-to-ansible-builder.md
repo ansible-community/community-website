@@ -53,7 +53,7 @@ these problems; simply put, they are container images that can be
 utilized as Ansible control nodes. These container images enable the
 simplification and automation of outdated processes.
 
-As an example of how useful Execution Environments can be, let\'s say a
+As an example of how useful Execution Environments can be, let's say a
 developer writes content for Ansible locally by using container
 technology so that they can create portable automation runtimes; these
 container images will allow that developer to share pre-packaged
@@ -70,8 +70,7 @@ building Execution Environments.  It does this by using the dependency
 information defined in various Ansible Content Collections, as well as
 by the user. Ansible Builder will produce a directory that acts as the
 build context for the container image build, which will contain the
-[Containerfile]{style="font-family: 'courier new', courier;"}, along
-with any other files that need to be added to the image.
+`Containerfile`, along with any other files that need to be added to the image.
 
 ## Getting Started
 
@@ -83,23 +82,19 @@ ansible-builder development branch of the codebase hosted on
 [GitHub](https://github.com/ansible/ansible-builder). In your terminal,
 simply run:
 
-``` 
+```bash
 $ pip install ansible-builder
 ```
 
 **Note:** Podman is used by default to build images. To use Docker, use
-[ansible-builder build \--container-runtime
-docker]{style="font-family: 'courier new', courier;"}.
-
- 
+`ansible-builder build --container-runtime docker`.
 
 ### Writing a Definition
 
-In the world of Ansible Builder, the \"definition\" is a YAML file that
+In the world of Ansible Builder, the "definition" is a YAML file that
 outlines the Execution Environment's Collection-level dependencies, base
 image source, and overrides for specific items within the Execution
-Environment. The [ansible-builder
-build]{style="font-family: 'courier new', courier;"} command, which we
+Environment. The `ansible-builder build` command, which we
 will discuss in further detail later, takes the definition file as an
 input and then outputs the build context necessary for creating an
 Execution Environment image, which it then uses to actually build that
@@ -109,7 +104,7 @@ working environments for any Collections. 
 
 Below is an example of the content that would be in a definition file:
 
-``` 
+```yaml
 ---
 version: 1
 dependencies:
@@ -125,24 +120,18 @@ additional_build_steps:
 ```
 
 **Note:** The build command will default to using a definition file
-named
-[execution-environment.yml]{style="font-family: 'courier new', courier;"}.
+named `execution-environment.yml`.
 If you want to use a different file, you will need to specify the file
-name with the [-f]{style="font-family: 'courier new', courier;"} (or
-[\--file]{style="font-family: 'courier new', courier;"}) flag. This file
-*must* be a [.yml]{style="font-family: 'courier new', courier;"}
+name with the `-f` (or `--file`) flag. This file *must* be a `.yml`
 formatted file.
 
-In the
-[dependencies]{style="font-family: 'courier new', courier;"} section of
+In the `dependencies` section of
 the definition file above, the entries that would be listed there may be
 a relative path from the directory of the Execution Environment
 definition's folder, or an absolute path. Below is an example of what
-might be contained in a
-[requirements.yml]{style="font-family: 'courier new', courier;"} file,
-which points to a valid requirements file for the [ansible-galaxy
-collection install -r]{style="font-family: 'courier new', courier;"}
-\... command:
+might be contained in a `requirements.yml` file,
+which points to a valid requirements file for the
+`ansible-galaxy collection install -r`... command:
 
 **NOTE**: The following collection example is sourced from Automation
 Hub on [cloud.redhat.com](http://cloud.redhat.com/) and requires a valid
@@ -153,27 +142,24 @@ and an upcoming feature to ansible-builder to access.
     guide](https://docs.ansible.com/ansible/latest/galaxy/user_guide.html#downloading-a-collection-from-automation-hub)
 -   For instructions on how to use an ansible.cfg file with Ansible
     Builder, see the [documentation
-    here](https://ansible-builder.readthedocs.io/en/latest/definition.html#ansible-config-file-path)[.]{style="background-color: transparent;"}
+    here](https://ansible-builder.readthedocs.io/en/latest/definition.html#ansible-config-file-path)
 
-``` 
+```yaml
 ---
 collections:
   - redhat.openshift
 ```
 
-The [python]{style="font-family: 'courier new', courier;"} entry points
-to a Python requirements file for [pip install
--r]{style="font-family: 'courier new', courier;"} \...  For example, the
-[requirements.txt]{style="font-family: 'courier new', courier;"} file
-might contain the following:
+The `python` entry points to a Python requirements file for `pip install -r`.
+For example, the `requirements.txt` file might contain the following:
 
-``` 
+```txt
 awxkit>=13.0.0
 boto>=2.49.0
 botocore>=1.12.249
 boto3>=1.9.249
 openshift>=0.6.2
-requests-oauthlib 
+requests-oauthlib
 ```
 
 The [bindep](https://docs.openstack.org/infra/bindep/readme.html)
@@ -181,71 +167,49 @@ requirements file specifies cross-platform requirements, if there are
 any.  These get processed by bindep and then passed to dnf (other
 platforms are not yet supported as of the publication of this blog
 post). An example of the content of a
-[bindep.txt]{style="font-family: 'courier new', courier;"} file is
-below:
+`bindep.txt` file is below:
 
-``` 
+```txt
 subversion [platform:rpm]
 subversion [platform:dpkg]
 ```
 
-Additional commands may be specified in the
-[additional_build_steps]{style="font-family: 'courier new', courier;"}
-section, to be executed before the main build steps
-([prepend]{style="font-family: 'courier new', courier;"}) or after
-([append]{style="font-family: 'courier new', courier;"}). The syntax
-needs to be either a multi-line string (as shown in the
-[prepend]{style="font-family: 'courier new', courier;"} section of the
-example definition file) or a list (as shown via the example's
-[append]{style="font-family: 'courier new', courier;"} section).
+Additional commands may be specified in the `additional_build_steps` section, to be executed before the main build steps (`prepend`) or after (`append`).
+The syntax needs to be either a multi-line string (as shown in the `prepend` section of the example definition file) or a list (as shown via the example's `append` section).
 
 ### Customizable Options
 
-Before we run the[ build]{style="font-family: 'courier new', courier;"}
-command, let's discuss the customizable options you can use alongside
+Before we run the `build` command, let's discuss the customizable options you can use alongside
 it.  
 
-[\'-f\', \'\--file\']{style="font-family: 'courier new', courier;"}
+`'-f', '--file'`
 
-This flag points to the specific definition file of the Execution
-Environment; it will default to
-[execution-environment.yml]{style="font-family: 'courier new', courier;"}
-if a different file name is not specified.
+This flag points to the specific definition file of the Execution Environment; it will default to `execution-environment.yml` if a different file name is not specified.
 
-[\'-b\',
-\'\--base-image\']{style="font-family: 'courier new', courier;"}
+`'-b', '--base-image'`
 
-The parent image for the Execution Environment; when not mentioned, it
-defaults to
-[quay.io/ansible/ansible-runner:devel]{style="font-family: 'courier new', courier;"}.
+The parent image for the Execution Environment; when not mentioned, it defaults to `quay.io/ansible/ansible-runner:devel`.
 
-[\'-c\', \'\--context\']{style="font-family: 'courier new', courier;"}
+`'-c', '--context'`
 
-The directory to use for the build context, if it should be generated in
-a specific place. The default location is
-[\$PWD/context.]{style="font-family: 'courier new', courier;"}
+The directory to use for the build context, if it should be generated in a specific place. The default location is `$PWD/context.`
 
-[\'\--container-runtime\']{style="font-family: 'courier new', courier;"}
+`'--container-runtime'`
 
-Specifies which container runtime to use; the choices are
-[podman]{style="font-family: 'courier new', courier;"} (default option)
-or [docker]{style="font-family: 'courier new', courier;"}.
+Specifies which container runtime to use; the choices are `podman` (default option) or `docker`.
 
-[\'\--tag\']{style="font-family: 'courier new', courier;"}
+`'--tag'`
 
-The name for the container image being built; when nothing is specified
-with this flag, the image will be named
-[ansible-execution-env]{style="font-family: 'courier new', courier;"}.
+The name for the container image being built; when nothing is specified with this flag, the image will be named `ansible-execution-env`.
 
-As with most CLIs, adding
-[\--help]{style="font-family: 'courier new', courier;"} at the end of
+As with most CLIs, adding `--help` at the end of
 any Ansible Builder command will provide output in the form of help text
 that will display and explain the options available under any particular
 command. Below is an example of a command for looking up help text,
 along with its corresponding output:
 
-``` 
-$ ansible-builder --help 
+```bash
+$ ansible-builder --help
 usage: ansible-builder [-h] [--version] {build,introspect} ...
 
 Tooling to help build container images for running Ansible content. Get
@@ -263,12 +227,10 @@ optional arguments:
 
 ### Start the Build
 
-Let's see what happens when we run the build command!  The build
-definition will be gathered from the default
-[execution-environment.yml]{style="font-family: 'courier new', courier;"}
-file as shown below:
+Let's see what happens when we run the build command!
+The build definition will be gathered from the default `execution-environment.yml` file as shown below:
 
-``` 
+```yaml
 ---
 version: 1
 dependencies:
@@ -281,13 +243,9 @@ additional_build_steps:
     - RUN ls -la /etc
 ```
 
-We will be building an image named
-[my_first_ee_image]{style="font-family: 'courier new', courier;"} using
-Docker by running the command below:
+We will be building an image named `my_first_ee_image` using Docker by running the command below:
 
-[]{style="background-color: transparent;"}
-
-``` 
+```bash
 $ ansible-builder build --tag my_first_ee_image --container-runtime docker
 Using python3 (3.7.7)
 File context/introspect.py is already up-to-date.
@@ -355,7 +313,7 @@ As you can see from the output above, the definition file points to the
 specific Collection(s) listed, then builds a container image with all of
 the dependencies specified in the metadata.  Output such as:
 
-``` 
+```bash
 Step 2/3 : RUN echo this is a command
  ---> Running in e9cea402bd67
 this is a command
@@ -363,19 +321,17 @@ this is a command
 
 and
 
-``` 
+```bash
 Step 4/4 : RUN ls -la /etc
  ---> Running in aa3d855d3ae7
 total 1072
 drwxr-xr-x 1 root root   4096 Sep 28 13:25 .
 ```
 
-shows that the [prepend]{style="font-family: 'courier new', courier;"}
-and [append]{style="font-family: 'courier new', courier;"} steps are
-also being run correctly. The following output shows that we indeed did
-not list any Python or system requirements:
+shows that the `prepend` and `append` steps are also being run correctly.
+The following output shows that we indeed did not list any Python or system requirements:
 
-``` 
+```bash
 python: {}
 system: {}
 ```
@@ -384,25 +340,24 @@ system: {}
 
 Due to this new tool still being in development, we are taking a
 shortcut with our current available set of tools to help us validate
-against this. That being said, as of now,
-[ansible-runner]{style="font-family: 'courier new', courier;"} is a
+against this. That being said, as of now, `ansible-runner` is a
 command-line utility that has the ability to interact with playbooks. 
 Also, since it is a key part of Execution Environments, our validation
 for now will be that the content runs as expected.  This will change in
 the future; we'll definitely come up with something bigger and better!
 So stay tuned. 
 
-Now without further ado, let's dive into this\...
+Now without further ado, let's dive into this...
 
 If you do not have Ansible Runner already installed, you can refer to
 its
 [documentation](https://ansible-runner.readthedocs.io/en/latest/install.html)
 for guidance. Below is an example playbook (we'll call it
-[test.yml]{style="font-family: 'courier new', courier;"}) that can be
+`test.yml`) that can be
 run via Ansible Runner to ensure that the Execution Environment is
 working:
 
-``` 
+```yaml
 ---
 - hosts: localhost
   connection: local
@@ -416,15 +371,12 @@ working:
         state: present
 ```
 
-To confirm that the
-[my_first_ee_image]{style="font-family: 'courier new', courier;"}
+To confirm that the `my_first_ee_image`
 Execution Environment image did indeed get built correctly and will work
-with the
-[redhat.openshift]{style="font-family: 'courier new', courier;"}
-Collection, run the command below to execute our
-[test.yml]{style="font-family: 'courier new', courier;"} playbook:
+with the `redhat.openshift` Collection, run the command below to execute our
+`test.yml` playbook:
 
-``` 
+```bash
 $ ansible-runner playbook --container-image=my_first_ee_image test.yml
 PLAY [localhost] *************************************************************
 
@@ -438,19 +390,13 @@ PLAY RECAP *******************************************************************
 Localhost: ok=2 changed=1 unreachable=0 failed=0 skipped=0 rescued=0  ignored=0
 ```
 
-Running the command
-[ansible-runner]{style="font-family: 'courier new', courier;"} playbook
-will indicate to Ansible Runner that we want it to execute a playbook
-that's similar to running the command
-[ansible-playbook]{style="font-family: 'courier new', courier;"} itself.
+Running the command `ansible-runner` playbook will indicate to Ansible Runner that we want it to execute a playbook
+that's similar to running the command `ansible-playbook` itself.
 However, Ansible Runner has additional advantages over a traditional
-[ansible-playbook]{style="font-family: 'courier new', courier;"}
-command, one of which is to let us take advantage of the Execution
+`ansible-playbook` command, one of which is to let us take advantage of the Execution
 Environment image and its dependencies, which ultimately allows the
 playbook to run. For this specific example, note that we also inherited
-the [kubeconfig]{style="font-family: 'courier new', courier;"} set per
-the [redhat.openshift.k8s]{style="font-family: 'courier new', courier;"}
-module; this [kubeconfig]{style="font-family: 'courier new', courier;"}
+the `kubeconfig` set per the `redhat.openshift.k8s` module; this `kubeconfig`
 is automatically detected and mounted into the Execution Environment
 container runtime (just as many other cloud provider modules and SSH
 credentials are) without any additional input needed from the user.
@@ -462,8 +408,7 @@ from them) can be easily shared via public or private registries.  This
 new workflow process allows users to automate tasks that were once more
 manual (e.g. container images can be scanned and rebuilt automatically
 when vulnerabilities are discovered inside).  The build context,
-generated when we ran the
-[ansible-builder]{style="font-family: 'courier new', courier;"} command,
+generated when we ran the `ansible-builder` command,
 can be committed to source control and utilized later without the need
 for Ansible Builder, either locally or on another system.
 
@@ -477,8 +422,7 @@ a specific image:
 
 ![Ansible Builder Blog one](/images/posts/archive/ansible-builder-blog-one.png)
 
-[Red Hat
-Quay](https://www.redhat.com/en/technologies/cloud-computing/quay) is a
+[Red Hat Quay](https://www.redhat.com/en/technologies/cloud-computing/quay) is a
 container image registry that provides storage and enables the building,
 distribution, and deployment of containers. Set up an account in quay.io
 and select "Create New Repository". A series of choices will be
@@ -504,9 +448,6 @@ build them using the new Ansible Builder CLI tool!  In a future version
 of Red Hat Ansible Automation Platform, Execution Environments will be
 able to be used to run jobs in Ansible Automation Platform, so keep an
 eye out for details regarding the next release. For further reading,
-please refer to the [Ansible Builder
-documentation](https://ansible-builder.readthedocs.io/en/latest/),
-[Ansible Runner
-documentation](https://ansible-runner.readthedocs.io/en/latest/execution_environments.html),
-and be sure to take a look at the [Ansible Builder
-repo](https://github.com/ansible/ansible-builder) on GitHub.
+please refer to the [Ansible Builder documentation](https://ansible-builder.readthedocs.io/en/latest/),
+[Ansible Runner documentation](https://ansible-runner.readthedocs.io/en/latest/execution_environments.html),
+and be sure to take a look at the [Ansible Builder repo](https://github.com/ansible/ansible-builder) on GitHub.

@@ -31,10 +31,8 @@ with modules or with direct calls to the Infoblox WAPI REST API.
 This post will walk you through six real-world scenarios where Ansible
 and Infoblox can streamline your network tasks:
 
-1.  Creating a provider in one place that is reusable across a
-    collection of roles.
-2.  Expanding your network by creating a new subnet with a forward DNS
-    zone. Ansible modules for Infoblox make this common two-part task
+1.  Creating a provider in one place that is reusable across a collection of roles.
+2.  Expanding your network by creating a new subnet with a forward DNS zone. Ansible modules for Infoblox make this common two-part task
     simple.
 3.  Creating a reverse DNS zone, for example, to flag email from any IP
     addresses that don't have an associated address name. You must do
@@ -72,12 +70,12 @@ whenever you need them.
 ```yml
 *group_vars/all/main.yml*
 
-    nios_provider:
-       #Infoblox out-of-the-box defaults specified here
-        host: 192.168.1.2
-        username: admin
-        password: infoblox
-    wapi_version: “v2.7”
+nios_provider:
+   #Infoblox out-of-the-box defaults specified here
+    host: 192.168.1.2
+    username: admin
+    password: infoblox
+wapi_version: “v2.7”
 ```
 
 
@@ -97,19 +95,19 @@ shown here define `ansible_subnet` and `ansible_zone` as
 variables, so you can override them each time you create a new subnet.
 
 ```yml
-    - name: Create a test network subnet 
-      nios_network: 
-         network: "{{ ansible_subnet }}" 
-         comment: Test network subnet to add host records to 
-         state: present 
-         provider: "{{ nios_provider }}" 
+- name: Create a test network subnet
+  nios_network:
+     network: "{{ ansible_subnet }}"
+     comment: Test network subnet to add host records to
+     state: present
+     provider: "{{ nios_provider }}"
 
-    - name: "Create a forward DNS zone called {{ ansible_zone }}" 
-      nios_zone: 
-         name: "{{ ansible_zone }}" 
-         comment: local DNS zone 
-         state: present 
-         provider: "{{ nios_provider }}"
+- name: "Create a forward DNS zone called {{ ansible_zone }}"
+  nios_zone:
+     name: "{{ ansible_zone }}"
+     comment: local DNS zone
+     state: present
+     provider: "{{ nios_provider }}"
 ```
 
 In this example, we've used the default Infoblox View. Infoblox allows
@@ -150,26 +148,26 @@ the API call in yaml, it is easy to use a Jinja2 filter (a topic we will
 revisit in depth) to convert it to JSON at runtime.
 
 ```yml
-    - name: Create a reverse DNS zone to complement forward zone 
-      uri: 
-        url: https://{{ nios_provider.host }}/wapi/{{ wapi_version }}/zone_auth 
-        method: POST 
-        user: "{{ nios_provider.username }}" 
-        password: "{{ nios_provider.password }}" 
-        body: "{{ reverse_zone_yml | to_json }}" 
-        #201 signifies successful creation 
-        #400 signifies existing entry 
-        #both signify a successful WAPI call 
-        status_code: 201,400 
-        headers: 
-            Content-Type: "application/json" 
-        validate_certs: no 
-      register: reverse_dns_create 
-      changed_when: reverse_dns_create.status == 201 
-      vars: 
-        reverse_zone_yml: 
-          fqdn: "{{ ansible_subnet }}" 
-          zone_format: "IPV4"
+- name: Create a reverse DNS zone to complement forward zone
+  uri:
+    url: https://{{ nios_provider.host }}/wapi/{{ wapi_version }}/zone_auth
+    method: POST
+    user: "{{ nios_provider.username }}"
+    password: "{{ nios_provider.password }}"
+    body: "{{ reverse_zone_yml | to_json }}"
+    #201 signifies successful creation
+    #400 signifies existing entry
+    #both signify a successful WAPI call
+    status_code: 201,400
+    headers:
+        Content-Type: "application/json"
+    validate_certs: no
+  register: reverse_dns_create
+  changed_when: reverse_dns_create.status == 201
+  vars:
+    reverse_zone_yml:
+      fqdn: "{{ ansible_subnet }}"
+      zone_format: "IPV4"
 ```
 
 If you establish the subnet, forward zone, and reverse zone before
@@ -194,14 +192,14 @@ subnet avoids gateway address name overwrites because it is common for
 each subnet to have its own gateway address.
 
 ```yml
-    - name: Create a host record for the gateway address 
-      nios_host_record: 
-         name: “gateway{{ ansible_subnet | ipaddr(‘first_usable’) | 
-      replace(".","_") }}.{{ ansible_zone }}” 
-         ipv4: 
-            - address: "{{ gateway_address }}" 
-         state: present 
-         provider: "{{ nios_provider }}"
+- name: Create a host record for the gateway address
+  nios_host_record:
+     name: “gateway{{ ansible_subnet | ipaddr(‘first_usable’) |
+  replace(".","_") }}.{{ ansible_zone }}”
+     ipv4:
+        - address: "{{ gateway_address }}"
+     state: present
+     provider: "{{ nios_provider }}"
 ```
 
 This task builds your gateway host name step by step with this complex
@@ -216,15 +214,15 @@ line:
 1.  Expression starts with "gateway"
 2.  The section in the does a few things:
     a. Retrieves the templated value of ansible_subnet
-    ```ansible_subnet =\> 198.168.1.0/24\```
+    ```ansible_subnet => 198.168.1.0/24```
     b. Uses the retrieved ansible_subnet value and supplies it to the
     ipaddr('first_usable') filter plugin to obtain first usable IP
-    ```192.168.1.0/24 \| ipaddr('first_usable') =\> 192.168.1.1\```
+    ```192.168.1.0/24 | ipaddr('first_usable') => 192.168.1.1```
     c. Formats the resulting IP with underscores instead of dots
-    ```192.168.1.1 \| replace('.', '\_') =\> 192_168_1\_1\```
+    ```192.168.1.1 | replace('.', '_') => 192_168_1_1```
     d. Adds a `.` separator before the subnet value
     e. Retrieves the templated value of ansible_zone
-    ```ansible_zone =\> ansible.local```
+    ```ansible_zone => ansible.local```
 
 The gateway host name, passing the values listed above through the
 example template, would be:
@@ -249,27 +247,24 @@ known number of additional host records. In a real-world scenario, you
 would probably generate groups of servers within the subnet (for
 example, database servers, application servers, etc.). For this simple
 demo, you can define a loop that will dynamically generate generic host
-records based on a user-supplied
-[host_count]{style="font-family: 'courier new', courier;"} value. This
-demo shows the power of
-[nios_next_ip]{style="font-family: 'courier new', courier;"} lookup
+records based on a user-supplied `host_count` value. This
+demo shows the power of `nios_next_ip` lookup
 plugin, which can obtain a single next available IP or a range of next
 available IPs to assign. In a Playbook with both tasks (the one above
 that creates a host record for the gateway address and the one below
 that generates host records), if you don't define a
-[host_count]{style="font-family: 'courier new', courier;"}, the playbook
-won't create any additional host records; just the gateway address will
-be created.
+`host_count`, the playbook won't create any additional host records;
+just the gateway address will be created.
 
-```
-    #Generating records this way should be for demo purposes
-    #Normal scenario would be to iterate over a dictionary/list of hosts or populate via a static csv file
-    - name: “Dynamically generate {{ host_count }} host records at next available ip in {{ ansible_subnet }}”
-      include_tasks: host_record_generation.yml
-      loop_control:
-         loop_var: count
-      with_sequence: start=1 end={{ host_count }}
-      when: host_count is defined
+```yaml
+#Generating records this way should be for demo purposes
+#Normal scenario would be to iterate over a dictionary/list of hosts or populate via a static csv file
+- name: “Dynamically generate {{ host_count }} host records at next available ip in {{ ansible_subnet }}”
+  include_tasks: host_record_generation.yml
+  loop_control:
+     loop_var: count
+  with_sequence: start=1 end={{ host_count }}
+  when: host_count is defined
 ```
 
 If you generate host records with Ansible based on a user-supplied host
@@ -284,8 +279,7 @@ different subnets) do not overwrite each other's records!
 
 Generating host records this way is different than generating them with
 naming conventions like most enterprises do, but it is an easy
-out-of-the-box method using the
-[nios_next_ip]{style="font-family: 'courier new', courier;"} lookup to
+out-of-the-box method using the `nios_next_ip` lookup to
 create some records across different zones and/or subnets. Infoblox also
 supports a csv record import feature for static records.
 
@@ -310,25 +304,25 @@ recovery functionality. You can use our Ansible Roles to predefine new
 Grid Master Candidates and Grid Members like this:
 
 ```yml
-    - name: Predefine a new Grid Master Candidate
-      hosts: localhost
-      connection: local
-      roles:
-        -  role: predefineGridmasterCandidate 
-           master_candidate_name: gmc.ansible.local 
-           master_candidate_address: 192.168.2.2 
-           master_candidate_gateway: 192.168.2.254
-           master_candidate_subnet_mask: 255.255.255.0
+- name: Predefine a new Grid Master Candidate
+  hosts: localhost
+  connection: local
+  roles:
+    -  role: predefineGridmasterCandidate
+       master_candidate_name: gmc.ansible.local
+       master_candidate_address: 192.168.2.2
+       master_candidate_gateway: 192.168.2.254
+       master_candidate_subnet_mask: 255.255.255.0
 
-    - name: Predefine a new Grid Member
-      hosts: localhost
-      connection: local
-      roles:
-        -  role: predefineGridMember 
-           member_name: m3.ansible.local
-           member_address: 192.168.2.3
-           member_gateway: 192.168.2.254
-           member_subnet_mask: 255.255.255.0 
+- name: Predefine a new Grid Member
+  hosts: localhost
+  connection: local
+  roles:
+    -  role: predefineGridMember
+       member_name: m3.ansible.local
+       member_address: 192.168.2.3
+       member_gateway: 192.168.2.254
+       member_subnet_mask: 255.255.255.0
 ```
 
 

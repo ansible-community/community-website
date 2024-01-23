@@ -37,138 +37,64 @@ scenarios.
 
 ## The Certified Content Collection
 
-[This blog uses the
-]{style="color: #000000;"}[cisco.ios]{style="color: #000000; font-family: 'courier new', courier;"}[
-Collection maintained by the Ansible team, but there are other platforms
-that also have ACL resource modules, such as
-]{style="color: #000000;"}[arista.eos]{style="color: #000000; font-family: 'courier new', courier;"}[,
-]{style="color: #000000;"}[junipernetworks.junos]{style="color: #000000; font-family: 'courier new', courier;"}[,
-and
-]{style="color: #000000;"}[vyos.vyos]{style="color: #000000; font-family: 'courier new', courier;"}[.]{style="color: #000000;"}
+This blog uses the `cisco.ios` Collection maintained by the Ansible team, but there are other platforms
+that also have ACL resource modules, such as `arista.eos`, `junipernetworks.junos`, and `vyos.vyos`.
 
--   **[How to obtain the certified (supported) and upstream (community)
-    Collection ]{style="color: #000000;"}[\
-    ]{style="color: #000000;"}[\
-    ]{style="color: #000000;"}**[The upstream community Collection can
-    be found on Ansible Galaxy:
-    ]{style="color: #000000;"}[https://galaxy.ansible.com/cisco/ios**[\
-    ]{style="color: #000000;"}[\
-    ]{style="color: #000000;"}**](https://galaxy.ansible.com/cisco/ios)[The
-    downstream supported Collection can be found on Automation
-    Hub:]{style="color: #000000;"}**[\
-    ]{style="color: #000000;"}**[https://cloud.redhat.com/ansible/automation-hub/cisco/ios**[\
-    ]{style="color: #000000;"}[\
-    ]{style="color: #000000;"}**](https://cloud.redhat.com/ansible/automation-hub/cisco/ios)[For
-    more information on Ansible Content Collections, please refer to the
-    following documentation:
-    ]{style="color: #000000;"}[https://docs.ansible.com/ansible/latest/user_guide/collections_using.html[]{style="color: #000000;"}](https://docs.ansible.com/ansible/latest/user_guide/collections_using.html)
+### How to obtain the certified (supported) and upstream (community) Collection
 
-[Before starting, let's quickly explain the rationale behind the naming
+The upstream community Collection can be found on Ansible Galaxy: [https://galaxy.ansible.com/cisco/ios**](https://galaxy.ansible.com/cisco/ios)
+
+The downstream supported Collection can be found on Automation Hub: [https://cloud.redhat.com/ansible/automation-hub/cisco/ios**](https://cloud.redhat.com/ansible/automation-hub/cisco/ios)
+
+For more information on Ansible Content Collections, please refer to the following documentation:
+
+https://docs.ansible.com/ansible/latest/user_guide/collections_using.html
+
+Before starting, let's quickly explain the rationale behind the naming
 of the network resource modules. The newly added ACLs modules will be
-plural
-(]{style="color: #333333;"}[eos_acls]{style="color: #333333; font-family: 'courier new', courier;"}[,
-]{style="color: #333333;"}[ios_acls]{style="color: #333333; font-family: 'courier new', courier;"}[,
-]{style="color: #333333;"}[junos_acls]{style="color: #333333; font-family: 'courier new', courier;"}[,
-]{style="color: #333333;"}[nxos_acls]{style="color: #333333; font-family: 'courier new', courier;"}[,
-]{style="color: #333333;"}[iosxr_acls]{style="color: #333333; font-family: 'courier new', courier;"}[). 
-The older singular form modules (e.g.
-[ios_acl]{style="font-family: 'courier new', courier;"},
-[nxos_acl]{style="font-family: 'courier new', courier;"}) will be
+plural `eos_acls`, `ios_acls`, `junos_acls`, `nxos_acls`, `iosxr_acls`. 
+The older singular form modules (e.g. `ios_acl`, `nxos_acl`) will be
 deprecated over time. This naming change was done so that those using
 existing network modules would not have their Ansible Playbooks stop
 working and have sufficient time to migrate to the new network
-automation modules.]
+automation modules.
 
 ## Platform support
 
-[This module is also available for the following Ansible-maintained
-platforms on both Automation Hub (supported) and Galaxy
-(community):]{style="color: #000000;"}[\
-\
-]{style="color: #000000;"}
+This module is also available for the following Ansible-maintained
+platforms on both Automation Hub (supported) and Galaxy (community):
 
-+-----------------+-----------------+-----------------+-----------------+
-| [Plat           | [Full           | [Automation Hub | [Ansible Galaxy |
-| form]{style="co | Collection      | Link (requires  | Link]{style="co |
-| lor: #000000;"} | pa              | subscript       | lor: #000000;"} |
-|                 | th]{style="colo | ion)]{style="co |                 |
-|                 | r: #000000;"}[\ | lor: #000000;"} |                 |
-|                 | ]{sty           |                 |                 |
-|                 | le="color: #000 |                 |                 |
-|                 | 000;"}[namespac |                 |                 |
-|                 | e.collection.mo |                 |                 |
-|                 | dule]{style="co |                 |                 |
-|                 | lor: #000000;"} |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| [Arista         | [[ari           | [Automation     | [G              |
-| EOS]{style="co  | sta.eos.eos_acl | Hub]            | alaxy](https:// |
-| lor: #000000;"} | s]{style="font- | (https://cloud. | galaxy.ansible. |
-|                 | family: 'courie | redhat.com/ansi | com/arista/eos) |
-|                 | r new', courier | ble/automation- |                 |
-|                 | ;"} ]{style="co | hub/arista/eos) |                 |
-|                 | lor: #000000;"} |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| [Cisco          | [cisco.         | [Automation     | [               |
-| IOS]{style="co  | ios.ios_acls]{s | Hub             | Galaxy](https:/ |
-| lor: #000000;"} | tyle="color: #0 | ](https://cloud | /galaxy.ansible |
-|                 | 00000; font-fam | .redhat.com/ans | .com/cisco/ios) |
-|                 | ily: 'courier n | ible/automation |                 |
-|                 | ew', courier;"} | -hub/cisco/ios) |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| [Cisco          | [cisco.iosx     | [Automation     | [Ga             |
-| I               | r.iosxr_acls]{s | Hub](           | laxy](https://g |
-| OSXR]{style="co | tyle="color: #0 | https://cloud.r | alaxy.ansible.c |
-| lor: #000000;"} | 00000; font-fam | edhat.com/ansib | om/cisco/iosxr) |
-|                 | ily: 'courier n | le/automation-h |                 |
-|                 | ew', courier;"} | ub/cisco/iosxr) |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| [Cisco          | [cisco.nx       | [Automation     | [G              |
-| NXOS]{style="co | os.nxos_acls]{s | Hub]            | alaxy](https:// |
-| lor: #000000;"} | tyle="color: #0 | (https://cloud. | galaxy.ansible. |
-|                 | 00000; font-fam | redhat.com/ansi | com/cisco/nxos) |
-|                 | ily: 'courier n | ble/automation- |                 |
-|                 | ew', courier;"} | hub/cisco/nxos) |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| [Juniper        | [junip          | [Automation     | [Galaxy](http   |
-| J               | ernetworks.juno | Hub](https://cl | s://galaxy.ansi |
-| unOS]{style="co | s.junos_acls]{s | oud.redhat.com/ | ble.com/juniper |
-| lor: #000000;"} | tyle="color: #0 | ansible/automat | networks/junos) |
-|                 | 00000; font-fam | ion-hub/juniper |                 |
-|                 | ily: 'courier n | networks/junos) |                 |
-|                 | ew', courier;"} |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
-| [               | [vy             | [Automation     | [               |
-| VyOs]{style="co | os.vyos.vyos_fi | Hub             | Galaxy](https:/ |
-| lor: #000000;"} | rewall_rules]{s | ](https://cloud | /galaxy.ansible |
-|                 | tyle="color: #0 | .redhat.com/ans | .com/vyos/vyos) |
-|                 | 00000; font-fam | ible/automation |                 |
-|                 | ily: 'courier n | -hub/vyos/vyos) |                 |
-|                 | ew', courier;"} |                 |                 |
-+-----------------+-----------------+-----------------+-----------------+
+| Platform         | Full Collection path               | Automation Hub Link (requires subscription) | Ansible Galaxy Link |
+|------------------|------------------------------------|---------------------------------------------|---------------------|
+| `Arista EOS`     | `arista.eos.eos_acls`              | [Automation Hub](https://cloud.redhat.com/ansible/automation-hub/arista/eos) | [Galaxy](https://galaxy.ansible.com/arista/eos) |
+| `Cisco IOS`      | `cisco.ios.ios_acls`               | [Automation Hub](https://cloud.redhat.com/ansible/automation-hub/cisco/ios) | [Galaxy](https://galaxy.ansible.com/cisco/ios) |
+| `Cisco IOS-XR`   | `cisco.iosxr.iosxr_acls`           | [Automation Hub](https://cloud.redhat.com/ansible/automation-hub/cisco/iosxr) | [Galaxy](https://galaxy.ansible.com/cisco/iosxr) |
+| `Cisco NX-OS`    | `cisco.nxos.nxos_acls`             | [Automation Hub](https://cloud.redhat.com/ansible/automation-hub/cisco/nxos) | [Galaxy](https://galaxy.ansible.com/cisco/nxos) |
+| `Juniper Junos`  | `junipernetworks.junos.junos_acls` | [Automation Hub](https://cloud.redhat.com/ansible/automation-hub/juniper/networks/junos) | [Galaxy](https://galaxy.ansible.com/juniper/networks/junos) |
+| `VyOS`           | `vyos.vyos.vyos_firewall_rules`    | [Automation Hub](https://cloud.redhat.com/ansible/automation-hub/vyos/vyos) | [Galaxy](https://galaxy.ansible.com/vyos/vyos) |
+
 
 ## Getting started - Managing the ACL configuration with Ansible
 
-[An a]{style="color: #000000;"}[ccess control list (ACL) provides rules
+An access control list (ACL) provides rules
 that are applied to port numbers and/or IP addresses  permitted to
 transit or reach that network device. ACL order of access control entry
 (ACE) is critical because the ACEs sequence/order route decides which
-rules are applied to inbound/outbound network
-traffic.]{style="color: #333333;"}
+rules are applied to inbound/outbound network traffic.
 
-[An ACL resource module provides the same level of functionality that a
+An ACL resource module provides the same level of functionality that a
 user can achieve when configuring manually on the Cisco IOS device. But
 combined with Ansible facts gathering and resource module approach, this
-is more closely aligned with how network professionals work day to
-day.]{style="color: #333333;"}
+is more closely aligned with how network professionals work day to day.
 
-[I'll be using an IOS router with version 15.6(3)M2 for all the
+I'll be using an IOS router with version 15.6(3)M2 for all the
 configuration of this post. Below is the initial state of router ACLs
 configuration and currently there are already active ACLs configured on
-the device.]{style="color: #333333;"}
+the device.
 
 ### Network device configuration
 
-``` 
+```bash
 cisco#sh access-lists
 Extended IP access list 110
   10 deny icmp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 traceroute dscp ef ttl eq 10
@@ -178,8 +104,6 @@ Extended IP access list test_acl
 IPv6 access list R1_TRAFFIC
   deny tcp any eq www any eq telnet ack dscp af11 sequence 10
 ```
-
- 
 
 ## Using state gathered - Building an Ansible inventory
 
@@ -194,12 +118,10 @@ configuration and store it as a flat file.
 Here is an Ansible Playbook example of using **state: gathered** and
 storing the result as YAML into host_vars.  If you are new to the
 concept of Ansible inventory and want to learn more about
-[group_vars]{style="font-family: 'courier new', courier;"} and
-[host_vars]{style="font-family: 'courier new', courier;"}, please refer
-to the [Ansible User Guide:
-Inventory.](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
+`group_vars` and `host_vars`, please refer
+to the [Ansible User Guide: Inventory.](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html)
 
-``` 
+```yaml
 ---
 - name: convert configured ACLs to structured data
   hosts: cisco
@@ -223,18 +145,15 @@ Inventory.](https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.h
         dest: "{{ inventory_dir }}/host_vars/{{ inventory_hostname }}/acls.yaml"
 ```
 
-Execute the Ansible Playbook with the ansible-playbook command:
-
-[ansible-playbook
-example.yml]{style="font-family: 'courier new', courier;"}
+Execute the Ansible Playbook with the ansible-playbook command: `ansible-playbook example.yml`
 
 ### Examine File contents
 
 Here is the data structure that was created from reading in an existing
 configuration:
 
-``` 
-$ cat lab_inventory/host_vars/rtr2/acls.yaml
+```yaml
+# lab_inventory/host_vars/rtr2/acls.yaml
 acls:
 - acls:
      - aces:
@@ -312,14 +231,9 @@ acls:
 
 In the above output (and future reference):
 
--   [afi]{style="font-family: 'courier new', courier;"} refers to
-    address family identifier, either IPv4 or IPv6
--   [acls]{style="font-family: 'courier new', courier;"} refers to
-    access control lists, and returns a list of dictionaries (ACEs)
--   [aces]{style="font-family: 'courier new', courier;"} refers to
-    access control entry, or the specific rule and sequence 
-
- 
+-   `afi` refers to address family identifier, either IPv4 or IPv6
+-   `acls` refers to access control lists, and returns a list of dictionaries (ACEs)
+-   `aces` refers to access control entry, or the specific rule and sequence
 
 ## Using state merged - Pushing configuration changes
 
@@ -335,9 +249,10 @@ create an Ansible Playbook to merge this new configuration into the
 network device's running configuration.
 
 Reference link:
-[https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Merged.txt](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Merged.txt)
 
-``` 
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Merged.txt
+
+```yaml
 acls:
 - afi: ipv4
   acls:
@@ -446,9 +361,9 @@ acls:
          dscp: af11
 ```
 
-Ansible Playbook Example
+Ansible Playbook Example:
 
-``` 
+```yaml
 ---
 - name: Merged state play
   hosts: cisco
@@ -461,12 +376,11 @@ Ansible Playbook Example
 ```
 
 Once we run the respective Merge play, all of the provided parameters
-will be configured on the Cisco IOS router with Ansible
-***changed=True***
+will be configured on the Cisco IOS router with Ansible **changed=True**
 
-[Network device configuration]{style="font-size: 14pt; color: #434343;"}
+Network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -501,26 +415,25 @@ observations:
     user that all of the provided configurations in the play are already
     configured on the IOS device.
 
- 
-
 ## Using state replaced - Pushing configuration changes
 
-[The replaced parameter enforces the data model on the network device
+The replaced parameter enforces the data model on the network device
 for each configured ACL/ACE. If we modify any of the ACL/ACEs, it will
 enforce all the parameters this resource module is aware of. To think of
 this another way, the replaced parameter is aware of all the commands
-that should and shouldn't be there.]{style="color: #000000;"}
+that should and shouldn't be there.
 
-[For this scenario, an ACL with some ACEs is already configured on the
+For this scenario, an ACL with some ACEs is already configured on the
 Cisco IOS device, and now the user wants to update the ACL with a new
 set of ACEs and discard all the already configured ACL ACEs. The
 resource module that replaced "s" will replace ACL existing ACEs with a
-new set of ACEs given as input by the user.]{style="color: #000000;"}
+new set of ACEs given as input by the user.
 
-[Ref gist link:
-]{style="color: #000000;"}<https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Replaced.txt>[](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Replaced.txt)
+Ref gist link:
 
-``` 
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Replaced.txt
+
+```yaml
 acls:
 - afi: ipv4
   acls:
@@ -565,7 +478,7 @@ acls:
 
 Ansible Playbook Example
 
-``` 
+```yaml
 ---
 - name: Replaced state play
   hosts: cisco
@@ -577,15 +490,13 @@ Ansible Playbook Example
         config: "{{ acls }}"
 ```
 
-[With the above play, the user is replacing the 123 extended ACL with
+With the above play, the user is replacing the 123 extended ACL with
 the provided ACL ACEs configuration and also configuring the 150
-extended new ACL ACEs.]{style="color: #333333;"}
+extended new ACL ACEs.
 
-[Before running the
-]{style="color: #333333;"}[replaced]{style="color: #333333;"}[ play
-network device configuration:]{style="color: #333333;"}
+Before running the `replaced` play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -604,7 +515,7 @@ IPv6 access list R1_TRAFFIC
 
 With replaced Play run, commands that are fired:
 
-``` 
+```bash
 - ip access-list extended 110
 - no 10
 - no 20
@@ -615,7 +526,7 @@ With replaced Play run, commands that are fired:
 
 After running the replaced play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -633,10 +544,9 @@ IPv6 access list R1_TRAFFIC
    deny tcp any eq www any eq telnet ack dscp af11 sequence 10
 ```
 
-[If we dig the output briefly, we may have following
-observation:]{style="color: #333333;"}
+If we dig the output briefly, we may have following observation:
 
--   [replaced]{style="font-family: 'courier new', courier;"} will negate
+-   `replaced` will negate
     all the pre-existing ACEs under the input ACL and then apply the
     configuration provided as input in the play. The same behaviour can
     be seen in the commands output above for numbered ACL 123, where the
@@ -650,15 +560,14 @@ observation:]{style="color: #333333;"}
     instead of 10, which would have been the case if value to sequence
     wasn't provided by the user.
 
-[With the second run of the above play, changed comes as false, which
-satisfies the Ansible idempotency.]{style="color: #333333;"}
+With the second run of the above play, changed comes as false, which
+satisfies the Ansible idempotency.
 
 ## Using state overridden - Pushing configuration changes
 
 For this example, we will mix it up slightly. Pretend you are a user
 making a bespoke configuration on the network device (making a change
-outside of automation).  The [state:
-overridden]{style="font-family: 'courier new', courier;"} will circle
+outside of automation).  The `state: overridden` will circle
 back on enforcing the data model (configuration policy enforcement) and
 remove the bespoke change.
 
@@ -672,11 +581,12 @@ will be using the same play that we used for the replaced scenario,
 keeping the pre-existing configuration the same as well.
 
 Ref gist link:
-[https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Overridden.txt](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Overridden.txt)
+
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Overridden.txt
 
 ACLs configuration:
 
-``` 
+```yaml
 acls:
 - afi: ipv4
   acls:
@@ -724,7 +634,7 @@ acls:
 
 Ansible Playbook Example
 
-``` 
+```yaml
 ---
 - name: Overridden state play
   hosts: cisco
@@ -736,14 +646,13 @@ Ansible Playbook Example
         config: "{{ acls }}"
 ```
 
-[With the above play, the user is replacing the 123 extended ACL with
+With the above play, the user is replacing the 123 extended ACL with
 the provided ACL ACEs configuration and also configuring the 150
-extended new ACL ACEs.]{style="color: #333333;"}
+extended new ACL ACEs.
 
-[Before running the Overridden play network device
-configuration:]{style="color: #333333;"}
+Before running the `Overridden` play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -760,9 +669,9 @@ IPv6 access list R1_TRAFFIC
    deny tcp any eq www any eq telnet ack dscp af11 sequence 10
 ```
 
-With Overridden play run, commands that are sent:
+With `Overridden` play run, commands that are sent:
 
-``` 
+```bash
 - no ip access-list standard std_acl
 - no ip access-list extended 110
 - no ip access-list extended 123
@@ -775,11 +684,9 @@ With Overridden play run, commands that are sent:
 - 20 deny tcp 198.51.100.0 0.0.0.255 eq telnet 198.51.110.0 0.0.0.255 eq www ack dscp ef ttl eq 10
 ```
 
-After running the
-[Overridden]{style="font-size: 13.5pt; color: #333333;"} play network
-device configuration:
+After running the `Overridden` play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Extended IP access list 110
    20 deny tcp 198.51.100.0 0.0.0.255 eq telnet 198.51.110.0 0.0.0.255 eq www ack dscp ef ttl eq 10
@@ -814,11 +721,11 @@ Method 1: Delete individual ACLs **based on ACL number** (which means if the use
 
 Ref gist link: 
 
-[https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Deleted.txt](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Deleted.txt)
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Deleted.txt
 
 ACLs that need to be deleted
 
-``` 
+```yaml
 acls:
 - afi: ipv4
   acls:
@@ -833,7 +740,7 @@ acls:
 
 Ansible Playbook Example
 
-``` 
+```yaml
 ---
 - name: Deleted state play
   hosts: cisco
@@ -845,9 +752,9 @@ Ansible Playbook Example
         config: "{{ acls }}"
 ```
 
-Before running the Deleted play network device configuration:
+Before running the `Deleted` play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -864,19 +771,18 @@ IPv6 access list R1_TRAFFIC
    deny tcp any eq www any eq telnet ack dscp af11 sequence 10
 ```
 
-With Delete by ACLs Play run, commands that are sent:
+With `Delete by ACLs` play run, commands that are sent:
 
-``` 
+```bash
 - no ip access-list extended test
 - no ip access-list extended 110
 - no ip access-list extended 123
 - no ipv6 access-list R1_TRAFFIC
 ```
 
-After running the [Deleted]{style="font-size: 13.5pt; color: #333333;"}
-play network device configuration:
+After running the `Deleted` play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -884,16 +790,15 @@ Standard IP access list std_acl
 cisco#
 ```
 
- 
-
 Method 2: Deleting individual ACLs **based on it's AFI (i.e. Address Family Indicator)** which means if the user needs to delete all of the ACLs configured under IPV4 or IPV6
 
-[Ref gist link:
-]{style="font-size: 11pt; color: #000000;"}[https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Deleted_by_AFI](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Deleted_by_AFI){style="font-size: 11pt;"}
+Ref gist link:
 
-[Ansible Playbook Example]{style="font-size: 14pt; color: #434343;"}
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Deleted_by_AFI
 
-``` 
+Ansible Playbook Example
+
+```yaml
 ---
 - name: Deleted state play
   hosts: cisco
@@ -908,7 +813,7 @@ Method 2: Deleting individual ACLs **based on it's AFI (i.e. Address Family Indi
 
 Before running the Deleted play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -927,7 +832,7 @@ IPv6 access list R1_TRAFFIC
 
 With Delete by ACLs Play run, commands that are fired:
 
-``` 
+```bash
 - no ip access-list standard std_acl
 - no ip access-list extended test
 - no ip access-list extended 110
@@ -935,28 +840,25 @@ With Delete by ACLs Play run, commands that are fired:
 - no ip access-list extended test
 ```
 
-After running the [Deleted]{style="font-size: 13.5pt; color: #333333;"}
-play network device configuration:
+After running the `Deleted` play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 IPv6 access list R1_TRAFFIC
    deny tcp any eq www any eq telnet ack dscp af11 sequence 10
 cisco#
 ```
 
- 
-
 Method 3: Delete ALL ACLs at once
 
 > Note: this is a very critical delete operation and if not used judiciously, it has the power of deleting all pre-configured ACLs
 
-[[Ref gist link:]{style="font-size: 18px;"}
-]{style="font-size: 11pt; color: #000000;"}[https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Deleted_wo_config.txt](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Deleted_wo_config.txt){style="font-size: 11pt;"}
+Ref gist link:
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/056d2a6a44910863cbbbf38cad2273435574db84/Deleted_wo_config.txt
 
-[Ansible Playbook Example]{style="font-size: 14pt; color: #434343;"}
+Ansible Playbook Example
 
-``` 
+```yaml
 ---
 - name: Deleted state play
   hosts: cisco
@@ -969,7 +871,7 @@ Method 3: Delete ALL ACLs at once
 
 Before running the Deleted play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 Standard IP access list std_acl
    10 deny   192.168.1.200
@@ -988,7 +890,7 @@ IPv6 access list R1_TRAFFIC
 
 With Delete by ACLs Play run, commands that are fired:
 
-``` 
+```bash
 - no ip access-list standard std_acl
 - no ip access-list extended test
 - no ip access-list extended 110
@@ -997,30 +899,27 @@ With Delete by ACLs Play run, commands that are fired:
 - no ipv6 access-list R1_TRAFFIC
 ```
 
-After running the
-[Overridden]{style="font-size: 13.5pt; color: #333333;"} play network
-device configuration:
+After running the `Overridden` play network device configuration:
 
-``` 
+```bash
 cisco#sh access-lists
 cisco#
 ```
 
- 
-
 ## Using state rendered - Development and working offline
 
-[The state rendered transforms the provided structured data model into
+The state rendered transforms the provided structured data model into
 platform specific CLI commands. This state does not require a connection
 to the end device. For this example, it will render the provided data
-model into the Cisco IOS syntax commands.]{style="color: #000000;"}
+model into the Cisco IOS syntax commands.
 
-[Ref gist link:
-]{style="color: #000000;"}[https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Rendered.txt](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Rendered.txt)
+Ref gist link:
 
-[ACLs Config that needs to be rendered]{style="color: #000000;"}
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Rendered.txt
 
-``` 
+ACLs Config that needs to be rendered
+
+```yaml
 acls:
 - afi: ipv4
   acls:
@@ -1060,12 +959,12 @@ acls:
              eq: telnet
          dscp: ef
          ttl:
-           eq: 10   
+           eq: 10
 ```
 
 Ansible Playbook Example
 
-``` 
+```yaml
 ---
 - name: Rendered state play
   hosts: cisco
@@ -1079,7 +978,7 @@ Ansible Playbook Example
 
 With Render state module execution results:
 
-``` 
+```yaml
 "rendered": [
    "ip access-list extended 110",
    "10 deny tcp 192.0.2.0 0.0.0.255 192.0.3.0 0.0.0.255 eq www syn dscp ef ttl eq 10",
@@ -1088,10 +987,7 @@ With Render state module execution results:
 ]
 ```
 
-[NOTE:]{style="text-decoration: underline;"} Render state won't change
-anything from configuration end
-
- 
+NOTE: Render state won't change anything from configuration end
 
 ## Using state parsed - Development and working offline
 
@@ -1103,13 +999,14 @@ troubleshooting or offline creation of a source of truth for your data
 models.
 
 Ref gist link:
-[https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Parsed.txt](https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Parsed.txt)
+
+https://gist.githubusercontent.com/justjais/bb2a65c373ab4e64d1eeb47bc425c613/raw/8c65946eae561ff569cfc5398879c51598ae050c/Parsed.txt
 
 ACLs Config that needs to be Parsed
 
-[Ansible Playbook Example]{style="font-size: 14pt; color: #434343;"}
+Ansible Playbook Example
 
-``` 
+```yaml
 ---
 - name: Parsed state play
   hosts: cisco
@@ -1125,7 +1022,7 @@ ACLs Config that needs to be Parsed
 
 With Parsed state module execution results:
 
-``` 
+```yaml
 "parsed": [
        {
            "acls": [

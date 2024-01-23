@@ -27,14 +27,12 @@ refer to the [Infoblox website](https://www.infoblox.com/)
 
 Let's elaborate on each of these Ansible 2.5 additions. All of the
 following examples (and many more) are provided in the network
-automation community project, under the
-[infoblox_ansible]{style="font-family: 'courier new', courier;"} [GitHub
-repository](https://github.com/network-automation/infoblox_ansible). The
+automation community project, under the `infoblox_ansible`
+[GitHub repository](https://github.com/network-automation/infoblox_ansible). The
 integrations for Ansible require that the control node (where Ansible is
 being executed from) have the infoblox-client installed. It can be
 [found here](https://pypi.python.org/pypi/infoblox-client) and installed
-with pip issuing the [pip install
-infoblox-client]{style="font-family: 'courier new', courier;"} command.
+with pip issuing the `pip install infoblox-client` command.
 
 ## Ansible Infoblox Modules
 
@@ -74,10 +72,8 @@ nios_network module:
 ```
 
 Since this playbook did not specify the
-[network_view]{style="font-family: 'courier new', courier;"} parameter
-it will default to the default view. To run the playbook use the
-[ansible-playbook]{style="font-family: 'courier new', courier;"}
-command:
+`network_view` parameter it will default to the default view. To run the playbook use the
+`ansible-playbook` command:
 
 ```yml
 SEANs-MacBook-Pro:infoblox_ansible sean$ ansible-playbook  configure_network.yml
@@ -88,7 +84,7 @@ TASK [set dhcp options for a network] ******************************************
 changed: [localhost]
 
 PLAY RECAP ******************************************************************************************
-localhost                  : ok=1    changed=1    unreachable=0    failed=0  
+localhost                  : ok=1    changed=1    unreachable=0    failed=0
 ```
 
 We can login to the web https GUI website and look under **Data
@@ -116,13 +112,13 @@ localhost                  : ok=1    changed=0    unreachable=0    failed=0
 
 ### Ansible Infoblox Lookup Plugin
 
-Next let\'s look at the [new lookup
+Next let's look at the [new lookup
 plugin](http://docs.ansible.com/ansible/latest/plugins/lookup.html) for
 Infoblox. The Ansible documentation for the lookup plugin can be [found
 here](http://docs.ansible.com/ansible/latest/plugins/lookup/nios.html).
 The lookup plugin allows us to query different InfoBlox NIOS objects,
 such as network views, dns views, host records, and more. In my Infoblox
-IPAM tab (**Data Management\>IPAM**) I have four top of rack leaf
+IPAM tab (**Data Management->IPAM**) I have four top of rack leaf
 switches, and two spine switches defined. I can see them under the list
 view for managed nodes:
 
@@ -213,8 +209,7 @@ more about dynamic inventory on the Ansible dynamic inventory
 page](http://docs.ansible.com/ansible/latest/intro_dynamic_inventory.html).
 
 There are two files that need to be located under the
-[contrib/inventory/]{style="font-family: 'courier new', courier;"} in
-the Ansible project:
+`contrib/inventory/` in the Ansible project:
 
 -   [infoblox.yaml](https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/infoblox.yaml) -
     specifies the provider arguments and optional filters
@@ -223,12 +218,10 @@ the Ansible project:
 
 Update the infoblox.yaml with your login information to the NIOS
 instance. This includes the username, password and an IP address or
-hostname. Make sure the infoblox.yaml file is located in
-[/etc/ansible/infoblox.yaml]{style="font-family: 'courier new', courier;"}.
+hostname. Make sure the infoblox.yaml file is located in `/etc/ansible/infoblox.yaml`.
 
 To test your setup the python script infoblox.py can be run by executing
-[python infoblox.py]{style="font-family: 'courier new', courier;"} on
-the command line:
+`python infoblox.py` on the command line:
 
 ```python
 [ec2-user@ip-172-16-103-218 infoblox]$ python infoblox.py
@@ -262,7 +255,7 @@ dynamic inventory script.
 ```
 
 To grab the inventory for a playbook use the
-[-i]{style="font-family: 'courier new', courier;"} parameter and specify
+`-i` parameter and specify
 the infoblox.py python script. Run the playbook with the
 ansible-playbook command:
 

@@ -10,8 +10,7 @@ title: Terraforming Clouds with Ansible
 
 # Terraforming Clouds with Ansible
 
-![](https://lh3.googleusercontent.com/0qRLHuyDCJxCaBytGMpe-OzQtssgb_HcBjlh_ytyjsxw8wMP-0nmgzZDbLmFbfr7usCP3dttppu44NYWTeJveZS2lY17wlQ6itxDi8CKve-DQIg5HAxfQwSusrnB_9xSHtuA78ixeTlH4EHGsw){width="624"
-height="229" loading="lazy"}
+![diagram one](/images/posts/archive/terraforming-clouds-with-ansible-one.png)
 
 The wheel was invented in the 4th millennium BC. Now, in the 4th
 millennium, I am sure the wheel was the hottest thing on the block, and
@@ -27,14 +26,8 @@ ability to turn existing resources into something a bit more intriguing.
 It can enhance toolsets and extend them further into an automation
 workflow. 
 
-[Let\'s take Terraform. Terraform is a tool used often for
-infrastructure-as-code. It is a great tool to use when provisioning
-infrastructure in a repeatable way across multiple large public cloud
-providers like Amazon Web Services (AWS), Microsoft Azure, and Google
-Cloud Platform (GCP). Many organizations use Terraform for quick
-infrastructure provisioning every day, but if we combine it with the
-power of Ansible, we can see that it builds into an efficient
-workflow. ]{style="color: #202124;"}
+Let's take Terraform. Terraform is a tool used often for
+infrastructure-as-code. It is a great tool to use when provisioning infrastructure in a repeatable way across multiple large public cloud providers like Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). Many organizations use Terraform for quick infrastructure provisioning every day, but if we combine it with the power of Ansible, we can see that it builds into an efficient workflow.
 
 # Don't replace tooling - reuse, enhance and master it
 
@@ -67,7 +60,7 @@ vault.
 version: 1
 
 build_arg_defaults:
-    EE_BASE_IMAGE: < BASE EE > 
+    EE_BASE_IMAGE: < BASE EE >
 
 dependencies:
   galaxy: requirements.yml
@@ -77,7 +70,7 @@ dependencies:
 additional_build_steps:
   prepend: |
     ADD terraform /sbin
-    ADD keep_secrets /opt 
+    ADD keep_secrets /opt
   append:
     - RUN echo This is a post-install command!
     - RUN ls -la /etc
@@ -86,14 +79,12 @@ additional_build_steps:
 Once I have pushed my execution environment to my private automation
 hub, we are ready to get building! 
 
-I\'m going to work on provisioning with Terraform with a simple use case
+I'm going to work on provisioning with Terraform with a simple use case
 using three files:
 
-  ----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  main.tf           This holds all the configuration information I need for my infrastructure
-  variables.tf      This will hold all the variables I use and reference in my main.tf file
-  cloud-init.conf   I use the cloud-init to inject configuration information, such as users to create and ssh keys to add to authorized_keys - so my automation controller can connect and do its magic. 
-  ----------------- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+- `main.tf` - This holds all the configuration information I need for my infrastructure
+- `variables.tf` - This will hold all the variables I use and reference in my main.tf file
+- `cloud-init.conf` - I use the cloud-init to inject configuration information, such as users to create and ssh keys to add to authorized_keys - so my automation controller can connect and do its magic.
 
 All the components we need to deploy cloud infrastructure are part of
 these manifests - this is our infrastructure-as-code. Using Terraform to
@@ -107,10 +98,7 @@ our automation workflows. A survey in Ansible Automation Platform allows
 us to present consumers of automation with the opportunity to input data
 that we can use inside of our automation.  
 
-![](https://lh6.googleusercontent.com/Unia0m2SLZyGJngh-oD6Hvqt17OpC2z1wL3o6OZuZEWmmddD6j2PA0fkB4jkUe8M6a9OO08deqgFOn_7BxMhS1Qb3G56asluEvhg2-XOJQ95gF8FtfJlgtLioyf602CIS2H0zUXozaw8tA7W4A){width="624"
-height="424" loading="lazy"}
-
- 
+![diagram two](/images/posts/archive/terraforming-clouds-with-ansible-two.png)
 
 This means creating all the infrastructure-as-code components really
 becomes a dynamic mechanism for our teams, making the process even
@@ -157,8 +145,7 @@ variable "instance_type" {
 
 # Provision Infrastructure
 
-![](https://lh3.googleusercontent.com/50gTNDXmh8QO--5DX541r6rdERrozzZ5uGnJlxBV1zfcBfyuEhVSVU6ctrNCfLN-LJHS2kjBI5Js8_WcQrXRIgeEQZ364GvW2HTtz1d6v_wHTOtiokiBIVBAaZxQCD9ZPRtisf3JqIzuTplmCw){width="570"
-height="444" loading="lazy"}
+![diagram three](/images/posts/archive/terraforming-clouds-with-ansible-three.png)
 
 With the survey data provided, we can get Ansible to create a project
 folder for Terraform to work with. This should be stored in a source of
@@ -185,7 +172,7 @@ manifest.
        project_path: /{{ working_dir }}/{{  my_terraform_build }}
        state: absent
        force_init: true
-    
+
     - name: Deploy Terraform Instance
       community.general.terraform:
         project_path: /{{ working_dir }}/{{ my_terraform_build }}
@@ -247,8 +234,7 @@ whenever we run a create or destroy job. 
 
 # Destroy Infrastructure
 
-![](https://lh3.googleusercontent.com/YLLtlNYMkHXUVi27tn9dBnW4ml5VOTWYfQ0GOioE_9DUIUfl-8AqgZlqpCDrgOm-y8yxs2YfHOrKe7q25NOJEVvY_I8fvjMc-m0I1dvAib9Mm8IV40Ic5dBXl1tIN_tU08eJ7YJ_nTSgHB6JsQ){width="540"
-height="370" loading="lazy"}
+![diagram four](/images/posts/archive/terraforming-clouds-with-ansible-four.png)
 
 Since we used Terraform to provision our infrastructure, de-provisioning
 it, is pretty straightforward. As I mentioned before, when Terraform
@@ -268,7 +254,7 @@ it created from our playbook. 
 
 # Start your engines! Post-provisioning
 
-[We have created a renewable method of building and destroying
+We have created a renewable method of building and destroying
 infrastructure using Ansible and Terraform. To extend the automation
 further and do the important work of deploying workloads, system
 hardening, and compliance, we only need to rely on Ansible. Ansible
@@ -278,11 +264,8 @@ to combine tasks in an end-to-end process. Not only is this a great way
 to view and inspect your automation process, but I find it beneficial in
 pinpointing possible improvements or perhaps adding rollback features to
 the process should a step fail or encounter
-issues. ]{style="color: #000000;"}
+issues.
 
-[![](https://lh3.googleusercontent.com/1b8E18L_NMzSjL3CT2EQz9YIJOlYC434NF1Er1Ep07eRdpGZuQILf5TsV_Ns3SXaak8G_DxbAG7lZfhuco63m_-294Da0BZhDdAxTa3R1tKFYlGqCzjA4SKSlrEegGplBhdT3if_smPNuM06Sg){width="624"
-height="167" loading="lazy"}]{style="color: #000000;"}
+![process diagram](/images/posts/archive/terraforming-clouds-with-ansible-five.png)
 
-Time to Terraform your clouds bringing infrastructure-as-code and
-configuration-as-code together with our centralized Ansible Automation
-Platform!
+Time to Terraform your clouds bringing infrastructure-as-code and configuration-as-code together with our centralized Ansible Automation Platform!

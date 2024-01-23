@@ -57,7 +57,7 @@ fleet. Below is how to add a postscript to your kickstart file to
 register your devices directly to an Ansible Automation Platform
 inventory so you can use it to manage your fleet.
 
-```
+```yaml
 %post
 # Create ansible playbook to register device to Ansible automation platform
 cat > /tmp/add_to_aap.yml <<EOF
@@ -99,32 +99,26 @@ ansible-playbook /tmp/add_to_aap.yml
 -   Create the inventory in Ansible Automation Platform, and get the
     inventory number.
 
-    ![](https://lh4.googleusercontent.com/62Uvhz3AZ5z2RN6n17q5NzYAqfnb7JVpMzfw505slI6EvJyt1YBGJnIzq0jaJb4I9RhCzjhMueg1OkjFgwqjhzQAFV_NzV-sZromZq7maniyaCRvYimNuhKJGiWuZsCOP5nGhNinLV89L2Pr1w){width="312"
-    height="116" loading="lazy"} 
+-   Get the URL: in this example, the inventory ID is 2:
 
--   [Get the URL: in this example, the inventory ID is 2:
-    ]{style="font-size: 18px;"}
+    ![url example](/images/posts/archive/edge-inventory-creation.png)
 
-    [![](https://lh5.googleusercontent.com/Pt8Umgqdnc9AilqHT0mZaIZEV9mlKFAjgA6hj7E13aXYDI0cUtIvu5vK5OUofw4RwdqScEoe-zEWBxVrMdWq3IgoRRwOnnQDNluu6d6G35Kn9HvUMV6bEfLi3nMxGpLi09aKlo3uoBQUSGMzGQ){width="624"
-    height="84" loading="lazy"}]{style="font-size: 12px;"}
+    ```
+    https://AAPHOST.fqdn.com/#/inventories/inventory/2/details
+    ```
 
-    [[https://AAPHOST.fqdn.com/#/inventories/inventory/**[2]{style="color: #ee0000; text-decoration: underline;"}**[/details]{style="color: #ee0000; text-decoration: underline;"}](https://aaphost.fqdn.com/#/inventories/inventory/2/details){style="color: #ee0000;"}]{style="font-size: 18px;"}
-
- 
-
--   Assign aap_url in vars section:\
-    [aap_url ]{style="color: #569cd6; background-color: #1e1e1e;"}[=
-    ]{style="color: #569cd6; background-color: #1e1e1e;"}[<https://AAPHOST.fqdn.com/api/v2/inventories/2/hosts/>]{style="color: #569cd6; background-color: #1e1e1e;"}
+-   Assign aap_url in vars section:
+    ```
+    aap_url = https://AAPHOST.fqdn.com/api/v2/inventories/2/hosts/
+    ```
 
 ## Step 2: Create credentials in Ansible Automation Platform
 
--   Assign credentials to aap_ks_user and aap_ks_password in the Access Users tab in Ansible Automation Platform.
+Assign credentials to `aap_ks_user` and `aap_ks_password` in the Access Users tab in Ansible Automation Platform.
 
 
 ## Step 3: Check Ansible Automation Platform
 
--   You should now see your devices in Ansible Automation Platform after
-    they boot up.
+You should now see your devices in Ansible Automation Platform after they boot up.
 
-[![](https://lh4.googleusercontent.com/EQ_LvWTcDa33BJW_MqFzG7nCXRA5oE8e00azOoyK6z976Fgb6h9MWWf4bHsL_E_yIkb0sMkoXHDrCyjoS2Oo6GBxm5diLNiptzwABY5swo4HOHNKMM6fDL7P28rISmNaxmUZKkXfMMTvJ9Jmkg){width="226"
-height="226" loading="lazy"}]{style="font-size: 11px;"}
+![screenshot](/images/posts/archive/edge-device-boot.png)
