@@ -3,7 +3,6 @@ title: Event-Driven Ansible is Here
 author: Joe Pisciotta
 date: 2023-05-23 13:00:00
 slug: event-driven-ansible-is-here
-category: event-driven-ansible
 tags: event-driven-ansible, release, announcement, eda
 type: text
 ---

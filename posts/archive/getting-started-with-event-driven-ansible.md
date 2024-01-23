@@ -3,23 +3,25 @@ title: Getting Started with Event-Driven Ansible
 author: Nuno Martins
 date: 2022-10-19 13:00:00
 slug: getting-started-with-event-driven-ansible
-category: event-driven-ansible
 tags: event-driven-ansible, getting-started, eda, ansible-rulebook, rulebooks
 type: text
 ---
+
+# Getting Started with Event-Driven Ansible
+
 As one technology advances, it expands the possibilities for other technologies and offers the solutions of tomorrow for the challenges we face today. AnsibleFest 2022 brings us new advances in Ansible automation that are as bright as they are innovative. I am talking about the Event-Driven Ansible developer preview.
 
 Automation allows us to give our systems and technology speed and agility while minimizing human error. However, when it comes to trouble tickets and issues, we are often left to traditional and manual methods of troubleshooting and information gathering. We inherently slow things down and interrupt our businesses. We have to gather information, try our common troubleshooting steps, confirm with different teams, and eventually, we need to sleep.
 
 The following image illustrates a support lifecycle with many manual steps and hand-offs:
 
-![support lifecycle diagram](/images/posts/getting-started-with-event-driven-ansible/lifecycle-diagram.png)
+![support lifecycle diagram](/images/posts/archive/getting-started-eda-lifecycle-diagram.png)
 
 One application of Event-Driven Ansible is to remediate technology issues before near real-time, or at least trigger troubleshooting and information collection in an attempt to find the root cause of an outage while your support teams handle other issues.
 
 The following image illustrates how event-driven automation is used in the support lifecycle: fewer steps, faster Mean-Time-To-Resolution.
 
-![Event-Driven Ansible in the support lifecycle](/images/posts/getting-started-with-event-driven-ansible/event-driven-automation.png)
+![Event-Driven Ansible in the support lifecycle](/images/posts/archive/getting-started-eda-eda.png)
 
 Event-Driven Ansible has the potential to change the way we respond to issues and illuminates many new automation possibilities. So, how do you take the next step with Event-Driven Ansible?
 
@@ -35,7 +37,7 @@ A rulebook is comprised of three main components:
 
 * **Actions** trigger what you need to happen should a condition be met. Some of the current actions are: run_playbook, run_module, set_fact, post_event, and debug.
 
-![getting-started-with-event-driven-ansible](/images/posts/getting-started-with-event-driven-ansible/event-source.png)
+![getting-started-with-event-driven-ansible](/images/posts/archive/getting-started-eda-event-source.png)
 
 Now, let's install ansible-rulebook and start with our very first event.
 
