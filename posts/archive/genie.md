@@ -6,10 +6,11 @@ description: This blog is part two in a series covering how Red Hat
   we'll cover dynamically adding a set of network facts from your
   switches and routers and into your ServiceNow tickets.
 lang: en-us
-title: Ansible and ServiceNow Part 2, Parsing facts from network devices using PyATS/Genie
+slug: ansible-servicenow-part-2-parsing-facts-from-network-devices-using-pyats/genie
+title: Ansible and ServiceNow Part 2
 ---
 
-# Ansible and ServiceNow Part 2, Parsing facts from network devices using PyATS/Genie
+# Parsing facts from network devices using PyATS/Genie
 
 This blog is part two in a series covering how Red Hat Ansible
 Automation can integrate with ticket automation. This time we'll cover
