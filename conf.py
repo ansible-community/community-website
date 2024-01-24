@@ -168,8 +168,9 @@ NAVIGATION_ALT_LINKS = {
           ),
           "Resources", ""
         ),
-        ("https://forum.ansible.com/", "Ansible community forum", ""),
+        ("https://forum.ansible.com/", "Forum", ""),
         ("https://docs.ansible.com/", "Documentation", ""),
+        ("https://www.redhat.com/en/technologies/management/ansible/", "Ansible Automation Platform", ""),
     )
 }
 
