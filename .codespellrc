@@ -1,5 +1,5 @@
 [codespell]
-skip = *.svg,./cache,./output,./venv,./plugins,conf.py,./posts,clipboard.min.js
+skip = *.svg,./cache,./output,./venv,./plugins,conf.py,./posts,./blog-archive,clipboard.min.js
 count =
 check-filenames = true
 quiet-level = 3
