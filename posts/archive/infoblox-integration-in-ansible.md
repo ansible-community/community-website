@@ -7,6 +7,7 @@ description: The Ansible 2.5 open source project release includes new
   Playbooks can utilize existing Infoblox infrastructure for IP Address
   Management (IPAM), using Infoblox for tracking inventory and more.
 lang: en-us
+slug: infoblox-integration-in-ansible-2.5
 title: Infoblox Integration in Ansible 2.5
 ---
 

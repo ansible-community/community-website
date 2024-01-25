@@ -4,6 +4,7 @@ date: 2021-02-18 00:00 UTC
 description: Version 3.0.0 of the Ansible community package marks the
   end of the restructuring of the Ansible ecosystem
 lang: en-us
+slug: announcing-the-community-ansible-3.0.0-package
 title: Announcing the Community Ansible 3.0.0 Package
 ---
 

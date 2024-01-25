@@ -5,6 +5,7 @@ description: This blog covers the latest release of the certified
   amazon.aws Collection for Ansible Automation Platform that brings a
   number of enhancements.
 lang: en-us
+slug: whats-new-cloud-automation-with-amazon.aws-6.0.0
 title: What's New with Cloud Automation with amazon.aws 6.0.0
 ---
 

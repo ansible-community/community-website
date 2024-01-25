@@ -5,6 +5,7 @@ description: Navigator 2.0 introduces improvements to existing
   functionality alongside additional features to aid in the development
   of automation content.
 lang: en-us
+slug: released-automation-content-navigator-2.0
 title: Automation content navigator releases with Ansible Automation Platform 2.2
 ---
 
