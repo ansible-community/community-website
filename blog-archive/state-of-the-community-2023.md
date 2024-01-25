@@ -26,7 +26,7 @@ In *this* post I'll lay out where we are today - if you already watched [my
 talk on this from CfgMgmtCamp
 2023](https://www.youtube.com/watch?v=B-AODeqjvss) then you can probably skip
 this one, as it covers the same topic. In the [second
-one](/blog/2023/02/24/ansible_community_strategy_2023)
+one](/blog/ansible-community-strategy-2023)
 I'll make the case for the website & forum.
 
 ## The state of the community today
@@ -53,16 +53,20 @@ the trend is real.
 So, lets look at four such metrics:
 
 Visits to docs.ansible.com
-![](/images/posts/2023-02-24-ansible-state-of-the-community/VaJS8bS.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/VaJS8bS.png)
 
 Comments on reddit.com/r/ansible
-![](/images/posts/2023-02-24-ansible-state-of-the-community/nO3GDZQ.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/nO3GDZQ.png)
 
 Questions tagged `ansible` on StackOverflow
-![](/images/posts/2023-02-24-ansible-state-of-the-community/JusWgNn.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/JusWgNn.png)
 
 Posts to the `ansible-project` mailing list
-![](/images/posts/2023-02-24-ansible-state-of-the-community/ABIOImR.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/ABIOImR.png)
 
 These graphs worry me. Sure, half-a-million hits per month on the docs is
 great, but none of these are positive trends - Docs is flat, and the other 3
@@ -86,16 +90,19 @@ since much of my work is in other spaces at the moment.
 
 So, how many **active contributors** do we have? I index ~500 repos that are
 relevant to Ansible, and this is the result:
-![](/images/posts/2023-02-24-ansible-state-of-the-community/h4wM7dE.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/h4wM7dE.png)
 
 I cannot stress enough how **huge** 850 highy-active contributors is! It blows
 my mind every time I look at this dataset. But again, it's lower than it was a
 year ago. We could also look at a few other subsets... here we just look at all
 the Collections repos that go into the full `ansible` package:
-![](/images/posts/2023-02-24-ansible-state-of-the-community/zjamo9R.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/zjamo9R.png)
 
 Same story. Here's *just* `ansible/ansible`:
-![](/images/posts/2023-02-24-ansible-state-of-the-community/4VJ1y1O.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/4VJ1y1O.png)
 
 Same again. I could show you more, but across most of the project, this pattern
 repeats - of all the sections I checked, only DevTools was increasing as of Jan
@@ -105,7 +112,8 @@ Contribution is not all about GitHub though. What about discussion elsewhere?
 We've already shown a plot for the mailing list, but what about chat?
 
 **Matrix Users per Day, smoothed for weekly variation**
-![](/images/posts/2023-02-24-ansible-state-of-the-community//UoMfYcq.png)
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community//UoMfYcq.png)
 
 This one has one piece of good news (for me anyway!) - Matrix use is growing,
 and has been all year (in fact 60% of our daily users in chat are coming from
@@ -114,8 +122,9 @@ Matrix). That's a win for my previous big proposal. But IRC is declining, and
 declining.
 
 One last one - meetups. This is no surprise given the pandemic, but it shows
-the same trend: 
-![](/images/posts/2023-02-24-ansible-state-of-the-community/t4yECHz.png)
+the same trend:
+
+![graph](/images/posts/archive/2023-02-24-ansible-state-of-the-community/t4yECHz.png)
 
 ## Taking stock
 

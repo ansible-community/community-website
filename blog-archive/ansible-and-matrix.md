@@ -8,7 +8,7 @@ tags: matrix, irc, strategy, community
 type: text
 ---
 
-# Building bridges - where the Ansible community needs to go next with chat
+**Building bridges - where the Ansible community needs to go next with chat**
 
 This post is long, because I have a lot to cover. But I'm going to lead with
 the big picture, and if you want details, you can keep reading. Please note
@@ -30,7 +30,7 @@ so (a) please keep the discussion civil, and (b) I *want* to hear those
 concerns so that we get this right. That said, "right" has to be for the
 *whole* community.
 
-# Future Vision - where I'd like to get to in the next 6 months
+## Future Vision - where I'd like to get to in the next 6 months
 
 I'm going to go into the specifics of Matrix & IRC later on, but let me start
 with [this quote from Thibault Martin over at
@@ -114,7 +114,7 @@ In particular I'd like to experiment with the GitHub Matrix bot that already
 exists, but there's also Etherpads, Calendars, room conferencing, RSS, Travis
 bots, and we can always write our own.
 
-# Justifying Matrix as the choice
+## Justifying Matrix as the choice
 
 Before we talk about Matrix in more detail, I think it's helpful to review the
 issues I see with IRC. I want to stress again that IRC is *not* going away. It
@@ -122,7 +122,7 @@ works for many, and I don't dispute that. But I'll refer back to that [survivor
 bias](https://en.wikipedia.org/wiki/Survivorship_bias#/media/File:Survivorship-bias.svg)
 - I no longer believe it works for *new* contributors joining us today.
 
-## What's wrong with IRC?
+### What's wrong with IRC?
 
 If you ask Mozilla that question, ["everything" is the
 answer](http://exple.tive.org/blarg/2019/04/26/synchronous-text/), but I don't
@@ -140,7 +140,7 @@ registration. However, the rest of his points stand:
 
 However, whether that adds up to "IRC is bad" depends on your use case:
 
-### I already use IRC, why should I stop?
+#### I already use IRC, why should I stop?
 
 As I said, I think for existing IRC users it's fine. You don't need to stop if
 you're happy. You've already got your spam protection in place, you've already
@@ -148,7 +148,7 @@ cast the Nickserv spells, and your organisations clearly permit IRC traffic.
 Carry on! But take a second, and read over that list of things again. How easy
 is it for someone unfamiliar with the world of IRC to do that?
 
-### I'm new, should I use IRC?
+#### I'm new, should I use IRC?
 
 No. It's not what people expect of a modern chat system - Nickserv is ...
 unintuitive (to be polite) compared to signup systems people encounter today,
@@ -160,7 +160,7 @@ That's an *enormous* ask for people who aren't deeply embedded in the project.
 I find it unsurprising that IRC growth in general has been outpaced by other
 platforms, and we are no exception.
 
-### I'm an organisation, should I set up on IRC?
+#### I'm an organisation, should I set up on IRC?
 
 If I was setting up a new project *today*, no, I would not use IRC. For an
 organisation, three things come up. Firstly, access & recruitment - as we've
@@ -179,7 +179,7 @@ but I do think it's time to start our journey into something more modern and
 welcoming to the newest of the community. That platform is Matrix - and I as
 said in the section header, we need to justify that...
 
-# What does Matrix bring us?
+## What does Matrix bring us?
 
 First we need to define what [Matrix](https://matrix.org) *is*, because I see
 this getting conflated all the time. Matrix is a *protocol* for real-time
@@ -191,7 +191,7 @@ not in scope here. Those interested may want to look at [the clients
 page](https://matrix.org/clients), there are *many* options, from full web UI
 to a plugin for WeeChat.
 
-## Matrix for the old IRC user
+### Matrix for the old IRC user
 
 I'm assuming here that this user *wants* to try a Matrix account - those who
 wish to remain on IRC can do so. If so, well, little changes really. Matrix can
@@ -202,7 +202,7 @@ on some IRC networks (Libera and OFTC to name two). You'll get persistence for
 free (no need to run a bouncer), and you can continue largely as normal (this
 has been my workflow for the last 4 years).
 
-## Matrix for the new user
+### Matrix for the new user
 
 I've already spoken about new-user expectations, so you'd expect that Matrix is
 similar compared to the likes of Slack etc. All the features you'd expect
@@ -218,14 +218,14 @@ In either case, it's worth reading this comparison of [Matrix vs
 Email](https://blog.ergaster.org/post/20210602-matrix-for-im/) as many of the
 concepts of email carry over.
 
-## Matrix for the organisation
+### Matrix for the organisation
 
 OK, this is the big one - what does Matrix mean for *the Ansible community* as
 a whole? I'm going to spend a bit more time on this one, because we're all
 familiar with chatting, but perhaps these organisational points are a bit more
 nuanced.
 
-### Access and recruitment
+#### Access and recruitment
 
 As we've said, Matrix supports the feature set that users have come to expect
 from modern chat. It's no surprise that Ansible would like to grow its
@@ -250,7 +250,7 @@ this is indeed the right channel to join and ask their question - it's hard to
 make the barrier lower than that. I have enabled this in [a small working group
 room](https://matrix.to/#/#jboss-wg:ansible.im) if anyone wishes to try it.
 
-### Safety and conduct
+#### Safety and conduct
 
 Matrix has good tooling for moderation and conduct. Unlike IRC, there's no such
 thing as an unauthenticated Matrix user (there are guest users but that's not
@@ -277,7 +277,7 @@ deeper, but I don't want to go on forever. I'll link to [this
 piece](http://exple.tive.org/blarg/2019/12/19/over-the-line/) for some thoughts
 from Mozilla on Matrix's tooling around CoC enforcement.
 
-### Ownership
+#### Ownership
 
 What does the name of a project mean? When a person emails from a work account,
 what values do they represent? When you join the chat room of a group, who are
@@ -312,14 +312,14 @@ should have the same gravitas as a project email address.
 There are some decisions to be made about how to hand these accounts out (and
 how we take them back, if need be) but I'll cover that later.
 
-# How do we get there? a.k.a THE PLAN
+## How do we get there? a.k.a THE PLAN
 
 OK, you have the vision, the concerns, the ways in which Matrix should improve
 our situation. How do we get there though? There's a few things to do, some of
 which are already in motion (because they're non-binding) and others need us to
 collectively agree to implement them.
 
-## Homeservers
+### Homeservers
 
 My notes on sovereignty and domain ownership rest on having our own homeserver.
 We could self-host this, however we aren't well set up for doing our own ops,
@@ -345,7 +345,7 @@ for user accounts (`ansible.im`). These are both live as of 2021-06-24,
 although the ansible.com instance is not yet federating while we work out
 things with the DNS.
 
-## User experience
+### User experience
 
 I'm looking to https://chat.mozilla.org for inspiration here - clearly
 displayed expectations of the user, links to the coduct pages, and so on. If
@@ -371,7 +371,7 @@ right now) and I'm meeting with Element in the coming weeks to give feedback on
 Spaces in general, so let me know how you find that if you are in the Spaces
 beta.
 
-## Accounts
+### Accounts
 
 This is one area where we need to decide what to do. As we've discussed, a
 Matrix account is akin to an email, and we don't just give out Ansible email
@@ -426,7 +426,7 @@ One day, I'd love to have open registration for our community - but until we
 have something to tie it to (such as Fedora and Mozilla do) then I think the
 concerns above outweigh the benefits. We'll get there :)
 
-## Interaction with IRC
+### Interaction with IRC
 
 Again I will reinforce that we have no plans to stop using IRC. Inevitably
 though, some of the richness of a more modern system will be lost on IRC, and
@@ -438,7 +438,7 @@ we're open to tuning the behaviour of the bridge in our rooms regarding edits
 and long lines if that becomes a significant issue, and so on. In short, I do
 not want IRC users feeling ignored - we should discuss issues as they arise.
 
-# Let's roll
+## Let's roll
 
 This is a step change for us, but a needed one (in my opinion). As a community,
 I think we need to ratify two things:
