@@ -3,6 +3,7 @@ author: The Ansible Community Team
 date: 2021-02-18 00:00 UTC
 description: Answering the most common questions we have received about the Ansible 3.0.0 release.
 lang: en-us
+slug: ansible-3.0.0-qa
 title: Ansible 3.0.0 Q&A
 ---
 
