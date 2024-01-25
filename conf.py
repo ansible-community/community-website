@@ -261,6 +261,7 @@ POSTS = (
     ("posts/*.rst", "blog", "post.tmpl"),
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
+    # See the README.txt file in the blog-archive folder for details.
     ("blog-archive/*.md", "blog", "post.tmpl"),
 )
 PAGES = (
