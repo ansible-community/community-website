@@ -264,6 +264,8 @@ POSTS = (
     ("posts/*.html", "blog", "post.tmpl"),
     # See the README.txt file in the blog-archive folder for details.
     ("blog-archive/*.md", "blog", "post.tmpl"),
+    # See the README.txt file in the bullhorn folder for details.
+    ("bullhorn/*.md", "blog", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.md", "", "page.tmpl"),
