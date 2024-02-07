@@ -167,3 +167,7 @@ links:
   platform:
     home: https://www.redhat.com/en/technologies/management/ansible
     use_cases: https://www.redhat.com/en/technologies/management/ansible/use-cases
+welcome:
+  title: Welcome to the new Ansible.com!
+  intro: Welcome home and thank you for supporting Ansible.  Please click on the video here to learn about what has changed and why.
+  url: https://www.youtube.com/embed/zHrIo4E1HmY?si=aXMEyR14P_6gKoj2
