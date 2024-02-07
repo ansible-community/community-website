@@ -1,1 +1,13 @@
+.homepage-welcome-band {
+  background-color: $grey94;
+}
 
+.ansible-image {
+  display: flex;
+
+  img {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
