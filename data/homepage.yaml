@@ -171,3 +171,33 @@ welcome:
   title: Welcome to the new Ansible.com!
   intro: Welcome home and thank you for supporting Ansible.  Please click on the video here to learn about what has changed and why.
   url: https://www.youtube.com/embed/zHrIo4E1HmY?si=aXMEyR14P_6gKoj2
+catalyst:
+  section_icon: /assets/images/orchestration.svg
+  icon_alt: Ansible Catalyst program icon
+  title: Ansible Catalyst
+  intro: This is a new formed program lead by Red Hat to spark additional user interaction, spotlight the ecosystems contributions and share insights on driving automation adoption at your organizations.
+  articles:
+    collection_spotlight:
+      heading: Collection Spotlight
+      description: Every week we will spotlight a new collection available to the Ansible ecosystem.
+      data_title: Ansible Middleware
+      data_body: Have you had a chance to check out the Ansible based automation for Red Hat Application Services and upstream middleware projects?
+      link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
+    contributions:
+      heading: Ansible Runner
+      description: An interface abstraction to Ansible that offers reliable and consistent task execution.
+      link: https://ansible.readthedocs.io/projects/runner/
+      logo: logo-runner.svg
+      alt: Ansible Runner project logo
+    adoption:
+      heading: Ansible Builder
+      description: Tooling to configure and build customized Ansible control nodes in container images.
+      link: https://ansible.readthedocs.io/projects/builder/
+      logo: logo-builder.svg
+      alt: Ansible Builder project logo
+    f2e:
+      heading: Event-Driven Ansible
+      description: Subscribe to event sources to scale automation and deliver more efficient IT operations.
+      link: https://ansible.readthedocs.io/projects/rulebook/
+      logo: logo-eda.svg
+      alt: Event-Driven Ansible project logo
