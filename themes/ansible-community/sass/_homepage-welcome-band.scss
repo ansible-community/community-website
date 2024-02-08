@@ -2,6 +2,15 @@
   background-color: $grey94;
 }
 
+.welcome-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  @media screen and (max-width: 1170px) {
+    flex-direction: column;
+  }
+}
+
 .ansible-image {
   display: flex;
 
