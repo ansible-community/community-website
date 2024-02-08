@@ -1,5 +1,5 @@
 ---
-title: Matrix & IRC | Size & Stability 
+title: Matrix & IRC | Size & Stability
 author: Greg Sutcliffe
 date: 2021-07-20 13:00:00 UTC
 slug: matrix-irc-size-stability
@@ -8,13 +8,9 @@ tags: matrix, irc, strategy, community
 type: text
 ---
 
-# Matrix & IRC | Size & Stability
-
-Over the last few days since I posted my thoughts on [Ansible &
-Matrix](/2021/07/08/ansible_and_matrix), I been getting some really good
+Over the last few days since I posted my thoughts on
+[Ansible & Matrix](/blog/ansible-and-matrix), I been getting some really good
 questions and comments - thank you all!
-
-<!-- TEASER_END -->
 
 Two themes have come up that go well together for a data-laden blog post, and
 they are:
@@ -35,18 +31,18 @@ OK, for this we have some decent data sources. Let's tackle IRC first. The best
 data source I know of is https://netsplit.de/networks/top10.php which gives us
 an idea of the change in users over time. Here's a sample:
 
-![Netsplit.de 2021](/images/posts/2021-08-20-matrix-irc-size-stability/netsplitde2021.png)<!-- -->
+![Netsplit.de 2021](/images/posts/archive/2021-08-20-matrix-irc-size-stability/netsplitde2021.png)
 
 Sadly the graphs are premade images/posts, so we dont have the raw data, but roughly
 I'd say that in July 2021, those ten add up to ~180k users (Libera itself is at
 ~50-55k). But Netsplit has historical data:
 
-![Netsplit.de 2016](/images/posts/2021-08-20-matrix-irc-size-stability/netsplitde2016.png)<!-- -->
+![Netsplit.de 2016](/images/posts/archive/2021-08-20-matrix-irc-size-stability/netsplitde2016.png)
 
 That's 2016, and here it adds up to ~250k with Freenode at 90k. Let's do one
 more:
 
-![Netsplit.de 2011](/images/posts/2021-08-20-matrix-irc-size-stability/netsplitde2011.png)<!-- -->
+![Netsplit.de 2011](/images/posts/archive/2021-08-20-matrix-irc-size-stability/netsplitde2011.png)
 
 Going back another 5 years to 2011, and the numbers are even higher - 2021 is
 just a fraction of what 2011 was. I spent some time going through other years,
@@ -58,7 +54,7 @@ rightly so, in my view). But for completeness, lets take a quick look. There's
 a lot of "corporations banging their own drum" in this space, but I did find
 this graph:
 
-![https://slack.com/blog/news/slack-has-10-million-daily-active-users](/images/posts/2021-08-20-matrix-irc-size-stability/slack.png)<!-- -->
+![https://slack.com/blog/news/slack-has-10-million-daily-active-users](/images/posts/archive/2021-08-20-matrix-irc-size-stability/slack.png)
 
 I'm struggling to get anything newer, but 10 million in 2019 is certainly
 higher now. Discord claims to be 150 million (https://discord.com/company).
@@ -76,7 +72,7 @@ Broberg](https://speakerdeck.com/mbbroberg/the-next-generation-of-open-source-co
 puts Element at 18 million (and Slack at 44 million, phew), and while I don't
 know where Matt sourced the numbers, they seem pretty high to me.
 
-![Matt Broberg](/images/posts/2021-08-20-matrix-irc-size-stability/broberg.png)<!-- -->
+![Matt Broberg](/images/posts/archive/2021-08-20-matrix-irc-size-stability/broberg.png)
 
 Maybe we can try to get our own value. There are (to my knowledge) two
 "traveller bots" in Matrix, who's job is to join any public room they see
@@ -157,7 +153,7 @@ time. So, how common is that?
 I asked my colleagues with long IRC logs to grep for netsplits, and here's what
 we got:
 
-![Disconnect stats](/images/posts/2021-08-20-matrix-irc-size-stability/graphs.png)<!-- -->
+![Disconnect stats](/images/posts/archive/2021-08-20-matrix-irc-size-stability/graphs.png)
 
 (I've added in a simple guess for total-affected-users here, picking 7% of the
 room membership (today) as the number of affected users and just multiplying it

@@ -2,13 +2,13 @@
 title: Ansible Community Strategy 2023
 author: Greg Sutcliffe
 date: 2023-02-24 14:00:00
-slug: ansible_community_strategy_2023
+slug: ansible-community-strategy-2023
 category: community-team
 tags: forum, website, strategy, community, discourse, dns
 type: text
 ---
 
-In the [last article](/2023/02/24/ansible-state-of-the-community-2023)
+In the [last article](/blog/ansible-state-of-the-community-2023)
 we covered metrics describing the community today, as well as some reasoning
 into why that might be. In this article, I'll lay out my view of how to go
 about fixing it.
@@ -166,7 +166,7 @@ the de-facto standard for async discusion.
 
 Rather than try to list features, I'll outline **some** (this is not
 exhaustive) of the things Discourse could help with, and then I'll tackle some
-of the criticisms I think will come up. 
+of the criticisms I think will come up.
 
 ### A new generation of users, but existing users too
 
@@ -340,7 +340,7 @@ languages better (a category each perhaps? as discussed above, they're easy to
 make), we can write modify the CSS/themes, and we'll be providing a single
 place to access things that works - while a ML might work with a screen reader,
 does GitHub? Does ansible.com? Does *trying* to find the right place to join
-in? 
+in?
 
 Since I *don't need accessiblity* I'm not sure what else is needed, but I'm
 happy to learn, please let me know.

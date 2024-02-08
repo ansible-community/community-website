@@ -164,6 +164,7 @@ NAVIGATION_ALT_LINKS = {
             ("/how-ansible-works/", "How Ansible works", ""),
             ("/ecosystem/", "Ansible ecosystem", ""),
             ("/ansible-community-training/", "Ansible community training", ""),
+            ("/mission-statement/", "Our mission statement", ""),
             ("/contact-us/", "Contact us", ""),
           ),
           "Resources", ""
@@ -262,6 +263,10 @@ POSTS = (
     ("posts/*.rst", "blog", "post.tmpl"),
     ("posts/*.txt", "blog", "post.tmpl"),
     ("posts/*.html", "blog", "post.tmpl"),
+    # See the README.txt file in the blog-archive folder for details.
+    ("blog-archive/*.md", "blog", "post.tmpl"),
+    # See the README.txt file in the bullhorn folder for details.
+    ("bullhorn/*.md", "blog", "post.tmpl"),
 )
 PAGES = (
     ("pages/*.md", "", "page.tmpl"),
@@ -1434,6 +1439,7 @@ try:
     "meta": load_data('data/meta.yaml'),
     "ecosystem": load_data('data/ecosystem.yaml'),
     "homepage": load_data('data/homepage.yaml'),
+    "training": load_data('data/training.yaml'),
     }
 
 except ImportError:

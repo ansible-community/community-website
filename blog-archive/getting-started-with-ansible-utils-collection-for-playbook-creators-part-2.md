@@ -4,19 +4,18 @@ date: 2022-01-24 00:00 UTC
 description:  In this blog, we will see how ansible.utils collection can
   be useful in operational state assessment as an example use case.
 lang: en-us
-title: Getting Started with Ansible.utils Collection for Playbook Creators, Part 2
+slug: getting-started-with-ansible.utils-collection-for-playbook-creators-part-2
+title: Getting Started with Ansible.utils Collection for Playbook Creators
 ---
 
-# Getting Started with Ansible.utils Collection for Playbook Creators, Part 2
+# Part 2: Use case of operational state assessment using ansible.utils collection
 
-## Use Case: Operational state assessment using ansible.utils collection
-
-In ansible.utils, there are a variety of plugins which we can use for
+In `ansible.utils`, there are a variety of plugins which we can use for
 operational state assessment of network devices. I overviewed the
-ansible.utils collection in part one of this two part blog series. If
+`ansible.utils` collection in part one of this two part blog series. If
 you have not reviewed part one,
 I recommend you do so, since I will build on this information in this
-part two blog. We will see how the ansible.utils collection can be
+part two blog. We will see how the `ansible.utils` collection can be
 useful in operational state assessment as an example use case.
 
 In general, state assessment workflow has following steps:
@@ -38,14 +37,14 @@ In general, state assessment workflow has following steps:
     -    Implement required configuration changes to correct drift. 
     -   Report on the change as an audit trail.
 
-### How can ansible.utils collection help in this workflow?
+## How can ansible.utils collection help in this workflow?
 
-The ansible.utils collection makes it easier to retrieve and parse the
+The `ansible.utils` collection makes it easier to retrieve and parse the
 data so it can then be further assessed from a structured format.
 
-#### Retrieving operational state in structured format using Ansible.utils.cli_parse
+### Retrieving operational state in structured format using Ansible.utils.cli_parse
 
-This module is available as ansible.utils collection. It has a variety
+This module is available as `ansible.utils` collection. It has a variety
 of parsers which help to parse CLI output or text output. It can work
 with multiple remote hosts like network, Linux, or windows.it. It
 supports multiple parsing engines and it is extensible which means you
@@ -102,7 +101,7 @@ All of the generic parsers are part of the `ansible.utils` collection and
 all network-related parsers are part of the `ansible.netcommon`
 collection.
 
-#### Validating structured data and report errors using ansible.utils.validate
+### Validating structured data and report errors using ansible.utils.validate
 
 The `Ansible.utils.validate` module is a new module available as part of
 the `ansible.utils` collection which works with all platforms. It has
@@ -129,7 +128,7 @@ tasks:
 In this task we need to provide data which is supposed to be structured
 data. Criteria is a list of criteria. Since currently we are using
 jsonschema, we have criteria in json format. Engine is a sub-plugin of
-the top level validate plugin. Here it is "ansible.utils.jsonschema".
+the top level validate plugin. Here it is `ansible.utils.jsonschema`.
 Again, you can write your own engine as it is extensible. 
 
 The above task will perform following operation:
@@ -138,14 +137,14 @@ The above task will perform following operation:
 -   Validate using the 'xxxx' engine
 -   Returns list of errors if data does not conform to the schema criteria
 
-Currently ansible.utils.validate plugin supports following validation
+Currently `ansible.utils.validate` plugin supports following validation
 engine:
 
 -   `ansible.utils.jsonschema`: Python module to validate json data against a schema. 
 
-Now let's use the above plugins from ansible.utils to see how we can
+Now let's use the above plugins from `ansible.utils` to see how we can
 use them in actual scenarios. In this example we will see how to use
-ansible.utils to fetch BGP operational state data, validate it against
+`ansible.utils` to fetch BGP operational state data, validate it against
 predefined json schema and also remediate configuration drift when
 detected. 
 
@@ -316,9 +315,9 @@ external events or also can be scheduled as a periodic job in Red Hat
 Ansible Automation Platform's Automation controller to ensure compliance
 with the expected operational state.
 
-# Takeaways & Next Steps
+## Takeaways & Next Steps
 
-As shown above, the ansible.utils collection: 
+As shown above, the `ansible.utils` collection: 
 
 -   Makes operational state assessment easier, complementing Ansible
     Automation Platform's configuration management capabilities.

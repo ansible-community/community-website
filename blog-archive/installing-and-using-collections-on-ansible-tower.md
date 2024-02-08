@@ -1,6 +1,6 @@
 ---
 author: Ajay Chenampara
-date: 2020-06-01 00:00 UTC
+date: 2020-07-01 00:00 UTC
 description: In this blog post we'll walk through using Ansible
   Collections with Ansible Tower, part of the Red Hat Ansible Automation
   Platform.

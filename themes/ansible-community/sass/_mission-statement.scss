@@ -1,0 +1,49 @@
+.mission-statement-title {
+  margin: 0 -13rem;
+  padding: 2rem 13rem;
+  background-color: $grey94;
+  h1 {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1170px) {
+    margin: 0 -6rem;
+    padding: 2rem 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0 -2rem;
+    padding: 1rem 2rem;
+  }
+}
+
+.mission-statement-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem 13rem;
+
+  @media screen and (max-width: 1170px) {
+    padding: 1rem 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 1rem 2rem;
+  }
+}
+
+.mission-statement-image-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  .mascot-right-margin {
+    margin-right: 1.25rem;
+  }
+  @media screen and (max-width: 990px) {
+    img {
+      display: none;
+    }
+  }
+}

@@ -10,7 +10,11 @@
           by <a href="/authors/{{ post.author() | slugify() }}">{{ post.author() }}</a> - {{ post.date.strftime("%_d %b '%y") }}
         </p>
       </div>
-      {{ post.text(teaser_only=True) }}
+      {% if "news" in post.tags %}
+        {{ post.text(teaser_only=True) }}
+      {% else %}
+        {{ post.description() }}
+      {% endif %}
     </div>
   {% endfor %}
 {% endif %}
