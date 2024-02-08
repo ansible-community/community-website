@@ -16,13 +16,10 @@
       <div class="catalyst-content">
         <h3>{{ item.heading }}</h3>
         <p>{{ item.description }}</p>
+        <p>{{ item.data_title }}</p>
+        <p>{{ item.data_body }}</p>
         <span class="homepage-link"><a href="{{ item.link }}" target="_blank">{{ homepage.labels.learn_more }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
       </div>
-      <img class="catalyst-logo"
-           src="/images/{{ item.logo }}"
-           alt="{{ item.alt }}"
-           width="95"
-           height="95" />
     </div>
   {% endfor %}
   {% include "homepage-back-to-top.tmpl" %}
