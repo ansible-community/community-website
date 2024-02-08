@@ -196,8 +196,8 @@ catalyst:
       data_body: Creating and supporting successful communities is something Red Hat has done for a long time.  We would love to share our framework with you on how we do it.
       link: link://slug/automation-adoption
     f2e:
-      heading: Collection Spotlight
-      description: Every week we will spotlight a new collection available to the Ansible ecosystem.
-      data_title: Ansible Middleware
-      data_body: Have you had a chance to check out the Ansible based automation for Red Hat Application Services and upstream middleware projects?
-      link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
+      heading: Enterprise Automation
+      description: Curious about the journey from AWX to the Ansible Automation Platform?
+      data_title: When should an organization consider upgrading to expand their enterprise-grade automation strategy.
+      data_body: This article will help you define your organizations automation maturity and aid in determining if it is time to uplevel your strategy.
+      link: link://slug/enterprise-grade-strategy
