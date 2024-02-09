@@ -50,7 +50,7 @@ And if needed, Ansible can easily connect with Kerberos, Lightweight Directory A
 
 Red Hat Ansible Automation Platform [can centralized authentication](https://docs.ansible.com/automation-controller/latest/html/userguide/credentials.html) as well as integrate with industry-standard tools like CyberArk AIM, Conjur, HashiCorp Vault, and Microsoft Azure Key Vault. Automation controller hashes local automation controller user passwords with the PBKDF2 algorithm using a SHA256 hash. Users who authenticate via external account mechanisms (LDAP, SAML, OAuth, and others) do not have any password or secret stored.
 
-[Read the secret handling and connection security documenation...](https://docs.ansible.com/automation-controller/latest/html/administration/secret_handling.html#ag-secret-handling)
+[Read the secret handling and connection security documentation...](https://docs.ansible.com/automation-controller/latest/html/administration/secret_handling.html#ag-secret-handling)
 
 
 # Manage your inventory in simple text files
