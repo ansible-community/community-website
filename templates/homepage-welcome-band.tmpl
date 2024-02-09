@@ -1,14 +1,15 @@
-<div class="grid-wrapper homepage-welcome-band full-width-band"
-     id="ansible">
-  <div class="section-title width-8-12 width-12-12-m">
-    <div class="welcome-box">
-      <h2>{{ homepage.welcome.title }}</h2>
+<div class="grid-wrapper homepage-welcome-band content-slim"
+     id="welcome">
+  <div class="width-12-12 width-12-12-m">
+    <div class="welcome-row">
+      <div class="welcome-box-left">
+        <h2>{{ homepage.welcome.title }}</h2>
+        <p>{{ homepage.welcome.intro }}</p>
+      </div>
+      <div class="welcome-box-right max-width-prose">
+        <iframe width="420" height="300" src="{{ homepage.welcome.url }}">
+        </iframe>
+      </div>
     </div>
-    <p>{{ homepage.welcome.intro }}</p>
   </div>
-  <div class="ansible-image width-4-12 width-12-12-m">
-    <iframe width="420" height="300" src="{{ homepage.welcome.url }}">
-    </iframe>
-  </div>
-  {% include "homepage-back-to-top.tmpl" %}
 </div>

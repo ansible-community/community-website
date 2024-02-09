@@ -161,10 +161,14 @@ NAVIGATION_ALT_LINKS = {
         ),
         (
           (
+            ("/mission-statement/", "Our mission statement", ""),
             ("/how-ansible-works/", "How Ansible works", ""),
             ("/ecosystem/", "Ansible ecosystem", ""),
+            ("/awx/", "AWX", ""),
+            ("/galaxy/", "Galaxy", ""),
+            ("/faq/", "FAQs", ""),
             ("/ansible-community-training/", "Ansible community training", ""),
-            ("/mission-statement/", "Our mission statement", ""),
+            
             ("/contact-us/", "Contact us", ""),
           ),
           "Resources", ""

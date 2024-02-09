@@ -1,22 +1,43 @@
 .homepage-welcome-band {
-  background-color: $grey94;
+  background-color: $white;
 }
 
-.welcome-box {
+.welcome-row {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.welcome-box-left {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  @media screen and (max-width: 1170px) {
-    flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  p {
+    font-size: $font-md;
   }
 }
 
-.ansible-image {
+.welcome-box-right {
   display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
 
-  img {
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
+@media screen and (max-width: 768px) {
+  .welcome-row {
+    grid-template-columns: 1fr;
+  }
+
+  .welcome-box-left {
+    padding-bottom: 2rem;
+  }
+
+  .welcome-box-right {
+    grid-column-start: initial;
+    grid-column-end: initial;
   }
 }

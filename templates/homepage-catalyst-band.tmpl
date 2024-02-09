@@ -1,5 +1,5 @@
 <div class="grid-wrapper homepage-catalyst-band full-width-band"
-     id="ecosystem">
+     id="catalyst">
   <div class="section-title width-12-12 width-12-12-m">
     <div class="section-top">
       <img class="section-icon"
@@ -14,9 +14,9 @@
   {% for key, item in homepage.catalyst.articles.items() %}
     <div class="catalyst-card width-6-12 width-12-12-m">
       <div class="catalyst-content">
-        <h3>{{ item.heading }}</h3>
+        <h3 style="color: red;">{{ item.heading }}</h3>
         <p>{{ item.description }}</p>
-        <p>{{ item.data_title }}</p>
+        <h5>{{ item.data_title }}</h5>
         <p>{{ item.data_body }}</p>
         <span class="homepage-link"><a href="{{ item.link }}" target="_blank">{{ homepage.labels.learn_more }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
       </div>

@@ -7,12 +7,20 @@ banner:
   redhat_logo_alt: Red Hat logo
   welcome_alt: Welcome to Ansible
   platform_learn: Learn about Red Hat Ansible Automation Platform
+events:
+  section_icon: /assets/images/calendar-cyan.svg
+  icon_alt: Ansible community event icon
+  title: Events
+  intro: 
+  url: 
 ansible:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Ansible automation icon
   image_alt: Ansible community collaboration
-  mission: Click here to learn more about mission
+  mission: Click here to learn more about our mission
   mission_url: link://slug/mission-statement
+  join: Click here to join the community
+  join_url: https://docs.ansible.com/community.html
   title: What is Ansible?
   intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
   top_section:
@@ -62,40 +70,6 @@ bullhorn:
   mailchimp_link: https://bit.ly/subscribe-bullhorn
   forum_link: https://forum.ansible.com/c/news/bullhorn/17
   forum_feed: https://forum.ansible.com/c/news/bullhorn/17.rss
-events:
-  section_icon: /assets/images/calendar-cyan.svg
-  icon_alt: Ansible community event icon
-  title: Events
-  intro: Share and learn about automation at Ansible events, in person or online.
-  url: https://forum.ansible.com/c/events/
-  view_calendar: View more
-  event_descriptions:
-    # This section contains various event descriptions.
-    # Copy and paste these descriptions as needed when updating event details.
-    # Changing below does not change text on the homepage. The value of the "events_list.<event>.description" key is used on the homepage.
-    community_day: Get together with a broad community of users, contributors, entusiasts, IT professionals and more to learn and share about Ansible automation.
-    contributor_summit: Interact with the Ansible contributor community and Ansible at Red Hat engineers to improve collaboration and possibly do some hacking.
-  events_list:
-    event_one:
-      name: Configuration Management Camp
-      # If the event is community day or contributor summit, you can copy the description from event_descriptions.
-      # Important: To prevent reflow and text wrapping issues on the homepage descriptions should be approximately 100 characters long.
-      description: Configuration Management Camp is the event for technologists interested in open source infrastructure automation and related topics.
-      date: February 5 to 7, 2024
-      location: Ghent, Belgium
-      image: cfgmgmtcamp-logo.png
-      alt: CfgMgmtCamp logo
-      link: https://forum.ansible.com/t/config-management-camp/91
-    event_two:
-      name: Ansible Minneapolis Meetup
-      # If the event is community day or contributor summit, you can copy the description from event_descriptions.
-      # Important: To prevent reflow and text wrapping issues on the homepage descriptions should be approximately 100 characters long.
-      description: Join a group of systems engineers and DevOps folks who want to Ansible all the things. Learn more and share your Ansible knowledge.
-      date: January 18, 2024
-      location: Minneapolis, MN, USA
-      image: ansible-meetup.svg
-      alt: Ansible meetup logo
-      link: https://forum.ansible.com/t/ansible-minneapolis-meetup-topic-tba-2024-01-18/1863
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
@@ -132,12 +106,6 @@ ecosystem:
       link: https://ansible.readthedocs.io/projects/rulebook/
       logo: logo-eda.svg
       alt: Event-Driven Ansible project logo
-blog:
-  section_icon: /assets/images/blog-cyan.svg
-  icon_alt: Ansible community blog icon
-  title: Blog
-  intro: Check out some recent blog posts from the Ansible community.
-  url: /blog/
 contribute:
   section_icon: /assets/images/collaboration-cyan.svg
   icon_alt: Ansible community contributor icon
@@ -169,10 +137,10 @@ links:
     use_cases: https://www.redhat.com/en/technologies/management/ansible/use-cases
 welcome:
   title: Welcome to the new Ansible.com!
-  intro: Welcome home and thank you for supporting Ansible.  Please click on the video here to learn about what has changed and why.
+  intro: Welcome home and thank you for supporting Ansible. View the video to learn about what changed and why...
   url: https://www.youtube.com/embed/zHrIo4E1HmY?si=aXMEyR14P_6gKoj2
 catalyst:
-  section_icon: /assets/images/orchestration.svg
+  section_icon: /assets/images/orchestration-cyan.svg
   icon_alt: Ansible Catalyst program icon
   title: Ansible Catalyst
   intro: This is a new formed program lead by Red Hat to spark additional user interaction, spotlight the ecosystems contributions and share insights on driving automation adoption at your organizations.
@@ -184,10 +152,10 @@ catalyst:
       data_body: Have you had a chance to check out the Ansible based automation for Red Hat Application Services and upstream middleware projects?
       link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
     contributions:
-      heading: What Are You Working On?
-      description: Take a moment to visit our forum and tell your fellow users what you are working on.
-      data_title: 
-      data_body: 
+      heading: Innovation By Automation
+      description: Using automation to drive innovation enabling business value should always be the end goal.
+      data_title: What's currently brewing in your creative canvas?
+      data_body: Take a moment to visit our forum and tell your fellow users what you are working on.
       link: https://forum.ansible.com/c/chat/4
     adoption:
       heading: Automation Adoption
