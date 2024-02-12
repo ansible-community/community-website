@@ -135,13 +135,15 @@ For now, the Red Hat sponsored AWX team will continue to make the majority of de
  
 **If my software runs with AWX, can I say that it is certified to run on AWX or on Red Hat Ansible Automation Platform?**
 
-No. Only Red Hat has the ability to say that software is “certified,” although you may truthfully use the AWX name to describe the relationship between your software and AWX. For more details, consult the [AWX trademark guidelines](https://github.com/ansible/awx-logos/blob/master/TRADEMARKS.md).
+No. Only Red Hat has the ability to say that software is “certified,” although you may truthfully use the AWX name to describe the relationship between your software and AWX.
+For more details, consult the [AWX trademark guidelines](https://github.com/ansible/awx-logos/blob/master/TRADEMARKS.md).
 
 <a name="13"><a>
 
 **I want to build my own forked version of AWX. Can I call it AWX? Can I call it Red Hat Ansible Automation Platform?**
 
-No. You may fork AWX like any open source codebase, but you may not use Red Hat trademarks. Red Hat reserves the exclusive right to decide what products can bear those marks. Be sure to read the [AWX trademark guidelines](https://github.com/ansible/awx-logos/blob/master/TRADEMARKS.md) for more information.
+No. You may fork AWX like any open source codebase, but you may not use Red Hat trademarks. Red Hat reserves the exclusive right to decide what products can bear those marks.
+Be sure to read the [AWX trademark guidelines](https://github.com/ansible/awx-logos/blob/master/TRADEMARKS.md) for more information.
 
 <a name="14"><a>
  
