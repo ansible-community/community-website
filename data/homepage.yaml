@@ -147,7 +147,7 @@ catalyst:
   articles:
     collection_spotlight:
       heading: Collection spotlight
-      description: Every week we will spotlight a new collection available to the Ansible ecosystem.
+      description: Every week we will highlight a new collection available to the Ansible ecosystem.
       data_title: Ansible Middleware
       data_body: Have you had a chance to check out the Ansible based automation for Red Hat Application Services and upstream middleware projects?
       link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
