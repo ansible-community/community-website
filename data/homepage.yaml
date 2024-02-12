@@ -143,7 +143,7 @@ catalyst:
   section_icon: /assets/images/orchestration-cyan.svg
   icon_alt: Ansible Catalyst program icon
   title: Ansible Catalyst
-  intro: This is a new formed program lead by Red Hat to spark additional user interaction, spotlight the ecosystems contributions and share insights on driving automation adoption at your organizations.
+  intro: This is a newly formed program lead by Red Hat to foster additional user interaction, showcase the ecosystems contributions, and share insights on driving automation adoption at your organizations.
   articles:
     collection_spotlight:
       heading: Collection Spotlight
