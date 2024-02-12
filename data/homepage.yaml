@@ -17,9 +17,9 @@ ansible:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Ansible automation icon
   image_alt: Ansible community collaboration
-  mission: Click here to learn more about our mission
+  mission: Learn more about our mission
   mission_url: link://slug/mission-statement
-  join: Click here to join the community
+  join: Join the Ansible community
   join_url: https://docs.ansible.com/community.html
   title: What is Ansible?
   intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
