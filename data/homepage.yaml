@@ -146,25 +146,25 @@ catalyst:
   intro: This is a newly formed program lead by Red Hat to foster additional user interaction, showcase the ecosystems contributions, and share insights on driving automation adoption at your organizations.
   articles:
     collection_spotlight:
-      heading: Collection Spotlight
+      heading: Collection spotlight
       description: Every week we will spotlight a new collection available to the Ansible ecosystem.
       data_title: Ansible Middleware
       data_body: Have you had a chance to check out the Ansible based automation for Red Hat Application Services and upstream middleware projects?
       link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
     contributions:
-      heading: Innovation By Automation
+      heading: Innovation by automation
       description: Using automation to drive innovation enabling business value should always be the end goal.
       data_title: What's currently brewing in your creative canvas?
       data_body: Take a moment to visit our forum and tell your fellow users what you are working on.
       link: https://forum.ansible.com/c/chat/4
     adoption:
-      heading: Automation Adoption
+      heading: Automation adoption
       description: Have questions about how you can expand adoption of automation with your organizations?  If so, check out the following article to learn some tips and tricks.
       data_title: Building your own automation community
       data_body: Creating and supporting successful communities is something Red Hat has done for a long time.  We would love to share our framework with you on how we do it.
       link: link://slug/automation-adoption
     f2e:
-      heading: Enterprise Automation
+      heading: Enterprise automation
       description: Curious about the journey from AWX to the Ansible Automation Platform?
       data_title: When should an organization consider upgrading to expand their enterprise-grade automation strategy.
       data_body: This article will help you define your organizations automation maturity and aid in determining if it is time to uplevel your strategy.
