@@ -164,4 +164,4 @@ catalyst:
       description: Curious about the journey from AWX to the Ansible Automation Platform?
       data_title: When should an organization consider upgrading to expand their enterprise-grade automation strategy.
       data_body: This article will help you define your organizations automation maturity and aid in determining if it is time to uplevel your strategy.
-      link: link://slug/enterprise-grade-strategy
+      link: 
