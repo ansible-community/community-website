@@ -20,3 +20,21 @@
     color: $cyan;
   }
 }
+
+.tab-menu-anchor {
+  display: flex;
+  padding: 1.75rem;
+  justify-content: center;
+  font-size: $font-lg;
+  img {
+    float: left;
+    margin-right: 0.25rem;
+  }
+  p {
+    white-space: nowrap;
+  }
+  &:hover {
+    background-color: $white;
+    color: $navy;
+  }
+}
