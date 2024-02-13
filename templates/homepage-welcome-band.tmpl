@@ -1,13 +1,11 @@
-<div class="grid-wrapper homepage-welcome-band content-slim" id="welcome">
-  <div class="width-12-12 width-12-12-m">
-    <div class="welcome-row">
-      <div class="welcome-box-left">
-        <h2>{{ homepage.welcome.title }}</h2>
-        <p>{{ homepage.welcome.intro }}</p>
-      </div>
-      <div class="welcome-box-right max-width-prose">
-        <iframe width="420" height="300" src="{{ homepage.welcome.url }}" />
-      </div>
-    </div>
+<div class="grid-wrapper homepage-welcome-band full-width-band"
+     id="welcome">
+  <div class="width-8-12 width-12-12-m welcome-box-left max-width-prose">
+    <h2>{{ homepage.welcome.title }}</h2>
+    <p>{{ homepage.welcome.intro }}</p>
+  </div>
+  <div class="width-4-12 width-12-12-m welcome-box-right">
+    <iframe title="{{ homepage.welcome.video_title }}"
+            src="{{ homepage.welcome.url }}" />
   </div>
 </div>

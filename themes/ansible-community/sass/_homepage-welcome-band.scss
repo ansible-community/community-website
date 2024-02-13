@@ -1,43 +1,45 @@
 .homepage-welcome-band {
   background-color: $white;
-}
-
-.welcome-row {
-  grid-column: span 2;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 40px;
+  display: flex;
+  flex-direction: row;
 }
 
 .welcome-box-left {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4rem;
-  p {
-    font-size: $font-md;
-  }
+  justify-content: center;
+  margin-right: 2rem;
+  font-size: $font-md;
 }
 
 .welcome-box-right {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
   align-items: center;
+  justify-content: center;
+  iframe {
+    width: 420px;
+    height: 300px;
+    @media screen and (max-width: 430px) {
+      width: 300px;
+      height: 214px;
+    }
+  }
 }
 
-@media screen and (max-width: 768px) {
-  .welcome-row {
-    grid-template-columns: 1fr;
+@media screen and (max-width: 992px) {
+  .homepage-welcome-band {
+    flex-direction: column;
   }
 
   .welcome-box-left {
-    padding-bottom: 2rem;
+    margin-right: 0;
   }
+}
 
-  .welcome-box-right {
-    grid-column-start: initial;
-    grid-column-end: initial;
+@media screen and (max-width: 300px) {
+  .homepage-welcome-band {
+    display: none;
   }
 }
