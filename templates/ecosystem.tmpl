@@ -1,24 +1,29 @@
 {% extends "base.tmpl" %}
 {% block content %}
-  <div class="grid-wrapper ecosystem">
-    <div class="width-12-12 width-12-12-m ecosystem-row">
-      <img src="/images/community_logo.svg"
-           height="auto"
-           width="200px"
-           alt="Ansible community logo" />
-      <div class="ecosystem-title">
-        <h1>Ansible ecosystem</h1>
-        <p>Expand your automation to a virtually unlimited set of use cases.</p>
-      </div>
+  <div class="grid-wrapper ecosystem-page">
+    <div class="width-12-12 width-12-12-m ecosystem-page-title">
+      <h1>Ansible ecosystem</h1>
+      <p>Expand your automation to a virtually unlimited set of use cases.</p>
     </div>
     <!-- Start ecosystem projects -->
     {% for key, item in ecosystem.items() %}
-      <div class="width-6-12 width-12-12-m">
-        <h2>{{ item.name }}</h2>
-        <p>{{ item.description }}</p>
-        {% for key, item in item.resources.items() %}
-          <a class="ecosystem-button" href="{{ item.link }}" role="button">{{ item.text }}</a>
-        {% endfor %}
+      <div class="ecosystem-project-card width-6-12 width-12-12-m">
+        <div class="ecosystem-project-content">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+          <ul>
+            {% for key, item in item.resources.items() %}
+              <li>
+                <a href="{{ item.link }}" target="_blank">{{ item.text }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <img class="ecosystem-project-logo"
+             src="/images/{{ item.logo }}"
+             alt="{{ item.alt }}"
+             width="100"
+             height="100" />
       </div>
     {% endfor %}
     <!-- End ecosystem projects -->
