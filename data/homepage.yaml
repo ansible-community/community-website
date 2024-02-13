@@ -139,6 +139,7 @@ welcome:
   title: Welcome to the new Ansible.com!
   intro: Welcome home and thank you for supporting Ansible. View the video to learn about what changed and why...
   url: https://www.youtube.com/embed/zHrIo4E1HmY?si=aXMEyR14P_6gKoj2
+  video_title: Welcome from Walter Bentley
 catalyst:
   section_icon: /assets/images/orchestration-cyan.svg
   icon_alt: Ansible Catalyst program icon
