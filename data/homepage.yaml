@@ -64,6 +64,10 @@ bullhorn:
   mailchimp_link: https://bit.ly/subscribe-bullhorn
   forum_link: https://forum.ansible.com/c/news/bullhorn/17
   forum_feed: https://forum.ansible.com/c/news/bullhorn/17.rss
+events:
+  section_icon: /assets/images/calendar-cyan.svg
+  icon_alt: Ansible community event icon
+  title: Events
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
