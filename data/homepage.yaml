@@ -137,7 +137,7 @@ catalyst:
   section_icon: /assets/images/orchestration-cyan.svg
   icon_alt: Ansible Catalyst program icon
   title: Ansible Catalyst
-  intro: This is a newly formed program lead by Red Hat to foster additional user interaction, showcase the ecosystems contributions, and share insights on driving automation adoption at your organizations.
+  intro: This is a newly-formed program lead by Red Hat to foster additional user interaction, showcase the ecosystem contributions, and share insights on driving automation adoption at your organization.
   articles:
     collection_spotlight:
       heading: Collection spotlight
@@ -153,13 +153,13 @@ catalyst:
       link: https://forum.ansible.com/c/chat/4
     adoption:
       heading: Automation adoption
-      description: Have questions about how you can expand adoption of automation with your organizations?  If so, check out the following article to learn some tips and tricks.
+      description: Have questions about how you can expand adoption of automation with your organization? If so, check out the following article to learn some tips and tricks.
       data_title: Building your own automation community
-      data_body: Creating and supporting successful communities is something Red Hat has done for a long time.  We would love to share our framework with you on how we do it.
+      data_body: Creating and supporting successful communities is something Red Hat has done for a long time. We would love to share our community adoption framework with you.
       link: 
     f2e:
       heading: Enterprise automation
-      description: Curious about the journey from AWX to the Ansible Automation Platform?
-      data_title: When should an organization consider upgrading to expand their enterprise-grade automation strategy.
-      data_body: This article will help you define your organizations automation maturity and aid in determining if it is time to uplevel your strategy.
+      description: Curious about the journey from AWX to Red Hat Ansible Automation Platform?
+      data_title: When should an organization consider upgrading to expand their enterprise-grade automation strategy?
+      data_body: This article will help you define your organization's automation maturity and aid in determining if it is time to level up your strategy.
       link: 
