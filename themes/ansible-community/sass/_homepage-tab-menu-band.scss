@@ -5,7 +5,6 @@
   background-color: $grey94;
   display: grid;
   grid-template-columns: repeat(5 1fr);
-  gap: 20px;
   @media screen and (max-width: 992px) {
     display: none;
   }
@@ -23,9 +22,10 @@
 
 .tab-menu-anchor {
   display: flex;
-  padding: 1.75rem;
+  padding: 1.75rem 1.75rem 1rem 1.75rem;
   justify-content: center;
   font-size: $font-lg;
+  line-height: 40px;
   img {
     float: left;
     margin-right: 0.25rem;
