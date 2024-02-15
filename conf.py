@@ -166,9 +166,8 @@ NAVIGATION_ALT_LINKS = {
             ("/ecosystem/", "Ansible ecosystem", ""),
             ("/awx/", "AWX", ""),
             ("/galaxy/", "Galaxy", ""),
-            ("/faq/", "FAQs", ""),
+            ("/faq/", "Frequently asked questions", ""),
             ("/ansible-community-training/", "Ansible community training", ""),
-            
             ("/contact-us/", "Contact us", ""),
           ),
           "Resources", ""
