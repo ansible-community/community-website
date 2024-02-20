@@ -6,9 +6,10 @@
   justify-content: start;
   text-align: center;
   img {
-    width: 3.125rem;
+    width: 50px;
     height: auto;
     margin-right: 16px;
+    min-width: 50px;
   }
   #blog-title {
     color: $black;
