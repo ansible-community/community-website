@@ -56,7 +56,7 @@ Get in touch with us if you need help or have questions.
   </div>
   <div class="contact-page-community-column">
     <h1>Ansible community</h1>
-    <p>For queries and assistance related to the Ansible community:</p>
+    <p>For queries and assistance related to the Ansible&reg; community:</p>
       <ul>
         <li>
           <a href="https://forum.ansible.com/g?type=public"
@@ -75,7 +75,7 @@ Get in touch with us if you need help or have questions.
              target="_blank">Get help by asking questions directly to the Ansible community.</a>
         </li>
       </ul>
-    <p>If you still have questions or need help, you can get in touch with the Ansible community team at Red Hat. Please send an email to <a href="mailto:ansible-community@redhat.com">ansible-community@redhat.com</a></p>
+    <p>If you still have questions or need help, you can get in touch with the Ansible community team at Red Hat&reg; by emailing <a href="mailto:ansible-community@redhat.com">ansible-community@redhat.com</a></p>
   </div>
 </div>
 <hr class="contact-page-rule" />
@@ -88,6 +88,6 @@ Get in touch with us if you need help or have questions.
   <div class="contact-page-platform-column">
     <h1>Red Hat Ansible Automation Platform</h1>
     <p>Visit the <a href="https://www.redhat.com/en/technologies/management/ansible" target="_blank">Red Hat Ansible Automation Platform</a> page to find out how it can solve your most challenging IT problems. You can find lots of resources and support for using Ansible Automation Platform across a variety of use cases.</p>
-    <p>You can also <a href="https://www.redhat.com/en/contact" target="_blank">contact Red Hat</a> directly with questions or to ask for help.</p>
+    <p>You can also <a href="https://www.redhat.com/en/contact" target="_blank">contact Red Hat&reg;</a> directly with questions or to ask for help.</p>
   </div>
 </div>

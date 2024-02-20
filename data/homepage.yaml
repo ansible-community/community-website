@@ -11,6 +11,10 @@ ansible:
   section_icon: /assets/images/automation-cyan.svg
   icon_alt: Ansible automation icon
   image_alt: Ansible community collaboration
+  mission: Learn more about our mission
+  mission_url: link://slug/mission-statement
+  join: Join the Ansible community
+  join_url: https://docs.ansible.com/community.html
   title: What is Ansible?
   intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
   top_section:
@@ -64,36 +68,6 @@ events:
   section_icon: /assets/images/calendar-cyan.svg
   icon_alt: Ansible community event icon
   title: Events
-  intro: Share and learn about automation at Ansible events, in person or online.
-  url: https://forum.ansible.com/c/events/
-  view_calendar: View more
-  event_descriptions:
-    # This section contains various event descriptions.
-    # Copy and paste these descriptions as needed when updating event details.
-    # Changing below does not change text on the homepage. The value of the "events_list.<event>.description" key is used on the homepage.
-    community_day: Get together with a broad community of users, contributors, entusiasts, IT professionals and more to learn and share about Ansible automation.
-    contributor_summit: Interact with the Ansible contributor community and Ansible at Red Hat engineers to improve collaboration and possibly do some hacking.
-  events_list:
-    event_one:
-      name: Configuration Management Camp
-      # If the event is community day or contributor summit, you can copy the description from event_descriptions.
-      # Important: To prevent reflow and text wrapping issues on the homepage descriptions should be approximately 100 characters long.
-      description: Configuration Management Camp is the event for technologists interested in open source infrastructure automation and related topics.
-      date: February 5 to 7, 2024
-      location: Ghent, Belgium
-      image: cfgmgmtcamp-logo.png
-      alt: CfgMgmtCamp logo
-      link: https://forum.ansible.com/t/config-management-camp/91
-    event_two:
-      name: Ansible Minneapolis Meetup
-      # If the event is community day or contributor summit, you can copy the description from event_descriptions.
-      # Important: To prevent reflow and text wrapping issues on the homepage descriptions should be approximately 100 characters long.
-      description: Join a group of systems engineers and DevOps folks who want to Ansible all the things. Learn more and share your Ansible knowledge.
-      date: January 18, 2024
-      location: Minneapolis, MN, USA
-      image: ansible-meetup.svg
-      alt: Ansible meetup logo
-      link: https://forum.ansible.com/t/ansible-minneapolis-meetup-topic-tba-2024-01-18/1863
 platform:
   main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
   discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
@@ -124,18 +98,6 @@ ecosystem:
       link: https://ansible.readthedocs.io/projects/rulebook/
       logo: project-logos/eda.svg
       alt: Event-Driven Ansible project logo
-    devtools:
-      heading: Ansible automation developer tools
-      description: Tooling to develop and test Ansible content for consistent, trusted automation.
-      link: https://ansible.readthedocs.io/projects/dev-tools/
-      logo: project-logos/ansible-community.svg
-      alt: Ansible DevTools project logo
-blog:
-  section_icon: /assets/images/blog-cyan.svg
-  icon_alt: Ansible community blog icon
-  title: Blog
-  intro: Check out some recent blog posts from the Ansible community.
-  url: /blog/
 contribute:
   section_icon: /assets/images/collaboration-cyan.svg
   icon_alt: Ansible community contributor icon
@@ -165,3 +127,33 @@ links:
   platform:
     home: https://www.redhat.com/en/technologies/management/ansible
     use_cases: https://www.redhat.com/en/technologies/management/ansible/use-cases
+catalyst:
+  section_icon: /assets/images/orchestration-cyan.svg
+  icon_alt: Ansible Catalyst program icon
+  title: Ansible Catalyst
+  intro: This is a newly-formed program lead by Red Hat to foster additional user interaction, showcase the ecosystem contributions, and share insights on driving automation adoption at your organization.
+  articles:
+    collection_spotlight:
+      heading: Collection spotlight
+      description: Every week we will highlight a new collection available to the Ansible ecosystem.
+      data_title: Ansible Middleware
+      data_body: Have you had a chance to check out the Ansible based automation for Red Hat Application Services and upstream middleware projects?
+      link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
+    contributions:
+      heading: Innovation by automation
+      description: Using automation to drive innovation enabling business value should always be the end goal.
+      data_title: What's currently brewing in your creative canvas?
+      data_body: Take a moment to visit our forum and tell your fellow users what you are working on.
+      link: https://forum.ansible.com/c/chat/4
+    adoption:
+      heading: Automation adoption
+      description: Have questions about how you can expand adoption of automation with your organization? If so, check out the following article to learn some tips and tricks.
+      data_title: Building your own automation community
+      data_body: Creating and supporting successful communities is something Red Hat has done for a long time. We would love to share our community adoption framework with you.
+      link: 
+    f2e:
+      heading: Enterprise automation
+      description: Curious about the journey from AWX to Red Hat Ansible Automation Platform?
+      data_title: When should an organization consider upgrading to expand their enterprise-grade automation strategy?
+      data_body: This article will help you define your organization's automation maturity and aid in determining if it is time to level up your strategy.
+      link: 

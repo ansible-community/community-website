@@ -161,16 +161,20 @@ NAVIGATION_ALT_LINKS = {
         ),
         (
           (
+            ("/mission-statement/", "Our mission statement", ""),
             ("/how-ansible-works/", "How Ansible works", ""),
             ("/ecosystem/", "Ansible ecosystem", ""),
+            ("/awx/", "AWX", ""),
+            ("/galaxy/", "Galaxy", ""),
+            ("/faq/", "Frequently asked questions", ""),
             ("/ansible-community-training/", "Ansible community training", ""),
-            ("/mission-statement/", "Our mission statement", ""),
             ("/contact-us/", "Contact us", ""),
           ),
           "Resources", ""
         ),
-        ("https://forum.ansible.com/", "Ansible community forum", ""),
+        ("https://forum.ansible.com/", "Forum", ""),
         ("https://docs.ansible.com/", "Documentation", ""),
+        ("https://www.redhat.com/en/technologies/management/ansible/", "Ansible Automation Platform", ""),
     )
 }
 
