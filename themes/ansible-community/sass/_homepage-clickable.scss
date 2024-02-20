@@ -24,27 +24,6 @@
   white-space: inherit;
 }
 
-/* tabs in the secondary menu */
-.tab-menu-anchor {
-  display: flex;
-  padding: 1.75rem;
-  align-items: center;
-  justify-content: center;
-  font-size: $font-lg;
-  img {
-    float: left;
-    width: auto;
-    height: 2.5rem;
-  }
-  p {
-    white-space: nowrap;
-  }
-  &:hover {
-    background-color: $white;
-    color: $navy;
-  }
-}
-
 /* controls text elements next to
    anchors, such as fa icons */
 .homepage-link {
