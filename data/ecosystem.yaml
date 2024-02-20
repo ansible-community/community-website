@@ -1,6 +1,95 @@
+ade:
+  name: Ansible Development Environment
+  description: A pip-like install for Ansible collections that isolates environments and promotes an ephemeral approach to development.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Development Environment project logo
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/dev-environment/"
+      text: Documentation
+    github:
+      link: "https://github.com/ansible/ansible-development-environment"
+      text: Source code
+adt:
+  name: Ansible Development Tools
+  description: Ansible Development Tools (ADT) streamlines the setup and usage of several tools for creating Ansible content.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Development Tools project logo
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/dev-tools/"
+      text: Documentation
+    github:
+      link: "https://github.com/ansible/ansible-dev-tools"
+      text: Source code
+als:
+  name: Ansible Language Server
+  description: Ansible Language Server implements language server protocol (LSP) to highlight and check Ansible syntax.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Language Server project logo
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/language-server/"
+      text: Documentation
+    github:
+      link: "https://github.com/ansible/ansible-language-server"
+      text: Source code
+ansible-pylibssh:
+  name: ansible-pylibssh
+  description: ansible-pylibssh provides Python bindings for Ansible with the libssh project.
+  logo: project-logos/ansible-community.svg
+  alt: ansible-pylibssh project logo
+  resources:
+    docs:
+      link: "https://ansible-pylibssh.readthedocs.io/en/latest/"
+      text: Documentation
+    github:
+      link: "https://github.com/ansible/pylibssh"
+      text: Source code
+awx:
+  name: Ansible AWX
+  description: AWX provides a web-based user interface, REST API, and task engine built on top of Ansible.
+  logo: project-logos/awx.svg
+  alt: AWX project logo
+  resources:
+    page:
+      link: "link://slug/awx"
+      text: The AWX project
+    docs:
+      link: "https://ansible.readthedocs.io/projects/awx/"
+      text: Documentation
+    github:
+      link: "https://github.com/ansible/awx"
+      text: Source code
+awx_operator:
+  name: AWX Operator
+  description: Ansible AWX Operator offers built-in intelligence and operational best practices for deploying on Kubernetes environments.
+  logo: project-logos/ansible-community.svg
+  alt: AWX Operator project logo
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/awx-operator/"
+      text: Documentation
+    github:
+      link: "https://github.com/ansible/awx-operator"
+      text: Source code
+builder:
+  name: Ansible Builder
+  description: Ansible Builder lets you create Execution Environments, which are container images that act as Ansible control nodes.
+  logo: project-logos/builder.svg
+  alt: Ansible Builder project logo
+  resources:
+    docs:
+      link: "https://ansible.readthedocs.io/projects/builder/"
+      text: Documentation
+    github:
+      link: "https://github.com/ansible/ansible-builder"
+      text: Source code
 collections:
   name: Ansible collections
   description: Ansible collections offer distributions of playbooks, roles, modules, and plugins.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible collections logo
   resources:
     index:
       link: "https://docs.ansible.com/ansible/latest/collections/index.html"
@@ -14,62 +103,23 @@ collections:
     plugin_index:
       link: "https://docs.ansible.com/ansible/latest/collections/all_plugins.html"
       text: Index of all modules and plugins
-als:
-  name: Ansible Language Server
-  description: Ansible Language Server implements language server protocol (LSP) to highlight and check Ansible syntax.
-  resources:
-    docs:
-      link: "https://ansible.readthedocs.io/projects/language-server/"
-      text: Ansible Language Server documentation
-    github:
-      link: "https://github.com/ansible/ansible-language-server"
-      text: Source code
-awx:
-  name: Ansible AWX
-  description: AWX provides a web-based user interface, REST API, and task engine built on top of Ansible.
-  resources:
-    page:
-      link: "link://slug/awx"
-      text: The AWX project
-    docs:
-      link: "https://ansible.readthedocs.io/projects/awx/"
-      text: AWX documentation
-    github:
-      link: "https://github.com/ansible/awx"
-      text: Source code
-awx_operator:
-  name: AWX Operator
-  description: Ansible AWX Operator offers built-in intelligence and operational best practices for deploying on Kubernetes environments.
-  resources:
-    docs:
-      link: "https://ansible.readthedocs.io/projects/awx-operator/"
-      text: AWX Operator documentation
-    github:
-      link: "https://github.com/ansible/awx-operator"
-      text: Source code
-builder:
-  name: Ansible Builder
-  description: Ansible Builder lets you create Execution Environments, which are container images that act as Ansible control nodes.
-  resources:
-    docs:
-      link: "https://ansible.readthedocs.io/projects/builder/"
-      text: Ansible Builder documentation
-    github:
-      link: "https://github.com/ansible/ansible-builder"
-      text: Source code
 compat:
   name: Ansible Compat
   description: Compat is a Python package that assists with compatibility between different Ansible releases, starting at version 2.9.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Compat project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/compat/"
-      text: Ansible Compat documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-compat"
       text: Source code
 core:
   name: Ansible Core
   description: Ansible Core is the language and runtime that powers automation. It also provides command-line tools such as Ansible Test.
+  logo: project-logos/ansible-core.svg
+  alt: Ansible Core project logo
   resources:
     docs:
       link: "https://docs.ansible.com/ansible-core/devel/index.html"
@@ -83,36 +133,20 @@ core:
 creator:
   name: Ansible Creator
   description: Ansible Creator is a Command-Line Interface (CLI) tool designed for effortlessly scaffolding all your Ansible content.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Creator project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/creator/"
-      text: Ansible Creator documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-creator"
-      text: Source code
-ade:
-  name: Ansible Development Environment
-  description: A pip-like install for Ansible collections.
-  resources:
-    docs:
-      link: "https://ansible.readthedocs.io/projects/development-environment/"
-      text: Ansible Development Environment documentation
-    github:
-      link: "https://github.com/ansible/ansible-development-environment"
-      text: Source code
-adt:
-  name: Ansible Development Tools
-  description: Ansible Development Tools (ADT) streamlines the setup and usage of several tools for creating Ansible content.
-  resources:
-    docs:
-      link: "https://ansible.readthedocs.io/projects/dev-tools/"
-      text: ADT documentation
-    github:
-      link: "https://github.com/ansible/ansible-dev-tools"
       text: Source code
 eda:
   name: Event-Driven Ansible Server
   description: Event-Driven Ansible Server offers scalable and flexible automation that can subscribe to a wide variety of event sources.
+  logo: project-logos/eda.svg
+  alt: Event-Driven Ansible Server project logo
   resources:
     deployment:
       link: "https://github.com/ansible/eda-server/blob/main/docs/deployment.md"
@@ -126,6 +160,8 @@ eda:
 edge:
   name: Edge Automation
   description: Edge provides tooling and collections to run automation jobs on device endpoints at the very edge of your infrastructure.
+  logo: project-logos/ansible-community.svg
+  alt: Edge Automation logo
   resources:
     osbuild:
       link: "https://github.com/redhat-cop/infra.osbuild"
@@ -141,7 +177,9 @@ edge:
       text: MicroShift Collection
 galaxy_ng:
   name: Galaxy NG
-  description: Galaxy NG jumpstarts automation projects with Ansible community content.
+  description: Galaxy NG jumpstarts automation projects with Ansible community content. Galaxy lets you share Ansible automation and promotes a collaborative approach to development and maintenance.
+  logo: project-logos/galaxy.svg
+  alt: Galaxy NG project logo
   resources:
     page:
       link: "link://slug/galaxy"
@@ -151,117 +189,127 @@ galaxy_ng:
       text: Search Galaxy
     docs:
       link: "https://ansible.readthedocs.io/projects/galaxy-ng/"
-      text: Galaxy documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/galaxy_ng/"
       text: Source code
 lint:
   name: Ansible Lint
   description: Lint improves code quality through proven best practices, patterns, and behaviors so that your Ansible content results in reliable and consistent automation.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Lint project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/lint/"
-      text: Ansible Lint documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-lint"
       text: Source code
 molecule:
   name: Molecule
-  description: Molecule helps you develop and test Ansible roles.
+  description: Molecule helps you develop and test Ansible roles with consistent development patterns. Using Molecule results in well-written roles that are easy to understand and maintain.
+  logo: project-logos/ansible-community.svg
+  alt: Molecule project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/molecule/"
-      text: Molecule documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/molecule/"
       text: Source code
 navigator:
   name: Ansible Navigator
   description: Ansible Navigator is a command-line tool for creating, reviewing, and troubleshooting Ansible content.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Navigator project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/navigator/"
-      text: Ansible Navigator documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-navigator"
-      text: Source code
-ansible-pylibssh:
-  name: ansible-pylibssh
-  description: ansible-pylibssh provides Python bindings for Ansible with the libssh project.
-  resources:
-    docs:
-      link: "https://ansible-pylibssh.readthedocs.io/en/latest/"
-      text: pylibssh documentation
-    github:
-      link: "https://github.com/ansible/pylibssh"
       text: Source code
 pytest:
   name: Ansible Pytest
   description: Enables the use of Ansible in tests as well as the use of pytest as a collection unit test runner, and exposes molecule scenarios using a pytest fixture.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Pytest project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/pytest-ansible/"
-      text: Ansible Pytest documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/pytest-ansible"
       text: Source code
 rulebook:
   name: Ansible Rulebook
   description: Ansible Rulebook is a command-line tool that listens to events so your automation can react when software or system states change.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Rulebook project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/rulebook/"
-      text: Ansible Rulebook documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-rulebook"
       text: Source code
 runner:
   name: Ansible Runner
   description: Ansible Runner provides a stable and consistent interface abstraction to Ansible.
+  logo: project-logos/runner.svg
+  alt: Ansible Runner project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/runner/"
-      text: Ansible Runner documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-runner"
       text: Source code
 sdk:
   name: Ansible SDK
   description: Ansible SDK is a toolkit that lets you harness the power and simplicity of Ansible automation directly from your applications.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible SDK project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/sdk/"
-      text: Ansible SDK documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-sdk"
       text: Source code
 sign:
   name: Ansible Sign
-  description: Ansible Sign is a utility for signing and verifying Ansible content.
+  description: Ansible Sign is a utility for signing and verifying Ansible automation. Use Sign to secure workflows and pipelines for trusted automation content.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible Sign project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/sign/"
-      text: Ansible Sign documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/ansible-sign"
       text: Source code
 tox:
   name: Tox Ansible
   description: Tox Ansible is a utility designed to simplify the testing of Ansible content collections.
+  logo: project-logos/ansible-community.svg
+  alt: Tox Ansible project logo
   resources:
     docs:
       link: "https://ansible.readthedocs.io/projects/tox-ansible/"
-      text: Tox Ansible documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/tox-ansible"
       text: Source code
 vscode:
   name: Ansible VS Code Extension
   description: The VS Code extension adds Ansible language support to Visual Studio Code and OpenVSX compatible editors.
+  logo: project-logos/ansible-community.svg
+  alt: Ansible VS Code Extension project logo
   resources:
     docs:
       link: "https://marketplace.visualstudio.com/items?itemName=redhat.ansible"
-      text: Ansible VS Code Extension documentation
+      text: Documentation
     github:
       link: "https://github.com/ansible/vscode-ansible"
       text: Source code

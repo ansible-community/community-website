@@ -110,25 +110,25 @@ ecosystem:
       heading: AWX
       description: Web-based user interface, REST API, and task engine for performing Ansible automation.
       link: https://ansible.readthedocs.io/projects/awx/
-      logo: logo-awx.svg
+      logo: project-logos/awx.svg
       alt: AWX project logo
     runner:
       heading: Ansible Runner
       description: An interface abstraction to Ansible that offers reliable and consistent task execution.
       link: https://ansible.readthedocs.io/projects/runner/
-      logo: logo-runner.svg
+      logo: project-logos/runner.svg
       alt: Ansible Runner project logo
     builder:
       heading: Ansible Builder
       description: Tooling to configure and build customized Ansible control nodes in container images.
       link: https://ansible.readthedocs.io/projects/builder/
-      logo: logo-builder.svg
+      logo: project-logos/builder.svg
       alt: Ansible Builder project logo
     eda:
       heading: Event-Driven Ansible
       description: Subscribe to event sources to scale automation and deliver more efficient IT operations.
       link: https://ansible.readthedocs.io/projects/rulebook/
-      logo: logo-eda.svg
+      logo: project-logos/eda.svg
       alt: Event-Driven Ansible project logo
 blog:
   section_icon: /assets/images/blog-cyan.svg
