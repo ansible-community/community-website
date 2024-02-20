@@ -1,62 +1,70 @@
-.ecosystem {
-  img {
-    padding-right: 2rem;
-    @media screen and (max-width: 990px) {
-      display: none;
-    }
-  }
+.ecosystem-page {
   h2 {
-    font-size: 1.5rem;
+    font-size: $font-xl;
     font-weight: normal;
     text-transform: none;
   }
-  gap: 4rem;
+  gap: 2rem;
 }
 
-.ecosystem-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.ecosystem-title {
+.ecosystem-page-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-weight: normal;
   text-align: left;
-  margin-top: 1.2rem;
-  line-height: 1.9rem;
+  padding-bottom: 2rem;
   p {
-    font-size: 1.45rem;
-    margin: 0 0 1.9rem;
+    font-size: $font-md;
   }
 }
 
-.ecosystem-button {
-  display: inline-block;
-  width: 80%;
-  padding: 0.125rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  background-color: $cyan;
-  color: $white;
-  font-size: $font-md;
-  font-weight: normal;
-  text-align: center;
-  white-space: normal;
-  &:hover {
-    text-decoration: none;
-    color: $white !important;
-    background-color: $black !important;
+.ecosystem-project-card {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 2rem;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: $white;
+  justify-content: stretch;
+}
+
+.ecosystem-project-content {
+  display: flex;
+  flex-direction: column;
+  padding-right: 2rem;
+
+  h3 {
+    font-size: $font-md;
+    font-weight: 600;
+    text-transform: none;
+  }
+  p {
+    font-size: $font-sm;
+    text-transform: none;
+    text-align: left;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+  }
+  li {
+    margin-top: 0.5rem;
+  }
+  a {
+    color: $blue-anchor;
+    font-size: $font-sm;
   }
 }
 
-@media screen and (max-width: 768px) {
-  .ecosystem {
-    gap: 2rem;
+.ecosystem-project-logo {
+  width: 6rem;
+  float: right;
+  @media screen and (max-width: 1170px) {
+    width: 4rem;
   }
-  .ecosystem-button {
-    width: 100%;
+  @media screen and (max-width: 768px) {
+    width: 6rem;
   }
 }
