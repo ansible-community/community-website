@@ -106,30 +106,30 @@ ecosystem:
   intro: Projects in the Ansible ecosystem let you expand automation to an unlimited set of use cases.
   url: link://slug/ecosystem
   projects:
+    core:
+      heading: Ansible Core
+      description: The Ansible programming language, automation tooling, and architectural framework.
+      link: https://ansible.readthedocs.io/projects/ansible-core/
+      logo: project-logos/ansible-core.svg
+      alt: Ansible Core project logo
     awx:
       heading: AWX
       description: Web-based user interface, REST API, and task engine for performing Ansible automation.
       link: https://ansible.readthedocs.io/projects/awx/
       logo: project-logos/awx.svg
       alt: AWX project logo
-    runner:
-      heading: Ansible Runner
-      description: An interface abstraction to Ansible that offers reliable and consistent task execution.
-      link: https://ansible.readthedocs.io/projects/runner/
-      logo: project-logos/runner.svg
-      alt: Ansible Runner project logo
-    builder:
-      heading: Ansible Builder
-      description: Tooling to configure and build customized Ansible control nodes in container images.
-      link: https://ansible.readthedocs.io/projects/builder/
-      logo: project-logos/builder.svg
-      alt: Ansible Builder project logo
     eda:
       heading: Event-Driven Ansible
       description: Subscribe to event sources to scale automation and deliver more efficient IT operations.
       link: https://ansible.readthedocs.io/projects/rulebook/
       logo: project-logos/eda.svg
       alt: Event-Driven Ansible project logo
+    devtools:
+      heading: Ansible automation developer tools
+      description: Tooling to develop and test Ansible content for consistent, trusted automation.
+      link: https://ansible.readthedocs.io/projects/dev-tools/
+      logo: project-logos/ansible-community.svg
+      alt: Ansible DevTools project logo
 blog:
   section_icon: /assets/images/blog-cyan.svg
   icon_alt: Ansible community blog icon
