@@ -152,10 +152,10 @@ NAVIGATION_ALT_LINKS = {
     DEFAULT_LANG: (
         (
           (
-            ("/blog/", "Latest posts", "fa fa-comment"),
-            ("/categories/", "Tags", "fa fa-tag"),
-            ("/blog/archive.html", "Post archive", "fa fa-archive"),
-            ("/rss.xml", "Feed", "fa fa-rss-square"),
+            ("/blog/", "Latest posts", ""),
+            ("/categories/", "Tags", ""),
+            ("/blog/archive.html", "Post archive", ""),
+            ("/rss.xml", "Feed", ""),
           ),
           "Blog", ""
         ),
