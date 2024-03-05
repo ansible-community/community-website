@@ -1,18 +1,15 @@
 .homepage-bullhorn-band {
   background-color: $pool;
   color: $black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .bullhorn-blast {
   display: flex;
-  img {
-    width: 30rem;
-    @media screen and (max-width: 1170px) {
-      width: 15rem;
-    }
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 
