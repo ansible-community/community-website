@@ -1,5 +1,4 @@
-<div class="grid-wrapper homepage-learn-band full-width-band"
-     id="learn">
+<div class="grid-wrapper homepage-learn-band full-width-band" id="learn">
   <div class="section-title width-12-12 width-12-12-m">
     <div class="section-top">
       <h2>{{ homepage.learn.title }}</h2>
@@ -9,11 +8,21 @@
     <div class="learn-card width-6-12 width-12-12-m">
       <div class="learn-content">
         <h4>{{ item.heading }}</h4>
-        <p><a href="{{ item.link1_url }}" target="_blank">{{ item.link1 }}</a></p>
-        <p><a href="{{ item.link2_url }}" target="_blank">{{ item.link2 }}</a></p>
-        <p><a href="{{ item.link3_url }}" target="_blank">{{ item.link3 }}</a></p>
-        <p><a href="{{ item.link4_url }}" target="_blank">{{ item.link4 }}</a></p>
-        <p><a href="{{ item.link5_url }}" target="_blank">{{ item.link5 }}</a></p>
+        <p>
+          <a href="{{ item.link1_url }}" target="_blank">{{ item.link1 }}</a>
+        </p>
+        <p>
+          <a href="{{ item.link2_url }}" target="_blank">{{ item.link2 }}</a>
+        </p>
+        <p>
+          <a href="{{ item.link3_url }}" target="_blank">{{ item.link3 }}</a>
+        </p>
+        <p>
+          <a href="{{ item.link4_url }}" target="_blank">{{ item.link4 }}</a>
+        </p>
+        <p>
+          <a href="{{ item.link5_url }}" target="_blank">{{ item.link5 }}</a>
+        </p>
       </div>
     </div>
   {% endfor %}
