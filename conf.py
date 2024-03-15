@@ -16,8 +16,8 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Ansible Community, et al"  # (translatable)
-BLOG_TITLE = "Ansible Community"  # (translatable)
+BLOG_AUTHOR = "Ansible Collaborative, et al"  # (translatable)
+BLOG_TITLE = ""  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://ansible.com/"
@@ -25,7 +25,7 @@ SITE_URL = "https://ansible.com/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://ansible.community/"
 BLOG_EMAIL = "website@ansible.community"
-BLOG_DESCRIPTION = "Ansible Community Website"  # (translatable)
+BLOG_DESCRIPTION = "Ansible Collaborative Website"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -150,31 +150,21 @@ NAVIGATION_LINKS = {
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
 NAVIGATION_ALT_LINKS = {
     DEFAULT_LANG: (
+        ("https://docs.ansible.com/", "Documentation", ""),
+        ("https://galaxy.ansible.com/", "Galaxy", ""),
+        ("https://forum.ansible.com/", "Forum", ""),
         (
           (
-            ("/blog/", "Latest posts", ""),
-            ("/categories/", "Tags", ""),
-            ("/blog/archive.html", "Post archive", ""),
-            ("/rss.xml", "Feed", ""),
-          ),
-          "Blog", ""
-        ),
-        (
-          (
-            ("/mission-statement/", "Our mission statement", ""),
             ("/how-ansible-works/", "How Ansible works", ""),
             ("/ecosystem/", "Ansible ecosystem", ""),
-            ("/awx/", "AWX", ""),
-            ("/galaxy/", "Galaxy", ""),
+            ("/blog/archive.html", "Blog", ""),
             ("/faq/", "Frequently asked questions", ""),
             ("/ansible-community-training/", "Ansible community training", ""),
             ("/contact-us/", "Contact us", ""),
           ),
           "Resources", ""
         ),
-        ("https://forum.ansible.com/", "Forum", ""),
-        ("https://docs.ansible.com/", "Documentation", ""),
-        ("https://www.redhat.com/en/technologies/management/ansible/", "Ansible Automation Platform", ""),
+        ("https://www.redhat.com/en/technologies/management/ansible?sc_cid=7015Y000003szaKQAQ", "Ansible Automation Platform", ""),
     )
 }
 
@@ -394,7 +384,7 @@ NEW_POST_DATE_PATH = True
 # Nikola supports logo display.  If you have one, you can put the URL here.
 # Final output is <img src="LOGO_URL" id="logo" alt="BLOG_TITLE">.
 # The URL may be relative to the site root.
-LOGO_URL = '/images/community_logo_black.svg'
+LOGO_URL = '/images/ansible_logo-small-15.png'
 
 # When linking posts to social media, Nikola provides Open Graph metadata
 # which is used to show a nice preview. This includes an image preview

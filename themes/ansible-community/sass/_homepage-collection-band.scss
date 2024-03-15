@@ -1,0 +1,64 @@
+.homepage-collection-band {
+  background-color: $white;
+}
+
+.collection-card {
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 2rem;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: $white;
+  justify-content: stretch;
+}
+
+.collection-content {
+  display: flex;
+  flex-direction: column;
+  padding-right: 2rem;
+  justify-content: space-between;
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: none;
+    color: $cyan;
+  }
+  h4 {
+    font-size: $font-md;
+  }
+  p {
+    font-size: $font-sm;
+    text-transform: none;
+    text-align: left;
+  }
+  a {
+    font-size: $font-sm;
+    white-space: nowrap;
+  }
+  .btn {
+    color: $navy;
+    background-color: $white;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: $navy;
+    width: fit-content;
+    height: auto;
+    &:hover {
+      background-color: $navy;
+      color: $white;
+    }
+  }
+}
+
+.collection-logo {
+  width: 8rem;
+  float: right;
+  @media screen and (max-width: 1170px) {
+    width: 6rem;
+  }
+  @media screen and (max-width: 768px) {
+    width: 8rem;
+  }
+}

@@ -1,9 +1,8 @@
 .hero-container {
   padding: 0 13rem;
   margin: 0 -13rem;
-  background-image: url(../images/unsplash.jpg);
+  background-image: url(/images/ansible-collaborative-hero-bkg.png);
   background-size: 100%;
-  background-color: $banner;
   background-position: bottom;
   background-repeat: no-repeat;
 
@@ -27,7 +26,7 @@
   .nav-link-color {
     color: $black !important;
     &:hover {
-      color: $white !important;
+      color: $cyan !important;
     }
   }
   #blog-title {

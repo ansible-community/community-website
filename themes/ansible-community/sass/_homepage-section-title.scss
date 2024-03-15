@@ -9,6 +9,11 @@
     font-size: $font-md;
     text-transform: none;
     padding: 1rem 0;
+    transform:translatex(0px) translatey(0px);
+    min-height:0px;
+    padding-top:0px;
+    padding-bottom:0px;
+    line-height:1.5em;
   }
 }
 

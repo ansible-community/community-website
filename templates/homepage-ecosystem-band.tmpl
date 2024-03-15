@@ -2,24 +2,23 @@
      id="ecosystem">
   <div class="section-title width-12-12 width-12-12-m">
     <div class="section-top">
-      <img class="section-icon"
-           src="{{ homepage.ecosystem.section_icon }}"
-           alt="{{ homepage.ecosystem.icon_alt }}"
-           width="40"
-           height="40" />
       <h2>{{ homepage.ecosystem.title }}</h2>
-      <div class="section-view-more">
-        <span class="homepage-link"><a href="{{ homepage.ecosystem.url }}">{{ homepage.labels.view_more }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
-      </div>
     </div>
     <p>{{ homepage.ecosystem.intro }}</p>
   </div>
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <div class="ecosystem-content max-width-prose">
+        <span class="homepage-link"><a href="{{ homepage.ecosystem.url }}">{{ homepage.ecosystem.link_title }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
+      </div>
+    </div>
+  </div>
   {% for key, item in homepage.ecosystem.projects.items() %}
-    <div class="ecosystem-card width-6-12 width-12-12-m">
+    <div class="ecosystem-card width-4-12 width-12-12-m">
       <div class="ecosystem-content">
         <h3>{{ item.heading }}</h3>
         <p>{{ item.description }}</p>
-        <span class="homepage-link"><a href="{{ item.link }}" target="_blank">{{ homepage.labels.learn_more }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
+        <span class="homepage-link"><a href="{{ item.link }}" target="_blank">{{ homepage.ecosystem.label }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
       </div>
       <img class="ecosystem-logo"
            src="/images/{{ item.logo }}"
@@ -28,5 +27,4 @@
            height="100" />
     </div>
   {% endfor %}
-  {% include "homepage-back-to-top.tmpl" %}
 </div>

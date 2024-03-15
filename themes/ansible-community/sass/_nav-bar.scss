@@ -6,7 +6,7 @@
   justify-content: start;
   text-align: center;
   img {
-    width: 50px;
+    width: 150px;
     height: auto;
     margin-right: 16px;
     min-width: 50px;
@@ -35,8 +35,9 @@ Set overriding homepage properties in the hero-container class.
   border: 0 !important;
   padding-top: 0.25rem;
   padding-bottom: 1rem;
+  background-color:#c5e5e6;
   a {
-    font-size: $font-md;
+    font-size: $font-sm;
     white-space: nowrap;
   }
   .dropdown-menu {
@@ -63,7 +64,7 @@ Set overriding homepage properties in the hero-container class.
 .nav-link-color {
   color: $black !important;
   &:hover {
-    color: $white !important;
+    color: $cyan !important;
   }
 }
 

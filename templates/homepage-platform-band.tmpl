@@ -1,22 +1,20 @@
 <div class="grid-wrapper homepage-platform-band full-width-band"
      id="platform">
-  <div class="width-12-12 width-12-12-m">
+  <div class="section-title width-12-12 width-12-12-m">
     <div class="platform-row">
       <div class="platform-box-left">
-        <a href="{{ homepage.links.platform.use_cases }}" target="_blank">
-          <img src="/images/platform.svg"
+        <img src="/images/logo-red_hat-aap.png"
                alt="{{ homepage.platform.logo_alt }}"
-               width="500"
-               height="150" />
-        </a>
+               width="250"
+               height="50" />
+        <h3>{{ homepage.platform.main }}</h3>
+        <p>{{ homepage.platform.discover }}</p>
+        <b><a href="{{ homepage.platform.learn_link }}"
+           target="_blank">{{ homepage.platform.learn }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" />
       </div>
       <div class="platform-box-right max-width-prose">
-        <p>{{ homepage.platform.main }}</p>
-        <p>{{ homepage.platform.discover }}</p>
-        <a class="homepage-anchor platform-anchor"
-           href="{{ homepage.links.platform.home }}"
-           role="button"
-           target="_blank">{{ homepage.platform.learn }}</a>
+        <img src="/images/ansible-collaborative-A.png"
+               alt="{{ homepage.platform.logo_alt }}" />
       </div>
     </div>
   </div>

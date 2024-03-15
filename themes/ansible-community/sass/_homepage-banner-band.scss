@@ -1,5 +1,4 @@
 .homepage-banner-band {
-  background-color: transparent;
   position: relative;
   padding-top: 3rem;
   padding-bottom: 6rem;
@@ -22,10 +21,16 @@
     font-weight: 600;
     text-decoration: solid;
   }
-  & > p {
+  & > h2 {
     padding-top: 12px;
     font-size: $font-lg;
     font-weight: 500;
+    text-decoration: solid;
+  }
+  & > p {
+    padding-top: 12px;
+    font-size: $font-sm;
+    font-weight: 300;
     text-decoration: solid;
   }
 }
@@ -73,12 +78,12 @@
   display: none;
 }
 
-.banner-platform-learn {
+.banner-join-forum {
   font-size: $font-md;
   font-weight: 500;
   padding-top: 1.5rem;
   white-space: nowrap;
-  .banner-platform-link {
+  .banner-forum-link {
     color: $blue-anchor;
     a {
       padding-left: 0.25rem;

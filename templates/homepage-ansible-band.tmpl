@@ -2,29 +2,15 @@
      id="ansible">
   <div class="section-title width-8-12 width-12-12-m">
     <div class="section-top">
-      <img class="section-icon"
-           src="{{ homepage.ansible.section_icon }}"
-           alt="{{ homepage.ansible.icon_alt }}"
-           width="40"
-           height="40" />
       <h2>{{ homepage.ansible.title }}</h2>
     </div>
-    <p>{{ homepage.ansible.intro }}</p>
     <div class="what-is-ansible max-width-prose">
-      <h3>{{ homepage.ansible.top_section.heading }}</h3>
-      <p>{{ homepage.ansible.top_section.body }}</p>
-      <h3>{{ homepage.ansible.bottom_section.heading }}</h3>
-      <p>{{ homepage.ansible.bottom_section.body }}</p>
-      <span class="homepage-link"><a href="{{ homepage.ansible.mission_url }}">{{ homepage.ansible.mission }}</a></span>
-      <br>
-      <span class="homepage-link"><a href="{{ homepage.ansible.join_url }}" target="_blank">{{ homepage.ansible.join }}</a></span>
+      <p>{{ homepage.ansible.intro }}</p>
+      <p>{{ homepage.ansible.body1 }}</p>
+      <p>{{ homepage.ansible.body2 }}</p>
+    </div>
+    <div class="what-is-ansible max-width-prose">
+      <span class="homepage-link"><a href="{{ homepage.ansible.join_url }}">{{ homepage.ansible.join }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
     </div>
   </div>
-  <div class="ansible-image width-4-12 width-12-12-m">
-    <img src="/images/collaboration.svg"
-         alt="{{ homepage.ansible.image_alt }}"
-         width="500px"
-         height="500px" />
-  </div>
-  {% include "homepage-back-to-top.tmpl" %}
 </div>

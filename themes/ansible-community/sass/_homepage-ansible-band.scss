@@ -5,12 +5,13 @@
 .what-is-ansible {
   display: flex;
   flex-direction: column;
+  margin: 0;
   h3 {
     font-size: $font-md;
     font-weight: bold;
   }
   p {
-    font-size: $font-md;
+    font-size: $font-sm;
     font-weight: normal;
   }
 }
@@ -21,6 +22,19 @@
   img {
     @media screen and (max-width: 768px) {
       display: none;
+    }
+  }
+}
+
+.ansible-works {
+  font-size: $font-md;
+  font-weight: 500;
+  padding-top: 1.5rem;
+  white-space: nowrap;
+  .ansible-works-link {
+    color: $blue-anchor;
+    a {
+      padding-left: 0.25rem;
     }
   }
 }

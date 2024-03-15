@@ -5,9 +5,13 @@ description: Find answers to some of the frequently asked questions here.
 type: text
 ---
 <style>
+p {
+  margin-bottom:6px;
+}
 h2 {
   font-size: 2rem;
   text-transform: none;
+  padding-top:12px;
 }
 h3,
 h4,
@@ -18,8 +22,7 @@ h6 {
   text-transform: uppercase;
 }
 </style>
-Find answers related to the AWX project in the following section.
-You can also find lots of information about AWX in the [Ansible community forum](https://forum.ansible.com/tag/awx).
+Find answers to many frequency asked questions below.  Please share any additional questions with us on the [Ansible forum](https://forum.ansible.com/c/help).
 
 # Core
 
@@ -57,9 +60,11 @@ You can also find lots of information about AWX in the [Ansible community forum]
 
 [Q: Does Red Hat’s Open Source Assurance Program apply to AWX?](#16)
 
-# Ansible Community
+# Ansible Collaborative
 
-[Q: How can I contribute back to the community?](#17)
+[Q: How can I contribute back to the user ecosystem?](#17)
+
+---
 
 # Core
 
@@ -208,7 +213,7 @@ No.
 
 <a name="17"/>
 
-**How can I contribute back to the community?**
+**How can I contribute back to the user ecosystem?**
 
 We are pleased to shared there are so many ways to contribute to the Ansible ecosystem.
 Here are just a few examples:
@@ -222,4 +227,4 @@ Here are just a few examples:
 * Improve the documentation
 
 Want to get involved?
-Check out our [contributor resources](https://forum.ansible.com/pub/how-to-contribute) or chat with [community members](https://matrix.to/#/#social:ansible.com) - we'd love to have you.
+Check out our [contributor resources](https://forum.ansible.com/pub/how-to-contribute) or chat with [other users](https://matrix.to/#/#social:ansible.com) - we'd love to have you.

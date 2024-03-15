@@ -1,0 +1,26 @@
+<div class="grid-wrapper homepage-collection-band full-width-band"
+     id="collection">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <h2>{{ homepage.collection.title }}</h2>
+    </div>
+    <p>{{ homepage.collection.intro }}</p>
+    <h3>{{ homepage.collection.main_heading }}</h3>
+  </div>
+  {% for key, item in homepage.collection.collections.items() %}
+    <div class="collection-card width-4-12 width-12-12-m">
+      <div class="collection-content">
+        <h4>{{ item.heading }}</h4>
+        <p>{{ item.description }}</p>
+        <span class="homepage-link"><a href="{{ item.link }}" target="_blank">Learn more</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
+      </div>
+    </div>
+  {% endfor %}
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <div class="collection-content max-width-prose">
+        <span class="homepage-link"><a href="{{ homepage.collection.url }}">{{ homepage.collection.link_title }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
+      </div>
+    </div>
+  </div>
+</div>

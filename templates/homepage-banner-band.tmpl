@@ -3,33 +3,14 @@
     <div class="banner-row">
       <div class="banner-main-content">
         <h1>{{ homepage.banner.title }}</h1>
-        <p>{{ homepage.banner.intro }}</p>
-        <div class="banner-main-row">
-          <a class="homepage-anchor"
-             href="{{ homepage.links.ansible.get_started_url }}"
-             role="button"
-             target="_blank">{{ homepage.labels.get_started }}</a>
-          <div class="banner-clipboard">
-            <button class="btn text-nowrap"
-                    data-clipboard-text="{{ homepage.banner.pip_install }}">
-              {{ homepage.banner.pip_install }}&ensp;<i class="fa fa-copy" aria-hidden="true" />
-            </button>
-            <div id="clipboard-popup" class="popup hidden">
-              <p>{{ homepage.banner.copy_success_message }}</p>
-            </div>
-          </div>
-        </div>
-        <div class="banner-platform-learn">
-          <img class="banner-redhat-logo"
-               src="/images/redhat.svg"
-               alt="{{ homepage.banner.redhat_logo_alt }}"
-               width="20"
-               height="20" />
-          <span class="banner-platform-link"><a href="#platform">{{ homepage.banner.platform_learn }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
+        <h2>{{ homepage.banner.intro }}</h2>
+        <p>{{ homepage.banner.welcome_alt }}</p>
+        <div class="banner-join-forum">
+          <span class="banner-forum-link"><a href="{{ homepage.banner.forum_url }}">{{ homepage.banner.join_forum }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
         </div>
       </div>
       <div class="banner-welcome-image">
-        <img src="/images/bullito_welcome.svg"
+        <img src="/images/ansible-collaborative-hero-img.svg"
              alt="{{ homepage.banner.welcome_alt }}"
              width="350"
              height="300" />

@@ -55,8 +55,8 @@ Get in touch with us if you need help or have questions.
          style="height: auto; width: 125px;"/>
   </div>
   <div class="contact-page-community-column">
-    <h1>Ansible community</h1>
-    <p>For queries and assistance related to the Ansible&reg; community:</p>
+    <h1>Ansible Collaborative</h1>
+    <p>For queries and assistance related to the Ansible&reg; user ecosystem:</p>
       <ul>
         <li>
           <a href="https://forum.ansible.com/g?type=public"
@@ -64,7 +64,7 @@ Get in touch with us if you need help or have questions.
         </li>
         <li>
           <a href="https://forum.ansible.com/upcoming-events"
-             target="_blank">Attend or organize an Ansible community event.</a>
+             target="_blank">Attend or organize an Ansible user event.</a>
         </li>
         <li>
           <a href="https://forum.ansible.com/t/about-the-newsletter-category/166"
@@ -72,10 +72,10 @@ Get in touch with us if you need help or have questions.
         </li>
         <li>
           <a href="https://forum.ansible.com/c/help/"
-             target="_blank">Get help by asking questions directly to the Ansible community.</a>
+             target="_blank">Get help by asking questions directly to users of Ansible.</a>
         </li>
       </ul>
-    <p>If you still have questions or need help, you can get in touch with the Ansible community team at Red Hat&reg; by emailing <a href="mailto:ansible-community@redhat.com">ansible-community@redhat.com</a></p>
+    <p>If you still have questions or need help, you can get in touch with the Ansible Catalyst team at Red Hat&reg; by emailing <a href="mailto:ansible-catalyst@redhat.com">ansible-catalyst@redhat.com</a></p>
   </div>
 </div>
 <hr class="contact-page-rule" />

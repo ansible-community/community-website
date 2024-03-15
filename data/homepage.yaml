@@ -1,33 +1,73 @@
 banner:
-  title: Community-powered open-source automation
-  intro: Configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more!
+  title: Ansible Collaborative
+  intro: A gathering space to build automation skills and success
   pip_install: pip install ansible
   install_tooltip: Copy the pip command to install the latest version of Ansible.
   copy_success_message: Copied!
   redhat_logo_alt: Red Hat logo
-  welcome_alt: Welcome to Ansible
+  welcome_alt: Welcome to the Ansible® Collaborative, a destination for Ansible users, customers, partners, and vendors to learn and share automation content.
+  join_forum: Join the Ansible forum
+  forum_url: https://forum.ansible.com
   platform_learn: Learn about Red Hat Ansible Automation Platform
 ansible:
-  section_icon: /assets/images/automation-cyan.svg
-  icon_alt: Ansible automation icon
-  image_alt: Ansible community collaboration
-  mission: Learn more about our mission
-  mission_url: link://slug/mission-statement
-  join: Join the Ansible community
-  join_url: https://docs.ansible.com/community.html
+  join: How Ansible works
+  join_url: link://slug/how-ansible-works
   title: What is Ansible?
-  intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
-  top_section:
-    heading: Code that reads like documentation
-    body: >-
-      Ansible is an automation language that can describe any IT environment, whether homelab or large scale infrastructure.
-      It is easy to learn, beautiful code that reads like clear documentation.
-  bottom_section:
-    heading: Freedom from repetitive tasks
-    body: >-
-      As an automation engine, Ansible ensures that your IT environment stays exactly as you describe it, no matter the complexity.
-      Not only that, you can automate any command with Ansible to eliminate drudgery from your daily routine.
-      Ansible gives you tooling to be more productive and solve problems that really matter.
+  intro: No matter your role, or your automation goals, Ansible can help you connect teams and deliver efficiencies.
+  body1: Ansible is an open source IT automation engine that automates provisioning, configuration management, application deployment, orchestration, and many other IT processes. It is free to use, and the project benefits from the experience and intelligence of its thousands of contributors.
+  body2: <a href="https://www.redhat.com/en/technologies/management/ansible?sc_cid=7015Y000003szaeQAA">Red Hat® Ansible Automation Platform</a> combines more than a dozen upstream projects into a unified, security-hardened enterprise platform for mission-critical automation. It builds on the foundation of the open source project to create an end-to-end automation experience for cross-functional teams.
+learn:
+  title: Learn Ansible skills
+  learn_link_text: Explore Red Hat Ansible Automation Platform learning materials and tools
+  learn_url: https://www.redhat.com/en/technologies/management/ansible/learn?sc_cid=7015Y000003szaeQAA
+  skills:
+    documentation:
+      heading: Documentation
+      link1: Introduction to Ansible
+      link1_url: https://docs.ansible.com/ansible/latest/getting_started/introduction.html
+      link2: Start automating with Ansible
+      link2_url: https://docs.ansible.com/ansible/latest/getting_started/get_started_ansible.html
+      link3: Create a playbook
+      link3_url: https://docs.ansible.com/ansible/latest/getting_started/get_started_playbook.html
+      link4: Explore Ansible concepts
+      link4_url: https://docs.ansible.com/ansible/latest/getting_started/basic_concepts.html
+      link5: Build an inventory
+      link5_url: https://docs.ansible.com/ansible/latest/getting_started/get_started_inventory.html
+    interactive_labs:
+      heading: Interactive labs
+      link1: Create an Ansible collection
+      link1_url: https://play.instruqt.com/embedv2/redhat/tracks/ansible-community-creating-your-own-collection?token=em_zcnbza2ex66zqptw
+      link2: Test a pull request locally
+      link2_url: https://play.instruqt.com/embedv2/redhat/tracks/ansible-community-testing-pull-request-locally?token=em_6ke967cktu5m9cww
+      link3: Develop an Ansible module
+      link3_url: https://play.instruqt.com/embedv2/redhat/tracks/ansible-community-developing-ansible-module?token=em_W1mnN4dZouYAhFBI
+      link4: Fix bugs in Ansible code
+      link4_url: https://play.instruqt.com/embedv2/redhat/tracks/community-fixing-a-bug?token=em_l4flalsa12evd97a
+      link5: Add integration tests
+      link5_url: https://play.instruqt.com/embedv2/redhat/tracks/adding-integration-tests-to-ansible-collections?token=em_6uMp_ZmBv4Fuug-z
+collection:
+  title: Ansible collections
+  intro: With Ansible Galaxy, you can jump-start your automation with pre-packaged roles and collections. Use this content in Ansible Playbooks to automate your work faster and improve productivity.
+  link_title: Explore all collections on Ansible Galaxy
+  url: https://galaxy.ansible.com/ui/collections/
+  main_heading: Featured collections
+  collections:
+    collection1:
+      heading: middleware_automation
+      description: Build, deploy, and manage multi-cloud application infrastructure at scale by automating Kafka, WildFly, Infinispan, Keyclock and more with the Ansible Middleware Collections.
+      link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
+    collection2:
+      heading: kubernetes.core
+      description: Automate the provisioning and maintenance of Kubernetes and OpenShift clusters as well as the management of applications with the kubernetes.core Collection.
+      link: https://galaxy.ansible.com/ui/repo/published/kubernetes/core/
+    collection3:
+      heading: community.vmware
+      description: Manage all your VMWare infrastructure, including vSphere, the Datacenters, Clusters and your Virtual Machines with the Ansible community.vmware Collection.
+      link: https://galaxy.ansible.com/ui/repo/published/community/vmware/
+adoption:
+  title: Automation adoption
+  intro: Expanding automation in your organization requires expertise in both technology and culture. Red Hat excels in creating and supporting successful communities, and we can help you build yours.
+  url: 
 community:
   section_icon: /assets/images/community-cyan.svg
   icon_alt: Ansible community icon
@@ -56,14 +96,6 @@ community:
         url: https://www.linkedin.com/groups/4648083/
         icon: fab fa-linkedin
         text: LinkedIn
-bullhorn:
-  title: Subscribe to the Bullhorn
-  about: The Bullhorn is a weekly newsletter full of Ansible Community news and updates.
-  forum_text: Read the latest edition
-  subscribe: Subscribe by email
-  mailchimp_link: https://bit.ly/subscribe-bullhorn
-  forum_link: https://forum.ansible.com/c/news/bullhorn/17
-  forum_feed: https://forum.ansible.com/c/news/bullhorn/17.rss
 events:
   section_icon: /assets/images/calendar-cyan.svg
   icon_alt: Ansible community event icon
@@ -99,29 +131,24 @@ events:
       alt: Ansible meetup logo
       link: https://forum.ansible.com/t/ansible-minneapolis-meetup-topic-tba-2024-01-18/1863
 platform:
-  main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
-  discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
-  learn: View more about Red Hat Ansible Automation Platform
+  main: Ready to move from patchwork to platform?
+  discover: You already know the benefits of upstream Ansible tools. But if your organization is ready to take automation to the next level, it's time to consider Red Hat Ansible Automation Platform. It delivers more capabilities-like event-driven automation and generative AI-that reduce manual effort and increase efficiency, as well as enhanced security and end-to-end technical support.
+  learn: Get the details
+  learn_link: https://www.redhat.com/en/engage/replace-patchwork-automation?sc_cid=7015Y000003szaZQAQ
   logo_alt: Red Hat Ansible Automation Platform logo
 ecosystem:
-  section_icon: /assets/images/communities-cyan.svg
-  icon_alt: Ansible ecosystem icon
-  title: Ecosystem
-  intro: Projects in the Ansible ecosystem let you expand automation to an unlimited set of use cases.
+  title: Ansible ecosystem
+  intro: The projects in the Ansible collaborative let you expand automation to an unlimited set of use cases.
+  link_title: View all projects
   url: link://slug/ecosystem
+  label: Read the docs
   projects:
     core:
       heading: Ansible Core
-      description: The Ansible programming language, automation tooling, and architectural framework.
+      description: Learn about the Ansible programming language, automation tooling, and architectural framework.
       link: https://ansible.readthedocs.io/projects/ansible-core/
       logo: project-logos/ansible-core.svg
       alt: Ansible Core project logo
-    awx:
-      heading: AWX
-      description: Web-based user interface, REST API, and task engine for performing Ansible automation.
-      link: https://ansible.readthedocs.io/projects/awx/
-      logo: project-logos/awx.svg
-      alt: AWX project logo
     eda:
       heading: Event-Driven Ansible
       description: Subscribe to event sources to scale automation and deliver more efficient IT operations.
@@ -129,8 +156,8 @@ ecosystem:
       logo: project-logos/eda.svg
       alt: Event-Driven Ansible project logo
     devtools:
-      heading: Ansible automation developer tools
-      description: Tooling to develop and test Ansible content for consistent, trusted automation.
+      heading: Developer tools
+      description: Use tooling to develop and test Ansible content for consistent, trusted automation.
       link: https://ansible.readthedocs.io/projects/dev-tools/
       logo: project-logos/ansible-community.svg
       alt: Ansible DevTools project logo
@@ -140,23 +167,6 @@ blog:
   title: Blog
   intro: Check out some recent blog posts from the Ansible community.
   url: /blog/
-contribute:
-  section_icon: /assets/images/collaboration-cyan.svg
-  icon_alt: Ansible community contributor icon
-  bull_builder_alt: Ansible bull contributor logo
-  aria_label: Visit the forum and find out how to contribute
-  title: Contribute
-  resources_url: https://forum.ansible.com/pub/how-to-contribute
-  chat_url: https://matrix.to/#/#social:ansible.com
-  how: Find out how you can contribute to Ansible.
-  heading: You can contribute to Ansible in so many ways...
-  ways:
-    - Organize meetups with other automation enthusiasts.
-    - Give lighting talks.
-    - Host Ansible workshops.
-    - Code a new module or fix a bug.
-    - Improve the documentation.
-  involved: Want to get involved?
 labels:
   learn_more: Learn more
   view_more: View more
@@ -169,33 +179,3 @@ links:
   platform:
     home: https://www.redhat.com/en/technologies/management/ansible
     use_cases: https://www.redhat.com/en/technologies/management/ansible/use-cases
-catalyst:
-  section_icon: /assets/images/orchestration-cyan.svg
-  icon_alt: Ansible Catalyst program icon
-  title: Ansible Catalyst
-  intro: This is a newly-formed program lead by Red Hat to foster additional user interaction, showcase the ecosystem contributions, and share insights on driving automation adoption at your organization.
-  articles:
-    collection_spotlight:
-      heading: Collection spotlight
-      description: Every week we will highlight a new collection available to the Ansible ecosystem.
-      data_title: Ansible Middleware
-      data_body: Have you had a chance to check out the Ansible based automation for Red Hat Application Services and upstream middleware projects?
-      link: https://galaxy.ansible.com/ui/namespaces/middleware_automation/
-    contributions:
-      heading: Innovation by automation
-      description: Using automation to drive innovation enabling business value should always be the end goal.
-      data_title: What's currently brewing in your creative canvas?
-      data_body: Take a moment to visit our forum and tell your fellow users what you are working on.
-      link: https://forum.ansible.com/c/chat/4
-    adoption:
-      heading: Automation adoption
-      description: Have questions about how you can expand adoption of automation with your organization? If so, check out the following article to learn some tips and tricks.
-      data_title: Building your own automation community
-      data_body: Creating and supporting successful communities is something Red Hat has done for a long time. We would love to share our community adoption framework with you.
-      link: 
-    f2e:
-      heading: Enterprise automation
-      description: Curious about the journey from AWX to Red Hat Ansible Automation Platform?
-      data_title: When should an organization consider upgrading to expand their enterprise-grade automation strategy?
-      data_body: This article will help you define your organization's automation maturity and aid in determining if it is time to level up your strategy.
-      link: 

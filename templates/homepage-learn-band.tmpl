@@ -1,0 +1,27 @@
+<div class="grid-wrapper homepage-learn-band full-width-band"
+     id="learn">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <h2>{{ homepage.learn.title }}</h2>
+    </div>
+  </div>
+  {% for key, item in homepage.learn.skills.items() %}
+    <div class="learn-card width-6-12 width-12-12-m">
+      <div class="learn-content">
+        <h4>{{ item.heading }}</h4>
+        <p><a href="{{ item.link1_url }}" target="_blank">{{ item.link1 }}</a></p>
+        <p><a href="{{ item.link2_url }}" target="_blank">{{ item.link2 }}</a></p>
+        <p><a href="{{ item.link3_url }}" target="_blank">{{ item.link3 }}</a></p>
+        <p><a href="{{ item.link4_url }}" target="_blank">{{ item.link4 }}</a></p>
+        <p><a href="{{ item.link5_url }}" target="_blank">{{ item.link5 }}</a></p>
+      </div>
+    </div>
+  {% endfor %}
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <div class="learn-content max-width-prose">
+        <span class="homepage-link"><a href="{{ homepage.learn.learn_url }}">{{ homepage.learn.learn_link_text }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
+      </div>
+    </div>
+  </div>
+</div>
