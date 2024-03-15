@@ -35,11 +35,11 @@ For automating network devices and other IT appliances where modules cannot be e
 
 <img src="../images/pages/network-automation-comparison.jpg" alt="Network automation local and remote execution diagram" style="height: auto; width:500px;"/>
 
-For automating public clouds and web services, Ansible will also run modules locally and talk directly to their APIs. For more information, read these docs:
+For automating public clouds and web services, Ansible will also run modules locally and talk directly to their APIs. For more information, review these collections:
 
 * [Amazon Web Services Guide](https://docs.ansible.com/ansible/latest/collections/amazon/aws/docsite/guide_aws.html#ansible-collections-amazon-aws-docsite-aws-intro)
-* [Google Cloud Platform Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_gce.html)
-* [Microsoft Azure Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_azure.html)
+* [Google Cloud Collection](https://docs.ansible.com/ansible/latest/collections/google/cloud/index.html)
+* [Microsoft Azure Collection](https://docs.ansible.com/ansible/latest/collections/azure/azcollection/index.html#plugins-in-azure-azcollection)
 
 # Credentials
 
@@ -48,9 +48,9 @@ For Ansible to execute, it needs an inventory (what are the managed nodes I am t
 Community Ansible is decentralized—meaning it relies on your existing OS credentials to control access to remote machines.
 And if needed, Ansible can easily connect with Kerberos, Lightweight Directory Access Protocol (LDAP), and other centralized authentication management systems. You can also just store usernames and passwords as variables for Ansible and encrypt them with [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html). This can be as easy as storing them in your inventory file, as elaborated on below.
 
-Red Hat Ansible Automation Platform [can centralized authentication](https://docs.ansible.com/automation-controller/latest/html/userguide/credentials.html) as well as integrate with industry-standard tools like CyberArk AIM, Conjur, HashiCorp Vault, and Microsoft Azure Key Vault. Automation controller hashes local automation controller user passwords with the PBKDF2 algorithm using a SHA256 hash. Users who authenticate via external account mechanisms (LDAP, SAML, OAuth, and others) do not have any password or secret stored.
+Red Hat Ansible Automation Platform [can centralized authentication](https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.4/html/automation_controller_user_guide/controller-credentials) as well as integrate with industry-standard tools like CyberArk AIM, Conjur, HashiCorp Vault, and Microsoft Azure Key Vault. Automation controller hashes local automation controller user passwords with the PBKDF2 algorithm using a SHA256 hash. Users who authenticate via external account mechanisms (LDAP, SAML, OAuth, and others) do not have any password or secret stored.
 
-[Read the secret handling and connection security documentation...](https://docs.ansible.com/automation-controller/latest/html/administration/secret_handling.html#ag-secret-handling)
+[Read the secret handling and connection security documentation...](https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.4/html/automation_controller_administration_guide/controller-secret-handling-and-connection-security)
 
 
 # Manage your inventory in simple text files
@@ -59,7 +59,7 @@ By default, Ansible represents which machines it manages using a very simple INI
 
 To add new machines, there is no additional SSL signing server involved, so there's never any hassle deciding why a particular machine didn’t get linked up due to obscure NTP or DNS issues.
 
-If there's another source of truth in your infrastructure, Ansible can also plug in to that, such as drawing inventory, group, and variable information from sources like Amazon Web Services, Google Compute Engine, Microsoft Azure, VMware vCenter, and more. Both community Ansible and Ansible Automation Platform can use a variety of [dynamic inventory plugins](https://docs.ansible.com/ansible/latest/plugins/inventory.html). Ansible Automation Platform makes these easily [available and configurable in the WebUI](https://docs.ansible.com/automation-controller/latest/html/userguide/inventories.html#inventory-plugins).
+If there's another source of truth in your infrastructure, Ansible can also plug in to that, such as drawing inventory, group, and variable information from sources like Amazon Web Services, Google Compute Engine, Microsoft Azure, VMware vCenter, and more. Both community Ansible and Ansible Automation Platform can use a variety of [dynamic inventory plugins](https://docs.ansible.com/ansible/latest/plugins/inventory.html). Ansible Automation Platform makes these easily [available and configurable in the WebUI](https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.4/html/automation_controller_user_guide/controller-inventories#ref-controller-inventory-plugins).
 
 Here's what a plain text inventory file looks like:
 
