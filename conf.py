@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Ansible Collaborative, et al"  # (translatable)
-BLOG_TITLE = ""  # (translatable)
+BLOG_TITLE = "Ansible Collaborative"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://ansible.com/"
@@ -150,7 +150,13 @@ NAVIGATION_LINKS = {
 # (Bootstrap 4: right-side of navbar, Bootblog 4: right side of title)
 NAVIGATION_ALT_LINKS = {
     DEFAULT_LANG: (
-        ("https://docs.ansible.com/", "Documentation", ""),
+        (
+          (
+            ("https://docs.ansible.com/", "Project documentation", ""),
+            ("https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/", "Ansible Automation Platform documentation", ""),
+          ),
+          "Documentation", ""
+        ),
         ("https://galaxy.ansible.com/", "Galaxy", ""),
         ("https://forum.ansible.com/", "Forum", ""),
         (

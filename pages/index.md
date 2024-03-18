@@ -1,5 +1,5 @@
 ---
-title: Ansible Community
+title: Homepage
 slug: index
 type: text
 template: homepage.tmpl
