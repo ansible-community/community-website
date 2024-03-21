@@ -22,18 +22,6 @@ adt:
     github:
       link: "https://github.com/ansible/ansible-dev-tools"
       text: Source code
-als:
-  name: Ansible Language Server
-  description: Ansible Language Server implements language server protocol (LSP) to highlight and check Ansible syntax.
-  logo: project-logos/ansible-community.svg
-  alt: Ansible Language Server project logo
-  resources:
-    docs:
-      link: "https://ansible.readthedocs.io/projects/language-server/"
-      text: Documentation
-    github:
-      link: "https://github.com/ansible/ansible-language-server"
-      text: Source code
 ansible-pylibssh:
   name: ansible-pylibssh
   description: ansible-pylibssh provides Python bindings for Ansible with the libssh project.
