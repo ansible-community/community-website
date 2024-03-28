@@ -1,6 +1,9 @@
 [![Discuss at #website:ansible.com on Matrix](https://img.shields.io/matrix/website:ansible.com.svg?server_fqdn=ansible-accounts.ems.host&label=Discuss%20at%20%23website:ansible.com&logo=matrix)](https://matrix.to/#/#website:ansible.com)
 
-This repository contains the assets required to build the Ansible Community website. Welcome!
+This repository contains the assets required to build the Ansible Community website. Welcome! 
+
+This repository is the initial work that the [updated Ansible.com website](https://github.com/ansible/ansible-collaborative)
+was derived from.
 
 See the WIP site at [https://ansible-community-website.readthedocs.io/](https://ansible-community-website.readthedocs.io/)
 
