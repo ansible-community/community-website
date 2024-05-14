@@ -12,7 +12,7 @@ RUN pip install -r requirements.in -c requirements.txt
 RUN nikola build --strict
 
 # Host the community website on a caddy web server
-FROM registry.fedoraproject.org/fedora:39
+FROM registry.fedoraproject.org/fedora:40
 EXPOSE 8080
 RUN dnf install --setopt=install_weak_deps=False --best -y caddy && dnf clean all
 COPY --from=builder /community-website/output/ /var/www/html/
