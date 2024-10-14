@@ -1,5 +1,5 @@
 # Build the community website with Nikola
-FROM python:3.12 AS builder
+FROM python:3.13 AS builder
 
 # Add the contents of this repository to the working directory
 ADD . /community-website
