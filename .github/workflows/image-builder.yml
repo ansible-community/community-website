@@ -14,7 +14,7 @@ env:
 
 jobs:
   build_dockerfile:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     name: Build and publish the image
     steps:
     - name: Check out the website repository
