@@ -52,7 +52,7 @@ python-dateutil==2.8.2
     # via nikola
 requests==2.31.0
     # via nikola
-ruamel-yaml==0.18.10
+ruamel-yaml==0.18.11
     # via -r requirements.in
 ruamel-yaml-clib==0.2.8
     # via ruamel-yaml
