@@ -4,28 +4,13 @@
       <div class="banner-main-content">
         <h1>{{ homepage.banner.title }}</h1>
         <p>{{ homepage.banner.intro }}</p>
-        <div class="banner-main-row">
-          <a class="homepage-anchor"
-             href="{{ homepage.links.ansible.get_started_url }}"
-             role="button"
-             target="_blank">{{ homepage.labels.get_started }}</a>
-          <div class="banner-clipboard">
-            <button class="btn text-nowrap"
-                    data-clipboard-text="{{ homepage.banner.pip_install }}">
-              {{ homepage.banner.pip_install }}&ensp;<i class="fa fa-copy" aria-hidden="true" />
-            </button>
-            <div id="clipboard-popup" class="popup hidden">
-              <p>{{ homepage.banner.copy_success_message }}</p>
-            </div>
-          </div>
-        </div>
         <div class="banner-platform-learn">
           <img class="banner-redhat-logo"
                src="/images/redhat.svg"
-               alt="{{ homepage.banner.redhat_logo_alt }}"
+               alt="{{ homepage.platform.redhat_logo_alt }}"
                width="20"
                height="20" />
-          <span class="banner-platform-link"><a href="#platform">{{ homepage.banner.platform_learn }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
+          <span class="banner-platform-link"><a href="#platform">{{ homepage.platform.platform_go }}</a>&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></span>
         </div>
       </div>
       <div class="banner-welcome-image">

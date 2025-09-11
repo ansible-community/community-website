@@ -1,0 +1,42 @@
+{% extends "base.tmpl" %}
+{% block content %}
+  <div class="grid-wrapper">
+    <div class="width-8-12 width-12-12-m">
+      <div class="page-title">
+        <h2>{{ homepage.maintainers.title }}</h2>
+        <p>{{ homepage.maintainers.intro }}</p>
+      </div>
+    </div>
+    <!-- Start quicklinks. -->
+    <div class="width-4-12 width-12-12-m">
+      <div class="quicklinks">
+        <h2>{{ quicklinks.labels.maintainers }}</h2>
+        {%- for key, item in quicklinks.maintainers.items() %}
+          <div class="top-link">
+            <i class="fas fa-bookmark"></i><a class="btn" href="{{ item.link }}" role="button">{{
+              item.label
+            }}</a>
+          </div>
+        {%- endfor %}
+        <hr />
+      </div>
+    </div>
+    <!-- End quicklinks. -->
+    <!-- Start community maintainer journey. -->
+    {% for key, value in maintainers.milestones.items() -%}
+      <div class="width-6-12 width-12-12-m journey-milestones">
+        <h3>{{ value.title }}</h3>
+        <div class="btn-group-vertical"
+             role="group"
+             aria-label="{{ homepage.labels.button_group }}">
+          {%- for action_key, action_value in value.actions.items() %}
+            <div class="doc-link-row doc-link">
+              <i class="fas fa-book"></i><a class="btn" href="{{ action_value.link }}" role="button">{{ action_value.label }}</a>
+            </div>
+          {%- endfor %}
+        </div>
+      </div>
+    {% endfor -%}
+    <!-- End community maintainer journey. -->
+  </div>
+{% endblock content %}

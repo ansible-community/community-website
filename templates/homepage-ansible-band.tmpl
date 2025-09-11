@@ -1,27 +1,46 @@
 <div class="grid-wrapper homepage-ansible-band full-width-band"
-     id="ansible">
-  <div class="section-title width-8-12 width-12-12-m">
+     id="get_started">
+  <div class="section-title width-12-12 width-12-12-m">
     <div class="section-top">
-      <img class="section-icon"
-           src="{{ homepage.ansible.section_icon }}"
-           alt="{{ homepage.ansible.icon_alt }}"
-           width="40"
-           height="40" />
+      <i class="fas fa-rocket section-icon"></i>
       <h2>{{ homepage.ansible.title }}</h2>
     </div>
     <p>{{ homepage.ansible.intro }}</p>
+  </div>
+  <div class="section-title width-6-12 width-12-12-m">
     <div class="what-is-ansible max-width-prose">
       <h3>{{ homepage.ansible.top_section.heading }}</h3>
       <p>{{ homepage.ansible.top_section.body }}</p>
+    </div>
+  </div>
+  <div class="section-title width-6-12 width-12-12-m">
+    <div class="what-is-ansible max-width-prose">
       <h3>{{ homepage.ansible.bottom_section.heading }}</h3>
       <p>{{ homepage.ansible.bottom_section.body }}</p>
     </div>
   </div>
-  <div class="ansible-image width-4-12 width-12-12-m">
-    <img src="/images/collaboration.svg"
-         alt="{{ homepage.ansible.image_alt }}"
-         width="500px"
-         height="500px" />
+  <div class="width-12-12 width-12-12-m">
+    <h4>{{ homepage.get_started.title }}</h4>
+    <div class="ansible-main-row">
+      <div class="ansible-clipboard">
+        <button class="btn text-nowrap"
+                data-clipboard-text="{{ homepage.banner.pip_install }}">
+          {{ homepage.banner.pip_install }}&ensp;<i class="fa fa-copy" aria-hidden="true" />
+        </button>
+        <div id="clipboard-popup" class="popup hidden">
+          <p>{{ homepage.banner.copy_success_message }}</p>
+        </div>
+      </div>
+      <div class="btn-group-vertical"
+           role="group"
+           aria-label="{{ homepage.labels.button_group }}">
+        {%- for key, item in homepage.get_started.actions.items() %}
+          <div class="doc-link-row doc-link">
+            <i class="fas fa-book"></i><a class="btn" href="{{ item.link }}" role="button">{{ item.label }}</a>
+          </div>
+        {%- endfor %}
+      </div>
+    </div>
   </div>
   {% include "homepage-back-to-top.tmpl" %}
 </div>

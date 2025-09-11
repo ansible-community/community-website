@@ -1,0 +1,21 @@
+{% extends "base.tmpl" %}
+{% block content %}
+  <div class="grid-wrapper">
+    <div class="width-12-12 width-12-12-m">
+      <div class="archive-title">
+        <h2>{{ homepage.archive_page.title }}</h2>
+        <p>{{ homepage.archive_page.intro }}</p>
+      </div>
+    </div>
+    <!-- Start community docs archive. -->
+    {% for key, item in archive.prior_versions.items() -%}
+      <div class="width-6-12 width-12-12-m">
+        <h5>{{ item.heading }}</h5>
+        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="{{ item.link }}" role="button">{{ homepage.labels.visit_docs }}</a>
+        </div>
+      </div>
+    {% endfor -%}
+    <!-- End community docs archive. -->
+  </div>
+{% endblock content %}

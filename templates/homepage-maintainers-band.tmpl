@@ -1,0 +1,27 @@
+<div class="grid-wrapper homepage-personas-grey full-width-band"
+     id="maintainers">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <i class="fas fa-screwdriver-wrench section-icon"></i>
+      <h2>{{ homepage.maintainers.title }}</h2>
+    </div>
+    <p>{{ homepage.maintainers.intro }}</p>
+  </div>
+  <div class="width-6-12 width-12-12-m">
+    <div class="btn-group-vertical"
+         role="group"
+         aria-label="{{ homepage.labels.button_group }}">
+      {%- for key, item in homepage.maintainers.actions.items() %}
+        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="{{ item.link }}" role="button">{{ item.label }}</a>
+        </div>
+      {%- endfor %}
+    </div>
+  </div>
+  <div class="continue-link width-6-12 width-12-12-m">
+    <a href="/maintainers.html" role="button">{{
+      homepage.maintainers.continue
+    }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></a>
+  </div>
+  {% include "homepage-back-to-top.tmpl" %}
+</div>
