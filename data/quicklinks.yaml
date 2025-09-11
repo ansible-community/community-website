@@ -1,0 +1,50 @@
+# Quicklinks are the most frequently accessed documentation pages
+labels:
+  ansible: Top links to Ansible documentation
+  users: Top links for Ansible users
+  developers: Top links for developers
+  maintainers: Top links for maintainers
+#Quicklinks on the homepage
+ansible:
+  package_docs:
+    label: Ansible package docs home
+    url: "https://docs.ansible.com/ansible/latest/index.html"
+  collection_index:
+    label: Collection index
+    url: "https://docs.ansible.com/ansible/latest/collections/index.html"
+  module_index:
+    label: Modules and plugins index
+    url: "https://docs.ansible.com/ansible/latest/collections/all_plugins.html"
+#Quicklinks for users
+users:
+  yaml_syntax:
+    label: YAML syntax
+    url: "https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html"
+  playbook_variables:
+    label: Playbook variables
+    url: "https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html"
+  playbook_conditionals:
+    label: Playbook conditionals
+    url: "https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_conditionals.html"
+#Quicklinks for developers
+developers:
+  developing_modules:
+    label: Developing modules
+    url: "https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general.html"
+  python_three:
+    label: Ansible and Python 3
+    url: "https://docs.ansible.com/ansible/latest/dev_guide/developing_python_3.html"
+  python_api:
+    label: Python API
+    url: "https://docs.ansible.com/ansible/latest/dev_guide/developing_api.html"
+#Quicklinks for maintainers
+maintainers:
+  maintainer_news:
+    label: News for maintainers
+    url: "https://forum.ansible.com/tag/news-for-maintainers"
+  community_topics:
+    label: Community topics
+    url: "https://docs.ansible.com/ansible/devel/community/communication.html#ansible-community-topics"
+  package_inclusion:
+    label: Package inclusion requests
+    url: "https://docs.ansible.com/ansible/devel/community/steering/community_steering_committee.html#collection-inclusion-requests-workflow"
