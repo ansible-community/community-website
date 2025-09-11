@@ -4,6 +4,7 @@
   h2 {
     font-size: $font-xl;
     text-transform: none;
+    padding-left: 1.25rem;
   }
   p {
     font-size: $font-md;
@@ -19,9 +20,9 @@
 
 .section-icon {
   float: left;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
+  font-size: $font-xxl;
+  text-align: center;
+  color: $cyan;
 }
 
 .section-view-more {

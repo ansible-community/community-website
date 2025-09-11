@@ -1,0 +1,30 @@
+.collections-title {
+  padding-bottom: 0.5rem;
+  h2 {
+    font-size: $font-xl;
+  }
+}
+
+.galaxy-section {
+  h3 {
+    font-size: $font-lg;
+    padding-top: 2rem;
+  }
+}
+
+.galaxy-search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6rem;
+}
+
+.galaxy-search-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.galaxy-search-left {
+    display: flex;
+    flex-direction: column;
+}

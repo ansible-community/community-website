@@ -7,6 +7,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
+  align-items: center;
 }
 
 .platform-box-left {
@@ -21,6 +22,7 @@
   flex-direction: column;
   grid-column-start: 2;
   grid-column-end: 4;
+  text-align: center;
   p {
     font-size: $font-md;
   }

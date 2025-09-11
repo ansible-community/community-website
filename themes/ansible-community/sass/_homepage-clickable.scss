@@ -17,6 +17,38 @@
   }
 }
 
+.doc-link {
+  a {
+    color: $blue-anchor;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  i {
+    margin-left: 1.2rem;
+  }
+}
+
+.doc-link-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.continue-link {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  margin-top: .5rem;
+  color: $blue-anchor;
+  gap: 0.75rem;
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 /* overrides homepage-anchor */
 .platform-anchor {
   width: 100%;

@@ -5,7 +5,7 @@
   background-color: $grey94;
   display: grid;
   grid-template-columns: repeat(5 1fr);
-  @media screen and (max-width: 992px) {
+  @media screen and (max-width: 1400px) {
     display: none;
   }
 }
@@ -22,14 +22,11 @@
 
 .tab-menu-anchor {
   display: flex;
-  padding: 1.75rem 1.75rem 1rem 1.75rem;
+  padding: 1.75rem 1.75rem 1rem 1rem;
   justify-content: center;
-  font-size: $font-lg;
-  line-height: 40px;
-  img {
-    float: left;
-    margin-right: 0.25rem;
-  }
+  font-size: $font-md;
+  line-height: 30px;
+  gap: .75rem;
   p {
     white-space: nowrap;
   }
@@ -37,4 +34,10 @@
     background-color: $white;
     color: $navy;
   }
+}
+
+.tab-menu-icon {
+  float: left;
+  font-size: $font-xl;
+  text-align: center;
 }
