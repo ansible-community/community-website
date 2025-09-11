@@ -1,3 +1,4 @@
-site_title: Ansible Community
+site_title: Ansible community documentation
 site_description: The home of the Ansible community.
 site_author: Ansible Community
+base_url: https://docs.ansible.com/
