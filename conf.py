@@ -17,7 +17,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Ansible Community, et al"  # (translatable)
-BLOG_TITLE = "Ansible Community"  # (translatable)
+BLOG_TITLE = "Ansible documentation"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
 SITE_URL = "https://ansible-community-website.readthedocs.io/"
@@ -25,7 +25,7 @@ SITE_URL = "https://ansible-community-website.readthedocs.io/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://ansible.community/"
 BLOG_EMAIL = "website@ansible.community"
-BLOG_DESCRIPTION = "Ansible Community Website"  # (translatable)
+BLOG_DESCRIPTION = "Ansible Community Documentation"  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -152,25 +152,20 @@ NAVIGATION_ALT_LINKS = {
     DEFAULT_LANG: (
         (
           (
-            ("/blog/", "Latest posts", ""),
-            ("/categories/", "Tags", ""),
-            ("/blog/archive.html", "Post archive", ""),
-            ("/rss.xml", "Feed", ""),
-          ),
-          "Blog", ""
-        ),
-        (
-          (
-            ("/how-ansible-works/", "How Ansible works", ""),
-            ("/ecosystem/", "Ansible ecosystem", ""),
-            ("/ansible-community-training/", "Ansible community training", ""),
-            ("/mission-statement/", "Our mission statement", ""),
-            ("/contact-us/", "Contact us", ""),
+            ("https://docs.ansible.com/ansible/latest/index.html", "Ansible package documentation", ""),
+            ("/users.html", "Users", ""),
+            ("/developers.html", "Developers", ""),
+            ("/maintainers.html", "Maintainers", ""),
+            ("/ecosystem.html", "Ecosystem", ""),
+            ("https://docs.ansible.com/ansible/latest/collections/index.html", "Collection index", ""),
+            ("https://docs.ansible.com/ansible/latest/collections/all_plugins.html", "Modules and plugins index", ""),
+            ("/ansible-prior-versions.html", "Documentation archive", ""),
+            ("https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/", "Red Hat Ansible Automation Platform", ""),
           ),
           "Resources", ""
         ),
-        ("https://forum.ansible.com/", "Ansible community forum", ""),
-        ("https://docs.ansible.com/", "Documentation", ""),
+        ("https://forum.ansible.com/", "Ansible forum", ""),
+        ("/community.html", "Join the community", ""),
     )
 }
 
@@ -257,16 +252,7 @@ THEME_CONFIG = {
 #         ("pages/*.md", {"en": "pages", "de": "seiten"}, "page.tmpl"),
 #     )
 
-POSTS = (
-    ("posts/*.md", "blog", "post.tmpl"),
-    ("posts/*.rst", "blog", "post.tmpl"),
-    ("posts/*.txt", "blog", "post.tmpl"),
-    ("posts/*.html", "blog", "post.tmpl"),
-    # See the README.txt file in the blog-archive folder for details.
-    ("blog-archive/*.md", "blog", "post.tmpl"),
-    # See the README.txt file in the bullhorn folder for details.
-    ("bullhorn/*.md", "blog", "post.tmpl"),
-)
+POSTS = ()
 PAGES = (
     ("pages/*.md", "", "page.tmpl"),
     ("pages/*.rst", "", "page.tmpl"),
@@ -624,7 +610,7 @@ FRONT_INDEX_HEADER = {
 # If monthly archives or full archives are created, adds also one archive per day
 # CREATE_DAILY_ARCHIVE = False
 # Create previous, up, next navigation links for archives
-CREATE_ARCHIVE_NAVIGATION = True
+CREATE_ARCHIVE_NAVIGATION = False
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
@@ -1086,7 +1072,7 @@ STRIP_INDEXES = True
 # This can be disabled on a per-page/post basis by adding
 #    .. pretty_url: False
 # to the metadata.
-PRETTY_URLS = True
+PRETTY_URLS = False
 
 # If True, publish future dated posts right away instead of scheduling them.
 # Defaults to False.
@@ -1375,13 +1361,13 @@ FILE_METADATA_UNSLUGIFY_TITLES = True
 USE_BUNDLES = False
 
 # Plugins you don't want to use. Be careful :-)
-# DISABLED_PLUGINS = ["render_galleries"]
+DISABLED_PLUGINS = ["render_galleries", "render_taxonomies",]
 
 # Special settings to disable only parts of the indexes plugin.
 # Use with care.
-# DISABLE_INDEXES = False
-# DISABLE_MAIN_ATOM_FEED = False
-# DISABLE_MAIN_RSS_FEED = False
+DISABLE_INDEXES = True
+DISABLE_MAIN_ATOM_FEED = True
+DISABLE_MAIN_RSS_FEED = True
 
 # Add the absolute paths to directories containing plugins to use them.
 # For example, the `plugins` directory of your clone of the Nikola plugins
@@ -1436,9 +1422,15 @@ try:
     from nikola.utils import load_data
     GLOBAL_CONTEXT = {
     "meta": load_data('data/meta.yaml'),
-    "ecosystem": load_data('data/ecosystem.yaml'),
     "homepage": load_data('data/homepage.yaml'),
-    "training": load_data('data/training.yaml'),
+    "quicklinks": load_data('data/quicklinks.yaml'),
+    "users": load_data('data/users.yaml'),
+    "developers": load_data('data/developers.yaml'),
+    "maintainers": load_data('data/maintainers.yaml'),
+    "ecosystem": load_data('data/ecosystem.yaml'),
+    "community": load_data('data/community.yaml'),
+    "collections": load_data('data/collections.yaml'),
+    "archive": load_data('data/archive.yaml'),
     }
 
 except ImportError:
