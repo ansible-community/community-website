@@ -12,13 +12,13 @@ jobs:
           matrix:
             include:
               - session: lint
-                python-versions: "3.11"
+                python-versions: "3.13"
               - session: format
-                python-versions: "3.11"
+                python-versions: "3.13"
               - session: spelling
-                python-versions: "3.11"
+                python-versions: "3.13"
               - session: build
-                python-versions: "3.11"
+                python-versions: "3.13"
         name: "Run nox ${{ matrix.session }} session"
         steps:
           - name: Check out repo
