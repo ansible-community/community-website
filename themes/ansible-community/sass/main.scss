@@ -62,3 +62,14 @@ h5 {
 h6 {
   font-family: $font-display;
 }
+
+#readthedocs-ea-text-nostyle-nodoctool {
+    display: none !important;
+}
+
+readthedocs-notification,
+readthedocs-search,
+readthedocs-hotkeys,
+readthedocs-flyout {
+    display: none !important;
+}
