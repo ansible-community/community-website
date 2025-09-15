@@ -1,0 +1,27 @@
+<div class="grid-wrapper homepage-personas-grey full-width-band"
+     id="users">
+  <div class="section-title width-12-12 width-12-12-m">
+    <div class="section-top">
+      <i class="fas fa-cogs section-icon"></i>
+      <h2>{{ homepage.users.title }}</h2>
+    </div>
+    <p>{{ homepage.users.intro }}</p>
+  </div>
+  <div class="width-6-12 width-12-12-m">
+    <div class="btn-group-vertical"
+         role="group"
+         aria-label="{{ homepage.labels.button_group }}">
+      {%- for key, item in homepage.users.actions.items() %}
+        <div class="doc-link-row doc-link">
+          <i class="fas fa-book"></i><a class="btn" href="{{ item.link }}" role="button">{{ item.label }}</a>
+        </div>
+      {%- endfor %}
+    </div>
+  </div>
+  <div class="continue-link width-6-12 width-12-12-m">
+    <a href="/users.html">{{
+      homepage.users.continue
+    }}&ensp;<i class="fa fa-arrow-right" aria-hidden="true" /></a>
+  </div>
+  {% include "homepage-back-to-top.tmpl" %}
+</div>

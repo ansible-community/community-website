@@ -1,0 +1,19 @@
+prior_versions:
+  v_2_8:
+    heading: Ansible community documentation for version 2.8
+    link: "https://ansible.readthedocs.io/projects/ansible/2.8-archive/"
+  v_2_7:
+    heading: Ansible community documentation for version 2.7
+    link: "https://ansible.readthedocs.io/projects/ansible/2.7-archive/"
+  v_2_6:
+    heading: Ansible community documentation for version 2.6
+    link: "https://ansible.readthedocs.io/projects/ansible/2.6-archive/"
+  v_2_5:
+    heading: Ansible community documentation for version 2.5
+    link: "https://ansible.readthedocs.io/projects/ansible/2.5-archive/"
+  v_2_4:
+    heading: Ansible community documentation for version 2.4
+    link: "https://ansible.readthedocs.io/projects/ansible/2.4-archive/"
+  v_2_3:
+    heading: Ansible community documentation for version 2.3
+    link: "https://ansible.readthedocs.io/projects/ansible/2.3-archive/"

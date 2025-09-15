@@ -1,0 +1,58 @@
+.homepage-personas-white {
+  background-color: $white;
+}
+
+.homepage-personas-grey {
+  background-color: $grey94;
+}
+
+.page-title {
+  padding-bottom: 8rem;
+  h2 {
+    font-size: $font-xl;
+  }
+  @media screen and (max-width: 992px) {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.quicklinks {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+  padding-left: 2rem;
+  white-space: nowrap;
+  h2 {
+    font-size: $font-md;
+  }
+}
+
+.top-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: -0.5rem;
+  a {
+    color: $blue-anchor;
+    margin-left: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  i {
+    margin-left: 0.25rem;
+    margin-right: 0;
+  }
+}
+
+.journey-milestones {
+  padding-bottom: 2rem;
+  margin-left: 2rem;
+  h3 {
+    font-size: $font-lg;
+  }
+  @media screen and (max-width: 992px) {
+    padding-bottom: 1rem;
+    grid-column: span 12;
+  }
+}

@@ -15,6 +15,66 @@
   }
 }
 
+.ansible-main-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+
+.ansible-clipboard {
+  display: flex;
+  .btn {
+    display: flex;
+    flex-direction: row;
+    background-color: $grey94 !important;
+    color: $cyan !important;
+    height: 2.5rem;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: $cyan !important;
+    margin-right: 1px;
+    margin-top: .5rem;
+    font-family: $font-monospace;
+    font-size: $font-sm;
+    font-weight: 500;
+    align-items: center;
+    &:hover {
+      background-color: $black !important;
+      color: $white !important;
+    }
+  }
+}
+
+.popup {
+  display: flex;
+  padding: 0 3px;
+  height: 2.5rem;
+  margin-top: .5rem;
+  background-color: $black !important;
+  color: $grey94 !important;
+  border-radius: 1px;
+  font-size: $font-sm;
+  align-items: center;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.quicklinks {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: $font-md;
+    font-weight: bold;
+  }
+  p {
+    font-size: $font-md;
+    font-weight: normal;
+  }
+}
+
 .ansible-image {
   display: flex;
 
@@ -22,5 +82,11 @@
     @media screen and (max-width: 768px) {
       display: none;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ansible-clipboard {
+    display: none;
   }
 }

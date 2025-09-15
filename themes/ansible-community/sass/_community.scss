@@ -1,0 +1,19 @@
+.community-title {
+  padding-bottom: 0.5rem;
+  margin-left: 1rem;
+  h2 {
+    font-size: $font-xl;
+  }
+}
+
+.community-sections {
+  padding-bottom: 2rem;
+  margin-left: 2rem;
+  h3 {
+    font-size: $font-lg;
+  }
+  @media screen and (max-width: 992px) {
+    padding-bottom: 1rem;
+    grid-column: span 12;
+  }
+}

@@ -3,21 +3,19 @@
   <div class="width-12-12 width-12-12-m">
     <div class="platform-row">
       <div class="platform-box-left">
-        <a href="{{ homepage.links.platform.use_cases }}" target="_blank">
-          <img src="/images/platform.svg"
-               alt="{{ homepage.platform.logo_alt }}"
-               width="500"
-               height="150" />
-        </a>
+        <img src="/images/platform.svg"
+             alt="{{ homepage.platform.logo_alt }}"
+             width="500"
+             height="150" />
       </div>
       <div class="platform-box-right max-width-prose">
-        <p>{{ homepage.platform.main }}</p>
         <p>{{ homepage.platform.discover }}</p>
         <a class="homepage-anchor platform-anchor"
-           href="{{ homepage.links.platform.home }}"
+           href="{{ homepage.links.platform_docs.url }}"
            role="button"
-           target="_blank">{{ homepage.platform.learn }}</a>
+           target="_blank">{{ homepage.links.platform_docs.label }}</a>
       </div>
     </div>
   </div>
+  {% include "homepage-back-to-top.tmpl" %}
 </div>

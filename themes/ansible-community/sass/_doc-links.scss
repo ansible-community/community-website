@@ -1,0 +1,18 @@
+.doc-link-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.doc-link {
+  white-space: nowrap;
+  a {
+    color: $blue-anchor;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  i {
+    margin-left: 1.2rem;
+  }
+}

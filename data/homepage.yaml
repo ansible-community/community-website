@@ -1,17 +1,18 @@
 banner:
-  title: Community-powered open-source automation
-  intro: Configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more!
+  title: Ansible community documentation
+  intro: Ansible community documentation can help you configure most operating systems, deploy software, and orchestrate advanced workflows to support application deployment, system updates, and more!
   pip_install: pip install ansible
   install_tooltip: Copy the pip command to install the latest version of Ansible.
   copy_success_message: Copied!
-  redhat_logo_alt: Red Hat logo
   welcome_alt: Welcome to Ansible
-  platform_learn: Learn about Red Hat Ansible Automation Platform
+platform:
+  platform_go: Looking for Red Hat Ansible Automation Platform?
+  learn: Tackle any automation challenge with enterprise-level engineering and support from Red Hat.
+  discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
+  logo_alt: Red Hat Ansible Automation Platform logo
+  redhat_logo_alt: Red Hat logo
 ansible:
-  section_icon: /assets/images/automation-cyan.svg
-  icon_alt: Ansible automation icon
-  image_alt: Ansible community collaboration
-  title: What is Ansible?
+  title: Get started
   intro: Ansible is open-source technology that can perform virtually any IT task and remove complexity from workflows.
   top_section:
     heading: Code that reads like documentation
@@ -24,121 +25,87 @@ ansible:
       As an automation engine, Ansible ensures that your IT environment stays exactly as you describe it, no matter the complexity.
       Not only that, you can automate any command with Ansible to eliminate drudgery from your daily routine.
       Ansible gives you tooling to be more productive and solve problems that really matter.
-community:
-  section_icon: /assets/images/community-cyan.svg
-  icon_alt: Ansible community icon
-  title: Community
-  ansible_community: Join us and get involved with our amazing community!
-  socials:
-    title: Hang out with us
-    links:
-      forum:
-        url: https://forum.ansible.com/
-        icon: fab fa-discourse
-        text: Forum
-      matrix:
-        url: https://matrix.to/#/#social:ansible.com
-        icon: fa fa-matrix-org
-        text: Matrix
-      mastodon:
-        url: https://fosstodon.org/@ansible
-        icon: fa fa-mastodon
-        text: Mastodon
-      youtube:
-        url: https://www.youtube.com/ansiblecommunity
-        icon: fab fa-youtube
-        text: YouTube
-      linkedin:
-        url: https://www.linkedin.com/groups/4648083/
-        icon: fab fa-linkedin
-        text: LinkedIn
+links:
+  get_started:
+    label: Get started with Ansible
+    url: https://docs.ansible.com/ansible/latest/getting_started/index.html
+  platform:
+    label: Red Hat Ansible Automation Platform
+    url: https://www.redhat.com/en/technologies/management/ansible
+  platform_docs:
+    label: Red Hat Ansible Automation Platform documentation
+    url: https://docs.redhat.com/en/documentation/red_hat_ansible_automation_platform/
+tab_menu:
+  get_started: Get started
+  users: Users
+  developers: Developers
+  maintainers: Maintainers
+  ecosystem: Ansible ecosystem
+  contribute: Contribute to Ansible
+# Start personas band on the homepage
+get_started:
+  title: Ready to start automating?
+  actions:
+    learn:
+      label: Understand the fundamentals of Ansible automation
+      link: "https://docs.ansible.com/ansible/latest/index.html"
+    install:
+      label: Install the Ansible package
+      link: "https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-and-upgrading-ansible"
+    start:
+      label: Run your first ad hoc command in a few easy steps
+      link: "https://docs.ansible.com/ansible/latest/getting_started/index.html"
+users:
+  title: Users
+  intro: Automate the management of remote systems and control their desired state.
+  continue: Find more user documentation
+  actions:
+    start:
+      label: Start writing Ansible playbooks
+      link: "https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html#playbook-syntax"
+    learn_modules:
+      label: Learn about Ansible modules
+      link: "https://docs.ansible.com/ansible/latest/module_plugin_guide/modules_intro.html"
+    build_inventory:
+      label: Build inventory files to manage multiple hosts
+      link: "https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html"
+developers:
+  title: Developers
+  intro: Extend automation with custom Ansible modules, add functionality to existing modules, or fix bugs to improve existing code.
+  continue: Find more developer documentation
+  actions:
+    setup:
+      label: Set up your development environment
+      link: "https://docs.ansible.com/ansible/latest/dev_guide/developing_modules_general.html#environment-setup"
+    learn:
+      label: Learn how Ansible works
+      link: "https://docs.ansible.com/ansible/latest/dev_guide/overview_architecture.html"
+    code:
+      label: Write custom modules or plugins
+      link: "https://docs.ansible.com/ansible/latest/dev_guide/developing_locally.html"
+maintainers:
+  title: Maintainers
+  intro: Ansible community maintainers are trusted contributors who oversee project lifecycle and overall health.
+  continue: Find more maintainer documentation
+  actions:
+    guidelines:
+      label: Review community maintainer responsibilities
+      link: "https://docs.ansible.com/ansible/latest/community/maintainers_guidelines.html"
+    paths:
+      label: Understand Ansible contributor paths
+      link: "https://docs.ansible.com/ansible/latest/community/contributor_path.html"
+    grow:
+      label: Explore ways to grow community
+      link: "https://docs.ansible.com/ansible/latest/community/maintainers_guidelines.html#expanding-the-collection-community"
+# Start bullhorn band on the homepage
 bullhorn:
-  title: Subscribe to the Bullhorn
+  title: Grab the Bullhorn
   about: The Bullhorn is a weekly newsletter full of Ansible Community news and updates.
   forum_text: Read the latest edition
-  subscribe: Subscribe by email
-  mailchimp_link: https://bit.ly/subscribe-bullhorn
   forum_link: https://forum.ansible.com/c/news/bullhorn/17
   forum_feed: https://forum.ansible.com/c/news/bullhorn/17.rss
-events:
-  section_icon: /assets/images/calendar-cyan.svg
-  icon_alt: Ansible community event icon
-  title: Events
-  intro: Share and learn about automation at Ansible events, in person or online.
-  url: https://forum.ansible.com/c/events/
-  view_calendar: View more
-  event_descriptions:
-    # This section contains various event descriptions.
-    # Copy and paste these descriptions as needed when updating event details.
-    # Changing below does not change text on the homepage. The value of the "events_list.<event>.description" key is used on the homepage.
-    community_day: Get together with a broad community of users, contributors, entusiasts, IT professionals and more to learn and share about Ansible automation.
-    contributor_summit: Interact with the Ansible contributor community and Ansible at Red Hat engineers to improve collaboration and possibly do some hacking.
-  events_list:
-    event_one:
-      name: Configuration Management Camp
-      # If the event is community day or contributor summit, you can copy the description from event_descriptions.
-      # Important: To prevent reflow and text wrapping issues on the homepage descriptions should be approximately 100 characters long.
-      description: Configuration Management Camp is the event for technologists interested in open source infrastructure automation and related topics.
-      date: February 5 to 7, 2024
-      location: Ghent, Belgium
-      image: cfgmgmtcamp-logo.png
-      alt: CfgMgmtCamp logo
-      link: https://forum.ansible.com/t/config-management-camp/91
-    event_two:
-      name: Ansible Minneapolis Meetup
-      # If the event is community day or contributor summit, you can copy the description from event_descriptions.
-      # Important: To prevent reflow and text wrapping issues on the homepage descriptions should be approximately 100 characters long.
-      description: Join a group of systems engineers and DevOps folks who want to Ansible all the things. Learn more and share your Ansible knowledge.
-      date: January 18, 2024
-      location: Minneapolis, MN, USA
-      image: ansible-meetup.svg
-      alt: Ansible meetup logo
-      link: https://forum.ansible.com/t/ansible-minneapolis-meetup-topic-tba-2024-01-18/1863
-platform:
-  main: Get enterprise engineering and support from Red Hat with a platform that can tackle any automation challenge.
-  discover: Red Hat Ansible Automation Platform provides everything needed to create, execute, and manage automation in a single subscription. From execution environments to certified collections to automation analytics, discover the features and benefits of Ansible Automation Platform.
-  learn: View more about Red Hat Ansible Automation Platform
-  logo_alt: Red Hat Ansible Automation Platform logo
-ecosystem:
-  section_icon: /assets/images/communities-cyan.svg
-  icon_alt: Ansible ecosystem icon
-  title: Ecosystem
-  intro: Projects in the Ansible ecosystem let you expand automation to an unlimited set of use cases.
-  url: link://slug/ecosystem
-  projects:
-    core:
-      heading: Ansible Core
-      description: The Ansible programming language, automation tooling, and architectural framework.
-      link: https://ansible.readthedocs.io/projects/ansible-core/
-      logo: project-logos/ansible-core.svg
-      alt: Ansible Core project logo
-    awx:
-      heading: AWX
-      description: Web-based user interface, REST API, and task engine for performing Ansible automation.
-      link: https://ansible.readthedocs.io/projects/awx/
-      logo: project-logos/awx.svg
-      alt: AWX project logo
-    eda:
-      heading: Event-Driven Ansible
-      description: Subscribe to event sources to scale automation and deliver more efficient IT operations.
-      link: https://ansible.readthedocs.io/projects/rulebook/
-      logo: project-logos/eda.svg
-      alt: Event-Driven Ansible project logo
-    devtools:
-      heading: Ansible automation developer tools
-      description: Tooling to develop and test Ansible content for consistent, trusted automation.
-      link: https://ansible.readthedocs.io/projects/dev-tools/
-      logo: project-logos/ansible-community.svg
-      alt: Ansible DevTools project logo
-blog:
-  section_icon: /assets/images/blog-cyan.svg
-  icon_alt: Ansible community blog icon
-  title: Blog
-  intro: Check out some recent blog posts from the Ansible community.
-  url: /blog/
+# Start contribute band on the homepage
 contribute:
-  section_icon: /assets/images/collaboration-cyan.svg
-  icon_alt: Ansible community contributor icon
   bull_builder_alt: Ansible bull contributor logo
   aria_label: Visit the forum and find out how to contribute
   title: Contribute
@@ -153,15 +120,56 @@ contribute:
     - Code a new module or fix a bug.
     - Improve the documentation.
   involved: Want to get involved?
+# Start ecosystem band on the homepage
+ecosystem:
+  title: Ansible ecosystem
+  intro: Expand automation to an unlimited set of use cases with projects in the Ansible ecosystem.
+  url: link://slug/ecosystem
+  projects:
+    core:
+      heading: Ansible Core
+      description: The Ansible programming language, automation tooling, and architectural framework.
+      link: https://ansible.readthedocs.io/projects/ansible-core/
+      logo: project-logos/ansible-core.svg
+      alt: Ansible Core project logo
+    antsibull-nox:
+      heading: Antsibull Nox
+      description: A nox helper library that simplifies the process of testing Ansible collections through a common interface for various tools.
+      link: https://ansible.readthedocs.io/projects/antsibull-nox/
+      logo: project-logos/ansible-community.svg
+      alt: Antsibull-nox project logo
+    builder:
+      heading: Ansible Builder
+      description: Ansible Builder lets you create Execution Environments, which are container images that act as Ansible control nodes.
+      link: https://ansible.readthedocs.io/projects/builder/
+      logo: project-logos/builder.svg
+      alt: Ansible Builder project logo
+    devtools:
+      heading: Ansible developer tools
+      description: An integrated tool kit and framework for creating Ansible automation content, from bootstrapping new projects to setting up ci/cd pipelines.
+      link: https://ansible.readthedocs.io/projects/dev-tools/
+      logo: project-logos/ansible-community.svg
+      alt: Ansible DevTools project logo
+# Start ecosystem page
+ecosystem_page:
+  title: Ansible ecosystem
+  intro: Expand your automation to a virtually unlimited set of use cases.
+# Start community page
+community_page:
+  title: Join the Ansible community
+  intro: Open-source and collaboration are at the heart of the Ansible community, helping more people experience the power of automation and work better and faster together.
+# Start collections page
+collections_page:
+  title: Ansible collections
+  intro: Collections are a distribution format for Ansible content that can include playbooks, roles, modules, and plugins.
+# Start community docs archive page
+archive_page:
+  title: Ansible community documentation archive
+  intro: Archive page for the Ansible community documentation that provides older versions of content.
+# Element labels
 labels:
-  learn_more: Learn more
-  view_more: View more
+  button_group: Button group that links to Ansible community documentation.
   back_to_top: Back to top
-  get_started: Get started with Ansible
-  get_started_tooltip: Quickly get up and running with Ansible automation.
-links:
-  ansible:
-    get_started_url: https://docs.ansible.com/ansible/latest/getting_started/index.html
-  platform:
-    home: https://www.redhat.com/en/technologies/management/ansible
-    use_cases: https://www.redhat.com/en/technologies/management/ansible/use-cases
+  learn_more: Find out more
+  view_more: View more
+  visit_docs: Visit the documentation
